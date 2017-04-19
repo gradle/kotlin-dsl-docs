@@ -1,5 +1,6 @@
 import org.eclipse.jgit.api.Git
 import org.gradle.api.file.FileCollection
+import org.gradle.api.tasks.GradleBuild
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputFiles
 import org.gradle.api.tasks.OutputDirectories
@@ -32,6 +33,16 @@ val copyGradleApiSources by tasks.creating(CopyGradleApiSources::class) {
     outputDirectory = files("$buildDir/gradle-api-sources")
 }
 
+val generateCorePluginsProjectSchema by tasks.creating(GradleBuild::class) {
+    setDir("build-with-core-plugins")
+    setTasks(listOf("gskGenerateAccessors"))
+}
+val generateCorePluginsAccessors by tasks.creating(GradleBuild::class) {
+    setDir("build-with-core-plugins")
+    setTasks(listOf("help"))
+    dependsOn(generateCorePluginsProjectSchema)
+}
+
 apply {
     // This is applied imperatively because using the plugins block fails
     plugin("org.jetbrains.dokka")
@@ -42,7 +53,7 @@ apply {
 }
 
 val dokka by tasks
-dokka.dependsOn(copyGradleApiSources, cloneGSK)
+dokka.dependsOn(copyGradleApiSources, cloneGSK, generateCorePluginsAccessors)
 
 val publishGhPages by tasks
 publishGhPages.dependsOn(dokka)

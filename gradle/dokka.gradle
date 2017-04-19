@@ -3,7 +3,7 @@ dokka {
   outputDirectory = "build/docs/dokka"
   jdkVersion = 8
   processConfigurations = [ ]
-  sourceDirs = [ new File( cloneGSK.outputDirectory.singleFile.absoluteFile, 'src/main/kotlin' ), copyGradleApiSources.outputDirectory.singleFile ]
-               //new File( cloneGradle.outputDirectory, "subprojects" ).listFiles().
-               //  collect { new File( it.absoluteFile, 'src/main/java' ) }
+  sourceDirs = [ new File( cloneGSK.outputDirectory.singleFile.absoluteFile, 'src/main/kotlin' ),
+                 copyGradleApiSources.outputDirectory.singleFile,
+                 file('build-with-core-plugins/buildSrc/build/generated-src/gradle-script-kotlin')]
 }
