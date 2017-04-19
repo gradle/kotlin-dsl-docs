@@ -14,19 +14,19 @@ buildscript {
     dependencies { classpath("org.jetbrains.dokka:dokka-gradle-plugin:0.9.13") }
 }
 
-val cloneGradle = task<GitClone>("cloneGradle") {
+val cloneGradle by tasks.creating(GitClone::class) {
     uri = "https://github.com/gradle/gradle.git"
     ref = "gradle-script-kotlin"
     outputDirectory = files("$buildDir/clones/gradle")
 }
 
-val cloneGSK = task<GitClone>("cloneGSK") {
+val cloneGSK by tasks.creating(GitClone::class) {
     uri = "https://github.com/gradle/gradle-script-kotlin.git"
     ref = "master"
     outputDirectory = files("$buildDir/clones/gradle-script-kotlin")
 }
 
-val copyGradleApiSources = task<CopyGradleApiSources>("copyGradleApiSources") {
+val copyGradleApiSources by tasks.creating(CopyGradleApiSources::class) {
     dependsOn(cloneGradle)
     gradleClone = cloneGradle.outputDirectory
     outputDirectory = files("$buildDir/gradle-api-sources")
@@ -49,13 +49,13 @@ publishGhPages.dependsOn(dokka)
 
 open class GitClone : DefaultTask()
 {
-    @Input
+    @get:Input
     var uri: String? = null
 
-    @Input
+    @get:Input
     var ref: String? = null
 
-    @OutputDirectories
+    @get:OutputDirectories
     var outputDirectory: FileCollection? = null
 
     @TaskAction
@@ -82,10 +82,10 @@ open class GitClone : DefaultTask()
 // TODO Gradle API definition extracted from gradle/gradle/build.gradle and gradle/gradle/subprojects/docs/docs.gradle
 open class CopyGradleApiSources : DefaultTask()
 {
-    @InputFiles
+    @get:InputFiles
     var gradleClone: FileCollection? = null
 
-    @OutputDirectories
+    @get:OutputDirectories
     var outputDirectory: FileCollection? = null
 
     @TaskAction
