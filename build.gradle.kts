@@ -33,6 +33,12 @@ val copyGradleApiSources by tasks.creating(CopyGradleApiSources::class) {
     outputDirectory = files("$buildDir/gradle-api-sources")
 }
 
+val generateGskExtensions by tasks.creating(GradleBuild::class) {
+    setDir(cloneGSK.outputDirectory!!.singleFile)
+    setTasks(listOf("generateExtensions"))
+    dependsOn(cloneGSK)
+}
+
 val generateCorePluginsProjectSchema by tasks.creating(GradleBuild::class) {
     setDir("build-with-core-plugins")
     setTasks(listOf("gskGenerateAccessors"))
@@ -53,7 +59,7 @@ apply {
 }
 
 val dokka by tasks
-dokka.dependsOn(copyGradleApiSources, cloneGSK, generateCorePluginsAccessors)
+dokka.dependsOn(copyGradleApiSources, generateGskExtensions, generateCorePluginsAccessors)
 
 val publishGhPages by tasks
 publishGhPages.dependsOn(dokka)
