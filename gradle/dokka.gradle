@@ -2,7 +2,7 @@ dokka {
   moduleName = "api"
   outputDirectory = "build/docs/dokka"
   jdkVersion = 8
-  processConfigurations = [ ]
+  processConfigurations = [ 'dokkaDependencies' ]
   sourceDirs = [ new File( cloneGSK.outputDirectory.singleFile.absoluteFile, 'src/main/kotlin' ),
                  new File( cloneGSK.outputDirectory.singleFile.absoluteFile, 'src/generated/kotlin' ),
                  copyGradleApiSources.outputDirectory.singleFile,

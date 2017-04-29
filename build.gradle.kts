@@ -15,6 +15,10 @@ buildscript {
     dependencies { classpath("org.jetbrains.dokka:dokka-gradle-plugin:0.9.13") }
 }
 
+repositories {
+    maven { url = uri("https://repo.gradle.org/gradle/repo") }
+}
+
 val cloneGradle by tasks.creating(GitClone::class) {
     uri = "https://github.com/gradle/gradle.git"
     ref = "gradle-script-kotlin"
@@ -58,8 +62,21 @@ apply {
     from("gradle/githubPages.gradle")
 }
 
+val declareDokkaDependencies by tasks.creating {
+    dependsOn(cloneGSK)
+    doLast {
+        val kotlinVersion = File(cloneGSK.outputDirectory!!.singleFile, "kotlin-version.txt").readText().trim()
+        val dokkaDependencies by configurations.creating
+        dependencies {
+            dokkaDependencies("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
+            dokkaDependencies("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
+            dokkaDependencies("org.jetbrains.kotlin:kotlin-compiler-embeddable:$kotlinVersion")
+        }
+    }
+}
+
 val dokka by tasks
-dokka.dependsOn(copyGradleApiSources, generateGskExtensions, generateCorePluginsAccessors)
+dokka.dependsOn(declareDokkaDependencies, copyGradleApiSources, generateGskExtensions, generateCorePluginsAccessors)
 
 val publishGhPages by tasks
 publishGhPages.dependsOn(dokka)
