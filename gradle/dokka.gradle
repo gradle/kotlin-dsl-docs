@@ -7,4 +7,5 @@ dokka {
                  new File( cloneGSK.outputDirectory.singleFile.absoluteFile, 'src/generated/kotlin' ),
                  copyGradleApiSources.outputDirectory.singleFile,
                  file('build-with-core-plugins/buildSrc/build/generated-src/gradle-script-kotlin')]
+  includes = [ 'src/dokka/gsk.md' ]
 }
