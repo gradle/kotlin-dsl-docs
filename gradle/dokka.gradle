@@ -1,11 +1,32 @@
+import static groovy.io.FileType.FILES
+
 dokka {
   moduleName = "api"
   outputDirectory = "build/docs/dokka"
   jdkVersion = 8
   processConfigurations = [ 'dokkaDependencies' ]
-  sourceDirs = [ new File( cloneGSK.outputDirectory.singleFile.absoluteFile, 'src/main/kotlin' ),
-                 new File( cloneGSK.outputDirectory.singleFile.absoluteFile, 'src/generated/kotlin' ),
-                 copyGradleApiSources.outputDirectory.singleFile,
+  sourceDirs = [ copyGradleScriptKotlinApiSources.outputDirectory.singleFile.absoluteFile,
+                 copyGradleApiSources.outputDirectory.singleFile.absoluteFile,
                  file('build-with-core-plugins/buildSrc/build/generated-src/gradle-script-kotlin')]
   includes = [ 'src/dokka/gsk.md' ]
+  doFirst {
+      file(outputDirectory).deleteDir()
+  }
+}
+
+task checkGeneratedApiDocs {
+    dependsOn dokka
+    def apiDocsRoot = file(dokka.outputDirectory)
+    inputs.dir apiDocsRoot
+    doLast {
+        def filesWithErrorClass = []
+        apiDocsRoot.traverse(type: FILES) { file ->
+            if(file.text.contains("ERROR CLASS")) {
+                filesWithErrorClass += file
+            }
+        }
+        if(filesWithErrorClass) {
+            throw new Exception("<ERROR CLASS> found in ${filesWithErrorClass.size()} files:\n  ${filesWithErrorClass.join('\n  ')}");
+        }
+    }
 }
