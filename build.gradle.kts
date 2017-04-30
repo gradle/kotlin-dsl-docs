@@ -1,5 +1,6 @@
 import org.eclipse.jgit.api.Git
 import org.gradle.api.file.FileCollection
+import org.gradle.api.tasks.Delete
 import org.gradle.api.tasks.GradleBuild
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputFiles
@@ -7,6 +8,7 @@ import org.gradle.api.tasks.OutputDirectories
 import org.gradle.api.tasks.TaskAction
 
 plugins {
+    base
     id("org.ajoberstar.github-pages") version "1.7.1"
 }
 
@@ -101,6 +103,18 @@ dokka.dependsOn(
 val checkGeneratedApiDocs by tasks
 val publishGhPages by tasks
 publishGhPages.dependsOn(checkGeneratedApiDocs)
+
+
+val clean: Delete by tasks
+clean.delete(
+    "build-with-core-plugins/buildSrc/build",
+    "build-with-core-plugins/build")
+
+val assemble by tasks
+assemble.dependsOn(dokka)
+
+val check by tasks
+check.dependsOn(checkGeneratedApiDocs)
 
 
 open class GitClone : DefaultTask()
