@@ -63,11 +63,16 @@ apply {
 }
 
 val declareDokkaDependencies by tasks.creating {
-    dependsOn(cloneGSK)
+    dependsOn(cloneGradle, cloneGSK)
     doLast {
-        val kotlinVersion = File(cloneGSK.outputDirectory!!.singleFile, "kotlin-version.txt").readText().trim()
+        val groovyVersion = File(cloneGradle.outputDirectory!!.singleFile, "gradle/dependencies.gradle")
+            .readLines().find { it.startsWith("versions.groovy =") }!!
+            .split("=").last().replace("\"", "").trim()
+        val kotlinVersion = File(cloneGSK.outputDirectory!!.singleFile, "kotlin-version.txt")
+            .readText().trim()
         val dokkaDependencies by configurations.creating
         dependencies {
+            dokkaDependencies("org.codehaus.groovy:groovy-all:$groovyVersion")
             dokkaDependencies("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
             dokkaDependencies("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
             dokkaDependencies("org.jetbrains.kotlin:kotlin-compiler-embeddable:$kotlinVersion")
