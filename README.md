@@ -3,7 +3,7 @@
 ## API
 
 Local preview
-- `./gradlew dokka`
+- `./gradlew apiDocumentation`
 - open `./build/docs/dokka/api/index.html`
 
 Publishing
