@@ -48,3 +48,6 @@ plugins {
     cunit
     `google-test`
 }
+
+val clean: org.gradle.api.tasks.Delete by tasks
+clean.delete("buildSrc")

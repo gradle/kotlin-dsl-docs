@@ -1,224 +1,132 @@
-import org.eclipse.jgit.api.Git
-import org.gradle.api.file.FileCollection
-import org.gradle.api.tasks.Delete
 import org.gradle.api.tasks.GradleBuild
-import org.gradle.api.tasks.Input
-import org.gradle.api.tasks.InputFiles
-import org.gradle.api.tasks.OutputDirectories
-import org.gradle.api.tasks.TaskAction
 
-plugins {
-    base
-    id("org.ajoberstar.github-pages") version "1.7.1"
-}
+plugins { base }
 
+// TODO Find out why this is required by the dokka task at execution time
 buildscript {
     repositories { jcenter() }
     dependencies { classpath("org.jetbrains.dokka:dokka-gradle-plugin:0.9.13") }
 }
 
-repositories {
-    maven { url = uri("https://repo.gradle.org/gradle/repo") }
-}
-
-
-val cloneGradle by tasks.creating(GitClone::class) {
-    uri = "https://github.com/gradle/gradle.git"
-    ref = "gradle-script-kotlin"
-    outputDirectory = files("$buildDir/clones/gradle")
-}
-
-val copyGradleApiSources by tasks.creating(CopyGradleApiSources::class) {
-    dependsOn(cloneGradle)
-    gradleClone = cloneGradle.outputDirectory
-    outputDirectory = files("$buildDir/api-sources/gradle")
-}
-
-
-val cloneGSK by tasks.creating(GitClone::class) {
-    uri = "https://github.com/gradle/gradle-script-kotlin.git"
-    ref = "master"
-    outputDirectory = files("$buildDir/clones/gradle-script-kotlin")
-}
-
-val generateGskExtensions by tasks.creating(GradleBuild::class) {
-    setDir(cloneGSK.outputDirectory!!.singleFile)
-    setTasks(listOf("generateExtensions"))
-    dependsOn(cloneGSK)
-}
-
-val copyGradleScriptKotlinApiSources by tasks.creating(CopyGradleScriptKotlinApiSources::class) {
-    dependsOn(generateGskExtensions)
-    gskClone = cloneGSK.outputDirectory
-    outputDirectory = files("$buildDir/api-sources/gradle-script-kotlin")
-}
-
-
-val generateCorePluginsProjectSchema by tasks.creating(GradleBuild::class) {
-    setDir("build-with-core-plugins")
-    setTasks(listOf("gskGenerateAccessors"))
-}
-val generateCorePluginsAccessors by tasks.creating(GradleBuild::class) {
-    setDir("build-with-core-plugins")
-    setTasks(listOf("help"))
-    dependsOn(generateCorePluginsProjectSchema)
-}
-
+repositories { maven { url = uri("https://repo.gradle.org/gradle/repo") } }
 
 apply {
-    // This is applied imperatively because using the plugins block fails
     plugin("org.jetbrains.dokka")
-    // This is in a Groovy file because the Dokka task type is not reachable
-    from("gradle/dokka.gradle")
-    // This is in a Groovy file because githubPages extensions is not usable from Kotlin
-    from("gradle/githubPages.gradle")
+    plugin("org.ajoberstar.github-pages")
 }
 
-val declareDokkaDependencies by tasks.creating {
-    dependsOn(cloneGradle, cloneGSK)
-    doLast {
-        val groovyVersion = File(cloneGradle.outputDirectory!!.singleFile, "gradle/dependencies.gradle")
-            .readLines().find { it.startsWith("versions.groovy =") }!!
-            .split("=").last().replace("\"", "").trim()
-        val kotlinVersion = File(cloneGSK.outputDirectory!!.singleFile, "kotlin-version.txt")
-            .readText().trim()
-        val dokkaDependencies by configurations.creating
-        dependencies {
-            dokkaDependencies("org.codehaus.groovy:groovy-all:$groovyVersion")
-            dokkaDependencies("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
-            dokkaDependencies("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
-            dokkaDependencies("org.jetbrains.kotlin:kotlin-compiler-embeddable:$kotlinVersion")
-        }
+// Sources sources
+// You can change this to local clones URIs and refs for faster turnaround
+val gradleGitUri = "https://github.com/gradle/gradle.git"
+val gradleGitRef = "gradle-script-kotlin"
+val gskGitUri = "https://github.com/gradle/gradle-script-kotlin.git"
+val gskGitRef = "master"
+
+
+tasks {
+    val cloningGroup = "cloning"
+    val apiSourcesGroup = "API sources"
+
+    // Gradle API sources extraction
+    val cloneGradle by creating(git.GitClone::class) {
+        group = cloningGroup
+        description = "Clones Gradle sources."
+        uri = gradleGitUri
+        ref = gradleGitRef
+        cloneDir = file("$buildDir/clones/gradle")
     }
-}
-
-
-val dokka by tasks
-dokka.dependsOn(
-    declareDokkaDependencies,
-    copyGradleApiSources,
-    copyGradleScriptKotlinApiSources,
-    generateCorePluginsAccessors)
-
-val checkGeneratedApiDocs by tasks
-val publishGhPages by tasks
-publishGhPages.dependsOn(checkGeneratedApiDocs)
-
-
-val clean: Delete by tasks
-clean.delete(
-    "build-with-core-plugins/buildSrc/build",
-    "build-with-core-plugins/build")
-
-val assemble by tasks
-assemble.dependsOn(dokka)
-
-val check by tasks
-check.dependsOn(checkGeneratedApiDocs)
-
-
-open class GitClone : DefaultTask()
-{
-    @get:Input
-    var uri: String? = null
-
-    @get:Input
-    var ref: String? = null
-
-    @get:OutputDirectories
-    var outputDirectory: FileCollection? = null
-
-    @TaskAction
-    fun gitClone(): Unit
-    {
-        outputDirectory!!.singleFile.deleteRecursively()
-        var clone: Git? = null
-        try
-        {
-            clone = Git.cloneRepository()
-                .setURI(uri!!)
-                .setDirectory(outputDirectory!!.singleFile)
-                .setBranchesToClone(listOf(ref!!))
-                .setBranch(ref!!)
-                .call()
-        }
-        finally
-        {
-            clone?.close()
-        }
+    val gradleApiSources by creating(api.GradleApiSources::class) {
+        group = apiSourcesGroup
+        description = "Generates Gradle API sources."
+        gradleClone = cloneGradle.cloneDir
+        sourceDir = file("$buildDir/api-sources/gradle")
+        dependsOn(cloneGradle)
     }
-}
 
-open class CopyGradleScriptKotlinApiSources : DefaultTask()
-{
-    @get:InputFiles
-    var gskClone: FileCollection? = null
-
-    @get:OutputDirectories
-    var outputDirectory: FileCollection? = null
-
-    @TaskAction
-    fun copyGradleScriptKotlinApiSources(): Unit
-    {
-        val gskRoot = gskClone!!.singleFile
-        project.copy {
-            from(File(gskRoot, "src/main/kotlin"))
-            from(File(gskRoot, "src/generated/kotlin"))
-            into(outputDirectory!!.singleFile)
-            exclude("org/gradle/script/lang/kotlin/provider")
-        }
+    // Gradle Script Kotlin API sources extraction and generation
+    val cloneGSK by tasks.creating(git.GitClone::class) {
+        group = cloningGroup
+        description = "Clones Gradle Script Kotlin sources."
+        uri = gskGitUri
+        ref = gskGitRef
+        cloneDir = file("$buildDir/clones/gradle-script-kotlin")
     }
-}
+    val generateGskExtensions by creating(GradleBuild::class) {
+        setDir(cloneGSK.cloneDir)
+        setTasks(listOf("generateExtensions"))
+        dependsOn(cloneGSK)
+    }
+    val gradleScriptKotlinApiSources by creating(api.GradleScriptKotlinApiSources::class) {
+        group = apiSourcesGroup
+        description = "Generates Gradle Script Kotlin API sources."
+        gskClone = cloneGSK.cloneDir
+        sourceDir = file("$buildDir/api-sources/gradle-script-kotlin")
+        dependsOn(generateGskExtensions)
+    }
 
-// TODO Gradle API definition extracted from gradle/gradle/build.gradle and gradle/gradle/subprojects/docs/docs.gradle
-open class CopyGradleApiSources : DefaultTask()
-{
-    @get:InputFiles
-    var gradleClone: FileCollection? = null
+    // Gradle built-in plugins accessors API generation
+    val buildWithCorePluginsDir = file("build-with-core-plugins")
+    val gradlePluginsAccessors by creating(api.GradlePluginsAccessors::class) {
+        buildDirectory = buildWithCorePluginsDir
+        accessorsDir = file("$buildDir/generated/gradle-plugins-accessors")
+    }
 
-    @get:OutputDirectories
-    var outputDirectory: FileCollection? = null
-
-    @TaskAction
-    fun copyGradleApiSources(): Unit
-    {
-        File(gradleClone!!.singleFile, "subprojects").listFiles { file: File ->
-            file.isDirectory() && !file.name.startsWith("internal") &&
-            file.name !in listOf("integTest", "distributions", "performance", "buildScanPerformance")
-        }.forEach { subprojectDir: File ->
-            project.copy {
-                from(File(subprojectDir, "src/main/java")) {
-                    include(
-                        "org/gradle/*",
-                        "org/gradle/api/**",
-                        "org/gradle/authentication/**",
-                        "org/gradle/buildinit/**",
-                        "org/gradle/caching/**",
-                        "org/gradle/external/javadoc/**",
-                        "org/gradle/ide/**",
-                        "org/gradle/ivy/**",
-                        "org/gradle/jvm/**",
-                        "org/gradle/language/**",
-                        "org/gradle/maven/**",
-                        "org/gradle/nativeplatform/**",
-                        "org/gradle/platform/**",
-                        "org/gradle/play/**",
-                        "org/gradle/plugin/devel/**",
-                        "org/gradle/plugin/repository/*",
-                        "org/gradle/plugin/use/*",
-                        "org/gradle/plugin/management/*",
-                        "org/gradle/plugins/**",
-                        "org/gradle/process/**",
-                        "org/gradle/testfixtures/**",
-                        "org/gradle/testing/jacoco/**",
-                        "org/gradle/tooling/**",
-                        "org/gradle/model/**",
-                        "org/gradle/testkit/**",
-                        "org/gradle/testing/**")
-                    exclude("**/internal/**")
-                }
-                into(outputDirectory!!.singleFile)
+    // API docs generation using dokka
+    val declareDokkaDependencies by creating {
+        dependsOn(cloneGradle, cloneGSK)
+        doLast {
+            val groovyVersion = File(cloneGradle.cloneDir, "gradle/dependencies.gradle")
+                .readLines().find { it.startsWith("versions.groovy =") }!!
+                .split("=").last().replace("\"", "").trim()
+            val kotlinVersion = File(cloneGSK.cloneDir, "kotlin-version.txt")
+                .readText().trim()
+            val dokkaDependencies by configurations.creating
+            dependencies {
+                dokkaDependencies("org.codehaus.groovy:groovy-all:$groovyVersion")
+                dokkaDependencies("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
+                dokkaDependencies("org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion")
+                dokkaDependencies("org.jetbrains.kotlin:kotlin-compiler-embeddable:$kotlinVersion")
             }
         }
+    }
+    project.apply {
+        // This is in a Groovy file because the Dokka task type is not reachable
+        from("gradle/dokka.gradle")
+    }
+    val dokka by this
+    dokka.dependsOn(
+        declareDokkaDependencies,
+        gradleApiSources,
+        gradleScriptKotlinApiSources,
+        gradlePluginsAccessors)
+    val apiDocumentation by creating {
+        group = "documentation"
+        description = "Generates Gradle Script Kotlin API documentation."
+        dependsOn(dokka)
+    }
+
+    // Lifecycle
+    val cleanBuildWithCorePlugins by creating(GradleBuild::class) {
+        setDir(buildWithCorePluginsDir)
+        setTasks(listOf("clean"))
+    }
+    "clean" {
+        dependsOn(cleanBuildWithCorePlugins)
+    }
+    "assemble" {
+        dependsOn(apiDocumentation)
+    }
+    "check" {
+        dependsOn("checkApiDocumentation")
+    }
+
+    // Publishing
+    project.apply {
+        // This is in a Groovy file because githubPages extensions is not usable from Kotlin
+        from("gradle/githubPages.gradle")
+    }
+    "publishGhPages" {
+        description = "Publishes documentation to production."
+        dependsOn("assemble", "check")
     }
 }

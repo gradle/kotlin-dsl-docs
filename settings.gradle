@@ -1,1 +1,7 @@
-rootProject.buildFileName = 'build.gradle.kts'
+rootProject.name = 'gradle-script-kotlin-docs'
+def configureGradleScriptKotlinOn(ProjectDescriptor project) {
+    project.buildFileName = 'build.gradle.kts'
+    project.children.each { configureGradleScriptKotlinOn(it) }
+}
+
+configureGradleScriptKotlinOn rootProject

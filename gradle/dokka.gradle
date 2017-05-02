@@ -1,32 +1,64 @@
 import static groovy.io.FileType.FILES
 
 dokka {
+  group = null
   moduleName = "api"
   outputDirectory = "build/docs/dokka"
   jdkVersion = 8
   processConfigurations = [ 'dokkaDependencies' ]
-  sourceDirs = [ copyGradleScriptKotlinApiSources.outputDirectory.singleFile.absoluteFile,
-                 copyGradleApiSources.outputDirectory.singleFile.absoluteFile,
-                 file('build-with-core-plugins/buildSrc/build/generated-src/gradle-script-kotlin')]
+  sourceDirs = [ gradleScriptKotlinApiSources.sourceDir,
+                 gradleApiSources.sourceDir,
+                 gradlePluginsAccessors.accessorsDir ]
   includes = [ 'src/dokka/gsk.md' ]
   doFirst {
       file(outputDirectory).deleteDir()
   }
 }
 
-task checkGeneratedApiDocs {
+task checkApiDocumentation {
     dependsOn dokka
+    group = "verification"
+    description = "Runs checks on the generated API documentation."
     def apiDocsRoot = file(dokka.outputDirectory)
     inputs.dir apiDocsRoot
     doLast {
+        def gradleApiFound = false
+        def gradleScriptKotlinApiFound = false
+        def gradleScriptKotlinGeneratedApiFound = false
+        def gradlePluginsAccessorsFound = false
         def filesWithErrorClass = []
         apiDocsRoot.traverse(type: FILES) { file ->
-            if(file.text.contains("ERROR CLASS")) {
+            def text = file.text
+            if(text.contains("ERROR CLASS")) {
                 filesWithErrorClass += file
             }
+            if(!gradleApiFound && text.contains("id=\"org.gradle.api.Project\$task")) {
+                gradleApiFound = true
+            }
+            if(!gradleScriptKotlinApiFound && text.contains("id=\"org.gradle.script.lang.kotlin.KotlinBuildScript\$apply")) {
+                gradleScriptKotlinApiFound = true
+            }
+            if(!gradleScriptKotlinGeneratedApiFound && text.contains("embeddedKotlinVersion")) {
+                gradleScriptKotlinGeneratedApiFound = true
+            }
+            if(!gradlePluginsAccessorsFound && text.contains("name=\"org.gradle.script.lang.kotlin\$checkstyle#org.gradle.api.Project")) {
+                gradlePluginsAccessorsFound = true
+            }
+        }
+        if(!gradleApiFound) {
+            throw new Exception("API documentation does not include Gradle API")
+        }
+        if(!gradleScriptKotlinApiFound) {
+            throw new Exception("API documentation does not include Gradle Script Kotlin API")
+        }
+        if(!gradleScriptKotlinGeneratedApiFound) {
+            throw new Exception("API documentation does not include *generated* Gradle Script Kotlin API")
+        }
+        if(!gradlePluginsAccessorsFound) {
+            throw new Exception("API documentation does not include *generated* Gradle Plugins accessors")
         }
         if(filesWithErrorClass) {
-            throw new Exception("<ERROR CLASS> found in ${filesWithErrorClass.size()} files:\n  ${filesWithErrorClass.join('\n  ')}");
+            throw new Exception("<ERROR CLASS> found in ${filesWithErrorClass.size()} files:\n  ${filesWithErrorClass.join('\n  ')}")
         }
     }
 }
