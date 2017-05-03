@@ -52,8 +52,8 @@ tasks {
         cloneDir = file("$buildDir/clones/gradle-script-kotlin")
     }
     val generateGskExtensions by creating(GradleBuild::class) {
-        setDir(cloneGSK.cloneDir)
-        setTasks(listOf("generateExtensions"))
+        dir = cloneGSK.cloneDir
+        tasks = listOf("generateExtensions")
         dependsOn(cloneGSK)
     }
     val gradleScriptKotlinApiSources by creating(api.GradleScriptKotlinApiSources::class) {
@@ -107,8 +107,8 @@ tasks {
 
     // Lifecycle
     val cleanBuildWithCorePlugins by creating(GradleBuild::class) {
-        setDir(buildWithCorePluginsDir)
-        setTasks(listOf("clean"))
+        dir = buildWithCorePluginsDir
+        tasks = listOf("clean")
     }
     "clean" {
         dependsOn(cleanBuildWithCorePlugins)
