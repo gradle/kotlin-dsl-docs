@@ -105,6 +105,20 @@ tasks {
         dependsOn(dokka)
     }
 
+    // User Guide
+    val gradleKtsUserGuideHtml by creating(GradleBuild::class) {
+        dir = cloneGradle.cloneDir
+        tasks = listOf(":docs:ktsUserGuideHtml")
+        dependsOn(cloneGradle)
+    }
+
+    val userGuideHtml by creating(Copy::class) {
+        group = "User Guide"
+        from(File(cloneGradle.cloneDir, "subprojects/docs/build/docs/ktsUserGuide"))
+        into("$buildDir/docs/gradle/userguide")
+        dependsOn(gradleKtsUserGuideHtml)
+    }
+
     // Lifecycle
     val cleanBuildWithCorePlugins by creating(GradleBuild::class) {
         dir = buildWithCorePluginsDir
@@ -114,7 +128,7 @@ tasks {
         dependsOn(cleanBuildWithCorePlugins)
     }
     "assemble" {
-        dependsOn(apiDocumentation)
+        dependsOn(apiDocumentation, userGuideHtml)
     }
     "check" {
         dependsOn("checkApiDocumentation")
