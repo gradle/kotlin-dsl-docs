@@ -2,13 +2,12 @@ import org.gradle.api.tasks.GradleBuild
 
 plugins { base }
 
-// TODO Find out why this is required by the dokka task at execution time
 buildscript {
-    repositories { jcenter() }
-    dependencies { classpath("org.jetbrains.dokka:dokka-gradle-plugin:0.9.13") }
+    // dokka requires a repository from which to download dokka-fatjar on demand
+    configure(listOf(repositories, project.repositories)) {
+        gradleScriptKotlin()
+    }
 }
-
-repositories { maven { url = uri("https://repo.gradle.org/gradle/repo") } }
 
 apply {
     plugin("org.jetbrains.dokka")
