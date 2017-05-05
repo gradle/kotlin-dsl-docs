@@ -138,8 +138,12 @@ tasks {
         // This is in a Groovy file because githubPages extensions is not usable from Kotlin
         from("gradle/githubPages.gradle")
     }
+    "prepareGhPages" {
+        description = "Stages documentation locally."
+        dependsOn("assemble")
+    }
     "publishGhPages" {
         description = "Publishes documentation to production."
-        dependsOn("assemble", "check")
+        dependsOn("check")
     }
 }

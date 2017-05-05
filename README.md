@@ -1,19 +1,11 @@
 # Gradle Script Kotlin Docs
 
-## API
-
 Local preview
-- `./gradlew apiDocumentation`
-- open `./build/docs/dokka/api/index.html`
+- `./gradlew prepareGhPages`
+- open `./build/ghpages/index.html`
 
 Publishing
 - `./gradlew publishGhPages`
-- open https://gradle.github.io/gradle-script-kotlin-docs/api/
+- open https://gradle.github.io/gradle-script-kotlin-docs/
 
-## User Guide
-
-The [Gradle User Guide](https://docs.gradle.org/current/userguide/userguide.html) with code samples in Kotlin.
-
-Local preview
-- `./gradlew userGuideHtml`
-- open `./build/docs/gradle/userguide/userguide.html`
+Look at `./gradlew tasks` output for details on how to run intermediate steps only.
