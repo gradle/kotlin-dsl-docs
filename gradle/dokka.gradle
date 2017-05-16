@@ -35,7 +35,7 @@ task checkApiDocumentation {
             if(!gradleApiFound && text.contains("id=\"org.gradle.api.Project\$task")) {
                 gradleApiFound = true
             }
-            if(!gradleScriptKotlinApiFound && text.contains("id=\"org.gradle.script.lang.kotlin.KotlinBuildScript\$apply")) {
+            if(!gradleScriptKotlinApiFound && text.contains("id=\"org.gradle.script.lang.kotlin.KotlinBuildScript")) {
                 gradleScriptKotlinApiFound = true
             }
             if(!gradleScriptKotlinGeneratedApiFound && text.contains("embeddedKotlinVersion")) {
