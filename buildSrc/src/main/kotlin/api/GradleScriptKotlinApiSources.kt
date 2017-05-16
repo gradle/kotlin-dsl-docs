@@ -16,12 +16,15 @@ open class GradleScriptKotlinApiSources : DefaultTask() {
 
     @TaskAction
     fun copyGradleScriptKotlinApiSources(): Unit {
-        project.copy { spec ->
+        project.sync { spec ->
             spec.from(File(gskClone!!, "provider/src/main/kotlin"))
             spec.from(File(gskClone!!, "provider/src/generated/kotlin"))
             spec.from(File(gskClone!!, "tooling-models/src/main/kotlin"))
+            spec.exclude("org/gradle/script/lang/kotlin/accessors/**")
+            spec.exclude("org/gradle/script/lang/kotlin/provider/**")
+            spec.exclude("org/gradle/script/lang/kotlin/resolver/**")
+            spec.exclude("org/gradle/script/lang/kotlin/support/**")
             spec.into(sourceDir!!)
-            spec.exclude("org/gradle/script/lang/kotlin/provider")
         }
     }
 }
