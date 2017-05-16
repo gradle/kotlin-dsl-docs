@@ -52,7 +52,7 @@ tasks {
     }
     val generateGskExtensions by creating(GradleBuild::class) {
         dir = cloneGSK.cloneDir
-        tasks = listOf("generateExtensions")
+        tasks = listOf(":provider:generateExtensions")
         dependsOn(cloneGSK)
     }
     val gradleScriptKotlinApiSources by creating(api.GradleScriptKotlinApiSources::class) {
