@@ -5,7 +5,7 @@ plugins { base }
 buildscript {
     // dokka requires a repository from which to download dokka-fatjar on demand
     configure(listOf(repositories, project.repositories)) {
-        gradleScriptKotlin()
+        jcenter()
     }
 }
 
@@ -17,7 +17,7 @@ apply {
 // Sources sources
 // You can change this to local clones URIs and refs for faster turnaround
 val gradleGitUri = "https://github.com/gradle/gradle.git"
-val gradleGitRef = "gradle-script-kotlin"
+val gradleGitRef = "kotlin-dsl"
 val gskGitUri = "https://github.com/gradle/gradle-script-kotlin.git"
 val gskGitRef = "master"
 
@@ -42,24 +42,24 @@ tasks {
         dependsOn(cloneGradle)
     }
 
-    // Gradle Script Kotlin API sources extraction and generation
+    // Gradle Kotlin DSL API sources extraction and generation
     val cloneGSK by tasks.creating(git.GitClone::class) {
         group = cloningGroup
-        description = "Clones Gradle Script Kotlin sources."
+        description = "Clones Gradle Kotlin DSL sources."
         uri = gskGitUri
         ref = gskGitRef
-        cloneDir = file("$buildDir/clones/gradle-script-kotlin")
+        cloneDir = file("$buildDir/clones/gradle-kotlin-dsl")
     }
     val generateGskExtensions by creating(GradleBuild::class) {
         dir = cloneGSK.cloneDir
         tasks = listOf(":provider:generateExtensions")
         dependsOn(cloneGSK)
     }
-    val gradleScriptKotlinApiSources by creating(api.GradleScriptKotlinApiSources::class) {
+    val gradleKotlinDslApiSources by creating(api.GradleKotlinDslApiSources::class) {
         group = apiSourcesGroup
-        description = "Generates Gradle Script Kotlin API sources."
+        description = "Generates Gradle Kotlin DSL API sources."
         gskClone = cloneGSK.cloneDir
-        sourceDir = file("$buildDir/api-sources/gradle-script-kotlin")
+        sourceDir = file("$buildDir/api-sources/gradle-kotlin-dsl")
         dependsOn(generateGskExtensions)
     }
 
@@ -96,11 +96,11 @@ tasks {
     dokka.dependsOn(
         declareDokkaDependencies,
         gradleApiSources,
-        gradleScriptKotlinApiSources,
+        gradleKotlinDslApiSources,
         gradlePluginsAccessors)
     val apiDocumentation by creating {
         group = "documentation"
-        description = "Generates Gradle Script Kotlin API documentation."
+        description = "Generates Gradle Kotlin DSL API documentation."
         dependsOn(dokka)
     }
 

@@ -34,13 +34,13 @@ open class GradlePluginsAccessors : DefaultTask() {
     fun gradlePluginsAccessors(): Unit {
         accessorsDir.deleteRecursively()
         val baos = ByteArrayOutputStream()
-        project.exec { spec ->
-            spec.commandLine = listOf(
+        project.exec {
+            commandLine = listOf(
                 "./gradlew", "-q",
                 "-c", File(buildDirectory!!, "settings.gradle").absolutePath,
                 "-p", buildDirectory!!.absolutePath,
                 "gskProjectAccessors")
-            spec.standardOutput = baos
+            standardOutput = baos
         }
         var text = """
         package org.gradle.script.lang.kotlin

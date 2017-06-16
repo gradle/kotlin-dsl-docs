@@ -22,10 +22,10 @@ open class GradleApiSources : DefaultTask() {
             file.isDirectory() && !file.name.startsWith("internal") &&
             file.name !in listOf("integTest", "distributions", "performance", "buildScanPerformance")
         }.forEach { subprojectDir: File ->
-            project.copy { spec ->
-                spec.from(File(subprojectDir, "src/main/java"))
-                spec.from(File(subprojectDir, "src/main/groovy"))
-                spec.include(
+            project.copy {
+                from(File(subprojectDir, "src/main/java"))
+                from(File(subprojectDir, "src/main/groovy"))
+                include(
                     "org/gradle/*",
                     "org/gradle/api/**",
                     "org/gradle/authentication/**",
@@ -52,8 +52,8 @@ open class GradleApiSources : DefaultTask() {
                     "org/gradle/model/**",
                     "org/gradle/testkit/**",
                     "org/gradle/testing/**")
-                spec.exclude("**/internal/**")
-                spec.into(sourceDir!!)
+                exclude("**/internal/**")
+                into(sourceDir!!)
             }
         }
     }

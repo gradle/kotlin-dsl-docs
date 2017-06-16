@@ -6,7 +6,7 @@ dokka {
   outputDirectory = "build/docs/dokka"
   jdkVersion = 8
   processConfigurations = [ 'dokkaDependencies' ]
-  sourceDirs = [ gradleScriptKotlinApiSources.sourceDir,
+  sourceDirs = [ gradleKotlinDslApiSources.sourceDir,
                  gradleApiSources.sourceDir,
                  gradlePluginsAccessors.accessorsDir ]
   includes = [ 'src/dokka/gsk.md' ]
@@ -23,8 +23,8 @@ task checkApiDocumentation {
     inputs.dir apiDocsRoot
     doLast {
         def gradleApiFound = false
-        def gradleScriptKotlinApiFound = false
-        def gradleScriptKotlinGeneratedApiFound = false
+        def gradleKotlinDslApiFound = false
+        def gradleKotlinDslGeneratedApiFound = false
         def gradlePluginsAccessorsFound = false
         def filesWithErrorClass = []
         apiDocsRoot.traverse(type: FILES) { file ->
@@ -35,11 +35,11 @@ task checkApiDocumentation {
             if(!gradleApiFound && text.contains("id=\"org.gradle.api.Project\$task")) {
                 gradleApiFound = true
             }
-            if(!gradleScriptKotlinApiFound && text.contains("id=\"org.gradle.script.lang.kotlin.KotlinBuildScript")) {
-                gradleScriptKotlinApiFound = true
+            if(!gradleKotlinDslApiFound && text.contains("id=\"org.gradle.script.lang.kotlin.KotlinBuildScript")) {
+                gradleKotlinDslApiFound = true
             }
-            if(!gradleScriptKotlinGeneratedApiFound && text.contains("embeddedKotlinVersion")) {
-                gradleScriptKotlinGeneratedApiFound = true
+            if(!gradleKotlinDslGeneratedApiFound && text.contains("embeddedKotlinVersion")) {
+                gradleKotlinDslGeneratedApiFound = true
             }
             if(!gradlePluginsAccessorsFound && text.contains("name=\"org.gradle.script.lang.kotlin\$checkstyle#org.gradle.api.Project")) {
                 gradlePluginsAccessorsFound = true
@@ -48,11 +48,11 @@ task checkApiDocumentation {
         if(!gradleApiFound) {
             throw new Exception("API documentation does not include Gradle API")
         }
-        if(!gradleScriptKotlinApiFound) {
-            throw new Exception("API documentation does not include Gradle Script Kotlin API")
+        if(!gradleKotlinDslApiFound) {
+            throw new Exception("API documentation does not include Gradle Kotlin DSL")
         }
-        if(!gradleScriptKotlinGeneratedApiFound) {
-            throw new Exception("API documentation does not include *generated* Gradle Script Kotlin API")
+        if(!gradleKotlinDslGeneratedApiFound) {
+            throw new Exception("API documentation does not include *generated* Gradle Kotlin DSL")
         }
         if(!gradlePluginsAccessorsFound) {
             throw new Exception("API documentation does not include *generated* Gradle Plugins accessors")
