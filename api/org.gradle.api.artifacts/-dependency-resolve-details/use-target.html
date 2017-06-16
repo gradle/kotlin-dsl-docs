@@ -1,0 +1,20 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DependencyResolveDetails.useTarget - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="index.html">DependencyResolveDetails</a>&nbsp;/&nbsp;<a href=".">useTarget</a><br/>
+<br/>
+<h1>useTarget</h1>
+<a name="org.gradle.api.artifacts.DependencyResolveDetails$useTarget(kotlin.Any)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">useTarget</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.DependencyResolveDetails$useTarget(kotlin.Any)/notation">notation</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Allows to override the details of the dependency (see <code><a href="get-target.html">#getTarget()</a></code>) when it is resolved (see <code><a href="get-requested.html">#getRequested()</a></code>). This method can be used to change the dependency before it is resolved, e.g. change group, name or version (or all three of them). In many cases users are interested in changing the version. For such scenario you can use the <code><a href="#">#useVersion(String)</a></code> method.</p>
+<h3>Parameters</h3>
+<a name="notation"></a>
+<code>notation</code> - the notation that gets parsed into an instance of ModuleVersionSelector. You can pass Strings like 'org.gradle:gradle-core:1.4', Maps like [group: 'org.gradle', name: 'gradle-core', version: '1.4'], or instances of ModuleVersionSelector.
+<p><strong>Since</strong><br/>
+1.5</p>
+</BODY>
+</HTML>

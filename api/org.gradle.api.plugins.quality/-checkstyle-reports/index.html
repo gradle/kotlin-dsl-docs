@@ -1,0 +1,114 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CheckstyleReports - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins.quality</a>&nbsp;/&nbsp;<a href=".">CheckstyleReports</a><br/>
+<br/>
+<h1>CheckstyleReports</h1>
+<code><span class="keyword">interface </span><span class="identifier">CheckstyleReports</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.reporting/-report-container/index.html"><span class="identifier">ReportContainer</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.reporting/-single-file-report/index.html"><span class="identifier">SingleFileReport</span></a><span class="symbol">&gt;</span></code>
+<p>The reporting configuration for the Checkstyle task.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-html.html">getHtml</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getHtml</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.reporting/-single-file-report/index.html"><span class="identifier">SingleFileReport</span></a></code>
+<p>The checkstyle HTML report. 
+<p> This report IS enabled by default. </p>
+<p> Enabling this report will also cause the XML report to be generated, as the HTML is derived from the XML.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-xml.html">getXml</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getXml</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.reporting/-single-file-report/index.html"><span class="identifier">SingleFileReport</span></a></code>
+<p>The checkstyle XML report 
+<p> This report IS enabled by default.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.reporting/-report-container/get-as-map.html">getAsMap</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAsMap</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/util/SortedMap.html"><span class="identifier">SortedMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.reporting/-report-container/get-enabled.html">getEnabled</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getEnabled</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Returns an immutable collection of all the enabled Report objects in this container. 
+<p> The returned collection is live. That is, as reports are enabled/disabled the returned collection always reflects the current set of enabled reports.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.reporting/-report-container/get-enabled-directory-report-destinations.html">getEnabledDirectoryReportDestinations</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getEnabledDirectoryReportDestinations</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.reporting/-report-container/get-enabled-file-report-destinations.html">getEnabledFileReportDestinations</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getEnabledFileReportDestinations</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.reporting/-report-container/get-enabled-report-names.html">getEnabledReportNames</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getEnabledReportNames</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/util/SortedSet.html"><span class="identifier">SortedSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.reporting/-report-container/get-namer.html">getNamer</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getNamer</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-namer/index.html"><span class="identifier">Namer</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.reporting/-report-container/get-names.html">getNames</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getNames</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/util/SortedSet.html"><span class="identifier">SortedSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.reporting/-report-container/get-rules.html">getRules</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRules</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-rule/index.html"><span class="identifier">Rule</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.reporting/-report-container/is-empty.html">isEmpty</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isEmpty</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

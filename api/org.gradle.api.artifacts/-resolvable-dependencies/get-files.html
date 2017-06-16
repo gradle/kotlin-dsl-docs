@@ -1,0 +1,20 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResolvableDependencies.getFiles - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="index.html">ResolvableDependencies</a>&nbsp;/&nbsp;<a href=".">getFiles</a><br/>
+<br/>
+<h1>getFiles</h1>
+<a name="org.gradle.api.artifacts.ResolvableDependencies$getFiles()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Overrides <a href="../-artifact-view/get-files.html">ArtifactView.getFiles</a></p>
+<p>Returns a FileCollection which contains the resolved set of files. The returned value is lazy, so dependency resolution is not performed until the contents of the collection are queried. 
+<p>The FileCollection carries the task dependencies required to build the files in the result, and when used as a task input the files will be built before the task executes.</p>
+</p>
+<p><strong>Return</strong><br/>
+The collection. Never null.</p>
+</BODY>
+</HTML>

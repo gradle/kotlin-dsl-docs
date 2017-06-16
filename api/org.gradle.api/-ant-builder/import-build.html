@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AntBuilder.importBuild - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">AntBuilder</a>&nbsp;/&nbsp;<a href=".">importBuild</a><br/>
+<br/>
+<h1>importBuild</h1>
+<a name="org.gradle.api.AntBuilder$importBuild(kotlin.Any)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">importBuild</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.AntBuilder$importBuild(kotlin.Any)/antBuildFile">antBuildFile</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Imports an Ant build into the associated Gradle project.</p>
+<h3>Parameters</h3>
+<a name="antBuildFile"></a>
+<code>antBuildFile</code> - The build file. This is resolved as per <code><a href="#">Project#file(Object)</a></code>.<a name="org.gradle.api.AntBuilder$importBuild(kotlin.Any, org.gradle.api.Transformer((kotlin.String, )))"></a>
+<code><span class="identifier">@Incubating</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">importBuild</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.AntBuilder$importBuild(kotlin.Any, org.gradle.api.Transformer((kotlin.String, )))/antBuildFile">antBuildFile</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.AntBuilder$importBuild(kotlin.Any, org.gradle.api.Transformer((kotlin.String, )))/taskNamer">taskNamer</span><span class="symbol">:</span>&nbsp;<a href="../-transformer/index.html"><span class="identifier">Transformer</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="keyword">in</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Imports an Ant build into the associated Gradle project, potentially providing alternative names for Gradle tasks that correspond to Ant targets. 
+<p> For each Ant target that is to be converted to a Gradle task, the given <code>taskNamer</code> receives the Ant target name as input and is expected to return the desired name for the corresponding Gradle task. The transformer may be called multiple times with the same input. Implementations should ensure uniqueness of the return value for a distinct input. That is, no two inputs should yield the same return value.</p>
+</p>
+<h3>Parameters</h3>
+<a name="antBuildFile"></a>
+<code>antBuildFile</code> - The build file. This is resolved as per <code><a href="#">org.gradle.api.Project#file(Object)</a></code>.<a name="taskNamer"></a>
+<code>taskNamer</code> - A transformer that calculates the name of the Gradle task for a corresponding Ant target.
+</BODY>
+</HTML>

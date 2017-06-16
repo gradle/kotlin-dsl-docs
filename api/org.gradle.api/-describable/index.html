@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Describable - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href=".">Describable</a><br/>
+<br/>
+<h1>Describable</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">Describable</span></code>
+<p>Types can implement this interface when they provide a human-readable display name. It is strongly encouraged to compute this display name lazily: computing a display name, even if it's only a string concatenation, can take a significant amount of time during configuration for something that would only be used, typically, in error messages.</p>
+<p><strong>Since</strong><br/>
+3.4</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the display name of this object. It is strongly encouraged to compute it lazily, and cache the value if it is expensive.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.file/-source-directory-set/index.html">SourceDirectorySet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SourceDirectorySet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-tree/index.html"><span class="identifier">FileTree</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">, </span><a href="../-named/index.html"><span class="identifier">Named</span></a><span class="symbol">, </span><span class="identifier">Describable</span></code>
+<p>
+<p>A <code>SourceDirectorySet</code> represents a set of source files composed from a set of source directories, along with associated include and exclude patterns.</p>
+ 
+<p><code>SourceDirectorySet</code> extends FileTree. The contents of the file tree represent the source files of this set, arranged in a hierarchy. The file tree is live and reflects changes to the source directories and their contents.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

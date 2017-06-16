@@ -1,0 +1,181 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Project - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.eclipse.model</a>&nbsp;/&nbsp;<a href=".">Project</a><br/>
+<br/>
+<h1>Project</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Project</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">XmlPersistableConfigurationObject</span></code>
+<p>Represents the customizable elements of an eclipse project file. (via XML hooks everything is customizable).</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">Project</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.Project$<init>(XmlTransformer)/xmlTransformer">xmlTransformer</span><span class="symbol">:</span>&nbsp;<span class="identifier">XmlTransformer</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-p-r-o-j-e-c-t_-f-i-l-e_-n-a-m-e.html">PROJECT_FILE_NAME</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">PROJECT_FILE_NAME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="configure.html">configure</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">configure</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.Project$configure(org.gradle.plugins.ide.eclipse.model.EclipseProject)/eclipseProject">eclipseProject</span><span class="symbol">:</span>&nbsp;<a href="../-eclipse-project/index.html"><span class="identifier">EclipseProject</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="equals.html">equals</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">equals</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.Project$equals(kotlin.Any)/o">o</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-build-commands.html">getBuildCommands</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getBuildCommands</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-build-command/index.html"><span class="identifier">BuildCommand</span></a><span class="symbol">&gt;</span></code>
+<p>The build commands to be added to this Eclipse project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-comment.html">getComment</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getComment</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>A comment used for the eclipse project</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-linked-resources.html">getLinkedResources</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLinkedResources</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-link/index.html"><span class="identifier">Link</span></a><span class="symbol">&gt;</span></code>
+<p>The linkedResources to be added to this Eclipse project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name used for the name of the eclipse project</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-natures.html">getNatures</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getNatures</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The natures to be added to this Eclipse project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-referenced-projects.html">getReferencedProjects</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getReferencedProjects</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The referenced projects of this Eclipse project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-resource-filters.html">getResourceFilters</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getResourceFilters</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-resource-filter/index.html"><span class="identifier">ResourceFilter</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="hash-code.html">hashCode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">hashCode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-build-commands.html">setBuildCommands</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setBuildCommands</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.Project$setBuildCommands(kotlin.collections.MutableList((org.gradle.plugins.ide.eclipse.model.BuildCommand)))/buildCommands">buildCommands</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-build-command/index.html"><span class="identifier">BuildCommand</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-comment.html">setComment</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setComment</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.Project$setComment(kotlin.String)/comment">comment</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-linked-resources.html">setLinkedResources</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setLinkedResources</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.Project$setLinkedResources(kotlin.collections.MutableSet((org.gradle.plugins.ide.eclipse.model.Link)))/linkedResources">linkedResources</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-link/index.html"><span class="identifier">Link</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-name.html">setName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.Project$setName(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-natures.html">setNatures</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setNatures</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.Project$setNatures(kotlin.collections.MutableList((kotlin.String)))/natures">natures</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-referenced-projects.html">setReferencedProjects</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setReferencedProjects</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.Project$setReferencedProjects(kotlin.collections.MutableSet((kotlin.String)))/referencedProjects">referencedProjects</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-resource-filters.html">setResourceFilters</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setResourceFilters</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.Project$setResourceFilters(kotlin.collections.MutableSet((org.gradle.plugins.ide.eclipse.model.ResourceFilter)))/resourceFilters">resourceFilters</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-resource-filter/index.html"><span class="identifier">ResourceFilter</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="to-string.html">toString</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

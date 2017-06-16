@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>IvyConfiguration - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.publish.ivy</a>&nbsp;/&nbsp;<a href=".">IvyConfiguration</a><br/>
+<br/>
+<h1>IvyConfiguration</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">IvyConfiguration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
+<p>A configuration included in an IvyPublication, which will be published in the ivy descriptor file generated.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="extend.html">extend</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">extend</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.publish.ivy.IvyConfiguration$extend(kotlin.String)/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Add the name of a configuration that this configuration extends. The extend value can use the following wildcards: <ul> <li>* - all other configurations</li>
+ <li>*(public) - all other public configurations</li>
+ <li>*(private) - all other private configurations</li>
+ </ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-extends.html">getExtends</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExtends</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The set of names of extended configurations, added via <code><a href="#">#extend(String)</a></code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-named/get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The object's name. 
+<p> Must be constant for the life of the object.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

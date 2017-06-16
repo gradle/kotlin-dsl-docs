@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>FileContentMerger.whenMerged - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.api</a>&nbsp;/&nbsp;<a href="index.html">FileContentMerger</a>&nbsp;/&nbsp;<a href=".">whenMerged</a><br/>
+<br/>
+<h1>whenMerged</h1>
+<a name="org.gradle.plugins.ide.api.FileContentMerger$whenMerged(org.gradle.api.Action((kotlin.Any)))"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">whenMerged</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.api.FileContentMerger$whenMerged(org.gradle.api.Action((kotlin.Any)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an action to be called after content is loaded from existing file and after gradle build information is merged. 
+<p> This is advanced api that gives access to internal implementation of idea plugin. Use it only to tackle some tricky edge cases. </p>
+<p> For examples see docs for org.gradle.plugins.ide.eclipse.model.EclipseProject or org.gradle.plugins.ide.idea.model.IdeaProject and others.</p>
+</p>
+<h3>Parameters</h3>
+<a name="action"></a>
+<code>action</code> - The action to execute.<a name="org.gradle.plugins.ide.api.FileContentMerger$whenMerged(groovy.lang.Closure((kotlin.Any)))"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">whenMerged</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.api.FileContentMerger$whenMerged(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a closure to be called after content is loaded from existing file and after gradle build information is merged. 
+<p> This is advanced api that gives access to internal implementation of idea plugin. Use it only to tackle some tricky edge cases. </p>
+<p> For examples see docs for org.gradle.plugins.ide.eclipse.model.EclipseProject or org.gradle.plugins.ide.idea.model.IdeaProject and others.</p>
+</p>
+<h3>Parameters</h3>
+<a name="closure"></a>
+<code>closure</code> - The closure to execute.
+</BODY>
+</HTML>

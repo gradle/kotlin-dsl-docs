@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ProjectState - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href=".">ProjectState</a><br/>
+<br/>
+<h1>ProjectState</h1>
+<code><span class="keyword">interface </span><span class="identifier">ProjectState</span></code>
+<p><code>ProjectState</code> provides information about the execution state of a project.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-executed.html">getExecuted</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExecuted</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>
+<p>Returns true if this project has been evaluated.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-failure.html">getFailure</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFailure</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a></code>
+<p>Returns the exception describing the project failure, if any.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="rethrow-failure.html">rethrowFailure</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">rethrowFailure</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Throws the project failure, if any. Does nothing if the project did not fail.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

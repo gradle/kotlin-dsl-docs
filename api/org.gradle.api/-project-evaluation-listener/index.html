@@ -1,0 +1,41 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ProjectEvaluationListener - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href=".">ProjectEvaluationListener</a><br/>
+<br/>
+<h1>ProjectEvaluationListener</h1>
+<code><span class="keyword">interface </span><span class="identifier">ProjectEvaluationListener</span></code>
+<p>
+<p>An <code>ProjectEvaluationListener</code> is notified when a project is evaluated. You add can add an <code>ProjectEvaluationListener</code> to a org.gradle.api.invocation.Gradle using <code><a href="../../org.gradle.api.invocation/-gradle/add-project-evaluation-listener.html"> </a></code>.</p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="after-evaluate.html">afterEvaluate</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">afterEvaluate</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.ProjectEvaluationListener$afterEvaluate(org.gradle.api.Project, org.gradle.api.ProjectState)/project">project</span><span class="symbol">:</span>&nbsp;<a href="../-project/index.html"><span class="identifier">Project</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.ProjectEvaluationListener$afterEvaluate(org.gradle.api.Project, org.gradle.api.ProjectState)/state">state</span><span class="symbol">:</span>&nbsp;<a href="../-project-state/index.html"><span class="identifier">ProjectState</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>This method is called when a project has been evaluated, and before the evaluated project is made available to other projects.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="before-evaluate.html">beforeEvaluate</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">beforeEvaluate</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.ProjectEvaluationListener$beforeEvaluate(org.gradle.api.Project)/project">project</span><span class="symbol">:</span>&nbsp;<a href="../-project/index.html"><span class="identifier">Project</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>This method is called immediately before a project is evaluated.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

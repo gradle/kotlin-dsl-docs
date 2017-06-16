@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>LongRunningOperation.addProgressListener - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling</a>&nbsp;/&nbsp;<a href="index.html">LongRunningOperation</a>&nbsp;/&nbsp;<a href=".">addProgressListener</a><br/>
+<br/>
+<h1>addProgressListener</h1>
+<a name="org.gradle.tooling.LongRunningOperation$addProgressListener(org.gradle.tooling.ProgressListener)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addProgressListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.LongRunningOperation$addProgressListener(org.gradle.tooling.ProgressListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../-progress-listener/index.html"><span class="identifier">ProgressListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">LongRunningOperation</span></a></code>
+<p>Adds a progress listener which will receive progress events as the operation runs. 
+<p>This method is intended to be replaced by <code>#addProgressListener(org.gradle.tooling.events.ProgressListener)</code>. The new progress listener type provides much richer information and much better handling of parallel operations that run during the build, such as tasks that run in parallel. You should prefer using the new listener interface where possible. Note, however, that the new interface is supported only for Gradle 2.5 and later and is currently Incubating. It may change in later Gradle releases. </p>
+</p>
+<h3>Parameters</h3>
+<a name="listener"></a>
+<code>listener</code> - The listener
+<p><strong>Return</strong><br/>
+this</p>
+<p><strong>Since</strong><br/>
+1.0-milestone-7</p>
+<a name="org.gradle.tooling.LongRunningOperation$addProgressListener(org.gradle.tooling.events.ProgressListener)"></a>
+<code><span class="identifier">@Incubating</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addProgressListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.LongRunningOperation$addProgressListener(org.gradle.tooling.events.ProgressListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.events/-progress-listener/index.html"><span class="identifier">ProgressListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">LongRunningOperation</span></a></code>
+<p>Adds a progress listener which will receive progress events of all types as the operation runs. 
+<p>This method is intended to replace <code>#addProgressListener(ProgressListener)</code>. You should prefer using the new progress listener method where possible, as the new interface provides much richer information and much better handling of parallel operations that run during the build. </p>
+ 
+<p>Supported by Gradle 2.5 or later. Gradle 2.4 supports <code><a href="#">OperationType#TEST</a></code> operations only. Ignored for older versions.</p>
+</p>
+<h3>Parameters</h3>
+<a name="listener"></a>
+<code>listener</code> - The listener
+<p><strong>Return</strong><br/>
+this</p>
+<p><strong>Since</strong><br/>
+2.5</p>
+<a name="org.gradle.tooling.LongRunningOperation$addProgressListener(org.gradle.tooling.events.ProgressListener, kotlin.collections.MutableSet((org.gradle.tooling.events.OperationType)))"></a>
+<code><span class="identifier">@Incubating</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addProgressListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.LongRunningOperation$addProgressListener(org.gradle.tooling.events.ProgressListener, kotlin.collections.MutableSet((org.gradle.tooling.events.OperationType)))/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.events/-progress-listener/index.html"><span class="identifier">ProgressListener</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.LongRunningOperation$addProgressListener(org.gradle.tooling.events.ProgressListener, kotlin.collections.MutableSet((org.gradle.tooling.events.OperationType)))/operationTypes">operationTypes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.tooling.events/-operation-type/index.html"><span class="identifier">OperationType</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">LongRunningOperation</span></a></code>
+<p>Adds a progress listener which will receive progress events as the operations of the requested type run. 
+<p>This method is intended to replace <code>#addProgressListener(ProgressListener)</code>. You should prefer using the new progress listener method where possible, as the new interface provides much richer information and much better handling of parallel operations that run during the build. </p>
+ 
+<p>Supported by Gradle 2.5 or later. Gradle 2.4 supports <code><a href="#">OperationType#TEST</a></code> operations only. Ignored for older versions.</p>
+</p>
+<h3>Parameters</h3>
+<a name="listener"></a>
+<code>listener</code> - The listener<a name="operationTypes"></a>
+<code>operationTypes</code> - The types of operations to receive progress events for.
+<p><strong>Return</strong><br/>
+this</p>
+<p><strong>Since</strong><br/>
+2.5</p>
+<a name="org.gradle.tooling.LongRunningOperation$addProgressListener(org.gradle.tooling.events.ProgressListener, kotlin.Array((org.gradle.tooling.events.OperationType)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addProgressListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.LongRunningOperation$addProgressListener(org.gradle.tooling.events.ProgressListener, kotlin.Array((org.gradle.tooling.events.OperationType)))/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.events/-progress-listener/index.html"><span class="identifier">ProgressListener</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.tooling.LongRunningOperation$addProgressListener(org.gradle.tooling.events.ProgressListener, kotlin.Array((org.gradle.tooling.events.OperationType)))/operationTypes">operationTypes</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.events/-operation-type/index.html"><span class="identifier">OperationType</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">LongRunningOperation</span></a></code>
+<p>Adds a progress listener which will receive progress events as the operations of the requested type run. 
+<p>This method is intended to replace <code>#addProgressListener(ProgressListener)</code>. You should prefer using the new progress listener method where possible, as the new interface provides much richer information and much better handling of parallel operations that run during the build. </p>
+ 
+<p>Supported by Gradle 2.5 or later. Gradle 2.4 supports <code><a href="#">OperationType#TEST</a></code> operations only. Ignored for older versions.</p>
+</p>
+<h3>Parameters</h3>
+<a name="listener"></a>
+<code>listener</code> - The listener<a name="operationTypes"></a>
+<code>operationTypes</code> - The types of operations to receive progress events for.
+<p><strong>Return</strong><br/>
+this</p>
+<p><strong>Since</strong><br/>
+2.6</p>
+</BODY>
+</HTML>

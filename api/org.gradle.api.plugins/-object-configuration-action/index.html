@@ -1,0 +1,78 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ObjectConfigurationAction - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href=".">ObjectConfigurationAction</a><br/>
+<br/>
+<h1>ObjectConfigurationAction</h1>
+<code><span class="keyword">interface </span><span class="identifier">ObjectConfigurationAction</span></code>
+<p>
+<p>An <code>ObjectConfigurationAction</code> allows you to apply org.gradle.api.Plugins and scripts to an object or objects.</p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="from.html">from</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.ObjectConfigurationAction$from(kotlin.Any)/script">script</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ObjectConfigurationAction</span></code>
+<p>Adds a script to use to configure the target objects. You can call this method multiple times, to use multiple scripts. Scripts and plugins are applied in the order that they are added.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="plugin.html">plugin</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">plugin</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.ObjectConfigurationAction$plugin(java.lang.Class((org.gradle.api.Plugin((kotlin.Any)))))/pluginClass">pluginClass</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ObjectConfigurationAction</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">plugin</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.ObjectConfigurationAction$plugin(kotlin.String)/pluginId">pluginId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ObjectConfigurationAction</span></code>
+<p>Adds a org.gradle.api.Plugin to use to configure the target objects. You can call this method multiple times, to use multiple plugins. Scripts and plugins are applied in the order that they are added.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="to.html">to</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">to</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.plugins.ObjectConfigurationAction$to(kotlin.Array((kotlin.Any)))/targets">targets</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ObjectConfigurationAction</span></code>
+<p>
+<p>Specifies some target objects to be configured. Any collections or arrays in the given parameters will be flattened, and the script applied to each object in the result, in the order given. Each call to this method adds some additional target objects.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="type.html">type</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">type</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.ObjectConfigurationAction$type(java.lang.Class((kotlin.Any)))/pluginClass">pluginClass</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ObjectConfigurationAction</span></code>
+<p>Adds the plugin implemented by the given class to the target. 
+<p> The class is expected to either implement Plugin, or extend org.gradle.model.RuleSource. An exception will be thrown if the class is not a valid plugin implementation.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.script.lang.kotlin/org.gradle.api.plugins.-object-configuration-action/plugin.html">plugin</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">ObjectConfigurationAction</span><span class="symbol">.</span><span class="identifier">plugin</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ObjectConfigurationAction</span></code>
+<p>Adds a Plugin to use to configure the target objects. This method may be called
+multiple times, to use multiple plugins. Scripts and plugins are applied in the order
+that they are added.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

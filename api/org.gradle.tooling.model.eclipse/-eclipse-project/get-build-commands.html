@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>EclipseProject.getBuildCommands - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.model.eclipse</a>&nbsp;/&nbsp;<a href="index.html">EclipseProject</a>&nbsp;/&nbsp;<a href=".">getBuildCommands</a><br/>
+<br/>
+<h1>getBuildCommands</h1>
+<a name="org.gradle.tooling.model.eclipse.EclipseProject$getBuildCommands()"></a>
+<code><span class="identifier">@Incubating</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildCommands</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-eclipse-build-command/index.html"><span class="identifier">EclipseBuildCommand</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the Eclipse build commands configured on the project. 
+<p> Some build commands are automatically added to the result based on the Gradle plugins applied on the project. For example, if the project applies the 'java' plugin the result will contain the <code>"org.eclipse.jdt.core.javabuilder"</code> build command. Note, that the exact list of automatically added build commands is not part of the API and can vary between Gradle releases. </p>
+<p> The result can be customized via the 'eclipse' plugin configuration.</p>
+</p>
+<h3>Exceptions</h3>
+<a name="UnsupportedMethodException"></a>
+<code>UnsupportedMethodException</code> - For Gradle versions older than 2.9, where this method is not supported.
+<p><strong>Return</strong><br/>
+The list of Eclipse build commands.</p>
+<p><strong>Since</strong><br/>
+2.9</p>
+</BODY>
+</HTML>

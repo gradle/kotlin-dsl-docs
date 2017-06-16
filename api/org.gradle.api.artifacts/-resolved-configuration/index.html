@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResolvedConfiguration - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">ResolvedConfiguration</a><br/>
+<br/>
+<h1>ResolvedConfiguration</h1>
+<code><span class="keyword">interface </span><span class="identifier">ResolvedConfiguration</span></code>
+<p>A <code>ResolvedConfiguration</code> represents the result of resolving a Configuration, and provides access to both the artifacts and the meta-data of the result.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-files.html">getFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the files for the configuration dependencies.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFiles</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolvedConfiguration$getFiles(org.gradle.api.specs.Spec((org.gradle.api.artifacts.Dependency)))/dependencySpec">dependencySpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the files for the specified subset of configuration dependencies.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-first-level-module-dependencies.html">getFirstLevelModuleDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFirstLevelModuleDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-resolved-dependency/index.html"><span class="identifier">ResolvedDependency</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the ResolvedDependency instances for each direct dependency of the configuration. Via those you have access to all ResolvedDependency instances, including the transitive dependencies of the configuration.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFirstLevelModuleDependencies</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolvedConfiguration$getFirstLevelModuleDependencies(org.gradle.api.specs.Spec((org.gradle.api.artifacts.Dependency)))/dependencySpec">dependencySpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-resolved-dependency/index.html"><span class="identifier">ResolvedDependency</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the ResolvedDependency instances for each direct dependency of the configuration that matches the given spec. Via those you have access to all ResolvedDependency instances, including the transitive dependencies of the configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-lenient-configuration.html">getLenientConfiguration</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLenientConfiguration</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-lenient-configuration/index.html"><span class="identifier">LenientConfiguration</span></a></code>
+<p>Provides configuration that does not fail eagerly when some dependencies are not resolved.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-resolved-artifacts.html">getResolvedArtifacts</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getResolvedArtifacts</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-resolved-artifact/index.html"><span class="identifier">ResolvedArtifact</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the set of artifact meta-data for this configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="has-error.html">hasError</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">hasError</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns whether all dependencies were successfully retrieved or not.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="rethrow-failure.html">rethrowFailure</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">rethrowFailure</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>A resolve of a configuration that is not successful does not automatically throws an exception. Such a exception is only thrown if the result of a resolve is accessed. You can force the throwing of such an exception by calling this method. 
+<p>This method does nothing when resolution was successful.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

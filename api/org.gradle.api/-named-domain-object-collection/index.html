@@ -1,0 +1,267 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NamedDomainObjectCollection - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href=".">NamedDomainObjectCollection</a><br/>
+<br/>
+<h1>NamedDomainObjectCollection</h1>
+<code><span class="keyword">interface </span><span class="identifier">NamedDomainObjectCollection</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-domain-object-collection/index.html"><span class="identifier">DomainObjectCollection</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>
+<p>A <code>NamedDomainObjectCollection</code> represents a collection of domain objects that have an inherent, constant, name.</p>
+ 
+<p>Objects to be added to a named domain object collection must implement <code>equals()</code> in such a way that no two objects with different names are considered equal. That is, all equality tests <strong>must</strong> consider the name as an equality key. Behavior is undefined if two objects with different names are considered equal by their <code>equals()</code> implementation.</p>
+ 
+<p>All implementations <strong>must</strong> guarantee that all elements in the collection are uniquely named. That is, an attempt to add an object with a name equal to the name of any existing object in the collection will fail. Implementations may choose to simply return false from <code>add(T)</code> or to throw an exception.</p>
+ 
+<p>Objects in the collection are accessible as read-only properties, using the name of the object as the property name. For example (assuming the 'name' property provides the object name):</p>
+ <pre><code> books.add(new Book(name: "gradle", title: null)) books.gradle.title = "Gradle in Action" </code></pre> 
+<p>A dynamic method is added for each object which takes a configuration closure. This is equivalent to calling <code><a href="#">#getByName(String, groovy.lang.Closure)</a></code>. For example:</p>
+ <pre><code> books.add(new Book(name: "gradle", title: null)) books.gradle { title = "Gradle in Action" } </code></pre> 
+<p>You can also use the <code>[]</code> operator to access the objects of a collection by name. For example:</p>
+ <pre><code> books.add(new Book(name: "gradle", title: null)) books['gradle'].title = "Gradle in Action" </code></pre> 
+<p>Rule objects can be attached to the collection in order to respond to requests for objects by name where no object with name exists in the collection. This mechanism can be used to create objects on demand. For example: </p>
+ <pre><code> books.addRule('create any') { books.add(new Book(name: "gradle", title: null)) } books.gradle.name == "gradle" </code></pre></p>
+<h3>Parameters</h3>
+<a name="&lt;T&gt;"></a>
+<code><T></code> - The type of domain objects in this collection.
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add.html">add</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectCollection$add(org.gradle.api.NamedDomainObjectCollection.T)/element">element</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Adds an object to the collection, if there is no existing object in the collection with the same name.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="add-all.html">addAll</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addAll</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectCollection$addAll(kotlin.collections.Collection((org.gradle.api.NamedDomainObjectCollection.T)))/elements">elements</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html"><span class="identifier">Collection</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Adds any of the given objects to the collection that do not have the same name as any existing element.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="add-rule.html">addRule</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addRule</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectCollection$addRule(org.gradle.api.Rule)/rule">rule</span><span class="symbol">:</span>&nbsp;<a href="../-rule/index.html"><span class="identifier">Rule</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-rule/index.html"><span class="identifier">Rule</span></a></code>
+<p>Adds a rule to this collection. The given rule is invoked when an unknown object is requested by name.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addRule</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectCollection$addRule(kotlin.String, groovy.lang.Closure((kotlin.Any)))/description">description</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.NamedDomainObjectCollection$addRule(kotlin.String, groovy.lang.Closure((kotlin.Any)))/ruleAction">ruleAction</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-rule/index.html"><span class="identifier">Rule</span></a></code>
+<p>Adds a rule to this collection. The given closure is executed when an unknown object is requested by name. The requested name is passed to the closure as a parameter.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addRule</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectCollection$addRule(kotlin.String, org.gradle.api.Action((kotlin.String)))/description">description</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.NamedDomainObjectCollection$addRule(kotlin.String, org.gradle.api.Action((kotlin.String)))/ruleAction">ruleAction</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-rule/index.html"><span class="identifier">Rule</span></a></code>
+<p>Adds a rule to this collection. The given action is executed when an unknown object is requested by name. The requested name is passed to the action.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="find-by-name.html">findByName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">findByName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectCollection$findByName(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Locates an object by name, returning null if there is no such object.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-as-map.html">getAsMap</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAsMap</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/util/SortedMap.html"><span class="identifier">SortedMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>
+<p>Returns the objects in this collection, as a map from object name to object instance.</p>
+ 
+<p>The map is ordered by the <em>natural ordering</em> of the object names (i.e. keys).</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-at.html">getAt</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAt</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectCollection$getAt(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Locates an object by name, failing if there is no such task. This method is identical to <code><a href="#"> </a></code>. You can call this method in your build script by using the groovy <code>[]</code> operator.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-by-name.html">getByName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getByName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectCollection$getByName(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Locates an object by name, failing if there is no such object.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getByName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectCollection$getByName(kotlin.String, groovy.lang.Closure((kotlin.Any)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.NamedDomainObjectCollection$getByName(kotlin.String, groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Locates an object by name, failing if there is no such object. The given configure closure is executed against the object before it is returned from this method. The object is passed to the closure as its delegate.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getByName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectCollection$getByName(kotlin.String, org.gradle.api.Action((org.gradle.api.NamedDomainObjectCollection.T)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.NamedDomainObjectCollection$getByName(kotlin.String, org.gradle.api.Action((org.gradle.api.NamedDomainObjectCollection.T)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Locates an object by name, failing if there is no such object. The given configure action is executed against the object before it is returned from this method.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-namer.html">getNamer</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getNamer</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-namer/index.html"><span class="identifier">Namer</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>An object that represents the naming strategy used to name objects of this collection.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-names.html">getNames</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getNames</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/util/SortedSet.html"><span class="identifier">SortedSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>
+<p>Returns the names of the objects in this collection as a Set of Strings.</p>
+ 
+<p>The set of names is in <em>natural ordering</em>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-rules.html">getRules</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRules</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-rule/index.html"><span class="identifier">Rule</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the rules used by this collection.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="matching.html">matching</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectCollection$matching(org.gradle.api.specs.Spec((org.gradle.api.NamedDomainObjectCollection.T)))/spec">spec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">NamedDomainObjectCollection</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectCollection$matching(groovy.lang.Closure((kotlin.Any)))/spec">spec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">NamedDomainObjectCollection</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="with-type.html">withType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">withType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectCollection$withType(java.lang.Class((org.gradle.api.NamedDomainObjectCollection.withType.S)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">NamedDomainObjectCollection</span><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-domain-object-collection/all.html">all</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">all</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.DomainObjectCollection$all(groovy.lang.Closure((kotlin.Any)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Executes the given closure against all objects in this collection, and any objects subsequently added to this collection. The object is passed to the closure as the closure delegate. Alternatively, it is also passed as a parameter.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-domain-object-collection/find-all.html">findAll</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">findAll</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.DomainObjectCollection$findAll(groovy.lang.Closure((kotlin.Any)))/spec">spec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Returns a collection which contains the objects in this collection which meet the given closure specification.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-domain-object-collection/when-object-added.html">whenObjectAdded</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">whenObjectAdded</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.DomainObjectCollection$whenObjectAdded(groovy.lang.Closure((kotlin.Any)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a closure to be called when an object is added to this collection. The newly added object is passed to the closure as the parameter.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-domain-object-collection/when-object-removed.html">whenObjectRemoved</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">whenObjectRemoved</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.DomainObjectCollection$whenObjectRemoved(groovy.lang.Closure((kotlin.Any)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a closure to be called when an object is removed from this collection. The removed object is passed to the closure as the parameter.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-domain-object-collection/with-type.html">withType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">withType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.DomainObjectCollection$withType(java.lang.Class((org.gradle.api.DomainObjectCollection.withType.S)), groovy.lang.Closure((kotlin.Any)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.DomainObjectCollection$withType(java.lang.Class((org.gradle.api.DomainObjectCollection.withType.S)), groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-domain-object-collection/index.html"><span class="identifier">DomainObjectCollection</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span></code>
+<p>Returns a collection containing the objects in this collection of the given type. Equivalent to calling <code>withType(type).all(configureClosure)</code>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">withType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.DomainObjectCollection$withType(java.lang.Class((org.gradle.api.DomainObjectCollection.withType.S)), org.gradle.api.Action((org.gradle.api.DomainObjectCollection.withType.S)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.DomainObjectCollection$withType(java.lang.Class((org.gradle.api.DomainObjectCollection.withType.S)), org.gradle.api.Action((org.gradle.api.DomainObjectCollection.withType.S)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-domain-object-collection/index.html"><span class="identifier">DomainObjectCollection</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span></code>
+<p>Returns a collection containing the objects in this collection of the given type. Equivalent to calling <code>withType(type).all(configureAction)</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.script.lang.kotlin/org.gradle.api.-named-domain-object-collection/get.html">get</a></p>
+</td>
+<td>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">NamedDomainObjectCollection</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="org.gradle.script.lang.kotlin$get(org.gradle.api.NamedDomainObjectCollection((org.gradle.script.lang.kotlin.get.T)), kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Locates an object by name, failing if there is no such object.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.script.lang.kotlin/org.gradle.api.-named-domain-object-collection/get-value.html">getValue</a></p>
+</td>
+<td>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">U</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">NamedDomainObjectCollection</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">getValue</span><span class="symbol">(</span><span class="identifier" id="org.gradle.script.lang.kotlin$getValue(org.gradle.api.NamedDomainObjectCollection((org.gradle.script.lang.kotlin.getValue.T)), kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)))/thisRef">thisRef</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="org.gradle.script.lang.kotlin$getValue(org.gradle.api.NamedDomainObjectCollection((org.gradle.script.lang.kotlin.getValue.T)), kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)))/property">property</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-property/index.html"><span class="identifier">KProperty</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">U</span></code>
+<p>Allows a NamedDomainObjectCollection to be used as a property delegate.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-named-domain-object-list/index.html">NamedDomainObjectList</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">NamedDomainObjectList</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NamedDomainObjectCollection</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>
+<p>A specialisation of org.gradle.api.NamedDomainObjectCollection that also implements java.util.List.</p>
+ 
+<p>All object equality is determined in terms of object names. That is, calling <code>remove()</code> with an object that is NOT equal to an existing object in terms of <code>equals</code>, but IS in terms of name equality will result in the existing collection item with the equal name being removed.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-named-domain-object-set/index.html">NamedDomainObjectSet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">NamedDomainObjectSet</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NamedDomainObjectCollection</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>
+<p>A specialisation of NamedDomainObjectCollection that also implements Set and orders objects by their inherent name.</p>
+ 
+<p>All object equality is determined in terms of object names. That is, calling <code>remove()</code> with an object that is NOT equal to an existing object in terms of <code>equals</code>, but IS in terms of name equality will result in the existing collection item with the equal name being removed.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

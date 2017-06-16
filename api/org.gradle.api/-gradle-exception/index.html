@@ -1,0 +1,361 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GradleException - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href=".">GradleException</a><br/>
+<br/>
+<h1>GradleException</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GradleException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/RuntimeException.html"><span class="identifier">RuntimeException</span></a></code>
+<p>
+<p><code>GradleException</code> is the base class of all exceptions thrown by Gradle.</p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">GradleException</span><span class="symbol">(</span><span class="symbol">)</span></code><br/>
+<code><span class="identifier">GradleException</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.GradleException$<init>(kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code><br/>
+<code><span class="identifier">GradleException</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.GradleException$<init>(kotlin.String, kotlin.Throwable)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.GradleException$<init>(kotlin.String, kotlin.Throwable)/cause">cause</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.artifacts.transform/-artifact-transform-exception/index.html">ArtifactTransformException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ArtifactTransformException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>An exception to report a problem during transformation execution.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.caching/-build-cache-exception/index.html">BuildCacheException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BuildCacheException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>
+<p><code>BuildCacheException</code> is the base class of all exceptions thrown by a BuildCacheService.</p>
+ A <code>BuildCacheException</code> is considered a non-fatal failure. Gradle should still be able to complete a build even when a <code>BuildCacheException</code> is encountered.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-build-cancelled-exception/index.html">BuildCancelledException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BuildCancelledException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>
+<p>A <code>BuildCancelledException</code> is thrown when a build is interrupted due to cancellation request.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-circular-reference-exception/index.html">CircularReferenceException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CircularReferenceException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>
+<p>A <code>CircularReferenceException</code> is thrown if circular references exists between tasks, the project evaluation order or the project dependsOn order.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.model/-configuration-cycle-exception/index.html">ConfigurationCycleException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ConfigurationCycleException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>Thrown when a cycle is encountered while configuring a model element.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.file/-duplicate-file-copying-exception/index.html">DuplicateFileCopyingException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">DuplicateFileCopyingException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>Thrown when more than one file with the same relative path name is to be copied and the DuplicatesStrategy is set to DuplicatesStrategy.FAIL</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-gradle-script-exception/index.html">GradleScriptException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GradleScriptException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>
+<p>A <code>GradleScriptException</code> is thrown when an exception occurs in the compilation or execution of a script.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-illegal-dependency-notation/index.html">IllegalDependencyNotation</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">IllegalDependencyNotation</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>This exceptions is thrown, if a dependency is declared with a illegal notation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.reporting/-report-container/-immutable-violation-exception/index.html">ImmutableViolationException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ImmutableViolationException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>The exception thrown when any of this container's mutation methods are called. 
+<p> This applies to the standard java.util.Collection methods such as <code>add()</code>, <code>remove()</code> and <code>clear()</code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-invalid-action-closure-exception/index.html">InvalidActionClosureException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InvalidActionClosureException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>Thrown when a Closure is given as an Action implementation, but has the wrong signature.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.platform.base/-invalid-model-exception/index.html">InvalidModelException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InvalidModelException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>Thrown when a component model is declared in an invalid way.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.model/-invalid-model-rule-declaration-exception/index.html">InvalidModelRuleDeclarationException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InvalidModelRuleDeclarationException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>Thrown when a model rule, or source of model rules, is declared in an invalid way.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.model/-invalid-model-rule-exception/index.html">InvalidModelRuleException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InvalidModelRuleException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>Thrown when there is a problem with the usage of a model rule. 
+<p> This exception is different to InvalidModelRuleDeclarationException in that it signifies a problem with using a model rule in a particular context, whereas <code>InvalidModelRuleDeclarationException</code> signifies a problem with the declaration of the model rule itself (which therefore means that the rule could not be used in any context). </p>
+<p> This exception should always have cause, that provides information about the actual problem.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.plugins/-invalid-plugin-exception/index.html">InvalidPluginException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InvalidPluginException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>Thrown when a plugin is found to be invalid when it is loaded.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-invalid-user-code-exception/index.html">InvalidUserCodeException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InvalidUserCodeException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>A <code>InvalidUserCodeException</code> is thrown when user-provided code cannot be executed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-invalid-user-data-exception/index.html">InvalidUserDataException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InvalidUserDataException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>A <code>InvalidUserDataException</code> is thrown, if a user is providing illegal data for the build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.java.archives/-manifest-exception/index.html">ManifestException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ManifestException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>Is thrown in the case an operation is applied against a org.gradle.api.java.archives.Manifest that violates the Manifest specification.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.platform.base/-model-instantiation-exception/index.html">ModelInstantiationException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ModelInstantiationException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>Thrown when a model element cannot be instantiated for some reason.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.model/-model-rule-binding-exception/index.html">ModelRuleBindingException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ModelRuleBindingException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>Thrown when there is a problem binding the model element references of a model rule. 
+<p> Should always be thrown as the cause of a org.gradle.model.InvalidModelRuleException.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.plugins/-plugin-instantiation-exception/index.html">PluginInstantiationException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PluginInstantiationException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>A <code>PluginInstantiationException</code> is thrown when a plugin cannot be instantiated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-project-configuration-exception/index.html">ProjectConfigurationException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ProjectConfigurationException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>Indicates a problem that occurs during project configuration (evaluation) phase.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.artifacts/-publish-exception/index.html">PublishException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PublishException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>
+<p>A <code>PublishException</code> is thrown when a dependency configuration cannot be published for some reason.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.model/-read-only-model-view-exception/index.html">ReadOnlyModelViewException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ReadOnlyModelViewException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>Thrown when an attempt is made to change the value of a model element that is not writable at the time.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.resources/-resource-exception/index.html">ResourceException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ResourceException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>Generic resource exception that all other resource-related exceptions inherit from.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.plugins.javascript.base/-source-transformation-exception/index.html">SourceTransformationException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SourceTransformationException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>Thrown when a source code transformation fails.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks/-stop-action-exception/index.html">StopActionException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">StopActionException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>
+<p>A <code>StopActionException</code> is be thrown by a task org.gradle.api.Action or task action closure to stop its own execution and to start execution of the task's next action. An action can usually be stopped by just calling return inside the action closure. But if the action works with helper methods that can lead to redundant code. For example:</p>
+ <pre><code> List existentSourceDirs = HelperUtil.getExistentSourceDirs() if (!existentSourceDirs) {return} </code></pre> 
+<p>If the <code>getExistentSourceDirs()</code> throws a <code>StopActionException</code> instead, the tasks does not need the if statement.</p>
+ 
+<p>Note that throwing this exception does not fail the execution of the task or the build.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks/-task-execution-exception/index.html">TaskExecutionException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">TaskExecutionException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>
+<p>A <code>TaskExecutionException</code> is thrown when a task fails to execute successfully.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks/-task-instantiation-exception/index.html">TaskInstantiationException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">TaskInstantiationException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>A <code>TaskInstantiationException</code> is thrown when a task cannot be instantiated for some reason.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.testing/-test-execution-exception/index.html">TestExecutionException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">TestExecutionException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>
+<p>A <code>TestExecutionException</code> is thrown when no tests can be found that match the specified test filters.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-unknown-domain-object-exception/index.html">UnknownDomainObjectException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">UnknownDomainObjectException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>
+<p>A <code>UnknownDomainObjectException</code> is the super class of all exceptions thrown when a given domain object cannot be located.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.provider.model/-unknown-model-exception/index.html">UnknownModelException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">UnknownModelException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>Thrown when an unknown tooling model is requested.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.artifacts.transform/-variant-transform-configuration-exception/index.html">VariantTransformConfigurationException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">VariantTransformConfigurationException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>An exception to report a problem during transformation execution.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.model/-write-only-model-view-exception/index.html">WriteOnlyModelViewException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WriteOnlyModelViewException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleException</span></code>
+<p>Thrown when an attempt is made to read the value of a model element that is not readable at the time.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

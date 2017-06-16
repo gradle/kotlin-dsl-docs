@@ -1,0 +1,92 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Delete - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks</a>&nbsp;/&nbsp;<a href=".">Delete</a><br/>
+<br/>
+<h1>Delete</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Delete</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><a href="../../org.gradle.api.file/-delete-spec/index.html"><span class="identifier">DeleteSpec</span></a></code>
+<p>
+<p>Deletes files or directories. Example:</p>
+ <pre><code> task makePretty(type: Delete) { delete 'uglyFolder', 'uglyFile' followSymlinks = true } </code></pre> Be default symlinks will not be followed when deleting files. To change this behavior call <code><a href="set-follow-symlinks.html">Delete#setFollowSymlinks(boolean)</a></code> with true. On systems that do not support symlinks, this will have no effect.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">Delete</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>
+<p>Deletes files or directories. Example:</p>
+ <pre><code> task makePretty(type: Delete) { delete 'uglyFolder', 'uglyFile' followSymlinks = true } </code></pre> Be default symlinks will not be followed when deleting files. To change this behavior call <code><a href="set-follow-symlinks.html">Delete#setFollowSymlinks(boolean)</a></code> with true. On systems that do not support symlinks, this will have no effect.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="delete.html">delete</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.tasks.Delete$delete(kotlin.Array((kotlin.Any)))/targets">targets</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Delete</span></code>
+<p>Adds some files to be deleted by this task. The given targets are evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-delete.html">getDelete</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDelete</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the set of files which will be deleted by this task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-target-files.html">getTargetFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTargetFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the resolved set of files which will be deleted by this task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-follow-symlinks.html">isFollowSymlinks</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isFollowSymlinks</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns if symlinks should be followed when doing a delete.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-delete.html">setDelete</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDelete</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.Delete$setDelete(kotlin.collections.MutableSet((kotlin.Any)))/targets">targets</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDelete</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.Delete$setDelete(kotlin.Any)/target">target</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the files to be deleted by this task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-follow-symlinks.html">setFollowSymlinks</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setFollowSymlinks</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.Delete$setFollowSymlinks(kotlin.Boolean)/followSymlinks">followSymlinks</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set if symlinks should be followed. If the platform doesn't support symlinks, then this will have no effect.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

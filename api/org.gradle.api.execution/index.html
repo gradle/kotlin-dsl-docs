@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api.execution - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.execution</a><br/>
+<br/>
+<h2>Package org.gradle.api.execution</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-task-action-listener/index.html">TaskActionListener</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskActionListener</span></code>
+<p>
+<p>A <code>TaskActionListener</code> is notified of the actions that a task performs.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-execution-adapter/index.html">TaskExecutionAdapter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">TaskExecutionAdapter</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-task-execution-listener/index.html"><span class="identifier">TaskExecutionListener</span></a></code>
+<p>A TaskExecutionListener adapter class for receiving task execution events. The methods in this class are empty. This class exists as convenience for creating listener objects.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-execution-graph/index.html">TaskExecutionGraph</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskExecutionGraph</span></code>
+<p>
+<p>A <code>TaskExecutionGraph</code> is responsible for managing the execution of the Task instances which are part of the build. The <code>TaskExecutionGraph</code> maintains an execution plan of tasks to be executed (or which have been executed), and you can query this plan from your build file.</p>
+ 
+<p>You can access the <code>TaskExecutionGraph</code> by calling <code><a href="../org.gradle.api.invocation/-gradle/get-task-graph.html">org.gradle.api.invocation.Gradle#getTaskGraph()</a></code>. In your build file you can use <code>gradle.taskGraph</code> to access it.</p>
+ 
+<p>The <code>TaskExecutionGraph</code> is populated only after all the projects in the build have been evaulated. It is empty before then. You can receive a notification when the graph is populated, using <code><a href="#"> </a></code> or <code><a href="-task-execution-graph/add-task-execution-graph-listener.html">#addTaskExecutionGraphListener(TaskExecutionGraphListener)</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-execution-graph-listener/index.html">TaskExecutionGraphListener</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskExecutionGraphListener</span></code>
+<p>
+<p>A <code>TaskExecutionGraphListener</code> is notified when the TaskExecutionGraph has been populated. You can use this interface in your build file to perform some action based on the contents of the graph, before any tasks are actually executed.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-execution-listener/index.html">TaskExecutionListener</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskExecutionListener</span></code>
+<p>
+<p>A <code>TaskExecutionListener</code> is notified of the execution of the tasks in a build.</p>
+ 
+<p>You can add a <code>TaskExecutionListener</code> to a build using <code><a href="-task-execution-graph/add-task-execution-listener.html">org.gradle.api.execution.TaskExecutionGraph#addTaskExecutionListener</a></code></p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

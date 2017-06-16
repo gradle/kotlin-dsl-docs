@@ -1,0 +1,202 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AbstractClasspathEntry - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.eclipse.model</a>&nbsp;/&nbsp;<a href=".">AbstractClasspathEntry</a><br/>
+<br/>
+<h1>AbstractClasspathEntry</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractClasspathEntry</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-classpath-entry/index.html"><span class="identifier">ClasspathEntry</span></a></code>
+<p>Common superclass for all ClasspathEntry instances.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">AbstractClasspathEntry</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.AbstractClasspathEntry$<init>(groovy.util.Node)/node">node</span><span class="symbol">:</span>&nbsp;<span class="identifier">Node</span><span class="symbol">)</span></code><br/>
+<code><span class="identifier">AbstractClasspathEntry</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.AbstractClasspathEntry$<init>(kotlin.String)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-c-o-m-p-o-n-e-n-t_-d-e-p-e-n-d-e-n-c-y_-a-t-t-r-i-b-u-t-e.html">COMPONENT_DEPENDENCY_ATTRIBUTE</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">COMPONENT_DEPENDENCY_ATTRIBUTE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-c-o-m-p-o-n-e-n-t_-n-o-n_-d-e-p-e-n-d-e-n-c-y_-a-t-t-r-i-b-u-t-e.html">COMPONENT_NON_DEPENDENCY_ATTRIBUTE</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">COMPONENT_NON_DEPENDENCY_ATTRIBUTE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="append-node.html">appendNode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">appendNode</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.AbstractClasspathEntry$appendNode(groovy.util.Node)/node">node</span><span class="symbol">:</span>&nbsp;<span class="identifier">Node</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="equals.html">equals</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">equals</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.AbstractClasspathEntry$equals(kotlin.Any)/other">other</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-access-rules.html">getAccessRules</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAccessRules</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-access-rule/index.html"><span class="identifier">AccessRule</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-entry-attributes.html">getEntryAttributes</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getEntryAttributes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-native-library-location.html">getNativeLibraryLocation</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getNativeLibraryLocation</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-path.html">getPath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="hash-code.html">hashCode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">hashCode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-exported.html">isExported</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isExported</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-access-rules.html">setAccessRules</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setAccessRules</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.AbstractClasspathEntry$setAccessRules(kotlin.collections.MutableSet((org.gradle.plugins.ide.eclipse.model.AccessRule)))/accessRules">accessRules</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-access-rule/index.html"><span class="identifier">AccessRule</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-exported.html">setExported</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExported</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.AbstractClasspathEntry$setExported(kotlin.Boolean)/exported">exported</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-native-library-location.html">setNativeLibraryLocation</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setNativeLibraryLocation</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.AbstractClasspathEntry$setNativeLibraryLocation(kotlin.String)/location">location</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-path.html">setPath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setPath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.AbstractClasspathEntry$setPath(kotlin.String)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="to-string.html">toString</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="write-entry-attributes.html">writeEntryAttributes</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">writeEntryAttributes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.AbstractClasspathEntry$writeEntryAttributes(groovy.util.Node)/node">node</span><span class="symbol">:</span>&nbsp;<span class="identifier">Node</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-classpath-entry/get-kind.html">getKind</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getKind</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-abstract-library/index.html">AbstractLibrary</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractClasspathEntry</span></code>
+<p>Common superclass for the library elements.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-container/index.html">Container</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Container</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractClasspathEntry</span></code>
+<p>A container classpath entry.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-project-dependency/index.html">ProjectDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ProjectDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractClasspathEntry</span></code>
+<p>A classpath entry representing a project dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-source-folder/index.html">SourceFolder</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SourceFolder</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractClasspathEntry</span></code>
+<p>SourceFolder.path contains only project relative path.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

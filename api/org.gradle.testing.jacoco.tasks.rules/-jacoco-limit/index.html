@@ -1,0 +1,93 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>JacocoLimit - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.testing.jacoco.tasks.rules</a>&nbsp;/&nbsp;<a href=".">JacocoLimit</a><br/>
+<br/>
+<h1>JacocoLimit</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">JacocoLimit</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code>
+<p>Defines a Jacoco rule limit.</p>
+<p><strong>Since</strong><br/>
+3.4</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-counter.html">getCounter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCounter</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The counter that applies to the limit as defined by <a href="#">org.jacoco.core.analysis.ICoverageNode.CounterEntity</a>. Valid values are INSTRUCTION, LINE, BRANCH, COMPLEXITY, METHOD and CLASS. Defaults to INSTRUCTION.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-maximum.html">getMaximum</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getMaximum</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html"><span class="identifier">BigDecimal</span></a></code>
+<p>Gets the maximum expected value for limit. Default to null.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-minimum.html">getMinimum</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getMinimum</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html"><span class="identifier">BigDecimal</span></a></code>
+<p>Gets the minimum expected value for limit. Default to null.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-value.html">getValue</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getValue</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The value that applies to the limit as defined by <a href="#">org.jacoco.core.analysis.ICounter.CounterValue</a>. Valid values are TOTALCOUNT, MISSEDCOUNT, COVEREDCOUNT, MISSEDRATIO and COVEREDRATIO. Defaults to COVEREDRATIO.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-counter.html">setCounter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setCounter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.tasks.rules.JacocoLimit$setCounter(kotlin.String)/counter">counter</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the counter that applies to the limit.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-maximum.html">setMaximum</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setMaximum</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.tasks.rules.JacocoLimit$setMaximum(java.math.BigDecimal)/maximum">maximum</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html"><span class="identifier">BigDecimal</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the maximum expected value for limit.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-minimum.html">setMinimum</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setMinimum</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.tasks.rules.JacocoLimit$setMinimum(java.math.BigDecimal)/minimum">minimum</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html"><span class="identifier">BigDecimal</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the minimum expected value for limit.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-value.html">setValue</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setValue</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.tasks.rules.JacocoLimit$setValue(kotlin.String)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the value that applies to the limit.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

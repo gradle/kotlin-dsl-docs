@@ -1,0 +1,118 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api.publish.ivy - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.publish.ivy</a><br/>
+<br/>
+<h2>Package org.gradle.api.publish.ivy</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-ivy-artifact/index.html">IvyArtifact</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">IvyArtifact</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<p>An artifact published as part of a IvyPublication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-ivy-artifact-set/index.html">IvyArtifactSet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">IvyArtifactSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><a href="-ivy-artifact/index.html"><span class="identifier">IvyArtifact</span></a><span class="symbol">&gt;</span></code>
+<p>A Collection of IvyArtifacts to be included in an IvyPublication. Being a DomainObjectSet, a <code>IvyArtifactSet</code> provides convenient methods for querying, filtering, and applying actions to the set of IvyArtifacts. <pre><code> apply plugin: 'ivy-publish' def publication = publishing.publications.create("my-pub", IvyPublication) def artifacts = publication.artifacts artifacts.matching({ it.type == "source" }).all({ it.extension = "src.jar" }) </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-ivy-configuration/index.html">IvyConfiguration</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">IvyConfiguration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
+<p>A configuration included in an IvyPublication, which will be published in the ivy descriptor file generated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-ivy-configuration-container.html">IvyConfigurationContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">IvyConfigurationContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named-domain-object-container/index.html"><span class="identifier">NamedDomainObjectContainer</span></a><span class="symbol">&lt;</span><a href="-ivy-configuration/index.html"><span class="identifier">IvyConfiguration</span></a><span class="symbol">&gt;</span></code>
+<p>The set of IvyConfigurations that will be included in the IvyPublication. Being a org.gradle.api.NamedDomainObjectContainer, a <code>IvyConfigurationContainer</code> provides convenient methods for adding, querying, filtering, and applying actions to the set of IvyConfigurations. <pre><code> apply plugin: 'ivy-publish' def publication = publishing.publications.create("my-pub", IvyPublication) def configurations = publication.configurations configurations.create("extended", { extend "default"}) configurations.all { extend "base" } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-ivy-dependency/index.html">IvyDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">IvyDependency</span></code>
+<p>A module dependency declared in an ivy dependency descriptor published as part of an IvyPublication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-ivy-extra-info-spec/index.html">IvyExtraInfoSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">IvyExtraInfoSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.artifacts.ivy/-ivy-extra-info/index.html"><span class="identifier">IvyExtraInfo</span></a></code>
+<p>Represents a modifiable form of IvyExtraInfo so that "extra" info elements can be configured on an Ivy publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-ivy-module-descriptor-spec/index.html">IvyModuleDescriptorSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">IvyModuleDescriptorSpec</span></code>
+<p>The descriptor of any Ivy publication. 
+<p> Corresponds to the <a href="#">XML version of the Ivy Module Descriptor</a>. </p>
+<p> The <code><a href="#">#withXml(org.gradle.api.Action)</a></code> method can be used to modify the descriptor after it has been generated according to the publication data.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-ivy-publication/index.html">IvyPublication</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">IvyPublication</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.publish/-publication.html"><span class="identifier">Publication</span></a></code>
+<p>A <code>IvyPublication</code> is the representation/configuration of how Gradle should publish something in Ivy format, to an Ivy repository. You directly add a named Ivy Publication the project's <code>publishing.publications</code> container by providing IvyPublication as the type. <pre><code> publishing { publications { myPublicationName(IvyPublication) { // Configure the publication here } } } </code></pre> 
+<p> The Ivy module identifying attributes of the publication are mapped as follows: </p>
+<ul> <li><code>module</code> - <code>project.name</code></li>
+ <li><code>organisation</code> - <code>project.group</code></li>
+ <li><code>revision</code> - <code>project.version</code></li>
+ <li><code>status</code> - <code>project.status</code></li>
+ </ul>
+  
+<p> For certain common use cases, it's often sufficient to specify the component to publish, using (<code><a href="-ivy-publication/from.html">#from(org.gradle.api.component.SoftwareComponent)</a></code>. The published component is used to determine which artifacts to publish, and which configurations and dependencies should be listed in the generated ivy descriptor file. </p>
+<p> You can add configurations to the generated ivy descriptor file, by supplying a Closure to the <code><a href="#">#configurations(org.gradle.api.Action)</a></code> method. </p>
+<p> To add additional artifacts to the set published, use the <code><a href="#">#artifact(Object)</a></code> and <code><a href="#">#artifact(Object, org.gradle.api.Action)</a></code> methods. You can also completely replace the set of published artifacts using <code><a href="#">#setArtifacts(Iterable)</a></code>. Together, these methods give you full control over the artifacts to be published. </p>
+<p> For any other tweaks to the publication, it is possible to modify the generated Ivy descriptor file prior to publication. This is done using the <code><a href="#">IvyModuleDescriptorSpec#withXml(org.gradle.api.Action)</a></code> method, normally via a Closure passed to the <code><a href="#">#descriptor(org.gradle.api.Action)</a></code> method. </p>
+ Example of publishing a java component with an added source jar and custom module description <pre><code> apply plugin: "java" apply plugin: "ivy-publish" task sourceJar(type: Jar) { from sourceSets.main.allJava } publishing { publications { myPublication(IvyPublication) { from components.java artifact(sourceJar) { type "source" extension "src.jar" conf "runtime" } descriptor.withXml { asNode().info[0].appendNode("description", "custom-description") } } } } </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Exceptions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-invalid-ivy-publication-exception/index.html">InvalidIvyPublicationException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InvalidIvyPublicationException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-invalid-user-data-exception/index.html"><span class="identifier">InvalidUserDataException</span></a></code>
+<p>Thrown when attempting to publish with an invalid IvyPublication.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

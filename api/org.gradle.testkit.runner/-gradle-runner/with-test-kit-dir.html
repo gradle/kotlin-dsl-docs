@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GradleRunner.withTestKitDir - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.testkit.runner</a>&nbsp;/&nbsp;<a href="index.html">GradleRunner</a>&nbsp;/&nbsp;<a href=".">withTestKitDir</a><br/>
+<br/>
+<h1>withTestKitDir</h1>
+<a name="org.gradle.testkit.runner.GradleRunner$withTestKitDir(java.io.File)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withTestKitDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$withTestKitDir(java.io.File)/testKitDir">testKitDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">GradleRunner</span></a></code>
+<p>Sets the directory to use for TestKit's working storage needs. 
+<p> This directory is used internally to store various files required by the runner. If no explicit Gradle user home is specified via the build arguments (i.e. the <code>-g «dir»</code> option}), this directory will also be used for the Gradle user home for the test build. </p>
+<p> If no value has been specified when the build is initiated, a directory unique to the current operating system user will be created and used within the JVM's temporary directory as advertised by the <code>java.io.tmpdir</code> system property. This directory is not deleted by the runner after the test build. </p>
+<p> You may wish to specify a location that is within your project and regularly cleaned, such as the project's build directory. </p>
+<p> The actual contents of this directory are an internal implementation detail and may change at any time.</p>
+</p>
+<h3>Parameters</h3>
+<a name="testKitDir"></a>
+<code>testKitDir</code> - the TestKit directory
+<p><strong>Return</strong><br/>
+<code>this</code></p>
+<p><strong>Since</strong><br/>
+2.7</p>
+</BODY>
+</HTML>

@@ -1,0 +1,20 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PublishingExtension.repositories - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.publish</a>&nbsp;/&nbsp;<a href="index.html">PublishingExtension</a>&nbsp;/&nbsp;<a href=".">repositories</a><br/>
+<br/>
+<h1>repositories</h1>
+<a name="org.gradle.api.publish.PublishingExtension$repositories(org.gradle.api.Action((org.gradle.api.artifacts.dsl.RepositoryHandler)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">repositories</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.publish.PublishingExtension$repositories(org.gradle.api.Action((org.gradle.api.artifacts.dsl.RepositoryHandler)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.artifacts.dsl/-repository-handler/index.html"><span class="identifier">RepositoryHandler</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the container of possible repositories to publish to. <pre><code> apply plugin: 'publishing' publishing { repositories { // Create an ivy publication destination named “releases” ivy { name "releases" url "http://my.org/ivy-repos/releases" } } } </code></pre> The <code>repositories</code> block is backed by a RepositoryHandler, which is the same DSL as that that is used for declaring repositories to consume dependencies from. However, certain types of repositories that can be created by the repository handler are not valid for publishing, such as <code><a href="../../org.gradle.api.artifacts.dsl/-repository-handler/maven-central.html">org.gradle.api.artifacts.dsl.RepositoryHandler#mavenCentral()</a></code>. 
+<p> At this time, only repositories created by the <code>ivy()</code> factory method have any effect. Please see org.gradle.api.publish.ivy.IvyPublication for information on how this can be used for publishing to Ivy repositories.</p>
+</p>
+<h3>Parameters</h3>
+<a name="configure"></a>
+<code>configure</code> - The action to configure the container of repositories with.
+</BODY>
+</HTML>

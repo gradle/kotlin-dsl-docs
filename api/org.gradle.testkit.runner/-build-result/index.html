@@ -1,0 +1,77 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BuildResult - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.testkit.runner</a>&nbsp;/&nbsp;<a href=".">BuildResult</a><br/>
+<br/>
+<h1>BuildResult</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">BuildResult</span></code>
+<p>The result of executing a build, via the GradleRunner.</p>
+<p><strong>Since</strong><br/>
+2.6</p>
+<p><strong>See Also</strong><br/>
+<a href="../-gradle-runner/build.html">GradleRunner#build()</a><a href="../-gradle-runner/build-and-fail.html">GradleRunner#buildAndFail()</a></p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-output.html">getOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOutput</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The textual output produced during the build. 
+<p> This is equivalent to the console output produced when running a build from the command line. It contains both the standard output, and standard error output, of the build.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-tasks.html">getTasks</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTasks</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-build-task/index.html"><span class="identifier">BuildTask</span></a><span class="symbol">&gt;</span></code>
+<p>The tasks that were part of the build. 
+<p> The order of the tasks corresponds to the order in which the tasks were started. If executing a parallel enabled build, the order is not guaranteed to be deterministic. </p>
+<p> The returned list is an unmodifiable view of items. The returned list will be empty if no tasks were executed. This can occur if the build fails early, due to a build script failing to compile for example.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="task.html">task</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">task</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.BuildResult$task(kotlin.String)/taskPath">taskPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-build-task/index.html"><span class="identifier">BuildTask</span></a></code>
+<p>Returns the result object for a particular task, or <code>null</code> if the given task was not part of the build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="task-paths.html">taskPaths</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">taskPaths</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.BuildResult$taskPaths(org.gradle.testkit.runner.TaskOutcome)/outcome">outcome</span><span class="symbol">:</span>&nbsp;<a href="../-task-outcome/index.html"><span class="identifier">TaskOutcome</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The paths of the subset of <code><a href="get-tasks.html">#getTasks()</a></code> that had the given outcome. 
+<p> The returned list is an unmodifiable view of items. The returned list will be empty if no tasks were executed with the given outcome.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="tasks.html">tasks</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">tasks</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.BuildResult$tasks(org.gradle.testkit.runner.TaskOutcome)/outcome">outcome</span><span class="symbol">:</span>&nbsp;<a href="../-task-outcome/index.html"><span class="identifier">TaskOutcome</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-build-task/index.html"><span class="identifier">BuildTask</span></a><span class="symbol">&gt;</span></code>
+<p>The subset of <code><a href="get-tasks.html">#getTasks()</a></code> that had the given outcome. 
+<p> The returned list is an unmodifiable view of items. The returned list will be empty if no tasks were executed with the given outcome.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TemplateBasedScriptGenerator - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.jvm.application.scripts</a>&nbsp;/&nbsp;<a href=".">TemplateBasedScriptGenerator</a><br/>
+<br/>
+<h1>TemplateBasedScriptGenerator</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">TemplateBasedScriptGenerator</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-script-generator/index.html"><span class="identifier">ScriptGenerator</span></a></code>
+<p>Interface for generating scripts with the provided details based on a provided template.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-template.html">getTemplate</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTemplate</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.resources/-text-resource/index.html"><span class="identifier">TextResource</span></a></code>
+<p>Gets the template reader used for generating script.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-template.html">setTemplate</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setTemplate</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator$setTemplate(org.gradle.api.resources.TextResource)/template">template</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.resources/-text-resource/index.html"><span class="identifier">TextResource</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the template text resource used for generating script.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-script-generator/generate-script.html">generateScript</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">generateScript</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.application.scripts.ScriptGenerator$generateScript(org.gradle.jvm.application.scripts.JavaAppStartScriptGenerationDetails, java.io.Writer)/details">details</span><span class="symbol">:</span>&nbsp;<a href="../-java-app-start-script-generation-details/index.html"><span class="identifier">JavaAppStartScriptGenerationDetails</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.jvm.application.scripts.ScriptGenerator$generateScript(org.gradle.jvm.application.scripts.JavaAppStartScriptGenerationDetails, java.io.Writer)/destination">destination</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/Writer.html"><span class="identifier">Writer</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Generate the script. 
+<p> Implementations should not close the given writer. It is the responsibility of the caller to close the stream.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

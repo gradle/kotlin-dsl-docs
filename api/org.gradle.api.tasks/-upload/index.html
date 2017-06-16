@@ -1,0 +1,109 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Upload - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks</a>&nbsp;/&nbsp;<a href=".">Upload</a><br/>
+<br/>
+<h1>Upload</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Upload</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span></code>
+<p>Uploads the artifacts of a Configuration to a set of repositories.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">Upload</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Uploads the artifacts of a Configuration to a set of repositories.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-artifacts.html">getArtifacts</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getArtifacts</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the artifacts which will be uploaded.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-configuration.html">getConfiguration</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getConfiguration</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a></code>
+<p>Returns the configuration to upload.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-descriptor-destination.html">getDescriptorDestination</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDescriptorDestination</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the path to generate the dependency descriptor to.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-repositories.html">getRepositories</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getRepositories</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.dsl/-repository-handler/index.html"><span class="identifier">RepositoryHandler</span></a></code>
+<p>Returns the repositories to upload to.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-upload-descriptor.html">isUploadDescriptor</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isUploadDescriptor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Specifies whether the dependency descriptor should be uploaded.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="repositories.html">repositories</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">repositories</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.Upload$repositories(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.dsl/-repository-handler/index.html"><span class="identifier">RepositoryHandler</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">repositories</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.Upload$repositories(org.gradle.api.Action((org.gradle.api.artifacts.dsl.RepositoryHandler)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.artifacts.dsl/-repository-handler/index.html"><span class="identifier">RepositoryHandler</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.dsl/-repository-handler/index.html"><span class="identifier">RepositoryHandler</span></a></code>
+<p>Configures the set of repositories to upload to.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-configuration.html">setConfiguration</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setConfiguration</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.Upload$setConfiguration(org.gradle.api.artifacts.Configuration)/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-descriptor-destination.html">setDescriptorDestination</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDescriptorDestination</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.Upload$setDescriptorDestination(java.io.File)/descriptorDestination">descriptorDestination</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-upload-descriptor.html">setUploadDescriptor</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setUploadDescriptor</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.Upload$setUploadDescriptor(kotlin.Boolean)/uploadDescriptor">uploadDescriptor</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

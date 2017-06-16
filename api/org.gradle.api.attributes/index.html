@@ -1,0 +1,146 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api.attributes - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.attributes</a><br/>
+<br/>
+<h2>Package org.gradle.api.attributes</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-attribute/index.html">Attribute</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Attribute</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
+<p>An attribute is a named entity with a type. It is used in conjunction with a AttributeContainer to provide a type safe container for attributes. This class isn't intended to store the value of an attribute, but only represent the identity of the attribute. It means that an attribute must be immutable and can potentially be pooled. Attributes can be created using the <code><a href="#">factory method</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-attribute-compatibility-rule.html">AttributeCompatibilityRule</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">AttributeCompatibilityRule</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><a href="-compatibility-check-details/index.html"><span class="identifier">CompatibilityCheckDetails</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>A rule that determines whether a given attribute value is compatible some provided attribute value.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-attribute-container/index.html">AttributeContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">AttributeContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-has-attributes/index.html"><span class="identifier">HasAttributes</span></a></code>
+<p>An attribute container is a container of Attribute, which are strongly typed named entities. Such a container is responsible for storing and getting attributes in a type safe way. In particular, attributes are strongly typed, meaning that when we get a value from the container, the returned value type is inferred from the type of the attribute. In a way, an attribute container is similar to a java.util.Map where the entry is a "typed String" and the value is of the string type. However the set of methods available to the container is much more limited. It is not allowed to have two attributes with the same name but different types in the container.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-attribute-disambiguation-rule.html">AttributeDisambiguationRule</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">AttributeDisambiguationRule</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><a href="-multiple-candidates-details/index.html"><span class="identifier">MultipleCandidatesDetails</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>A rule that selects the best value out of a set of two or more candidates.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-attribute-matching-strategy/index.html">AttributeMatchingStrategy</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">AttributeMatchingStrategy</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>An attribute matching strategy is responsible for providing information about how an Attribute is matched during dependency resolution. In particular, it will tell if a value, provided by a consumer, is compatible with a value provided by a candidate.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-attributes-schema/index.html">AttributesSchema</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">AttributesSchema</span></code>
+<p>An attributes schema stores information about Attribute and how they can be matched together.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-compatibility-check-details/index.html">CompatibilityCheckDetails</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CompatibilityCheckDetails</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Provides context about attribute compatibility checks, and allows the user to define when an attribute is compatible with another.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-compatibility-rule-chain/index.html">CompatibilityRuleChain</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CompatibilityRuleChain</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>
+<p>A chain of compatibility checks, implemented as action rules. By default the chain is empty and will eventually tell the values are incompatible if no rule expressed an opinion.</p>
+ 
+<p>For a given set of rules, the execution is done <em>in order</em>, and interrupts as soon as a rule expressed an option (through <code><a href="-compatibility-check-details/compatible.html">CompatibilityCheckDetails#compatible()</a></code> or <code><a href="-compatibility-check-details/incompatible.html">CompatibilityCheckDetails#incompatible()</a></code>). </p>
+ 
+<p>If the end of the rule chain is reached and that no rule expressed an opinion then we apply an equality check by default, and eventually fail if they are not equal.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-disambiguation-rule-chain/index.html">DisambiguationRuleChain</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DisambiguationRuleChain</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>
+<p>A chain of disambiguation rules. By default the chain is empty and will not do any disambiguation.</p>
+ 
+<p>For a given set of rules, the execution is done <em>in order</em>, and interrupts as soon as a rule selected at least one candidate (through <code><a href="#">MultipleCandidatesDetails#closestMatch(Object)</a></code>). </p>
+ 
+<p>If the end of the rule chain is reached and that no rule selected a candidate then the candidate list is returned unmodified, meaning we still have an ambiguous match.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-has-attributes/index.html">HasAttributes</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">HasAttributes</span></code>
+<p>Represents something that carries attributes by utilizing an AttributeContainer</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-has-configurable-attributes/index.html">HasConfigurableAttributes</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">HasConfigurableAttributes</span><span class="symbol">&lt;</span><span class="identifier">SELF</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-has-attributes/index.html"><span class="identifier">HasAttributes</span></a></code>
+<p>Represents something that carries attributes by utilizing an AttributeContainer that is configurable.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-multiple-candidates-details/index.html">MultipleCandidatesDetails</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MultipleCandidatesDetails</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Provides context about candidates for an attribute. In particular, this class gives access to the list of candidates on the producer side.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-usage/index.html">Usage</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Usage</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
+<p>Represents the usage of a configuration. Typical usages include compilation or runtime. This interface allows the user to customize usages by implementing this interface.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

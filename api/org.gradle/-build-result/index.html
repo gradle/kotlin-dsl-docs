@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BuildResult - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle</a>&nbsp;/&nbsp;<a href=".">BuildResult</a><br/>
+<br/>
+<h1>BuildResult</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BuildResult</span></code>
+<p>
+<p>A <code>BuildResult</code> packages up the results of a build executed by a org.gradle.initialization.GradleLauncher instance.</p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">BuildResult</span><span class="symbol">(</span><span class="identifier" id="org.gradle.BuildResult$<init>(org.gradle.api.invocation.Gradle, kotlin.Throwable)/gradle">gradle</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.invocation/-gradle/index.html"><span class="identifier">Gradle</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.BuildResult$<init>(org.gradle.api.invocation.Gradle, kotlin.Throwable)/failure">failure</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">)</span></code><br/>
+<code><span class="identifier">BuildResult</span><span class="symbol">(</span><span class="identifier" id="org.gradle.BuildResult$<init>(kotlin.String, org.gradle.api.invocation.Gradle, kotlin.Throwable)/action">action</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.BuildResult$<init>(kotlin.String, org.gradle.api.invocation.Gradle, kotlin.Throwable)/gradle">gradle</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.invocation/-gradle/index.html"><span class="identifier">Gradle</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.BuildResult$<init>(kotlin.String, org.gradle.api.invocation.Gradle, kotlin.Throwable)/failure">failure</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-action.html">getAction</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAction</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The action performed by this build. Either `Build` or `Configure`.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-failure.html">getFailure</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getFailure</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-gradle.html">getGradle</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getGradle</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.invocation/-gradle/index.html"><span class="identifier">Gradle</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="rethrow-failure.html">rethrowFailure</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">rethrowFailure</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BuildResult</span></code>
+<p>
+<p>Rethrows the build failure. Does nothing if there was no build failure.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

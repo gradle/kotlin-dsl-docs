@@ -1,0 +1,259 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>EclipseProject - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.eclipse.model</a>&nbsp;/&nbsp;<a href=".">EclipseProject</a><br/>
+<br/>
+<h1>EclipseProject</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">EclipseProject</span></code>
+<p>Enables fine-tuning project details (.project file) of the Eclipse plugin 
+<p> Example of use with a blend of all possible properties. Bear in mind that usually you don't have configure eclipse project directly because Gradle configures it for free! </p>
+<pre><code> apply plugin: 'java' apply plugin: 'eclipse' eclipse { project { //if you don't like the name Gradle has chosen name = 'someBetterName' //if you want to specify the Eclipse project's comment comment = 'Very interesting top secret project' //if you want to append some extra referenced projects in a declarative fashion: referencedProjects 'someProject', 'someOtherProject' //if you want to assign referenced projects referencedProjects = ['someProject'] as Set //if you want to append some extra natures in a declarative fashion: natures 'some.extra.eclipse.nature', 'some.another.interesting.nature' //if you want to assign natures in a groovy fashion: natures = ['some.extra.eclipse.nature', 'some.another.interesting.nature'] //if you want to append some extra build command: buildCommand 'buildThisLovelyProject' //if you want to append a build command with parameters: buildCommand 'buildItWithTheArguments', argumentOne: "I'm first", argumentTwo: "I'm second" //if you want to create an extra link in the eclipse project, //by location uri: linkedResource name: 'someLinkByLocationUri', type: 'someLinkType', locationUri: 'file://someUri' //by location: linkedResource name: 'someLinkByLocation', type: 'someLinkType', location: '/some/location' //if you don't want any node_modules folder to appear in Eclipse, you can filter it out: resourceFilter { appliesTo = 'FOLDERS' type = 'EXCLUDE_ALL' matcher { id = 'org.eclipse.ui.ide.multiFilter' arguments = '1.0-name-matches-false-false-node_modules' } } } } </code></pre> For tackling edge cases users can perform advanced configuration on resulting XML file. It is also possible to affect the way eclipse plugin merges the existing configuration via beforeMerged and whenMerged closures. 
+<p> beforeMerged and whenMerged closures receive Project object </p>
+<p> Examples of advanced configuration: </p>
+<pre><code> apply plugin: 'java' apply plugin: 'eclipse' eclipse { project { file { //if you want to mess with the resulting XML in whatever way you fancy withXml { def node = it.asNode() node.appendNode('xml', 'is what I love') } //closure executed after .project content is loaded from existing file //but before gradle build information is merged beforeMerged { project -&gt; //if you want skip merging natures... (a very abstract example) project.natures.clear() } //closure executed after .project content is loaded from existing file //and after gradle build information is merged whenMerged { project -&gt; //you can tinker with the Project here } } } } </code></pre></p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">EclipseProject</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseProject$<init>(org.gradle.plugins.ide.api.XmlFileContentMerger)/file">file</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.ide.api/-xml-file-content-merger/index.html"><span class="identifier">XmlFileContentMerger</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-v-a-l-i-d_-l-i-n-k-e-d_-r-e-s-o-u-r-c-e_-a-r-g-s.html">VALID_LINKED_RESOURCE_ARGS</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">VALID_LINKED_RESOURCE_ARGS</span><span class="symbol">: </span><span class="identifier">ImmutableSet</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="build-command.html">buildCommand</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">buildCommand</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseProject$buildCommand(kotlin.collections.MutableMap((kotlin.String, )), kotlin.String)/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseProject$buildCommand(kotlin.collections.MutableMap((kotlin.String, )), kotlin.String)/buildCommand">buildCommand</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a build command with arguments to the eclipse project. 
+<p> For example see docs for EclipseProject</p>
+</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">buildCommand</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseProject$buildCommand(kotlin.String)/buildCommand">buildCommand</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a build command to the eclipse project. 
+<p> For example see docs for EclipseProject</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="file.html">file</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseProject$file(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Enables advanced configuration like tinkering with the output XML or affecting the way existing .project content is merged with gradle build information 
+<p> The object passed to whenMerged{} and beforeMerged{} closures is of type Project </p>
+<p> For example see docs for EclipseProject</p>
+</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseProject$file(org.gradle.api.Action((org.gradle.plugins.ide.api.XmlFileContentMerger)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.plugins.ide.api/-xml-file-content-merger/index.html"><span class="identifier">XmlFileContentMerger</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Enables advanced configuration like tinkering with the output XML or affecting the way existing .project content is merged with gradle build information. For example see docs for EclipseProject</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-build-commands.html">getBuildCommands</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getBuildCommands</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-build-command/index.html"><span class="identifier">BuildCommand</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-comment.html">getComment</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getComment</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-file.html">getFile</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.plugins.ide.api/-xml-file-content-merger/index.html"><span class="identifier">XmlFileContentMerger</span></a></code>
+<p>See <code><a href="#">#file(Action)</a></code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-linked-resources.html">getLinkedResources</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLinkedResources</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-link/index.html"><span class="identifier">Link</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-natures.html">getNatures</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getNatures</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-referenced-projects.html">getReferencedProjects</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getReferencedProjects</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-resource-filters.html">getResourceFilters</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getResourceFilters</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-resource-filter/index.html"><span class="identifier">ResourceFilter</span></a><span class="symbol">&gt;</span></code>
+<p>The resource filters of the eclipse project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="linked-resource.html">linkedResource</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">linkedResource</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseProject$linkedResource(kotlin.collections.MutableMap((kotlin.String, )))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a resource link (aka 'source link') to the eclipse project. 
+<p> For example see docs for EclipseProject</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="merge-xml-project.html">mergeXmlProject</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">mergeXmlProject</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseProject$mergeXmlProject(org.gradle.plugins.ide.eclipse.model.Project)/xmlProject">xmlProject</span><span class="symbol">:</span>&nbsp;<a href="../-project/index.html"><span class="identifier">Project</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="natures.html">natures</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">natures</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseProject$natures(kotlin.Array((kotlin.String)))/natures">natures</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Appends natures entries to the eclipse project. 
+<p> For example see docs for EclipseProject</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="referenced-projects.html">referencedProjects</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">referencedProjects</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseProject$referencedProjects(kotlin.Array((kotlin.String)))/referencedProjects">referencedProjects</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The referenced projects of this Eclipse project (*not*: java build path project references). 
+<p> Referencing projects does not mean adding a build path dependencies between them! If you need to configure a build path dependency use Gradle's dependencies section or eclipse.classpath.whenMerged { classpath -&gt; ... to manipulate the classpath entries</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="resource-filter.html">resourceFilter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">resourceFilter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseProject$resourceFilter(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-resource-filter/index.html"><span class="identifier">ResourceFilter</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">resourceFilter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseProject$resourceFilter(org.gradle.api.Action((org.gradle.plugins.ide.eclipse.model.ResourceFilter)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-resource-filter/index.html"><span class="identifier">ResourceFilter</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-resource-filter/index.html"><span class="identifier">ResourceFilter</span></a></code>
+<p>Adds a resource filter to the eclipse project. 
+<p> For examples, see docs for ResourceFilter</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-build-commands.html">setBuildCommands</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setBuildCommands</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseProject$setBuildCommands(kotlin.collections.MutableList((org.gradle.plugins.ide.eclipse.model.BuildCommand)))/buildCommands">buildCommands</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-build-command/index.html"><span class="identifier">BuildCommand</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The build commands to be added to this Eclipse project. 
+<p> For example see docs for EclipseProject</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-comment.html">setComment</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setComment</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseProject$setComment(kotlin.String)/comment">comment</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>A comment used for the eclipse project. By default it will be configured to <strong>project.description</strong> 
+<p> For example see docs for EclipseProject</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-linked-resources.html">setLinkedResources</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setLinkedResources</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseProject$setLinkedResources(kotlin.collections.MutableSet((org.gradle.plugins.ide.eclipse.model.Link)))/linkedResources">linkedResources</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-link/index.html"><span class="identifier">Link</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The linked resources to be added to this Eclipse project. 
+<p> For example see docs for EclipseProject</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-name.html">setName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseProject$setName(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures eclipse project name. It is <strong>optional</strong> because the task should configure it correctly for you. By default it will try to use the <strong>project.name</strong> or prefix it with a part of a <strong>project.path</strong> to make sure the moduleName is unique in the scope of a multi-module build. The 'uniqueness' of a module name is required for correct import into Eclipse and the task will make sure the name is unique. 
+<p> The logic that makes sure project names are unique is available <strong>since</strong> 1.0-milestone-2 </p>
+<p> If your project has problems with unique names it is recommended to always run gradle eclipse from the root, e.g. for all subprojects, including generation of .classpath. If you run the generation of the eclipse project only for a single subproject then you may have different results because the unique names are calculated based on eclipse projects that are involved in the specific build run. </p>
+<p> If you update the project names then make sure you run gradle eclipse from the root, e.g. for all subprojects. The reason is that there may be subprojects that depend on the subproject with amended eclipse project name. So you want them to be generated as well because the project dependencies in .classpath need to refer to the amended project name. Basically, for non-trivial projects it is recommended to always run gradle eclipse from the root. </p>
+<p> For example see docs for EclipseProject</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-natures.html">setNatures</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setNatures</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseProject$setNatures(kotlin.collections.MutableList((kotlin.String)))/natures">natures</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The natures to be added to this Eclipse project. 
+<p> For example see docs for EclipseProject</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-referenced-projects.html">setReferencedProjects</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setReferencedProjects</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseProject$setReferencedProjects(kotlin.collections.MutableSet((kotlin.String)))/referencedProjects">referencedProjects</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The referenced projects of this Eclipse project (*not*: java build path project references). 
+<p> Referencing projects does not mean adding a build path dependencies between them! If you need to configure a build path dependency use Gradle's dependencies section or eclipse.classpath.whenMerged { classpath -&gt; ... to manipulate the classpath entries </p>
+<p> For example see docs for EclipseProject</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

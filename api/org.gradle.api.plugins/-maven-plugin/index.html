@@ -1,0 +1,94 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MavenPlugin - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href=".">MavenPlugin</a><br/>
+<br/>
+<h1>MavenPlugin</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">MavenPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><span class="identifier">ProjectInternal</span><span class="symbol">&gt;</span></code>
+<p>
+<p>A org.gradle.api.Plugin which allows project artifacts to be deployed to a Maven repository, or installed to the local Maven cache.</p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">MavenPlugin</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.MavenPlugin$<init>(Factory, FileResolver, ProjectPublicationRegistry, ProjectConfigurationActionContainer, MavenSettingsProvider, LocalMavenRepositoryLocator, ImmutableModuleIdentifierFactory)/loggingManagerFactory">loggingManagerFactory</span><span class="symbol">:</span>&nbsp;<span class="identifier">Factory</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.plugins.MavenPlugin$<init>(Factory, FileResolver, ProjectPublicationRegistry, ProjectConfigurationActionContainer, MavenSettingsProvider, LocalMavenRepositoryLocator, ImmutableModuleIdentifierFactory)/fileResolver">fileResolver</span><span class="symbol">:</span>&nbsp;<span class="identifier">FileResolver</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.plugins.MavenPlugin$<init>(Factory, FileResolver, ProjectPublicationRegistry, ProjectConfigurationActionContainer, MavenSettingsProvider, LocalMavenRepositoryLocator, ImmutableModuleIdentifierFactory)/publicationRegistry">publicationRegistry</span><span class="symbol">:</span>&nbsp;<span class="identifier">ProjectPublicationRegistry</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.plugins.MavenPlugin$<init>(Factory, FileResolver, ProjectPublicationRegistry, ProjectConfigurationActionContainer, MavenSettingsProvider, LocalMavenRepositoryLocator, ImmutableModuleIdentifierFactory)/configurationActionContainer">configurationActionContainer</span><span class="symbol">:</span>&nbsp;<span class="identifier">ProjectConfigurationActionContainer</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.plugins.MavenPlugin$<init>(Factory, FileResolver, ProjectPublicationRegistry, ProjectConfigurationActionContainer, MavenSettingsProvider, LocalMavenRepositoryLocator, ImmutableModuleIdentifierFactory)/mavenSettingsProvider">mavenSettingsProvider</span><span class="symbol">:</span>&nbsp;<span class="identifier">MavenSettingsProvider</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.plugins.MavenPlugin$<init>(Factory, FileResolver, ProjectPublicationRegistry, ProjectConfigurationActionContainer, MavenSettingsProvider, LocalMavenRepositoryLocator, ImmutableModuleIdentifierFactory)/mavenRepositoryLocator">mavenRepositoryLocator</span><span class="symbol">:</span>&nbsp;<span class="identifier">LocalMavenRepositoryLocator</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.plugins.MavenPlugin$<init>(Factory, FileResolver, ProjectPublicationRegistry, ProjectConfigurationActionContainer, MavenSettingsProvider, LocalMavenRepositoryLocator, ImmutableModuleIdentifierFactory)/moduleIdentifierFactory">moduleIdentifierFactory</span><span class="symbol">:</span>&nbsp;<span class="identifier">ImmutableModuleIdentifierFactory</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-c-o-m-p-i-l-e_-p-r-i-o-r-i-t-y.html">COMPILE_PRIORITY</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">COMPILE_PRIORITY</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-i-n-s-t-a-l-l_-t-a-s-k_-n-a-m-e.html">INSTALL_TASK_NAME</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">INSTALL_TASK_NAME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-p-r-o-v-i-d-e-d_-c-o-m-p-i-l-e_-p-r-i-o-r-i-t-y.html">PROVIDED_COMPILE_PRIORITY</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">PROVIDED_COMPILE_PRIORITY</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-p-r-o-v-i-d-e-d_-r-u-n-t-i-m-e_-p-r-i-o-r-i-t-y.html">PROVIDED_RUNTIME_PRIORITY</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">PROVIDED_RUNTIME_PRIORITY</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-r-u-n-t-i-m-e_-p-r-i-o-r-i-t-y.html">RUNTIME_PRIORITY</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">RUNTIME_PRIORITY</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-t-e-s-t_-c-o-m-p-i-l-e_-p-r-i-o-r-i-t-y.html">TEST_COMPILE_PRIORITY</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">TEST_COMPILE_PRIORITY</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-t-e-s-t_-r-u-n-t-i-m-e_-p-r-i-o-r-i-t-y.html">TEST_RUNTIME_PRIORITY</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">TEST_RUNTIME_PRIORITY</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="apply.html">apply</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.MavenPlugin$apply(ProjectInternal)/project">project</span><span class="symbol">:</span>&nbsp;<span class="identifier">ProjectInternal</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PrebuiltLibrary - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform</a>&nbsp;/&nbsp;<a href=".">PrebuiltLibrary</a><br/>
+<br/>
+<h1>PrebuiltLibrary</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">PrebuiltLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a><span class="symbol">, </span><a href="../-native-library.html"><span class="identifier">NativeLibrary</span></a></code>
+<p>A library component that is not built by gradle.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-binaries.html">getBinaries</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBinaries</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><a href="../-native-library-binary/index.html"><span class="identifier">NativeLibraryBinary</span></a><span class="symbol">&gt;</span></code>
+<p>The binaries that are built for this component. You can use this to configure the binaries for this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-headers.html">getHeaders</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getHeaders</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-source-directory-set/index.html"><span class="identifier">SourceDirectorySet</span></a></code>
+<p>The headers exported by this library. These headers will be added to all binaries for this library.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-named/get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The object's name. 
+<p> Must be constant for the life of the object.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

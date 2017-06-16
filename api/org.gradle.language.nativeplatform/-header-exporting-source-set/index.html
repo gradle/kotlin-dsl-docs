@@ -1,0 +1,125 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>HeaderExportingSourceSet - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.nativeplatform</a>&nbsp;/&nbsp;<a href=".">HeaderExportingSourceSet</a><br/>
+<br/>
+<h1>HeaderExportingSourceSet</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">HeaderExportingSourceSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.base/-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a></code>
+<p>A source set that exposes headers</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-exported-headers.html">getExportedHeaders</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExportedHeaders</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-source-directory-set/index.html"><span class="identifier">SourceDirectorySet</span></a></code>
+<p>The headers as a directory set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-implicit-headers.html">getImplicitHeaders</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getImplicitHeaders</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-source-directory-set/index.html"><span class="identifier">SourceDirectorySet</span></a></code>
+<p>The headers that are private to this source set and implicitly available. These are not explicitly made available for compilation.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.base/-language-source-set/generated-by.html">generatedBy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">generatedBy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.base.LanguageSourceSet$generatedBy(org.gradle.api.Task)/generatorTask">generatorTask</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.base/-language-source-set/get-parent-name.html">getParentName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getParentName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.base/-language-source-set/get-source.html">getSource</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-source-directory-set/index.html"><span class="identifier">SourceDirectorySet</span></a></code>
+<p>The source files.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.c/-c-source-set.html">CSourceSet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CSourceSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HeaderExportingSourceSet</span><span class="symbol">, </span><a href="../../org.gradle.language.base/-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a><span class="symbol">, </span><a href="../-dependent-source-set/index.html"><span class="identifier">DependentSourceSet</span></a></code>
+<p>A set of C source files. 
+<p>A C source set contains a set of source files, together with an optional set of exported header files.</p>
+ <pre><code> apply plugin: "c" model { components { main(NativeLibrarySpec) { sources { c { source { srcDirs "src/main/cpp", "src/shared/c++" include "**/*.c" } exportedHeaders { srcDirs "src/main/include" } } } } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.cpp/-cpp-source-set.html">CppSourceSet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CppSourceSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HeaderExportingSourceSet</span><span class="symbol">, </span><a href="../../org.gradle.language.base/-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a><span class="symbol">, </span><a href="../-dependent-source-set/index.html"><span class="identifier">DependentSourceSet</span></a></code>
+<p>A set of C++ source files. 
+<p>A C++ source set contains a set of source files, together with an optional set of exported header files.</p>
+ <pre><code> apply plugin: "cpp" model { components { main(NativeLibrarySpec) { sources { cpp { source { srcDirs "src/main/cpp", "src/shared/c++" include "**/*.cpp" } exportedHeaders { srcDirs "src/main/include", "src/shared/include" } } } } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.objectivec/-objective-c-source-set.html">ObjectiveCSourceSet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ObjectiveCSourceSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HeaderExportingSourceSet</span><span class="symbol">, </span><a href="../../org.gradle.language.base/-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a><span class="symbol">, </span><a href="../-dependent-source-set/index.html"><span class="identifier">DependentSourceSet</span></a></code>
+<p>A set of Objective-C source files. 
+<p>An ObjectiveC source set contains a set of source files, together with an optional set of exported header files.</p>
+ <pre><code> apply plugin: "objective-c" model { components { main(NativeLibrarySpec) { sources { objc { source { srcDirs "src/main/objectiveC", "src/shared/objectiveC" include "**/*.m" } exportedHeaders { srcDirs "src/main/include" } } } } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.objectivecpp/-objective-cpp-source-set.html">ObjectiveCppSourceSet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ObjectiveCppSourceSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HeaderExportingSourceSet</span><span class="symbol">, </span><a href="../../org.gradle.language.base/-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a><span class="symbol">, </span><a href="../-dependent-source-set/index.html"><span class="identifier">DependentSourceSet</span></a></code>
+<p>A set of Objective-C++ source files. 
+<p>An Objective-C++ source set contains a set of source files, together with an optional set of exported header files.</p>
+ <pre><code> apply plugin: "objective-cpp" model { components { main(NativeLibrarySpec) { sources { objcpp { source { srcDirs "src/main/objectiveCpp", "src/shared/objectiveCpp" include "**/*.mm" } exportedHeaders { srcDirs "src/main/include" } } } } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.rc/-windows-resource-set.html">WindowsResourceSet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">WindowsResourceSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.base/-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a><span class="symbol">, </span><span class="identifier">HeaderExportingSourceSet</span><span class="symbol">, </span><a href="../-native-resource-set.html"><span class="identifier">NativeResourceSet</span></a></code>
+<p>A set of Windows Resource definition files. 
+<p>A Windows Resource set contains a set of script files, together with an optional set of header files.</p>
+ <pre><code> apply plugin: "windows-resources" model { components { main(NativeLibrarySpec) { sources { rc { source { srcDirs "src/main/rc" include "**/*.rc" } exportedHeaders { srcDirs "src/main/include" } } } } } } </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PluginManagementSpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugin.management</a>&nbsp;/&nbsp;<a href=".">PluginManagementSpec</a><br/>
+<br/>
+<h1>PluginManagementSpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">PluginManagementSpec</span></code>
+<p>Configures how plugins are resolved.</p>
+<p><strong>Since</strong><br/>
+3.5</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-repositories.html">getRepositories</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRepositories</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.plugin.repository/-plugin-repositories-spec/index.html"><span class="identifier">PluginRepositoriesSpec</span></a></code>
+<p>The plugin repositories to use.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-resolution-strategy.html">getResolutionStrategy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getResolutionStrategy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-plugin-resolution-strategy/index.html"><span class="identifier">PluginResolutionStrategy</span></a></code>
+<p>The plugin resolution strategy.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="repositories.html">repositories</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">repositories</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.management.PluginManagementSpec$repositories(org.gradle.api.Action((org.gradle.plugin.repository.PluginRepositoriesSpec)))/repositoriesAction">repositoriesAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.plugin.repository/-plugin-repositories-spec/index.html"><span class="identifier">PluginRepositoriesSpec</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Defines the plugin repositories to use.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="resolution-strategy.html">resolutionStrategy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">resolutionStrategy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.management.PluginManagementSpec$resolutionStrategy(org.gradle.api.Action((org.gradle.plugin.management.PluginResolutionStrategy)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-plugin-resolution-strategy/index.html"><span class="identifier">PluginResolutionStrategy</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configure the plugin resolution strategy.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

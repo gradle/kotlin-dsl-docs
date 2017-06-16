@@ -1,0 +1,137 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TaskExecutionGraph - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.execution</a>&nbsp;/&nbsp;<a href=".">TaskExecutionGraph</a><br/>
+<br/>
+<h1>TaskExecutionGraph</h1>
+<code><span class="keyword">interface </span><span class="identifier">TaskExecutionGraph</span></code>
+<p>
+<p>A <code>TaskExecutionGraph</code> is responsible for managing the execution of the Task instances which are part of the build. The <code>TaskExecutionGraph</code> maintains an execution plan of tasks to be executed (or which have been executed), and you can query this plan from your build file.</p>
+ 
+<p>You can access the <code>TaskExecutionGraph</code> by calling <code><a href="../../org.gradle.api.invocation/-gradle/get-task-graph.html">org.gradle.api.invocation.Gradle#getTaskGraph()</a></code>. In your build file you can use <code>gradle.taskGraph</code> to access it.</p>
+ 
+<p>The <code>TaskExecutionGraph</code> is populated only after all the projects in the build have been evaulated. It is empty before then. You can receive a notification when the graph is populated, using <code><a href="#"> </a></code> or <code><a href="add-task-execution-graph-listener.html">#addTaskExecutionGraphListener(TaskExecutionGraphListener)</a></code>.</p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-task-execution-graph-listener.html">addTaskExecutionGraphListener</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addTaskExecutionGraphListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.execution.TaskExecutionGraph$addTaskExecutionGraphListener(org.gradle.api.execution.TaskExecutionGraphListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../-task-execution-graph-listener/index.html"><span class="identifier">TaskExecutionGraphListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Adds a listener to this graph, to be notified when this graph is ready.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="add-task-execution-listener.html">addTaskExecutionListener</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addTaskExecutionListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.execution.TaskExecutionGraph$addTaskExecutionListener(org.gradle.api.execution.TaskExecutionListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../-task-execution-listener/index.html"><span class="identifier">TaskExecutionListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Adds a listener to this graph, to be notified as tasks are executed.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="after-task.html">afterTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">afterTask</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.execution.TaskExecutionGraph$afterTask(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Adds a closure to be called immediately after a task has executed. The task is passed to the closure as the first parameter. A org.gradle.api.tasks.TaskState is passed as the second parameter. Both parameters are optional.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">afterTask</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.execution.TaskExecutionGraph$afterTask(org.gradle.api.Action((org.gradle.api.Task)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Adds an action to be called immediately after a task has executed. The task is passed to the action as the first parameter.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="before-task.html">beforeTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">beforeTask</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.execution.TaskExecutionGraph$beforeTask(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Adds a closure to be called immediately before a task is executed. The task is passed to the closure as a parameter.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">beforeTask</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.execution.TaskExecutionGraph$beforeTask(org.gradle.api.Action((org.gradle.api.Task)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Adds an action to be called immediately before a task is executed. The task is passed to the action as a parameter.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-all-tasks.html">getAllTasks</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAllTasks</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span></code>
+<p>
+<p>Returns the tasks which are included in the execution plan. The tasks are returned in the order that they will be executed.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="has-task.html">hasTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">hasTask</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.execution.TaskExecutionGraph$hasTask(kotlin.String)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">hasTask</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.execution.TaskExecutionGraph$hasTask(org.gradle.api.Task)/task">task</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>
+<p>Determines whether the given task is included in the execution plan.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="remove-task-execution-graph-listener.html">removeTaskExecutionGraphListener</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">removeTaskExecutionGraphListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.execution.TaskExecutionGraph$removeTaskExecutionGraphListener(org.gradle.api.execution.TaskExecutionGraphListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../-task-execution-graph-listener/index.html"><span class="identifier">TaskExecutionGraphListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Remove a listener from this graph.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="remove-task-execution-listener.html">removeTaskExecutionListener</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">removeTaskExecutionListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.execution.TaskExecutionGraph$removeTaskExecutionListener(org.gradle.api.execution.TaskExecutionListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../-task-execution-listener/index.html"><span class="identifier">TaskExecutionListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Remove a listener from this graph.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="when-ready.html">whenReady</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">whenReady</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.execution.TaskExecutionGraph$whenReady(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Adds a closure to be called when this graph has been populated. This graph is passed to the closure as a parameter.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">whenReady</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.execution.TaskExecutionGraph$whenReady(org.gradle.api.Action((org.gradle.api.execution.TaskExecutionGraph)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="identifier">TaskExecutionGraph</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Adds an action to be called when this graph has been populated. This graph is passed to the action as a parameter.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

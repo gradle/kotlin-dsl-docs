@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>IvyArtifactSet - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.publish.ivy</a>&nbsp;/&nbsp;<a href=".">IvyArtifactSet</a><br/>
+<br/>
+<h1>IvyArtifactSet</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">IvyArtifactSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><a href="../-ivy-artifact/index.html"><span class="identifier">IvyArtifact</span></a><span class="symbol">&gt;</span></code>
+<p>A Collection of IvyArtifacts to be included in an IvyPublication. Being a DomainObjectSet, a <code>IvyArtifactSet</code> provides convenient methods for querying, filtering, and applying actions to the set of IvyArtifacts. <pre><code> apply plugin: 'ivy-publish' def publication = publishing.publications.create("my-pub", IvyPublication) def artifacts = publication.artifacts artifacts.matching({ it.type == "source" }).all({ it.extension = "src.jar" }) </code></pre></p>
+<p><strong>See Also</strong><br/>
+DomainObjectSet</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="artifact.html">artifact</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">artifact</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.publish.ivy.IvyArtifactSet$artifact(kotlin.Any)/source">source</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-ivy-artifact/index.html"><span class="identifier">IvyArtifact</span></a></code>
+<p>Creates and adds a IvyArtifact to the set. The semantics of this method are the same as <code><a href="#">IvyPublication#artifact(Object)</a></code>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">artifact</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.publish.ivy.IvyArtifactSet$artifact(kotlin.Any, org.gradle.api.Action((org.gradle.api.publish.ivy.IvyArtifact)))/source">source</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.publish.ivy.IvyArtifactSet$artifact(kotlin.Any, org.gradle.api.Action((org.gradle.api.publish.ivy.IvyArtifact)))/config">config</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-ivy-artifact/index.html"><span class="identifier">IvyArtifact</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-ivy-artifact/index.html"><span class="identifier">IvyArtifact</span></a></code>
+<p>Creates and adds a IvyArtifact to the set, which is configured by the associated action. The semantics of this method are the same as <code><a href="#">IvyPublication#artifact(Object, Action)</a></code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-domain-object-set/find-all.html">findAll</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">findAll</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.DomainObjectSet$findAll(groovy.lang.Closure((kotlin.Any)))/spec">spec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-domain-object-set/matching.html">matching</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.DomainObjectSet$matching(groovy.lang.Closure((kotlin.Any)))/spec">spec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-domain-object-set/with-type.html">withType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">withType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.DomainObjectSet$withType(java.lang.Class((org.gradle.api.DomainObjectSet.withType.S)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

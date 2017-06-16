@@ -1,0 +1,343 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.model - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.model</a><br/>
+<br/>
+<h2>Package org.gradle.model</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-model-element/index.html">ModelElement</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ModelElement</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
+<p>Represents an element in a model. Elements are arranged in a hierarchy.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-model-map/index.html">ModelMap</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ModelMap</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><a href="-model-element/index.html"><span class="identifier">ModelElement</span></a></code>
+<p>Model backed map like structure allowing adding of items where instantiation is managed. 
+<p> org.gradle.model.Managed types may declare model map properties. Model maps can only contain managed types.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-model-set/index.html">ModelSet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ModelSet</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><a href="-model-element/index.html"><span class="identifier">ModelElement</span></a></code>
+<p>A set of managed model objects. 
+<p> org.gradle.model.Managed types may declare managed set properties. Managed sets can only contain managed types. </p>
+<p> Managed set objects cannot be mutated via the mutative methods of the java.util.Set interface (e.g. <code><a href="#">java.util.Set#add(Object)</a></code>, <code><a href="#">java.util.Set#clear()</a></code>). To add elements to the set, the <code><a href="#">#create(Action)</a></code> method can be used.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-rule-source/index.html">RuleSource</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">RuleSource</span></code>
+<p>A marker type for a class that is a collection of rules. 
+<p> A rule source is not used like a regular Java object. It is a stateless container of methods and possibly constants. </p>
+<p> Please consult the “Rule based model configuration” chapter of the Gradle User Guide for general information about “rules”. </p>
+Rule methods 
+<p> Each method that is annotated with one of the following is considered a rule: </p>
+<ul> <li>Model</li>
+ <li>Defaults</li>
+ <li>Mutate</li>
+ <li>Finalize</li>
+ <li>Validate</li>
+ <li>Rules</li>
+ <li>org.gradle.platform.base.ComponentType</li>
+ <li>org.gradle.platform.base.ComponentBinaries</li>
+ <li>org.gradle.platform.base.BinaryTasks</li>
+ </ul>
+ 
+<p> Each annotation specifies the type of the rule, which affects when it will be executed. </p>
+<p> The following constraints apply to all rule methods: </p>
+<ul> <li>A method may only be annotated by at most one of the above annotations.</li>
+ <li>A rule method may be <code>static</code> or not; it makes no difference.</li>
+ <li>A rule method cannot be generic (i.e. cannot have type parameters).</li>
+ <li>With the exception of Model methods, all methods must have at least one parameter.</li>
+ <li>With the exception of Model methods, all methods must have a <code>void</code> return type.</li>
+ </ul>
+ 
+<p> See Model for information on the significance of the return type of a Model method. </p>
+Subjects and inputs 
+<p> Method rules declare the subject and any inputs as parameters to the method. With the exception of Model methods, the subject of the rule is the, required, first parameter and all subsequent parameters are inputs. For a non-void Model method, the subject (i.e. model element being created) is the return object. For a void Model method, the subject is the first method parameter. </p>
+<p> The Path annotation can be placed on any parameter (except the subject of Model rules) to indicate the model element to bind to. If there is no Path annotation, a “by-type” binding will be attempted. The binding scope is determined by how the rule source is applied. </p>
+General class constraints 
+<p> Along with the constraints on individual rule methods by their associated annotation, the following are general constraints of rule source implementations: </p>
+<ul> <li>Constructors are not allowed.</li>
+ <li>Inheritance hierarchies are not allowed (i.e. all rules sources must directly extend RuleSource).</li>
+ <li>Instance variables are not allowed.</li>
+ <li>Non-final static variables are not allowed (i.e. constants are allowed).</li>
+ <li>Methods cannot be overloaded.</li>
+ <li>Implementations cannot be generic (i.e. cannot use type parameters).</li>
+ </ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Annotations</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-defaults/index.html">Defaults</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Defaults</span></code>
+<p>Denotes that the RuleSource method rule carrying this annotation initializes the rule subject with default values. 
+<p> Default rules execute first for a given subject, just after the subject has been created but before Model rules and Mutate rules. The first parameter of the rule is the rule subject, which is mutable for the duration of the rule. </p>
+<p> Please see RuleSource for more information on method rules.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-each/index.html">Each</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Each</span></code>
+<p>Signals that a RuleSource rule should be applied to all matching descendant elements of the scope instead of the scope itself.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-finalize/index.html">Finalize</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Finalize</span></code>
+<p>Denotes that the RuleSource method rule carrying this annotation finalizes the rule subject. 
+<p> Finalize rules execute after Mutate rules, but before Validate rules. The first parameter of the rule is the rule subject, which is mutable for the duration of the rule. </p>
+<p> Please see RuleSource for more information on method rules.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-managed/index.html">Managed</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Managed</span></code>
+<p>A managed type is transparent to the model space, and enforces immutability at the appropriate times in the object's lifecycle. 
+<p> Gradle generates implementations for managed types. As such, managed types are declared either as interfaces or abstract classes. The generated implementation integrates with the model space mechanisms, and manages mutability. </p>
+<p> Managed types are mostly behaviour-less, as they are data. Instances of managed types should effectively be considered value objects. </p>
+Properties 
+<p> Managed types declare their structure as properties, via getter and setter methods. Getter and setter methods are expected to conform to the well-known Java Bean naming conventions. A read/write “name” property would be expressed via the following methods: </p>
+<pre><code> void setName(String name); String getName(); </code></pre> 
+<p> A getter and setter must be declared for each property that is not of a managed type or of ModelSet. For properties of managed types or of ModelSet the getter is mandatory and the setter is optional. If no setter is provided the property is considered inherent and defaults to an "empty" instance of the type. In addition to the traditional getter method, properties of type <code>boolean</code> (but not <code>Boolean</code>) also support a getter method which name starts with <code>is</code>, for example: </p>
+<pre><code> void setEnabled(boolean enabled); boolean isEnabed(); </code></pre> Supported property types 
+<p> The following JDK types are allowed: </p>
+<ul> <li>String</li>
+ <li>Boolean</li>
+ <li>Character</li>
+ <li>Byte</li>
+ <li>Short</li>
+ <li>Integer</li>
+ <li>Long</li>
+ <li>Float</li>
+ <li>Double</li>
+ <li>java.math.BigInteger</li>
+ <li>java.math.BigDecimal</li>
+ <li>java.io.File</li>
+ </ul>
+ 
+<p> All primitive types and Enum types are also allowed. </p>
+<p> Properties that are themselves of a managed type are also supported. </p>
+<p> Currently, the only collection types that are supported are ModelSet and ModelMap, as well as java.util.Set or java.util.List of org.gradle.model.internal.manage.schema.extract.ScalarTypes, where scalar types is either one of the supported immutable JDK types above or an enumeration. </p>
+<p> Properties of any other type must have their getter annotated with Unmanaged. An unmanaged property is not transparent to the model infrastructure and is guaranteed to be immutable when realized. </p>
+Named types 
+<p> Managed types may implement/extend the org.gradle.api.Named interface. Any managed type implementing this interface will have its <code>name</code> attribute populated automatically based on the name of the corresponding node in the model graph. </p>
+<p> The ModelMap type requires that its elements are org.gradle.api.Named. </p>
+Inheritance 
+<p> Managed types can be arranged into an inheritance hierarchy. Every type in the hierarchy must conform to the constraints of managed types. </p>
+Calculated read-only properties 
+<p> Managed types can contain getter methods that return calculated values, based on other properties. For example, a “name” property may return the concatenation of a “firstName” and “lastName” property. When using Java 8 or later, such properties can be implemented as interface default methods. Alternatively, the managed type can be implemented as an abstract class with the calculated property implemented as a non-abstract getter method. In both cases, the implementation of the calculated property getter may not call any setter method. </p>
+Abstract classes 
+<p> A managed type can be implemented as an abstract class. All property getters and setters must be declared <code>abstract</code> (with the exception of calculated read-only properties). The class cannot contain instance variables, constructors, or any methods that are not a getter or setter. </p>
+Creating managed model elements 
+<p> Please see Model for information on creating model elements of managed types.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-model/index.html">Model</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Model</span></code>
+<p>Denotes that the RuleSource method rule carrying this annotation creates a new top level element in the model space. 
+<p> The method must advertise a name and type for the model element. The name is defined either by the name of the method, or the <code><a href="#">#value</a></code> of this annotation. The type is defined differently depending on whether the new element is Managed or not. </p>
+Creating managed model elements 
+<p> If the element is to be of a managed type, the method must return <code>void</code> and receive the newly created instance as the <strong>first</strong> parameter. All other parameters are considered <em>inputs</em>. </p>
+<p> It is an error for a <code>@Model</code> rule to return <code>void</code> and specify a non-managed type as the first parameter. It is an error for a <code>@Model</code> rule to return <code>void</code> and for the first parameter to be annotated with Path. It is an error for a <code>@Model</code> rule to specify a managed type as the return type. </p>
+Creating non-managed model elements 
+<p> If the element is to be of a non-managed type, the method must return the newly created instance. All parameters are considered <em>inputs</em>. Please see RuleSource for more information on method rules.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-mutate/index.html">Mutate</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Mutate</span></code>
+<p>Denotes that the RuleSource method rule carrying this annotation mutates the rule subject. 
+<p> Mutate rules execute after Defaults rules, but before Finalize rules. The first parameter of the rule is the rule subject, which is mutable for the duration of the rule. </p>
+<p> Please see RuleSource for more information on method rules.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-path/index.html">Path</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Path</span></code>
+<p>Specifies a model path on a parameter</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-rule-input/index.html">RuleInput</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">RuleInput</span></code>
+<p>Attached to the getter for a property on a RuleSource to denote that the property defines an implicit input for all rules defined by the rule source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-rule-target/index.html">RuleTarget</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">RuleTarget</span></code>
+<p>Attached to the getter for a property on a RuleSource to denote that the property defines the target for the rule source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-rules/index.html">Rules</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Rules</span></code>
+<p>Denotes that the RuleSource method rule carrying this annotation defines additional rules based on its inputs.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-unmanaged/index.html">Unmanaged</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Unmanaged</span></code>
+<p>Indicates that a property of a managed model element is explicitly of an unmanaged type. 
+<p> This annotation must be present on the <strong>getter</strong> of the property for the unmanaged type. If the annotation is not present for a property that is not a managed type, a fatal error will occur.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-validate/index.html">Validate</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Validate</span></code>
+<p>Denotes that the RuleSource method rule carrying this annotation validates the rule subject. 
+<p> Validate rules execute after Finalize rules, but before rule subject is used as an input. The first parameter of the rule is the rule subject, which is <strong>immutable</strong>. </p>
+<p> Please see RuleSource for more information on method rules.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Exceptions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-configuration-cycle-exception/index.html">ConfigurationCycleException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ConfigurationCycleException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>Thrown when a cycle is encountered while configuring a model element.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-invalid-model-rule-declaration-exception/index.html">InvalidModelRuleDeclarationException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InvalidModelRuleDeclarationException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>Thrown when a model rule, or source of model rules, is declared in an invalid way.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-invalid-model-rule-exception/index.html">InvalidModelRuleException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InvalidModelRuleException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>Thrown when there is a problem with the usage of a model rule. 
+<p> This exception is different to InvalidModelRuleDeclarationException in that it signifies a problem with using a model rule in a particular context, whereas <code>InvalidModelRuleDeclarationException</code> signifies a problem with the declaration of the model rule itself (which therefore means that the rule could not be used in any context). </p>
+<p> This exception should always have cause, that provides information about the actual problem.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-model-rule-binding-exception/index.html">ModelRuleBindingException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ModelRuleBindingException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>Thrown when there is a problem binding the model element references of a model rule. 
+<p> Should always be thrown as the cause of a org.gradle.model.InvalidModelRuleException.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-model-view-closed-exception/index.html">ModelViewClosedException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ModelViewClosedException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-read-only-model-view-exception/index.html"><span class="identifier">ReadOnlyModelViewException</span></a></code>
+<p>Thrown when at attempt is made to mutate a subject of a rule after the rule has completed. 
+<p> This can potentially happen when a reference to the subject is retained during a rule and then used afterwards, Such as when an anonymous inner class or closure “closes over” the subject.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-read-only-model-view-exception/index.html">ReadOnlyModelViewException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ReadOnlyModelViewException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>Thrown when an attempt is made to change the value of a model element that is not writable at the time.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-write-only-model-view-exception/index.html">WriteOnlyModelViewException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WriteOnlyModelViewException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>Thrown when an attempt is made to read the value of a model element that is not readable at the time.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

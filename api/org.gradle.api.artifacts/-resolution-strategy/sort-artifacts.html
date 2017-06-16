@@ -1,0 +1,21 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResolutionStrategy.sortArtifacts - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="index.html">ResolutionStrategy</a>&nbsp;/&nbsp;<a href=".">sortArtifacts</a><br/>
+<br/>
+<h1>sortArtifacts</h1>
+<a name="org.gradle.api.artifacts.ResolutionStrategy$sortArtifacts(org.gradle.api.artifacts.ResolutionStrategy.SortOrder)"></a>
+<code><span class="identifier">@Incubating</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">sortArtifacts</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$sortArtifacts(org.gradle.api.artifacts.ResolutionStrategy.SortOrder)/sortOrder">sortOrder</span><span class="symbol">:</span>&nbsp;<a href="-sort-order/index.html"><span class="identifier">SortOrder</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies the ordering for resolved artifacts. Options are: <ul> <li><code><a href="#">SortOrder#DEFAULT</a></code> : Don't specify the sort order. Gradle will provide artifacts in the default order.</li>
+ <li><code><a href="#">SortOrder#CONSUMER_FIRST</a></code> : Artifacts for a consuming component should appear <em>before</em> artifacts for it's dependencies.</li>
+ <li><code><a href="#">SortOrder#DEPENDENCY_FIRST</a></code> : Artifacts for a consuming component should appear <em>after</em> artifacts for it's dependencies.</li>
+ </ul>
+ A best attempt will be made to sort artifacts according the supplied SortOrder, but no guarantees will be made in the presence of dependency cycles. NOTE: For a particular Gradle version, artifact ordering will be consistent. Multiple resolves for the same inputs will result in the same outputs in the same order.</p>
+<p><strong>Since</strong><br/>
+3.5</p>
+</BODY>
+</HTML>

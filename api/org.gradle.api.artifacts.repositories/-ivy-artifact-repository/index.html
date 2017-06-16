@@ -1,0 +1,249 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>IvyArtifactRepository - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.repositories</a>&nbsp;/&nbsp;<a href=".">IvyArtifactRepository</a><br/>
+<br/>
+<h1>IvyArtifactRepository</h1>
+<code><span class="keyword">interface </span><span class="identifier">IvyArtifactRepository</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-artifact-repository/index.html"><span class="identifier">ArtifactRepository</span></a><span class="symbol">, </span><a href="../-authentication-supported/index.html"><span class="identifier">AuthenticationSupported</span></a></code>
+<p>An artifact repository which uses an Ivy format to store artifacts and meta-data. 
+<p> When used to resolve metadata and artifact files, all available patterns will be searched. </p>
+<p> When used to upload metadata and artifact files, only a single, primary pattern will be used: </p>
+<ol> <li>If a URL is specified via <code><a href="#">#setUrl(Object)</a></code> then that URL will be used for upload, combined with the applied <code><a href="#">#layout(String)</a></code>.</li>
+ <li>If no URL has been specified but additional patterns have been added via <code><a href="#">#artifactPattern</a></code> or <code><a href="#">#ivyPattern</a></code>, then the first defined pattern will be used.</li>
+ </ol>
+ 
+<p> Repositories of this type are created by the <code><a href="#">org.gradle.api.artifacts.dsl.RepositoryHandler#ivy(org.gradle.api.Action)</a></code> group of methods.</p>
+</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-g-r-a-d-l-e_-a-r-t-i-f-a-c-t_-p-a-t-t-e-r-n.html">GRADLE_ARTIFACT_PATTERN</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">GRADLE_ARTIFACT_PATTERN</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-g-r-a-d-l-e_-i-v-y_-p-a-t-t-e-r-n.html">GRADLE_IVY_PATTERN</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">GRADLE_IVY_PATTERN</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-i-v-y_-a-r-t-i-f-a-c-t_-p-a-t-t-e-r-n.html">IVY_ARTIFACT_PATTERN</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">IVY_ARTIFACT_PATTERN</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-m-a-v-e-n_-a-r-t-i-f-a-c-t_-p-a-t-t-e-r-n.html">MAVEN_ARTIFACT_PATTERN</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">MAVEN_ARTIFACT_PATTERN</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-m-a-v-e-n_-i-v-y_-p-a-t-t-e-r-n.html">MAVEN_IVY_PATTERN</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">MAVEN_IVY_PATTERN</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="artifact-pattern.html">artifactPattern</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">artifactPattern</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.IvyArtifactRepository$artifactPattern(kotlin.String)/pattern">pattern</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an independent pattern that will be used to locate artifact files in this repository. This pattern will be used to locate ivy files as well, unless a specific ivy pattern is supplied via <code><a href="#">#ivyPattern(String)</a></code>. If this pattern is not a fully-qualified URL, it will be interpreted as a file relative to the project directory. It is not interpreted relative the URL specified in <code><a href="#">#setUrl(Object)</a></code>. Patterns added in this way will be in addition to any layout-based patterns added via <code><a href="#">#setUrl(Object)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-resolve.html">getResolve</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getResolve</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-ivy-artifact-repository-meta-data-provider/index.html"><span class="identifier">IvyArtifactRepositoryMetaDataProvider</span></a></code>
+<p>Returns the meta-data provider used when resolving artifacts from this repository. The provider is responsible for locating and interpreting the meta-data for the modules and artifacts contained in this repository. Using this provider, you can fine tune how this resolution happens.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-url.html">getUrl</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getUrl</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/net/URI.html"><span class="identifier">URI</span></a></code>
+<p>The base URL of this repository.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="ivy-pattern.html">ivyPattern</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">ivyPattern</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.IvyArtifactRepository$ivyPattern(kotlin.String)/pattern">pattern</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an independent pattern that will be used to locate ivy files in this repository. If this pattern is not a fully-qualified URL, it will be interpreted as a file relative to the project directory. It is not interpreted relative the URL specified in <code><a href="#">#setUrl(Object)</a></code>. Patterns added in this way will be in addition to any layout-based patterns added via <code><a href="#">#setUrl(Object)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="layout.html">layout</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">layout</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.IvyArtifactRepository$layout(kotlin.String)/layoutName">layoutName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies the layout to use with this repository, based on the root url. See <code><a href="#">#layout(String, Closure)</a></code>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">layout</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.IvyArtifactRepository$layout(kotlin.String, org.gradle.api.Action((org.gradle.api.artifacts.repositories.RepositoryLayout)))/layoutName">layoutName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.repositories.IvyArtifactRepository$layout(kotlin.String, org.gradle.api.Action((org.gradle.api.artifacts.repositories.RepositoryLayout)))/config">config</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-repository-layout.html"><span class="identifier">RepositoryLayout</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies how the items of the repository are organized. 
+<p> The layout is configured with the supplied closure. </p>
+<p> Recognised values are as follows: </p>
+ 'gradle' 
+<p> A Repository Layout that applies the following patterns: </p>
+<ul> <li>Artifacts: <code>$baseUri/{@value #GRADLE_ARTIFACT_PATTERN}</code></li>
+ <li>Ivy: <code>$baseUri/{@value #GRADLE_IVY_PATTERN}</code></li>
+ </ul>
+  'maven' 
+<p> A Repository Layout that applies the following patterns: </p>
+<ul> <li>Artifacts: <code>$baseUri/{@value #MAVEN_ARTIFACT_PATTERN}</code></li>
+ <li>Ivy: <code>$baseUri/{@value #MAVEN_IVY_PATTERN}</code></li>
+ </ul>
+  
+<p> Following the Maven convention, the 'organisation' value is further processed by replacing '.' with '/'. </p>
+ 'ivy' 
+<p> A Repository Layout that applies the following patterns: </p>
+<ul> <li>Artifacts: <code>$baseUri/{@value #IVY_ARTIFACT_PATTERN}</code></li>
+ <li>Ivy: <code>$baseUri/{@value #IVY_ARTIFACT_PATTERN}</code></li>
+ </ul>
+  
+<p><strong>Note:</strong> this pattern is currently org.gradle.api.Incubating.</p>
+ 'pattern' 
+<p> A repository layout that allows custom patterns to be defined. eg: </p>
+<pre><code> repositories { ivy { layout 'pattern' , { artifact '[module]/[revision]/[artifact](.[ext])' ivy '[module]/[revision]/ivy.xml' } } } </code></pre>  
+<p>The available pattern tokens are listed as part of <a href="#">Ivy's Main Concepts documentation</a>.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">layout</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.IvyArtifactRepository$layout(kotlin.String, groovy.lang.Closure((kotlin.Any)))/layoutName">layoutName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.repositories.IvyArtifactRepository$layout(kotlin.String, groovy.lang.Closure((kotlin.Any)))/config">config</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies how the items of the repository are organized. See <code><a href="#">#layout(String, org.gradle.api.Action)</a></code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-metadata-supplier.html">setMetadataSupplier</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setMetadataSupplier</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.IvyArtifactRepository$setMetadataSupplier(java.lang.Class((org.gradle.api.artifacts.ComponentMetadataSupplier)))/rule">rule</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.api.artifacts/-component-metadata-supplier/index.html"><span class="identifier">ComponentMetadataSupplier</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets a custom metadata rule, which is capable of supplying the metadata of a component (status, status scheme, changing flag) whenever a dynamic version is requested. It can be used to provide metadata directly, instead of having to parse the Ivy descriptor.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setMetadataSupplier</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.IvyArtifactRepository$setMetadataSupplier(java.lang.Class((org.gradle.api.artifacts.ComponentMetadataSupplier)), org.gradle.api.Action((org.gradle.api.ActionConfiguration)))/rule">rule</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.api.artifacts/-component-metadata-supplier/index.html"><span class="identifier">ComponentMetadataSupplier</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.repositories.IvyArtifactRepository$setMetadataSupplier(java.lang.Class((org.gradle.api.artifacts.ComponentMetadataSupplier)), org.gradle.api.Action((org.gradle.api.ActionConfiguration)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api/-action-configuration/index.html"><span class="identifier">ActionConfiguration</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets a custom metadata rule, possibly configuring the rule.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-url.html">setUrl</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setUrl</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.IvyArtifactRepository$setUrl(java.net.URI)/url">url</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/net/URI.html"><span class="identifier">URI</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the base URL of this repository.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setUrl</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.IvyArtifactRepository$setUrl(kotlin.Any)/url">url</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the base URL of this repository. The provided value is evaluated as per <code><a href="#">org.gradle.api.Project#uri(Object)</a></code>. This means, for example, you can pass in a File object or a relative path which is evaluated relative to the project directory. File are resolved based on the supplied URL and the configured <code><a href="#">#layout(String, Closure)</a></code> for this repository.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-authentication-supported/authentication.html">authentication</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">authentication</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.AuthenticationSupported$authentication(org.gradle.api.Action((org.gradle.api.artifacts.repositories.AuthenticationContainer)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-authentication-container.html"><span class="identifier">AuthenticationContainer</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Configures the authentication schemes for this repository. </p>
+<p>This method executes the given action against the AuthenticationContainer for this project. The is passed to the closure as the closure's delegate. </p>
+<p> If no authentication schemes have been assigned to this repository, a default set of authentication schemes are used based on the repository's transport scheme. </p>
+<pre><code> repositories { maven { url "${url}" authentication { basic(BasicAuthentication) } } } </code></pre> 
+<p> Supported authentication scheme types extend org.gradle.authentication.Authentication.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-authentication-supported/credentials.html">credentials</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">credentials</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.AuthenticationSupported$credentials(org.gradle.api.Action((org.gradle.api.artifacts.repositories.PasswordCredentials)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-password-credentials/index.html"><span class="identifier">PasswordCredentials</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the username and password credentials for this repository using the supplied action. 
+<p> If no credentials have been assigned to this repository, an empty set of username and password credentials is assigned to this repository and passed to the action. </p>
+<pre><code> repositories { maven { url "${url}" credentials { username = 'joe' password = 'secret' } } } </code></pre></p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.credentials/-credentials.html"><span class="identifier">Credentials</span></a><span class="symbol">&gt;</span> <span class="identifier">credentials</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.AuthenticationSupported$credentials(java.lang.Class((org.gradle.api.artifacts.repositories.AuthenticationSupported.credentials.T)), org.gradle.api.Action((org.gradle.api.artifacts.repositories.AuthenticationSupported.credentials.T)))/credentialsType">credentialsType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.repositories.AuthenticationSupported$credentials(java.lang.Class((org.gradle.api.artifacts.repositories.AuthenticationSupported.credentials.T)), org.gradle.api.Action((org.gradle.api.artifacts.repositories.AuthenticationSupported.credentials.T)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the credentials for this repository using the supplied action. 
+<p> If no credentials have been assigned to this repository, an empty set of credentials of the specified type will be assigned to this repository and given to the configuration action. If credentials have already been specified for this repository, they will be passed to the given configuration action. </p>
+<pre><code> repositories { maven { url "${url}" credentials(AwsCredentials) { accessKey "myAccessKey" secretKey "mySecret" } } } </code></pre> 
+<p> The following credential types are currently supported for the <code>credentialsType</code> argument: </p>
+<ul> <li>org.gradle.api.artifacts.repositories.PasswordCredentials</li>
+ <li>org.gradle.api.credentials.AwsCredentials</li>
+ </ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-authentication-supported/get-authentication.html">getAuthentication</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAuthentication</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-authentication-container.html"><span class="identifier">AuthenticationContainer</span></a></code>
+<p>Returns the authentication schemes for this repository.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-authentication-supported/get-credentials.html">getCredentials</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCredentials</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-password-credentials/index.html"><span class="identifier">PasswordCredentials</span></a></code>
+<p>Returns the username and password credentials used to authenticate to this repository. 
+<p> If no credentials have been assigned to this repository, an empty set of username and password credentials is assigned to this repository and returned. </p>
+<p> If you are using a different type of credentials than PasswordCredentials, please use <code><a href="#">#getCredentials(Class)</a></code> to obtain the credentials.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.credentials/-credentials.html"><span class="identifier">Credentials</span></a><span class="symbol">&gt;</span> <span class="identifier">getCredentials</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.AuthenticationSupported$getCredentials(java.lang.Class((org.gradle.api.artifacts.repositories.AuthenticationSupported.getCredentials.T)))/credentialsType">credentialsType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Returns the credentials of the specified type used to authenticate with this repository. 
+<p> If no credentials have been assigned to this repository, an empty set of credentials of the specified type is assigned to this repository and returned.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-artifact-repository/get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name for this repository. A name must be unique amongst a repository set. A default name is provided for the repository if none is provided. 
+<p>The name is used in logging output and error reporting to point to information related to this repository.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-artifact-repository/set-name.html">setName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.ArtifactRepository$setName(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the name for this repository. If this repository is to be added to an org.gradle.api.artifacts.ArtifactRepositoryContainer (including org.gradle.api.artifacts.dsl.RepositoryHandler), its name cannot be changed after it has been added to the container.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

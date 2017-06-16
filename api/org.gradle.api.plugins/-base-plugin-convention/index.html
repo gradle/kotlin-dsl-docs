@@ -1,0 +1,113 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BasePluginConvention - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href=".">BasePluginConvention</a><br/>
+<br/>
+<h1>BasePluginConvention</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BasePluginConvention</span></code>
+<p>
+<p>A Convention used for the BasePlugin.</p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">BasePluginConvention</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.BasePluginConvention$<init>(org.gradle.api.Project)/project">project</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-archives-base-name.html">getArchivesBaseName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getArchivesBaseName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The base name to use for archive files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-dists-dir.html">getDistsDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDistsDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the directory to generate TAR and ZIP archives into.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-dists-dir-name.html">getDistsDirName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDistsDirName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name for the distributions directory. This in interpreted relative to the project' build directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-libs-dir.html">getLibsDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLibsDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the directory to generate JAR and WAR archives into.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-libs-dir-name.html">getLibsDirName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLibsDirName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name for the libs directory. This in interpreted relative to the project' build directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project.html">getProject</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getProject</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ProjectInternal</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-archives-base-name.html">setArchivesBaseName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setArchivesBaseName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.BasePluginConvention$setArchivesBaseName(kotlin.String)/archivesBaseName">archivesBaseName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-dists-dir-name.html">setDistsDirName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDistsDirName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.BasePluginConvention$setDistsDirName(kotlin.String)/distsDirName">distsDirName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-libs-dir-name.html">setLibsDirName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setLibsDirName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.BasePluginConvention$setLibsDirName(kotlin.String)/libsDirName">libsDirName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-project.html">setProject</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setProject</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.BasePluginConvention$setProject(ProjectInternal)/project">project</span><span class="symbol">:</span>&nbsp;<span class="identifier">ProjectInternal</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

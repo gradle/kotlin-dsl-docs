@@ -1,0 +1,20 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CopySpec.with - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href="index.html">CopySpec</a>&nbsp;/&nbsp;<a href=".">with</a><br/>
+<br/>
+<h1>with</h1>
+<a name="org.gradle.api.file.CopySpec$with(kotlin.Array((org.gradle.api.file.CopySpec)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">with</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.file.CopySpec$with(kotlin.Array((org.gradle.api.file.CopySpec)))/sourceSpecs">sourceSpecs</span><span class="symbol">:</span>&nbsp;<a href="index.html"><span class="identifier">CopySpec</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">CopySpec</span></a></code>
+<p>Adds the given specs as a child of this spec. <pre><code> def contentSpec = copySpec { from("content") { include "**/*.txt" } } task copy(type: Copy) { into "$buildDir/copy" with contentSpec } </code></pre></p>
+<h3>Parameters</h3>
+<a name="sourceSpecs"></a>
+<code>sourceSpecs</code> - The specs to add
+<p><strong>Return</strong><br/>
+this</p>
+</BODY>
+</HTML>

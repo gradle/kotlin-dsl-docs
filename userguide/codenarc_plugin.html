@@ -1,0 +1,48 @@
+<html><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>The CodeNarc Plugin - Gradle User Guide Version 4.1-20170616095913+0000</title><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="base.css"><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="docs.css"><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="userguide.css"><meta content="DocBook XSL Stylesheets V1.75.2" name="generator"><link rel="home" href="userguide.html" title="Gradle User Guide Version 4.1-20170616095913+0000"><link rel="up" href="pt05.html" title="Part&nbsp;V.&nbsp;Building JVM projects"><link rel="prev" href="checkstyle_plugin.html" title="The Checkstyle Plugin - Gradle User Guide Version 4.1-20170616095913+0000"><link rel="next" href="findbugs_plugin.html" title="The FindBugs Plugin - Gradle User Guide Version 4.1-20170616095913+0000"></head><body><div class="navheader"><div><div class="navbar"><a xmlns:xslthl="http://xslthl.sf.net" href="checkstyle_plugin.html" title="The Checkstyle Plugin - Gradle User Guide Version 4.1-20170616095913+0000">Previous</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="Gradle User Guide Version 4.1-20170616095913+0000">Contents</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="findbugs_plugin.html" title="The FindBugs Plugin - Gradle User Guide Version 4.1-20170616095913+0000">Next</a></div></div></div><div class="chapter"><div class="titlepage"><div><div><h1 xmlns:xslthl="http://xslthl.sf.net"><a name="codenarc_plugin"></a>Chapter&nbsp;59.&nbsp;The CodeNarc Plugin</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="codenarc_plugin.html#sec:codenarc_usage">59.1. Usage</a></span></dt><dt><span class="section"><a href="codenarc_plugin.html#sec:codenarc_tasks">59.2. Tasks</a></span></dt><dt><span class="section"><a href="codenarc_plugin.html#sec:codenarc_project_layout">59.3. Project layout</a></span></dt><dt><span class="section"><a href="codenarc_plugin.html#sec:codenarc_dependency_management">59.4. Dependency management</a></span></dt><dt><span class="section"><a href="codenarc_plugin.html#sec:codenarc_configuration">59.5. Configuration</a></span></dt></dl></div><p>The CodeNarc plugin performs quality checks on your project's Groovy source files using <a class="ulink" href="http://codenarc.sourceforge.net/index.html" target="_top">CodeNarc</a>
+        and generates reports from these checks.
+    </p><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:codenarc_usage" class="section-anchor" href="#sec:codenarc_usage"></a>59.1.&nbsp;Usage</h2></div></div></div><p>To use the CodeNarc plugin, include the following in your build script:</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="useCodeNarcPlugin"></a><p class="title"><b>Example&nbsp;59.1.&nbsp;Using the CodeNarc plugin</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">apply(mapOf(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"plugin"</span> to <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"codenarc"</span>))</pre></div></div><br class="example-break"><p>The plugin adds a number of tasks to the project that perform the quality checks. You can execute the checks by running <strong class="userinput"><code>gradle check</code></strong>.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:codenarc_tasks" class="section-anchor" href="#sec:codenarc_tasks"></a>59.2.&nbsp;Tasks</h2></div></div></div><p>The CodeNarc plugin adds the following tasks to the project:</p><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;59.1.&nbsp;CodeNarc plugin - tasks</b></p><div class="table-contents"><table id="N17EB6"><thead><tr>
+                    <td>Task name</td>
+                    <td>Depends on</td>
+                    <td>Type</td>
+                    <td>Description</td>
+                </tr></thead><tr>
+                <td>
+                    <code class="literal">codenarcMain</code>
+                </td>
+                <td>-</td>
+                <td><a class="ulink" href="../dsl/org.gradle.api.plugins.quality.CodeNarc.html" target="_top"><code class="classname">CodeNarc</code></a></td>
+                <td>Runs CodeNarc against the production Groovy source files.</td>
+            </tr><tr>
+                <td>
+                    <code class="literal">codenarcTest</code>
+                </td>
+                <td>-</td>
+                <td><a class="ulink" href="../dsl/org.gradle.api.plugins.quality.CodeNarc.html" target="_top"><code class="classname">CodeNarc</code></a></td>
+                <td>Runs CodeNarc against the test Groovy source files.</td>
+            </tr><tr>
+                <td>
+                    <code class="literal">codenarc<em class="replaceable"><code>SourceSet</code></em></code>
+                </td>
+                <td>-</td>
+                <td><a class="ulink" href="../dsl/org.gradle.api.plugins.quality.CodeNarc.html" target="_top"><code class="classname">CodeNarc</code></a></td>
+                <td>Runs CodeNarc against the given source set's Groovy source files.</td>
+            </tr></table></div></div><p>The CodeNarc plugin adds the following dependencies to tasks defined by the Groovy plugin.</p><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;59.2.&nbsp;CodeNarc plugin - additional task dependencies</b></p><div class="table-contents"><table id="N17F08"><thead><td>Task name</td><td>Depends on</td></thead><tr>
+                <td><code class="literal">check</code></td>
+                <td>All CodeNarc tasks, including <code class="literal">codenarcMain</code> and <code class="literal">codenarcTest</code>.</td>
+            </tr></table></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:codenarc_project_layout" class="section-anchor" href="#sec:codenarc_project_layout"></a>59.3.&nbsp;Project layout</h2></div></div></div><p>The CodeNarc plugin expects the following project layout:</p><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;59.3.&nbsp;CodeNarc plugin - project layout</b></p><div class="table-contents"><table id="N17F25"><thead><tr>
+                    <td>File</td>
+                    <td>Meaning</td>
+                </tr></thead><tr>
+                <td>
+                    <code class="filename">config/codenarc/codenarc.xml</code>
+                </td>
+                <td>CodeNarc configuration file</td>
+            </tr></table></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:codenarc_dependency_management" class="section-anchor" href="#sec:codenarc_dependency_management"></a>59.4.&nbsp;Dependency management</h2></div></div></div><p>The CodeNarc plugin adds the following dependency configurations:</p><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;59.4.&nbsp;CodeNarc plugin - dependency configurations</b></p><div class="table-contents"><table id="N17F42"><thead><tr>
+                    <td>Name</td>
+                    <td>Meaning</td>
+                </tr></thead><tr>
+                <td>
+                    <code class="filename">codenarc</code>
+                </td>
+                <td>The CodeNarc libraries to use</td>
+            </tr></table></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:codenarc_configuration" class="section-anchor" href="#sec:codenarc_configuration"></a>59.5.&nbsp;Configuration</h2></div></div></div><p>See the <a class="ulink" href="../dsl/org.gradle.api.plugins.quality.CodeNarcExtension.html" target="_top"><code class="classname">CodeNarcExtension</code></a> class in the API documentation.</p></div></div><div class="navfooter"><div><div class="navbar"><a xmlns:xslthl="http://xslthl.sf.net" href="checkstyle_plugin.html" title="The Checkstyle Plugin - Gradle User Guide Version 4.1-20170616095913+0000">Previous</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="Gradle User Guide Version 4.1-20170616095913+0000">Contents</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="findbugs_plugin.html" title="The FindBugs Plugin - Gradle User Guide Version 4.1-20170616095913+0000">Next</a></div></div></div></body></html>

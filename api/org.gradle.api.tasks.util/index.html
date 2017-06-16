@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api.tasks.util - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.tasks.util</a><br/>
+<br/>
+<h2>Package org.gradle.api.tasks.util</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-pattern-filterable/index.html">PatternFilterable</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PatternFilterable</span></code>
+<p>
+<p>A <code>PatternFilterable</code> represents some file container which Ant-style include and exclude patterns or specs can be applied to.</p>
+ 
+<p>Patterns may include:</p>
+ <ul> <li>'*' to match any number of characters </li>
+<li>'?' to match any single character </li>
+<li>'**' to match any number of directories or files </li>
+</ul>
+ 
+<p>Either '/' or '\' may be used in a pattern to separate directories. Patterns ending with '/' or '\' will have '**' automatically appended.</p>
+ 
+<p>Examples:</p>
+ <pre><code> all files ending with 'jsp' (including subdirectories) **/*.jsp all files beginning with 'template_' in the level1/level2 directory level1/level2/template_* all files (including subdirectories) beneath src/main/webapp src/main/webapp/ all files beneath any .svn directory (including subdirectories) under src/main/java src/main/java/**/.svn/** </code></pre> 
+<p>You may also use a closure or Spec to specify which files to include or exclude. The closure or Spec is passed a org.gradle.api.file.FileTreeElement, and must return a boolean value.</p>
+ 
+<p>If no include patterns or specs are specified, then all files in this container will be included. If any include patterns or specs are specified, then a file is included if it matches any of the patterns or specs.</p>
+ 
+<p>If no exclude patterns or spec are specified, then no files will be excluded. If any exclude patterns or specs are specified, then a file is include only if it matches none of the patterns or specs.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-pattern-set/index.html">PatternSet</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PatternSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.tasks/-ant-builder-aware/index.html"><span class="identifier">AntBuilderAware</span></a><span class="symbol">, </span><a href="-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a></code>
+<p>Standalone implementation of PatternFilterable.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

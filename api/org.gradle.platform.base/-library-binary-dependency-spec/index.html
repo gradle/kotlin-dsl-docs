@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>LibraryBinaryDependencySpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.platform.base</a>&nbsp;/&nbsp;<a href=".">LibraryBinaryDependencySpec</a><br/>
+<br/>
+<h1>LibraryBinaryDependencySpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">LibraryBinaryDependencySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-dependency-spec/index.html"><span class="identifier">DependencySpec</span></a></code>
+<p>A dependency onto a specific binary of a library published by a project.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-library-name.html">getLibraryName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLibraryName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the library this dependency refers to. If null, it should be assumed that the project defines a single library.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project-path.html">getProjectPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the project path of the project this dependency refers to.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-variant.html">getVariant</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getVariant</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the variant of this binary.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-dependency-spec/get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The human friendly name of this dependency.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

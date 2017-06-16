@@ -1,0 +1,254 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>FileCopyDetails - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href=".">FileCopyDetails</a><br/>
+<br/>
+<h1>FileCopyDetails</h1>
+<code><span class="identifier">@NonExtensible</span> <span class="keyword">interface </span><span class="identifier">FileCopyDetails</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-file-tree-element/index.html"><span class="identifier">FileTreeElement</span></a><span class="symbol">, </span><a href="../-content-filterable/index.html"><span class="identifier">ContentFilterable</span></a></code>
+<p>
+<p>Provides details about a file or directory about to be copied, and allows some aspects of the destination file to be modified.</p>
+ 
+<p>Using this interface, you can change the destination path of the file, filter the content of the file, or exclude the file from the result entirely.</p>
+ 
+<p>Access to the source file itself after any filters have been added is not a supported operation. </p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="exclude.html">exclude</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Excludes this file from the copy.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-duplicates-strategy.html">getDuplicatesStrategy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDuplicatesStrategy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-duplicates-strategy/index.html"><span class="identifier">DuplicatesStrategy</span></a></code>
+<p>The strategy to use if there is already a file at this file's destination. 
+<p> The value can be set with a case insensitive string of the enum value (e.g. <code>'exclude'</code> for <code><a href="#">DuplicatesStrategy#EXCLUDE</a></code>).</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the base name of this file at the copy destination.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-path.html">getPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the path of this file, relative to the root of the copy destination. 
+<p> Always uses '/' as the hierarchy separator, regardless of platform file separator. Same as calling <code>getRelativePath().getPathString()</code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-relative-path.html">getRelativePath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRelativePath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-relative-path/index.html"><span class="identifier">RelativePath</span></a></code>
+<p>Returns the path of this file, relative to the root of the copy destination.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-relative-source-path.html">getRelativeSourcePath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRelativeSourcePath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-relative-path/index.html"><span class="identifier">RelativePath</span></a></code>
+<p>Returns the path of this file, relative to the root of the containing file tree.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-source-name.html">getSourceName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSourceName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the base name of this file at the copy source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-source-path.html">getSourcePath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSourcePath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the path of this file, relative to the root of the containing file tree. 
+<p> Always uses '/' as the hierarchy separator, regardless of platform file separator. Same as calling <code>getRelativeSourcePath().getPathString()</code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-duplicates-strategy.html">setDuplicatesStrategy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setDuplicatesStrategy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCopyDetails$setDuplicatesStrategy(org.gradle.api.file.DuplicatesStrategy)/strategy">strategy</span><span class="symbol">:</span>&nbsp;<a href="../-duplicates-strategy/index.html"><span class="identifier">DuplicatesStrategy</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The strategy to use if there is already a file at this file's destination.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-mode.html">setMode</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setMode</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCopyDetails$setMode(kotlin.Int)/mode">mode</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the Unix permissions of this file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-name.html">setName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCopyDetails$setName(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the destination name of this file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-path.html">setPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setPath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCopyDetails$setPath(kotlin.String)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the destination path of this file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-relative-path.html">setRelativePath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setRelativePath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCopyDetails$setRelativePath(org.gradle.api.file.RelativePath)/path">path</span><span class="symbol">:</span>&nbsp;<a href="../-relative-path/index.html"><span class="identifier">RelativePath</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the destination path of this file.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-file-tree-element/copy-to.html">copyTo</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copyTo</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTreeElement$copyTo(java.io.OutputStream)/output">output</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Copies the content of this file to an output stream. Generally, calling this method is more performant than calling <code>new FileInputStream(getFile())</code>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copyTo</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTreeElement$copyTo(java.io.File)/target">target</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Copies this file to the given target file. Does not copy the file if the target is already a copy of this file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-content-filterable/expand.html">expand</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">expand</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.ContentFilterable$expand(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/properties">properties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-content-filterable/index.html"><span class="identifier">ContentFilterable</span></a></code>
+<p>
+<p>Expands property references in each file as it is copied. More specifically, each file is transformed using Groovy's groovy.text.SimpleTemplateEngine. This means you can use simple property references, such as <code>$property</code> or <code>${property}</code> in the file. You can also include arbitrary Groovy code in the file, such as <code>${version ?: 'unknown'}</code> or <code>${classpath*.name.join(' ')}</code></p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-content-filterable/filter.html">filter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.ContentFilterable$filter(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), java.lang.Class((java.io.FilterReader)))/properties">properties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.file.ContentFilterable$filter(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), java.lang.Class((java.io.FilterReader)))/filterType">filterType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/FilterReader.html"><span class="identifier">FilterReader</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-content-filterable/index.html"><span class="identifier">ContentFilterable</span></a></code>
+<p>
+<p>Adds a content filter to be used during the copy. Multiple calls to filter, add additional filters to the filter chain. Each filter should implement <code>java.io.FilterReader</code>. Include <code>org.apache.tools.ant.filters.*</code> for access to all the standard Ant filters.</p>
+ 
+<p>Filter properties may be specified using groovy map syntax.</p>
+ 
+<p> Examples: </p>
+<pre><code> filter(HeadFilter, lines:25, skip:2) filter(ReplaceTokens, tokens:[copyright:'2009', version:'2.3.1']) </code></pre></p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.ContentFilterable$filter(java.lang.Class((java.io.FilterReader)))/filterType">filterType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/FilterReader.html"><span class="identifier">FilterReader</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-content-filterable/index.html"><span class="identifier">ContentFilterable</span></a></code>
+<p>
+<p>Adds a content filter to be used during the copy. Multiple calls to filter, add additional filters to the filter chain. Each filter should implement <code>java.io.FilterReader</code>. Include <code>org.apache.tools.ant.filters.*</code> for access to all the standard Ant filters.</p>
+ 
+<p> Examples: </p>
+<pre><code> filter(StripJavaComments) filter(com.mycompany.project.CustomFilter) </code></pre></p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.ContentFilterable$filter(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-content-filterable/index.html"><span class="identifier">ContentFilterable</span></a></code>
+<p>Adds a content filter based on the provided closure. The Closure will be called with each line (stripped of line endings) and should return a String to replace the line or <code>null</code> to remove the line. If every line is removed, the result will be an empty file, not an absent one.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.ContentFilterable$filter(org.gradle.api.Transformer((kotlin.String, )))/transformer">transformer</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-transformer/index.html"><span class="identifier">Transformer</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-content-filterable/index.html"><span class="identifier">ContentFilterable</span></a></code>
+<p>Adds a content filter based on the provided transformer. The Closure will be called with each line (stripped of line endings) and should return a String to replace the line or <code>null</code> to remove the line. If every line is removed, the result will be an empty file, not an absent one.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-tree-element/get-file.html">getFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the file being visited.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-tree-element/get-last-modified.html">getLastModified</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLastModified</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code>
+<p>Returns the last modified time of this file at the time of file traversal.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-tree-element/get-mode.html">getMode</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getMode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>Returns the Unix permissions of this file, e.g. <code>0644</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-tree-element/get-size.html">getSize</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code>
+<p>Returns the size of this file at the time of file traversal.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-tree-element/is-directory.html">isDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isDirectory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if this element is a directory, or false if this element is a regular file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-tree-element/open.html">open</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">open</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a></code>
+<p>Opens this file as an input stream. Generally, calling this method is more performant than calling <code>new FileInputStream(getFile())</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

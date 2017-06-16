@@ -1,0 +1,251 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ConfigurableFileCollection - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href=".">ConfigurableFileCollection</a><br/>
+<br/>
+<h1>ConfigurableFileCollection</h1>
+<code><span class="keyword">interface </span><span class="identifier">ConfigurableFileCollection</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>
+<p>A <code>ConfigurableFileCollection</code> is a mutable <code>FileCollection</code>.</p>
+ 
+<p>You can obtain an instance of <code>ConfigurableFileCollection</code> by calling <code><a href="#"> </a></code></p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="built-by.html">builtBy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">builtBy</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.file.ConfigurableFileCollection$builtBy(kotlin.Array((kotlin.Any)))/tasks">tasks</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ConfigurableFileCollection</span></code>
+<p>Registers some tasks which build the files of this collection.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="from.html">from</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.file.ConfigurableFileCollection$from(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ConfigurableFileCollection</span></code>
+<p>Adds a set of source paths to this collection. The given paths are evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-built-by.html">getBuiltBy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuiltBy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the set of tasks which build the files of this collection.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-from.html">getFrom</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFrom</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the set of source paths for this collection. The paths are evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-built-by.html">setBuiltBy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setBuiltBy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.ConfigurableFileCollection$setBuiltBy(kotlin.collections.MutableIterable((kotlin.Any)))/tasks">tasks</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ConfigurableFileCollection</span></code>
+<p>Sets the tasks which build the files of this collection.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-from.html">setFrom</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setFrom</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.ConfigurableFileCollection$setFrom(kotlin.collections.MutableIterable((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setFrom</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.file.ConfigurableFileCollection$setFrom(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the source paths for this collection. The given paths are evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-file-collection/add.html">add</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$add(org.gradle.api.file.FileCollection)/collection">collection</span><span class="symbol">:</span>&nbsp;<a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>
+<p>Adds another collection to this collection. This is an optional operation.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-collection/add-to-ant-builder.html">addToAntBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addToAntBuilder</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$addToAntBuilder(kotlin.Any, kotlin.String, org.gradle.api.file.FileCollection.AntType)/builder">builder</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.file.FileCollection$addToAntBuilder(kotlin.Any, kotlin.String, org.gradle.api.file.FileCollection.AntType)/nodeName">nodeName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.file.FileCollection$addToAntBuilder(kotlin.Any, kotlin.String, org.gradle.api.file.FileCollection.AntType)/type">type</span><span class="symbol">:</span>&nbsp;<a href="../-file-collection/-ant-type/index.html"><span class="identifier">AntType</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds this collection to an Ant task as a nested node. The given type determines how this collection is added: <ul> <li><code><a href="#">AntType#MatchingTask</a></code>: adds this collection to an Ant MatchingTask. The collection is converted to a set of source directories and include and exclude patterns. The source directories as added as an Ant Path with the given node name. The patterns are added using 'include' and 'exclude' nodes.</li>
+ <li><code><a href="#">AntType#FileSet</a></code>: adds this collection as zero or more Ant FileSets with the given node name.</li>
+ <li><code><a href="#">AntType#ResourceCollection</a></code>: adds this collection as zero or more Ant ResourceCollections with the given node name.</li>
+ </ul>
+ You should prefer using <code><a href="#">AntType#ResourceCollection</a></code>, if the target Ant task supports it, as this is generally the most efficient. Using the other types may involve copying the contents of this collection to a temporary directory.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addToAntBuilder</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$addToAntBuilder(kotlin.Any, kotlin.String)/builder">builder</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.file.FileCollection$addToAntBuilder(kotlin.Any, kotlin.String)/nodeName">nodeName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Adds this collection to an Ant task as a nested node. Equivalent to calling <code>addToAntBuilder(builder, nodeName,AntType.ResourceCollection)</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-collection/as-type.html">asType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">asType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$asType(java.lang.Class((kotlin.Any)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>
+<p>Converts this collection into an object of the specified type. Supported types are: <code>Collection</code>, <code>List</code>, <code>Set</code>, <code>Object[]</code>, <code>File[]</code>, <code>File</code>, and FileTree.</p>
+ 
+<p>You can call this method in your build script using the <code>as</code> operator.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-collection/contains.html">contains</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">contains</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$contains(java.io.File)/file">file</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Determines whether this collection contains the given file. Generally, this method is more efficient than calling <code>getFiles().contains(file)</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-collection/filter.html">filter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$filter(groovy.lang.Closure((kotlin.Any)))/filterClosure">filterClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>
+<p>Restricts the contents of this collection to those files which match the given criteria. The filtered collection is live, so that it reflects any changes to this collection.</p>
+ 
+<p>The given closure is passed the File as a parameter, and should return a boolean value.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$filter(org.gradle.api.specs.Spec((java.io.File)))/filterSpec">filterSpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>
+<p>Restricts the contents of this collection to those files which match the given criteria. The filtered collection is live, so that it reflects any changes to this collection.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-collection/get-as-file-tree.html">getAsFileTree</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAsFileTree</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<p>Converts this collection to a FileTree. Generally, for each file in this collection, the resulting file tree will contain the source file at the root of the tree. For each directory in this collection, the resulting file tree will contain all the files under the source directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-collection/get-as-path.html">getAsPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAsPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the contents of this collection as a platform-specific path. This can be used, for example, in an Ant  element.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-collection/get-files.html">getFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the contents of this collection as a Set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-collection/get-single-file.html">getSingleFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSingleFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the content of this collection, asserting it contains exactly one file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-collection/is-empty.html">isEmpty</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isEmpty</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if this collection is empty. Generally, calling this method is more efficient than calling <code>getFiles().isEmpty()</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-collection/minus.html">minus</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">minus</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$minus(org.gradle.api.file.FileCollection)/collection">collection</span><span class="symbol">:</span>&nbsp;<a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>
+<p>Returns a <code>FileCollection</code> which contains the difference between this collection and the given collection. The returned collection is live, and tracks changes to both source collections.</p>
+ 
+<p>You can call this method in your build script using the <code>-</code> operator.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-collection/plus.html">plus</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$plus(org.gradle.api.file.FileCollection)/collection">collection</span><span class="symbol">:</span>&nbsp;<a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>
+<p>Returns a <code>FileCollection</code> which contains the union of this collection and the given collection. The returned collection is live, and tracks changes to both source collections.</p>
+ 
+<p>You can call this method in your build script using the <code>+</code> operator.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-collection/stop-execution-if-empty.html">stopExecutionIfEmpty</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">stopExecutionIfEmpty</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Throws a StopExecutionException if this collection is empty.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.script.lang.kotlin/org.gradle.api.file.-configurable-file-collection/get-value.html">getValue</a></p>
+</td>
+<td>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">ConfigurableFileCollection</span><span class="symbol">.</span><span class="identifier">getValue</span><span class="symbol">(</span><span class="identifier" id="org.gradle.script.lang.kotlin$getValue(org.gradle.api.file.ConfigurableFileCollection, kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)))/receiver">receiver</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="org.gradle.script.lang.kotlin$getValue(org.gradle.api.file.ConfigurableFileCollection, kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)))/property">property</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-property/index.html"><span class="identifier">KProperty</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ConfigurableFileCollection</span></code>
+<p>Property delegate for ConfigurableFileCollection instances.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.script.lang.kotlin/org.gradle.api.file.-configurable-file-collection/set-value.html">setValue</a></p>
+</td>
+<td>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="identifier">ConfigurableFileCollection</span><span class="symbol">.</span><span class="identifier">setValue</span><span class="symbol">(</span><span class="identifier" id="org.gradle.script.lang.kotlin$setValue(org.gradle.api.file.ConfigurableFileCollection, kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)), kotlin.collections.Iterable((kotlin.Any)))/receiver">receiver</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="org.gradle.script.lang.kotlin$setValue(org.gradle.api.file.ConfigurableFileCollection, kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)), kotlin.collections.Iterable((kotlin.Any)))/property">property</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-property/index.html"><span class="identifier">KProperty</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.script.lang.kotlin$setValue(org.gradle.api.file.ConfigurableFileCollection, kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)), kotlin.collections.Iterable((kotlin.Any)))/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html"><span class="identifier">Iterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Property delegate for ConfigurableFileCollection instances.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

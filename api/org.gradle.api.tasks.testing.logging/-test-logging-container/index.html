@@ -1,0 +1,408 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TestLoggingContainer - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.testing.logging</a>&nbsp;/&nbsp;<a href=".">TestLoggingContainer</a><br/>
+<br/>
+<h1>TestLoggingContainer</h1>
+<code><span class="keyword">interface </span><span class="identifier">TestLoggingContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-test-logging/index.html"><span class="identifier">TestLogging</span></a></code>
+<p>Container for all test logging related options. Different options can be set for each log level. Options that are set directly (without specifying a log level) apply to log level LIFECYCLE. Example: <pre><code> apply plugin: 'java' test { testLogging { // set options for log level LIFECYCLE events "failed" exceptionFormat "short" // set options for log level DEBUG debug { events "started", "skipped", "failed" exceptionFormat "full" } // remove standard output/error logging from --info builds // by assigning only 'failed' and 'skipped' events info.events = ["failed", "skipped"] } } </code></pre> The defaults that are in place show progressively more information on log levels WARN, LIFECYCLE, INFO, and DEBUG, respectively.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="debug.html">debug</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">debug</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLoggingContainer$debug(org.gradle.api.Action((org.gradle.api.tasks.testing.logging.TestLogging)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><a href="../-test-logging/index.html"><span class="identifier">TestLogging</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures logging options for debug level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="error.html">error</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">error</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLoggingContainer$error(org.gradle.api.Action((org.gradle.api.tasks.testing.logging.TestLogging)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><a href="../-test-logging/index.html"><span class="identifier">TestLogging</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures logging options for error level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get.html">get</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLoggingContainer$get(org.gradle.api.logging.LogLevel)/level">level</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.logging/-log-level/index.html"><span class="identifier">LogLevel</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-test-logging/index.html"><span class="identifier">TestLogging</span></a></code>
+<p>Returns logging options for the specified level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-debug.html">getDebug</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDebug</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-test-logging/index.html"><span class="identifier">TestLogging</span></a></code>
+<p>Returns logging options for debug level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-error.html">getError</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getError</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-test-logging/index.html"><span class="identifier">TestLogging</span></a></code>
+<p>Returns logging options for error level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-info.html">getInfo</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getInfo</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-test-logging/index.html"><span class="identifier">TestLogging</span></a></code>
+<p>Gets logging options for info level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-lifecycle.html">getLifecycle</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLifecycle</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-test-logging/index.html"><span class="identifier">TestLogging</span></a></code>
+<p>Returns logging options for lifecycle level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-quiet.html">getQuiet</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getQuiet</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-test-logging/index.html"><span class="identifier">TestLogging</span></a></code>
+<p>Returns logging options for quiet level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-warn.html">getWarn</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getWarn</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-test-logging/index.html"><span class="identifier">TestLogging</span></a></code>
+<p>Gets logging options for warn level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="info.html">info</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">info</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLoggingContainer$info(org.gradle.api.Action((org.gradle.api.tasks.testing.logging.TestLogging)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><a href="../-test-logging/index.html"><span class="identifier">TestLogging</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures logging options for info level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="lifecycle.html">lifecycle</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">lifecycle</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLoggingContainer$lifecycle(org.gradle.api.Action((org.gradle.api.tasks.testing.logging.TestLogging)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><a href="../-test-logging/index.html"><span class="identifier">TestLogging</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures logging options for lifecycle level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="quiet.html">quiet</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">quiet</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLoggingContainer$quiet(org.gradle.api.Action((org.gradle.api.tasks.testing.logging.TestLogging)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><a href="../-test-logging/index.html"><span class="identifier">TestLogging</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures logging options for quiet level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-debug.html">setDebug</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setDebug</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLoggingContainer$setDebug(org.gradle.api.tasks.testing.logging.TestLogging)/logging">logging</span><span class="symbol">:</span>&nbsp;<a href="../-test-logging/index.html"><span class="identifier">TestLogging</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets logging options for debug level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-error.html">setError</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setError</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLoggingContainer$setError(org.gradle.api.tasks.testing.logging.TestLogging)/logging">logging</span><span class="symbol">:</span>&nbsp;<a href="../-test-logging/index.html"><span class="identifier">TestLogging</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets logging options for error level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-info.html">setInfo</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setInfo</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLoggingContainer$setInfo(org.gradle.api.tasks.testing.logging.TestLogging)/logging">logging</span><span class="symbol">:</span>&nbsp;<a href="../-test-logging/index.html"><span class="identifier">TestLogging</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets logging options for info level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-lifecycle.html">setLifecycle</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setLifecycle</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLoggingContainer$setLifecycle(org.gradle.api.tasks.testing.logging.TestLogging)/logging">logging</span><span class="symbol">:</span>&nbsp;<a href="../-test-logging/index.html"><span class="identifier">TestLogging</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets logging options for lifecycle level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-quiet.html">setQuiet</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setQuiet</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLoggingContainer$setQuiet(org.gradle.api.tasks.testing.logging.TestLogging)/logging">logging</span><span class="symbol">:</span>&nbsp;<a href="../-test-logging/index.html"><span class="identifier">TestLogging</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets logging options for quiet level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-warn.html">setWarn</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setWarn</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLoggingContainer$setWarn(org.gradle.api.tasks.testing.logging.TestLogging)/logging">logging</span><span class="symbol">:</span>&nbsp;<a href="../-test-logging/index.html"><span class="identifier">TestLogging</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets logging options for warn level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="warn.html">warn</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">warn</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLoggingContainer$warn(org.gradle.api.Action((org.gradle.api.tasks.testing.logging.TestLogging)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><a href="../-test-logging/index.html"><span class="identifier">TestLogging</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures logging options for warn level.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-test-logging/events.html">events</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">events</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLogging$events(kotlin.Array((kotlin.Any)))/events">events</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the events to be logged. Events can be passed as enum values (e.g. <code><a href="#">TestLogEvent#FAILED</a></code>) or Strings (e.g. "failed").</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-logging/get-display-granularity.html">getDisplayGranularity</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayGranularity</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>Returns the display granularity of the events to be logged. For example, if set to 0, a method-level event will be displayed as "Test Run &gt; Test Worker x &gt; org.SomeClass &gt; org.someMethod". If set to 2, the same event will be displayed as "org.someClass &gt; org.someMethod". 
+<p>-1 denotes the highest granularity and corresponds to an atomic test.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-logging/get-events.html">getEvents</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getEvents</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-test-log-event/index.html"><span class="identifier">TestLogEvent</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the events to be logged.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-logging/get-exception-format.html">getExceptionFormat</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExceptionFormat</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-test-exception-format/index.html"><span class="identifier">TestExceptionFormat</span></a></code>
+<p>Returns the format to be used for logging test exceptions. Only relevant if <code>showStackTraces</code> is <code>true</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-logging/get-max-granularity.html">getMaxGranularity</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getMaxGranularity</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>Returns the maximum granularity of the events to be logged. Typically, 0 corresponds to the Gradle-generated test suite for the whole test run, 1 corresponds to the Gradle-generated test suite for a particular test JVM, 2 corresponds to a test class, and 3 corresponds to a test method. These values will vary if user-defined suites are executed. 
+<p>-1 denotes the highest granularity and corresponds to an atomic test.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-logging/get-min-granularity.html">getMinGranularity</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getMinGranularity</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>Returns the minimum granularity of the events to be logged. Typically, 0 corresponds to the Gradle-generated test suite for the whole test run, 1 corresponds to the Gradle-generated test suite for a particular test JVM, 2 corresponds to a test class, and 3 corresponds to a test method. These values will vary if user-defined suites are executed. 
+<p>-1 denotes the highest granularity and corresponds to an atomic test.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-logging/get-show-causes.html">getShowCauses</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getShowCauses</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Tells whether causes of exceptions that occur during test execution will be logged. Only relevant if <code>showExceptions</code> is <code>true</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-logging/get-show-exceptions.html">getShowExceptions</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getShowExceptions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Tells whether exceptions that occur during test execution will be logged. Typically these exceptions coincide with a "failed" event.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-logging/get-show-stack-traces.html">getShowStackTraces</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getShowStackTraces</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Tells whether stack traces of exceptions that occur during test execution will be logged.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-logging/get-show-standard-streams.html">getShowStandardStreams</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getShowStandardStreams</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Tells whether output on standard out and standard error will be logged. Equivalent to checking if both log events <code>TestLogEvent.STANDARD_OUT</code> and <code>TestLogEvent.STANDARD_ERROR</code> are set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-logging/get-stack-trace-filters.html">getStackTraceFilters</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getStackTraceFilters</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-test-stack-trace-filter/index.html"><span class="identifier">TestStackTraceFilter</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the set of filters to be used for sanitizing test stack traces.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-logging/set-display-granularity.html">setDisplayGranularity</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setDisplayGranularity</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLogging$setDisplayGranularity(kotlin.Int)/granularity">granularity</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the display granularity of the events to be logged. For example, if set to 0, a method-level event will be displayed as "Test Run &gt; Test Worker x &gt; org.SomeClass &gt; org.someMethod". If set to 2, the same event will be displayed as "org.someClass &gt; org.someMethod". 
+<p>-1 denotes the highest granularity and corresponds to an atomic test.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-logging/set-events.html">setEvents</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setEvents</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLogging$setEvents(kotlin.collections.MutableSet((org.gradle.api.tasks.testing.logging.TestLogEvent)))/events">events</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-test-log-event/index.html"><span class="identifier">TestLogEvent</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setEvents</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLogging$setEvents(kotlin.collections.MutableIterable((kotlin.Any)))/events">events</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the events to be logged.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-logging/set-exception-format.html">setExceptionFormat</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setExceptionFormat</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLogging$setExceptionFormat(org.gradle.api.tasks.testing.logging.TestExceptionFormat)/exceptionFormat">exceptionFormat</span><span class="symbol">:</span>&nbsp;<a href="../-test-exception-format/index.html"><span class="identifier">TestExceptionFormat</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setExceptionFormat</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLogging$setExceptionFormat(kotlin.Any)/exceptionFormat">exceptionFormat</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the format to be used for logging test exceptions. Only relevant if <code>showStackTraces</code> is <code>true</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-logging/set-max-granularity.html">setMaxGranularity</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setMaxGranularity</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLogging$setMaxGranularity(kotlin.Int)/granularity">granularity</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Returns the maximum granularity of the events to be logged. Typically, 0 corresponds to the Gradle-generated test suite for the whole test run, 1 corresponds to the Gradle-generated test suite for a particular test JVM, 2 corresponds to a test class, and 3 corresponds to a test method. These values will vary if user-defined suites are executed. 
+<p>-1 denotes the highest granularity and corresponds to an atomic test.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-logging/set-min-granularity.html">setMinGranularity</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setMinGranularity</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLogging$setMinGranularity(kotlin.Int)/granularity">granularity</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the minimum granularity of the events to be logged. Typically, 0 corresponds to the Gradle-generated test suite for the whole test run, 1 corresponds to the Gradle-generated test suite for a particular test JVM, 2 corresponds to a test class, and 3 corresponds to a test method. These values will vary if user-defined suites are executed. 
+<p>-1 denotes the highest granularity and corresponds to an atomic test.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-logging/set-show-causes.html">setShowCauses</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setShowCauses</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLogging$setShowCauses(kotlin.Boolean)/flag">flag</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets whether causes of exceptions that occur during test execution will be logged. Only relevant if <code>showExceptions</code> is <code>true</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-logging/set-show-exceptions.html">setShowExceptions</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setShowExceptions</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLogging$setShowExceptions(kotlin.Boolean)/flag">flag</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets whether exceptions that occur during test execution will be logged.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-logging/set-show-stack-traces.html">setShowStackTraces</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setShowStackTraces</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLogging$setShowStackTraces(kotlin.Boolean)/flag">flag</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets whether stack traces of exceptions that occur during test execution will be logged.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-logging/set-show-standard-streams.html">setShowStandardStreams</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setShowStandardStreams</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLogging$setShowStandardStreams(kotlin.Boolean)/flag">flag</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-test-logging/index.html"><span class="identifier">TestLogging</span></a></code>
+<p>Sets whether output on standard out and standard error will be logged. Equivalent to setting log events <code>TestLogEvent.STANDARD_OUT</code> and <code>TestLogEvent.STANDARD_ERROR</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-logging/set-stack-trace-filters.html">setStackTraceFilters</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setStackTraceFilters</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLogging$setStackTraceFilters(kotlin.collections.MutableSet((org.gradle.api.tasks.testing.logging.TestStackTraceFilter)))/stackTraces">stackTraces</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-test-stack-trace-filter/index.html"><span class="identifier">TestStackTraceFilter</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setStackTraceFilters</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLogging$setStackTraceFilters(kotlin.collections.MutableIterable((kotlin.Any)))/stackTraces">stackTraces</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the set of filters to be used for sanitizing test stack traces.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-logging/stack-trace-filters.html">stackTraceFilters</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">stackTraceFilters</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLogging$stackTraceFilters(kotlin.Array((kotlin.Any)))/stackTraces">stackTraces</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Convenience method for <code><a href="#">#setStackTraceFilters(java.lang.Iterable)</a></code>. Accepts both enum values and Strings.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

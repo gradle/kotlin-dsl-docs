@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ComponentMetadataDetails - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">ComponentMetadataDetails</a><br/>
+<br/>
+<h1>ComponentMetadataDetails</h1>
+<code><span class="identifier">@Incubating</span> <span class="identifier">@NonExtensible</span> <span class="keyword">interface </span><span class="identifier">ComponentMetadataDetails</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-component-metadata/index.html"><span class="identifier">ComponentMetadata</span></a></code>
+<p>Describes a resolved component's metadata, which typically originates from a component descriptor (Ivy file, Maven POM). Some parts of the metadata can be changed via metadata rules (see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
+<p><strong>Since</strong><br/>
+1.8</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="set-changing.html">setChanging</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setChanging</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ComponentMetadataDetails$setChanging(kotlin.Boolean)/changing">changing</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets whether the component is changing or immutable.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-status.html">setStatus</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setStatus</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ComponentMetadataDetails$setStatus(kotlin.String)/status">status</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the status of the component. Must match one of the values in <code><a href="../-component-metadata/get-status-scheme.html">#getStatusScheme()</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-status-scheme.html">setStatusScheme</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setStatusScheme</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ComponentMetadataDetails$setStatusScheme(kotlin.collections.MutableList((kotlin.String)))/statusScheme">statusScheme</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the status scheme of the component. Values are ordered from least to most mature status.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-component-metadata/get-id.html">getId</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getId</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-module-version-identifier/index.html"><span class="identifier">ModuleVersionIdentifier</span></a></code>
+<p>Returns the identifier of the component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-component-metadata/get-status.html">getStatus</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getStatus</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the status of the component. Must match one of the values in <code><a href="../-component-metadata/get-status-scheme.html">#getStatusScheme()</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-component-metadata/get-status-scheme.html">getStatusScheme</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getStatusScheme</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the status scheme of the component. Values are ordered from least to most mature status. Defaults to <code>["integration", "milestone", "release"]</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-component-metadata/is-changing.html">isChanging</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isChanging</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Tells whether the component is changing or immutable.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

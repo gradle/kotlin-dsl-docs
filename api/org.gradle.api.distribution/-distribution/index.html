@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Distribution - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.distribution</a>&nbsp;/&nbsp;<a href=".">Distribution</a><br/>
+<br/>
+<h1>Distribution</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">Distribution</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
+<p>A distribution allow to bundle an application or a library including dependencies,sources...</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="contents.html">contents</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">contents</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.distribution.Distribution$contents(org.gradle.api.Action((org.gradle.api.file.CopySpec)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a></code>
+<p>Configures the contents of the distribution. 
+<p> Can be used to configure the contents of the distribution: </p>
+<pre><code> apply plugin: "distribution" distributions { main { contents { from "src/readme" } } } </code></pre> The DSL inside the <code>contents\{} </code> block is the same DSL used for Copy tasks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-base-name.html">getBaseName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBaseName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The baseName of the distribution, used in naming the distribution archives. 
+<p> If the <code><a href="get-name.html">#getName()</a></code> of this distribution is "<code>main</code>" this defaults to the project's name. Otherwise it is "<code>$project.name-$this.name</code>".</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-contents.html">getContents</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getContents</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a></code>
+<p>The contents of the distribution.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name of this distribution.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-base-name.html">setBaseName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setBaseName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.distribution.Distribution$setBaseName(kotlin.String)/baseName">baseName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The baseName of the distribution. 
+<p> Set to change the name of the distribution archives.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.play.distribution/-play-distribution/index.html">PlayDistribution</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PlayDistribution</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Distribution</span></code>
+<p>Represents a Play distribution package</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

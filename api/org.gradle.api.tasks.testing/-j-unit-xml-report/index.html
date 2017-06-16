@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>JUnitXmlReport - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.testing</a>&nbsp;/&nbsp;<a href=".">JUnitXmlReport</a><br/>
+<br/>
+<h1>JUnitXmlReport</h1>
+<code><span class="keyword">interface </span><span class="identifier">JUnitXmlReport</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.reporting/-directory-report/index.html"><span class="identifier">DirectoryReport</span></a></code>
+<p>The JUnit XML files, commonly used to communicate results to CI servers.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="is-output-per-test-case.html">isOutputPerTestCase</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isOutputPerTestCase</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Should the output be associated with individual test cases instead of at the suite level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-output-per-test-case.html">setOutputPerTestCase</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setOutputPerTestCase</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.JUnitXmlReport$setOutputPerTestCase(kotlin.Boolean)/outputPerTestCase">outputPerTestCase</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Should the output be associated with individual test cases instead of at the suite level.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.reporting/-directory-report/get-destination.html">getDestination</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDestination</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.reporting/-directory-report/get-entry-point.html">getEntryPoint</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getEntryPoint</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the entry point of a directory based Report This can be the index.html file in a HTML report</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.reporting/-directory-report/get-output-type.html">getOutputType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOutputType</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.reporting/-report/-output-type/index.html"><span class="identifier">OutputType</span></a></code>
+<p>Always returns <code><a href="#">Report.OutputType#DIRECTORY</a></code></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

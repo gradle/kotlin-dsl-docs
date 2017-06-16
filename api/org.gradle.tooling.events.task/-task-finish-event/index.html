@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TaskFinishEvent - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.events.task</a>&nbsp;/&nbsp;<a href=".">TaskFinishEvent</a><br/>
+<br/>
+<h1>TaskFinishEvent</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">TaskFinishEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-task-progress-event/index.html"><span class="identifier">TaskProgressEvent</span></a><span class="symbol">, </span><a href="../../org.gradle.tooling.events/-finish-event/index.html"><span class="identifier">FinishEvent</span></a></code>
+<p>An event that informs about a task having finished its execution. You can query the result of the task using <code><a href="get-result.html">#getResult()</a></code>.</p>
+<p><strong>Since</strong><br/>
+2.5</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-result.html">getResult</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getResult</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-task-operation-result.html"><span class="identifier">TaskOperationResult</span></a></code>
+<p>Returns the result of the finished task operation. Currently, the result will be one of the following sub-types: <ul> <li>TaskSuccessResult</li>
+ <li>TaskSkippedResult</li>
+ <li>TaskFailureResult</li>
+ </ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-task-progress-event/get-descriptor.html">getDescriptor</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDescriptor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-task-operation-descriptor/index.html"><span class="identifier">TaskOperationDescriptor</span></a></code>
+<p>Returns the description of the task for which progress is reported.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,116 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.nativeplatform.toolchain - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.nativeplatform.toolchain</a><br/>
+<br/>
+<h2>Package org.gradle.nativeplatform.toolchain</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-clang.html">Clang</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Clang</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-gcc-compatible-tool-chain/index.html"><span class="identifier">GccCompatibleToolChain</span></a></code>
+<p>The <a href="#">Clang</a> tool chain.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-command-line-tool-configuration/index.html">CommandLineToolConfiguration</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CommandLineToolConfiguration</span></code>
+<p>An executable tool that forms part of a tool chain.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-gcc.html">Gcc</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Gcc</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-gcc-compatible-tool-chain/index.html"><span class="identifier">GccCompatibleToolChain</span></a></code>
+<p>The <a href="#">GNU GCC</a> tool chain.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-gcc-command-line-tool-configuration/index.html">GccCommandLineToolConfiguration</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">GccCommandLineToolConfiguration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-command-line-tool-configuration/index.html"><span class="identifier">CommandLineToolConfiguration</span></a></code>
+<p>An executable tool used for GCC that allows customizing the executable.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-gcc-compatible-tool-chain/index.html">GccCompatibleToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">GccCompatibleToolChain</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a></code>
+<p>A ToolChain that can handle additional platforms simply by configuring the NativeBinary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-gcc-platform-tool-chain/index.html">GccPlatformToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">GccPlatformToolChain</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-native-platform-tool-chain/index.html"><span class="identifier">NativePlatformToolChain</span></a></code>
+<p>GCC specific settings for the tools used to build for a particular platform.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-native-platform-tool-chain/index.html">NativePlatformToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">NativePlatformToolChain</span></code>
+<p>A platform specific configurable tool chain.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-native-tool-chain.html">NativeToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">NativeToolChain</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.platform.base/-tool-chain/index.html"><span class="identifier">ToolChain</span></a></code>
+<p>A set of compilers and linkers that are used together to construct a native binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-native-tool-chain-registry.html">NativeToolChainRegistry</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">NativeToolChainRegistry</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-extensible-polymorphic-domain-object-container/index.html"><span class="identifier">ExtensiblePolymorphicDomainObjectContainer</span></a><span class="symbol">&lt;</span><a href="-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../org.gradle.platform.base/-tool-chain-registry/index.html"><span class="identifier">ToolChainRegistry</span></a><span class="symbol">&lt;</span><a href="../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a><span class="symbol">,</span>&nbsp;<a href="-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a><span class="symbol">&gt;</span></code>
+<p>A container for NativeToolChains.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-visual-cpp/index.html">VisualCpp</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VisualCpp</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a></code>
+<p>The Visual C++ tool chain.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-visual-cpp-platform-tool-chain/index.html">VisualCppPlatformToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VisualCppPlatformToolChain</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-native-platform-tool-chain/index.html"><span class="identifier">NativePlatformToolChain</span></a></code>
+<p>Visual C++ specific settings for the tools used to build for a particular platform.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

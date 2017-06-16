@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ReadableResource - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.resources</a>&nbsp;/&nbsp;<a href=".">ReadableResource</a><br/>
+<br/>
+<h1>ReadableResource</h1>
+<code><span class="keyword">interface </span><span class="identifier">ReadableResource</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-resource/index.html"><span class="identifier">Resource</span></a></code>
+<p>A resource that can be read. The simplest example is a file.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="read.html">read</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">read</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a></code>
+<p>Returns an unbuffered InputStream that provides means to read the resource. It is the caller's responsibility to close this stream.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-resource/get-base-name.html">getBaseName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBaseName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Short name that concisely describes this resource</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-resource/get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Human readable name of this resource</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-resource/get-u-r-i.html">getURI</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getURI</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/net/URI.html"><span class="identifier">URI</span></a></code>
+<p>Uniform resource identifier that uniquely describes this resource</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

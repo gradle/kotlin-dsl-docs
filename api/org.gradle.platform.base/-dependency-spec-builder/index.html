@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DependencySpecBuilder - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.platform.base</a>&nbsp;/&nbsp;<a href=".">DependencySpecBuilder</a><br/>
+<br/>
+<h1>DependencySpecBuilder</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">DependencySpecBuilder</span></code>
+<p>A builder of a DependencySpec. Implementations are required to return immutable dependency specs.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="build.html">build</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">build</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-dependency-spec/index.html"><span class="identifier">DependencySpec</span></a></code>
+<p>Builds a concrete immutable DependencySpec instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-module-dependency-spec-builder/index.html">ModuleDependencySpecBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ModuleDependencySpecBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DependencySpecBuilder</span></code>
+<p>A builder of a ModuleDependencySpec.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-project-dependency-spec-builder/index.html">ProjectDependencySpecBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ProjectDependencySpecBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DependencySpecBuilder</span></code>
+<p>A builder of a ProjectDependencySpec.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

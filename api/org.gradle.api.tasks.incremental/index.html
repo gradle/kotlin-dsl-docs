@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api.tasks.incremental - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.tasks.incremental</a><br/>
+<br/>
+<h2>Package org.gradle.api.tasks.incremental</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-incremental-task-inputs/index.html">IncrementalTaskInputs</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">IncrementalTaskInputs</span></code>
+<p>Provides access to any input files that need to be processed by an incremental task. 
+<p> An incremental task action is one that accepts a single IncrementalTaskInputs parameter. The task can then provide an action to execute for all input files that are out of date with respect to the previous execution of the task, and a separate action for all input files that have been removed since the previous execution. </p>
+<pre><code> class IncrementalReverseTask extends DefaultTask { @InputDirectory def File inputDir @OutputDirectory def File outputDir @TaskAction void execute(IncrementalTaskInputs inputs) { if (!inputs.incremental) project.delete(outputDir.listFiles()) inputs.outOfDate { change -&gt; def targetFile = project.file("$outputDir/${change.file.name}") targetFile.text = change.file.text.reverse() } inputs.removed { change -&gt; def targetFile = project.file("$outputDir/${change.file.name}") if (targetFile.exists()) { targetFile.delete() } } } } </code></pre> 
+<p> In the case where Gradle is unable to determine which input files need to be reprocessed, then all of the input files will be reported as <code><a href="#">#outOfDate</a></code>. Cases where this occurs include: </p>
+<ul> <li>There is no history available from a previous execution.</li>
+ <li>An <code><a href="#">org.gradle.api.tasks.TaskOutputs#upToDateWhen(groovy.lang.Closure)</a></code> criteria added to the task returns <code>false</code>.</li>
+ <li>An org.gradle.api.tasks.Input property has changed since the previous execution.</li>
+ <li>One or more output files have changed since the previous execution.</li>
+ </ul>
+ Note that this is a stateful API: <ul> <li><code><a href="#">#outOfDate</a></code> and <code><a href="#">#removed</a></code> can each only be executed a single time per IncrementalTaskInputs instance.</li>
+ <li><code><a href="#">#outOfDate</a></code> must be executed before <code><a href="#">#removed</a></code> is called.</li>
+ </ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-input-file-details/index.html">InputFileDetails</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">InputFileDetails</span></code>
+<p>A change to an input file.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

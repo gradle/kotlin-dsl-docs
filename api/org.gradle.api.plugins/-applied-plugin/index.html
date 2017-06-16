@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AppliedPlugin - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href=".">AppliedPlugin</a><br/>
+<br/>
+<h1>AppliedPlugin</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">AppliedPlugin</span></code>
+<p>Represents a plugin that has been applied. 
+<p> Currently just provides information about the ID of the plugin.</p>
+</p>
+<p><strong>See Also</strong><br/>
+org.gradle.api.plugins.PluginAware</p>
+<p><strong>Since</strong><br/>
+2.3</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-id.html">getId</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getId</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The ID of the plugin. 
+<p> An example of a plugin ID would be <code>"org.gradle.java"</code>. This method always returns the fully qualified ID, regardless of whether the fully qualified ID was used to apply the plugin or not. </p>
+<p> This value is guaranteed to be unique, for a given org.gradle.api.plugins.PluginAware.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name of the plugin. 
+<p> An example of a plugin name would be <code>"java"</code> for the plugin with ID <code>"org.gradle.java"</code>. This method always returns the name, regardless of whether the fully qualified ID was used to apply the plugin or not. </p>
+<p> If the plugin has an unqualified ID, this method will return the same value as <code><a href="get-id.html">#getId()</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-namespace.html">getNamespace</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getNamespace</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The namespace of the plugin. 
+<p> An example of a plugin namespace would be <code>"org.gradle"</code> for the plugin with ID <code>"org.gradle.java"</code>. This method always returns the namespace, regardless of whether the fully qualified ID was used to apply the plugin or not. </p>
+<p> If the plugin has an unqualified ID, this method will return <code>null</code>.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

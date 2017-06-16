@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Launchable - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.model</a>&nbsp;/&nbsp;<a href=".">Launchable</a><br/>
+<br/>
+<h1>Launchable</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">Launchable</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-project-model/index.html"><span class="identifier">ProjectModel</span></a></code>
+<p>Represents an object that can be used to launch a Gradle build, such as a task. 
+<p>To launch a build, you pass one or more org.gradle.tooling.model.Launchable instances to either <code><a href="#">org.gradle.tooling.BuildLauncher#forTasks(Iterable)</a></code> or <code><a href="#">org.gradle.tooling.BuildLauncher#forLaunchables(Iterable)</a></code>.</p>
+</p>
+<p><strong>Since</strong><br/>
+1.12</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-description.html">getDescription</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDescription</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the description of this launchable, or <code>null</code> if it has no description.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns a human-consumable display name for this launchable.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project-identifier.html">getProjectIdentifier</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectIdentifier</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-project-identifier/index.html"><span class="identifier">ProjectIdentifier</span></a></code>
+<p>Returns the identifier for the Gradle project that this model originated from.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-public.html">isPublic</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isPublic</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns whether launchable is public or not. A public launchable is one that is considered a public 'entry point' to the build, that is interesting for an end user of the build to run.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-task/index.html">Task</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Task</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Launchable</span></code>
+<p>Represents a task which is executable by Gradle. 
+<p>Note: <code>Task</code> extends <code>Launchable</code> since 1.12.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-task-selector/index.html">TaskSelector</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskSelector</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Launchable</span></code>
+<p>Represents a Launchable that uses task name to select tasks executed from a given project and its sub-projects. This is roughly equivalent to running `gradle &lt;task-name&gt;` from the command-line.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

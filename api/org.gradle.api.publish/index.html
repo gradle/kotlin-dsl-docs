@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api.publish - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.publish</a><br/>
+<br/>
+<h2>Package org.gradle.api.publish</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-publication.html">Publication</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Publication</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
+<p>A publication is a description of a consumable representation of one or more artifacts, and possibly associated metadata.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-publication-container.html">PublicationContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PublicationContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-extensible-polymorphic-domain-object-container/index.html"><span class="identifier">ExtensiblePolymorphicDomainObjectContainer</span></a><span class="symbol">&lt;</span><a href="-publication.html"><span class="identifier">Publication</span></a><span class="symbol">&gt;</span></code>
+<p>A <code>PublicationContainer</code> is responsible for creating and managing Publication instances. The set of available publication types is dependent on the application of particular plugins: <ul> <li>The org.gradle.api.publish.maven.plugins.MavenPublishPlugin makes it possible to create org.gradle.api.publish.maven.MavenPublication instances.</li>
+ <li>The org.gradle.api.publish.ivy.plugins.IvyPublishPlugin makes it possible to create org.gradle.api.publish.ivy.IvyPublication instances.</li>
+ </ul>
+ <pre><code> apply plugin: 'ivy-publish' publishing.publications.create('publication-name', IvyPublication) { // Configure the ivy publication here } </code></pre> The usual way to add publications is via a configuration block. See the documentation for <code><a href="#">PublishingExtension#publications(org.gradle.api.Action)</a></code> for examples of how to create and configure publications.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-publishing-extension/index.html">PublishingExtension</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PublishingExtension</span></code>
+<p>The configuration of how to “publish” the different components of a project. 
+<p> This new publishing mechanism will eventually replace the current mechanism of upload tasks and configurations. At this time, it is an incubating feature and under development. </p>
+<p> The PublishingExtension is a org.gradle.api.plugins.DeferredConfigurable model element, meaning that extension will be configured as late as possible in the build. So any 'publishing' configuration blocks are not evaluated until either: </p>
+<ol> <li>The project is about to execute, or</li>
+ <li>he publishing extension is referenced as an instance, as opposed to via a configuration closure.</li>
+ </ol>
+ 
+<p> A 'publishing' configuration block does not need to dereference the publishing extension, and so will be evaluated late. eg: </p>
+<pre><code> publishing { publications { ... } repositories.maven { ... } } </code></pre> 
+<p> Any use that accesses the publishing extension as an instance does require the publishing extension to be realised, forcing all configuration blocks to be evaluated. eg: </p>
+<pre><code> publishing.publications { ... } publishing.repositories.maven { ... } </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

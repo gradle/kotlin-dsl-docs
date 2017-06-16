@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ReproducibleFileVisitor - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href=".">ReproducibleFileVisitor</a><br/>
+<br/>
+<h1>ReproducibleFileVisitor</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ReproducibleFileVisitor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-file-visitor/index.html"><span class="identifier">FileVisitor</span></a></code>
+<p>Visitor which can request a reproducible file order.</p>
+<p><strong>Since</strong><br/>
+3.4</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="is-reproducible-file-order.html">isReproducibleFileOrder</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isReproducibleFileOrder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether the FileVisitor should receive the files in a reproducible order independent of the underlying file system.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-file-visitor/visit-dir.html">visitDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">visitDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileVisitor$visitDir(org.gradle.api.file.FileVisitDetails)/dirDetails">dirDetails</span><span class="symbol">:</span>&nbsp;<a href="../-file-visit-details/index.html"><span class="identifier">FileVisitDetails</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Visits a directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-visitor/visit-file.html">visitFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">visitFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileVisitor$visitFile(org.gradle.api.file.FileVisitDetails)/fileDetails">fileDetails</span><span class="symbol">:</span>&nbsp;<a href="../-file-visit-details/index.html"><span class="identifier">FileVisitDetails</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Visits a file.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

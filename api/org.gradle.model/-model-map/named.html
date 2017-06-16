@@ -1,0 +1,34 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ModelMap.named - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.model</a>&nbsp;/&nbsp;<a href="index.html">ModelMap</a>&nbsp;/&nbsp;<a href=".">named</a><br/>
+<br/>
+<h1>named</h1>
+<a name="org.gradle.model.ModelMap$named(kotlin.String, org.gradle.api.Action((org.gradle.model.ModelMap.T)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">named</span><span class="symbol">(</span><span class="identifier" id="org.gradle.model.ModelMap$named(kotlin.String, org.gradle.api.Action((org.gradle.model.ModelMap.T)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.model.ModelMap$named(kotlin.String, org.gradle.api.Action((org.gradle.model.ModelMap.T)))/configAction">configAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies the given action to the given item, when the item is required. 
+<p>The given action is invoked to configure the item when the item is required. It is called after any actions provided to <code><a href="#">#beforeEach(org.gradle.api.Action)</a></code> and <code><a href="#">#create(String, * org.gradle.api.Action)</a></code>.</p>
+</p>
+<h3>Parameters</h3>
+<a name="name"></a>
+<code>name</code> - The name.<a name="configAction"></a>
+<code>configAction</code> - An action that configures the item. The action is executed when the item is required.<a name="org.gradle.model.ModelMap$named(kotlin.String, java.lang.Class((org.gradle.model.RuleSource)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">named</span><span class="symbol">(</span><span class="identifier" id="org.gradle.model.ModelMap$named(kotlin.String, java.lang.Class((org.gradle.model.RuleSource)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.model.ModelMap$named(kotlin.String, java.lang.Class((org.gradle.model.RuleSource)))/ruleSource">ruleSource</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-rule-source/index.html"><span class="identifier">RuleSource</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies the given rule source class to the given item, when the item is required. 
+<p>Rules are applied in the scope of the item therefore: </p>
+<ul> <li>subject by-type and by-path bindings are of inner scope</li>
+ <li>subject can be bound by type to a child of the scope in which the rule is applied</li>
+ <li>input by-path bindings are of inner scope</li>
+ <li>input by-type bindings are of outer scope</li>
+ </ul>
+</p>
+<h3>Parameters</h3>
+<a name="name"></a>
+<code>name</code> - The name.<a name="ruleSource"></a>
+<code>ruleSource</code> - A rule source class.
+</BODY>
+</HTML>

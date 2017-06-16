@@ -1,0 +1,325 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Gradle - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.invocation</a>&nbsp;/&nbsp;<a href=".">Gradle</a><br/>
+<br/>
+<h1>Gradle</h1>
+<code><span class="keyword">interface </span><span class="identifier">Gradle</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins/-plugin-aware/index.html"><span class="identifier">PluginAware</span></a></code>
+<p>Represents an invocation of Gradle. 
+<p>You can obtain a <code>Gradle</code> instance by calling <code><a href="../../org.gradle.api/-project/get-gradle.html">Project#getGradle()</a></code>.</p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-build-listener.html">addBuildListener</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addBuildListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$addBuildListener(org.gradle.BuildListener)/buildListener">buildListener</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle/-build-listener/index.html"><span class="identifier">BuildListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a BuildListener to this Build instance. The listener is notified of events which occur during the execution of the build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="add-listener.html">addListener</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$addListener(kotlin.Any)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds the given listener to this build. The listener may implement any of the given listener interfaces: <ul> <li>org.gradle.BuildListener </li>
+<li>org.gradle.api.execution.TaskExecutionGraphListener </li>
+<li>org.gradle.api.ProjectEvaluationListener </li>
+<li>org.gradle.api.execution.TaskExecutionListener </li>
+<li>org.gradle.api.execution.TaskActionListener </li>
+<li>org.gradle.api.logging.StandardOutputListener </li>
+<li>org.gradle.api.tasks.testing.TestListener </li>
+<li>org.gradle.api.tasks.testing.TestOutputListener </li>
+<li>org.gradle.api.artifacts.DependencyResolutionListener </li>
+</ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="add-project-evaluation-listener.html">addProjectEvaluationListener</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addProjectEvaluationListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$addProjectEvaluationListener(org.gradle.api.ProjectEvaluationListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-project-evaluation-listener/index.html"><span class="identifier">ProjectEvaluationListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-project-evaluation-listener/index.html"><span class="identifier">ProjectEvaluationListener</span></a></code>
+<p>Adds a listener to this build, to receive notifications as projects are evaluated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="after-project.html">afterProject</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">afterProject</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$afterProject(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a closure to be called immediately after a project is evaluated. The project is passed to the closure as the first parameter. The project evaluation failure, if any, is passed as the second parameter. Both parameters are optional.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">afterProject</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$afterProject(org.gradle.api.Action((org.gradle.api.Project)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an action to be called immediately after a project is evaluated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="allprojects.html">allprojects</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">allprojects</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$allprojects(org.gradle.api.Action((org.gradle.api.Project)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an action to execute against all projects of this build. The action is executed immediately against all projects which are already available. It is also executed as subsequent projects are added to this build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="before-project.html">beforeProject</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">beforeProject</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$beforeProject(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a closure to be called immediately before a project is evaluated. The project is passed to the closure as a parameter.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">beforeProject</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$beforeProject(org.gradle.api.Action((org.gradle.api.Project)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an action to be called immediately before a project is evaluated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="build-finished.html">buildFinished</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">buildFinished</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$buildFinished(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a closure to be called when the build is completed. All selected tasks have been executed. A BuildResult instance is passed to the closure as a parameter.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">buildFinished</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$buildFinished(org.gradle.api.Action((org.gradle.BuildResult)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle/-build-result/index.html"><span class="identifier">BuildResult</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an action to be called when the build is completed. All selected tasks have been executed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="build-started.html">buildStarted</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">buildStarted</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$buildStarted(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a closure to be called when the build is started. This <code>Gradle</code> instance is passed to the closure as the first parameter.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">buildStarted</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$buildStarted(org.gradle.api.Action((org.gradle.api.invocation.Gradle)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">Gradle</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an action to be called when the build is started.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-gradle.html">getGradle</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGradle</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Gradle</span></code>
+<p>Returns this <code>Gradle</code> instance. This method is useful in init scripts to explicitly access Gradle properties and methods. For example, using <code>gradle.parent</code> can express your intent better than using <code>parent</code>. This property also allows you to access Gradle properties from a scope where the property may be hidden, such as, for example, from a method or closure.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-gradle-home-dir.html">getGradleHomeDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGradleHomeDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the Gradle home directory, if any. This directory is the directory containing the Gradle distribution executing this build. 
+<p> When using the “Gradle Daemon”, this may not be the same Gradle distribution that the build was started with. If an existing daemon process is running that is deemed compatible (e.g. has the desired JVM characteristics) then this daemon may be used instead of starting a new process and it may have been started from a different “gradle home”. However, it is guaranteed to be the same version of Gradle. For more information on the Gradle Daemon, please consult <a href="#">the user guide</a>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-gradle-user-home-dir.html">getGradleUserHomeDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGradleUserHomeDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the Gradle user home directory. This directory is used to cache downloaded resources, compiled build scripts and so on.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-gradle-version.html">getGradleVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGradleVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the current Gradle version.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-included-builds.html">getIncludedBuilds</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getIncludedBuilds</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><span class="identifier">IncludedBuild</span><span class="symbol">&gt;</span></code>
+<p>Returns the included builds for this build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-parent.html">getParent</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getParent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Gradle</span></code>
+<p>Returns the parent build of this build, if any.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-root-project.html">getRootProject</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRootProject</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a></code>
+<p>Returns the root project of this build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-start-parameter.html">getStartParameter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getStartParameter</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle/-start-parameter/index.html"><span class="identifier">StartParameter</span></a></code>
+<p>Returns the StartParameter used to start this build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-task-graph.html">getTaskGraph</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTaskGraph</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.execution/-task-execution-graph/index.html"><span class="identifier">TaskExecutionGraph</span></a></code>
+<p>Returns the TaskExecutionGraph for this build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="included-build.html">includedBuild</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">includedBuild</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$includedBuild(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">IncludedBuild</span></code>
+<p>Returns the included build with the specified name for this build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="projects-evaluated.html">projectsEvaluated</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">projectsEvaluated</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$projectsEvaluated(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a closure to be called when all projects for the build have been evaluated. The project objects are fully configured and are ready to use to populate the task graph. This <code>Gradle</code> instance is passed to the closure as a parameter.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">projectsEvaluated</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$projectsEvaluated(org.gradle.api.Action((org.gradle.api.invocation.Gradle)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">Gradle</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an action to be called when all projects for the build have been evaluated. The project objects are fully configured and are ready to use to populate the task graph.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="projects-loaded.html">projectsLoaded</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">projectsLoaded</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$projectsLoaded(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a closure to be called when the projects for the build have been created from the settings. None of the projects have been evaluated. This <code>Gradle</code> instance is passed to the closure as a parameter. 
+<p> An example of hooking into the projectsLoaded to configure buildscript classpath from the init script. </p>
+<pre><code> //init.gradle gradle.projectsLoaded { rootProject.buildscript { repositories { //... } dependencies { //... } } } </code></pre></p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">projectsLoaded</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$projectsLoaded(org.gradle.api.Action((org.gradle.api.invocation.Gradle)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">Gradle</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an action to be called when the projects for the build have been created from the settings. None of the projects have been evaluated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="remove-listener.html">removeListener</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">removeListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$removeListener(kotlin.Any)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Removes the given listener from this build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="remove-project-evaluation-listener.html">removeProjectEvaluationListener</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">removeProjectEvaluationListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$removeProjectEvaluationListener(org.gradle.api.ProjectEvaluationListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-project-evaluation-listener/index.html"><span class="identifier">ProjectEvaluationListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Removes the given listener from this build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="root-project.html">rootProject</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">rootProject</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$rootProject(org.gradle.api.Action((org.gradle.api.Project)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an action to execute against the root project of this build. If the root project is already available, the action is executed immediately. Otherwise, the action is executed when the root project becomes available.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="settings-evaluated.html">settingsEvaluated</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">settingsEvaluated</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$settingsEvaluated(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a closure to be called when the build settings have been loaded and evaluated. The settings object is fully configured and is ready to use to load the build projects. The org.gradle.api.initialization.Settings object is passed to the closure as a parameter.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">settingsEvaluated</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$settingsEvaluated(org.gradle.api.Action((org.gradle.api.initialization.Settings)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.initialization/-settings/index.html"><span class="identifier">Settings</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an action to be called when the build settings have been loaded and evaluated. The settings object is fully configured and is ready to use to load the build projects.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="use-logger.html">useLogger</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">useLogger</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$useLogger(kotlin.Any)/logger">logger</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Uses the given object as a logger. The logger object may implement any of the listener interfaces supported by <code><a href="#">#addListener(Object)</a></code>. 
+<p> Each listener interface has exactly one associated logger. When you call this method with a logger of a given listener type, the new logger will replace whichever logger is currently associated with the listener type. This allows you to selectively replace the standard logging which Gradle provides with your own implementation, for certain types of events.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.plugins/-plugin-aware/apply.html">apply</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginAware$apply(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginAware$apply(org.gradle.api.Action((org.gradle.api.plugins.ObjectConfigurationAction)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.plugins/-object-configuration-action/index.html"><span class="identifier">ObjectConfigurationAction</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies zero or more plugins or scripts. 
+<p> The given closure is used to configure an ObjectConfigurationAction, which “builds” the plugin application. </p>
+<p> This method differs from <code><a href="#">#apply(java.util.Map)</a></code> in that it allows methods of the configuration action to be invoked more than once.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginAware$apply(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/options">options</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies a plugin or script, using the given options provided as a map. Does nothing if the plugin has already been applied. 
+<p> The given map is applied as a series of method calls to a newly created ObjectConfigurationAction. That is, each key in the map is expected to be the name of a method ObjectConfigurationAction and the value to be compatible arguments to that method. </p>
+<p>The following options are available:</p>
+ <ul><li><code>from</code>: A script to apply. Accepts any path supported by <code><a href="#">org.gradle.api.Project#uri(Object)</a></code>.</li>
+ <li><code>plugin</code>: The id or implementation class of the plugin to apply.</li>
+ <li><code>to</code>: The target delegate object or objects. The default is this plugin aware object. Use this to configure objects other than this object.</li>
+</ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.plugins/-plugin-aware/get-plugin-manager.html">getPluginManager</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPluginManager</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins/-plugin-manager/index.html"><span class="identifier">PluginManager</span></a></code>
+<p>The plugin manager for this plugin aware object.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.plugins/-plugin-aware/get-plugins.html">getPlugins</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPlugins</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins/-plugin-container/index.html"><span class="identifier">PluginContainer</span></a></code>
+<p>The container of plugins that have been applied to this object. 
+<p> While not deprecated, it is preferred to use the methods of this interface or the <code><a href="../../org.gradle.api.plugins/-plugin-aware/get-plugin-manager.html">plugin manager</a></code> than use the plugin container. </p>
+<p> Use one of the 'apply' methods on this interface or on the <code><a href="../../org.gradle.api.plugins/-plugin-aware/get-plugin-manager.html">plugin manager</a></code> to apply plugins instead of applying via the plugin container. </p>
+<p> Use <code><a href="#">PluginManager#hasPlugin(String)</a></code> or similar to query for the application of plugins instead of doing so via the plugin container.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

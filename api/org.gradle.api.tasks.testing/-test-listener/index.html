@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TestListener - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.testing</a>&nbsp;/&nbsp;<a href=".">TestListener</a><br/>
+<br/>
+<h1>TestListener</h1>
+<code><span class="keyword">interface </span><span class="identifier">TestListener</span></code>
+<p>Interface for listening to test execution. The intent is to be framework agnostic. Currently this interface can support feedback from JUnit and TestNG tests.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="after-suite.html">afterSuite</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">afterSuite</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.TestListener$afterSuite(org.gradle.api.tasks.testing.TestDescriptor, org.gradle.api.tasks.testing.TestResult)/suite">suite</span><span class="symbol">:</span>&nbsp;<a href="../-test-descriptor/index.html"><span class="identifier">TestDescriptor</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.testing.TestListener$afterSuite(org.gradle.api.tasks.testing.TestDescriptor, org.gradle.api.tasks.testing.TestResult)/result">result</span><span class="symbol">:</span>&nbsp;<a href="../-test-result/index.html"><span class="identifier">TestResult</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Called after a test suite is finished.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="after-test.html">afterTest</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">afterTest</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.TestListener$afterTest(org.gradle.api.tasks.testing.TestDescriptor, org.gradle.api.tasks.testing.TestResult)/testDescriptor">testDescriptor</span><span class="symbol">:</span>&nbsp;<a href="../-test-descriptor/index.html"><span class="identifier">TestDescriptor</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.testing.TestListener$afterTest(org.gradle.api.tasks.testing.TestDescriptor, org.gradle.api.tasks.testing.TestResult)/result">result</span><span class="symbol">:</span>&nbsp;<a href="../-test-result/index.html"><span class="identifier">TestResult</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Called after an atomic test is finished.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="before-suite.html">beforeSuite</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">beforeSuite</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.TestListener$beforeSuite(org.gradle.api.tasks.testing.TestDescriptor)/suite">suite</span><span class="symbol">:</span>&nbsp;<a href="../-test-descriptor/index.html"><span class="identifier">TestDescriptor</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Called before a test suite is started.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="before-test.html">beforeTest</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">beforeTest</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.TestListener$beforeTest(org.gradle.api.tasks.testing.TestDescriptor)/testDescriptor">testDescriptor</span><span class="symbol">:</span>&nbsp;<a href="../-test-descriptor/index.html"><span class="identifier">TestDescriptor</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Called before an atomic test is started.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,183 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>SignOperation - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.signing</a>&nbsp;/&nbsp;<a href=".">SignOperation</a><br/>
+<br/>
+<h1>SignOperation</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SignOperation</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-signature-spec/index.html"><span class="identifier">SignatureSpec</span></a></code>
+<p>A sign operation creates digital signatures for one or more files or PublishArtifact. 
+<p>The external representation of the signature is specified by the <code><a href="get-signature-type.html">signature type property</a></code>, while the <code><a href="#">#signatory</a></code> property specifies who is to sign. </p>
+<p> A sign operation manages one or more Signature objects. The <code>sign</code> methods are used to register things to generate signatures for. The <code><a href="execute.html">#execute()</a></code> method generates the signatures for all of the registered items at that time.</p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">SignOperation</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>A sign operation creates digital signatures for one or more files or PublishArtifact. 
+<p>The external representation of the signature is specified by the <code><a href="get-signature-type.html">signature type property</a></code>, while the <code><a href="#">#signatory</a></code> property specifies who is to sign. </p>
+<p> A sign operation manages one or more Signature objects. The <code>sign</code> methods are used to register things to generate signatures for. The <code><a href="execute.html">#execute()</a></code> method generates the signatures for all of the registered items at that time.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="configure.html">configure</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">configure</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SignOperation$configure(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SignOperation</span></code>
+<p>Executes the given closure against this object.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="execute.html">execute</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">execute</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SignOperation</span></code>
+<p>Generates actual signature files for all of the registered signatures. 
+<p>The signatures are generated with the configuration they have at this time, which includes the signature type and signatory of this operation at this time. </p>
+<p> This method can be called multiple times, with the signatures being generated with their current configuration each time.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-files-to-sign.html">getFilesToSign</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getFilesToSign</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>All of the files that will be signed by this operation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-signatory.html">getSignatory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSignatory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.plugins.signing.signatory/-signatory/index.html"><span class="identifier">Signatory</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-signature-files.html">getSignatureFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSignatureFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>All of the signature files that will be generated by this operation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-signature-type.html">getSignatureType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSignatureType</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.plugins.signing.type/-signature-type/index.html"><span class="identifier">SignatureType</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-signatures.html">getSignatures</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSignatures</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-signature/index.html"><span class="identifier">Signature</span></a><span class="symbol">&gt;</span></code>
+<p>The registered signatures.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-single-signature.html">getSingleSignature</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSingleSignature</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-signature/index.html"><span class="identifier">Signature</span></a></code>
+<p>Returns the single registered signature.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-required.html">isRequired</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isRequired</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-required.html">setRequired</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setRequired</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SignOperation$setRequired(kotlin.Boolean)/required">required</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-signatory.html">setSignatory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSignatory</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SignOperation$setSignatory(org.gradle.plugins.signing.signatory.Signatory)/signatory">signatory</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.signing.signatory/-signatory/index.html"><span class="identifier">Signatory</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-signature-type.html">setSignatureType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSignatureType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SignOperation$setSignatureType(org.gradle.plugins.signing.type.SignatureType)/signatureType">signatureType</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.signing.type/-signature-type/index.html"><span class="identifier">SignatureType</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="sign.html">sign</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.plugins.signing.SignOperation$sign(kotlin.Array((org.gradle.api.artifacts.PublishArtifact)))/artifacts">artifacts</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts/-publish-artifact/index.html"><span class="identifier">PublishArtifact</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SignOperation</span></code>
+<p>Registers signatures for the given artifacts.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.plugins.signing.SignOperation$sign(kotlin.Array((java.io.File)))/files">files</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SignOperation</span></code>
+<p>Registers signatures for the given files.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SignOperation$sign(kotlin.String, kotlin.Array((java.io.File)))/classifier">classifier</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.plugins.signing.SignOperation$sign(kotlin.String, kotlin.Array((java.io.File)))/files">files</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SignOperation</span></code>
+<p>Registers signatures (with the given classifier) for the given files</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="signatory.html">signatory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">signatory</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SignOperation$signatory(org.gradle.plugins.signing.signatory.Signatory)/signatory">signatory</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.signing.signatory/-signatory/index.html"><span class="identifier">Signatory</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SignOperation</span></code>
+<p>Change the signatory for signature generation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="signature-type.html">signatureType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">signatureType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SignOperation$signatureType(org.gradle.plugins.signing.type.SignatureType)/type">type</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.signing.type/-signature-type/index.html"><span class="identifier">SignatureType</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SignOperation</span></code>
+<p>Change the signature type for signature generation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="to-string.html">toString</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

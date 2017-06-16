@@ -1,0 +1,20 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>FindBugs.setExtraArgs - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins.quality</a>&nbsp;/&nbsp;<a href="index.html">FindBugs</a>&nbsp;/&nbsp;<a href=".">setExtraArgs</a><br/>
+<br/>
+<h1>setExtraArgs</h1>
+<a name="org.gradle.api.plugins.quality.FindBugs$setExtraArgs(kotlin.collections.MutableCollection((kotlin.String)))"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExtraArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.FindBugs$setExtraArgs(kotlin.collections.MutableCollection((kotlin.String)))/extraArgs">extraArgs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Any additional arguments (not covered here more explicitly like <code>effort</code>) to be passed along to FindBugs. 
+<p> Extra arguments are passed to FindBugs after the arguments Gradle understands (like <code>effort</code> but before the list of classes to analyze. This should only be used for arguments that cannot be provided by Gradle directly. Gradle does not try to interpret or validate the arguments before passing them to FindBugs. </p>
+<p> See the <a href="#">FindBugs TextUICommandLine source</a> for available options.</p>
+</p>
+<p><strong>Since</strong><br/>
+2.6</p>
+</BODY>
+</HTML>

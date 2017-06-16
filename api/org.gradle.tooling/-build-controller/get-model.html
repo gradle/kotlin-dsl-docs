@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BuildController.getModel - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling</a>&nbsp;/&nbsp;<a href="index.html">BuildController</a>&nbsp;/&nbsp;<a href=".">getModel</a><br/>
+<br/>
+<h1>getModel</h1>
+<a name="org.gradle.tooling.BuildController$getModel(java.lang.Class((org.gradle.tooling.BuildController.getModel.T)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">getModel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.BuildController$getModel(java.lang.Class((org.gradle.tooling.BuildController.getModel.T)))/modelType">modelType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Fetches a snapshot of the model of the given type for the default project. The default project is generally the project referenced when a ProjectConnection is created. 
+<p>Any of following models types may be available, depending on the version of Gradle being used by the target build: </p>
+<ul> <li>GradleBuild</li>
+ <li>org.gradle.tooling.model.build.BuildEnvironment</li>
+ <li>org.gradle.tooling.model.GradleProject</li>
+ <li>org.gradle.tooling.model.gradle.BuildInvocations</li>
+ <li>org.gradle.tooling.model.gradle.ProjectPublications</li>
+ <li>org.gradle.tooling.model.idea.IdeaProject</li>
+ <li>org.gradle.tooling.model.idea.BasicIdeaProject</li>
+ <li>org.gradle.tooling.model.eclipse.EclipseProject</li>
+ <li>org.gradle.tooling.model.eclipse.HierarchicalEclipseProject</li>
+ </ul>
+ 
+<p>A build may also expose additional custom tooling models. You can use this method to query these models.</p>
+</p>
+<h3>Parameters</h3>
+<a name="modelType"></a>
+<code>modelType</code> - The model type.<a name="&lt;T&gt;"></a>
+<code><T></code> - The model type.
+<h3>Exceptions</h3>
+<a name="UnknownModelException"></a>
+<code>UnknownModelException</code> - When the default project does not support the requested model.
+<p><strong>Return</strong><br/>
+The model.</p>
+<p><strong>Since</strong><br/>
+1.8</p>
+<a name="org.gradle.tooling.BuildController$getModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.getModel.T)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">getModel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.BuildController$getModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.getModel.T)))/target">target</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.model/-model.html"><span class="identifier">Model</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.BuildController$getModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.getModel.T)))/modelType">modelType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Fetches a snapshot of the model of the given type for the given element, usually a Gradle project. 
+<p>The following elements are supported: </p>
+<ul> <li>Any org.gradle.tooling.model.gradle.BasicGradleProject</li>
+ <li>Any org.gradle.tooling.model.GradleProject</li>
+ <li>Any org.gradle.tooling.model.eclipse.EclipseProject</li>
+ <li>Any org.gradle.tooling.model.idea.IdeaModule</li>
+ </ul>
+ 
+<p>See <code><a href="#">#getModel(Class)</a></code> for more details.</p>
+</p>
+<h3>Parameters</h3>
+<a name="target"></a>
+<code>target</code> - The target element, usually a project.<a name="modelType"></a>
+<code>modelType</code> - The model type.<a name="&lt;T&gt;"></a>
+<code><T></code> - The model type.
+<h3>Exceptions</h3>
+<a name="UnknownModelException"></a>
+<code>UnknownModelException</code> - When the target project does not support the requested model.
+<p><strong>Return</strong><br/>
+The model.</p>
+</BODY>
+</HTML>

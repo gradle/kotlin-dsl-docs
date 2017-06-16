@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Project.setProperty - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">Project</a>&nbsp;/&nbsp;<a href=".">setProperty</a><br/>
+<br/>
+<h1>setProperty</h1>
+<a name="org.gradle.api.Project$setProperty(kotlin.String, kotlin.Any)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setProperty</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$setProperty(kotlin.String, kotlin.Any)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Project$setProperty(kotlin.String, kotlin.Any)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Sets a property of this project. This method searches for a property with the given name in the following locations, and sets the property on the first location where it finds the property.</p>
+ <ol> <li>The project object itself. For example, the <code>rootDir</code> project property.</li>
+ <li>The project's Convention object. For example, the <code>srcRootName</code> java plugin property.</li>
+ <li>The project's extra properties.</li>
+ </ol>
+ If the property is not found, a groovy.lang.MissingPropertyException is thrown.</p>
+<h3>Parameters</h3>
+<a name="name"></a>
+<code>name</code> - The name of the property<a name="value"></a>
+<code>value</code> - The value of the property
+</BODY>
+</HTML>

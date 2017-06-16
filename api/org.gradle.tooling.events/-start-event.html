@@ -1,0 +1,71 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>StartEvent - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.tooling.events</a>&nbsp;/&nbsp;<a href=".">StartEvent</a><br/>
+<br/>
+<h1>StartEvent</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">StartEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-progress-event/index.html"><span class="identifier">ProgressEvent</span></a></code>
+<p>An event that informs about an operation having started its execution.</p>
+<p><strong>Since</strong><br/>
+2.4</p>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-progress-event/get-descriptor.html">getDescriptor</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDescriptor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-operation-descriptor/index.html"><span class="identifier">OperationDescriptor</span></a></code>
+<p>Returns the description of the operation for which progress is reported.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-progress-event/get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns a human consumable short description of the event.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-progress-event/get-event-time.html">getEventTime</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getEventTime</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code>
+<p>Returns the time this event was triggered.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../org.gradle.tooling.events.task/-task-start-event.html">TaskStartEvent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskStartEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.tooling.events.task/-task-progress-event/index.html"><span class="identifier">TaskProgressEvent</span></a><span class="symbol">, </span><span class="identifier">StartEvent</span></code>
+<p>An event that informs about a task having started its execution.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.tooling.events.test/-test-start-event.html">TestStartEvent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TestStartEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.tooling.events.test/-test-progress-event/index.html"><span class="identifier">TestProgressEvent</span></a><span class="symbol">, </span><span class="identifier">StartEvent</span></code>
+<p>An event that informs about a test having started its execution.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,69 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Provider - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.provider</a>&nbsp;/&nbsp;<a href=".">Provider</a><br/>
+<br/>
+<h1>Provider</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">Provider</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>A container object which provides a value of a specific type. The value can be retrieved by the method <code>get()</code> or <code>getOrNull()</code>. 
+<p> <strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory methods <code><a href="#">org.gradle.api.Project#provider(java.util.concurrent.Callable)</a></code> or <code><a href="#">org.gradle.api.provider.ProviderFactory#provider(java.util.concurrent.Callable)</a></code>.</p>
+</p>
+<h3>Parameters</h3>
+<a name="&lt;T&gt;"></a>
+<code><T></code> - Type of value represented by provider
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get.html">get</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>If a value is present in this provider, returns the value, otherwise throws <code>java.lang.IllegalStateException</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-or-null.html">getOrNull</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOrNull</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Returns the value if present in this provider. Returns null if value is not available.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-present.html">isPresent</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isPresent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns <code>true</code> if there is a value present, otherwise <code>false</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-property-state/index.html">PropertyState</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PropertyState</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Provider</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>A <code>Provider</code> representation for capturing property state. The value can be provided by using the method <code>set()</code>. 
+<p> <strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory methods <code><a href="#">org.gradle.api.Project#property(java.lang.Class)</a></code> or <code><a href="#">org.gradle.api.provider.ProviderFactory#property(java.lang.Class)</a></code>.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

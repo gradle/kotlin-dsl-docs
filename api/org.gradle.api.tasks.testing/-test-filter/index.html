@@ -1,0 +1,75 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TestFilter - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.testing</a>&nbsp;/&nbsp;<a href=".">TestFilter</a><br/>
+<br/>
+<h1>TestFilter</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">TestFilter</span></code>
+<p>Allows filtering tests for execution. Some examples: <pre><code> apply plugin: 'java' test { filter { //specific test method includeTestsMatching "org.gradle.SomeTest.someSpecificFeature" //specific test method, use wildcard for packages includeTestsMatching "*SomeTest.someSpecificFeature" //specific test class includeTestsMatching "org.gradle.SomeTest" //specific test class, wildcard for packages includeTestsMatching "*.SomeTest" //all classes in package, recursively includeTestsMatching "com.gradle.tooling.*" //all integration tests, by naming convention includeTestsMatching "*IntegTest" //only ui tests from integration tests, by some naming convention includeTestsMatching "*IntegTest*ui" //specific test class and test method includeTest "org.gradle.SomeTest", "someTestMethod" } } </code></pre></p>
+<p><strong>Since</strong><br/>
+1.10</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-include-patterns.html">getIncludePatterns</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getIncludePatterns</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the included test name patterns. They can be class or method names and may contain wildcard '*'. Test name patterns can be appended via <code><a href="#">#includeTestsMatching(String)</a></code> or set via <code><a href="#">#setIncludePatterns(String...)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="include-test.html">includeTest</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">includeTest</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.TestFilter$includeTest(kotlin.String, kotlin.String)/className">className</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.testing.TestFilter$includeTest(kotlin.String, kotlin.String)/methodName">methodName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TestFilter</span></code>
+<p>Add a test method specified by test class name and method name.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="include-tests-matching.html">includeTestsMatching</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">includeTestsMatching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.TestFilter$includeTestsMatching(kotlin.String)/testNamePattern">testNamePattern</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TestFilter</span></code>
+<p>Appends a test name pattern to the filter. Wildcard '*' is supported, either test method name or class name is supported. Examples of test names: "com.foo.FooTest.someMethod", "com.foo.FooTest", "*FooTest*", "com.foo*". See examples in the docs for TestFilter.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-fail-on-no-matching-tests.html">isFailOnNoMatchingTests</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isFailOnNoMatchingTests</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns whether the task should fail if no matching tests where found. The default is true.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-fail-on-no-matching-tests.html">setFailOnNoMatchingTests</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setFailOnNoMatchingTests</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.TestFilter$setFailOnNoMatchingTests(kotlin.Boolean)/failOnNoMatchingTests">failOnNoMatchingTests</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Let the test task fail if a filter configuration was provided but no test matched the given configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-include-patterns.html">setIncludePatterns</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setIncludePatterns</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.tasks.testing.TestFilter$setIncludePatterns(kotlin.Array((kotlin.String)))/testNamePatterns">testNamePatterns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TestFilter</span></code>
+<p>Sets the test name patterns to be included in the filter. Wildcard '*' is supported. Replaces any existing test name patterns.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

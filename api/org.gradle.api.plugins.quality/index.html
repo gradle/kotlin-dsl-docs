@@ -1,0 +1,233 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api.plugins.quality - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.plugins.quality</a><br/>
+<br/>
+<h2>Package org.gradle.api.plugins.quality</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-checkstyle/index.html">Checkstyle</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Checkstyle</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a><span class="symbol">, </span><a href="../org.gradle.api.tasks/-verification-task/index.html"><span class="identifier">VerificationTask</span></a><span class="symbol">, </span><a href="../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="-checkstyle-reports/index.html"><span class="identifier">CheckstyleReports</span></a><span class="symbol">&gt;</span></code>
+<p>Runs Checkstyle against some source files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-checkstyle-extension/index.html">CheckstyleExtension</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CheckstyleExtension</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-code-quality-extension/index.html"><span class="identifier">CodeQualityExtension</span></a></code>
+<p>Configuration options for the Checkstyle plugin.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-checkstyle-plugin/index.html">CheckstylePlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CheckstylePlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractCodeQualityPlugin</span></code>
+<p>Checkstyle Plugin.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-checkstyle-reports/index.html">CheckstyleReports</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CheckstyleReports</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.reporting/-report-container/index.html"><span class="identifier">ReportContainer</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api.reporting/-single-file-report/index.html"><span class="identifier">SingleFileReport</span></a><span class="symbol">&gt;</span></code>
+<p>The reporting configuration for the Checkstyle task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-code-narc/index.html">CodeNarc</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CodeNarc</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a><span class="symbol">, </span><a href="../org.gradle.api.tasks/-verification-task/index.html"><span class="identifier">VerificationTask</span></a><span class="symbol">, </span><a href="../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="-code-narc-reports/index.html"><span class="identifier">CodeNarcReports</span></a><span class="symbol">&gt;</span></code>
+<p>Runs CodeNarc against some source files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-code-narc-extension/index.html">CodeNarcExtension</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CodeNarcExtension</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-code-quality-extension/index.html"><span class="identifier">CodeQualityExtension</span></a></code>
+<p>Configuration options for the CodeNarc plugin.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-code-narc-plugin/index.html">CodeNarcPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CodeNarcPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractCodeQualityPlugin</span></code>
+<p>CodeNarc Plugin.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-code-narc-reports/index.html">CodeNarcReports</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CodeNarcReports</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.reporting/-report-container/index.html"><span class="identifier">ReportContainer</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api.reporting/-single-file-report/index.html"><span class="identifier">SingleFileReport</span></a><span class="symbol">&gt;</span></code>
+<p>The reporting configuration for the CodeNarc test.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-code-quality-extension/index.html">CodeQualityExtension</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">CodeQualityExtension</span></code>
+<p>Base Code Quality Extension.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-find-bugs/index.html">FindBugs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">FindBugs</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a><span class="symbol">, </span><a href="../org.gradle.api.tasks/-verification-task/index.html"><span class="identifier">VerificationTask</span></a><span class="symbol">, </span><a href="../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="-find-bugs-reports/index.html"><span class="identifier">FindBugsReports</span></a><span class="symbol">&gt;</span></code>
+<p>Analyzes code with <a href="#">FindBugs</a>. See the <a href="#">FindBugs Manual</a> for additional information on configuration options.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-find-bugs-extension/index.html">FindBugsExtension</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">FindBugsExtension</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-code-quality-extension/index.html"><span class="identifier">CodeQualityExtension</span></a></code>
+<p>Configuration options for the FindBugs plugin. All options have sensible defaults. See the <a href="#">FindBugs Manual</a> for additional information on these options. 
+<p>Below is a full configuration example. Since all properties have sensible defaults, typically only selected properties will be configured. </p>
+<pre><code> apply plugin: "java" apply plugin: "findbugs" findbugs { toolVersion = "2.0.1" sourceSets = [sourceSets.main] ignoreFailures = true reportsDir = file("$project.buildDir/findbugsReports") effort = "max" reportLevel = "high" visitors = ["FindSqlInjection", "SwitchFallthrough"] omitVisitors = ["FindNonShortCircuit"] includeFilter = file("$rootProject.projectDir/config/findbugs/includeFilter.xml") excludeFilter = file("$rootProject.projectDir/config/findbugs/excludeFilter.xml") excludeBugsFilter = file("$rootProject.projectDir/config/findbugs/excludeBugsFilter.xml") } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-find-bugs-plugin/index.html">FindBugsPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">FindBugsPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractCodeQualityPlugin</span></code>
+<p>A plugin for the <a href="#">FindBugs</a> byte code analyzer. 
+<p> Declares a findbugs configuration which needs to be configured with the FindBugs library to be used. Additional plugins can be added to the findbugsPlugins configuration. </p>
+<p> For projects that have the Java (base) plugin applied, a FindBugs task is created for each source set.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-find-bugs-reports/index.html">FindBugsReports</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">FindBugsReports</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.reporting/-report-container/index.html"><span class="identifier">ReportContainer</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api.reporting/-single-file-report/index.html"><span class="identifier">SingleFileReport</span></a><span class="symbol">&gt;</span></code>
+<p>The reporting configuration for the FindBugs task. Only one of the reports can be enabled when the task executes. If more than one is enabled, an org.gradle.api.InvalidUserDataException will be thrown.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-find-bugs-xml-report/index.html">FindBugsXmlReport</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">FindBugsXmlReport</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.reporting/-single-file-report/index.html"><span class="identifier">SingleFileReport</span></a></code>
+<p>The single file XML report for FindBugs.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-j-depend/index.html">JDepend</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JDepend</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a><span class="symbol">, </span><a href="../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="-j-depend-reports/index.html"><span class="identifier">JDependReports</span></a><span class="symbol">&gt;</span></code>
+<p>Analyzes code with <a href="#">JDepend</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-j-depend-extension/index.html">JDependExtension</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JDependExtension</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-code-quality-extension/index.html"><span class="identifier">CodeQualityExtension</span></a></code>
+<p>Configuration options for the JDepend plugin.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-j-depend-plugin/index.html">JDependPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JDependPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractCodeQualityPlugin</span></code>
+<p>A org.gradle.api.Plugin that generates design quality metrics by scanning your source packages. This is done using the JDepend tool. This plugin will automatically generate a task for each Java source set. See <a href="#">JDepend</a> for more information.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-j-depend-reports/index.html">JDependReports</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">JDependReports</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.reporting/-report-container/index.html"><span class="identifier">ReportContainer</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api.reporting/-single-file-report/index.html"><span class="identifier">SingleFileReport</span></a><span class="symbol">&gt;</span></code>
+<p>The reporting configuration for the JDepend task. Exactly one of the XML or HTML reports can be enabled when the task executes. If more than one or none is enabled, an org.gradle.api.InvalidUserDataException will be thrown.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-pmd/index.html">Pmd</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Pmd</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a><span class="symbol">, </span><a href="../org.gradle.api.tasks/-verification-task/index.html"><span class="identifier">VerificationTask</span></a><span class="symbol">, </span><a href="../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="-pmd-reports/index.html"><span class="identifier">PmdReports</span></a><span class="symbol">&gt;</span></code>
+<p>Runs a set of static code analysis rules on Java source code files and generates a report of problems found.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-pmd-extension/index.html">PmdExtension</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PmdExtension</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-code-quality-extension/index.html"><span class="identifier">CodeQualityExtension</span></a></code>
+<p>Configuration options for the PMD plugin.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-pmd-plugin/index.html">PmdPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PmdPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractCodeQualityPlugin</span></code>
+<p>A plugin for the <a href="#">PMD</a> source code analyzer. 
+<p> Declares a pmd configuration which needs to be configured with the PMD library to be used. </p>
+<p> For each source set that is to be analyzed, a Pmd task is created and configured to analyze all Java code. </p>
+<p> All PMD tasks (including user-defined ones) are added to the check lifecycle task.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-pmd-reports/index.html">PmdReports</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PmdReports</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.reporting/-report-container/index.html"><span class="identifier">ReportContainer</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api.reporting/-single-file-report/index.html"><span class="identifier">SingleFileReport</span></a><span class="symbol">&gt;</span></code>
+<p>The reporting configuration for the Pmd task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-target-jdk/index.html">TargetJdk</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">TargetJdk</span></code>
+<p>Represents the PMD targetjdk property available for PMD &lt; 5.0</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

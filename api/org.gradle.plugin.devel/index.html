@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.plugin.devel - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.plugin.devel</a><br/>
+<br/>
+<h2>Package org.gradle.plugin.devel</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-gradle-plugin-development-extension/index.html">GradlePluginDevelopmentExtension</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GradlePluginDevelopmentExtension</span></code>
+<p>Configuration options for the org.gradle.plugin.devel.plugins.JavaGradlePluginPlugin. 
+<p>Below is a full configuration example. Since all properties have sensible defaults, typically only selected properties will be configured. </p>
+<pre><code> apply plugin: "java-gradle-plugin" gradlePlugin { pluginSourceSet project.sourceSets.customMain testSourceSets project.sourceSets.functionalTest plugins { helloPlugin { id = 'org.example.hello' implementationClass = 'org.example.HelloPlugin' } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-plugin-declaration/index.html">PluginDeclaration</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PluginDeclaration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a><span class="symbol">, </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code>
+<p>Describes a Gradle plugin under development.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

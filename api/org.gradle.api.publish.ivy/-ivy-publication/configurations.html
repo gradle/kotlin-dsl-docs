@@ -1,0 +1,18 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>IvyPublication.configurations - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.publish.ivy</a>&nbsp;/&nbsp;<a href="index.html">IvyPublication</a>&nbsp;/&nbsp;<a href=".">configurations</a><br/>
+<br/>
+<h1>configurations</h1>
+<a name="org.gradle.api.publish.ivy.IvyPublication$configurations(org.gradle.api.Action((org.gradle.api.publish.ivy.IvyConfigurationContainer)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">configurations</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.publish.ivy.IvyPublication$configurations(org.gradle.api.Action((org.gradle.api.publish.ivy.IvyConfigurationContainer)))/config">config</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-ivy-configuration-container.html"><span class="identifier">IvyConfigurationContainer</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Defines some IvyConfigurations that should be included in the published ivy module descriptor file. The following example demonstrates how to add a "testCompile" configuration, and a "testRuntime" configuration that extends it. <pre><code> apply plugin: "java" apply plugin: "ivy-publish" publishing { publications { ivy(IvyPublication) { configurations { testCompile {} testRuntime { extend "testCompile" } } } } } </code></pre></p>
+<h3>Parameters</h3>
+<a name="config"></a>
+<code>config</code> - An action or closure to configure the values of the constructed IvyConfiguration.
+</BODY>
+</HTML>

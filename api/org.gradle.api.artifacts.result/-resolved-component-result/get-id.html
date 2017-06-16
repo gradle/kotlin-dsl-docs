@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResolvedComponentResult.getId - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.result</a>&nbsp;/&nbsp;<a href="index.html">ResolvedComponentResult</a>&nbsp;/&nbsp;<a href=".">getId</a><br/>
+<br/>
+<h1>getId</h1>
+<a name="org.gradle.api.artifacts.result.ResolvedComponentResult$getId()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getId</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.component/-component-identifier/index.html"><span class="identifier">ComponentIdentifier</span></a></code>
+<p>
+<p>Returns the identifier of this component. This can be used to uniquely identify the component within the current build, but it is not necessarily unique between different builds. </p>
+<p>The return type is declared as an opaque ComponentIdentifier, however the identifier may also implement one of the following interfaces:</p>
+ <ul> <li>org.gradle.api.artifacts.component.ProjectComponentIdentifier for those component instances which are produced by the current build.</li>
+ <li>org.gradle.api.artifacts.component.ModuleComponentIdentifier for those component instances which are found in some repository.</li>
+ </ul>
+</p>
+<p><strong>Return</strong><br/>
+the identifier of this component</p>
+</BODY>
+</HTML>

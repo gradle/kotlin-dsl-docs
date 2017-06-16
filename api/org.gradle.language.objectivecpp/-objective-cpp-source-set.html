@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ObjectiveCppSourceSet - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.language.objectivecpp</a>&nbsp;/&nbsp;<a href=".">ObjectiveCppSourceSet</a><br/>
+<br/>
+<h1>ObjectiveCppSourceSet</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ObjectiveCppSourceSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.language.nativeplatform/-header-exporting-source-set/index.html"><span class="identifier">HeaderExportingSourceSet</span></a><span class="symbol">, </span><a href="../org.gradle.language.base/-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-dependent-source-set/index.html"><span class="identifier">DependentSourceSet</span></a></code>
+<p>A set of Objective-C++ source files. 
+<p>An Objective-C++ source set contains a set of source files, together with an optional set of exported header files.</p>
+ <pre><code> apply plugin: "objective-cpp" model { components { main(NativeLibrarySpec) { sources { objcpp { source { srcDirs "src/main/objectiveCpp", "src/shared/objectiveCpp" include "**/*.mm" } exportedHeaders { srcDirs "src/main/include" } } } } } } </code></pre></p>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../org.gradle.language.nativeplatform/-header-exporting-source-set/get-exported-headers.html">getExportedHeaders</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExportedHeaders</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.file/-source-directory-set/index.html"><span class="identifier">SourceDirectorySet</span></a></code>
+<p>The headers as a directory set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.language.nativeplatform/-header-exporting-source-set/get-implicit-headers.html">getImplicitHeaders</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getImplicitHeaders</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.file/-source-directory-set/index.html"><span class="identifier">SourceDirectorySet</span></a></code>
+<p>The headers that are private to this source set and implicitly available. These are not explicitly made available for compilation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.language.nativeplatform/-dependent-source-set/get-libs.html">getLibs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLibs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span></code>
+<p>The libraries that this source set requires.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.language.nativeplatform/-dependent-source-set/get-pre-compiled-header.html">getPreCompiledHeader</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPreCompiledHeader</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the pre-compiled header configured for this source set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.language.nativeplatform/-dependent-source-set/lib.html">lib</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">lib</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.nativeplatform.DependentSourceSet$lib(kotlin.Any)/library">library</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a library that this source set requires. This method accepts the following types: <ul> <li>A org.gradle.nativeplatform.NativeLibrarySpec</li>
+ <li>A org.gradle.nativeplatform.NativeDependencySet</li>
+ <li>A LanguageSourceSet</li>
+ <li>A java.util.Map containing the library selector.</li>
+ </ul>
+ The Map notation supports the following String attributes: <ul> <li>project: the path to the project containing the library (optional, defaults to current project)</li>
+ <li>library: the name of the library (required)</li>
+ <li>linkage: the library linkage required ['shared'/'static'] (optional, defaults to 'shared')</li>
+ </ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.language.nativeplatform/-dependent-source-set/set-pre-compiled-header.html">setPreCompiledHeader</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setPreCompiledHeader</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.nativeplatform.DependentSourceSet$setPreCompiledHeader(kotlin.String)/header">header</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the pre-compiled header to be used when compiling sources in this source set.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

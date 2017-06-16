@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Conf2ScopeMappingContainer - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.maven</a>&nbsp;/&nbsp;<a href=".">Conf2ScopeMappingContainer</a><br/>
+<br/>
+<h1>Conf2ScopeMappingContainer</h1>
+<code><span class="keyword">interface </span><span class="identifier">Conf2ScopeMappingContainer</span></code>
+<p>Defines a set of rules for how to map the Gradle dependencies to a POM. This mapping is based on the configuration the dependencies belong to.</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-c-o-m-p-i-l-e.html">COMPILE</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">COMPILE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-p-r-o-v-i-d-e-d.html">PROVIDED</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">PROVIDED</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-r-u-n-t-i-m-e.html">RUNTIME</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">RUNTIME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-t-e-s-t.html">TEST</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">TEST</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-mapping.html">addMapping</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addMapping</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.Conf2ScopeMappingContainer$addMapping(kotlin.Int, org.gradle.api.artifacts.Configuration, kotlin.String)/priority">priority</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.maven.Conf2ScopeMappingContainer$addMapping(kotlin.Int, org.gradle.api.artifacts.Configuration, kotlin.String)/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.maven.Conf2ScopeMappingContainer$addMapping(kotlin.Int, org.gradle.api.artifacts.Configuration, kotlin.String)/scope">scope</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Conf2ScopeMappingContainer</span></code>
+<p>
+<p>Specifies that dependencies of a certain configuration should be mapped against a certain Maven scope. A configuration can be mapped to one and only one scope. If this method is called more than once for a particular configuration, the last call wins.</p>
+ See <code><a href="#">#getMapping(java.util.Collection)</a></code> for the rules how a scope is choosen from a set of mappings.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-mapping.html">getMapping</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getMapping</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.Conf2ScopeMappingContainer$getMapping(kotlin.collections.MutableCollection((org.gradle.api.artifacts.Configuration)))/configurations">configurations</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-conf2-scope-mapping/index.html"><span class="identifier">Conf2ScopeMapping</span></a></code>
+<p>Returns a scope that corresponds to the given configurations. Dependencies of different configurations can be equal. But only one of those equals dependencies (which might differ in content) can be mapped to a POM (due to the nature of a Maven POM). 
+<p>Which scope is returned depends on the existing mappings. See <code><a href="#">#addMapping(int, Configuration, String)</a></code>. If only one configuration is mapped, this mapping is used to choose the scope. If more than one configuration of a dependency is mapped, and those mappings all map to the same scope, this scope is used. If more than one configuration is mapped and the mappings map to different scopes, the mapping with the highest priority is used. If there is more than one mapping with the highest priority and those mappings map to different scopes, an exception is thrown.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-mappings.html">getMappings</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getMappings</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">,</span>&nbsp;<a href="../-conf2-scope-mapping/index.html"><span class="identifier">Conf2ScopeMapping</span></a><span class="symbol">&gt;</span></code>
+<p>Returns a map with all the configuration to scope mappings. If no such mapping has been defined, an empty map is returned.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-skip-unmapped-confs.html">isSkipUnmappedConfs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isSkipUnmappedConfs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns whether unmapped configuration should be skipped or not. Defaults to true.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-skip-unmapped-confs.html">setSkipUnmappedConfs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setSkipUnmappedConfs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.Conf2ScopeMappingContainer$setSkipUnmappedConfs(kotlin.Boolean)/skipDependenciesWithUnmappedConfiguration">skipDependenciesWithUnmappedConfiguration</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets, whether unmapped configuration should be skipped or not. If this is set to false, dependencies belonging to unmapped configurations will be added to the Maven POM with no scope specified. This means they belong to the Maven default scope, which is 'compile'.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

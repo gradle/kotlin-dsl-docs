@@ -1,0 +1,272 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BaseScalaCompileOptions - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.scala.tasks</a>&nbsp;/&nbsp;<a href=".">BaseScalaCompileOptions</a><br/>
+<br/>
+<h1>BaseScalaCompileOptions</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BaseScalaCompileOptions</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks.compile/-abstract-options/index.html"><span class="identifier">AbstractOptions</span></a></code>
+<p>Options for Scala platform compilation.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">BaseScalaCompileOptions</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Options for Scala platform compilation.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-additional-parameters.html">getAdditionalParameters</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAdditionalParameters</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Additional parameters passed to the compiler. Each parameter must start with '-'.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-debug-level.html">getDebugLevel</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDebugLevel</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Generate debugging information. Legal values: none, source, line, vars, notailcalls</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-encoding.html">getEncoding</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getEncoding</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Encoding of source files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-fork-options.html">getForkOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getForkOptions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.scala/-scala-fork-options/index.html"><span class="identifier">ScalaForkOptions</span></a></code>
+<p>Options for running the Scala compiler in a separate process.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-incremental-options.html">getIncrementalOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getIncrementalOptions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.scala/-incremental-compile-options/index.html"><span class="identifier">IncrementalCompileOptions</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-logging-level.html">getLoggingLevel</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLoggingLevel</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Specifies the amount of logging. Legal values: none, verbose, debug</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-logging-phases.html">getLoggingPhases</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLoggingPhases</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Phases of the compiler to log. Legal values: namer, typer, pickler, uncurry, tailcalls, transmatch, explicitouter, erasure, lambdalift, flatten, constructors, mixin, icode, jvm, terminal.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-deprecation.html">isDeprecation</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isDeprecation</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Generate deprecation information.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-fail-on-error.html">isFailOnError</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isFailOnError</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Fail the build on compilation errors.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-force.html">isForce</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isForce</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether to force the compilation of all files. Legal values: - false (only compile modified files) - true (always recompile all files)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-list-files.html">isListFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isListFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>List files to be compiled.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-optimize.html">isOptimize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isOptimize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Run optimizations.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-unchecked.html">isUnchecked</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isUnchecked</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Generate unchecked information.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-additional-parameters.html">setAdditionalParameters</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setAdditionalParameters</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.scala.tasks.BaseScalaCompileOptions$setAdditionalParameters(kotlin.collections.MutableList((kotlin.String)))/additionalParameters">additionalParameters</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-debug-level.html">setDebugLevel</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDebugLevel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.scala.tasks.BaseScalaCompileOptions$setDebugLevel(kotlin.String)/debugLevel">debugLevel</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-deprecation.html">setDeprecation</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDeprecation</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.scala.tasks.BaseScalaCompileOptions$setDeprecation(kotlin.Boolean)/deprecation">deprecation</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-encoding.html">setEncoding</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setEncoding</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.scala.tasks.BaseScalaCompileOptions$setEncoding(kotlin.String)/encoding">encoding</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-fail-on-error.html">setFailOnError</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setFailOnError</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.scala.tasks.BaseScalaCompileOptions$setFailOnError(kotlin.Boolean)/failOnError">failOnError</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-force.html">setForce</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setForce</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.scala.tasks.BaseScalaCompileOptions$setForce(kotlin.Boolean)/force">force</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-fork-options.html">setForkOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setForkOptions</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.scala.tasks.BaseScalaCompileOptions$setForkOptions(org.gradle.api.tasks.scala.ScalaForkOptions)/forkOptions">forkOptions</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks.scala/-scala-fork-options/index.html"><span class="identifier">ScalaForkOptions</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-incremental-options.html">setIncrementalOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setIncrementalOptions</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.scala.tasks.BaseScalaCompileOptions$setIncrementalOptions(org.gradle.api.tasks.scala.IncrementalCompileOptions)/incrementalOptions">incrementalOptions</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks.scala/-incremental-compile-options/index.html"><span class="identifier">IncrementalCompileOptions</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-list-files.html">setListFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setListFiles</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.scala.tasks.BaseScalaCompileOptions$setListFiles(kotlin.Boolean)/listFiles">listFiles</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-logging-level.html">setLoggingLevel</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setLoggingLevel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.scala.tasks.BaseScalaCompileOptions$setLoggingLevel(kotlin.String)/loggingLevel">loggingLevel</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-logging-phases.html">setLoggingPhases</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setLoggingPhases</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.scala.tasks.BaseScalaCompileOptions$setLoggingPhases(kotlin.collections.MutableList((kotlin.String)))/loggingPhases">loggingPhases</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-optimize.html">setOptimize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOptimize</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.scala.tasks.BaseScalaCompileOptions$setOptimize(kotlin.Boolean)/optimize">optimize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-unchecked.html">setUnchecked</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setUnchecked</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.scala.tasks.BaseScalaCompileOptions$setUnchecked(kotlin.Boolean)/unchecked">unchecked</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.compile/-abstract-options/define.html">define</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">define</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.compile.AbstractOptions$define(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.compile/-abstract-options/option-map.html">optionMap</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">optionMap</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.scala/-scala-compile-options/index.html">ScalaCompileOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ScalaCompileOptions</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BaseScalaCompileOptions</span></code>
+<p>Options for Scala Compilation.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,75 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>HtmlDependencyReportTask - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.reporting.dependencies</a>&nbsp;/&nbsp;<a href=".">HtmlDependencyReportTask</a><br/>
+<br/>
+<h1>HtmlDependencyReportTask</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">HtmlDependencyReportTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><a href="../../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="../-dependency-report-container/index.html"><span class="identifier">DependencyReportContainer</span></a><span class="symbol">&gt;</span></code>
+<p>Generates an HTML dependency report. This report combines the features of the ASCII dependency report and those of the ASCII dependency insight report. For a given project, it generates a tree of the dependencies of every configuration, and each dependency can be clicked to show the insight of this dependency. 
+<p> This task generates a report for the task's containing project by default. But it can also generate a report for multiple projects, by setting the value of the <code>projects</code> property. Here's how to generate an HTML dependency report for all the projects of a multi-project build, for example: </p>
+<pre><code> htmlDependencyReport { projects = project.allprojects } </code></pre> 
+<p> The report is generated in the <code>build/reports/project/dependencies</code> directory by default. This can also be changed by setting the <code>reports.html.destination</code> property: </p>
+<pre><code> htmlDependencyReport { reports.html.destination = file("build/reports/project/dependencies") } </code></pre></p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">HtmlDependencyReportTask</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="generate.html">generate</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">generate</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-projects.html">getProjects</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getProjects</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the set of projects to generate a report for. By default, the report is generated for the task's containing project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-reports.html">getReports</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getReports</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-dependency-report-container/index.html"><span class="identifier">DependencyReportContainer</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="reports.html">reports</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">reports</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.reporting.dependencies.HtmlDependencyReportTask$reports(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-dependency-report-container/index.html"><span class="identifier">DependencyReportContainer</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">reports</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.reporting.dependencies.HtmlDependencyReportTask$reports(org.gradle.api.Action((org.gradle.api.reporting.dependencies.DependencyReportContainer)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency-report-container/index.html"><span class="identifier">DependencyReportContainer</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-dependency-report-container/index.html"><span class="identifier">DependencyReportContainer</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-projects.html">setProjects</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setProjects</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.reporting.dependencies.HtmlDependencyReportTask$setProjects(kotlin.collections.MutableSet((org.gradle.api.Project)))/projects">projects</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies the set of projects to generate this report for.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

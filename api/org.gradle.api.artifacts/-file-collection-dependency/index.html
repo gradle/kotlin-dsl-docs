@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>FileCollectionDependency - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">FileCollectionDependency</a><br/>
+<br/>
+<h1>FileCollectionDependency</h1>
+<code><span class="keyword">interface </span><span class="identifier">FileCollectionDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-self-resolving-dependency/index.html"><span class="identifier">SelfResolvingDependency</span></a></code>
+<p>A <code>FileCollectionDependency</code> is a Dependency on a collection of local files which are not stored in a repository.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-files.html">getFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the files attached to this dependency.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-self-resolving-dependency/resolve.html">resolve</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">resolve</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>Resolves this dependency. A org.gradle.api.artifacts.ProjectDependency is resolved with transitive equals true by this method.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">resolve</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.SelfResolvingDependency$resolve(kotlin.Boolean)/transitive">transitive</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>Resolves this dependency by specifying the transitive mode. This mode has only an effect if the self resolved dependency is of type org.gradle.api.artifacts.ProjectDependency. In this case, if transitive is <code>false</code>, only the self resolving dependencies of the project configuration which are no project dependencies are resolved. If transitive is set to true, other project dependencies belonging to the configuration of the resolved project dependency are resolved recursively.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

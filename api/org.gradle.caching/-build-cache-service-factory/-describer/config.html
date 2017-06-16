@@ -1,0 +1,21 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BuildCacheServiceFactory.Describer.config - api</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">api</a>&nbsp;/&nbsp;<a href="../../index.html">org.gradle.caching</a>&nbsp;/&nbsp;<a href="../index.html">BuildCacheServiceFactory</a>&nbsp;/&nbsp;<a href="index.html">Describer</a>&nbsp;/&nbsp;<a href=".">config</a><br/>
+<br/>
+<h1>config</h1>
+<a name="org.gradle.caching.BuildCacheServiceFactory.Describer$config(kotlin.String, kotlin.String)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">config</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.BuildCacheServiceFactory.Describer$config(kotlin.String, kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.caching.BuildCacheServiceFactory.Describer$config(kotlin.String, kotlin.String)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">Describer</span></a></code>
+<p>Sets a configuration param of the cache being used. 
+<p> e.g. <code>config("location", "https://some/cache")</code>. </p>
+<p> Values may be logged. Secrets (e.g. passwords) should not be declared with this method. </p>
+<p> Implementations should describe their config where possible. </p>
+<p> Subsequent calls to this method with the same <code>name</code> argument will replace the previously supplied <code>value</code> argument. </p>
+<p> Subsequent calls to this method with different <code>name</code> arguments will append values.</p>
+</p>
+</BODY>
+</HTML>

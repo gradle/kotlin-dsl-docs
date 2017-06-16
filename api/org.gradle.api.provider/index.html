@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api.provider - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.provider</a><br/>
+<br/>
+<h2>Package org.gradle.api.provider</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-property-state/index.html">PropertyState</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PropertyState</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>A <code>Provider</code> representation for capturing property state. The value can be provided by using the method <code>set()</code>. 
+<p> <strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory methods <code><a href="#">org.gradle.api.Project#property(java.lang.Class)</a></code> or <code><a href="#">org.gradle.api.provider.ProviderFactory#property(java.lang.Class)</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-provider/index.html">Provider</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Provider</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>A container object which provides a value of a specific type. The value can be retrieved by the method <code>get()</code> or <code>getOrNull()</code>. 
+<p> <strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory methods <code><a href="#">org.gradle.api.Project#provider(java.util.concurrent.Callable)</a></code> or <code><a href="#">org.gradle.api.provider.ProviderFactory#provider(java.util.concurrent.Callable)</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-provider-factory/index.html">ProviderFactory</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ProviderFactory</span></code>
+<p>A factory for creating instances of <code>Provider</code> and <code>PropertyState</code>. 
+<p> An instance of the factory can be injected into a task or plugin by annotating a public constructor or method with <code>javax.inject.Inject</code>. </p>
+<pre><code> public class MyTask extends DefaultTask { // injection into a constructor @javax.inject.Inject public MyTask(ProviderFactory providerFactory) { } // injection into a method @javax.inject.Inject public ProviderFactory getProviderFactory() { throw new UnsupportedOperationException(); } } </code></pre> 
+<p>An instance of the factory is also available using <code><a href="../org.gradle.api/-project/get-providers.html">Project#getProviders()</a></code></p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

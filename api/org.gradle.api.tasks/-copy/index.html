@@ -1,0 +1,352 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Copy - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks</a>&nbsp;/&nbsp;<a href=".">Copy</a><br/>
+<br/>
+<h1>Copy</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Copy</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code>
+<p>Copies files into a destination directory. This task can also rename and filter files as it copies. The task implements org.gradle.api.file.CopySpec for specifying what to copy. 
+<p> Examples: </p>
+<pre><code> task copyDocs(type: Copy) { from 'src/main/doc' into 'build/target/doc' } //for Ant filter import org.apache.tools.ant.filters.ReplaceTokens //for including in the copy task def dataContent = copySpec { from 'src/data' include '*.data' } task initConfig(type: Copy) { from('src/main/config') { include '**/*.properties' include '**/*.xml' filter(ReplaceTokens, tokens: [version: '2.3.1']) } from('src/main/config') { exclude '**/*.properties', '**/*.xml' } from('src/main/languages') { rename 'EN_US_(.*)', '$1' } into 'build/target/config' exclude '**/*.bak' includeEmptyDirs = false with dataContent } </code></pre></p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">Copy</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Copies files into a destination directory. This task can also rename and filter files as it copies. The task implements org.gradle.api.file.CopySpec for specifying what to copy. 
+<p> Examples: </p>
+<pre><code> task copyDocs(type: Copy) { from 'src/main/doc' into 'build/target/doc' } //for Ant filter import org.apache.tools.ant.filters.ReplaceTokens //for including in the copy task def dataContent = copySpec { from 'src/data' include '*.data' } task initConfig(type: Copy) { from('src/main/config') { include '**/*.properties' include '**/*.xml' filter(ReplaceTokens, tokens: [version: '2.3.1']) } from('src/main/config') { exclude '**/*.properties', '**/*.xml' } from('src/main/languages') { rename 'EN_US_(.*)', '$1' } into 'build/target/config' exclude '**/*.bak' includeEmptyDirs = false with dataContent } </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-destination-dir.html">getDestinationDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDestinationDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the directory to copy files into.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-root-spec.html">getRootSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getRootSpec</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">DestinationRootCopySpec</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-destination-dir.html">setDestinationDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDestinationDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.Copy$setDestinationDir(java.io.File)/destinationDir">destinationDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the directory to copy files into. This is the same as calling <code><a href="#">#into(Object)</a></code> on this task.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/each-file.html">eachFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">eachFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$eachFile(org.gradle.api.Action((org.gradle.api.file.FileCopyDetails)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.file/-file-copy-details/index.html"><span class="identifier">FileCopyDetails</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">eachFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$eachFile(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/exclude.html">exclude</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$exclude(kotlin.Array((kotlin.String)))/excludes">excludes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$exclude(kotlin.collections.MutableIterable((kotlin.String)))/excludes">excludes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$exclude(org.gradle.api.specs.Spec((org.gradle.api.file.FileTreeElement)))/excludeSpec">excludeSpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.file/-file-tree-element/index.html"><span class="identifier">FileTreeElement</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$exclude(groovy.lang.Closure((kotlin.Any)))/excludeSpec">excludeSpec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/expand.html">expand</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">expand</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$expand(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/properties">properties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/files-matching.html">filesMatching</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">filesMatching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$filesMatching(kotlin.String, org.gradle.api.Action((org.gradle.api.file.FileCopyDetails)))/pattern">pattern</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$filesMatching(kotlin.String, org.gradle.api.Action((org.gradle.api.file.FileCopyDetails)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.file/-file-copy-details/index.html"><span class="identifier">FileCopyDetails</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">filesMatching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$filesMatching(kotlin.collections.MutableIterable((kotlin.String)), org.gradle.api.Action((org.gradle.api.file.FileCopyDetails)))/patterns">patterns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$filesMatching(kotlin.collections.MutableIterable((kotlin.String)), org.gradle.api.Action((org.gradle.api.file.FileCopyDetails)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.file/-file-copy-details/index.html"><span class="identifier">FileCopyDetails</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/files-not-matching.html">filesNotMatching</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">filesNotMatching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$filesNotMatching(kotlin.String, org.gradle.api.Action((org.gradle.api.file.FileCopyDetails)))/pattern">pattern</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$filesNotMatching(kotlin.String, org.gradle.api.Action((org.gradle.api.file.FileCopyDetails)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.file/-file-copy-details/index.html"><span class="identifier">FileCopyDetails</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">filesNotMatching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$filesNotMatching(kotlin.collections.MutableIterable((kotlin.String)), org.gradle.api.Action((org.gradle.api.file.FileCopyDetails)))/patterns">patterns</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$filesNotMatching(kotlin.collections.MutableIterable((kotlin.String)), org.gradle.api.Action((org.gradle.api.file.FileCopyDetails)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.file/-file-copy-details/index.html"><span class="identifier">FileCopyDetails</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/filter.html">filter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$filter(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), java.lang.Class((java.io.FilterReader)))/properties">properties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$filter(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), java.lang.Class((java.io.FilterReader)))/filterType">filterType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/FilterReader.html"><span class="identifier">FilterReader</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$filter(java.lang.Class((java.io.FilterReader)))/filterType">filterType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/FilterReader.html"><span class="identifier">FilterReader</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$filter(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$filter(org.gradle.api.Transformer((kotlin.String, )))/transformer">transformer</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-transformer/index.html"><span class="identifier">Transformer</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/from.html">from</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$from(kotlin.Array((kotlin.Any)))/sourcePaths">sourcePaths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$from(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/sourcePath">sourcePath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$from(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/c">c</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$from(kotlin.Any, org.gradle.api.Action((org.gradle.api.file.CopySpec)))/sourcePath">sourcePath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$from(kotlin.Any, org.gradle.api.Action((org.gradle.api.file.CopySpec)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/get-dir-mode.html">getDirMode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDirMode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/get-duplicates-strategy.html">getDuplicatesStrategy</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDuplicatesStrategy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-duplicates-strategy/index.html"><span class="identifier">DuplicatesStrategy</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/get-excludes.html">getExcludes</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getExcludes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/get-file-mode.html">getFileMode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getFileMode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/get-filtering-charset.html">getFilteringCharset</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getFilteringCharset</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/get-include-empty-dirs.html">getIncludeEmptyDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getIncludeEmptyDirs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/get-includes.html">getIncludes</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getIncludes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/get-source.html">getSource</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the source files for this task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/include.html">include</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">include</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$include(kotlin.Array((kotlin.String)))/includes">includes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">include</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$include(kotlin.collections.MutableIterable((kotlin.String)))/includes">includes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">include</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$include(org.gradle.api.specs.Spec((org.gradle.api.file.FileTreeElement)))/includeSpec">includeSpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.file/-file-tree-element/index.html"><span class="identifier">FileTreeElement</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">include</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$include(groovy.lang.Closure((kotlin.Any)))/includeSpec">includeSpec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/into.html">into</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">into</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$into(kotlin.Any)/destDir">destDir</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">into</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$into(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/destPath">destPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$into(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">into</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$into(kotlin.Any, org.gradle.api.Action((org.gradle.api.file.CopySpec)))/destPath">destPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$into(kotlin.Any, org.gradle.api.Action((org.gradle.api.file.CopySpec)))/copySpec">copySpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/is-case-sensitive.html">isCaseSensitive</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isCaseSensitive</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/rename.html">rename</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">rename</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$rename(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">rename</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$rename(org.gradle.api.Transformer((kotlin.String, )))/renamer">renamer</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-transformer/index.html"><span class="identifier">Transformer</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">rename</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$rename(kotlin.String, kotlin.String)/sourceRegEx">sourceRegEx</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$rename(kotlin.String, kotlin.String)/replaceWith">replaceWith</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">rename</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$rename(java.util.regex.Pattern, kotlin.String)/sourceRegEx">sourceRegEx</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html"><span class="identifier">Pattern</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$rename(java.util.regex.Pattern, kotlin.String)/replaceWith">replaceWith</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/set-case-sensitive.html">setCaseSensitive</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setCaseSensitive</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$setCaseSensitive(kotlin.Boolean)/caseSensitive">caseSensitive</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/set-dir-mode.html">setDirMode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDirMode</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$setDirMode(kotlin.Int)/mode">mode</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/set-duplicates-strategy.html">setDuplicatesStrategy</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDuplicatesStrategy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$setDuplicatesStrategy(org.gradle.api.file.DuplicatesStrategy)/strategy">strategy</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-duplicates-strategy/index.html"><span class="identifier">DuplicatesStrategy</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/set-excludes.html">setExcludes</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExcludes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$setExcludes(kotlin.collections.MutableIterable((kotlin.String)))/excludes">excludes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/set-file-mode.html">setFileMode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setFileMode</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$setFileMode(kotlin.Int)/mode">mode</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/set-filtering-charset.html">setFilteringCharset</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setFilteringCharset</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$setFilteringCharset(kotlin.String)/charset">charset</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/set-include-empty-dirs.html">setIncludeEmptyDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setIncludeEmptyDirs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$setIncludeEmptyDirs(kotlin.Boolean)/includeEmptyDirs">includeEmptyDirs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/set-includes.html">setIncludes</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setIncludes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$setIncludes(kotlin.collections.MutableIterable((kotlin.String)))/includes">includes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-copy-task/with.html">with</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">with</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.tasks.AbstractCopyTask$with(kotlin.Array((org.gradle.api.file.CopySpec)))/sourceSpecs">sourceSpecs</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.jvm.tasks/-process-resources/index.html">ProcessResources</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ProcessResources</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Copy</span></code>
+<p>Copies resources from their source to their target directory, potentially processing them. Makes sure no stale resources remain in the target directory.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

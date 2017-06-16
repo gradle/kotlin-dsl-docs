@@ -1,0 +1,42 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GradleConnector.<init> - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling</a>&nbsp;/&nbsp;<a href="index.html">GradleConnector</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.gradle.tooling.GradleConnector$&lt;init&gt;()"></a>
+<code><span class="identifier">GradleConnector</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>
+<p>A <code>GradleConnector</code> is the main entry point to the Gradle tooling API. You use this API as follows:</p>
+ <ol> <li>Call <code><a href="new-connector.html">#newConnector()</a></code> to create a new connector instance.</li>
+ <li>Configure the connector. You must call <code><a href="for-project-directory.html">#forProjectDirectory(java.io.File)</a></code> to specify which project you wish to connect to. Other methods are optional.</li>
+ <li>Call <code><a href="connect.html">#connect()</a></code> to create the connection to a project.</li>
+ <li>When finished with the connection, call <code><a href="../-project-connection/close.html">ProjectConnection#close()</a></code> to clean up.</li>
+ </ol>
+ 
+<p>Example:</p>
+ <pre><code> ProjectConnection connection = GradleConnector.newConnector() .forProjectDirectory(new File("someProjectFolder")) .connect(); try { connection.newBuild().forTasks("tasks").run(); } finally { connection.close(); } </code></pre> 
+<p>The connection will use the version of Gradle that the target build is configured to use, for example in the Gradle wrapper properties file. When no Gradle version is defined for the build, the connection will use the tooling API's version as the Gradle version to run the build. Generally, you should avoid configuring a Gradle distribution or version and instead use the default provided by the tooling API. </p>
+ 
+<p>Similarly, the connection will use the JVM and JVM arguments that the target build is configured to use, for example in the <code>gradle.properties</code> file. When no JVM or JVM arguments are defined for the build, the connection will use the current JVM and some default JVM arguments.</p>
+ 
+<p><code>GradleConnector</code> instances are not thread-safe. If you want to use a <code>GradleConnector</code> concurrently you <em>must</em> always create a new instance for each thread using <code><a href="new-connector.html">#newConnector()</a></code>. Note, however, the ProjectConnection instances that a connector creates are completely thread-safe.</p>
+ Gradle version compatibility 
+<p>The Tooling API is both forwards and backwards compatible with other versions of Gradle. It supports execution of Gradle builds that use older or newer versions of Gradle.</p>
+ 
+<p>The current version of the Tooling API supports running builds using Gradle versions 1.2.</p>
+ 
+<p>You should note that not all features of the Tooling API are available for all versions of Gradle. For example, build cancellation is only available for builds using Gradle 2.1 and later. Refer to the documentation for each class and method for more details.</p>
+ 
+<p>The current Gradle version can be used from Tooling API versions 2.0 or later. </p>
+Java version compatibility 
+<p>The Tooling API requires Java 7 or later. The Gradle version used by builds may have additional Java version requirements.</p>
+</p>
+<p><strong>Since</strong><br/>
+1.0-milestone-3</p>
+</BODY>
+</HTML>

@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResolutionStrategy.force - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="index.html">ResolutionStrategy</a>&nbsp;/&nbsp;<a href=".">force</a><br/>
+<br/>
+<h1>force</h1>
+<a name="org.gradle.api.artifacts.ResolutionStrategy$force(kotlin.Array((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">force</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$force(kotlin.Array((kotlin.Any)))/moduleVersionSelectorNotations">moduleVersionSelectorNotations</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">ResolutionStrategy</span></a></code>
+<p>Allows forcing certain versions of dependencies, including transitive dependencies. <strong>Appends</strong> new forced modules to be considered when resolving dependencies. 
+<p> It accepts following notations: </p>
+<ul> <li>String in a format of: 'group:name:version', for example: 'org.gradle:gradle-core:1.0'</li>
+ <li>instance of ModuleVersionSelector</li>
+ <li>any collection or array of above will be automatically flattened</li>
+ </ul>
+ Example: <pre><code> apply plugin: 'java' //so that there are some configurations configurations.all { resolutionStrategy.force 'asm:asm-all:3.3.1', 'commons-io:commons-io:1.4' } </code></pre></p>
+<h3>Parameters</h3>
+<a name="moduleVersionSelectorNotations"></a>
+<code>moduleVersionSelectorNotations</code> - typically group:name:version notations to append
+<p><strong>Return</strong><br/>
+this ResolutionStrategy instance</p>
+<p><strong>Since</strong><br/>
+1.0-milestone-7</p>
+</BODY>
+</HTML>

@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AuthenticationSupported.authentication - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.repositories</a>&nbsp;/&nbsp;<a href="index.html">AuthenticationSupported</a>&nbsp;/&nbsp;<a href=".">authentication</a><br/>
+<br/>
+<h1>authentication</h1>
+<a name="org.gradle.api.artifacts.repositories.AuthenticationSupported$authentication(org.gradle.api.Action((org.gradle.api.artifacts.repositories.AuthenticationContainer)))"></a>
+<code><span class="identifier">@Incubating</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">authentication</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.AuthenticationSupported$authentication(org.gradle.api.Action((org.gradle.api.artifacts.repositories.AuthenticationContainer)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-authentication-container.html"><span class="identifier">AuthenticationContainer</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Configures the authentication schemes for this repository. </p>
+<p>This method executes the given action against the AuthenticationContainer for this project. The is passed to the closure as the closure's delegate. </p>
+<p> If no authentication schemes have been assigned to this repository, a default set of authentication schemes are used based on the repository's transport scheme. </p>
+<pre><code> repositories { maven { url "${url}" authentication { basic(BasicAuthentication) } } } </code></pre> 
+<p> Supported authentication scheme types extend org.gradle.authentication.Authentication.</p>
+</p>
+<h3>Parameters</h3>
+<a name="action"></a>
+<code>action</code> - the action to use to configure the authentication schemes.
+</BODY>
+</HTML>

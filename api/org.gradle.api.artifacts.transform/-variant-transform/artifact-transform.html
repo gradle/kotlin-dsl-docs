@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>VariantTransform.artifactTransform - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.transform</a>&nbsp;/&nbsp;<a href="index.html">VariantTransform</a>&nbsp;/&nbsp;<a href=".">artifactTransform</a><br/>
+<br/>
+<h1>artifactTransform</h1>
+<a name="org.gradle.api.artifacts.transform.VariantTransform$artifactTransform(java.lang.Class((org.gradle.api.artifacts.transform.ArtifactTransform)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">artifactTransform</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.transform.VariantTransform$artifactTransform(java.lang.Class((org.gradle.api.artifacts.transform.ArtifactTransform)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-artifact-transform/index.html"><span class="identifier">ArtifactTransform</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Action to transform artifacts for this variant transform. 
+<p>An instance of the specified type is created for each file that is to be transformed. The class should provide a public zero-args constructor.</p>
+</p>
+<a name="org.gradle.api.artifacts.transform.VariantTransform$artifactTransform(java.lang.Class((org.gradle.api.artifacts.transform.ArtifactTransform)), org.gradle.api.Action((org.gradle.api.ActionConfiguration)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">artifactTransform</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.transform.VariantTransform$artifactTransform(java.lang.Class((org.gradle.api.artifacts.transform.ArtifactTransform)), org.gradle.api.Action((org.gradle.api.ActionConfiguration)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-artifact-transform/index.html"><span class="identifier">ArtifactTransform</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.transform.VariantTransform$artifactTransform(java.lang.Class((org.gradle.api.artifacts.transform.ArtifactTransform)), org.gradle.api.Action((org.gradle.api.ActionConfiguration)))/configAction">configAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api/-action-configuration/index.html"><span class="identifier">ActionConfiguration</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Action to transform artifacts for this variant transform, potentially supplying some configuration to inject into the transform. 
+<p>An instance of the specified type is created for each file that is to be transformed. The class should provide a public constructor that accepts the provided configuration.</p>
+</p>
+</BODY>
+</HTML>

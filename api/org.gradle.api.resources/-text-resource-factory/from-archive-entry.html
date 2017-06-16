@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TextResourceFactory.fromArchiveEntry - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.resources</a>&nbsp;/&nbsp;<a href="index.html">TextResourceFactory</a>&nbsp;/&nbsp;<a href=".">fromArchiveEntry</a><br/>
+<br/>
+<h1>fromArchiveEntry</h1>
+<a name="org.gradle.api.resources.TextResourceFactory$fromArchiveEntry(kotlin.Any, kotlin.String, kotlin.String)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">fromArchiveEntry</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.resources.TextResourceFactory$fromArchiveEntry(kotlin.Any, kotlin.String, kotlin.String)/archive">archive</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.resources.TextResourceFactory$fromArchiveEntry(kotlin.Any, kotlin.String, kotlin.String)/entryPath">entryPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.resources.TextResourceFactory$fromArchiveEntry(kotlin.Any, kotlin.String, kotlin.String)/charset">charset</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-text-resource/index.html"><span class="identifier">TextResource</span></a></code>
+<p>Creates a text resource backed by the archive entry at the given path within the given archive. The archive format is determined based on the archive's file extension. If the archive format is not supported or cannot be determined, any attempt to access the resource will fail with an exception.</p>
+<h3>Parameters</h3>
+<a name="archive"></a>
+<code>archive</code> - an archive file evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code><a name="entryPath"></a>
+<code>entryPath</code> - the path to an archive entry<a name="charset"></a>
+<code>charset</code> - the archive entry's character encoding (e.g. <code>"utf-8"</code>)
+<p><strong>Return</strong><br/>
+a text resource backed by the archive entry at the given path within the given archive</p>
+<a name="org.gradle.api.resources.TextResourceFactory$fromArchiveEntry(kotlin.Any, kotlin.String)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">fromArchiveEntry</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.resources.TextResourceFactory$fromArchiveEntry(kotlin.Any, kotlin.String)/archive">archive</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.resources.TextResourceFactory$fromArchiveEntry(kotlin.Any, kotlin.String)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-text-resource/index.html"><span class="identifier">TextResource</span></a></code>
+<p>Same as <code>fromArchiveEntry(archive, path, Charset.defaultCharset().name())</code>.</p>
+</BODY>
+</HTML>

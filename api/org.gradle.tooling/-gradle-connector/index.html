@@ -1,0 +1,166 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GradleConnector - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling</a>&nbsp;/&nbsp;<a href=".">GradleConnector</a><br/>
+<br/>
+<h1>GradleConnector</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">GradleConnector</span></code>
+<p>
+<p>A <code>GradleConnector</code> is the main entry point to the Gradle tooling API. You use this API as follows:</p>
+ <ol> <li>Call <code><a href="new-connector.html">#newConnector()</a></code> to create a new connector instance.</li>
+ <li>Configure the connector. You must call <code><a href="for-project-directory.html">#forProjectDirectory(java.io.File)</a></code> to specify which project you wish to connect to. Other methods are optional.</li>
+ <li>Call <code><a href="connect.html">#connect()</a></code> to create the connection to a project.</li>
+ <li>When finished with the connection, call <code><a href="../-project-connection/close.html">ProjectConnection#close()</a></code> to clean up.</li>
+ </ol>
+ 
+<p>Example:</p>
+ <pre><code> ProjectConnection connection = GradleConnector.newConnector() .forProjectDirectory(new File("someProjectFolder")) .connect(); try { connection.newBuild().forTasks("tasks").run(); } finally { connection.close(); } </code></pre> 
+<p>The connection will use the version of Gradle that the target build is configured to use, for example in the Gradle wrapper properties file. When no Gradle version is defined for the build, the connection will use the tooling API's version as the Gradle version to run the build. Generally, you should avoid configuring a Gradle distribution or version and instead use the default provided by the tooling API. </p>
+ 
+<p>Similarly, the connection will use the JVM and JVM arguments that the target build is configured to use, for example in the <code>gradle.properties</code> file. When no JVM or JVM arguments are defined for the build, the connection will use the current JVM and some default JVM arguments.</p>
+ 
+<p><code>GradleConnector</code> instances are not thread-safe. If you want to use a <code>GradleConnector</code> concurrently you <em>must</em> always create a new instance for each thread using <code><a href="new-connector.html">#newConnector()</a></code>. Note, however, the ProjectConnection instances that a connector creates are completely thread-safe.</p>
+ Gradle version compatibility 
+<p>The Tooling API is both forwards and backwards compatible with other versions of Gradle. It supports execution of Gradle builds that use older or newer versions of Gradle.</p>
+ 
+<p>The current version of the Tooling API supports running builds using Gradle versions 1.2.</p>
+ 
+<p>You should note that not all features of the Tooling API are available for all versions of Gradle. For example, build cancellation is only available for builds using Gradle 2.1 and later. Refer to the documentation for each class and method for more details.</p>
+ 
+<p>The current Gradle version can be used from Tooling API versions 2.0 or later. </p>
+Java version compatibility 
+<p>The Tooling API requires Java 7 or later. The Gradle version used by builds may have additional Java version requirements.</p>
+</p>
+<p><strong>Since</strong><br/>
+1.0-milestone-3</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">GradleConnector</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>
+<p>A <code>GradleConnector</code> is the main entry point to the Gradle tooling API. You use this API as follows:</p>
+ <ol> <li>Call <code><a href="new-connector.html">#newConnector()</a></code> to create a new connector instance.</li>
+ <li>Configure the connector. You must call <code><a href="for-project-directory.html">#forProjectDirectory(java.io.File)</a></code> to specify which project you wish to connect to. Other methods are optional.</li>
+ <li>Call <code><a href="connect.html">#connect()</a></code> to create the connection to a project.</li>
+ <li>When finished with the connection, call <code><a href="../-project-connection/close.html">ProjectConnection#close()</a></code> to clean up.</li>
+ </ol>
+ 
+<p>Example:</p>
+ <pre><code> ProjectConnection connection = GradleConnector.newConnector() .forProjectDirectory(new File("someProjectFolder")) .connect(); try { connection.newBuild().forTasks("tasks").run(); } finally { connection.close(); } </code></pre> 
+<p>The connection will use the version of Gradle that the target build is configured to use, for example in the Gradle wrapper properties file. When no Gradle version is defined for the build, the connection will use the tooling API's version as the Gradle version to run the build. Generally, you should avoid configuring a Gradle distribution or version and instead use the default provided by the tooling API. </p>
+ 
+<p>Similarly, the connection will use the JVM and JVM arguments that the target build is configured to use, for example in the <code>gradle.properties</code> file. When no JVM or JVM arguments are defined for the build, the connection will use the current JVM and some default JVM arguments.</p>
+ 
+<p><code>GradleConnector</code> instances are not thread-safe. If you want to use a <code>GradleConnector</code> concurrently you <em>must</em> always create a new instance for each thread using <code><a href="new-connector.html">#newConnector()</a></code>. Note, however, the ProjectConnection instances that a connector creates are completely thread-safe.</p>
+ Gradle version compatibility 
+<p>The Tooling API is both forwards and backwards compatible with other versions of Gradle. It supports execution of Gradle builds that use older or newer versions of Gradle.</p>
+ 
+<p>The current version of the Tooling API supports running builds using Gradle versions 1.2.</p>
+ 
+<p>You should note that not all features of the Tooling API are available for all versions of Gradle. For example, build cancellation is only available for builds using Gradle 2.1 and later. Refer to the documentation for each class and method for more details.</p>
+ 
+<p>The current Gradle version can be used from Tooling API versions 2.0 or later. </p>
+Java version compatibility 
+<p>The Tooling API requires Java 7 or later. The Gradle version used by builds may have additional Java version requirements.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="connect.html">connect</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">connect</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-project-connection/index.html"><span class="identifier">ProjectConnection</span></a></code>
+<p>Creates a connection to the project in the specified project directory. You should call <code><a href="../-project-connection/close.html">org.gradle.tooling.ProjectConnection#close()</a></code> when you are finished with the connection.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="for-project-directory.html">forProjectDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">forProjectDirectory</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.GradleConnector$forProjectDirectory(java.io.File)/projectDir">projectDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleConnector</span></code>
+<p>Specifies the working directory to use.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="new-cancellation-token-source.html">newCancellationTokenSource</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">static</span> <span class="keyword">fun </span><span class="identifier">newCancellationTokenSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-cancellation-token-source/index.html"><span class="identifier">CancellationTokenSource</span></a></code>
+<p>Creates a new CancellationTokenSource that can be used to cancel one or more org.gradle.tooling.LongRunningOperation executions.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="new-connector.html">newConnector</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">static</span> <span class="keyword">fun </span><span class="identifier">newConnector</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleConnector</span></code>
+<p>Creates a new connector instance.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="use-build-distribution.html">useBuildDistribution</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">useBuildDistribution</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleConnector</span></code>
+<p>Specifies to use the Gradle distribution defined by the target Gradle build. The appropriate distribution defined by the target Gradle build is downloaded and installed into the user's Gradle home directory. If the target Gradle build does not define the distribution that it should be built with, the Gradle version of this connector is used. This replaces any value specified using <code><a href="use-installation.html">#useInstallation(File)</a></code>, <code><a href="use-distribution.html">#useDistribution(URI)</a></code>, or <code><a href="#">#useGradleVersion(String)</a></code>. Acts as the default behavior.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="use-distribution.html">useDistribution</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">useDistribution</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.GradleConnector$useDistribution(java.net.URI)/gradleDistribution">gradleDistribution</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/net/URI.html"><span class="identifier">URI</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleConnector</span></code>
+<p>Specifies which Gradle distribution to use. The appropriate distribution is downloaded and installed into the user's Gradle home directory. This replaces any value specified using <code><a href="use-installation.html"> </a></code>, <code><a href="#">#useGradleVersion(String)</a></code>, or <code><a href="use-build-distribution.html">#useBuildDistribution()</a></code>. Defaults to a project-specific Gradle version.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="use-gradle-user-home-dir.html">useGradleUserHomeDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">useGradleUserHomeDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.GradleConnector$useGradleUserHomeDir(java.io.File)/gradleUserHomeDir">gradleUserHomeDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleConnector</span></code>
+<p>Specifies the user's Gradle home directory to use. Defaults to <code>~/.gradle</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="use-gradle-version.html">useGradleVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">useGradleVersion</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.GradleConnector$useGradleVersion(kotlin.String)/gradleVersion">gradleVersion</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleConnector</span></code>
+<p>Specifies which Gradle version to use. The appropriate distribution is downloaded and installed into the user's Gradle home directory. This replaces any value specified using <code><a href="use-installation.html"> </a></code>, <code><a href="use-distribution.html">#useDistribution(URI)</a></code>, or <code><a href="use-build-distribution.html">#useBuildDistribution()</a></code>. Defaults to a project-specific Gradle version.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="use-installation.html">useInstallation</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">useInstallation</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.GradleConnector$useInstallation(java.io.File)/gradleHome">gradleHome</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleConnector</span></code>
+<p>Specifies which Gradle installation to use. This replaces any value specified using <code><a href="use-distribution.html">#useDistribution(URI)</a></code>, <code><a href="#">#useGradleVersion(String)</a></code>, or <code><a href="use-build-distribution.html">#useBuildDistribution()</a></code>. Defaults to a project-specific Gradle version.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

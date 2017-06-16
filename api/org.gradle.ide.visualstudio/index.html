@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.ide.visualstudio - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.ide.visualstudio</a><br/>
+<br/>
+<h2>Package org.gradle.ide.visualstudio</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-config-file/index.html">ConfigFile</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ConfigFile</span></code>
+<p>A configuration file generated for Visual Studio.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-text-config-file/index.html">TextConfigFile</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TextConfigFile</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-config-file/index.html"><span class="identifier">ConfigFile</span></a></code>
+<p>A plain text config file generated for Visual Studio.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-text-provider/index.html">TextProvider</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TextProvider</span></code>
+<p>Provides access to the content of a generated text file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-visual-studio-extension/index.html">VisualStudioExtension</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VisualStudioExtension</span></code>
+<p>The configuration for mapping a set of org.gradle.nativeplatform.NativeComponentSpecs to a Visual Studio project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-visual-studio-project/index.html">VisualStudioProject</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VisualStudioProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-buildable-component-spec/index.html"><span class="identifier">BuildableComponentSpec</span></a></code>
+<p>A visual studio project, created from one or more org.gradle.nativeplatform.NativeBinary instances.  The content and location of the generate project file can be modified by the supplied methods: <pre><code> apply plugin: "visual-studio" model { visualStudio { projects.all { projectFile.location = "vs/${name}.vcxproj" projectFile.withXml { asNode().appendNode('PropertyGroup', [Label: 'Custom']) .appendNode('ProjectDetails', "Project is named ${project.name}") } } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-visual-studio-solution/index.html">VisualStudioSolution</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VisualStudioSolution</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-buildable-component-spec/index.html"><span class="identifier">BuildableComponentSpec</span></a></code>
+<p>A visual studio solution, representing one or more org.gradle.nativeplatform.NativeBinarySpec instances from the same org.gradle.nativeplatform.NativeComponentSpec.  The content and location of the generate solution file can be modified by the supplied methods: <pre><code> apply plugin: "visual-studio" model { visualStudio { solutions.all { solutionFile.location = "vs/${name}.sln" solutionFile.withContent { TextProvider content -&gt; content.asBuilder().insert(0, "# GENERATED FILE: DO NOT EDIT\n") content.text = content.text.replaceAll("HideSolutionNode = FALSE", "HideSolutionNode = TRUE") } } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-xml-config-file/index.html">XmlConfigFile</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">XmlConfigFile</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-config-file/index.html"><span class="identifier">ConfigFile</span></a></code>
+<p>An XML config file generated for Visual Studio.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

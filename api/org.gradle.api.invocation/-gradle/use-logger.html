@@ -1,0 +1,20 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Gradle.useLogger - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.invocation</a>&nbsp;/&nbsp;<a href="index.html">Gradle</a>&nbsp;/&nbsp;<a href=".">useLogger</a><br/>
+<br/>
+<h1>useLogger</h1>
+<a name="org.gradle.api.invocation.Gradle$useLogger(kotlin.Any)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">useLogger</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$useLogger(kotlin.Any)/logger">logger</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Uses the given object as a logger. The logger object may implement any of the listener interfaces supported by <code><a href="#">#addListener(Object)</a></code>. 
+<p> Each listener interface has exactly one associated logger. When you call this method with a logger of a given listener type, the new logger will replace whichever logger is currently associated with the listener type. This allows you to selectively replace the standard logging which Gradle provides with your own implementation, for certain types of events.</p>
+</p>
+<h3>Parameters</h3>
+<a name="logger"></a>
+<code>logger</code> - The logger to use.
+</BODY>
+</HTML>

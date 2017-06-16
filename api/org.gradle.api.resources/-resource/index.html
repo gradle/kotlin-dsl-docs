@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Resource - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.resources</a>&nbsp;/&nbsp;<a href=".">Resource</a><br/>
+<br/>
+<h1>Resource</h1>
+<code><span class="keyword">interface </span><span class="identifier">Resource</span></code>
+<p>A generic resource of some kind. Only describes the resource. There are more specific interface that extend this one and specify ways of accessing the resource's content.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-base-name.html">getBaseName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBaseName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Short name that concisely describes this resource</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Human readable name of this resource</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-u-r-i.html">getURI</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getURI</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/net/URI.html"><span class="identifier">URI</span></a></code>
+<p>Uniform resource identifier that uniquely describes this resource</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-readable-resource/index.html">ReadableResource</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ReadableResource</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Resource</span></code>
+<p>A resource that can be read. The simplest example is a file.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>JvmTestOperationDescriptor - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.events.test</a>&nbsp;/&nbsp;<a href=".">JvmTestOperationDescriptor</a><br/>
+<br/>
+<h1>JvmTestOperationDescriptor</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">JvmTestOperationDescriptor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-test-operation-descriptor.html"><span class="identifier">TestOperationDescriptor</span></a></code>
+<p>Describes a test that runs on the JVM and for which an event has occurred. At least a suite name, class name, or method name is available for each JVM test.</p>
+<p><strong>Since</strong><br/>
+2.4</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-class-name.html">getClassName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getClassName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the test class, if any.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-jvm-test-kind.html">getJvmTestKind</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getJvmTestKind</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-jvm-test-kind/index.html"><span class="identifier">JvmTestKind</span></a></code>
+<p>Returns what kind of test this is.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-method-name.html">getMethodName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getMethodName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the test method, if any.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-suite-name.html">getSuiteName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSuiteName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the test suite, if any.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

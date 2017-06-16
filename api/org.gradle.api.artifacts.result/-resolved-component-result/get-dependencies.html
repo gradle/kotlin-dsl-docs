@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResolvedComponentResult.getDependencies - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.result</a>&nbsp;/&nbsp;<a href="index.html">ResolvedComponentResult</a>&nbsp;/&nbsp;<a href=".">getDependencies</a><br/>
+<br/>
+<h1>getDependencies</h1>
+<a name="org.gradle.api.artifacts.result.ResolvedComponentResult$getDependencies()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-dependency-result/index.html"><span class="identifier">DependencyResult</span></a><span class="symbol">&gt;</span></code>
+<p>
+<p>Returns the dependencies of this component. Includes resolved and unresolved dependencies (if any). </p>
+<p>The elements of the returned collection are declared as DependencyResult, however the dependency instances will also implement one of the following instances:</p>
+ <ul> <li>ResolvedDependencyResult for dependencies which were successfully resolved.</li>
+ <li>UnresolvedDependencyResult for dependencies which could not be resolved for some reason.</li>
+ </ul>
+</p>
+<p><strong>Return</strong><br/>
+the dependencies of this component</p>
+</BODY>
+</HTML>

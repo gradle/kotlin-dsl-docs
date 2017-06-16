@@ -1,0 +1,41 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>RepositoryHandler.flatDir - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.dsl</a>&nbsp;/&nbsp;<a href="index.html">RepositoryHandler</a>&nbsp;/&nbsp;<a href=".">flatDir</a><br/>
+<br/>
+<h1>flatDir</h1>
+<a name="org.gradle.api.artifacts.dsl.RepositoryHandler$flatDir(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">flatDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.dsl.RepositoryHandler$flatDir(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.repositories/-flat-directory-artifact-repository/index.html"><span class="identifier">FlatDirectoryArtifactRepository</span></a></code>
+<p>Adds a resolver that looks into a number of directories for artifacts. The artifacts are expected to be located in the root of the specified directories. The resolver ignores any group/organization information specified in the dependency section of your build script. If you only use this kind of resolver you might specify your dependencies like <code>":junit:4.4"</code> instead of <code>"junit:junit:4.4"</code>. The following parameter are accepted as keys for the map:  Key Description of Associated Value <code>name</code> <em>(optional)</em> The name of the repository. The default is a Hash value of the rootdir paths. The name is used in the console output, to point to information related to a particular repository. A name must be unique amongst a repository group. <code>dirs</code> Specifies a list of rootDirs where to look for dependencies. These are evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code>  
+<p>Examples: </p>
+<pre><code> repositories { flatDir name: 'libs', dirs: "$projectDir/libs" flatDir dirs: ["$projectDir/libs1", "$projectDir/libs2"] } </code></pre> </p>
+<h3>Parameters</h3>
+<a name="args"></a>
+<code>args</code> - The arguments used to configure the repository.
+<h3>Exceptions</h3>
+<a name="org.gradle.api.InvalidUserDataException"></a>
+<code>org.gradle.api.InvalidUserDataException</code> - In the case neither rootDir nor rootDirs is specified of if both are specified.
+<p><strong>Return</strong><br/>
+the added resolver</p>
+<a name="org.gradle.api.artifacts.dsl.RepositoryHandler$flatDir(groovy.lang.Closure((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">flatDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.dsl.RepositoryHandler$flatDir(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.repositories/-flat-directory-artifact-repository/index.html"><span class="identifier">FlatDirectoryArtifactRepository</span></a></code>
+<p>Adds an configures a repository which will look for dependencies in a number of local directories.</p>
+<h3>Parameters</h3>
+<a name="configureClosure"></a>
+<code>configureClosure</code> - The closure to execute to configure the repository.
+<p><strong>Return</strong><br/>
+The repository.</p>
+<a name="org.gradle.api.artifacts.dsl.RepositoryHandler$flatDir(org.gradle.api.Action((org.gradle.api.artifacts.repositories.FlatDirectoryArtifactRepository)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">flatDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.dsl.RepositoryHandler$flatDir(org.gradle.api.Action((org.gradle.api.artifacts.repositories.FlatDirectoryArtifactRepository)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.artifacts.repositories/-flat-directory-artifact-repository/index.html"><span class="identifier">FlatDirectoryArtifactRepository</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.repositories/-flat-directory-artifact-repository/index.html"><span class="identifier">FlatDirectoryArtifactRepository</span></a></code>
+<p>Adds an configures a repository which will look for dependencies in a number of local directories.</p>
+<h3>Parameters</h3>
+<a name="action"></a>
+<code>action</code> - The action to execute to configure the repository.
+<p><strong>Return</strong><br/>
+The repository.</p>
+</BODY>
+</HTML>

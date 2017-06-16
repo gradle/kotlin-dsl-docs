@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PluginResolveDetails - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugin.management</a>&nbsp;/&nbsp;<a href=".">PluginResolveDetails</a><br/>
+<br/>
+<h1>PluginResolveDetails</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">PluginResolveDetails</span></code>
+<p>Allows plugin resolution rules to inspect a requested plugin and modify which target plugin will be used.</p>
+<p><strong>Since</strong><br/>
+3.5</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-requested.html">getRequested</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRequested</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-plugin-request/index.html"><span class="identifier">PluginRequest</span></a></code>
+<p>Get the plugin that was requested.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-target.html">getTarget</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTarget</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-plugin-request/index.html"><span class="identifier">PluginRequest</span></a></code>
+<p>The target plugin request to use.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="use-module.html">useModule</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">useModule</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.management.PluginResolveDetails$useModule(kotlin.Any)/notation">notation</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the implementation module to use for this plugin.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="use-version.html">useVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">useVersion</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.management.PluginResolveDetails$useVersion(kotlin.String)/version">version</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the version of the plugin to use.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

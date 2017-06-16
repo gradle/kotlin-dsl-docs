@@ -1,0 +1,598 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api</a><br/>
+<br/>
+<h2>Package org.gradle.api</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-action/index.html">Action</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Action</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Performs some action against objects of type T.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-action-configuration/index.html">ActionConfiguration</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ActionConfiguration</span></code>
+<p>Allows specification of configuration for some action.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-ant-builder/index.html">AntBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AntBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AntBuilder</span></code>
+<p>
+<p>An <code>AntBuilder</code> allows you to use Ant from your build script.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-buildable/index.html">Buildable</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Buildable</span></code>
+<p>A <code>Buildable</code> represents an artifact or set of artifacts which are built by one or more Task instances.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-buildable-component-spec/index.html">BuildableComponentSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BuildableComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-buildable/index.html"><span class="identifier">Buildable</span></a><span class="symbol">, </span><a href="../org.gradle.platform.base/-component-spec/index.html"><span class="identifier">ComponentSpec</span></a></code>
+<p>A ComponentSpec that is directly Buildable via a specified task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-checkable-component-spec/index.html">CheckableComponentSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CheckableComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.platform.base/-component-spec/index.html"><span class="identifier">ComponentSpec</span></a></code>
+<p>A ComponentSpec that is directly checkable via a specified task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-default-task/index.html">DefaultTask</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">DefaultTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractTask</span></code>
+<p><code>DefaultTask</code> is the standard Task implementation. You can extend this to implement your own task types.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-describable/index.html">Describable</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Describable</span></code>
+<p>Types can implement this interface when they provide a human-readable display name. It is strongly encouraged to compute this display name lazily: computing a display name, even if it's only a string concatenation, can take a significant amount of time during configuration for something that would only be used, typically, in error messages.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-domain-object-collection/index.html">DomainObjectCollection</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DomainObjectCollection</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>
+<p>A <code>DomainObjectCollection</code> is a specialised Collection that adds the ability to modification notifications and live filtered sub collections.</p>
+ 
+<p>The filtered collections returned by the filtering methods, such as <code><a href="#">#matching(Closure)</a></code>, return collections that are <em>live</em>. That is, they reflect changes made to the source collection that they were created from. This is true for filtered collections made from filtered collections etc.</p>
+ 
+<p> You can also add actions which are executed as elements are added to the collection. Actions added to filtered collections will be fired if an addition/removal occurs for the source collection that matches the filter.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-domain-object-set/index.html">DomainObjectSet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DomainObjectSet</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-domain-object-collection/index.html"><span class="identifier">DomainObjectCollection</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>
+<p>A <code>DomainObjectSet</code> is a specialisation of DomainObjectCollection that guarantees Set semantics.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-extensible-polymorphic-domain-object-container/index.html">ExtensiblePolymorphicDomainObjectContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ExtensiblePolymorphicDomainObjectContainer</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-polymorphic-domain-object-container/index.html"><span class="identifier">PolymorphicDomainObjectContainer</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">NamedDomainObjectFactoryRegistry</span></code>
+<p>A org.gradle.api.PolymorphicDomainObjectContainer that can be extended at runtime to create elements of new types.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-java-version/index.html">JavaVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">JavaVersion</span></code>
+<p>An enumeration of Java versions.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-named/index.html">Named</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Named</span></code>
+<p>Types can implement this interface and use the embedded Namer implementation, to satisfy API that calls for a namer.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-named-domain-object-collection/index.html">NamedDomainObjectCollection</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">NamedDomainObjectCollection</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-domain-object-collection/index.html"><span class="identifier">DomainObjectCollection</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>
+<p>A <code>NamedDomainObjectCollection</code> represents a collection of domain objects that have an inherent, constant, name.</p>
+ 
+<p>Objects to be added to a named domain object collection must implement <code>equals()</code> in such a way that no two objects with different names are considered equal. That is, all equality tests <strong>must</strong> consider the name as an equality key. Behavior is undefined if two objects with different names are considered equal by their <code>equals()</code> implementation.</p>
+ 
+<p>All implementations <strong>must</strong> guarantee that all elements in the collection are uniquely named. That is, an attempt to add an object with a name equal to the name of any existing object in the collection will fail. Implementations may choose to simply return false from <code>add(T)</code> or to throw an exception.</p>
+ 
+<p>Objects in the collection are accessible as read-only properties, using the name of the object as the property name. For example (assuming the 'name' property provides the object name):</p>
+ <pre><code> books.add(new Book(name: "gradle", title: null)) books.gradle.title = "Gradle in Action" </code></pre> 
+<p>A dynamic method is added for each object which takes a configuration closure. This is equivalent to calling <code><a href="#">#getByName(String, groovy.lang.Closure)</a></code>. For example:</p>
+ <pre><code> books.add(new Book(name: "gradle", title: null)) books.gradle { title = "Gradle in Action" } </code></pre> 
+<p>You can also use the <code>[]</code> operator to access the objects of a collection by name. For example:</p>
+ <pre><code> books.add(new Book(name: "gradle", title: null)) books['gradle'].title = "Gradle in Action" </code></pre> 
+<p>Rule objects can be attached to the collection in order to respond to requests for objects by name where no object with name exists in the collection. This mechanism can be used to create objects on demand. For example: </p>
+ <pre><code> books.addRule('create any') { books.add(new Book(name: "gradle", title: null)) } books.gradle.name == "gradle" </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-named-domain-object-container/index.html">NamedDomainObjectContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">NamedDomainObjectContainer</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">Configurable</span></code>
+<p>
+<p>A named domain object container is a specialisation of NamedDomainObjectSet that adds the ability to create instances of the element type.</p>
+ 
+<p>Implementations may use different strategies for creating new object instances.</p>
+ 
+<p>Note that a container is an implementation of java.util.SortedSet, which means that the container is guaranteed to only contain elements with unique names within this container. Furthermore, items are ordered by their name.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-named-domain-object-factory/index.html">NamedDomainObjectFactory</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">NamedDomainObjectFactory</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>A factory for named objects of type <code>T</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-named-domain-object-list/index.html">NamedDomainObjectList</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">NamedDomainObjectList</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-named-domain-object-collection/index.html"><span class="identifier">NamedDomainObjectCollection</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>
+<p>A specialisation of org.gradle.api.NamedDomainObjectCollection that also implements java.util.List.</p>
+ 
+<p>All object equality is determined in terms of object names. That is, calling <code>remove()</code> with an object that is NOT equal to an existing object in terms of <code>equals</code>, but IS in terms of name equality will result in the existing collection item with the equal name being removed.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-named-domain-object-set/index.html">NamedDomainObjectSet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">NamedDomainObjectSet</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-named-domain-object-collection/index.html"><span class="identifier">NamedDomainObjectCollection</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>
+<p>A specialisation of NamedDomainObjectCollection that also implements Set and orders objects by their inherent name.</p>
+ 
+<p>All object equality is determined in terms of object names. That is, calling <code>remove()</code> with an object that is NOT equal to an existing object in terms of <code>equals</code>, but IS in terms of name equality will result in the existing collection item with the equal name being removed.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-namer/index.html">Namer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Namer</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>A namer is capable of providing a name based on some inherent characteristic of an object.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-path-validation/index.html">PathValidation</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">PathValidation</span></code>
+<p>An enumeration for describing validation policies for file paths.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-plugin/index.html">Plugin</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Plugin</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>
+<p>A <code>Plugin</code> represents an extension to Gradle. A plugin applies some configuration to a target object. Usually, this target object is a org.gradle.api.Project, but plugins can be applied to any type of objects.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-polymorphic-domain-object-container/index.html">PolymorphicDomainObjectContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PolymorphicDomainObjectContainer</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-named-domain-object-container/index.html"><span class="identifier">NamedDomainObjectContainer</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>A NamedDomainObjectContainer that allows to create domain objects with different types.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-project/index.html">Project</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Project</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><a href="-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../org.gradle.api.plugins/-extension-aware/index.html"><span class="identifier">ExtensionAware</span></a><span class="symbol">, </span><a href="../org.gradle.api.plugins/-plugin-aware/index.html"><span class="identifier">PluginAware</span></a></code>
+<p>
+<p>This interface is the main API you use to interact with Gradle from your build file. From a <code>Project</code>, you have programmatic access to all of Gradle's features.</p>
+ Lifecycle 
+<p>There is a one-to-one relationship between a <code>Project</code> and a <code>{@value #DEFAULT_BUILD_FILE}</code> file. During build initialisation, Gradle assembles a <code>Project</code> object for each project which is to participate in the build, as follows:</p>
+ <ul> <li>Create a org.gradle.api.initialization.Settings instance for the build.</li>
+ <li>Evaluate the <code>{@value org.gradle.api.initialization.Settings#DEFAULT_SETTINGS_FILE}</code> script, if present, against the org.gradle.api.initialization.Settings object to configure it.</li>
+ <li>Use the configured org.gradle.api.initialization.Settings object to create the hierarchy of <code>Project</code> instances.</li>
+ <li>Finally, evaluate each <code>Project</code> by executing its <code>{@value #DEFAULT_BUILD_FILE}</code> file, if present, against the project. The projects are evaluated in breadth-wise order, such that a project is evaluated before its child projects. This order can be overridden by calling <code><code><a href="-project/evaluation-depends-on-children.html">#evaluationDependsOnChildren()</a></code></code> or by adding an explicit evaluation dependency using <code><code><a href="#">#evaluationDependsOn(String)</a></code></code>.</li>
+ </ul>
+ Tasks 
+<p>A project is essentially a collection of Task objects. Each task performs some basic piece of work, such as compiling classes, or running unit tests, or zipping up a WAR file. You add tasks to a project using one of the <code>create()</code> methods on TaskContainer, such as <code><a href="#">TaskContainer#create(String)</a></code>. You can locate existing tasks using one of the lookup methods on TaskContainer, such as <code><a href="#">org.gradle.api.tasks.TaskCollection#getByName(String)</a></code>.</p>
+ Dependencies 
+<p>A project generally has a number of dependencies it needs in order to do its work. Also, a project generally produces a number of artifacts, which other projects can use. Those dependencies are grouped in configurations, and can be retrieved and uploaded from repositories. You use the org.gradle.api.artifacts.ConfigurationContainer returned by <code><a href="-project/get-configurations.html">#getConfigurations()</a></code> method to manage the configurations. The returned by <code><a href="-project/get-dependencies.html">#getDependencies()</a></code> method to manage the dependencies. The org.gradle.api.artifacts.dsl.ArtifactHandler returned by <code><a href="-project/get-artifacts.html">#getArtifacts()</a></code> method to manage the artifacts. The org.gradle.api.artifacts.dsl.RepositoryHandler returned by <code><a href="-project/get-repositories.html"> </a></code> method to manage the repositories.</p>
+ Multi-project Builds 
+<p>Projects are arranged into a hierarchy of projects. A project has a name, and a fully qualified path which uniquely identifies it in the hierarchy.</p>
+ Plugins 
+<p> Plugins can be used to modularise and reuse project configuration. Plugins can be applied using the <code><a href="#">PluginAware#apply(java.util.Map)</a></code> method, or by using the org.gradle.plugin.use.PluginDependenciesSpec. </p>
+ <a href="#"></a> Properties 
+<p>Gradle executes the project's build file against the <code>Project</code> instance to configure the project. Any property or method which your script uses is delegated through to the associated <code>Project</code> object. This means, that you can use any of the methods and properties on the <code>Project</code> interface directly in your script. </p>
+<p>For example: </p>
+<pre><code> defaultTasks('some-task') // Delegates to Project.defaultTasks() reportsDir = file('reports') // Delegates to Project.file() and the Java Plugin </code></pre> 
+<p>You can also access the <code>Project</code> instance using the <code>project</code> property. This can make the script clearer in some cases. For example, you could use <code>project.name</code> rather than <code>name</code> to access the project's name.</p>
+ 
+<p>A project has 5 property 'scopes', which it searches for properties. You can access these properties by name in your build file, or by calling the project's <code><a href="#">#property(String)</a></code> method. The scopes are:</p>
+ <ul> <li>The <code>Project</code> object itself. This scope includes any property getters and setters declared by the <code>Project</code> implementation class. For example, <code><a href="-project/get-root-project.html">#getRootProject()</a></code> is accessible as the <code>rootProject</code> property. The properties of this scope are readable or writable depending on the presence of the corresponding getter or setter method.</li>
+ <li>The <em>extra</em> properties of the project. Each project maintains a map of extra properties, which can contain any arbitrary name -&gt; value pair. Once defined, the properties of this scope are readable and writable. See <a href="#">extra properties</a> for more details.</li>
+ <li>The <em>extensions</em> added to the project by the plugins. Each extension is available as a read-only property with the same name as the extension.</li>
+ <li>The <em>convention</em> properties added to the project by the plugins. A plugin can add properties and methods to a project through the project's Convention object. The properties of this scope may be readable or writable, depending on the convention objects.</li>
+ <li>The tasks of the project. A task is accessible by using its name as a property name. The properties of this scope are read-only. For example, a task called <code>compile</code> is accessible as the <code>compile</code> property.</li>
+ <li>The extra properties and convention properties inherited from the project's parent, recursively up to the root project. The properties of this scope are read-only.</li>
+ </ul>
+ 
+<p>When reading a property, the project searches the above scopes in order, and returns the value from the first scope it finds the property in. If not found, an exception is thrown. See <code><a href="#">#property(String)</a></code> for more details.</p>
+ 
+<p>When writing a property, the project searches the above scopes in order, and sets the property in the first scope it finds the property in. If not found, an exception is thrown. See <code><a href="#">#setProperty(String, Object)</a></code> for more details.</p>
+ <a href="#"></a> Extra Properties All extra properties must be defined through the "ext" namespace. Once an extra property has been defined, it is available directly on the owning object (in the below case the Project, Task, and sub-projects respectively) and can be read and updated. Only the initial declaration that needs to be done via the namespace. <pre><code> project.ext.prop1 = "foo" task doStuff { ext.prop2 = "bar" } subprojects { ext.${prop3} = false } </code></pre> Reading extra properties is done through the "ext" or through the owning object. <pre><code> ext.isSnapshot = version.endsWith("-SNAPSHOT") if (isSnapshot) { // do snapshot stuff } </code></pre> Dynamic Methods 
+<p>A project has 5 method 'scopes', which it searches for methods:</p>
+ <ul> <li>The <code>Project</code> object itself.</li>
+ <li>The build file. The project searches for a matching method declared in the build file.</li>
+ <li>The <em>extensions</em> added to the project by the plugins. Each extension is available as a method which takes a closure or org.gradle.api.Action as a parameter.</li>
+ <li>The <em>convention</em> methods added to the project by the plugins. A plugin can add properties and method to a project through the project's Convention object.</li>
+ <li>The tasks of the project. A method is added for each task, using the name of the task as the method name and taking a single closure or org.gradle.api.Action parameter. The method calls the <code><a href="#">Task#configure(groovy.lang.Closure)</a></code> method for the associated task with the provided closure. For example, if the project has a task called <code>compile</code>, then a method is added with the following signature: <code>void compile(Closure configureClosure)</code>.</li>
+ <li>The methods of the parent project, recursively up to the root project.</li>
+ <li>A property of the project whose value is a closure. The closure is treated as a method and called with the provided parameters. The property is located as described above.</li>
+ </ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-project-evaluation-listener/index.html">ProjectEvaluationListener</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ProjectEvaluationListener</span></code>
+<p>
+<p>An <code>ProjectEvaluationListener</code> is notified when a project is evaluated. You add can add an <code>ProjectEvaluationListener</code> to a org.gradle.api.invocation.Gradle using <code><a href="../org.gradle.api.invocation/-gradle/add-project-evaluation-listener.html"> </a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-project-state/index.html">ProjectState</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ProjectState</span></code>
+<p><code>ProjectState</code> provides information about the execution state of a project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-rule/index.html">Rule</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Rule</span></code>
+<p>
+<p>A <code>Rule</code> represents some action to perform when an unknown domain object is referenced. The rule can use the domain object name to add an implicit domain object.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-script/index.html">Script</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Script</span></code>
+<p>
+<p>This interface is implemented by all Gradle scripts to add in some Gradle-specific methods. As your compiled script class will implement this interface, you can use the methods and properties declared by this interface directly in your script.</p>
+ 
+<p>Generally, a <code>Script</code> object will have a delegate object attached to it. For example, a build script will have a Project instance attached to it, and an initialization script will have a instance attached to it. Any property reference or method call which is not found on this <code>Script</code> object is forwarded to the delegate object.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task/index.html">Task</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Task</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><a href="-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../org.gradle.api.plugins/-extension-aware/index.html"><span class="identifier">ExtensionAware</span></a></code>
+<p>
+<p>A <code>Task</code> represents a single atomic piece of work for a build, such as compiling classes or generating javadoc.</p>
+ 
+<p>Each task belongs to a Project. You can use the various methods on to create and lookup task instances. For example, <code><a href="#"> </a></code> creates an empty task with the given name. You can also use the <code>task</code> keyword in your build file: </p>
+ <pre><code> task myTask task myTask { configure closure } task myTask(type: SomeType) task myTask(type: SomeType) { configure closure } </code></pre> 
+<p>Each task has a name, which can be used to refer to the task within its owning project, and a fully qualified path, which is unique across all tasks in all projects. The path is the concatenation of the owning project's path and the task's name. Path elements are separated using the {@value org.gradle.api.Project#PATH_SEPARATOR} character.</p>
+ Task Actions 
+<p>A <code>Task</code> is made up of a sequence of Action objects. When the task is executed, each of the actions is executed in turn, by calling <code><a href="#">Action#execute</a></code>. You can add actions to a task by calling <code><a href="#"> </a></code> or <code><a href="#">#doLast(Action)</a></code>.</p>
+ 
+<p>Groovy closures can also be used to provide a task action. When the action is executed, the closure is called with the task as parameter. You can add action closures to a task by calling <code><a href="#">#doFirst(groovy.lang.Closure)</a></code> or <code><a href="#">#doLast(groovy.lang.Closure)</a></code>.</p>
+ 
+<p>There are 2 special exceptions which a task action can throw to abort execution and continue without failing the build. A task action can abort execution of the action and continue to the next action of the task by throwing a org.gradle.api.tasks.StopActionException. A task action can abort execution of the task and continue to the next task by throwing a org.gradle.api.tasks.StopExecutionException. Using these exceptions allows you to have precondition actions which skip execution of the task, or part of the task, if not true.</p>
+ <a href="#"></a>Task Dependencies and Task Ordering 
+<p>A task may have dependencies on other tasks or might be scheduled to always run after another task. Gradle ensures that all task dependencies and ordering rules are honored when executing tasks, so that the task is executed after all of its dependencies and any "must run after" tasks have been executed.</p>
+ 
+<p>Dependencies to a task are controlled using <code><a href="#">#dependsOn(Object...)</a></code> or <code><a href="#">#setDependsOn(Iterable)</a></code>, and <code><a href="#">#mustRunAfter(Object...)</a></code>, <code><a href="#">#setMustRunAfter(Iterable)</a></code>, <code><a href="#">#shouldRunAfter(Object...)</a></code> and <code><a href="#">#setShouldRunAfter(Iterable)</a></code> are used to specify ordering between tasks. You can use objects of any of the following types to specify dependencies and ordering:</p>
+ <ul> <li>A <code>String</code>, <code>CharSequence</code> or <code>groovy.lang.GString</code> task path or name. A relative path is interpreted relative to the task's Project. This allows you to refer to tasks in other projects.</li>
+ <li>A Task.</li>
+ <li>A closure. The closure may take a <code>Task</code> as parameter. It may return any of the types listed here. Its return value is recursively converted to tasks. A <code>null</code> return value is treated as an empty collection.</li>
+ <li>A TaskDependency object.</li>
+ <li>A Buildable object.</li>
+ <li>A <code>Iterable</code>, <code>Collection</code>, <code>Map</code> or array. May contain any of the types listed here. The elements of the iterable/collection/map/array are recursively converted to tasks.</li>
+ <li>A <code>Callable</code>. The <code>call()</code> method may return any of the types listed here. Its return value is recursively converted to tasks. A <code>null</code> return value is treated as an empty collection.</li>
+ </ul>
+ Using a Task in a Build File <a href="#"></a> Dynamic Properties 
+<p>A <code>Task</code> has 4 'scopes' for properties. You can access these properties by name from the build file or by calling the <code><a href="#">#property(String)</a></code> method. You can change the value of these properties by calling the <code><a href="#">#setProperty(String, Object)</a></code> method.</p>
+ <ul> <li>The <code>Task</code> object itself. This includes any property getters and setters declared by the <code>Task</code> implementation class. The properties of this scope are readable or writable based on the presence of the corresponding getter and setter methods.</li>
+ <li>The <em>extensions</em> added to the task by plugins. Each extension is available as a read-only property with the same name as the extension.</li>
+ <li>The <em>convention</em> properties added to the task by plugins. A plugin can add properties and methods to a task through the task's Convention object. The properties of this scope may be readable or writable, depending on the convention objects.</li>
+ <li>The <em>extra properties</em> of the task. Each task object maintains a map of additional properties. These are arbitrary name -&gt; value pairs which you can use to dynamically add properties to a task object. Once defined, the properties of this scope are readable and writable.</li>
+ </ul>
+ Dynamic Methods 
+<p>A Plugin may add methods to a <code>Task</code> using its Convention object.</p>
+ Parallel Execution 
+<p> By default, tasks are not executed in parallel unless a task is waiting on asynchronous work and another task (which is not dependent) is ready to execute. Parallel execution can be enabled by the <code>--parallel</code> flag when the build is initiated. In parallel mode, the tasks of different projects (i.e. in a multi project build) are able to be executed in parallel.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-transformer/index.html">Transformer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Transformer</span><span class="symbol">&lt;</span><span class="identifier">OUT</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">IN</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>
+<p>A <code>Transformer</code> transforms objects of type.</p>
+ 
+<p>Implementations are free to return new objects or mutate the incoming value.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-xml-provider/index.html">XmlProvider</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">XmlProvider</span></code>
+<p>Provides various ways to access the content of an XML document.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Annotations</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-has-implicit-receiver/index.html">HasImplicitReceiver</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">HasImplicitReceiver</span></code>
+<p>Marks a SAM interface as a target for lambda expressions / closures where the single parameter is passed as the implicit receiver of the invocation (<code>this</code> in Kotlin, <code>delegate</code> in Groovy) as if the lambda expression was an extension method of the parameter type. <pre><code> // copySpec(Action&lt;CopySpec&gt;) copySpec { from("./sources") // the given CopySpec is the implicit receiver } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-incubating/index.html">Incubating</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Incubating</span></code>
+<p>Indicates that a feature is incubating. This means that the feature is currently a work-in-progress and may change at any time.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-non-extensible/index.html">NonExtensible</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">NonExtensible</span></code>
+<p>Indicates that the type, when DSL enhanced, does not support extensibility. 
+<p> This means that it will not be enhanced with org.gradle.api.plugins.ExtensionAware.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-nullable/index.html">Nullable</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Nullable</span></code>
+<p>Indicates that the value of an element can be null.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Exceptions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-build-cancelled-exception/index.html">BuildCancelledException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BuildCancelledException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>
+<p>A <code>BuildCancelledException</code> is thrown when a build is interrupted due to cancellation request.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-circular-reference-exception/index.html">CircularReferenceException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CircularReferenceException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>
+<p>A <code>CircularReferenceException</code> is thrown if circular references exists between tasks, the project evaluation order or the project dependsOn order.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-gradle-exception/index.html">GradleException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GradleException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/RuntimeException.html"><span class="identifier">RuntimeException</span></a></code>
+<p>
+<p><code>GradleException</code> is the base class of all exceptions thrown by Gradle.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-gradle-script-exception/index.html">GradleScriptException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GradleScriptException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>
+<p>A <code>GradleScriptException</code> is thrown when an exception occurs in the compilation or execution of a script.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-illegal-dependency-notation/index.html">IllegalDependencyNotation</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">IllegalDependencyNotation</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>This exceptions is thrown, if a dependency is declared with a illegal notation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-invalid-action-closure-exception/index.html">InvalidActionClosureException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InvalidActionClosureException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>Thrown when a Closure is given as an Action implementation, but has the wrong signature.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-invalid-user-code-exception/index.html">InvalidUserCodeException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InvalidUserCodeException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>A <code>InvalidUserCodeException</code> is thrown when user-provided code cannot be executed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-invalid-user-data-exception/index.html">InvalidUserDataException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InvalidUserDataException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>A <code>InvalidUserDataException</code> is thrown, if a user is providing illegal data for the build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-project-configuration-exception/index.html">ProjectConfigurationException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ProjectConfigurationException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>Indicates a problem that occurs during project configuration (evaluation) phase.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-unchecked-i-o-exception/index.html">UncheckedIOException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">UncheckedIOException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/RuntimeException.html"><span class="identifier">RuntimeException</span></a></code>
+<p><code>UncheckedIOException</code> is used to wrap an java.io.IOException into an unchecked exception.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-unknown-domain-object-exception/index.html">UnknownDomainObjectException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">UnknownDomainObjectException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>
+<p>A <code>UnknownDomainObjectException</code> is the super class of all exceptions thrown when a given domain object cannot be located.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-unknown-project-exception/index.html">UnknownProjectException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">UnknownProjectException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-unknown-domain-object-exception/index.html"><span class="identifier">UnknownDomainObjectException</span></a></code>
+<p>
+<p>An <code>UnknownProjectException</code> is thrown when a project referenced by path cannot be found.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-unknown-task-exception/index.html">UnknownTaskException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">UnknownTaskException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-unknown-domain-object-exception/index.html"><span class="identifier">UnknownDomainObjectException</span></a></code>
+<p>
+<p>An <code>UnknownTaskException</code> is thrown when a task referenced by path cannot be found.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

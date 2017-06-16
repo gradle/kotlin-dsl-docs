@@ -1,0 +1,112 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GradlePluginDevelopmentExtension - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugin.devel</a>&nbsp;/&nbsp;<a href=".">GradlePluginDevelopmentExtension</a><br/>
+<br/>
+<h1>GradlePluginDevelopmentExtension</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GradlePluginDevelopmentExtension</span></code>
+<p>Configuration options for the org.gradle.plugin.devel.plugins.JavaGradlePluginPlugin. 
+<p>Below is a full configuration example. Since all properties have sensible defaults, typically only selected properties will be configured. </p>
+<pre><code> apply plugin: "java-gradle-plugin" gradlePlugin { pluginSourceSet project.sourceSets.customMain testSourceSets project.sourceSets.functionalTest plugins { helloPlugin { id = 'org.example.hello' implementationClass = 'org.example.HelloPlugin' } } } </code></pre></p>
+<p><strong>See Also</strong><br/>
+org.gradle.plugin.devel.plugins.JavaGradlePluginPlugin</p>
+<p><strong>Since</strong><br/>
+2.13</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">GradlePluginDevelopmentExtension</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.devel.GradlePluginDevelopmentExtension$<init>(org.gradle.api.Project, org.gradle.api.tasks.SourceSet, org.gradle.api.tasks.SourceSet)/project">project</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.plugin.devel.GradlePluginDevelopmentExtension$<init>(org.gradle.api.Project, org.gradle.api.tasks.SourceSet, org.gradle.api.tasks.SourceSet)/pluginSourceSet">pluginSourceSet</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks/-source-set/index.html"><span class="identifier">SourceSet</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.plugin.devel.GradlePluginDevelopmentExtension$<init>(org.gradle.api.Project, org.gradle.api.tasks.SourceSet, org.gradle.api.tasks.SourceSet)/testSourceSet">testSourceSet</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks/-source-set/index.html"><span class="identifier">SourceSet</span></a><span class="symbol">)</span></code><br/>
+<code><span class="identifier">GradlePluginDevelopmentExtension</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.devel.GradlePluginDevelopmentExtension$<init>(org.gradle.api.Project, org.gradle.api.tasks.SourceSet, kotlin.Array((org.gradle.api.tasks.SourceSet)))/project">project</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.plugin.devel.GradlePluginDevelopmentExtension$<init>(org.gradle.api.Project, org.gradle.api.tasks.SourceSet, kotlin.Array((org.gradle.api.tasks.SourceSet)))/pluginSourceSet">pluginSourceSet</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks/-source-set/index.html"><span class="identifier">SourceSet</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.plugin.devel.GradlePluginDevelopmentExtension$<init>(org.gradle.api.Project, org.gradle.api.tasks.SourceSet, kotlin.Array((org.gradle.api.tasks.SourceSet)))/testSourceSets">testSourceSets</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.tasks/-source-set/index.html"><span class="identifier">SourceSet</span></a><span class="symbol">&gt;</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-plugin-source-set.html">getPluginSourceSet</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getPluginSourceSet</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-source-set/index.html"><span class="identifier">SourceSet</span></a></code>
+<p>Returns the source set that compiles the code under test. Defaults to <code>project.sourceSets.main</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-plugins.html">getPlugins</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getPlugins</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-named-domain-object-container/index.html"><span class="identifier">NamedDomainObjectContainer</span></a><span class="symbol">&lt;</span><a href="../-plugin-declaration/index.html"><span class="identifier">PluginDeclaration</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the declared plugins.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-test-source-sets.html">getTestSourceSets</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTestSourceSets</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.tasks/-source-set/index.html"><span class="identifier">SourceSet</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the source sets executing the functional tests with TestKit. Defaults to <code>project.sourceSets.test</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-automated-publishing.html">isAutomatedPublishing</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isAutomatedPublishing</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether the plugin should automatically configure the publications for the plugins.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="plugin-source-set.html">pluginSourceSet</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">pluginSourceSet</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.devel.GradlePluginDevelopmentExtension$pluginSourceSet(org.gradle.api.tasks.SourceSet)/pluginSourceSet">pluginSourceSet</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks/-source-set/index.html"><span class="identifier">SourceSet</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Provides the source set that compiles the code under test.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="plugins.html">plugins</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">plugins</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.devel.GradlePluginDevelopmentExtension$plugins(org.gradle.api.Action((org.gradle.api.NamedDomainObjectContainer((org.gradle.plugin.devel.PluginDeclaration)))))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api/-named-domain-object-container/index.html"><span class="identifier">NamedDomainObjectContainer</span></a><span class="symbol">&lt;</span><a href="../-plugin-declaration/index.html"><span class="identifier">PluginDeclaration</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the declared plugins.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-automated-publishing.html">setAutomatedPublishing</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setAutomatedPublishing</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.devel.GradlePluginDevelopmentExtension$setAutomatedPublishing(kotlin.Boolean)/automatedPublishing">automatedPublishing</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures whether the plugin should automatically configure the publications for the plugins.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="test-source-sets.html">testSourceSets</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">testSourceSets</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.plugin.devel.GradlePluginDevelopmentExtension$testSourceSets(kotlin.Array((org.gradle.api.tasks.SourceSet)))/testSourceSets">testSourceSets</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks/-source-set/index.html"><span class="identifier">SourceSet</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Provides the source sets executing the functional tests with TestKit. 
+<p> Calling this method multiple times with different source sets is not additive.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

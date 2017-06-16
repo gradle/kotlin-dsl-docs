@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GradleProject - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.model</a>&nbsp;/&nbsp;<a href=".">GradleProject</a><br/>
+<br/>
+<h1>GradleProject</h1>
+<code><span class="keyword">interface </span><span class="identifier">GradleProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-hierarchical-element/index.html"><span class="identifier">HierarchicalElement</span></a><span class="symbol">, </span><a href="../-buildable-element/index.html"><span class="identifier">BuildableElement</span></a><span class="symbol">, </span><a href="../-project-model/index.html"><span class="identifier">ProjectModel</span></a></code>
+<p>Represents a Gradle project.</p>
+<p><strong>Since</strong><br/>
+1.0-milestone-5</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="find-by-path.html">findByPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">findByPath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.model.GradleProject$findByPath(kotlin.String)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleProject</span></code>
+<p>Searches all descendants (children, grand-children, etc.), including self, by given path.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-build-directory.html">getBuildDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildDirectory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the build directory for this project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-build-script.html">getBuildScript</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildScript</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model.gradle/-gradle-script/index.html"><span class="identifier">GradleScript</span></a></code>
+<p>Returns the build script for this project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-children.html">getChildren</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getChildren</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">GradleProject</span><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-parent.html">getParent</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getParent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleProject</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-path.html">getPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the path of this project. This is a unique identifier for this project within the build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project-directory.html">getProjectDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectDirectory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the project directory for this project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project-identifier.html">getProjectIdentifier</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectIdentifier</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-project-identifier/index.html"><span class="identifier">ProjectIdentifier</span></a></code>
+<p>Returns the identifier for this Gradle project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-tasks.html">getTasks</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTasks</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-gradle-task/index.html"><span class="identifier">GradleTask</span></a><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

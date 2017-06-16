@@ -1,0 +1,392 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api.plugins - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.plugins</a><br/>
+<br/>
+<h2>Package org.gradle.api.plugins</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-application-plugin/index.html">ApplicationPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ApplicationPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span></code>
+<p>
+<p>A Plugin which runs a project as a Java Application.</p>
+ 
+<p>The plugin can be configured via its companion ApplicationPluginConvention object.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-application-plugin-convention/index.html">ApplicationPluginConvention</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ApplicationPluginConvention</span></code>
+<p>
+<p>The Convention used for configuring the ApplicationPlugin.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-applied-plugin/index.html">AppliedPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">AppliedPlugin</span></code>
+<p>Represents a plugin that has been applied. 
+<p> Currently just provides information about the ID of the plugin.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-base-plugin/index.html">BasePlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BasePlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span></code>
+<p>
+<p>A org.gradle.api.Plugin which defines a basic project lifecycle and some common convention properties.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-base-plugin-convention/index.html">BasePluginConvention</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BasePluginConvention</span></code>
+<p>
+<p>A Convention used for the BasePlugin.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-convention/index.html">Convention</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Convention</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-extension-container/index.html"><span class="identifier">ExtensionContainer</span></a></code>
+<p>
+<p>A <code>Convention</code> manages a set of <em>convention objects</em>. When you add a convention object to a <code>Convention</code>, and the properties and methods of the convention object become available as properties and methods of the object which the convention is associated to. A convention object is simply a POJO or POGO. Usually, a <code>Convention</code> is used by plugins to extend a org.gradle.api.Project or a org.gradle.api.Task.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-extension-aware/index.html">ExtensionAware</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ExtensionAware</span></code>
+<p>Objects that can be extended at runtime with other objects. <pre><code> // Extensions are just plain objects, there is no interface/type class MyExtension { String foo MyExtension(String foo) { this.foo = foo } } // Add new extensions via the extension container project.extensions.create('custom', MyExtension, "bar") // («name», «type», «constructor args», …) // extensions appear as properties on the target object by the given name assert project.custom instanceof MyExtension assert project.custom.foo == "bar" // also via a namespace method project.custom { assert foo == "bar" foo = "other" } assert project.custom.foo == "other" // Extensions added with the extension container's create method are themselves extensible assert project.custom instanceof ExtensionAware project.custom.extensions.create("nested", MyExtension, "baz") assert project.custom.nested.foo == "baz" // All extension aware objects have a special “ext” extension of type ExtraPropertiesExtension assert project.hasProperty("myProperty") == false project.ext.myProperty = "myValue" // Properties added to the “ext” extension are promoted to the owning object assert project.myProperty == "myValue" </code></pre> Many Gradle objects are extension aware. This includes; projects, tasks, configurations, dependencies etc. 
+<p> For more on adding &amp; creating extensions, see ExtensionContainer. </p>
+<p> For more on extra properties, see ExtraPropertiesExtension. </p>
+<p> An <code>ExtensionAware</code> object has several 'scopes' that Gradle searches for properties. These scopes are:</p>
+ <ul> <li>The object itself. This scope includes any property getters and setters declared by the implementation class. The properties of this scope are readable or writable depending on the presence of the corresponding getter or setter method.</li>
+ <li>Groovy Meta-programming methods implemented by the object's class, like <code>propertyMissing()</code>. Care must be taken by plugin authors to ensure <code>propertyMissing()</code> is implemented such that if a property is not found a MissingPropertyException(String, Class) exception is thrown. If <code>propertyMissing()</code> always returns a value for any property, <em>Gradle will not search the rest of the scopes below.</em></li>
+ <li>The <em>extra</em> properties of the object. Each object maintains a map of extra properties, which can contain any arbitrary name -&gt; value pair. Once defined, the properties of this scope are readable and writable.</li>
+ <li>The <em>extensions</em> added to the object by plugins. Each extension is available as a read-only property with the same name as the extension.</li>
+ </ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-extension-container/index.html">ExtensionContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ExtensionContainer</span></code>
+<p>Allows adding 'namespaced' DSL extensions to a target object.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-extra-properties-extension/index.html">ExtraPropertiesExtension</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ExtraPropertiesExtension</span></code>
+<p>Additional, ad-hoc, properties for Gradle domain objects. 
+<p> Extra properties extensions allow new properties to be added to existing domain objects. They act like maps, allowing the storage of arbitrary key/value pairs. All ExtensionAware Gradle domain objects intrinsically have an extension named “{@value #EXTENSION_NAME}” of this type. </p>
+<p> An important feature of extra properties extensions is that all of its properties are exposed for reading and writing via the ExtensionAware object that owns the extension. </p>
+<pre><code> project.ext.set("myProp", "myValue") assert project.myProp == "myValue" project.myProp = "anotherValue" assert project.myProp == "anotherValue" assert project.ext.get("myProp") == "anotherValue" </code></pre> Extra properties extension objects support Groovy property syntax. That is, a property can be read via <code>extension.«name»</code> and set via <code>extension.«name» = "value"</code>. <strong>Wherever possible, the Groovy property syntax should be preferred over the <code><a href="#">#get(String)</a></code> and <code><a href="#">#set(String, Object)</a></code> methods.</strong> <pre><code> project.ext { myprop = "a" } assert project.myprop == "a" assert project.ext.myprop == "a" project.myprop = "b" assert project.myprop == "b" assert project.ext.myprop == "b" </code></pre> You can also use the Groovy accessor syntax to get and set properties on an extra properties extension. <pre><code> project.ext["otherProp"] = "a" assert project.otherProp == "a" assert project.ext["otherProp"] == "a" </code></pre> The exception that is thrown when an attempt is made to get the value of a property that does not exist is different depending on whether the Groovy syntax is used or not. If Groovy property syntax is used, the Groovy groovy.lang.MissingPropertyException will be thrown. When the <code><a href="#">#get(String)</a></code> method is used, an UnknownPropertyException will be thrown.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-groovy-base-plugin/index.html">GroovyBasePlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GroovyBasePlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span></code>
+<p>Extends org.gradle.api.plugins.JavaBasePlugin to provide support for compiling and documenting Groovy source files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-groovy-plugin/index.html">GroovyPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GroovyPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span></code>
+<p>
+<p>A Plugin which extends the JavaPlugin to provide support for compiling and documenting Groovy source files.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-help-tasks-plugin/index.html">HelpTasksPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">HelpTasksPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><span class="identifier">ProjectInternal</span><span class="symbol">&gt;</span></code>
+<p>Adds various reporting tasks that provide information about the project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-java-base-plugin/index.html">JavaBasePlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JavaBasePlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><span class="identifier">ProjectInternal</span><span class="symbol">&gt;</span></code>
+<p>
+<p>A org.gradle.api.Plugin which compiles and tests Java source, and assembles it into a JAR file.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-java-library-distribution-plugin/index.html">JavaLibraryDistributionPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JavaLibraryDistributionPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><span class="identifier">ProjectInternal</span><span class="symbol">&gt;</span></code>
+<p>A Plugin which package a Java project as a distribution including the JAR and runtime dependencies.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-java-library-plugin/index.html">JavaLibraryPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JavaLibraryPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span></code>
+<p>
+<p>A Plugin which extends the capabilities of the JavaPlugin by cleanly separating the API and implementation dependencies of a library.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-java-plugin/index.html">JavaPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JavaPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><span class="identifier">ProjectInternal</span><span class="symbol">&gt;</span></code>
+<p>
+<p>A Plugin which compiles and tests Java source, and assembles it into a JAR file.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-java-plugin-convention/index.html">JavaPluginConvention</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JavaPluginConvention</span></code>
+<p>Is mixed into the project when applying the org.gradle.api.plugins.JavaBasePlugin or the org.gradle.api.plugins.JavaPlugin.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-plugin/index.html">MavenPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">MavenPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><span class="identifier">ProjectInternal</span><span class="symbol">&gt;</span></code>
+<p>
+<p>A org.gradle.api.Plugin which allows project artifacts to be deployed to a Maven repository, or installed to the local Maven cache.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-plugin-convention/index.html">MavenPluginConvention</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">MavenPluginConvention</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">MavenPomMetaInfoProvider</span></code>
+<p>Properties and methods added by the org.gradle.api.plugins.MavenPlugin.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-repository-handler-convention/index.html">MavenRepositoryHandlerConvention</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MavenRepositoryHandlerConvention</span></code>
+<p>Allows Maven repositories for publishing artifacts to be defined. The Maven plugin mixes-in this interface to the org.gradle.api.artifacts.dsl.RepositoryHandler associated with each task of type org.gradle.api.tasks.Upload.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-object-configuration-action/index.html">ObjectConfigurationAction</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ObjectConfigurationAction</span></code>
+<p>
+<p>An <code>ObjectConfigurationAction</code> allows you to apply org.gradle.api.Plugins and scripts to an object or objects.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-plugin-aware/index.html">PluginAware</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PluginAware</span></code>
+<p>Something that can have plugins applied to it. 
+<p> The <code><a href="-plugin-aware/get-plugin-manager.html">plugin manager</a></code> can be used for applying and detecting whether plugins have been applied. </p>
+<p> For more on writing and applying plugins, see org.gradle.api.Plugin.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-plugin-collection/index.html">PluginCollection</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PluginCollection</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>
+<p>A <code>PluginCollection</code> represents a collection of org.gradle.api.Plugin instances.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-plugin-container/index.html">PluginContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PluginContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-plugin-collection/index.html"><span class="identifier">PluginCollection</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>
+<p>A <code>PluginContainer</code> is used to manage a set of org.gradle.api.Plugin instances applied to a particular project.</p>
+ 
+<p>Plugins can be specified using either an id or type. The id of a plugin is specified using a META-INF/gradle-plugins/${id}.properties classpath resource.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-plugin-manager/index.html">PluginManager</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PluginManager</span></code>
+<p>Facilitates applying plugins and determining which plugins have been applied to a PluginAware object.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-project-reports-plugin/index.html">ProjectReportsPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ProjectReportsPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span></code>
+<p>
+<p>A Plugin which adds some project visualization report tasks to a project.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-project-reports-plugin-convention/index.html">ProjectReportsPluginConvention</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ProjectReportsPluginConvention</span></code>
+<p>The conventional configuration for the `ProjectReportsPlugin`.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-reporting-base-plugin/index.html">ReportingBasePlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ReportingBasePlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><span class="identifier">ProjectInternal</span><span class="symbol">&gt;</span></code>
+<p>
+<p>A Plugin which provides the basic skeleton for reporting.</p>
+ 
+<p>This plugin adds the following extension objects to the project:</p>
+ <ul> <li>org.gradle.api.reporting.ReportingExtension</li>
+ </ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-war-plugin/index.html">WarPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WarPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span></code>
+<p>
+<p>A Plugin which extends the JavaPlugin to add tasks which assemble a web application into a WAR file.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-war-plugin-convention/index.html">WarPluginConvention</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WarPluginConvention</span></code>
+<p>
+<p>A Convention used for the WarPlugin.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Annotations</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-deferred-configurable/index.html">DeferredConfigurable</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">DeferredConfigurable</span></code>
+<p>Indicates that the annotated object is designed to be configured only once, and that changes to configuration inputs made after configuration should not be allowed.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Exceptions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-invalid-plugin-exception/index.html">InvalidPluginException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InvalidPluginException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>Thrown when a plugin is found to be invalid when it is loaded.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-plugin-instantiation-exception/index.html">PluginInstantiationException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PluginInstantiationException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>A <code>PluginInstantiationException</code> is thrown when a plugin cannot be instantiated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-unknown-plugin-exception/index.html">UnknownPluginException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">UnknownPluginException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-invalid-user-data-exception/index.html"><span class="identifier">InvalidUserDataException</span></a></code>
+<p>A <code>UnknownPluginException</code> is thrown when an unknown plugin id is provided.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

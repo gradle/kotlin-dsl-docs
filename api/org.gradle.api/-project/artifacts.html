@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Project.artifacts - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">Project</a>&nbsp;/&nbsp;<a href=".">artifacts</a><br/>
+<br/>
+<h1>artifacts</h1>
+<a name="org.gradle.api.Project$artifacts(groovy.lang.Closure((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">artifacts</span><span class="symbol">(</span><span class="identifier">@DelegatesTo</span><span class="symbol">(</span>ArtifactHandler<span class="symbol">, </span>1<span class="symbol">)</span> <span class="identifier" id="org.gradle.api.Project$artifacts(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Configures the published artifacts for this project. </p>
+<p>This method executes the given closure against the ArtifactHandler for this project. The is passed to the closure as the closure's delegate. </p>
+<p>Example: </p>
+<pre><code> configurations { //declaring new configuration that will be used to associate with artifacts schema } task schemaJar(type: Jar) { //some imaginary task that creates a jar artifact with the schema } //associating the task that produces the artifact with the configuration artifacts { //configuration name and the task: schema schemaJar } </code></pre></p>
+<h3>Parameters</h3>
+<a name="configureClosure"></a>
+<code>configureClosure</code> - the closure to use to configure the published artifacts.<a name="org.gradle.api.Project$artifacts(org.gradle.api.Action((org.gradle.api.artifacts.dsl.ArtifactHandler)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">artifacts</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$artifacts(org.gradle.api.Action((org.gradle.api.artifacts.dsl.ArtifactHandler)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.artifacts.dsl/-artifact-handler/index.html"><span class="identifier">ArtifactHandler</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Configures the published artifacts for this project. </p>
+<p>This method executes the given action against the ArtifactHandler for this project. </p>
+<p>Example: </p>
+<pre><code> configurations { //declaring new configuration that will be used to associate with artifacts schema } task schemaJar(type: Jar) { //some imaginary task that creates a jar artifact with the schema } //associating the task that produces the artifact with the configuration artifacts { //configuration name and the task: schema schemaJar } </code></pre></p>
+<h3>Parameters</h3>
+<a name="configureAction"></a>
+<code>configureAction</code> - the action to use to configure the published artifacts.
+<p><strong>Since</strong><br/>
+3.5</p>
+</BODY>
+</HTML>

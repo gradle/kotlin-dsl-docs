@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PluginManager.apply - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href="index.html">PluginManager</a>&nbsp;/&nbsp;<a href=".">apply</a><br/>
+<br/>
+<h1>apply</h1>
+<a name="org.gradle.api.plugins.PluginManager$apply(kotlin.String)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginManager$apply(kotlin.String)/pluginId">pluginId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies the plugin with the given ID. Does nothing if the plugin has already been applied. 
+<p> Plugins in the <code>"org.gradle"</code> namespace can be applied directly via name. That is, the following two lines are equivalent… </p>
+<pre><code> pluginManager.apply "org.gradle.java" pluginManager.apply "java" </code></pre></p>
+<h3>Parameters</h3>
+<a name="pluginId"></a>
+<code>pluginId</code> - the ID of the plugin to apply
+<p><strong>Since</strong><br/>
+2.3</p>
+<a name="org.gradle.api.plugins.PluginManager$apply(java.lang.Class((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginManager$apply(java.lang.Class((kotlin.Any)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies the given plugin. Does nothing if the plugin has already been applied. 
+<p> The given class should implement the org.gradle.api.Plugin interface, and be parameterized for a compatible type of <code>this</code>. </p>
+<p> The following two lines are equivalent… </p>
+<pre><code> pluginManager.apply org.gradle.api.plugins.JavaPlugin pluginManager.apply "org.gradle.java" </code></pre></p>
+<h3>Parameters</h3>
+<a name="type"></a>
+<code>type</code> - the plugin class to apply
+<p><strong>Since</strong><br/>
+2.3</p>
+</BODY>
+</HTML>

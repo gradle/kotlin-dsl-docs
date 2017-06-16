@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MavenRepositoryHandlerConvention.mavenDeployer - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href="index.html">MavenRepositoryHandlerConvention</a>&nbsp;/&nbsp;<a href=".">mavenDeployer</a><br/>
+<br/>
+<h1>mavenDeployer</h1>
+<a name="org.gradle.api.plugins.MavenRepositoryHandlerConvention$mavenDeployer()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">mavenDeployer</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.maven/-groovy-maven-deployer.html"><span class="identifier">GroovyMavenDeployer</span></a></code>
+<p>Adds a repository for publishing to a Maven repository. This repository can not be used for resolving dependencies.</p>
+<p><strong>Return</strong><br/>
+The added repository</p>
+<p><strong>See Also</strong><br/>
+<a href="#">#mavenDeployer(java.util.Map, groovy.lang.Closure)</a></p>
+<a name="org.gradle.api.plugins.MavenRepositoryHandlerConvention$mavenDeployer(groovy.lang.Closure((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">mavenDeployer</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.MavenRepositoryHandlerConvention$mavenDeployer(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.maven/-groovy-maven-deployer.html"><span class="identifier">GroovyMavenDeployer</span></a></code>
+<p>Adds a repository for publishing to a Maven repository. This repository can not be used for resolving dependencies.</p>
+<h3>Parameters</h3>
+<a name="configureClosure"></a>
+<code>configureClosure</code> - A closure to use to configure the repository.
+<p><strong>Return</strong><br/>
+The added repository</p>
+<p><strong>See Also</strong><br/>
+<a href="#">#mavenDeployer(java.util.Map, groovy.lang.Closure)</a></p>
+<a name="org.gradle.api.plugins.MavenRepositoryHandlerConvention$mavenDeployer(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">mavenDeployer</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.MavenRepositoryHandlerConvention$mavenDeployer(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.maven/-groovy-maven-deployer.html"><span class="identifier">GroovyMavenDeployer</span></a></code>
+<p>Adds a repository for publishing to a Maven repository. This repository can not be used for resolving dependencies. The following parameter are accepted as keys for the map:  Key Description of Associated Value <code>name</code> <em>(optional)</em> The name of the repository. The default is <em>mavenDeployer-{SOME_ID}</em>. The name is used in the console output, to point to information related to a particular repository. A name must be unique amongst a repository group.  </p>
+<h3>Parameters</h3>
+<a name="args"></a>
+<code>args</code> - The argument to create the repository
+<p><strong>Return</strong><br/>
+The added repository</p>
+<p><strong>See Also</strong><br/>
+<a href="#">#mavenDeployer(java.util.Map, groovy.lang.Closure)</a></p>
+<a name="org.gradle.api.plugins.MavenRepositoryHandlerConvention$mavenDeployer(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), groovy.lang.Closure((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">mavenDeployer</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.MavenRepositoryHandlerConvention$mavenDeployer(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), groovy.lang.Closure((kotlin.Any)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.plugins.MavenRepositoryHandlerConvention$mavenDeployer(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.maven/-groovy-maven-deployer.html"><span class="identifier">GroovyMavenDeployer</span></a></code>
+<p>Adds a repository for publishing to a Maven repository. This repository can not be used for resolving dependencies.</p>
+<h3>Parameters</h3>
+<a name="args"></a>
+<code>args</code> - The argument to create the repository<a name="configureClosure"></a>
+<code>configureClosure</code> - A closure to use to configure the repository.
+<p><strong>Return</strong><br/>
+The added repository</p>
+</BODY>
+</HTML>

@@ -1,0 +1,252 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NativeTestSuiteBinarySpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform.test</a>&nbsp;/&nbsp;<a href=".">NativeTestSuiteBinarySpec</a><br/>
+<br/>
+<h1>NativeTestSuiteBinarySpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">NativeTestSuiteBinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.testing.base/-test-suite-binary-spec/index.html"><span class="identifier">TestSuiteBinarySpec</span></a><span class="symbol">, </span><a href="../../org.gradle.nativeplatform/-native-binary-spec/index.html"><span class="identifier">NativeBinarySpec</span></a></code>
+<p>An executable which runs a suite of tests.</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-tasks-collection/index.html">TasksCollection</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TasksCollection</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.testing.base/-test-suite-task-collection/index.html"><span class="identifier">TestSuiteTaskCollection</span></a></code>
+<p>Provides access to key tasks used for building the binary.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-component.html">getComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getComponent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-native-test-suite-spec/index.html"><span class="identifier">NativeTestSuiteSpec</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-executable.html">getExecutable</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExecutable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform/-native-executable-file-spec/index.html"><span class="identifier">NativeExecutableFileSpec</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-executable-file.html">getExecutableFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExecutableFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The executable file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-installation.html">getInstallation</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getInstallation</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform/-native-installation-spec/index.html"><span class="identifier">NativeInstallationSpec</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-tasks.html">getTasks</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTasks</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-tasks-collection/index.html"><span class="identifier">TasksCollection</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-test-suite.html">getTestSuite</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTestSuite</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-native-test-suite-spec/index.html"><span class="identifier">NativeTestSuiteSpec</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-tested-binary.html">getTestedBinary</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTestedBinary</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform/-native-binary-spec/index.html"><span class="identifier">NativeBinarySpec</span></a></code>
+<p>The tested binary.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-native-binary-spec/get-assembler.html">getAssembler</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAssembler</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform/-tool/index.html"><span class="identifier">Tool</span></a></code>
+<p>The configuration of the assembler used when compiling assembly sources this binary. Valid for SharedLibraryBinarySpec, StaticLibraryBinarySpec and NativeExecutableBinarySpec when the 'assembler' plugin is applied.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-native-binary-spec/get-build-type.html">getBuildType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildType</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform/-build-type/index.html"><span class="identifier">BuildType</span></a></code>
+<p>Returns the org.gradle.nativeplatform.BuildType used to construct this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-native-binary-spec/get-cpp-compiler.html">getCppCompiler</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCppCompiler</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform/-preprocessing-tool/index.html"><span class="identifier">PreprocessingTool</span></a></code>
+<p>The configuration of the C++ compiler used when compiling C++ sources for this binary. Valid for SharedLibraryBinarySpec, StaticLibraryBinarySpec and NativeExecutableBinarySpec when the 'cpp' plugin is applied.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-native-binary-spec/get-flavor.html">getFlavor</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFlavor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform/-flavor/index.html"><span class="identifier">Flavor</span></a></code>
+<p>The org.gradle.nativeplatform.Flavor that this binary was built with.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-native-binary-spec/get-libs.html">getLibs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLibs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.nativeplatform/-native-dependency-set/index.html"><span class="identifier">NativeDependencySet</span></a><span class="symbol">&gt;</span></code>
+<p>The libraries that should be linked into this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-native-binary-spec/get-linker.html">getLinker</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLinker</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform/-tool/index.html"><span class="identifier">Tool</span></a></code>
+<p>The configuration of the linker used when linking this binary. Valid for SharedLibraryBinarySpec and NativeExecutableBinarySpec.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-native-binary-spec/get-objc-compiler.html">getObjcCompiler</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getObjcCompiler</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform/-preprocessing-tool/index.html"><span class="identifier">PreprocessingTool</span></a></code>
+<p>The configuration of the Objective-C compiler used when compiling Objective-C sources for this binary. Valid for SharedLibraryBinarySpec, StaticLibraryBinarySpec and NativeExecutableBinarySpec when the 'objective-c' plugin is applied.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-native-binary-spec/get-objcpp-compiler.html">getObjcppCompiler</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getObjcppCompiler</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform/-preprocessing-tool/index.html"><span class="identifier">PreprocessingTool</span></a></code>
+<p>The configuration of the Objective-C++ compiler used when compiling Objective-C++ sources for this binary. Valid for SharedLibraryBinarySpec, StaticLibraryBinarySpec and NativeExecutableBinarySpec when the 'objective-cpp' plugin is applied.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-native-binary-spec/get-rc-compiler.html">getRcCompiler</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRcCompiler</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform/-preprocessing-tool/index.html"><span class="identifier">PreprocessingTool</span></a></code>
+<p>The configuration of the Resource compiler used when compiling resources for this binary. Valid for SharedLibraryBinarySpec, StaticLibraryBinarySpec and NativeExecutableBinarySpec when the 'windows-resources' plugin is applied.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-native-binary-spec/get-static-lib-archiver.html">getStaticLibArchiver</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getStaticLibArchiver</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform/-tool/index.html"><span class="identifier">Tool</span></a></code>
+<p>The configuration of the static library archiver used when creating this binary. Valid for StaticLibraryBinarySpec.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-native-binary-spec/get-target-platform.html">getTargetPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a></code>
+<p>Returns the org.gradle.nativeplatform.platform.NativePlatform that this binary is targeted to run on.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-native-binary-spec/get-tool-chain.html">getToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getToolChain</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a></code>
+<p>Returns the org.gradle.nativeplatform.toolchain.NativeToolChain that will be used to build this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-native-binary-spec/getc-compiler.html">getcCompiler</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getcCompiler</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform/-preprocessing-tool/index.html"><span class="identifier">PreprocessingTool</span></a></code>
+<p>The configuration of the C compiler used when compiling C sources for this binary. Valid for SharedLibraryBinarySpec, StaticLibraryBinarySpec and NativeExecutableBinarySpec when the 'c' plugin is applied.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-native-binary-spec/lib.html">lib</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">lib</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.NativeBinarySpec$lib(kotlin.Any)/library">library</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a library as input to this binary.  This method accepts the following types: <ul> <li>A NativeLibrarySpec</li>
+ <li>A NativeDependencySet</li>
+ <li>A java.util.Map containing the library selector.</li>
+ </ul>
+ The Map notation supports the following String attributes: <ul> <li>project: the path to the project containing the library (optional, defaults to current project)</li>
+ <li>library: the name of the library (required)</li>
+ <li>linkage: the library linkage required ['shared'/'static'] (optional, defaults to 'shared')</li>
+ </ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.test.cunit/-c-unit-test-suite-binary-spec/index.html">CUnitTestSuiteBinarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CUnitTestSuiteBinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NativeTestSuiteBinarySpec</span></code>
+<p>An executable which run a CUnit test suite.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.test.googletest/-google-test-test-suite-binary-spec/index.html">GoogleTestTestSuiteBinarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">GoogleTestTestSuiteBinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NativeTestSuiteBinarySpec</span></code>
+<p>An executable which run a Google Test test suite.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

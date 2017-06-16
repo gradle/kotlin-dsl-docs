@@ -1,0 +1,135 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BuildableComponentSpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href=".">BuildableComponentSpec</a><br/>
+<br/>
+<h1>BuildableComponentSpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">BuildableComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-buildable/index.html"><span class="identifier">Buildable</span></a><span class="symbol">, </span><a href="../../org.gradle.platform.base/-component-spec/index.html"><span class="identifier">ComponentSpec</span></a></code>
+<p>A ComponentSpec that is directly Buildable via a specified task.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="built-by.html">builtBy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">builtBy</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.BuildableComponentSpec$builtBy(kotlin.Array((kotlin.Any)))/tasks">tasks</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds tasks required to build this component. Tasks added this way are subsequently added as dependencies of this component's <code><a href="get-build-task.html">build task</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-build-task.html">getBuildTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildTask</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-task/index.html"><span class="identifier">Task</span></a></code>
+<p>Returns the task responsible for building this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="has-build-dependencies.html">hasBuildDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">hasBuildDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-build-task.html">setBuildTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setBuildTask</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.BuildableComponentSpec$setBuildTask(org.gradle.api.Task)/buildTask">buildTask</span><span class="symbol">:</span>&nbsp;<a href="../-task/index.html"><span class="identifier">Task</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies the task responsible for building this component.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-buildable/get-build-dependencies.html">getBuildDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-task-dependency/index.html"><span class="identifier">TaskDependency</span></a></code>
+<p>Returns a dependency which contains the tasks which build this artifact. All <code>Buildable</code> implementations must ensure that the returned dependency object is live, so that it tracks changes to the dependencies of this buildable.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.platform.base/-component-spec/get-project-path.html">getProjectPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The path to the project containing this component.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.platform.base/-binary-spec/index.html">BinarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BuildableComponentSpec</span><span class="symbol">, </span><a href="../-checkable-component-spec/index.html"><span class="identifier">CheckableComponentSpec</span></a><span class="symbol">, </span><a href="../../org.gradle.platform.base/-binary/index.html"><span class="identifier">Binary</span></a></code>
+<p>Represents a binary that is the result of building a component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.play/-jvm-classes/index.html">JvmClasses</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">JvmClasses</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BuildableComponentSpec</span></code>
+<p>A set of classes and resources that operate together.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.base/-language-source-set/index.html">LanguageSourceSet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">LanguageSourceSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BuildableComponentSpec</span></code>
+<p>A set of sources for a programming language.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.play/-public-assets/index.html">PublicAssets</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PublicAssets</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BuildableComponentSpec</span></code>
+<p>A set of public assets added to a binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.ide.visualstudio/-visual-studio-project/index.html">VisualStudioProject</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VisualStudioProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BuildableComponentSpec</span></code>
+<p>A visual studio project, created from one or more org.gradle.nativeplatform.NativeBinary instances.  The content and location of the generate project file can be modified by the supplied methods: <pre><code> apply plugin: "visual-studio" model { visualStudio { projects.all { projectFile.location = "vs/${name}.vcxproj" projectFile.withXml { asNode().appendNode('PropertyGroup', [Label: 'Custom']) .appendNode('ProjectDetails', "Project is named ${project.name}") } } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.ide.visualstudio/-visual-studio-solution/index.html">VisualStudioSolution</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VisualStudioSolution</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BuildableComponentSpec</span></code>
+<p>A visual studio solution, representing one or more org.gradle.nativeplatform.NativeBinarySpec instances from the same org.gradle.nativeplatform.NativeComponentSpec.  The content and location of the generate solution file can be modified by the supplied methods: <pre><code> apply plugin: "visual-studio" model { visualStudio { solutions.all { solutionFile.location = "vs/${name}.sln" solutionFile.withContent { TextProvider content -&gt; content.asBuilder().insert(0, "# GENERATED FILE: DO NOT EDIT\n") content.text = content.text.replaceAll("HideSolutionNode = FALSE", "HideSolutionNode = TRUE") } } } } </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

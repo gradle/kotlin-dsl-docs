@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>StatusEvent - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.events</a>&nbsp;/&nbsp;<a href=".">StatusEvent</a><br/>
+<br/>
+<h1>StatusEvent</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">StatusEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-progress-event/index.html"><span class="identifier">ProgressEvent</span></a></code>
+<p>An event that informs about an interim results of the operation.</p>
+<p><strong>Since</strong><br/>
+3.5</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-progress.html">getProgress</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProgress</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code>
+<p>The amount of work already performed by the build operation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-total.html">getTotal</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTotal</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code>
+<p>The total amount of work that the build operation is in the progress of performing, or -1 if not known.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-unit.html">getUnit</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getUnit</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The measure used to express the amount of work.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-progress-event/get-descriptor.html">getDescriptor</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDescriptor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-operation-descriptor/index.html"><span class="identifier">OperationDescriptor</span></a></code>
+<p>Returns the description of the operation for which progress is reported.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-progress-event/get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns a human consumable short description of the event.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-progress-event/get-event-time.html">getEventTime</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getEventTime</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code>
+<p>Returns the time this event was triggered.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

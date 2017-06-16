@@ -1,0 +1,112 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResolvableDependencies - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">ResolvableDependencies</a><br/>
+<br/>
+<h1>ResolvableDependencies</h1>
+<code><span class="keyword">interface </span><span class="identifier">ResolvableDependencies</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-artifact-view/index.html"><span class="identifier">ArtifactView</span></a></code>
+<p>A set of Dependency objects which can be resolved to a set of files. There are various methods on this type that you can use to get the result in different forms: <ul> <li><code><a href="get-files.html">#getFiles()</a></code> returns a FileCollection that provides the result as a set of java.io.File instances.</li>
+ <li><code><a href="get-resolution-result.html">#getResolutionResult()</a></code> returns a ResolutionResult that provides information about the dependency graph.</li>
+ <li><code><a href="get-artifacts.html">#getArtifacts()</a></code> returns an ArtifactCollection that provides the files with additional metadata.</li>
+ </ul>
+ 
+<p>The dependencies are resolved once only, when the result is first requested. The result is reused and returned for subsequent calls. Once resolved, any mutation to the dependencies will result in an error.</p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="after-resolve.html">afterResolve</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">afterResolve</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolvableDependencies$afterResolve(org.gradle.api.Action((org.gradle.api.artifacts.ResolvableDependencies)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">ResolvableDependencies</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">afterResolve</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolvableDependencies$afterResolve(groovy.lang.Closure((kotlin.Any)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an action to be executed after the dependencies of this set have been resolved.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="artifact-view.html">artifactView</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">artifactView</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolvableDependencies$artifactView(org.gradle.api.Action((org.gradle.api.artifacts.ArtifactView.ViewConfiguration)))/configAction">configAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-artifact-view/-view-configuration/index.html"><span class="identifier">ViewConfiguration</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-artifact-view/index.html"><span class="identifier">ArtifactView</span></a></code>
+<p>Returns a builder that can be used to define and access a filtered view of the resolved artifacts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="before-resolve.html">beforeResolve</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">beforeResolve</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolvableDependencies$beforeResolve(org.gradle.api.Action((org.gradle.api.artifacts.ResolvableDependencies)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">ResolvableDependencies</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">beforeResolve</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolvableDependencies$beforeResolve(groovy.lang.Closure((kotlin.Any)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an action to be executed before the dependencies in this set are resolved.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-artifacts.html">getArtifacts</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getArtifacts</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-artifact-collection/index.html"><span class="identifier">ArtifactCollection</span></a></code>
+<p>Returns the resolved artifacts, performing the resolution if required. This will resolve and download the files as required.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-dependencies.html">getDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-dependency-set.html"><span class="identifier">DependencySet</span></a></code>
+<p>Returns the set of dependencies which will be resolved.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-files.html">getFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns a FileCollection which contains the resolved set of files. The returned value is lazy, so dependency resolution is not performed until the contents of the collection are queried. 
+<p>The FileCollection carries the task dependencies required to build the files in the result, and when used as a task input the files will be built before the task executes.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of this set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-path.html">getPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the path of this set. This is a unique identifier for this set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-resolution-result.html">getResolutionResult</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getResolutionResult</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.result/-resolution-result/index.html"><span class="identifier">ResolutionResult</span></a></code>
+<p>Returns the resolved dependency graph, performing the resolution if required. This will resolve the dependency graph but will not resolve or download the files. 
+<p>You should note that when resolution fails, the exceptions are included in the ResolutionResult returned from this method. This method will not throw these exceptions.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,43 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Project.configure - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">Project</a>&nbsp;/&nbsp;<a href=".">configure</a><br/>
+<br/>
+<h1>configure</h1>
+<a name="org.gradle.api.Project$configure(kotlin.Any, groovy.lang.Closure((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">configure</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$configure(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/object">object</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Project$configure(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>
+<p>Configures an object via a closure, with the closure's delegate set to the supplied object. This way you don't have to specify the context of a configuration statement multiple times. </p>
+ Instead of: <pre><code> MyType myType = new MyType() myType.doThis() myType.doThat() </code></pre>  you can do: <pre><code> MyType myType = configure(new MyType()) { doThis() doThat() } </code></pre> 
+<p>The object being configured is also passed to the closure as a parameter, so you can access it explicitly if required:</p>
+ <pre><code> configure(someObj) { obj -&gt; obj.doThis() } </code></pre></p>
+<h3>Parameters</h3>
+<a name="object"></a>
+<code>object</code> - The object to configure<a name="configureClosure"></a>
+<code>configureClosure</code> - The closure with configure statements
+<p><strong>Return</strong><br/>
+The configured object</p>
+<a name="org.gradle.api.Project$configure(kotlin.collections.MutableIterable((kotlin.Any)), groovy.lang.Closure((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">configure</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$configure(kotlin.collections.MutableIterable((kotlin.Any)), groovy.lang.Closure((kotlin.Any)))/objects">objects</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Project$configure(kotlin.collections.MutableIterable((kotlin.Any)), groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span></code>
+<p>Configures a collection of objects via a closure. This is equivalent to calling <code><a href="#">#configure(Object, * groovy.lang.Closure)</a></code> for each of the given objects.</p>
+<h3>Parameters</h3>
+<a name="objects"></a>
+<code>objects</code> - The objects to configure<a name="configureClosure"></a>
+<code>configureClosure</code> - The closure with configure statements
+<p><strong>Return</strong><br/>
+The configured objects.</p>
+<a name="org.gradle.api.Project$configure(kotlin.collections.MutableIterable((org.gradle.api.Project.configure.T)), org.gradle.api.Action((org.gradle.api.Project.configure.T)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">configure</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$configure(kotlin.collections.MutableIterable((org.gradle.api.Project.configure.T)), org.gradle.api.Action((org.gradle.api.Project.configure.T)))/objects">objects</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Project$configure(kotlin.collections.MutableIterable((org.gradle.api.Project.configure.T)), org.gradle.api.Action((org.gradle.api.Project.configure.T)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Configures a collection of objects via an action.</p>
+<h3>Parameters</h3>
+<a name="objects"></a>
+<code>objects</code> - The objects to configure<a name="configureAction"></a>
+<code>configureAction</code> - The action to apply to each object
+<p><strong>Return</strong><br/>
+The configured objects.</p>
+</BODY>
+</HTML>

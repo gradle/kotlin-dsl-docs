@@ -1,0 +1,92 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>LibraryBinarySpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.platform.base</a>&nbsp;/&nbsp;<a href=".">LibraryBinarySpec</a><br/>
+<br/>
+<h1>LibraryBinarySpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">LibraryBinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-binary-spec/index.html"><span class="identifier">BinarySpec</span></a></code>
+<p>A binary produced from a `org.gradle.platform.base.LibrarySpec`.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-library.html">getLibrary</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLibrary</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-library-spec.html"><span class="identifier">LibrarySpec</span></a></code>
+<p>The library that this binary belongs to.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-binary-spec/get-inputs.html">getInputs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getInputs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.language.base/-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a><span class="symbol">&gt;</span></code>
+<p>Returns all inputs of the binary. This includes source sets owned by the binary, and other source sets created elsewhere (e.g. inherited from the binary's component).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-binary-spec/get-sources.html">getSources</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSources</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.model/-model-map/index.html"><span class="identifier">ModelMap</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.language.base/-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a><span class="symbol">&gt;</span></code>
+<p>The sources owned by this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-binary-spec/get-tasks.html">getTasks</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTasks</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-binary-tasks-collection/index.html"><span class="identifier">BinaryTasksCollection</span></a></code>
+<p>The set of tasks associated with this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-binary-spec/is-buildable.html">isBuildable</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isBuildable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Can this binary be built in the current environment?</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm/-jar-binary-spec/index.html">JarBinarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">JarBinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">LibraryBinarySpec</span><span class="symbol">, </span><a href="../../org.gradle.jvm/-jvm-binary-spec/index.html"><span class="identifier">JvmBinarySpec</span></a></code>
+<p>Definition of a Jar file binary that is to be built by Gradle.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-native-library-binary-spec/index.html">NativeLibraryBinarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">NativeLibraryBinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.nativeplatform/-native-binary-spec/index.html"><span class="identifier">NativeBinarySpec</span></a><span class="symbol">, </span><span class="identifier">LibraryBinarySpec</span></code>
+<p>Represents a binary artifact that is the result of building a native library component.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

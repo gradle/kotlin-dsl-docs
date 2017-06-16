@@ -1,0 +1,119 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ComponentSpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.platform.base</a>&nbsp;/&nbsp;<a href=".">ComponentSpec</a><br/>
+<br/>
+<h1>ComponentSpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.model/-model-element/index.html"><span class="identifier">ModelElement</span></a></code>
+<p>A software component that is built by Gradle.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-project-path.html">getProjectPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The path to the project containing this component.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.model/-model-element/get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns a human-consumable display name for this element.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.model/-model-element/get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of this element. Each element has a name associated with it, that uniquely identifies the element amongst its siblings. Some element have their name generated or automatically assigned, and for these elements the name may not be human consumable.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-buildable-component-spec/index.html">BuildableComponentSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BuildableComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a><span class="symbol">, </span><span class="identifier">ComponentSpec</span></code>
+<p>A ComponentSpec that is directly Buildable via a specified task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-checkable-component-spec/index.html">CheckableComponentSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CheckableComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ComponentSpec</span></code>
+<p>A ComponentSpec that is directly checkable via a specified task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-general-component-spec.html">GeneralComponentSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">GeneralComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ComponentSpec</span><span class="symbol">, </span><a href="../-source-component-spec/index.html"><span class="identifier">SourceComponentSpec</span></a><span class="symbol">, </span><a href="../-variant-component-spec/index.html"><span class="identifier">VariantComponentSpec</span></a></code>
+<p>A general purpose component specification, that can be used to represent some software component built from source and producing multiple output variants.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm/-jvm-component-spec.html">JvmComponentSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">JvmComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ComponentSpec</span></code>
+<p>Definition of a software component that is to be built by Gradle to run a on JVM platform.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-native-component-spec/index.html">NativeComponentSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">NativeComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ComponentSpec</span></code>
+<p>Definition of a software component that is to be built by Gradle to run a on JVM platform.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-source-component-spec/index.html">SourceComponentSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SourceComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ComponentSpec</span></code>
+<p>Represents some component whose implementation can be represented as a collection of source files, and whose other outputs are built from this source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-variant-component-spec/index.html">VariantComponentSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VariantComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ComponentSpec</span><span class="symbol">, </span><a href="../-variant-component/index.html"><span class="identifier">VariantComponent</span></a></code>
+<p>Represents a component spec that is made up of one or more mutually exclusive variants.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

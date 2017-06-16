@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>EclipseSourceDirectory - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.model.eclipse</a>&nbsp;/&nbsp;<a href=".">EclipseSourceDirectory</a><br/>
+<br/>
+<h1>EclipseSourceDirectory</h1>
+<code><span class="keyword">interface </span><span class="identifier">EclipseSourceDirectory</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.model/-source-directory/index.html"><span class="identifier">SourceDirectory</span></a><span class="symbol">, </span><a href="../-eclipse-classpath-entry/index.html"><span class="identifier">EclipseClasspathEntry</span></a></code>
+<p>A source directory in an Eclipse project.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-classpath-attributes.html">getClasspathAttributes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getClasspathAttributes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-classpath-attribute/index.html"><span class="identifier">ClasspathAttribute</span></a><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-excludes.html">getExcludes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExcludes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the exclude patterns for this source directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-includes.html">getIncludes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getIncludes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the include patterns for this source directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-output.html">getOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOutput</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the output location of this source directory. If <code>null</code>, then the compiled classes are placed in the project's default output location.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-path.html">getPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the relative path for this source directory.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-eclipse-classpath-entry/get-access-rules.html">getAccessRules</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAccessRules</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-access-rule/index.html"><span class="identifier">AccessRule</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the access rules associated with this classpath entry.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.model/-source-directory/get-directory.html">getDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDirectory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the source directory.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

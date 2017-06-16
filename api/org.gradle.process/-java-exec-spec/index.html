@@ -1,0 +1,407 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>JavaExecSpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.process</a>&nbsp;/&nbsp;<a href=".">JavaExecSpec</a><br/>
+<br/>
+<h1>JavaExecSpec</h1>
+<code><span class="keyword">interface </span><span class="identifier">JavaExecSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-java-fork-options/index.html"><span class="identifier">JavaForkOptions</span></a><span class="symbol">, </span><a href="../-base-exec-spec/index.html"><span class="identifier">BaseExecSpec</span></a></code>
+<p>Specifies the options for executing a Java application.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="args.html">args</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">args</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.process.JavaExecSpec$args(kotlin.Array((kotlin.Any)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">JavaExecSpec</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">args</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaExecSpec$args(kotlin.collections.MutableIterable((kotlin.Any)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">JavaExecSpec</span></code>
+<p>Adds args for the main class to be executed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="classpath.html">classpath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">classpath</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.process.JavaExecSpec$classpath(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">JavaExecSpec</span></code>
+<p>Adds elements to the classpath for executing the main class.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-args.html">getArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getArgs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the arguments passed to the main class to be executed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-classpath.html">getClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getClasspath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the classpath for executing the main class.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-main.html">getMain</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getMain</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the fully qualified name of the Main class to be executed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-args.html">setArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaExecSpec$setArgs(kotlin.collections.MutableList((kotlin.String)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">JavaExecSpec</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaExecSpec$setArgs(kotlin.collections.MutableIterable((kotlin.Any)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">JavaExecSpec</span></code>
+<p>Sets the args for the main class to be executed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-classpath.html">setClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setClasspath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaExecSpec$setClasspath(org.gradle.api.file.FileCollection)/classpath">classpath</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">JavaExecSpec</span></code>
+<p>Sets the classpath for executing the main class.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-main.html">setMain</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setMain</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaExecSpec$setMain(kotlin.String)/main">main</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">JavaExecSpec</span></code>
+<p>Sets the fully qualified name of the main class to be executed.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-java-fork-options/bootstrap-classpath.html">bootstrapClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">bootstrapClasspath</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.process.JavaForkOptions$bootstrapClasspath(kotlin.Array((kotlin.Any)))/classpath">classpath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-java-fork-options/index.html"><span class="identifier">JavaForkOptions</span></a></code>
+<p>Adds the given values to the end of the bootstrap classpath for the process.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/copy-to.html">copyTo</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copyTo</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$copyTo(org.gradle.process.JavaForkOptions)/options">options</span><span class="symbol">:</span>&nbsp;<a href="../-java-fork-options/index.html"><span class="identifier">JavaForkOptions</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-java-fork-options/index.html"><span class="identifier">JavaForkOptions</span></a></code>
+<p>Copies these options to the given options.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/get-all-jvm-args.html">getAllJvmArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAllJvmArgs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the full set of arguments to use to launch the JVM for the process. This includes arguments to define system properties, the minimum/maximum heap size, and the bootstrap classpath.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/get-bootstrap-classpath.html">getBootstrapClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBootstrapClasspath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the bootstrap classpath to use for the process. The default bootstrap classpath for the JVM is used when this classpath is empty.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-exec-spec/get-command-line.html">getCommandLine</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCommandLine</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the full command line, including the executable plus its arguments.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/get-debug.html">getDebug</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDebug</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if debugging is enabled for the process. When enabled, the process is started suspended and listening on port 5005.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/get-default-character-encoding.html">getDefaultCharacterEncoding</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDefaultCharacterEncoding</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the default character encoding to use.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/get-enable-assertions.html">getEnableAssertions</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getEnableAssertions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if assertions are enabled for the process.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-exec-spec/get-error-output.html">getErrorOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getErrorOutput</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a></code>
+<p>Returns the output stream to consume standard error from the process executing the command. Default to <code>System.err</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/get-jvm-args.html">getJvmArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getJvmArgs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the extra arguments to use to launch the JVM for the process. Does not include system properties and the minimum/maximum heap size.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/get-max-heap-size.html">getMaxHeapSize</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getMaxHeapSize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the maximum heap size for the process, if any.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/get-min-heap-size.html">getMinHeapSize</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getMinHeapSize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the minimum heap size for the process, if any.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-exec-spec/get-standard-input.html">getStandardInput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getStandardInput</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a></code>
+<p>Returns the standard input stream for the process executing the command. The stream is closed after the process completes. Defaults to an empty stream.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-exec-spec/get-standard-output.html">getStandardOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getStandardOutput</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a></code>
+<p>Returns the output stream to consume standard output from the process executing the command. Defaults to <code>System.out</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/get-system-properties.html">getSystemProperties</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSystemProperties</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the system properties which will be used for the process.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-exec-spec/is-ignore-exit-value.html">isIgnoreExitValue</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isIgnoreExitValue</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Tells whether a non-zero exit value is ignored, or an exception thrown. Defaults to <code>false</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/jvm-args.html">jvmArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">jvmArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$jvmArgs(kotlin.collections.MutableIterable((kotlin.Any)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-java-fork-options/index.html"><span class="identifier">JavaForkOptions</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">jvmArgs</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.process.JavaForkOptions$jvmArgs(kotlin.Array((kotlin.Any)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-java-fork-options/index.html"><span class="identifier">JavaForkOptions</span></a></code>
+<p>Adds some arguments to use to launch the JVM for the process.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/set-all-jvm-args.html">setAllJvmArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setAllJvmArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$setAllJvmArgs(kotlin.collections.MutableList((kotlin.String)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setAllJvmArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$setAllJvmArgs(kotlin.collections.MutableIterable((kotlin.Any)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the full set of arguments to use to launch the JVM for the process. Overwrites any previously set system properties, minimum/maximum heap size, assertions, and bootstrap classpath.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/set-bootstrap-classpath.html">setBootstrapClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setBootstrapClasspath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$setBootstrapClasspath(org.gradle.api.file.FileCollection)/classpath">classpath</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the bootstrap classpath to use for the process. Set to an empty classpath to use the default bootstrap classpath for the specified JVM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/set-debug.html">setDebug</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setDebug</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$setDebug(kotlin.Boolean)/enabled">enabled</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Enable or disable debugging for the process. When enabled, the process is started suspended and listening on port 5005.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/set-default-character-encoding.html">setDefaultCharacterEncoding</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setDefaultCharacterEncoding</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$setDefaultCharacterEncoding(kotlin.String)/defaultCharacterEncoding">defaultCharacterEncoding</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the default character encoding to use. Note: Many JVM implementations support the setting of this attribute via system property on startup (namely, the <code>file.encoding</code> property). For JVMs where this is the case, setting the <code>file.encoding</code> property via <code><a href="#">#setSystemProperties(java.util.Map)</a></code> or similar will have no effect as this value will be overridden by the value specified by <code><a href="../-java-fork-options/get-default-character-encoding.html">#getDefaultCharacterEncoding()</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/set-enable-assertions.html">setEnableAssertions</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setEnableAssertions</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$setEnableAssertions(kotlin.Boolean)/enabled">enabled</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Enable or disable assertions for the process.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-exec-spec/set-error-output.html">setErrorOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setErrorOutput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.BaseExecSpec$setErrorOutput(java.io.OutputStream)/outputStream">outputStream</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-base-exec-spec/index.html"><span class="identifier">BaseExecSpec</span></a></code>
+<p>Sets the output stream to consume standard error from the process executing the command. The stream is closed after the process completes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-exec-spec/set-ignore-exit-value.html">setIgnoreExitValue</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setIgnoreExitValue</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.BaseExecSpec$setIgnoreExitValue(kotlin.Boolean)/ignoreExitValue">ignoreExitValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-base-exec-spec/index.html"><span class="identifier">BaseExecSpec</span></a></code>
+<p>Sets whether a non-zero exit value is ignored, or an exception thrown.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/set-jvm-args.html">setJvmArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setJvmArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$setJvmArgs(kotlin.collections.MutableList((kotlin.String)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setJvmArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$setJvmArgs(kotlin.collections.MutableIterable((kotlin.Any)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the extra arguments to use to launch the JVM for the process. System properties and minimum/maximum heap size are updated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/set-max-heap-size.html">setMaxHeapSize</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setMaxHeapSize</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$setMaxHeapSize(kotlin.String)/heapSize">heapSize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the maximum heap size for the process.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/set-min-heap-size.html">setMinHeapSize</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setMinHeapSize</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$setMinHeapSize(kotlin.String)/heapSize">heapSize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the minimum heap size for the process.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-exec-spec/set-standard-input.html">setStandardInput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setStandardInput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.BaseExecSpec$setStandardInput(java.io.InputStream)/inputStream">inputStream</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-base-exec-spec/index.html"><span class="identifier">BaseExecSpec</span></a></code>
+<p>Sets the standard input stream for the process executing the command. The stream is closed after the process completes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-exec-spec/set-standard-output.html">setStandardOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setStandardOutput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.BaseExecSpec$setStandardOutput(java.io.OutputStream)/outputStream">outputStream</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-base-exec-spec/index.html"><span class="identifier">BaseExecSpec</span></a></code>
+<p>Sets the output stream to consume standard output from the process executing the command. The stream is closed after the process completes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/set-system-properties.html">setSystemProperties</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setSystemProperties</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$setSystemProperties(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/properties">properties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the system properties to use for the process.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/system-properties.html">systemProperties</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">systemProperties</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$systemProperties(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/properties">properties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-java-fork-options/index.html"><span class="identifier">JavaForkOptions</span></a></code>
+<p>Adds some system properties to use for the process.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/system-property.html">systemProperty</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">systemProperty</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$systemProperty(kotlin.String, kotlin.Any)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.process.JavaForkOptions$systemProperty(kotlin.String, kotlin.Any)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-java-fork-options/index.html"><span class="identifier">JavaForkOptions</span></a></code>
+<p>Adds a system property to use for the process.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks/-java-exec/index.html">JavaExec</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JavaExec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><span class="identifier">JavaExecSpec</span></code>
+<p>Executes a Java application in a child process. 
+<p> Similar to org.gradle.api.tasks.Exec, but starts a JVM with the given classpath and application class. </p>
+ <pre><code> apply plugin: 'java' task runApp(type: JavaExec) { classpath = sourceSets.main.runtimeClasspath main = 'package.Main' // arguments to pass to the application args 'appArg1' } </code></pre> 
+<p> The process can be started in debug mode (see <code><a href="../../org.gradle.api.tasks/-java-exec/get-debug.html">#getDebug()</a></code>) in an ad-hoc manner by supplying the `--debug-jvm` switch when invoking the build. </p>
+<pre><code> gradle someJavaExecTask --debug-jvm </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,255 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api.file - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.file</a><br/>
+<br/>
+<h2>Package org.gradle.api.file</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-configurable-file-collection/index.html">ConfigurableFileCollection</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ConfigurableFileCollection</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>
+<p>A <code>ConfigurableFileCollection</code> is a mutable <code>FileCollection</code>.</p>
+ 
+<p>You can obtain an instance of <code>ConfigurableFileCollection</code> by calling <code><a href="#"> </a></code></p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-configurable-file-tree/index.html">ConfigurableFileTree</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ConfigurableFileTree</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-file-tree/index.html"><span class="identifier">FileTree</span></a><span class="symbol">, </span><a href="-directory-tree/index.html"><span class="identifier">DirectoryTree</span></a><span class="symbol">, </span><a href="../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">, </span><a href="../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<p>
+<p>A FileTree with a single base directory, which can be configured and modified.</p>
+ 
+<p>You can obtain a <code>ConfigurableFileTree</code> instance by calling <code><a href="#">org.gradle.api.Project#fileTree(java.util.Map)</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-content-filterable/index.html">ContentFilterable</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ContentFilterable</span></code>
+<p>Represents some binary resource whose content can be filtered.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-copy-processing-spec/index.html">CopyProcessingSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CopyProcessingSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-content-filterable/index.html"><span class="identifier">ContentFilterable</span></a></code>
+<p>Specifies the destination of a copy.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-copy-source-spec/index.html">CopySourceSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CopySourceSpec</span></code>
+<p>Specifies sources for a file copy.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-copy-spec/index.html">CopySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CopySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-copy-source-spec/index.html"><span class="identifier">CopySourceSpec</span></a><span class="symbol">, </span><a href="-copy-processing-spec/index.html"><span class="identifier">CopyProcessingSpec</span></a><span class="symbol">, </span><a href="../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a></code>
+<p>A set of specifications for copying files. This includes: <ul> <li>source directories (multiples allowed) </li>
+<li>destination directory </li>
+<li>ANT like include patterns </li>
+<li>ANT like exclude patterns </li>
+<li>File relocating rules </li>
+<li>renaming rules </li>
+<li>content filters </li>
+</ul>
+ CopySpecs may be nested by passing a closure to one of the from methods. The closure creates a child CopySpec and delegates methods in the closure to the child. Child CopySpecs inherit any values specified in the parent. This allows constructs like: <pre><code> def myCopySpec = project.copySpec { into('webroot') exclude('**/.data/**') from('src/main/webapp') { include '**/*.jsp' } from('src/main/js') { include '**/*.js' } } </code></pre> In this example, the <code>into</code> and <code>exclude</code> specifications at the root level are inherited by the two child CopySpecs. Copy specs can be reused in other copy specs via <code><a href="#">#with(CopySpec...)</a></code> method. This enables reuse of the copy spec instances. <pre><code> def contentSpec = copySpec { from("content") { include "**/*.txt" } } task copy(type: Copy) { into "$buildDir/copy" with contentSpec } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-delete-spec/index.html">DeleteSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DeleteSpec</span></code>
+<p>A specification for deleting files from the filesystem.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-directory-tree/index.html">DirectoryTree</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DirectoryTree</span></code>
+<p>
+<p>A directory with some associated include and exclude patterns.</p>
+ 
+<p>This interface does not allow mutation. However, the actual implementation may not be immutable.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-duplicates-strategy/index.html">DuplicatesStrategy</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">DuplicatesStrategy</span></code>
+<p>Strategies for dealing with the potential creation of duplicate files for or archive entries.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-empty-file-visitor/index.html">EmptyFileVisitor</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">EmptyFileVisitor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-file-visitor/index.html"><span class="identifier">FileVisitor</span></a></code>
+<p>The EmptyFileVisitor can be extends by implementations that only require to implement one of the 2 visit methods (dir or file). This is just to limit the amount of code clutter when not both visit methods need to be implemented.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-file-collection/index.html">FileCollection</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">FileCollection</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../org.gradle.api.tasks/-ant-builder-aware/index.html"><span class="identifier">AntBuilderAware</span></a><span class="symbol">, </span><a href="../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<p>
+<p>A <code>FileCollection</code> represents a collection of files which you can query in certain ways. A file collection is often used to define a classpath, or to add files to a container.</p>
+ 
+<p>You can obtain a <code>FileCollection</code> instance using <code><a href="#">org.gradle.api.Project#files</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-file-copy-details/index.html">FileCopyDetails</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">FileCopyDetails</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-file-tree-element/index.html"><span class="identifier">FileTreeElement</span></a><span class="symbol">, </span><a href="-content-filterable/index.html"><span class="identifier">ContentFilterable</span></a></code>
+<p>
+<p>Provides details about a file or directory about to be copied, and allows some aspects of the destination file to be modified.</p>
+ 
+<p>Using this interface, you can change the destination path of the file, filter the content of the file, or exclude the file from the result entirely.</p>
+ 
+<p>Access to the source file itself after any filters have been added is not a supported operation. </p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-file-tree/index.html">FileTree</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">FileTree</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>
+<p>A <code>FileTree</code> represents a hierarchy of files. It extends FileCollection to add hierarchy query and manipulation methods. You typically use a <code>FileTree</code> to represent files to copy or the contents of an archive.</p>
+ 
+<p>You can obtain a <code>FileTree</code> instance using <code><a href="#">org.gradle.api.Project#fileTree(java.util.Map)</a></code>, <code><a href="#">org.gradle.api.Project#zipTree(Object)</a></code> or <code><a href="#">org.gradle.api.Project#tarTree(Object)</a></code>. </p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-file-tree-element/index.html">FileTreeElement</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">FileTreeElement</span></code>
+<p>Information about a file in a FileTree.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-file-visit-details/index.html">FileVisitDetails</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">FileVisitDetails</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-file-tree-element/index.html"><span class="identifier">FileTreeElement</span></a></code>
+<p>Provides access to details about a file or directory being visited by a FileVisitor.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-file-visitor/index.html">FileVisitor</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">FileVisitor</span></code>
+<p>
+<p>A <code>FileVisitor</code> is used to visit each of the files in a FileTree.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-relative-path/index.html">RelativePath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">RelativePath</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a><span class="symbol">, </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><a href="-relative-path/index.html"><span class="identifier">RelativePath</span></a><span class="symbol">&gt;</span></code>
+<p>
+<p>Represents a relative path from some base directory to a file. Used in file copying to represent both a source and target file path when copying files.</p>
+ 
+<p><code>RelativePath</code> instances are immutable.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-reproducible-file-visitor/index.html">ReproducibleFileVisitor</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ReproducibleFileVisitor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-file-visitor/index.html"><span class="identifier">FileVisitor</span></a></code>
+<p>Visitor which can request a reproducible file order.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-source-directory-set/index.html">SourceDirectorySet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SourceDirectorySet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-file-tree/index.html"><span class="identifier">FileTree</span></a><span class="symbol">, </span><a href="../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">, </span><a href="../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a><span class="symbol">, </span><a href="../org.gradle.api/-describable/index.html"><span class="identifier">Describable</span></a></code>
+<p>
+<p>A <code>SourceDirectorySet</code> represents a set of source files composed from a set of source directories, along with associated include and exclude patterns.</p>
+ 
+<p><code>SourceDirectorySet</code> extends FileTree. The contents of the file tree represent the source files of this set, arranged in a hierarchy. The file tree is live and reflects changes to the source directories and their contents.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Exceptions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-duplicate-file-copying-exception/index.html">DuplicateFileCopyingException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">DuplicateFileCopyingException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>Thrown when more than one file with the same relative path name is to be copied and the DuplicatesStrategy is set to DuplicatesStrategy.FAIL</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-unable-to-delete-file-exception/index.html">UnableToDeleteFileException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">UnableToDeleteFileException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-unchecked-i-o-exception/index.html"><span class="identifier">UncheckedIOException</span></a></code>
+<p>Thrown by Gradle when it is unable to delete a file.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CopyProcessingSpec.rename - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href="index.html">CopyProcessingSpec</a>&nbsp;/&nbsp;<a href=".">rename</a><br/>
+<br/>
+<h1>rename</h1>
+<a name="org.gradle.api.file.CopyProcessingSpec$rename(groovy.lang.Closure((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">rename</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.CopyProcessingSpec$rename(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">CopyProcessingSpec</span></a></code>
+<p>Renames a source file. The closure will be called with a single parameter, the name of the file. The closure should return a String object with a new target name. The closure may return null, in which case the original name will be used.</p>
+<h3>Parameters</h3>
+<a name="closure"></a>
+<code>closure</code> - rename closure
+<p><strong>Return</strong><br/>
+this</p>
+<a name="org.gradle.api.file.CopyProcessingSpec$rename(org.gradle.api.Transformer((kotlin.String, )))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">rename</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.CopyProcessingSpec$rename(org.gradle.api.Transformer((kotlin.String, )))/renamer">renamer</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-transformer/index.html"><span class="identifier">Transformer</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">CopyProcessingSpec</span></a></code>
+<p>Renames a source file. The function will be called with a single parameter, the name of the file. The function should return a new target name. The function may return null, in which case the original name will be used.</p>
+<h3>Parameters</h3>
+<a name="renamer"></a>
+<code>renamer</code> - rename function
+<p><strong>Return</strong><br/>
+this</p>
+<a name="org.gradle.api.file.CopyProcessingSpec$rename(kotlin.String, kotlin.String)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">rename</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.CopyProcessingSpec$rename(kotlin.String, kotlin.String)/sourceRegEx">sourceRegEx</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.file.CopyProcessingSpec$rename(kotlin.String, kotlin.String)/replaceWith">replaceWith</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">CopyProcessingSpec</span></a></code>
+<p>Renames files based on a regular expression. Uses java.util.regex type of regular expressions. Note that the replace string should use the '$1' syntax to refer to capture groups in the source regular expression. Files that do not match the source regular expression will be copied with the original name. 
+<p> Example: </p>
+<pre><code> rename '(.*)_OEM_BLUE_(.*)', '$1$2' </code></pre> would map the file 'style_OEM_BLUE_.css' to 'style.css'</p>
+<h3>Parameters</h3>
+<a name="sourceRegEx"></a>
+<code>sourceRegEx</code> - Source regular expression<a name="replaceWith"></a>
+<code>replaceWith</code> - Replacement string (use $ syntax for capture groups)
+<p><strong>Return</strong><br/>
+this</p>
+<a name="org.gradle.api.file.CopyProcessingSpec$rename(java.util.regex.Pattern, kotlin.String)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">rename</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.CopyProcessingSpec$rename(java.util.regex.Pattern, kotlin.String)/sourceRegEx">sourceRegEx</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html"><span class="identifier">Pattern</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.file.CopyProcessingSpec$rename(java.util.regex.Pattern, kotlin.String)/replaceWith">replaceWith</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">CopyProcessingSpec</span></a></code>
+<p>Renames files based on a regular expression. See <code><a href="#">#rename(String, String)</a></code>.</p>
+<h3>Parameters</h3>
+<a name="sourceRegEx"></a>
+<code>sourceRegEx</code> - Source regular expression<a name="replaceWith"></a>
+<code>replaceWith</code> - Replacement string (use $ syntax for capture groups)
+<p><strong>Return</strong><br/>
+this</p>
+</BODY>
+</HTML>

@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NativeExecutableBinary - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform</a>&nbsp;/&nbsp;<a href=".">NativeExecutableBinary</a><br/>
+<br/>
+<h1>NativeExecutableBinary</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">NativeExecutableBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-native-binary/index.html"><span class="identifier">NativeBinary</span></a></code>
+<p>A binary artifact for a NativeExecutable, targeted at a particular platform with specific configuration.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-executable-file.html">getExecutableFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExecutableFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The executable file.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-native-binary/get-build-type.html">getBuildType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildType</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-build-type/index.html"><span class="identifier">BuildType</span></a></code>
+<p>Returns the org.gradle.nativeplatform.BuildType used to construct this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-native-binary/get-flavor.html">getFlavor</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFlavor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-flavor/index.html"><span class="identifier">Flavor</span></a></code>
+<p>The org.gradle.nativeplatform.Flavor that this binary was built with.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-native-binary/get-target-platform.html">getTargetPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a></code>
+<p>Returns the org.gradle.nativeplatform.platform.NativePlatform that this binary is targeted to run on.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

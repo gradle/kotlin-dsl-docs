@@ -1,0 +1,154 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>JvmTestSuiteBinarySpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.jvm.test</a>&nbsp;/&nbsp;<a href=".">JvmTestSuiteBinarySpec</a><br/>
+<br/>
+<h1>JvmTestSuiteBinarySpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">JvmTestSuiteBinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.testing.base/-test-suite-binary-spec/index.html"><span class="identifier">TestSuiteBinarySpec</span></a><span class="symbol">, </span><a href="../../org.gradle.jvm/-jvm-binary-spec/index.html"><span class="identifier">JvmBinarySpec</span></a><span class="symbol">, </span><span class="identifier">WithDependencies</span></code>
+<p>Base type of JVM test suite binaries.</p>
+<p><strong>Since</strong><br/>
+2.11</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-jvm-test-suite-tasks/index.html">JvmTestSuiteTasks</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">JvmTestSuiteTasks</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.testing.base/-test-suite-task-collection/index.html"><span class="identifier">TestSuiteTaskCollection</span></a></code>
+<p>Provides direct access to important build tasks of JVM test suites.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-runtime-classpath.html">getRuntimeClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRuntimeClasspath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">DependencyResolvingClasspath</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-tasks.html">getTasks</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTasks</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-jvm-test-suite-tasks/index.html"><span class="identifier">JvmTestSuiteTasks</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-test-suite.html">getTestSuite</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTestSuite</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-jvm-test-suite-spec/index.html"><span class="identifier">JvmTestSuiteSpec</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-tested-binary.html">getTestedBinary</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTestedBinary</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.jvm/-jvm-binary-spec/index.html"><span class="identifier">JvmBinarySpec</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm/-jvm-binary-spec/get-classes-dir.html">getClassesDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getClassesDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The classes directory for this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm/-jvm-binary-spec/get-resources-dir.html">getResourcesDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getResourcesDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The resources directory for this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm/-jvm-binary-spec/get-target-platform.html">getTargetPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.jvm.platform/-java-platform/index.html"><span class="identifier">JavaPlatform</span></a></code>
+<p>The target platform for this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm/-jvm-binary-spec/get-tool-chain.html">getToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getToolChain</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.jvm.toolchain/-java-tool-chain/index.html"><span class="identifier">JavaToolChain</span></a></code>
+<p>Returns the org.gradle.jvm.toolchain.JavaToolChain that will be used to build this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm/-jvm-binary-spec/set-classes-dir.html">setClassesDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setClassesDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.JvmBinarySpec$setClassesDir(java.io.File)/classesDir">classesDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the classes directory for this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm/-jvm-binary-spec/set-resources-dir.html">setResourcesDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setResourcesDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.JvmBinarySpec$setResourcesDir(java.io.File)/dir">dir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the resources directory for this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm/-jvm-binary-spec/set-target-platform.html">setTargetPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setTargetPlatform</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.JvmBinarySpec$setTargetPlatform(org.gradle.jvm.platform.JavaPlatform)/platform">platform</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.jvm.platform/-java-platform/index.html"><span class="identifier">JavaPlatform</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the target platform for this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm/-jvm-binary-spec/set-tool-chain.html">setToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setToolChain</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.JvmBinarySpec$setToolChain(org.gradle.jvm.toolchain.JavaToolChain)/toolChain">toolChain</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.jvm.toolchain/-java-tool-chain/index.html"><span class="identifier">JavaToolChain</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the org.gradle.jvm.toolchain.JavaToolChain that will be used to build this binary.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-j-unit-test-suite-binary-spec/index.html">JUnitTestSuiteBinarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">JUnitTestSuiteBinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JvmTestSuiteBinarySpec</span></code>
+<p>Represents a JUnit test suite binary.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

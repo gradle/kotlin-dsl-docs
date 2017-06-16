@@ -1,0 +1,120 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.testkit.runner - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.testkit.runner</a><br/>
+<br/>
+<h2>Package org.gradle.testkit.runner</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-build-result/index.html">BuildResult</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BuildResult</span></code>
+<p>The result of executing a build, via the GradleRunner.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-build-task/index.html">BuildTask</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BuildTask</span></code>
+<p>A task that was executed when running a specific build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-gradle-runner/index.html">GradleRunner</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">GradleRunner</span></code>
+<p>Executes a Gradle build, allowing inspection of the outcome. 
+<p> A Gradle runner can be used to functionally test build logic, by executing a contrived build. Assertions can then be made on the outcome of the build, such as the state of files created by the build, or what tasks were actually executed during the build. </p>
+<p> A runner can be created via the <code><a href="-gradle-runner/create.html">#create()</a></code> method. </p>
+<p> Typically, the test code using the runner will programmatically create a build (e.g. by writing Gradle build files to a temporary space) to execute. The build to execute is effectively specified by the <code><a href="-gradle-runner/with-project-dir.html">#withProjectDir(File)</a></code>} method. It is a requirement that a project directory be set. </p>
+<p> The <code><a href="#">#withArguments(String...)</a></code> method allows the build arguments to be specified, just as they would be on the command line. </p>
+<p> The <code><a href="-gradle-runner/build.html">#build()</a></code> method can be used to invoke the build when it is expected to succeed, while the <code><a href="-gradle-runner/build-and-fail.html">#buildAndFail()</a></code> method can be used when the build is expected to fail. </p>
+<p> GradleRunner instances are not thread safe and cannot be used concurrently. However, multiple instances are able to be used concurrently. </p>
+<p> Please see <a href="#">the Gradle TestKit User Guide chapter</a> for more information.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-outcome/index.html">TaskOutcome</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">TaskOutcome</span></code>
+<p>The outcome of executing a task during a build.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Exceptions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-invalid-plugin-metadata-exception/index.html">InvalidPluginMetadataException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InvalidPluginMetadataException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html"><span class="identifier">IllegalStateException</span></a></code>
+<p>Thrown when the plugin under test metadata cannot be read.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-invalid-runner-configuration-exception/index.html">InvalidRunnerConfigurationException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InvalidRunnerConfigurationException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/IllegalStateException.html"><span class="identifier">IllegalStateException</span></a></code>
+<p>Thrown when a build cannot be executed due to the runner being in an invalid state.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-unexpected-build-failure/index.html">UnexpectedBuildFailure</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">UnexpectedBuildFailure</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-unexpected-build-result-exception/index.html"><span class="identifier">UnexpectedBuildResultException</span></a></code>
+<p>Thrown when executing a build that was expected to succeed, but failed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-unexpected-build-result-exception/index.html">UnexpectedBuildResultException</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">UnexpectedBuildResultException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/RuntimeException.html"><span class="identifier">RuntimeException</span></a></code>
+<p>Base class for UnexpectedBuildFailure and UnexpectedBuildSuccess.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-unexpected-build-success/index.html">UnexpectedBuildSuccess</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">UnexpectedBuildSuccess</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-unexpected-build-result-exception/index.html"><span class="identifier">UnexpectedBuildResultException</span></a></code>
+<p>Thrown when executing a build that was expected to fail, but succeeded.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-unsupported-feature-exception/index.html">UnsupportedFeatureException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">UnsupportedFeatureException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/RuntimeException.html"><span class="identifier">RuntimeException</span></a></code>
+<p>Thrown when a build was executed with a target Gradle version that does not support a specific feature.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

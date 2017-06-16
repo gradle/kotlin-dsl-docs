@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>IvyArtifactRepositoryMetaDataProvider - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.repositories</a>&nbsp;/&nbsp;<a href=".">IvyArtifactRepositoryMetaDataProvider</a><br/>
+<br/>
+<h1>IvyArtifactRepositoryMetaDataProvider</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">IvyArtifactRepositoryMetaDataProvider</span></code>
+<p>The meta-data provider for an Ivy repository. Uses the Ivy module descriptor (<code>ivy.xml</code>) to determine the meta-data for module versions and artifacts.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="is-dynamic-mode.html">isDynamicMode</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isDynamicMode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if dynamic resolve mode should be used for Ivy modules. When enabled, the <code>revConstraint</code> attribute for each dependency declaration is used in preference to the <code>rev</code> attribute. When disabled (the default), the <code>rev</code> attribute is always used.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-dynamic-mode.html">setDynamicMode</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setDynamicMode</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.IvyArtifactRepositoryMetaDataProvider$setDynamicMode(kotlin.Boolean)/mode">mode</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies whether dynamic resolve mode should be used for Ivy modules. When enabled, the <code>revConstraint</code> attribute for each dependency declaration is used in preference to the <code>rev</code> attribute. When disabled (the default), the <code>rev</code> attribute is always used.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

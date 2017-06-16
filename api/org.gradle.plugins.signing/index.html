@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.plugins.signing - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.plugins.signing</a><br/>
+<br/>
+<h2>Package org.gradle.plugins.signing</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-sign/index.html">Sign</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Sign</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a><span class="symbol">, </span><a href="-signature-spec/index.html"><span class="identifier">SignatureSpec</span></a></code>
+<p>A task for creating digital signature files for one or more; tasks, files, publishable artifacts or configurations. 
+<p>The task produces Signature</p>
+ objects that are publishable artifacts and can be assigned to another configuration. 
+<p> The signature objects are created with defaults and using this tasks signatory and signature type.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-sign-operation/index.html">SignOperation</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SignOperation</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-signature-spec/index.html"><span class="identifier">SignatureSpec</span></a></code>
+<p>A sign operation creates digital signatures for one or more files or PublishArtifact. 
+<p>The external representation of the signature is specified by the <code><a href="-sign-operation/get-signature-type.html">signature type property</a></code>, while the <code><a href="#">#signatory</a></code> property specifies who is to sign. </p>
+<p> A sign operation manages one or more Signature objects. The <code>sign</code> methods are used to register things to generate signatures for. The <code><a href="-sign-operation/execute.html">#execute()</a></code> method generates the signatures for all of the registered items at that time.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-signature/index.html">Signature</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Signature</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractPublishArtifact</span></code>
+<p>A digital signature file artifact. 
+<p>A signature file is always generated from another file, which may be a PublishArtifact.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-signature-spec/index.html">SignatureSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SignatureSpec</span></code>
+<p>Specifies how objects will be signed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-signing-extension/index.html">SigningExtension</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SigningExtension</span></code>
+<p>The global signing configuration for a project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-signing-plugin/index.html">SigningPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SigningPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span></code>
+<p>Adds the ability to digitally sign files and artifacts.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

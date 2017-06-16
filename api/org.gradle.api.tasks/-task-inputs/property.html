@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TaskInputs.property - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks</a>&nbsp;/&nbsp;<a href="index.html">TaskInputs</a>&nbsp;/&nbsp;<a href=".">property</a><br/>
+<br/>
+<h1>property</h1>
+<a name="org.gradle.api.tasks.TaskInputs$property(kotlin.String, kotlin.Any)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">property</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.TaskInputs$property(kotlin.String, kotlin.Any)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.TaskInputs$property(kotlin.String, kotlin.Any)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">TaskInputs</span></a></code>
+<p>
+<p>Registers an input property for this task. This value is persisted when the task executes, and is compared against the property value for later invocations of the task, to determine if the task is up-to-date.</p>
+ 
+<p>The given value for the property must be Serializable, so that it can be persisted. It should also provide a useful <code>equals()</code> method.</p>
+ 
+<p>You can specify a closure or <code>Callable</code> as the value of the property. In which case, the closure or <code>Callable</code> is executed to determine the actual property value.</p>
+</p>
+<h3>Parameters</h3>
+<a name="name"></a>
+<code>name</code> - The name of the property. Must not be null.<a name="value"></a>
+<code>value</code> - The value for the property. Can be null.
+</BODY>
+</HTML>

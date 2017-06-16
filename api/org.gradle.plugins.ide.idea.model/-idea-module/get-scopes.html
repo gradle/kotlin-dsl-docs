@@ -1,0 +1,17 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>IdeaModule.getScopes - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.idea.model</a>&nbsp;/&nbsp;<a href="index.html">IdeaModule</a>&nbsp;/&nbsp;<a href=".">getScopes</a><br/>
+<br/>
+<h1>getScopes</h1>
+<a name="org.gradle.plugins.ide.idea.model.IdeaModule$getScopes()"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getScopes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>The keys of this map are the IDEA scopes. Each key points to another map that has two keys, plus and minus. The values of those keys are collections of org.gradle.api.artifacts.Configuration objects. The files of the plus configurations are added minus the files from the minus configurations. See example below... 
+<p> Example how to use scopes property to enable 'performanceTestCompile' dependencies in the output *.iml file: </p>
+<pre><code> apply plugin: 'java' apply plugin: 'idea' configurations { performanceTestCompile performanceTestCompile.extendsFrom(testCompile) } dependencies { //performanceTestCompile "some.interesting:dependency:1.0" } idea { module { scopes.TEST.plus += [ configurations.performanceTestCompile ] } } </code></pre></p>
+</BODY>
+</HTML>

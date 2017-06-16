@@ -1,0 +1,454 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>IdeaModule - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.idea.model</a>&nbsp;/&nbsp;<a href=".">IdeaModule</a><br/>
+<br/>
+<h1>IdeaModule</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">IdeaModule</span></code>
+<p>Enables fine-tuning module details (*.iml file) of the IDEA plugin. 
+<p> Example of use with a blend of most possible properties. Typically you don't have to configure this model directly because Gradle configures it for you. </p>
+<pre><code> apply plugin: 'java' apply plugin: 'idea' //for the sake of this example, let's introduce a 'performanceTestCompile' configuration configurations { performanceTestCompile performanceTestCompile.extendsFrom(testCompile) } dependencies { //performanceTestCompile "some.interesting:dependency:1.0" } idea { //if you want parts of paths in resulting files (*.iml, etc.) to be replaced by variables (Files) pathVariables GRADLE_HOME: file('~/cool-software/gradle') module { //if for some reason you want to add an extra sourceDirs sourceDirs += file('some-extra-source-folder') //and some extra test source dirs testSourceDirs += file('some-extra-test-dir') //and hint to mark some of existing source dirs as generated sources generatedSourceDirs += file('some-extra-source-folder') //and some extra dirs that should be excluded by IDEA excludeDirs += file('some-extra-exclude-dir') //if you don't like the name Gradle has chosen name = 'some-better-name' //if you prefer different output folders inheritOutputDirs = false outputDir = file('muchBetterOutputDir') testOutputDir = file('muchBetterTestOutputDir') //if you prefer different SDK than the one inherited from IDEA project jdkName = '1.6' //put our custom test dependencies onto IDEA's TEST scope scopes.TEST.plus += [ configurations.performanceTestCompile ] //if 'content root' (as IDEA calls it) of the module is different contentRoot = file('my-module-content-root') //if you love browsing Javadoc downloadJavadoc = true //and hate reading sources :) downloadSources = false } } </code></pre> For tackling edge cases, users can perform advanced configuration on the resulting XML file. It is also possible to affect the way the IDEA plugin merges the existing configuration via beforeMerged and whenMerged closures. 
+<p> beforeMerged and whenMerged closures receive a Module parameter </p>
+<p> Examples of advanced configuration: </p>
+<pre><code> apply plugin: 'java' apply plugin: 'idea' idea { module { iml { //if you like to keep *.iml in a secret folder generateTo = file('secret-modules-folder') //if you want to mess with the resulting XML in whatever way you fancy withXml { def node = it.asNode() node.appendNode('iLoveGradle', 'true') node.appendNode('butAlso', 'I find increasing pleasure tinkering with output *.iml contents. Yeah!!!') } //closure executed after *.iml content is loaded from existing file //but before gradle build information is merged beforeMerged { module -&gt; //if you want skip merging exclude dirs module.excludeFolders.clear() } //closure executed after *.iml content is loaded from existing file //and after gradle build information is merged whenMerged { module -&gt; //you can tinker with Module } } } } </code></pre></p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">IdeaModule</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$<init>(org.gradle.api.Project, org.gradle.plugins.ide.idea.model.IdeaModuleIml)/project">project</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$<init>(org.gradle.api.Project, org.gradle.plugins.ide.idea.model.IdeaModuleIml)/iml">iml</span><span class="symbol">:</span>&nbsp;<a href="../-idea-module-iml/index.html"><span class="identifier">IdeaModuleIml</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-content-root.html">getContentRoot</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getContentRoot</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The content root directory of the module. 
+<p> For example see docs for IdeaModule</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-exclude-dirs.html">getExcludeDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getExcludeDirs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>org.gradle.api.dsl.ConventionProperty for the directories to be excluded. 
+<p> For example see docs for IdeaModule</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-generated-source-dirs.html">getGeneratedSourceDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getGeneratedSourceDirs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>The directories containing the generated sources (both production and test sources). 
+<p> For example see docs for IdeaModule</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-iml.html">getIml</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getIml</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-idea-module-iml/index.html"><span class="identifier">IdeaModuleIml</span></a></code>
+<p>See <code><a href="#">#iml(Action)</a></code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-inherit-output-dirs.html">getInheritOutputDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getInheritOutputDirs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>If true, output directories for this module will be located below the output directory for the project; otherwise, they will be set to the directories specified by <code><a href="get-output-dir.html">#getOutputDir()</a></code> and <code><a href="get-test-output-dir.html">#getTestOutputDir()</a></code>. 
+<p> For example see docs for IdeaModule</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-jdk-name.html">getJdkName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getJdkName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The JDK to use for this module. If <code>null</code>, the value of the existing or default ipr XML (inherited) is used. If it is set to <code>inherited</code>, the project SDK is used. Otherwise the SDK for the corresponding value of java version is used for this module. 
+<p> For example see docs for IdeaModule</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-language-level.html">getLanguageLevel</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLanguageLevel</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-idea-language-level/index.html"><span class="identifier">IdeaLanguageLevel</span></a></code>
+<p>The module specific language Level to use for this module. When <code>null</code>, the module will inherit the language level from the idea project. 
+<p> The Idea module language level is based on the <code>sourceCompatibility</code> settings for the associated Gradle project.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Configures module name, that is the name of the *.iml file. 
+<p> It's <strong>optional</strong> because the task should configure it correctly for you. By default it will try to use the <strong>project.name</strong> or prefix it with a part of a <strong>project.path</strong> to make sure the module name is unique in the scope of a multi-module build. The 'uniqueness' of a module name is required for correct import into IDEA and the task will make sure the name is unique. </p>
+<p> <strong>since</strong> 1.0-milestone-2 </p>
+<p> If your project has problems with unique names it is recommended to always run gradle idea from the root, i.e. for all subprojects. If you run the generation of the IDEA module only for a single subproject then you may have different results because the unique names are calculated based on IDEA modules that are involved in the specific build run. </p>
+<p> If you update the module names then make sure you run gradle idea from the root, e.g. for all subprojects, including generation of IDEA project. The reason is that there may be subprojects that depend on the subproject with amended module name. So you want them to be generated as well because the module dependencies need to refer to the amended project name. Basically, for non-trivial projects it is recommended to always run gradle idea from the root. </p>
+<p> For example see docs for IdeaModule</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-output-dir.html">getOutputDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOutputDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The output directory for production classes. If <code>null</code>, no entry will be created. 
+<p> For example see docs for IdeaModule</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-output-file.html">getOutputFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOutputFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Configures output *.iml file. It's <strong>optional</strong> because the task should configure it correctly for you (including making sure it is unique in the multi-module build). If you really need to change the output file name (or the module name) it is much easier to do it via the <strong>moduleName</strong> property! 
+<p> Please refer to documentation on <strong>moduleName</strong> property. In IntelliJ IDEA the module name is the same as the name of the *.iml file.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-path-factory.html">getPathFactory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getPathFactory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-path-factory/index.html"><span class="identifier">PathFactory</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-path-variables.html">getPathVariables</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getPathVariables</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>The variables to be used for replacing absolute paths in the iml entries. For example, you might add a <code>GRADLE_USER_HOME</code> variable to point to the Gradle user home dir. 
+<p> For example see docs for IdeaModule</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project.html">getProject</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getProject</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a></code>
+<p>An owner of this IDEA module. 
+<p> If IdeaModule requires some information from gradle this field should not be used for this purpose. IdeaModule instances should be configured with all necessary information by the plugin or user.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-scala-platform.html">getScalaPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getScalaPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.language.scala/-scala-platform/index.html"><span class="identifier">ScalaPlatform</span></a></code>
+<p>The Scala version used by this module.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-scopes.html">getScopes</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getScopes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>The keys of this map are the IDEA scopes. Each key points to another map that has two keys, plus and minus. The values of those keys are collections of org.gradle.api.artifacts.Configuration objects. The files of the plus configurations are added minus the files from the minus configurations. See example below... 
+<p> Example how to use scopes property to enable 'performanceTestCompile' dependencies in the output *.iml file: </p>
+<pre><code> apply plugin: 'java' apply plugin: 'idea' configurations { performanceTestCompile performanceTestCompile.extendsFrom(testCompile) } dependencies { //performanceTestCompile "some.interesting:dependency:1.0" } idea { module { scopes.TEST.plus += [ configurations.performanceTestCompile ] } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-single-entry-libraries.html">getSingleEntryLibraries</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSingleEntryLibraries</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-source-dirs.html">getSourceDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSourceDirs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>The directories containing the production sources. 
+<p> For example see docs for IdeaModule</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-target-bytecode-version.html">getTargetBytecodeVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTargetBytecodeVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-java-version/index.html"><span class="identifier">JavaVersion</span></a></code>
+<p>The module specific bytecode version to use for this module. When <code>null</code>, the module will inherit the bytecode version from the idea project. 
+<p> The Idea module bytecode version is based on the <code>targetCompatibility</code> settings for the associated Gradle project.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-test-output-dir.html">getTestOutputDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTestOutputDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The output directory for test classes. If <code>null</code>, no entry will be created. 
+<p> For example see docs for IdeaModule</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-test-source-dirs.html">getTestSourceDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTestSourceDirs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>The directories containing the test sources. 
+<p> For example see docs for IdeaModule</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="iml.html">iml</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">iml</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$iml(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">iml</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$iml(org.gradle.api.Action((org.gradle.plugins.ide.idea.model.IdeaModuleIml)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-idea-module-iml/index.html"><span class="identifier">IdeaModuleIml</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Enables advanced configuration like tinkering with the output XML or affecting the way existing *.iml content is merged with gradle build information. 
+<p> For example see docs for IdeaModule.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-download-javadoc.html">isDownloadJavadoc</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isDownloadJavadoc</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether to download and add javadoc associated with the dependency jars. 
+<p> For example see docs for IdeaModule</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-download-sources.html">isDownloadSources</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isDownloadSources</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether to download and add sources associated with the dependency jars. 
+<p> For example see docs for IdeaModule</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-offline.html">isOffline</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isOffline</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>If true then external artifacts (e.g. those found in repositories) will not be included in the resulting classpath (only project and local file dependencies will be included).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="merge-xml-module.html">mergeXmlModule</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">mergeXmlModule</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$mergeXmlModule(org.gradle.plugins.ide.idea.model.Module)/xmlModule">xmlModule</span><span class="symbol">:</span>&nbsp;<a href="../-module/index.html"><span class="identifier">Module</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="resolve-dependencies.html">resolveDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">resolveDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">&gt;</span></code>
+<p>Resolves and returns the module's dependencies.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-content-root.html">setContentRoot</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setContentRoot</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setContentRoot(java.io.File)/contentRoot">contentRoot</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-download-javadoc.html">setDownloadJavadoc</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDownloadJavadoc</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setDownloadJavadoc(kotlin.Boolean)/downloadJavadoc">downloadJavadoc</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-download-sources.html">setDownloadSources</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDownloadSources</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setDownloadSources(kotlin.Boolean)/downloadSources">downloadSources</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-exclude-dirs.html">setExcludeDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExcludeDirs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setExcludeDirs(kotlin.collections.MutableSet((java.io.File)))/excludeDirs">excludeDirs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-generated-source-dirs.html">setGeneratedSourceDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setGeneratedSourceDirs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setGeneratedSourceDirs(kotlin.collections.MutableSet((java.io.File)))/generatedSourceDirs">generatedSourceDirs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-inherit-output-dirs.html">setInheritOutputDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setInheritOutputDirs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setInheritOutputDirs(kotlin.Boolean)/inheritOutputDirs">inheritOutputDirs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-jdk-name.html">setJdkName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setJdkName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setJdkName(kotlin.String)/jdkName">jdkName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-language-level.html">setLanguageLevel</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setLanguageLevel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setLanguageLevel(org.gradle.plugins.ide.idea.model.IdeaLanguageLevel)/languageLevel">languageLevel</span><span class="symbol">:</span>&nbsp;<a href="../-idea-language-level/index.html"><span class="identifier">IdeaLanguageLevel</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-name.html">setName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setName(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-offline.html">setOffline</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOffline</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setOffline(kotlin.Boolean)/offline">offline</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-output-dir.html">setOutputDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOutputDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setOutputDir(java.io.File)/outputDir">outputDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-output-file.html">setOutputFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOutputFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setOutputFile(java.io.File)/newOutputFile">newOutputFile</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-path-factory.html">setPathFactory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setPathFactory</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setPathFactory(org.gradle.plugins.ide.idea.model.PathFactory)/pathFactory">pathFactory</span><span class="symbol">:</span>&nbsp;<a href="../-path-factory/index.html"><span class="identifier">PathFactory</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-path-variables.html">setPathVariables</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setPathVariables</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setPathVariables(kotlin.collections.MutableMap((kotlin.String, java.io.File)))/pathVariables">pathVariables</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-scala-platform.html">setScalaPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setScalaPlatform</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setScalaPlatform(org.gradle.language.scala.ScalaPlatform)/scalaPlatform">scalaPlatform</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.scala/-scala-platform/index.html"><span class="identifier">ScalaPlatform</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-scopes.html">setScopes</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setScopes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setScopes(kotlin.collections.MutableMap((kotlin.String, kotlin.collections.MutableMap((, kotlin.collections.MutableCollection((org.gradle.api.artifacts.Configuration)))))))/scopes">scopes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-single-entry-libraries.html">setSingleEntryLibraries</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSingleEntryLibraries</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setSingleEntryLibraries(kotlin.collections.MutableMap((kotlin.String, kotlin.collections.MutableIterable((java.io.File)))))/singleEntryLibraries">singleEntryLibraries</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-source-dirs.html">setSourceDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSourceDirs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setSourceDirs(kotlin.collections.MutableSet((java.io.File)))/sourceDirs">sourceDirs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-target-bytecode-version.html">setTargetBytecodeVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTargetBytecodeVersion</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setTargetBytecodeVersion(org.gradle.api.JavaVersion)/targetBytecodeVersion">targetBytecodeVersion</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-java-version/index.html"><span class="identifier">JavaVersion</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-test-output-dir.html">setTestOutputDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTestOutputDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setTestOutputDir(java.io.File)/testOutputDir">testOutputDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-test-source-dirs.html">setTestSourceDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTestSourceDirs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setTestSourceDirs(kotlin.collections.MutableSet((java.io.File)))/testSourceDirs">testSourceDirs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

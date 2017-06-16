@@ -1,0 +1,75 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TextResource - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.resources</a>&nbsp;/&nbsp;<a href=".">TextResource</a><br/>
+<br/>
+<h1>TextResource</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">TextResource</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<p>A read-only body of text backed by a string, file, archive entry, or other source. To create a text resource, use one of the factory methods in TextResourceFactory (e.g. <code>project.resources.text.fromFile(myFile)</code>).</p>
+<p><strong>Since</strong><br/>
+2.2</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="as-file.html">asFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">asFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.resources.TextResource$asFile(kotlin.String)/charset">charset</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns a file containing the resource's text and using the given character encoding. If this resource is backed by a file with a matching encoding, that file may be returned. Otherwise, a temporary file will be created and returned.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">asFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Same as <code>asFile(Charset.defaultCharset().name())</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="as-reader.html">asReader</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">asReader</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/Reader.html"><span class="identifier">Reader</span></a></code>
+<p>Returns an unbuffered Reader that allows the resource's text to be read. The caller is responsible for closing the reader.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="as-string.html">asString</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">asString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns a string containing the resource's text</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-build-dependencies.html">getBuildDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-task-dependency/index.html"><span class="identifier">TaskDependency</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-input-files.html">getInputFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getInputFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the input files registered when this resource is used as task input. Not typically used directly.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-input-properties.html">getInputProperties</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getInputProperties</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Returns the input properties registered when this resource is used as task input. Not typically used directly.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

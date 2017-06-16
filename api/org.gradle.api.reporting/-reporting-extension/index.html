@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ReportingExtension - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.reporting</a>&nbsp;/&nbsp;<a href=".">ReportingExtension</a><br/>
+<br/>
+<h1>ReportingExtension</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ReportingExtension</span></code>
+<p>A project extension named "reporting" that provides basic reporting settings and utilities. 
+<p> Example usage: </p>
+<p> </p>
+<pre><code> reporting { baseDir "$buildDir/our-reports" } </code></pre> 
+<p> When implementing a task that produces reports, the location of where to generate reports should be obtained via the <code><a href="#">#file(String)</a></code> method of this extension.</p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ReportingExtension</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.reporting.ReportingExtension$<init>(org.gradle.api.Project)/project">project</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-d-e-f-a-u-l-t_-r-e-p-o-r-t-s_-d-i-r_-n-a-m-e.html">DEFAULT_REPORTS_DIR_NAME</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">DEFAULT_REPORTS_DIR_NAME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The default name of the base directory for all reports, relative to <code><a href="../../org.gradle.api/-project/get-build-dir.html">org.gradle.api.Project#getBuildDir()</a></code> ({@value}).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-n-a-m-e.html">NAME</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">NAME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name of this extension ("{@value}")</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="file.html">file</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.reporting.ReportingExtension$file(kotlin.String)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Creates a file object for the given path, relative to <code><a href="get-base-dir.html">#getBaseDir()</a></code>. 
+<p> The reporting base dir can be changed, so users of this method should use it on demand where appropriate.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-api-doc-title.html">getApiDocTitle</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getApiDocTitle</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-base-dir.html">getBaseDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getBaseDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The base directory for all reports 
+<p> This value can be changed, so any files derived from this should be calculated on demand.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-base-dir.html">setBaseDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setBaseDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.reporting.ReportingExtension$setBaseDir(java.io.File)/baseDir">baseDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the base directory to use for all reports</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setBaseDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.reporting.ReportingExtension$setBaseDir(kotlin.Any)/baseDir">baseDir</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the base directory to use for all reports 
+<p> The value will be converted to a <code>File</code> on demand via <code><a href="#">Project#file(Object)</a></code>.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

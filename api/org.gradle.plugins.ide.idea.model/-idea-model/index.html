@@ -1,0 +1,154 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>IdeaModel - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.idea.model</a>&nbsp;/&nbsp;<a href=".">IdeaModel</a><br/>
+<br/>
+<h1>IdeaModel</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">IdeaModel</span></code>
+<p>DSL-friendly model of the IDEA project information. First point of entry when it comes to customizing the IDEA generation. 
+<p> See the examples in docs for IdeaModule or IdeaProject.</p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">IdeaModel</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>DSL-friendly model of the IDEA project information. First point of entry when it comes to customizing the IDEA generation. 
+<p> See the examples in docs for IdeaModule or IdeaProject.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-module.html">getModule</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getModule</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-idea-module/index.html"><span class="identifier">IdeaModule</span></a></code>
+<p>Configures IDEA module information. 
+<p> For examples see docs for IdeaModule.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project.html">getProject</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getProject</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-idea-project/index.html"><span class="identifier">IdeaProject</span></a></code>
+<p>Configures IDEA project information. 
+<p> For examples see docs for IdeaProject.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-target-version.html">getTargetVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTargetVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Configures the target IDEA version.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-workspace.html">getWorkspace</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getWorkspace</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-idea-workspace/index.html"><span class="identifier">IdeaWorkspace</span></a></code>
+<p>Configures IDEA workspace information. 
+<p> For examples see docs for IdeaWorkspace.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="module.html">module</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">module</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModel$module(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">module</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModel$module(org.gradle.api.Action((org.gradle.plugins.ide.idea.model.IdeaModule)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-idea-module/index.html"><span class="identifier">IdeaModule</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures IDEA module information. 
+<p> For examples see docs for IdeaModule.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="path-variables.html">pathVariables</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">pathVariables</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModel$pathVariables(kotlin.collections.MutableMap((kotlin.String, java.io.File)))/pathVariables">pathVariables</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds path variables to be used for replacing absolute paths in resulting files (*.iml, etc.). 
+<p> For example see docs for IdeaModule.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="project.html">project</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">project</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModel$project(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">project</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModel$project(org.gradle.api.Action((org.gradle.plugins.ide.idea.model.IdeaProject)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-idea-project/index.html"><span class="identifier">IdeaProject</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures IDEA project information. 
+<p> For examples see docs for IdeaProject.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-module.html">setModule</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setModule</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModel$setModule(org.gradle.plugins.ide.idea.model.IdeaModule)/module">module</span><span class="symbol">:</span>&nbsp;<a href="../-idea-module/index.html"><span class="identifier">IdeaModule</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-project.html">setProject</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setProject</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModel$setProject(org.gradle.plugins.ide.idea.model.IdeaProject)/project">project</span><span class="symbol">:</span>&nbsp;<a href="../-idea-project/index.html"><span class="identifier">IdeaProject</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-target-version.html">setTargetVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTargetVersion</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModel$setTargetVersion(kotlin.String)/targetVersion">targetVersion</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-workspace.html">setWorkspace</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setWorkspace</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModel$setWorkspace(org.gradle.plugins.ide.idea.model.IdeaWorkspace)/workspace">workspace</span><span class="symbol">:</span>&nbsp;<a href="../-idea-workspace/index.html"><span class="identifier">IdeaWorkspace</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="workspace.html">workspace</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">workspace</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModel$workspace(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">workspace</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModel$workspace(org.gradle.api.Action((org.gradle.plugins.ide.idea.model.IdeaWorkspace)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-idea-workspace/index.html"><span class="identifier">IdeaWorkspace</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures IDEA workspace information. 
+<p> For examples see docs for IdeaWorkspace.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

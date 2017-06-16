@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ArtifactResult - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.result</a>&nbsp;/&nbsp;<a href=".">ArtifactResult</a><br/>
+<br/>
+<h1>ArtifactResult</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ArtifactResult</span></code>
+<p>The result of resolving an artifact.</p>
+<p><strong>Since</strong><br/>
+2.0</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-id.html">getId</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getId</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.component/-component-artifact-identifier/index.html"><span class="identifier">ComponentArtifactIdentifier</span></a></code>
+<p>Returns an identifier for this artifact.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-type.html">getType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getType</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.api.component/-artifact.html"><span class="identifier">Artifact</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the type of this artifact.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-resolved-artifact-result/index.html">ResolvedArtifactResult</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ResolvedArtifactResult</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ArtifactResult</span></code>
+<p>The result of successfully resolving an artifact.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-unresolved-artifact-result/index.html">UnresolvedArtifactResult</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">UnresolvedArtifactResult</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ArtifactResult</span></code>
+<p>An artifact that could not be resolved.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

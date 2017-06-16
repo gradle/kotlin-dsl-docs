@@ -1,0 +1,15 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ComponentType.<init> - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.platform.base</a>&nbsp;/&nbsp;<a href="index.html">ComponentType</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.gradle.platform.base.ComponentType$&lt;init&gt;()"></a>
+<code><span class="identifier">ComponentType</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Declares a custom org.gradle.platform.base.ComponentSpec type. The following example demonstrates how to register a custom component type using a plugin with a ComponentType annotation. Furthermore the plugin creates an instance of SampleComponent named 'sampleComponent'. <pre><code> interface SampleComponent extends ComponentSpec {} class DefaultSampleComponent extends BaseComponentSpec implements SampleComponent {} apply plugin: MySamplePlugin class MySamplePlugin extends RuleSource { @ComponentType void register(TypeBuilder&lt;SampleComponent&gt; builder) { builder.defaultImplementation(DefaultSampleComponent) } @Mutate void createSampleLibraryComponents(ModelMap&lt;SampleComponent&gt; componentSpecs) { componentSpecs.create("sampleComponent") } } </code></pre></p>
+</BODY>
+</HTML>

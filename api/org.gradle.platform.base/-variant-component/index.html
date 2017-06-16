@@ -1,0 +1,63 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>VariantComponent - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.platform.base</a>&nbsp;/&nbsp;<a href=".">VariantComponent</a><br/>
+<br/>
+<h1>VariantComponent</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">VariantComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.model/-model-element/index.html"><span class="identifier">ModelElement</span></a></code>
+<p>A component that has one or more mutually exclusive variants.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-variants.html">getVariants</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getVariants</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="../-binary/index.html"><span class="identifier">Binary</span></a><span class="symbol">&gt;</span></code>
+<p>The variants of this component.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.model/-model-element/get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns a human-consumable display name for this element.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-variant-component-spec/index.html">VariantComponentSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VariantComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-component-spec/index.html"><span class="identifier">ComponentSpec</span></a><span class="symbol">, </span><span class="identifier">VariantComponent</span></code>
+<p>Represents a component spec that is made up of one or more mutually exclusive variants.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

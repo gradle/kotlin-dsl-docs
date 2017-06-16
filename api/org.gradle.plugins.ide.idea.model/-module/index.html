@@ -1,0 +1,222 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Module - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.idea.model</a>&nbsp;/&nbsp;<a href=".">Module</a><br/>
+<br/>
+<h1>Module</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Module</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">XmlPersistableConfigurationObject</span></code>
+<p>Represents the customizable elements of an iml (via XML hooks everything of the iml is customizable).</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">Module</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Module$<init>(XmlTransformer, org.gradle.plugins.ide.idea.model.PathFactory)/withXmlActions">withXmlActions</span><span class="symbol">:</span>&nbsp;<span class="identifier">XmlTransformer</span><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Module$<init>(XmlTransformer, org.gradle.plugins.ide.idea.model.PathFactory)/pathFactory">pathFactory</span><span class="symbol">:</span>&nbsp;<a href="../-path-factory/index.html"><span class="identifier">PathFactory</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-i-n-h-e-r-i-t-e-d.html">INHERITED</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">INHERITED</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="equals.html">equals</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">equals</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Module$equals(kotlin.Any)/o">o</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-content-path.html">getContentPath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getContentPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-path/index.html"><span class="identifier">Path</span></a></code>
+<p>The directory for the content root of the module. Defaults to the project directory. If null, the directory containing the output file will be used.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-dependencies.html">getDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">&gt;</span></code>
+<p>The dependencies of this module. Must not be null.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-exclude-folders.html">getExcludeFolders</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getExcludeFolders</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-path/index.html"><span class="identifier">Path</span></a><span class="symbol">&gt;</span></code>
+<p>The directories to be excluded. Must not be null.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-generated-source-folders.html">getGeneratedSourceFolders</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getGeneratedSourceFolders</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-path/index.html"><span class="identifier">Path</span></a><span class="symbol">&gt;</span></code>
+<p>The directories containing generated the production sources. Must not be null.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-jdk-name.html">getJdkName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getJdkName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-output-dir.html">getOutputDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOutputDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-path/index.html"><span class="identifier">Path</span></a></code>
+<p>The output directory for production classes. If <code>null</code>, no entry will be created.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-source-folders.html">getSourceFolders</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSourceFolders</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-path/index.html"><span class="identifier">Path</span></a><span class="symbol">&gt;</span></code>
+<p>The directories containing the production sources. Must not be null.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-test-output-dir.html">getTestOutputDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTestOutputDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-path/index.html"><span class="identifier">Path</span></a></code>
+<p>The output directory for test classes. If <code>null</code>, no entry will be created.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-test-source-folders.html">getTestSourceFolders</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTestSourceFolders</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-path/index.html"><span class="identifier">Path</span></a><span class="symbol">&gt;</span></code>
+<p>The directories containing the test sources. Must not be null.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="hash-code.html">hashCode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">hashCode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-inherit-output-dirs.html">isInheritOutputDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isInheritOutputDirs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>If true, output directories for this module will be located below the output directory for the project; otherwise, <code><a href="#">#outputDir</a></code> and <code><a href="#">#testOutputDir</a></code> will take effect.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-content-path.html">setContentPath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setContentPath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Module$setContentPath(org.gradle.plugins.ide.idea.model.Path)/contentPath">contentPath</span><span class="symbol">:</span>&nbsp;<a href="../-path/index.html"><span class="identifier">Path</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-dependencies.html">setDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDependencies</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Module$setDependencies(kotlin.collections.MutableSet((org.gradle.plugins.ide.idea.model.Dependency)))/dependencies">dependencies</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-exclude-folders.html">setExcludeFolders</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExcludeFolders</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Module$setExcludeFolders(kotlin.collections.MutableSet((org.gradle.plugins.ide.idea.model.Path)))/excludeFolders">excludeFolders</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-path/index.html"><span class="identifier">Path</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-generated-source-folders.html">setGeneratedSourceFolders</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setGeneratedSourceFolders</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Module$setGeneratedSourceFolders(kotlin.collections.MutableSet((org.gradle.plugins.ide.idea.model.Path)))/generatedSourceFolders">generatedSourceFolders</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-path/index.html"><span class="identifier">Path</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-inherit-output-dirs.html">setInheritOutputDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setInheritOutputDirs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Module$setInheritOutputDirs(kotlin.Boolean)/inheritOutputDirs">inheritOutputDirs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-jdk-name.html">setJdkName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setJdkName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Module$setJdkName(kotlin.String)/jdkName">jdkName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-output-dir.html">setOutputDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOutputDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Module$setOutputDir(org.gradle.plugins.ide.idea.model.Path)/outputDir">outputDir</span><span class="symbol">:</span>&nbsp;<a href="../-path/index.html"><span class="identifier">Path</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-source-folders.html">setSourceFolders</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSourceFolders</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Module$setSourceFolders(kotlin.collections.MutableSet((org.gradle.plugins.ide.idea.model.Path)))/sourceFolders">sourceFolders</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-path/index.html"><span class="identifier">Path</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-test-output-dir.html">setTestOutputDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTestOutputDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Module$setTestOutputDir(org.gradle.plugins.ide.idea.model.Path)/testOutputDir">testOutputDir</span><span class="symbol">:</span>&nbsp;<a href="../-path/index.html"><span class="identifier">Path</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-test-source-folders.html">setTestSourceFolders</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTestSourceFolders</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Module$setTestSourceFolders(kotlin.collections.MutableSet((org.gradle.plugins.ide.idea.model.Path)))/testSourceFolders">testSourceFolders</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-path/index.html"><span class="identifier">Path</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="to-string.html">toString</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,83 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NativeBinary - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform</a>&nbsp;/&nbsp;<a href=".">NativeBinary</a><br/>
+<br/>
+<h1>NativeBinary</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">NativeBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.platform.base/-binary/index.html"><span class="identifier">Binary</span></a></code>
+<p>Represents a particular binary artifact.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-build-type.html">getBuildType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildType</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-build-type/index.html"><span class="identifier">BuildType</span></a></code>
+<p>Returns the org.gradle.nativeplatform.BuildType used to construct this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-flavor.html">getFlavor</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFlavor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-flavor/index.html"><span class="identifier">Flavor</span></a></code>
+<p>The org.gradle.nativeplatform.Flavor that this binary was built with.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-target-platform.html">getTargetPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a></code>
+<p>Returns the org.gradle.nativeplatform.platform.NativePlatform that this binary is targeted to run on.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.platform.base/-binary/get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns a human-consumable display name for this binary.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-native-executable-binary/index.html">NativeExecutableBinary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">NativeExecutableBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NativeBinary</span></code>
+<p>A binary artifact for a NativeExecutable, targeted at a particular platform with specific configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-native-library-binary/index.html">NativeLibraryBinary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">NativeLibraryBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NativeBinary</span></code>
+<p>A physical representation of a NativeLibrary component.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

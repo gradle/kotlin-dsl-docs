@@ -1,0 +1,187 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>JarBinarySpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.jvm</a>&nbsp;/&nbsp;<a href=".">JarBinarySpec</a><br/>
+<br/>
+<h1>JarBinarySpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">JarBinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.platform.base/-library-binary-spec/index.html"><span class="identifier">LibraryBinarySpec</span></a><span class="symbol">, </span><a href="../-jvm-binary-spec/index.html"><span class="identifier">JvmBinarySpec</span></a></code>
+<p>Definition of a Jar file binary that is to be built by Gradle.</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-tasks-collection/index.html">TasksCollection</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TasksCollection</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.platform.base/-binary-tasks-collection/index.html"><span class="identifier">BinaryTasksCollection</span></a></code>
+<p>Provides access to key tasks used for building the binary.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-api-jar-file.html">getApiJarFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getApiJarFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The API jar file output for this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-exported-packages.html">getExportedPackages</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExportedPackages</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-id.html">getId</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getId</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.component/-library-binary-identifier/index.html"><span class="identifier">LibraryBinaryIdentifier</span></a></code>
+<p>The unique identifier of this JarBinarySpec.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-jar-file.html">getJarFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getJarFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The jar file output for this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-library.html">getLibrary</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLibrary</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-jvm-library-spec/index.html"><span class="identifier">JvmLibrarySpec</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-tasks.html">getTasks</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTasks</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-tasks-collection/index.html"><span class="identifier">TasksCollection</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-api-jar-file.html">setApiJarFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setApiJarFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.JarBinarySpec$setApiJarFile(java.io.File)/jarFile">jarFile</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the API jar file output for this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-exported-packages.html">setExportedPackages</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setExportedPackages</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.JarBinarySpec$setExportedPackages(kotlin.collections.MutableSet((kotlin.String)))/exportedPackages">exportedPackages</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-jar-file.html">setJarFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setJarFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.JarBinarySpec$setJarFile(java.io.File)/jarFile">jarFile</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the jar file output for this binary.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-jvm-binary-spec/get-classes-dir.html">getClassesDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getClassesDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The classes directory for this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jvm-binary-spec/get-resources-dir.html">getResourcesDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getResourcesDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The resources directory for this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jvm-binary-spec/get-target-platform.html">getTargetPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.jvm.platform/-java-platform/index.html"><span class="identifier">JavaPlatform</span></a></code>
+<p>The target platform for this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jvm-binary-spec/get-tool-chain.html">getToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getToolChain</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.jvm.toolchain/-java-tool-chain/index.html"><span class="identifier">JavaToolChain</span></a></code>
+<p>Returns the org.gradle.jvm.toolchain.JavaToolChain that will be used to build this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jvm-binary-spec/set-classes-dir.html">setClassesDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setClassesDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.JvmBinarySpec$setClassesDir(java.io.File)/classesDir">classesDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the classes directory for this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jvm-binary-spec/set-resources-dir.html">setResourcesDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setResourcesDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.JvmBinarySpec$setResourcesDir(java.io.File)/dir">dir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the resources directory for this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jvm-binary-spec/set-target-platform.html">setTargetPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setTargetPlatform</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.JvmBinarySpec$setTargetPlatform(org.gradle.jvm.platform.JavaPlatform)/platform">platform</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.jvm.platform/-java-platform/index.html"><span class="identifier">JavaPlatform</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the target platform for this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jvm-binary-spec/set-tool-chain.html">setToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setToolChain</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.JvmBinarySpec$setToolChain(org.gradle.jvm.toolchain.JavaToolChain)/toolChain">toolChain</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.jvm.toolchain/-java-tool-chain/index.html"><span class="identifier">JavaToolChain</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the org.gradle.jvm.toolchain.JavaToolChain that will be used to build this binary.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

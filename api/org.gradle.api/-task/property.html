@@ -1,0 +1,31 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Task.property - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">Task</a>&nbsp;/&nbsp;<a href=".">property</a><br/>
+<br/>
+<h1>property</h1>
+<a name="org.gradle.api.Task$property(kotlin.String)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">property</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$property(kotlin.String)/propertyName">propertyName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>
+<p>Returns the value of the given property of this task. This method locates a property as follows:</p>
+ <ol> <li>If this task object has a property with the given name, return the value of the property.</li>
+ <li>If this task has an extension with the given name, return the extension. </li>
+ <li>If this task's convention object has a property with the given name, return the value of the property.</li>
+ <li>If this task has an extra property with the given name, return the value of the property.</li>
+ <li>If not found, throw MissingPropertyException</li>
+ </ol>
+</p>
+<h3>Parameters</h3>
+<a name="propertyName"></a>
+<code>propertyName</code> - The name of the property.
+<h3>Exceptions</h3>
+<a name="MissingPropertyException"></a>
+<code>MissingPropertyException</code> - When the given property is unknown.
+<p><strong>Return</strong><br/>
+The value of the property, possibly null.</p>
+</BODY>
+</HTML>

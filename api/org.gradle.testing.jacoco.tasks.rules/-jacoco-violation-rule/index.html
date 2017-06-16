@@ -1,0 +1,109 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>JacocoViolationRule - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.testing.jacoco.tasks.rules</a>&nbsp;/&nbsp;<a href=".">JacocoViolationRule</a><br/>
+<br/>
+<h1>JacocoViolationRule</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">JacocoViolationRule</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code>
+<p>Defines a Jacoco violation rule.</p>
+<p><strong>Since</strong><br/>
+3.4</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-element.html">getElement</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getElement</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Gets the element for the rule as defined by <a href="#">org.jacoco.core.analysis.ICoverageNode.ElementType</a>. Valid scope values are BUNDLE, PACKAGE, CLASS, SOURCEFILE and METHOD. Defaults to BUNDLE.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-excludes.html">getExcludes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExcludes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>List of elements that should be excluded from check. Names can use wildcards (* and ?). If left empty, no elements will be excluded. Defaults to an empty list.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-includes.html">getIncludes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getIncludes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>List of elements that should be included in check. Names can use wildcards (* and ?). If left empty, all elements will be included. Defaults to [*].</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-limits.html">getLimits</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLimits</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-jacoco-limit/index.html"><span class="identifier">JacocoLimit</span></a><span class="symbol">&gt;</span></code>
+<p>Gets all limits defined for this rule. Defaults to an empty list.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-enabled.html">isEnabled</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isEnabled</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Indicates if the rule should be used when checking generated coverage metrics. Defaults to true.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="limit.html">limit</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">limit</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.tasks.rules.JacocoViolationRule$limit(org.gradle.api.Action((org.gradle.testing.jacoco.tasks.rules.JacocoLimit)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-jacoco-limit/index.html"><span class="identifier">JacocoLimit</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-jacoco-limit/index.html"><span class="identifier">JacocoLimit</span></a></code>
+<p>Adds a limit for this rule. Any number of limits can be added.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-element.html">setElement</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setElement</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.tasks.rules.JacocoViolationRule$setElement(kotlin.String)/element">element</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets element for the rule.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-enabled.html">setEnabled</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setEnabled</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.tasks.rules.JacocoViolationRule$setEnabled(kotlin.Boolean)/enabled">enabled</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-excludes.html">setExcludes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setExcludes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.tasks.rules.JacocoViolationRule$setExcludes(kotlin.collections.MutableList((kotlin.String)))/excludes">excludes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets list of elements that should be excluded from check.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-includes.html">setIncludes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setIncludes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.tasks.rules.JacocoViolationRule$setIncludes(kotlin.collections.MutableList((kotlin.String)))/includes">includes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets list of elements that should be included in check.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

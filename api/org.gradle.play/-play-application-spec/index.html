@@ -1,0 +1,50 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PlayApplicationSpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.play</a>&nbsp;/&nbsp;<a href=".">PlayApplicationSpec</a><br/>
+<br/>
+<h1>PlayApplicationSpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">PlayApplicationSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.platform.base/-application-spec.html"><span class="identifier">ApplicationSpec</span></a><span class="symbol">, </span><a href="../-play-platform-aware-component-spec/index.html"><span class="identifier">PlayPlatformAwareComponentSpec</span></a></code>
+<p>Definition of a Play Framework software component that is built by Gradle.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-injected-routes-generator.html">getInjectedRoutesGenerator</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getInjectedRoutesGenerator</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Will an injected router be generated for this application?</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="platform.html">platform</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">platform</span><span class="symbol">(</span><span class="identifier" id="org.gradle.play.PlayApplicationSpec$platform(kotlin.Any)/platformRequirements">platformRequirements</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies a org.gradle.play.platform.PlayPlatform with a given set of requirements that this component should be built be for. Can accept a map of play, scala and/or java requirements or a string representation of the desired play platform. <pre><code> model { components { play { platform 'play-2.3.9' platform play: '2.3.2' platform play: '2.3.6', scala: '2.10' platform play: '2.3.7', scala: '2.11', java: '1.8' } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-injected-routes-generator.html">setInjectedRoutesGenerator</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setInjectedRoutesGenerator</span><span class="symbol">(</span><span class="identifier" id="org.gradle.play.PlayApplicationSpec$setInjectedRoutesGenerator(kotlin.Boolean)/injectedRoutesGenerator">injectedRoutesGenerator</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the style of router to use with this application. 
+<p> By default, a static routes generator is used to generate a singleton router. This requires that all the actions that the router invokes on the application's controllers are either Scala singleton objects, or Java static methods. </p>
+ 
+<p> In Play 2.4+, a injected routes generator is recommended. This requires that the router declares its dependencies to the application's controllers in its constructor. The controllers methods need to be instance methods. </p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

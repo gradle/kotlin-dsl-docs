@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Failure - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling</a>&nbsp;/&nbsp;<a href=".">Failure</a><br/>
+<br/>
+<h1>Failure</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">Failure</span></code>
+<p>Represents a failure. Failures are similar to exceptions but carry less information (only a message, a description and a cause) so they can be used in a wider scope than just the JVM where the exception failed.</p>
+<p><strong>Since</strong><br/>
+2.4</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-causes.html">getCauses</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCauses</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">Failure</span><span class="symbol">&gt;</span></code>
+<p>Returns the underlying causes for this failure, if any.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-description.html">getDescription</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDescription</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns a long description of the failure. For example, a stack trace.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-message.html">getMessage</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getMessage</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns a short message (typically one line) for the failure.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

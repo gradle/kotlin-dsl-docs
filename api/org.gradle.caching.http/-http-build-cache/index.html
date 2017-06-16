@@ -1,0 +1,113 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>HttpBuildCache - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.caching.http</a>&nbsp;/&nbsp;<a href=".">HttpBuildCache</a><br/>
+<br/>
+<h1>HttpBuildCache</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">HttpBuildCache</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.caching.configuration/-abstract-build-cache/index.html"><span class="identifier">AbstractBuildCache</span></a></code>
+<p>Configuration object for the HTTP build cache. The build cache only supports BASIC authentication currently. 
+<p>Cache entries are loaded via GET and stored via PUT requests.</p>
+ For a GET request we expect a 200 or 404 response and for PUT we expect any 2xx response. Other responses are treated as recoverable or non-recoverable errors, depending on the status code. E.g. we treat authentication failures (401 and 409) as non-recoverable while an internal server error (500) is recoverable.</p>
+<p><strong>Since</strong><br/>
+3.5</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">HttpBuildCache</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="credentials.html">credentials</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">credentials</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.http.HttpBuildCache$credentials(org.gradle.api.Action((org.gradle.caching.http.HttpBuildCacheCredentials)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-http-build-cache-credentials/index.html"><span class="identifier">HttpBuildCacheCredentials</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the credentials used to access the HTTP cache backend.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-credentials.html">getCredentials</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getCredentials</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-http-build-cache-credentials/index.html"><span class="identifier">HttpBuildCacheCredentials</span></a></code>
+<p>Returns the credentials used to access the HTTP cache backend.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-url.html">getUrl</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getUrl</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/net/URI.html"><span class="identifier">URI</span></a></code>
+<p>Returns the URI to the cache.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-url.html">setUrl</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setUrl</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.http.HttpBuildCache$setUrl(kotlin.String)/url">url</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setUrl</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.http.HttpBuildCache$setUrl(java.net.URL)/url">url</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/net/URL.html"><span class="identifier">URL</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the URL of the cache. The URL must end in a '/'.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setUrl</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.http.HttpBuildCache$setUrl(java.net.URI)/url">url</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/net/URI.html"><span class="identifier">URI</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.caching.configuration/-abstract-build-cache/is-enabled.html">isEnabled</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isEnabled</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.caching.configuration/-abstract-build-cache/is-push.html">isPush</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isPush</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.caching.configuration/-abstract-build-cache/set-enabled.html">setEnabled</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setEnabled</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.configuration.AbstractBuildCache$setEnabled(kotlin.Boolean)/enabled">enabled</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.caching.configuration/-abstract-build-cache/set-push.html">setPush</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setPush</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.configuration.AbstractBuildCache$setPush(kotlin.Boolean)/push">push</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

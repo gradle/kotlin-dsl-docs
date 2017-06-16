@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PomFilterContainer.setPom - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.maven</a>&nbsp;/&nbsp;<a href="index.html">PomFilterContainer</a>&nbsp;/&nbsp;<a href=".">setPom</a><br/>
+<br/>
+<h1>setPom</h1>
+<a name="org.gradle.api.artifacts.maven.PomFilterContainer$setPom(org.gradle.api.artifacts.maven.MavenPom)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setPom</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$setPom(org.gradle.api.artifacts.maven.MavenPom)/defaultPom">defaultPom</span><span class="symbol">:</span>&nbsp;<a href="../-maven-pom/index.html"><span class="identifier">MavenPom</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Sets the default POM to be used. This POM is active if no custom filters have been added (see <code><a href="#">#addFilter(String, org.gradle.api.artifacts.maven.PublishFilter)</a></code>). If at least one custom filter has been added the default POM is not used any longer.</p>
+ 
+<p>Usually you don't need to set this property as the default value provides you a POM object you might use for configuration. By default the properties of such a POM object are all null. If they are null, Gradle will use default values for generating the Maven POM. Those default values are derived from the deployable artifact and from the project type (e.g. java, war, ...). If you explicitly set a POM property, Gradle will use this instead.</p>
+</p>
+<h3>Parameters</h3>
+<a name="defaultPom"></a>
+<code>defaultPom</code> - 
+</BODY>
+</HTML>

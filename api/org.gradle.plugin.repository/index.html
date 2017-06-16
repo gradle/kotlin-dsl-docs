@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.plugin.repository - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.plugin.repository</a><br/>
+<br/>
+<h2>Package org.gradle.plugin.repository</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-gradle-plugin-portal.html">GradlePluginPortal</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">GradlePluginPortal</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-plugin-repository.html"><span class="identifier">PluginRepository</span></a></code>
+<p>The Gradle Plugin Portal which can be used to resolve plugins.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-ivy-plugin-repository/index.html">IvyPluginRepository</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">IvyPluginRepository</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-plugin-repository.html"><span class="identifier">PluginRepository</span></a><span class="symbol">, </span><a href="../org.gradle.api.artifacts.repositories/-authentication-supported/index.html"><span class="identifier">AuthenticationSupported</span></a></code>
+<p>Represents an Ivy repository which contains Gradle plugins.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-plugin-repository/index.html">MavenPluginRepository</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MavenPluginRepository</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-plugin-repository.html"><span class="identifier">PluginRepository</span></a><span class="symbol">, </span><a href="../org.gradle.api.artifacts.repositories/-authentication-supported/index.html"><span class="identifier">AuthenticationSupported</span></a></code>
+<p>Represents a Maven repository which contains Gradle plugins.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-plugin-repositories-spec/index.html">PluginRepositoriesSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PluginRepositoriesSpec</span></code>
+<p>Used to declare org.gradle.plugin.repository.PluginRepository instances. 
+<p> Plugin repositories added via this interface will used to resolve plugins specified in the <code>plugins {}</code> block.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-plugin-repository.html">PluginRepository</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PluginRepository</span></code>
+<p>Represents a repository from which Gradle plugins can be resolved. 
+<p> This type of repository will only be consulted when resolving plugins applied using the <code>plugins {}</code> syntax.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

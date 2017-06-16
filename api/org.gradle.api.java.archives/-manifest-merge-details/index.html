@@ -1,0 +1,82 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ManifestMergeDetails - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.java.archives</a>&nbsp;/&nbsp;<a href=".">ManifestMergeDetails</a><br/>
+<br/>
+<h1>ManifestMergeDetails</h1>
+<code><span class="keyword">interface </span><span class="identifier">ManifestMergeDetails</span></code>
+<p>Details of a value being merged from two different manifests.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="exclude.html">exclude</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Excludes this key from being in the manifest after the merge.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-base-value.html">getBaseValue</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBaseValue</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the value for the key of the manifest that is the target of the merge.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-key.html">getKey</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getKey</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the key that is to be merged.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-merge-value.html">getMergeValue</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getMergeValue</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the value for the key of the manifest that is the source for the merge.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-section.html">getSection</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSection</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the section this merge details belongs to.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-value.html">getValue</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getValue</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the value for the key of the manifest after the merge takes place. By default this is the value of the source for the merge.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-value.html">setValue</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setValue</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.java.archives.ManifestMergeDetails$setValue(kotlin.String)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set's the value for the key of the manifest after the merge takes place.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

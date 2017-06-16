@@ -1,0 +1,151 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>FunctionalSourceSet - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.language.base</a>&nbsp;/&nbsp;<a href=".">FunctionalSourceSet</a><br/>
+<br/>
+<h1>FunctionalSourceSet</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">FunctionalSourceSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.model/-model-map/index.html"><span class="identifier">ModelMap</span></a><span class="symbol">&lt;</span><a href="-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a><span class="symbol">&gt;</span></code>
+<p>A container holding LanguageSourceSets with a similar function (production code, test code, etc.).</p>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../org.gradle.model/-model-map/after-each.html">afterEach</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">afterEach</span><span class="symbol">(</span><span class="identifier" id="org.gradle.model.ModelMap$afterEach(java.lang.Class((org.gradle.model.ModelMap.afterEach.S)), org.gradle.api.Action((org.gradle.model.ModelMap.afterEach.S)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.model.ModelMap$afterEach(java.lang.Class((org.gradle.model.ModelMap.afterEach.S)), org.gradle.api.Action((org.gradle.model.ModelMap.afterEach.S)))/configAction">configAction</span><span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies the given action to each item of the given type in the collection, as each item is required. 
+<p>The given action is invoked to configure the item when the item is required. It is called after any actions provided to <code><a href="#">#beforeEach(org.gradle.api.Action)</a></code>, <code><a href="#">#create(String, * org.gradle.api.Action)</a></code>, and other mutation methods.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.model/-model-map/before-each.html">beforeEach</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">beforeEach</span><span class="symbol">(</span><span class="identifier" id="org.gradle.model.ModelMap$beforeEach(java.lang.Class((org.gradle.model.ModelMap.beforeEach.S)), org.gradle.api.Action((org.gradle.model.ModelMap.beforeEach.S)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.model.ModelMap$beforeEach(java.lang.Class((org.gradle.model.ModelMap.beforeEach.S)), org.gradle.api.Action((org.gradle.model.ModelMap.beforeEach.S)))/configAction">configAction</span><span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies the given action to each item of the given type in this collection, as each item is required. 
+<p>The given action is invoked to configure the item when the item is required. It is called before any actions provided to <code><a href="#">#create(String, org.gradle.api.Action)</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.model/-model-map/contains-key.html">containsKey</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">containsKey</span><span class="symbol">(</span><span class="identifier" id="org.gradle.model.ModelMap$containsKey(kotlin.Any)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if this collection contains an item with the given name.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.model/-model-map/contains-value.html">containsValue</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">containsValue</span><span class="symbol">(</span><span class="identifier" id="org.gradle.model.ModelMap$containsValue(kotlin.Any)/item">item</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if this collection contains the given item.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.model/-model-map/create.html">create</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">create</span><span class="symbol">(</span><span class="identifier" id="org.gradle.model.ModelMap$create(kotlin.String, java.lang.Class((org.gradle.model.ModelMap.create.S)), org.gradle.api.Action((org.gradle.model.ModelMap.create.S)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.model.ModelMap$create(kotlin.String, java.lang.Class((org.gradle.model.ModelMap.create.S)), org.gradle.api.Action((org.gradle.model.ModelMap.create.S)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.model.ModelMap$create(kotlin.String, java.lang.Class((org.gradle.model.ModelMap.create.S)), org.gradle.api.Action((org.gradle.model.ModelMap.create.S)))/configAction">configAction</span><span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Defines an item with the given name and type. The item is not created immediately, but is instead created as it is required. 
+<p>The given action is invoked to configure the item when the item is required.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">create</span><span class="symbol">(</span><span class="identifier" id="org.gradle.model.ModelMap$create(kotlin.String, java.lang.Class((org.gradle.model.ModelMap.create.S)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.model.ModelMap$create(kotlin.String, java.lang.Class((org.gradle.model.ModelMap.create.S)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Defines an item with the given name and type. The item is not created immediately, but is instead created as it is required.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">create</span><span class="symbol">(</span><span class="identifier" id="org.gradle.model.ModelMap$create(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Defines an item with the given name and type T. The item is not created immediately, but is instead created as it is required.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.model/-model-map/get.html">get</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="org.gradle.model.ModelMap$get(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="org.gradle.model.ModelMap$get(kotlin.Any)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Returns the item with the given name, if any.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.model/-model-map/is-empty.html">isEmpty</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isEmpty</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if this collection contains no items.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.model/-model-map/key-set.html">keySet</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">keySet</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the names of the items in this collection.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.model/-model-map/named.html">named</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">named</span><span class="symbol">(</span><span class="identifier" id="org.gradle.model.ModelMap$named(kotlin.String, java.lang.Class((org.gradle.model.RuleSource)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.model.ModelMap$named(kotlin.String, java.lang.Class((org.gradle.model.RuleSource)))/ruleSource">ruleSource</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../org.gradle.model/-rule-source/index.html"><span class="identifier">RuleSource</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies the given rule source class to the given item, when the item is required. 
+<p>Rules are applied in the scope of the item therefore: </p>
+<ul> <li>subject by-type and by-path bindings are of inner scope</li>
+ <li>subject can be bound by type to a child of the scope in which the rule is applied</li>
+ <li>input by-path bindings are of inner scope</li>
+ <li>input by-type bindings are of outer scope</li>
+ </ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.model/-model-map/size.html">size</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">size</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>Returns the number of items in this collection.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.model/-model-map/values.html">values</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">values</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Returns the items in this collection.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.model/-model-map/with-type.html">withType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">withType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.model.ModelMap$withType(java.lang.Class((org.gradle.model.ModelMap.withType.S)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.model/-model-map/index.html"><span class="identifier">ModelMap</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span></code>
+<p>Returns a collection containing the items from this collection which are of the specified type.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">withType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.model.ModelMap$withType(java.lang.Class((org.gradle.model.ModelMap.withType.S)), org.gradle.api.Action((org.gradle.model.ModelMap.withType.S)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.model.ModelMap$withType(java.lang.Class((org.gradle.model.ModelMap.withType.S)), org.gradle.api.Action((org.gradle.model.ModelMap.withType.S)))/configAction">configAction</span><span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies the given action to each item of the given type in the collection, as each item is required. 
+<p>The given action is invoked to configure the item when the item is required. It is called after any actions provided to <code><a href="#">#beforeEach(org.gradle.api.Action)</a></code> and <code><a href="#">#create(String, * org.gradle.api.Action)</a></code>.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">withType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.model.ModelMap$withType(java.lang.Class((org.gradle.model.ModelMap.withType.S)), java.lang.Class((org.gradle.model.RuleSource)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.model.ModelMap$withType(java.lang.Class((org.gradle.model.ModelMap.withType.S)), java.lang.Class((org.gradle.model.RuleSource)))/rules">rules</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../org.gradle.model/-rule-source/index.html"><span class="identifier">RuleSource</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies the given rules to all items of the collection of the given type.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

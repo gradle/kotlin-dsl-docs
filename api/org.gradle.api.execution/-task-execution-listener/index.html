@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TaskExecutionListener - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.execution</a>&nbsp;/&nbsp;<a href=".">TaskExecutionListener</a><br/>
+<br/>
+<h1>TaskExecutionListener</h1>
+<code><span class="keyword">interface </span><span class="identifier">TaskExecutionListener</span></code>
+<p>
+<p>A <code>TaskExecutionListener</code> is notified of the execution of the tasks in a build.</p>
+ 
+<p>You can add a <code>TaskExecutionListener</code> to a build using <code><a href="../-task-execution-graph/add-task-execution-listener.html">org.gradle.api.execution.TaskExecutionGraph#addTaskExecutionListener</a></code></p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="after-execute.html">afterExecute</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">afterExecute</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.execution.TaskExecutionListener$afterExecute(org.gradle.api.Task, org.gradle.api.tasks.TaskState)/task">task</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.execution.TaskExecutionListener$afterExecute(org.gradle.api.Task, org.gradle.api.tasks.TaskState)/state">state</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks/-task-state/index.html"><span class="identifier">TaskState</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>This method is call immediately after a task has been executed. It is always called, regardless of whether the task completed successfully, or failed with an exception.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="before-execute.html">beforeExecute</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">beforeExecute</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.execution.TaskExecutionListener$beforeExecute(org.gradle.api.Task)/task">task</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>This method is called immediately before a task is executed.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-task-execution-adapter/index.html">TaskExecutionAdapter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">TaskExecutionAdapter</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">TaskExecutionListener</span></code>
+<p>A TaskExecutionListener adapter class for receiving task execution events. The methods in this class are empty. This class exists as convenience for creating listener objects.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

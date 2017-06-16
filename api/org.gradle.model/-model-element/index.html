@@ -1,0 +1,83 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ModelElement - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.model</a>&nbsp;/&nbsp;<a href=".">ModelElement</a><br/>
+<br/>
+<h1>ModelElement</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ModelElement</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
+<p>Represents an element in a model. Elements are arranged in a hierarchy.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns a human-consumable display name for this element.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of this element. Each element has a name associated with it, that uniquely identifies the element amongst its siblings. Some element have their name generated or automatically assigned, and for these elements the name may not be human consumable.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.platform.base/-component-spec/index.html">ComponentSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ModelElement</span></code>
+<p>A software component that is built by Gradle.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-model-map/index.html">ModelMap</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ModelMap</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">ModelElement</span></code>
+<p>Model backed map like structure allowing adding of items where instantiation is managed. 
+<p> org.gradle.model.Managed types may declare model map properties. Model maps can only contain managed types.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-model-set/index.html">ModelSet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ModelSet</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">ModelElement</span></code>
+<p>A set of managed model objects. 
+<p> org.gradle.model.Managed types may declare managed set properties. Managed sets can only contain managed types. </p>
+<p> Managed set objects cannot be mutated via the mutative methods of the java.util.Set interface (e.g. <code><a href="#">java.util.Set#add(Object)</a></code>, <code><a href="#">java.util.Set#clear()</a></code>). To add elements to the set, the <code><a href="#">#create(Action)</a></code> method can be used.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.platform.base/-variant-component/index.html">VariantComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VariantComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ModelElement</span></code>
+<p>A component that has one or more mutually exclusive variants.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

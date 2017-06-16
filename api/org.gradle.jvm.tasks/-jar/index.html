@@ -1,0 +1,204 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Jar - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.jvm.tasks</a>&nbsp;/&nbsp;<a href=".">Jar</a><br/>
+<br/>
+<h1>Jar</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Jar</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks.bundling/-zip/index.html"><span class="identifier">Zip</span></a></code>
+<p>Assembles a JAR archive.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">Jar</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-d-e-f-a-u-l-t_-e-x-t-e-n-s-i-o-n.html">DEFAULT_EXTENSION</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">DEFAULT_EXTENSION</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.bundling/-zip/-z-i-p_-e-x-t-e-n-s-i-o-n.html">ZIP_EXTENSION</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">ZIP_EXTENSION</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-manifest.html">getManifest</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getManifest</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.java.archives/-manifest/index.html"><span class="identifier">Manifest</span></a></code>
+<p>Returns the manifest for this JAR archive.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-manifest-content-charset.html">getManifestContentCharset</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getManifestContentCharset</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The character set used to encode the manifest content. Defaults to UTF-8. You can change this property but it is not recommended as JVMs expect manifests content to be encoded using UTF-8.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-meta-inf.html">getMetaInf</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMetaInf</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-metadata-charset.html">getMetadataCharset</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMetadataCharset</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The character set used to encode JAR metadata like file names. Defaults to UTF-8. You can change this property but it is not recommended as JVMs expect JAR metadata to be encoded using UTF-8</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="manifest.html">manifest</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">manifest</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.tasks.Jar$manifest(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Jar</span></code>
+<p>Configures the manifest for this JAR archive. 
+<p>The given closure is executed to configure the manifest. The org.gradle.api.java.archives.Manifest is passed to the closure as its delegate.</p>
+</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">manifest</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.tasks.Jar$manifest(org.gradle.api.Action((org.gradle.api.java.archives.Manifest)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.java.archives/-manifest/index.html"><span class="identifier">Manifest</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Jar</span></code>
+<p>Configures the manifest for this JAR archive. 
+<p>The given action is executed to configure the manifest.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="meta-inf.html">metaInf</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">metaInf</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.tasks.Jar$metaInf(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a></code>
+<p>Adds content to this JAR archive's META-INF directory. 
+<p>The given closure is executed to configure a <code>CopySpec</code>. The org.gradle.api.file.CopySpec is passed to the closure as its delegate.</p>
+</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">metaInf</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.tasks.Jar$metaInf(org.gradle.api.Action((org.gradle.api.file.CopySpec)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a></code>
+<p>Adds content to this JAR archive's META-INF directory. 
+<p>The given action is executed to configure a <code>CopySpec</code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-manifest.html">setManifest</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setManifest</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.tasks.Jar$setManifest(org.gradle.api.java.archives.Manifest)/manifest">manifest</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.java.archives/-manifest/index.html"><span class="identifier">Manifest</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the manifest for this JAR archive.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-manifest-content-charset.html">setManifestContentCharset</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setManifestContentCharset</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.tasks.Jar$setManifestContentCharset(kotlin.String)/manifestContentCharset">manifestContentCharset</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The character set used to encode the manifest content.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-metadata-charset.html">setMetadataCharset</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMetadataCharset</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.tasks.Jar$setMetadataCharset(kotlin.String)/metadataCharset">metadataCharset</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The character set used to encode JAR metadata like file names. Defaults to UTF-8. You can change this property but it is not recommended as JVMs expect JAR metadata to be encoded using UTF-8</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.bundling/-zip/get-entry-compression.html">getEntryCompression</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getEntryCompression</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.bundling/-zip-entry-compression/index.html"><span class="identifier">ZipEntryCompression</span></a></code>
+<p>Returns the compression level of the entries of the archive. If set to <code><a href="#">ZipEntryCompression#DEFLATED</a></code> (the default), each entry is compressed using the DEFLATE algorithm. If set to <code><a href="#">ZipEntryCompression#STORED</a></code> the entries of the archive are left uncompressed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.bundling/-zip/is-zip64.html">isZip64</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isZip64</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether the zip can contain more than 65535 files and/or support files greater than 4GB in size. 
+<p> The standard zip format has hard limits on file size and count. The <a href="#">Zip64 format extension</a> practically removes these limits and is therefore required for building large zips. </p>
+<p> However, not all Zip readers support the Zip64 extensions. Notably, the java.util.zip.ZipInputStream JDK class does not support Zip64 for versions earlier than Java 7. This means you should not enable this property if you are building JARs to be used with Java 6 and earlier runtimes.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.bundling/-zip/set-entry-compression.html">setEntryCompression</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setEntryCompression</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.bundling.Zip$setEntryCompression(org.gradle.api.tasks.bundling.ZipEntryCompression)/entryCompression">entryCompression</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks.bundling/-zip-entry-compression/index.html"><span class="identifier">ZipEntryCompression</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the compression level of the entries of the archive. If set to <code><a href="#">ZipEntryCompression#DEFLATED</a></code> (the default), each entry is compressed using the DEFLATE algorithm. If set to <code><a href="#">ZipEntryCompression#STORED</a></code> the entries of the archive are left uncompressed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.bundling/-zip/set-zip64.html">setZip64</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setZip64</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.bundling.Zip$setZip64(kotlin.Boolean)/allowZip64">allowZip64</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Enables building zips with more than 65535 files or bigger than 4GB.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.bundling/-jar/index.html">Jar</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Jar</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Jar</span></code>
+<p>Assembles a JAR archive.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

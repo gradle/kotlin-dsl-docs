@@ -1,0 +1,131 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PomFilterContainer - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.maven</a>&nbsp;/&nbsp;<a href=".">PomFilterContainer</a><br/>
+<br/>
+<h1>PomFilterContainer</h1>
+<code><span class="keyword">interface </span><span class="identifier">PomFilterContainer</span></code>
+<p>Manages a set of MavenPom instances and their associated PublishFilter instances.</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-d-e-f-a-u-l-t_-a-r-t-i-f-a-c-t_-p-o-m_-n-a-m-e.html">DEFAULT_ARTIFACT_POM_NAME</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">DEFAULT_ARTIFACT_POM_NAME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-filter.html">addFilter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addFilter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$addFilter(kotlin.String, org.gradle.api.artifacts.maven.PublishFilter)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$addFilter(kotlin.String, org.gradle.api.artifacts.maven.PublishFilter)/publishFilter">publishFilter</span><span class="symbol">:</span>&nbsp;<a href="../-publish-filter/index.html"><span class="identifier">PublishFilter</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-maven-pom/index.html"><span class="identifier">MavenPom</span></a></code>
+<p>If you want to deploy more than one artifact you need to define filters to select each of those artifacts. The method returns a POM object associated with this filter, that allows you to customize the POM generation for the artifact selected by the filter.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addFilter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$addFilter(kotlin.String, groovy.lang.Closure((kotlin.Any)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$addFilter(kotlin.String, groovy.lang.Closure((kotlin.Any)))/filter">filter</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-maven-pom/index.html"><span class="identifier">MavenPom</span></a></code>
+<p>Adds a publish filter.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="filter.html">filter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$filter(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-publish-filter/index.html"><span class="identifier">PublishFilter</span></a></code>
+<p>Returns a filter added with <code><a href="#">#addFilter(String, org.gradle.api.artifacts.maven.PublishFilter)</a></code>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$filter(groovy.lang.Closure((kotlin.Any)))/filter">filter</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the default publish filter.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-active-pom-filters.html">getActivePomFilters</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getActivePomFilters</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">PomFilter</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-filter.html">getFilter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFilter</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-publish-filter/index.html"><span class="identifier">PublishFilter</span></a></code>
+<p>Returns the default filter being used. .</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-pom.html">getPom</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPom</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-maven-pom/index.html"><span class="identifier">MavenPom</span></a></code>
+<p>Returns the POM property of the custom filter. The POM property can be used to customize the POM generation. By default the properties of such a POM object are all null. Null means that Gradle will use default values for generating the Maven POM. Those default values are derived from the deployable artifact and from the project type (e.g. java, war, ...). If you explicitly set a POM property, Gradle will use those instead.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="pom.html">pom</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">pom</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$pom(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-maven-pom/index.html"><span class="identifier">MavenPom</span></a></code>
+<p>Returns the POM associated with a filter added with <code><a href="#">#addFilter(String, org.gradle.api.artifacts.maven.PublishFilter)</a></code>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">pom</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$pom(kotlin.String, groovy.lang.Closure((kotlin.Any)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$pom(kotlin.String, groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-maven-pom/index.html"><span class="identifier">MavenPom</span></a></code>
+<p>Configures a POM by a closure. The closure statements are delegated to the POM object associated with the given name.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">pom</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$pom(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-maven-pom/index.html"><span class="identifier">MavenPom</span></a></code>
+<p>Configures the default POM by a closure. The closure statements are delegated to the default POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-filter.html">setFilter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setFilter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$setFilter(org.gradle.api.artifacts.maven.PublishFilter)/defaultFilter">defaultFilter</span><span class="symbol">:</span>&nbsp;<a href="../-publish-filter/index.html"><span class="identifier">PublishFilter</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Sets the default filter to be used. This filter is active if no custom filters have been added (see <code><a href="#">#addFilter(String, org.gradle.api.artifacts.maven.PublishFilter)</a></code>). If at least one custom filter has been added the default filter is not used any longer.</p>
+ 
+<p>The default for this property is <code><a href="../-publish-filter/-a-l-w-a-y-s_-a-c-c-e-p-t.html">PublishFilter#ALWAYS_ACCEPT</a></code>. If there is only one artifact you are fine with this filter. If there is more than one artifact, deployment will lead to an exception, if you don't specify a filter that selects the artifact to deploy. If you want to deploy more than one artifact you have to use the (see <code><a href="#">#addFilter(String, org.gradle.api.artifacts.maven.PublishFilter)</a></code> method.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-pom.html">setPom</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setPom</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$setPom(org.gradle.api.artifacts.maven.MavenPom)/defaultPom">defaultPom</span><span class="symbol">:</span>&nbsp;<a href="../-maven-pom/index.html"><span class="identifier">MavenPom</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Sets the default POM to be used. This POM is active if no custom filters have been added (see <code><a href="#">#addFilter(String, org.gradle.api.artifacts.maven.PublishFilter)</a></code>). If at least one custom filter has been added the default POM is not used any longer.</p>
+ 
+<p>Usually you don't need to set this property as the default value provides you a POM object you might use for configuration. By default the properties of such a POM object are all null. If they are null, Gradle will use default values for generating the Maven POM. Those default values are derived from the deployable artifact and from the project type (e.g. java, war, ...). If you explicitly set a POM property, Gradle will use this instead.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-maven-resolver/index.html">MavenResolver</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MavenResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts.repositories/-artifact-repository/index.html"><span class="identifier">ArtifactRepository</span></a><span class="symbol">, </span><span class="identifier">PomFilterContainer</span></code>
+<p>An ArtifactRepository which can be used to publish artifacts to Maven repositories.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

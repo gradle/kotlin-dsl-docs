@@ -1,0 +1,104 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Managed - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.model</a>&nbsp;/&nbsp;<a href=".">Managed</a><br/>
+<br/>
+<h1>Managed</h1>
+<code><span class="identifier">@Target</span><span class="symbol">(</span>[AnnotationTarget.CLASS, AnnotationTarget.FILE]<span class="symbol">)</span> <span class="identifier">@Incubating</span> <span class="keyword">class </span><span class="identifier">Managed</span></code>
+<p>A managed type is transparent to the model space, and enforces immutability at the appropriate times in the object's lifecycle. 
+<p> Gradle generates implementations for managed types. As such, managed types are declared either as interfaces or abstract classes. The generated implementation integrates with the model space mechanisms, and manages mutability. </p>
+<p> Managed types are mostly behaviour-less, as they are data. Instances of managed types should effectively be considered value objects. </p>
+Properties 
+<p> Managed types declare their structure as properties, via getter and setter methods. Getter and setter methods are expected to conform to the well-known Java Bean naming conventions. A read/write “name” property would be expressed via the following methods: </p>
+<pre><code> void setName(String name); String getName(); </code></pre> 
+<p> A getter and setter must be declared for each property that is not of a managed type or of ModelSet. For properties of managed types or of ModelSet the getter is mandatory and the setter is optional. If no setter is provided the property is considered inherent and defaults to an "empty" instance of the type. In addition to the traditional getter method, properties of type <code>boolean</code> (but not <code>Boolean</code>) also support a getter method which name starts with <code>is</code>, for example: </p>
+<pre><code> void setEnabled(boolean enabled); boolean isEnabed(); </code></pre> Supported property types 
+<p> The following JDK types are allowed: </p>
+<ul> <li>String</li>
+ <li>Boolean</li>
+ <li>Character</li>
+ <li>Byte</li>
+ <li>Short</li>
+ <li>Integer</li>
+ <li>Long</li>
+ <li>Float</li>
+ <li>Double</li>
+ <li>java.math.BigInteger</li>
+ <li>java.math.BigDecimal</li>
+ <li>java.io.File</li>
+ </ul>
+ 
+<p> All primitive types and Enum types are also allowed. </p>
+<p> Properties that are themselves of a managed type are also supported. </p>
+<p> Currently, the only collection types that are supported are ModelSet and ModelMap, as well as java.util.Set or java.util.List of org.gradle.model.internal.manage.schema.extract.ScalarTypes, where scalar types is either one of the supported immutable JDK types above or an enumeration. </p>
+<p> Properties of any other type must have their getter annotated with Unmanaged. An unmanaged property is not transparent to the model infrastructure and is guaranteed to be immutable when realized. </p>
+Named types 
+<p> Managed types may implement/extend the org.gradle.api.Named interface. Any managed type implementing this interface will have its <code>name</code> attribute populated automatically based on the name of the corresponding node in the model graph. </p>
+<p> The ModelMap type requires that its elements are org.gradle.api.Named. </p>
+Inheritance 
+<p> Managed types can be arranged into an inheritance hierarchy. Every type in the hierarchy must conform to the constraints of managed types. </p>
+Calculated read-only properties 
+<p> Managed types can contain getter methods that return calculated values, based on other properties. For example, a “name” property may return the concatenation of a “firstName” and “lastName” property. When using Java 8 or later, such properties can be implemented as interface default methods. Alternatively, the managed type can be implemented as an abstract class with the calculated property implemented as a non-abstract getter method. In both cases, the implementation of the calculated property getter may not call any setter method. </p>
+Abstract classes 
+<p> A managed type can be implemented as an abstract class. All property getters and setters must be declared <code>abstract</code> (with the exception of calculated read-only properties). The class cannot contain instance variables, constructors, or any methods that are not a getter or setter. </p>
+Creating managed model elements 
+<p> Please see Model for information on creating model elements of managed types.</p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">Managed</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>A managed type is transparent to the model space, and enforces immutability at the appropriate times in the object's lifecycle. 
+<p> Gradle generates implementations for managed types. As such, managed types are declared either as interfaces or abstract classes. The generated implementation integrates with the model space mechanisms, and manages mutability. </p>
+<p> Managed types are mostly behaviour-less, as they are data. Instances of managed types should effectively be considered value objects. </p>
+Properties 
+<p> Managed types declare their structure as properties, via getter and setter methods. Getter and setter methods are expected to conform to the well-known Java Bean naming conventions. A read/write “name” property would be expressed via the following methods: </p>
+<pre><code> void setName(String name); String getName(); </code></pre> 
+<p> A getter and setter must be declared for each property that is not of a managed type or of ModelSet. For properties of managed types or of ModelSet the getter is mandatory and the setter is optional. If no setter is provided the property is considered inherent and defaults to an "empty" instance of the type. In addition to the traditional getter method, properties of type <code>boolean</code> (but not <code>Boolean</code>) also support a getter method which name starts with <code>is</code>, for example: </p>
+<pre><code> void setEnabled(boolean enabled); boolean isEnabed(); </code></pre> Supported property types 
+<p> The following JDK types are allowed: </p>
+<ul> <li>String</li>
+ <li>Boolean</li>
+ <li>Character</li>
+ <li>Byte</li>
+ <li>Short</li>
+ <li>Integer</li>
+ <li>Long</li>
+ <li>Float</li>
+ <li>Double</li>
+ <li>java.math.BigInteger</li>
+ <li>java.math.BigDecimal</li>
+ <li>java.io.File</li>
+ </ul>
+ 
+<p> All primitive types and Enum types are also allowed. </p>
+<p> Properties that are themselves of a managed type are also supported. </p>
+<p> Currently, the only collection types that are supported are ModelSet and ModelMap, as well as java.util.Set or java.util.List of org.gradle.model.internal.manage.schema.extract.ScalarTypes, where scalar types is either one of the supported immutable JDK types above or an enumeration. </p>
+<p> Properties of any other type must have their getter annotated with Unmanaged. An unmanaged property is not transparent to the model infrastructure and is guaranteed to be immutable when realized. </p>
+Named types 
+<p> Managed types may implement/extend the org.gradle.api.Named interface. Any managed type implementing this interface will have its <code>name</code> attribute populated automatically based on the name of the corresponding node in the model graph. </p>
+<p> The ModelMap type requires that its elements are org.gradle.api.Named. </p>
+Inheritance 
+<p> Managed types can be arranged into an inheritance hierarchy. Every type in the hierarchy must conform to the constraints of managed types. </p>
+Calculated read-only properties 
+<p> Managed types can contain getter methods that return calculated values, based on other properties. For example, a “name” property may return the concatenation of a “firstName” and “lastName” property. When using Java 8 or later, such properties can be implemented as interface default methods. Alternatively, the managed type can be implemented as an abstract class with the calculated property implemented as a non-abstract getter method. In both cases, the implementation of the calculated property getter may not call any setter method. </p>
+Abstract classes 
+<p> A managed type can be implemented as an abstract class. All property getters and setters must be declared <code>abstract</code> (with the exception of calculated read-only properties). The class cannot contain instance variables, constructors, or any methods that are not a getter or setter. </p>
+Creating managed model elements 
+<p> Please see Model for information on creating model elements of managed types.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,139 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Usage - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.attributes</a>&nbsp;/&nbsp;<a href=".">Usage</a><br/>
+<br/>
+<h1>Usage</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">Usage</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
+<p>Represents the usage of a configuration. Typical usages include compilation or runtime. This interface allows the user to customize usages by implementing this interface.</p>
+<p><strong>Since</strong><br/>
+3.4</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-c_-p-l-u-s_-p-l-u-s_-a-p-i.html">C_PLUS_PLUS_API</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">C_PLUS_PLUS_API</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The C++ API of a library, packaged as header directories.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-f-o-r_-c-o-m-p-i-l-e.html">FOR_COMPILE</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">FOR_COMPILE</span><span class="symbol">: </span><span class="identifier">Usage</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-f-o-r_-r-u-n-t-i-m-e.html">FOR_RUNTIME</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">FOR_RUNTIME</span><span class="symbol">: </span><span class="identifier">Usage</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-j-a-v-a_-a-p-i.html">JAVA_API</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">JAVA_API</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The Java API of a library, packaged as class path elements, either a JAR or a classes directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-j-a-v-a_-a-p-i_-c-l-a-s-s-e-s.html">JAVA_API_CLASSES</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">JAVA_API_CLASSES</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The Java API of a library, packaged as class path elements, either a JAR or a classes directory. Should not include resources, but may.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-j-a-v-a_-r-u-n-t-i-m-e.html">JAVA_RUNTIME</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">JAVA_RUNTIME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The Java runtime of a component, packaged as class path elements, either a JAR or a classes directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-j-a-v-a_-r-u-n-t-i-m-e_-c-l-a-s-s-e-s.html">JAVA_RUNTIME_CLASSES</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">JAVA_RUNTIME_CLASSES</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The Java runtime classes of a component, packaged as class path elements, either a JAR or a classes directory. Should not include resources, but may.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-j-a-v-a_-r-u-n-t-i-m-e_-j-a-r-s.html">JAVA_RUNTIME_JARS</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">JAVA_RUNTIME_JARS</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The Java runtime of a component, packaged as JAR only. Must not include classes directories.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-j-a-v-a_-r-u-n-t-i-m-e_-r-e-s-o-u-r-c-e-s.html">JAVA_RUNTIME_RESOURCES</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">JAVA_RUNTIME_RESOURCES</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The Java runtime resources of a component, packaged as class path elements, either a JAR or a classes directory. Should not include classes, but may.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-n-a-t-i-v-e_-l-i-n-k.html">NATIVE_LINK</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">NATIVE_LINK</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The native link files of a library, packaged as static or shared library.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-n-a-t-i-v-e_-r-u-n-t-i-m-e.html">NATIVE_RUNTIME</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">NATIVE_RUNTIME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The native runtime files of a library, packaged as a shared library.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-u-s-a-g-e_-a-t-t-r-i-b-u-t-e.html">USAGE_ATTRIBUTE</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">USAGE_ATTRIBUTE</span><span class="symbol">: </span><a href="../-attribute/index.html"><span class="identifier">Attribute</span></a><span class="symbol">&lt;</span><span class="identifier">Usage</span><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-named/get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The object's name. 
+<p> Must be constant for the life of the object.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

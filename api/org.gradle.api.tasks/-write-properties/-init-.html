@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>WriteProperties.<init> - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks</a>&nbsp;/&nbsp;<a href="index.html">WriteProperties</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.gradle.api.tasks.WriteProperties$&lt;init&gt;()"></a>
+<code><span class="identifier">WriteProperties</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Writes a java.util.Properties in a way that the results can be expected to be reproducible. 
+<p>There are a number of differences compared to how properties are stored:</p>
+ <ul> <li>no timestamp comment is generated at the beginning of the file</li>
+ <li>the lines in the resulting files are separated by a pre-set separator (defaults to '\n') instead of the system default line separator</li>
+ <li>the properties are sorted alphabetically</li>
+ </ul>
+ 
+<p>Like with java.util.Properties, Unicode characters are escaped when using the default Latin-1 (ISO-8559-1) encoding.</p>
+</p>
+<p><strong>See Also</strong><br/>
+<a href="#">java.util.Properties#store(OutputStream, String)</a></p>
+<p><strong>Since</strong><br/>
+3.3</p>
+</BODY>
+</HTML>

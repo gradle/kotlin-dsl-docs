@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PomFilterContainer.setFilter - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.maven</a>&nbsp;/&nbsp;<a href="index.html">PomFilterContainer</a>&nbsp;/&nbsp;<a href=".">setFilter</a><br/>
+<br/>
+<h1>setFilter</h1>
+<a name="org.gradle.api.artifacts.maven.PomFilterContainer$setFilter(org.gradle.api.artifacts.maven.PublishFilter)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setFilter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$setFilter(org.gradle.api.artifacts.maven.PublishFilter)/defaultFilter">defaultFilter</span><span class="symbol">:</span>&nbsp;<a href="../-publish-filter/index.html"><span class="identifier">PublishFilter</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Sets the default filter to be used. This filter is active if no custom filters have been added (see <code><a href="#">#addFilter(String, org.gradle.api.artifacts.maven.PublishFilter)</a></code>). If at least one custom filter has been added the default filter is not used any longer.</p>
+ 
+<p>The default for this property is <code><a href="../-publish-filter/-a-l-w-a-y-s_-a-c-c-e-p-t.html">PublishFilter#ALWAYS_ACCEPT</a></code>. If there is only one artifact you are fine with this filter. If there is more than one artifact, deployment will lead to an exception, if you don't specify a filter that selects the artifact to deploy. If you want to deploy more than one artifact you have to use the (see <code><a href="#">#addFilter(String, org.gradle.api.artifacts.maven.PublishFilter)</a></code> method.</p>
+</p>
+<h3>Parameters</h3>
+<a name="defaultFilter"></a>
+<code>defaultFilter</code> - 
+<p><strong>See Also</strong><br/>
+<a href="get-filter.html">#getFilter()</a></p>
+</BODY>
+</HTML>

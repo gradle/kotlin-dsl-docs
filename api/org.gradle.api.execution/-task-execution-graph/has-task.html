@@ -1,0 +1,38 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TaskExecutionGraph.hasTask - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.execution</a>&nbsp;/&nbsp;<a href="index.html">TaskExecutionGraph</a>&nbsp;/&nbsp;<a href=".">hasTask</a><br/>
+<br/>
+<h1>hasTask</h1>
+<a name="org.gradle.api.execution.TaskExecutionGraph$hasTask(kotlin.String)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">hasTask</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.execution.TaskExecutionGraph$hasTask(kotlin.String)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>
+<p>Determines whether the given task is included in the execution plan.</p>
+</p>
+<h3>Parameters</h3>
+<a name="path"></a>
+<code>path</code> - the <em>absolute</em> path of the task.
+<h3>Exceptions</h3>
+<a name="IllegalStateException"></a>
+<code>IllegalStateException</code> - When this graph has not been populated.
+<p><strong>Return</strong><br/>
+true if a task with the given path is included in the execution plan.</p>
+<a name="org.gradle.api.execution.TaskExecutionGraph$hasTask(org.gradle.api.Task)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">hasTask</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.execution.TaskExecutionGraph$hasTask(org.gradle.api.Task)/task">task</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>
+<p>Determines whether the given task is included in the execution plan.</p>
+</p>
+<h3>Parameters</h3>
+<a name="task"></a>
+<code>task</code> - the task
+<h3>Exceptions</h3>
+<a name="IllegalStateException"></a>
+<code>IllegalStateException</code> - When this graph has not been populated.
+<p><strong>Return</strong><br/>
+true if the given task is included in the execution plan.</p>
+</BODY>
+</HTML>

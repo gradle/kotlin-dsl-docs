@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GradleRunner.withProjectDir - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.testkit.runner</a>&nbsp;/&nbsp;<a href="index.html">GradleRunner</a>&nbsp;/&nbsp;<a href=".">withProjectDir</a><br/>
+<br/>
+<h1>withProjectDir</h1>
+<a name="org.gradle.testkit.runner.GradleRunner$withProjectDir(java.io.File)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withProjectDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$withProjectDir(java.io.File)/projectDir">projectDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">GradleRunner</span></a></code>
+<p>Sets the directory that the Gradle will be executed in. 
+<p> This is typically set to the root project of the build under test. </p>
+<p> A project directory must be set. This method must be called before <code><a href="build.html">#build()</a></code> or <code><a href="build-and-fail.html">#buildAndFail()</a></code>. </p>
+<p> All builds executed with the runner effectively implicitly add the <code>--no-search-upward</code> argument. This suppresses Gradle's default behaviour of searching upwards through the file system in order to find the root of the current project tree. This default behaviour is often utilised when focusing on a particular build within a multi-project build. This behaviour is suppressed due to test builds being executed potentially being created within a “real build” (e.g. under the <code>/build</code> directory of the plugin's project directory).</p>
+</p>
+<h3>Parameters</h3>
+<a name="projectDir"></a>
+<code>projectDir</code> - the project directory
+<p><strong>Return</strong><br/>
+<code>this</code></p>
+<p><strong>See Also</strong><br/>
+<a href="get-project-dir.html">#getProjectDir()</a></p>
+</BODY>
+</HTML>

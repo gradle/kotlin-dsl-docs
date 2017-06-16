@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Project.zipTree - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">Project</a>&nbsp;/&nbsp;<a href=".">zipTree</a><br/>
+<br/>
+<h1>zipTree</h1>
+<a name="org.gradle.api.Project$zipTree(kotlin.Any)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">zipTree</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$zipTree(kotlin.Any)/zipPath">zipPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<p>
+<p>Creates a new <code>FileTree</code> which contains the contents of the given ZIP file. The given zipPath path is evaluated as per <code><a href="#">#file(Object)</a></code>. You can combine this method with the <code><a href="#">#copy(groovy.lang.Closure)</a></code> method to unzip a ZIP file.</p>
+ 
+<p>The returned file tree is lazy, so that it scans for files only when the contents of the file tree are queried. The file tree is also live, so that it scans for files each time the contents of the file tree are queried.</p>
+</p>
+<h3>Parameters</h3>
+<a name="zipPath"></a>
+<code>zipPath</code> - The ZIP file. Evaluated as per <code><a href="#">#file(Object)</a></code>.
+<p><strong>Return</strong><br/>
+the file tree. Never returns null.</p>
+</BODY>
+</HTML>

@@ -1,0 +1,531 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api.artifacts - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.artifacts</a><br/>
+<br/>
+<h2>Package org.gradle.api.artifacts</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-artifact-collection/index.html">ArtifactCollection</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ArtifactCollection</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api.artifacts.result/-resolved-artifact-result/index.html"><span class="identifier">ResolvedArtifactResult</span></a><span class="symbol">&gt;</span></code>
+<p>A collection of artifacts resolved for a configuration. The configuration is resolved on demand when the collection is queried.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-artifact-identifier/index.html">ArtifactIdentifier</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ArtifactIdentifier</span></code>
+<p>The identifier for a module artifact.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-artifact-repository-container/index.html">ArtifactRepositoryContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ArtifactRepositoryContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named-domain-object-list/index.html"><span class="identifier">NamedDomainObjectList</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api.artifacts.repositories/-artifact-repository/index.html"><span class="identifier">ArtifactRepository</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">Configurable</span></code>
+<p>
+<p>A <code>ResolverContainer</code> is responsible for managing a set of ArtifactRepository instances. Repositories are arranged in a sequence.</p>
+ 
+<p>You can obtain a <code>ResolverContainer</code> instance by calling <code><a href="../org.gradle.api/-project/get-repositories.html">org.gradle.api.Project#getRepositories()</a></code> or using the <code>repositories</code> property in your build script.</p>
+ 
+<p>The resolvers in a container are accessible as read-only properties of the container, using the name of the resolver as the property name. For example:</p>
+ <pre><code> repositories.maven { name 'myResolver' } repositories.myResolver.url = 'some-url' </code></pre> 
+<p>A dynamic method is added for each resolver which takes a configuration closure. This is equivalent to calling <code><a href="#">#getByName(String, groovy.lang.Closure)</a></code>. For example:</p>
+ <pre><code> repositories.maven { name 'myResolver' } repositories.myResolver { url 'some-url' } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-artifact-view/index.html">ArtifactView</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ArtifactView</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.attributes/-has-attributes/index.html"><span class="identifier">HasAttributes</span></a></code>
+<p>A view over the artifacts resolved for this set of dependencies. By default, the view returns all files and artifacts, but this can be restricted by component identifier or by attributes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-client-module/index.html">ClientModule</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ClientModule</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-external-module-dependency/index.html"><span class="identifier">ExternalModuleDependency</span></a></code>
+<p>To model a module in your dependency declarations. Usually you can either declare a single dependency artifact or you declare a module dependency that depends on a module descriptor in a repository. With a client module you can declare a module dependency without the need of a module descriptor in a remote repository.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-component-metadata/index.html">ComponentMetadata</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentMetadata</span></code>
+<p>Provides a read-only view of a resolved component's metadata, which typically originates from a component descriptor (Ivy file, Maven POM).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-component-metadata-builder/index.html">ComponentMetadataBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentMetadataBuilder</span></code>
+<p>A component metadata builder.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-component-metadata-details/index.html">ComponentMetadataDetails</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentMetadataDetails</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-component-metadata/index.html"><span class="identifier">ComponentMetadata</span></a></code>
+<p>Describes a resolved component's metadata, which typically originates from a component descriptor (Ivy file, Maven POM). Some parts of the metadata can be changed via metadata rules (see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-component-metadata-supplier/index.html">ComponentMetadataSupplier</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentMetadataSupplier</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><a href="-component-metadata-supplier-details/index.html"><span class="identifier">ComponentMetadataSupplierDetails</span></a><span class="symbol">&gt;</span></code>
+<p>A component metadata rule is responsible for providing the initial metadata of a component from a remote repository, in place of parsing the descriptor. Users may implement a provider to make dependency resolution faster.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-component-metadata-supplier-details/index.html">ComponentMetadataSupplierDetails</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentMetadataSupplierDetails</span></code>
+<p>A component metadata rule details, giving access to the identifier of the component being resolved, the metadata builder, and the repository resource accessor for this.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-component-module-metadata/index.html">ComponentModuleMetadata</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentModuleMetadata</span></code>
+<p>Contains immutable component module metadata information.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-component-module-metadata-details/index.html">ComponentModuleMetadataDetails</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentModuleMetadataDetails</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-component-module-metadata/index.html"><span class="identifier">ComponentModuleMetadata</span></a></code>
+<p>Contains and allows configuring component module metadata information. For information and examples please see org.gradle.api.artifacts.dsl.ComponentModuleMetadataHandler</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-component-selection/index.html">ComponentSelection</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentSelection</span></code>
+<p>* Represents a tuple of the component selector of a module and a candidate version to be evaluated in a component selection rule.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-component-selection-rules/index.html">ComponentSelectionRules</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentSelectionRules</span></code>
+<p>* Represents a container for component selection rules. Rules can be applied as part of the resolutionStrategy of a configuration and individual components can be explicitly accepted or rejected by rule. Components that are neither accepted or rejected will be subject to the default version matching strategies. <pre><code> configurations { conf { resolutionStrategy { componentSelection { all { ComponentSelection selection -&gt; if (selection.candidate.module == 'someModule' &amp;&amp; selection.candidate.version == '1.1') { selection.reject("bad version '1.1' for 'someModule'") } } all { ComponentSelection selection, IvyModuleDescriptor descriptor, ComponentMetadata metadata -&gt; if (selection.candidate.module == 'someModule' &amp;&amp; descriptor.branch == 'testing') { if (metadata.status != 'milestone') { selection.reject("only use milestones for someModule:testing") } } } withModule("org.sample:api") { ComponentSelection selection -&gt; if (selection.candidate.version == "1.1") { selection.reject("known bad version") } } } } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-configurable-publish-artifact/index.html">ConfigurablePublishArtifact</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ConfigurablePublishArtifact</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-publish-artifact/index.html"><span class="identifier">PublishArtifact</span></a></code>
+<p>A PublishArtifact whose properties can be modified.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-configuration/index.html">Configuration</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Configuration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">, </span><a href="../org.gradle.api.attributes/-has-configurable-attributes/index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span></code>
+<p>A <code>Configuration</code> represents a group of artifacts and their dependencies. Find more information about declaring dependencies to a configuration or about managing configurations in docs for ConfigurationContainer 
+<p> Configuration is an instance of a FileCollection that contains all dependencies (see also <code><a href="-configuration/get-all-dependencies.html">#getAllDependencies()</a></code>) but not artifacts. If you want to refer to the artifacts declared in this configuration please use <code><a href="-configuration/get-artifacts.html">#getArtifacts()</a></code> or <code><a href="-configuration/get-all-artifacts.html">#getAllArtifacts()</a></code>. Read more about declaring artifacts in the configuration in docs for org.gradle.api.artifacts.dsl.ArtifactHandler </p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-configuration-container/index.html">ConfigurationContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ConfigurationContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named-domain-object-container/index.html"><span class="identifier">NamedDomainObjectContainer</span></a><span class="symbol">&lt;</span><a href="-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span></code>
+<p>
+<p>A <code>ConfigurationContainer</code> is responsible for declaring and managing configurations. See also Configuration.</p>
+ 
+<p>You can obtain a <code>ConfigurationContainer</code> instance by calling <code><a href="../org.gradle.api/-project/get-configurations.html">org.gradle.api.Project#getConfigurations()</a></code>, or using the <code>configurations</code> property in your build script.</p>
+ 
+<p>The configurations in a container are accessible as read-only properties of the container, using the name of the configuration as the property name. For example:</p>
+ <pre><code> configurations.create('myConfiguration') configurations.myConfiguration.transitive = false </code></pre> 
+<p>A dynamic method is added for each configuration which takes a configuration closure. This is equivalent to calling <code><a href="#">#getByName(String, groovy.lang.Closure)</a></code>. For example:</p>
+ <pre><code> configurations.create('myConfiguration') configurations.myConfiguration { transitive = false } </code></pre> Examples An example showing how to refer to a given configuration by name in order to get hold of all dependencies (e.g. jars, but only) <pre><code> apply plugin: 'java' //so that I can use 'compile' configuration //copying all dependencies attached to 'compile' into a specific folder task copyAllDependencies(type: Copy) { //referring to the 'compile' configuration from configurations.compile into 'allLibs' } </code></pre> An example showing how to declare and configure configurations <pre><code> apply plugin: 'java' //so that I can use 'compile', 'testCompile' configurations configurations { //adding a configuration: myConfiguration //adding a configuration that extends existing configuration: //(testCompile was added by the java plugin) myIntegrationTestsCompile.extendsFrom(testCompile) //configuring existing configurations not to put transitive dependencies on the compile classpath //this way you can avoid issues with implicit dependencies to transitive libraries compile.transitive = false testCompile.transitive = false } </code></pre> Examples on configuring the <strong>resolution strategy</strong> - see docs for ResolutionStrategy</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-configuration-publications/index.html">ConfigurationPublications</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ConfigurationPublications</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.attributes/-has-configurable-attributes/index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="-configuration-publications/index.html"><span class="identifier">ConfigurationPublications</span></a><span class="symbol">&gt;</span></code>
+<p>Represents the outgoing artifacts associated with a configuration. These artifacts are used when the configuration is referenced during dependency resolution. 
+<p>You can use this interface associate artifacts with a configuration using the <code><a href="#">#artifact(Object)</a></code> methods. You can also define several <em>variants</em> of the configuration's artifacts. Each variant represents a set of artifacts that form some mutually exclusive usage of the component.</p>
+ 
+<p>An implicit variant is defined for a configuration whenever any artifacts are attached directly to this object or inherited from another configuration.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-configuration-variant/index.html">ConfigurationVariant</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ConfigurationVariant</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a><span class="symbol">, </span><a href="../org.gradle.api.attributes/-has-configurable-attributes/index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="-configuration-variant/index.html"><span class="identifier">ConfigurationVariant</span></a><span class="symbol">&gt;</span></code>
+<p>Represents some variant of an outgoing configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency/index.html">Dependency</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Dependency</span></code>
+<p>A <code>Dependency</code> represents a dependency on the artifacts from a particular source. A source can be an Ivy module, a Maven POM, another Gradle project, a collection of Files, etc... A source can have zero or more artifacts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency-artifact/index.html">DependencyArtifact</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DependencyArtifact</span></code>
+<p>
+<p>An <code>Artifact</code> represents an artifact included in a org.gradle.api.artifacts.Dependency.</p>
+ An artifact is an (immutable) value object.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency-resolution-listener/index.html">DependencyResolutionListener</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DependencyResolutionListener</span></code>
+<p>A <code>DependencyResolutionListener</code> is notified as dependencies are resolved.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency-resolve-details/index.html">DependencyResolveDetails</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DependencyResolveDetails</span></code>
+<p>Provides details about a dependency when it is resolved. Provides means to manipulate dependency metadata when it is resolved.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency-set.html">DependencySet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DependencySet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><a href="-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<p>A set of artifact dependencies.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency-substitution/index.html">DependencySubstitution</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DependencySubstitution</span></code>
+<p>Provides means to substitute a different dependency during resolution.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency-substitutions/index.html">DependencySubstitutions</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DependencySubstitutions</span></code>
+<p>Allows replacing dependencies with other dependencies.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-exclude-rule/index.html">ExcludeRule</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ExcludeRule</span></code>
+<p>An <code>ExcludeRule</code> is used to describe transitive dependencies that should be excluded when resolving dependencies.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-exclude-rule-container/index.html">ExcludeRuleContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ExcludeRuleContainer</span></code>
+<p>
+<p>A container for adding exclude rules for dependencies.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-external-dependency/index.html">ExternalDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ExternalDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-module-dependency/index.html"><span class="identifier">ModuleDependency</span></a><span class="symbol">, </span><a href="-module-version-selector/index.html"><span class="identifier">ModuleVersionSelector</span></a></code>
+<p>
+<p>An <code>ExternalDependency</code> is a Dependency on a source outside the current project hierarchy.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-external-module-dependency/index.html">ExternalModuleDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ExternalModuleDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-external-dependency/index.html"><span class="identifier">ExternalDependency</span></a></code>
+<p>
+<p>A <code>ModuleDependency</code> is a Dependency on a module outside the current project hierarchy.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-file-collection-dependency/index.html">FileCollectionDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">FileCollectionDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-self-resolving-dependency/index.html"><span class="identifier">SelfResolvingDependency</span></a></code>
+<p>A <code>FileCollectionDependency</code> is a Dependency on a collection of local files which are not stored in a repository.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-lenient-configuration/index.html">LenientConfiguration</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">LenientConfiguration</span></code>
+<p>Resolved configuration that does not fail eagerly when some dependencies are not resolved, or some artifacts do not exist.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-module-dependency/index.html">ModuleDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ModuleDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependency/index.html"><span class="identifier">Dependency</span></a></code>
+<p>A <code>ModuleDependency</code> is a org.gradle.api.artifacts.Dependency on a module outside the current project. 
+<p> For examples on configuring the exclude rules please refer to <code><a href="#">#exclude(java.util.Map)</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-module-identifier/index.html">ModuleIdentifier</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ModuleIdentifier</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code>
+<p>The identifier of a module.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-module-version-identifier/index.html">ModuleVersionIdentifier</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ModuleVersionIdentifier</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code>
+<p>The identifier of a module version.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-module-version-selector/index.html">ModuleVersionSelector</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ModuleVersionSelector</span></code>
+<p>Selects a module version</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-project-dependency/index.html">ProjectDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ProjectDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-module-dependency/index.html"><span class="identifier">ModuleDependency</span></a><span class="symbol">, </span><a href="-self-resolving-dependency/index.html"><span class="identifier">SelfResolvingDependency</span></a></code>
+<p>
+<p>A <code>ProjectDependency</code> is a Dependency on another project in the current project hierarchy.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-publish-artifact/index.html">PublishArtifact</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PublishArtifact</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<p>
+<p>A <code>PublishArtifact</code> is an artifact produced by a project.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-publish-artifact-set/index.html">PublishArtifactSet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PublishArtifactSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><a href="-publish-artifact/index.html"><span class="identifier">PublishArtifact</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<p>A set of artifacts to be published.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-resolution-strategy/index.html">ResolutionStrategy</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ResolutionStrategy</span></code>
+<p>Defines the strategies around dependency resolution. For example, forcing certain dependency versions, substitutions, conflict resolutions or snapshot timeouts. 
+<p> Examples: </p>
+<pre><code> apply plugin: 'java' //so that there are some configurations configurations.all { resolutionStrategy { // fail eagerly on version conflict (includes transitive dependencies) // e.g. multiple different versions of the same dependency (group and name are equal) failOnVersionConflict() // prefer modules that are part of this build (multi-project or composite build) over external modules preferProjectModules() // force certain versions of dependencies (including transitive) // *append new forced modules: force 'asm:asm-all:3.3.1', 'commons-io:commons-io:1.4' // *replace existing forced modules with new ones: forcedModules = ['asm:asm-all:3.3.1'] // add dependency substitution rules dependencySubstitution { substitute module('org.gradle:api') with project(':api') substitute project(':util') with module('org.gradle:util:3.0') } // cache dynamic versions for 10 minutes cacheDynamicVersionsFor 10*60, 'seconds' // don't cache changing modules at all cacheChangingModulesFor 0, 'seconds' } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-resolvable-dependencies/index.html">ResolvableDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ResolvableDependencies</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-artifact-view/index.html"><span class="identifier">ArtifactView</span></a></code>
+<p>A set of Dependency objects which can be resolved to a set of files. There are various methods on this type that you can use to get the result in different forms: <ul> <li><code><a href="-resolvable-dependencies/get-files.html">#getFiles()</a></code> returns a FileCollection that provides the result as a set of java.io.File instances.</li>
+ <li><code><a href="-resolvable-dependencies/get-resolution-result.html">#getResolutionResult()</a></code> returns a ResolutionResult that provides information about the dependency graph.</li>
+ <li><code><a href="-resolvable-dependencies/get-artifacts.html">#getArtifacts()</a></code> returns an ArtifactCollection that provides the files with additional metadata.</li>
+ </ul>
+ 
+<p>The dependencies are resolved once only, when the result is first requested. The result is reused and returned for subsequent calls. Once resolved, any mutation to the dependencies will result in an error.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-resolve-exception/index.html">ResolveException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ResolveException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultMultiCauseException</span></code>
+<p>
+<p>A <code>ResolveException</code> is thrown when dependency resolution fails for some reason.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-resolved-artifact/index.html">ResolvedArtifact</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ResolvedArtifact</span></code>
+<p>Information about a resolved artifact.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-resolved-configuration/index.html">ResolvedConfiguration</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ResolvedConfiguration</span></code>
+<p>A <code>ResolvedConfiguration</code> represents the result of resolving a Configuration, and provides access to both the artifacts and the meta-data of the result.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-resolved-dependency/index.html">ResolvedDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ResolvedDependency</span></code>
+<p>Information about a resolved dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-resolved-module-version/index.html">ResolvedModuleVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ResolvedModuleVersion</span></code>
+<p>Represents meta-data about a resolved module version.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-self-resolving-dependency/index.html">SelfResolvingDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SelfResolvingDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">, </span><a href="../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<p>A <code>SelfResolvingDependency</code> is a Dependency which is able to resolve itself, independent of a repository.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-unresolved-dependency/index.html">UnresolvedDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">UnresolvedDependency</span></code>
+<p>Unsuccessfully resolved dependency.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Exceptions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-publish-exception/index.html">PublishException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PublishException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>
+<p>A <code>PublishException</code> is thrown when a dependency configuration cannot be published for some reason.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-unknown-configuration-exception/index.html">UnknownConfigurationException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">UnknownConfigurationException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-unknown-domain-object-exception/index.html"><span class="identifier">UnknownDomainObjectException</span></a></code>
+<p>
+<p>An <code>UnknownConfigurationException</code> is thrown when a configuration referenced by name cannot be found.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-unknown-repository-exception/index.html">UnknownRepositoryException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">UnknownRepositoryException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-unknown-domain-object-exception/index.html"><span class="identifier">UnknownDomainObjectException</span></a></code>
+<p>An <code>UnknownRepositoryException</code> is thrown when a repository referenced by name cannot be found.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

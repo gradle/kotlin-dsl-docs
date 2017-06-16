@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Project.tarTree - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">Project</a>&nbsp;/&nbsp;<a href=".">tarTree</a><br/>
+<br/>
+<h1>tarTree</h1>
+<a name="org.gradle.api.Project$tarTree(kotlin.Any)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">tarTree</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$tarTree(kotlin.Any)/tarPath">tarPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<p>Creates a new <code>FileTree</code> which contains the contents of the given TAR file. The given tarPath path can be: <ul> <li>an instance of org.gradle.api.resources.Resource</li>
+ <li>any other object is evaluated as per <code><a href="#">#file(Object)</a></code></li>
+ </ul>
+ The returned file tree is lazy, so that it scans for files only when the contents of the file tree are queried. The file tree is also live, so that it scans for files each time the contents of the file tree are queried. 
+<p> Unless custom implementation of resources is passed, the tar tree attempts to guess the compression based on the file extension. </p>
+<p> You can combine this method with the <code><a href="#">#copy(groovy.lang.Closure)</a></code> method to untar a TAR file: </p>
+<pre><code> task untar(type: Copy) { from tarTree('someCompressedTar.gzip') //tar tree attempts to guess the compression based on the file extension //however if you must specify the compression explicitly you can: from tarTree(resources.gzip('someTar.ext')) //in case you work with unconventionally compressed tars //you can provide your own implementation of a ReadableResource: //from tarTree(yourOwnResource as ReadableResource) into 'dest' } </code></pre></p>
+<h3>Parameters</h3>
+<a name="tarPath"></a>
+<code>tarPath</code> - The TAR file or an instance of org.gradle.api.resources.Resource.
+<p><strong>Return</strong><br/>
+the file tree. Never returns null.</p>
+</BODY>
+</HTML>

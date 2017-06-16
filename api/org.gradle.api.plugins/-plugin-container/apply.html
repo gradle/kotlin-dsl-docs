@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PluginContainer.apply - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href="index.html">PluginContainer</a>&nbsp;/&nbsp;<a href=".">apply</a><br/>
+<br/>
+<h1>apply</h1>
+<a name="org.gradle.api.plugins.PluginContainer$apply(kotlin.String)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginContainer$apply(kotlin.String)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Has the same behavior as <code><a href="#">#apply(Class)</a></code> except that the plugin is specified via its id. Not all plugins have an id.</p>
+<h3>Parameters</h3>
+<a name="id"></a>
+<code>id</code> - The id of the plugin to be applied.
+<p><strong>Return</strong><br/>
+The plugin which has been used against the project.</p>
+<a name="org.gradle.api.plugins.PluginContainer$apply(java.lang.Class((org.gradle.api.plugins.PluginContainer.apply.T)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginContainer$apply(java.lang.Class((org.gradle.api.plugins.PluginContainer.apply.T)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Applies a plugin to the project. This usually means that the plugin uses the project API to add and modify the state of the project. This method can be called an arbitrary number of times for a particular plugin type. The plugin will be actually used only the first time this method is called.</p>
+<h3>Parameters</h3>
+<a name="type"></a>
+<code>type</code> - The type of the plugin to be used
+<p><strong>Return</strong><br/>
+The plugin which has been used against the project.</p>
+</BODY>
+</HTML>

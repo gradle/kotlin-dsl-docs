@@ -1,0 +1,165 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>EclipseModel - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.eclipse.model</a>&nbsp;/&nbsp;<a href=".">EclipseModel</a><br/>
+<br/>
+<h1>EclipseModel</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">EclipseModel</span></code>
+<p>DSL-friendly model of the Eclipse project information. First point of entry for customizing Eclipse project generation. <pre><code> apply plugin: 'java' apply plugin: 'eclipse' apply plugin: 'eclipse-wtp' //for web projects only eclipse { pathVariables 'GRADLE_HOME': file('/best/software/gradle'), 'TOMCAT_HOME': file('../tomcat') project { //see docs for EclipseProject } classpath { //see docs for EclipseClasspath } wtp { //see docs for EclipseWtp } } </code></pre> More examples in docs for EclipseProject, EclipseClasspath, EclipseWtp</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">EclipseModel</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>DSL-friendly model of the Eclipse project information. First point of entry for customizing Eclipse project generation. <pre><code> apply plugin: 'java' apply plugin: 'eclipse' apply plugin: 'eclipse-wtp' //for web projects only eclipse { pathVariables 'GRADLE_HOME': file('/best/software/gradle'), 'TOMCAT_HOME': file('../tomcat') project { //see docs for EclipseProject } classpath { //see docs for EclipseClasspath } wtp { //see docs for EclipseWtp } } </code></pre> More examples in docs for EclipseProject, EclipseClasspath, EclipseWtp</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="classpath.html">classpath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">classpath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseModel$classpath(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">classpath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseModel$classpath(org.gradle.api.Action((org.gradle.plugins.ide.eclipse.model.EclipseClasspath)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-eclipse-classpath/index.html"><span class="identifier">EclipseClasspath</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures eclipse classpath information 
+<p> For examples see docs for EclipseClasspath</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-classpath.html">getClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getClasspath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-eclipse-classpath/index.html"><span class="identifier">EclipseClasspath</span></a></code>
+<p>Configures eclipse classpath information 
+<p> For examples see docs for EclipseClasspath</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-jdt.html">getJdt</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getJdt</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-eclipse-jdt/index.html"><span class="identifier">EclipseJdt</span></a></code>
+<p>Configures eclipse java compatibility information (jdt) 
+<p> For examples see docs for EclipseProject</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project.html">getProject</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getProject</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-eclipse-project/index.html"><span class="identifier">EclipseProject</span></a></code>
+<p>Configures eclipse project information 
+<p> For examples see docs for EclipseProject</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-wtp.html">getWtp</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getWtp</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-eclipse-wtp/index.html"><span class="identifier">EclipseWtp</span></a></code>
+<p>Configures eclipse wtp information 
+<p> For examples see docs for EclipseWtp</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="jdt.html">jdt</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">jdt</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseModel$jdt(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">jdt</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseModel$jdt(org.gradle.api.Action((org.gradle.plugins.ide.eclipse.model.EclipseJdt)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-eclipse-jdt/index.html"><span class="identifier">EclipseJdt</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures eclipse java compatibility information (jdt) 
+<p> For examples see docs for EclipseProject</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="path-variables.html">pathVariables</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">pathVariables</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseModel$pathVariables(kotlin.collections.MutableMap((kotlin.String, java.io.File)))/pathVariables">pathVariables</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds path variables to be used for replacing absolute paths in classpath entries. 
+<p> If the beginning of the absolute path of a library or other path-related element matches a value of a variable, a variable entry is used. The matching part of the library path is replaced with the variable name. </p>
+<p> For example see docs for EclipseModel</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="project.html">project</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">project</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseModel$project(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">project</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseModel$project(org.gradle.api.Action((org.gradle.plugins.ide.eclipse.model.EclipseProject)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-eclipse-project/index.html"><span class="identifier">EclipseProject</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures eclipse project information 
+<p> For examples see docs for EclipseProject</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-classpath.html">setClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setClasspath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseModel$setClasspath(org.gradle.plugins.ide.eclipse.model.EclipseClasspath)/classpath">classpath</span><span class="symbol">:</span>&nbsp;<a href="../-eclipse-classpath/index.html"><span class="identifier">EclipseClasspath</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-jdt.html">setJdt</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setJdt</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseModel$setJdt(org.gradle.plugins.ide.eclipse.model.EclipseJdt)/jdt">jdt</span><span class="symbol">:</span>&nbsp;<a href="../-eclipse-jdt/index.html"><span class="identifier">EclipseJdt</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-project.html">setProject</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setProject</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseModel$setProject(org.gradle.plugins.ide.eclipse.model.EclipseProject)/project">project</span><span class="symbol">:</span>&nbsp;<a href="../-eclipse-project/index.html"><span class="identifier">EclipseProject</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-wtp.html">setWtp</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setWtp</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseModel$setWtp(org.gradle.plugins.ide.eclipse.model.EclipseWtp)/wtp">wtp</span><span class="symbol">:</span>&nbsp;<a href="../-eclipse-wtp/index.html"><span class="identifier">EclipseWtp</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="wtp.html">wtp</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">wtp</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseModel$wtp(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">wtp</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseModel$wtp(org.gradle.api.Action((org.gradle.plugins.ide.eclipse.model.EclipseWtp)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-eclipse-wtp/index.html"><span class="identifier">EclipseWtp</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures eclipse wtp information 
+<p> For examples see docs for EclipseWtp</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

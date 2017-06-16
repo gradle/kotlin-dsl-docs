@@ -1,0 +1,99 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>EclipseWtp - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.eclipse.model</a>&nbsp;/&nbsp;<a href=".">EclipseWtp</a><br/>
+<br/>
+<h1>EclipseWtp</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">EclipseWtp</span></code>
+<p>Enables fine-tuning wtp/wst details of the Eclipse plugin 
+<p> For projects applying the eclipse plugin and either one of the ear or war plugins, this plugin is auto-applied. </p>
+<p> More interesting examples you will find in docs for EclipseWtpComponent and EclipseWtpFacet </p>
+<pre><code> apply plugin: 'war' //or 'ear' or 'java' apply plugin: 'eclipse-wtp' eclipse { //if you want parts of paths in resulting file(s) to be replaced by variables (files): pathVariables 'GRADLE_HOME': file('/best/software/gradle'), 'TOMCAT_HOME': file('../tomcat') wtp { component { //for examples see docs for EclipseWtpComponent } facet { //for examples see docs for EclipseWtpFacet } } } </code></pre></p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">EclipseWtp</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Enables fine-tuning wtp/wst details of the Eclipse plugin 
+<p> For projects applying the eclipse plugin and either one of the ear or war plugins, this plugin is auto-applied. </p>
+<p> More interesting examples you will find in docs for EclipseWtpComponent and EclipseWtpFacet </p>
+<pre><code> apply plugin: 'war' //or 'ear' or 'java' apply plugin: 'eclipse-wtp' eclipse { //if you want parts of paths in resulting file(s) to be replaced by variables (files): pathVariables 'GRADLE_HOME': file('/best/software/gradle'), 'TOMCAT_HOME': file('../tomcat') wtp { component { //for examples see docs for EclipseWtpComponent } facet { //for examples see docs for EclipseWtpFacet } } } </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="component.html">component</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">component</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtp$component(groovy.lang.Closure((kotlin.Any)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">component</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtp$component(org.gradle.api.Action((org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-eclipse-wtp-component/index.html"><span class="identifier">EclipseWtpComponent</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures wtp component. 
+<p> For examples see docs for EclipseWtpComponent</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="facet.html">facet</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">facet</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtp$facet(groovy.lang.Closure((kotlin.Any)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">facet</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtp$facet(org.gradle.api.Action((org.gradle.plugins.ide.eclipse.model.EclipseWtpFacet)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-eclipse-wtp-facet/index.html"><span class="identifier">EclipseWtpFacet</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures wtp facet. 
+<p> For examples see docs for EclipseWtpFacet</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-component.html">getComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getComponent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-eclipse-wtp-component/index.html"><span class="identifier">EclipseWtpComponent</span></a></code>
+<p>Configures wtp component. 
+<p> For examples see docs for EclipseWtpComponent</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-facet.html">getFacet</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getFacet</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-eclipse-wtp-facet/index.html"><span class="identifier">EclipseWtpFacet</span></a></code>
+<p>Configures wtp facet. 
+<p> For examples see docs for EclipseWtpFacet</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-component.html">setComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setComponent</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtp$setComponent(org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent)/component">component</span><span class="symbol">:</span>&nbsp;<a href="../-eclipse-wtp-component/index.html"><span class="identifier">EclipseWtpComponent</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-facet.html">setFacet</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setFacet</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtp$setFacet(org.gradle.plugins.ide.eclipse.model.EclipseWtpFacet)/facet">facet</span><span class="symbol">:</span>&nbsp;<a href="../-eclipse-wtp-facet/index.html"><span class="identifier">EclipseWtpFacet</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

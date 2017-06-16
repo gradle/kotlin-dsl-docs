@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResolutionResult - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.result</a>&nbsp;/&nbsp;<a href=".">ResolutionResult</a><br/>
+<br/>
+<h1>ResolutionResult</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ResolutionResult</span></code>
+<p>Contains the information about the result of dependency resolution. You can use this type to determine all the component instances that are included in the resolved dependency graph, and the dependencies between them.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="all-components.html">allComponents</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">allComponents</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.result.ResolutionResult$allComponents(org.gradle.api.Action((org.gradle.api.artifacts.result.ResolvedComponentResult)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-resolved-component-result/index.html"><span class="identifier">ResolvedComponentResult</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies given action for each component. An instance of ResolvedComponentResult is passed as parameter to the action.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">allComponents</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.result.ResolutionResult$allComponents(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies given closure for each component. An instance of ResolvedComponentResult is passed as parameter to the closure.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="all-dependencies.html">allDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">allDependencies</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.result.ResolutionResult$allDependencies(org.gradle.api.Action((org.gradle.api.artifacts.result.DependencyResult)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency-result/index.html"><span class="identifier">DependencyResult</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies given action for each dependency. An instance of DependencyResult is passed as parameter to the action.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">allDependencies</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.result.ResolutionResult$allDependencies(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies given closure for each dependency. An instance of DependencyResult is passed as parameter to the closure.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-all-components.html">getAllComponents</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAllComponents</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-resolved-component-result/index.html"><span class="identifier">ResolvedComponentResult</span></a><span class="symbol">&gt;</span></code>
+<p>Retrieves all instances of ResolvedComponentResult from the graph, e.g. all nodes of the dependency graph.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-all-dependencies.html">getAllDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAllDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-dependency-result/index.html"><span class="identifier">DependencyResult</span></a><span class="symbol">&gt;</span></code>
+<p>Retrieves all dependencies, including unresolved dependencies. Resolved dependencies are represented by instances of ResolvedDependencyResult, unresolved dependencies by UnresolvedDependencyResult. In dependency graph terminology, this method returns the edges of the graph.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-root.html">getRoot</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRoot</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-resolved-component-result/index.html"><span class="identifier">ResolvedComponentResult</span></a></code>
+<p>Gives access to the root of resolved dependency graph. You can walk the graph recursively from the root to obtain information about resolved dependencies. For example, Gradle's built-in 'dependencies' task uses this to render the dependency tree.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

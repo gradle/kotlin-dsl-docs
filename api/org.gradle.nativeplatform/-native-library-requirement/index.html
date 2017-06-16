@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NativeLibraryRequirement - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform</a>&nbsp;/&nbsp;<a href=".">NativeLibraryRequirement</a><br/>
+<br/>
+<h1>NativeLibraryRequirement</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">NativeLibraryRequirement</span></code>
+<p>A dependency on a native library within the build.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-library-name.html">getLibraryName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLibraryName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name of the required library.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-linkage.html">getLinkage</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLinkage</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The required linkage.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project-path.html">getProjectPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The path to the project containing the library.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="with-project-path.html">withProjectPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withProjectPath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.NativeLibraryRequirement$withProjectPath(kotlin.String)/projectPath">projectPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">NativeLibraryRequirement</span></code>
+<p>Creates a copy of this requirement with the specified project path</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

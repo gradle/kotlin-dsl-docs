@@ -1,0 +1,322 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>EclipseWtpComponent - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.eclipse.model</a>&nbsp;/&nbsp;<a href=".">EclipseWtpComponent</a><br/>
+<br/>
+<h1>EclipseWtpComponent</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">EclipseWtpComponent</span></code>
+<p>Enables fine-tuning wtp component details of the Eclipse plugin 
+<p> Example of use with a blend of all possible properties. Bear in mind that usually you don't have to configure them directly because Gradle configures it for free! </p>
+<pre><code> apply plugin: 'war' //or 'ear' or 'java' apply plugin: 'eclipse-wtp' configurations { someInterestingConfiguration anotherConfiguration } eclipse { //if you want parts of paths in resulting file(s) to be replaced by variables (files): pathVariables 'GRADLE_HOME': file('/best/software/gradle'), 'TOMCAT_HOME': file('../tomcat') wtp { component { //you can configure the context path: contextPath = 'someContextPath' //you can configure the deployName: deployName = 'killerApp' //you can alter the wb-resource elements. sourceDirs is a ConventionProperty. //non-existing source dirs won't be added to the component file. sourceDirs += file('someExtraFolder') // dependencies to mark as deployable with lib folder deploy path libConfigurations += [ configurations.someInterestingConfiguration ] // dependencies to mark as deployable with root folder deploy path rootConfigurations += [ configurations.someInterestingConfiguration ] // dependencies to exclude from wtp deployment minusConfigurations &lt;&lt; configurations.anotherConfiguration //you can add a wb-resource elements; mandatory keys: 'sourcePath', 'deployPath': //if sourcePath points to non-existing folder it will *not* be added. resource sourcePath: 'extra/resource', deployPath: 'deployment/resource' //you can add a wb-property elements; mandatory keys: 'name', 'value': property name: 'moodOfTheDay', value: ':-D' } } } </code></pre> For tackling edge cases users can perform advanced configuration on resulting XML file. It is also possible to affect the way eclipse plugin merges the existing configuration via beforeMerged and whenMerged closures. 
+<p> beforeMerged and whenMerged closures receive WtpComponent object </p>
+<p> Examples of advanced configuration: </p>
+<pre><code> apply plugin: 'war' apply plugin: 'eclipse-wtp' eclipse { wtp { component { file { //if you want to mess with the resulting XML in whatever way you fancy withXml { def node = it.asNode() node.appendNode('xml', 'is what I love') } //closure executed after wtp component file content is loaded from existing file //but before gradle build information is merged beforeMerged { wtpComponent -&gt; //tinker with WtpComponent here } //closure executed after wtp component file content is loaded from existing file //and after gradle build information is merged whenMerged { wtpComponent -&gt; //you can tinker with the WtpComponent here } } } } } </code></pre></p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">EclipseWtpComponent</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent$<init>(org.gradle.api.Project, org.gradle.plugins.ide.api.XmlFileContentMerger)/project">project</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent$<init>(org.gradle.api.Project, org.gradle.plugins.ide.api.XmlFileContentMerger)/file">file</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.ide.api/-xml-file-content-merger/index.html"><span class="identifier">XmlFileContentMerger</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="file.html">file</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent$file(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Enables advanced configuration like tinkering with the output XML or affecting the way existing wtp component file content is merged with gradle build information 
+<p> The object passed to whenMerged{} and beforeMerged{} closures is of type WtpComponent </p>
+<p> For example see docs for EclipseWtpComponent</p>
+</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent$file(org.gradle.api.Action((org.gradle.plugins.ide.api.XmlFileContentMerger)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.plugins.ide.api/-xml-file-content-merger/index.html"><span class="identifier">XmlFileContentMerger</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Enables advanced configuration like tinkering with the output XML or affecting the way existing wtp component file content is merged with gradle build information. 
+<p> For example see docs for EclipseWtpComponent</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-classes-deploy-path.html">getClassesDeployPath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getClassesDeployPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The deploy path for classes. 
+<p> For examples see docs for EclipseWtp</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-context-path.html">getContextPath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getContextPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The context path for the web application 
+<p> For examples see docs for EclipseWtp</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-deploy-name.html">getDeployName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDeployName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The deploy name to be used. 
+<p> For examples see docs for EclipseWtp</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-file.html">getFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.plugins.ide.api/-xml-file-content-merger/index.html"><span class="identifier">XmlFileContentMerger</span></a></code>
+<p>See <code><a href="#">#file(Action)</a></code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-file-reference-factory.html">getFileReferenceFactory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getFileReferenceFactory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileReferenceFactory</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-lib-configurations.html">getLibConfigurations</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLibConfigurations</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span></code>
+<p>The configurations whose files are to be marked to be deployed with a deploy path of <code><a href="get-lib-deploy-path.html">#getLibDeployPath()</a></code>. 
+<p> For examples see docs for EclipseWtp</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-lib-deploy-path.html">getLibDeployPath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLibDeployPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The deploy path for libraries. 
+<p> For examples see docs for EclipseWtp</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-minus-configurations.html">getMinusConfigurations</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMinusConfigurations</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span></code>
+<p>The configurations whose files are to be excluded from wtp deployment. 
+<p> For examples see docs for EclipseWtp</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-path-variables.html">getPathVariables</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getPathVariables</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>The variables to be used for replacing absolute path in dependent-module elements. 
+<p> For examples see docs for EclipseModel</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-plus-configurations.html">getPlusConfigurations</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getPlusConfigurations</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span></code>
+<p>Synonym for <code><a href="get-lib-configurations.html">#getLibConfigurations()</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project.html">getProject</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getProject</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-properties.html">getProperties</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getProperties</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-wb-property/index.html"><span class="identifier">WbProperty</span></a><span class="symbol">&gt;</span></code>
+<p>Additional property elements. 
+<p> For examples see docs for EclipseWtp</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-resources.html">getResources</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getResources</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-wb-resource/index.html"><span class="identifier">WbResource</span></a><span class="symbol">&gt;</span></code>
+<p>org.gradle.api.dsl.ConventionProperty for additional wb-resource elements. 
+<p> For examples see docs for EclipseWtp </p>
+<p> Only resources that link to an existing directory (<code><a href="../-wb-resource/get-source-path.html">WbResource#getSourcePath()</a></code>) will be added to the wtp component file. The reason is that non-existing resource directory declarations lead to errors when project is imported into Eclipse.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-root-configurations.html">getRootConfigurations</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getRootConfigurations</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span></code>
+<p>The configurations whose files are to be marked to be deployed with a deploy path of '/'. 
+<p> For examples see docs for EclipseWtp</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-source-dirs.html">getSourceDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSourceDirs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>org.gradle.api.dsl.ConventionProperty for the source directories to be transformed into wb-resource elements. 
+<p> For examples see docs for EclipseWtp </p>
+<p> Only source dirs that exist will be added to the wtp component file. Non-existing resource directory declarations lead to errors when project is imported into Eclipse.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="merge-xml-component.html">mergeXmlComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">mergeXmlComponent</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent$mergeXmlComponent(org.gradle.plugins.ide.eclipse.model.WtpComponent)/xmlComponent">xmlComponent</span><span class="symbol">:</span>&nbsp;<a href="../-wtp-component/index.html"><span class="identifier">WtpComponent</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="property.html">property</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">property</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent$property(kotlin.collections.MutableMap((kotlin.String, )))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a property. 
+<p> For examples see docs for EclipseWtp</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="resource.html">resource</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">resource</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent$resource(kotlin.collections.MutableMap((kotlin.String, )))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a wb-resource. 
+<p> For examples see docs for EclipseWtp</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-classes-deploy-path.html">setClassesDeployPath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setClassesDeployPath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent$setClassesDeployPath(kotlin.String)/classesDeployPath">classesDeployPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-context-path.html">setContextPath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setContextPath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent$setContextPath(kotlin.String)/contextPath">contextPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-deploy-name.html">setDeployName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDeployName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent$setDeployName(kotlin.String)/deployName">deployName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-lib-configurations.html">setLibConfigurations</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setLibConfigurations</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent$setLibConfigurations(kotlin.collections.MutableSet((org.gradle.api.artifacts.Configuration)))/libConfigurations">libConfigurations</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-lib-deploy-path.html">setLibDeployPath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setLibDeployPath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent$setLibDeployPath(kotlin.String)/libDeployPath">libDeployPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-minus-configurations.html">setMinusConfigurations</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMinusConfigurations</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent$setMinusConfigurations(kotlin.collections.MutableSet((org.gradle.api.artifacts.Configuration)))/minusConfigurations">minusConfigurations</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-path-variables.html">setPathVariables</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setPathVariables</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent$setPathVariables(kotlin.collections.MutableMap((kotlin.String, java.io.File)))/pathVariables">pathVariables</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-plus-configurations.html">setPlusConfigurations</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setPlusConfigurations</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent$setPlusConfigurations(kotlin.collections.MutableSet((org.gradle.api.artifacts.Configuration)))/plusConfigurations">plusConfigurations</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Synonym for <code><a href="#">#setLibConfigurations(Set)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-properties.html">setProperties</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setProperties</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent$setProperties(kotlin.collections.MutableList((org.gradle.plugins.ide.eclipse.model.WbProperty)))/properties">properties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-wb-property/index.html"><span class="identifier">WbProperty</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-resources.html">setResources</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setResources</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent$setResources(kotlin.collections.MutableList((org.gradle.plugins.ide.eclipse.model.WbResource)))/resources">resources</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-wb-resource/index.html"><span class="identifier">WbResource</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-root-configurations.html">setRootConfigurations</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setRootConfigurations</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent$setRootConfigurations(kotlin.collections.MutableSet((org.gradle.api.artifacts.Configuration)))/rootConfigurations">rootConfigurations</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-source-dirs.html">setSourceDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSourceDirs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpComponent$setSourceDirs(kotlin.collections.MutableSet((java.io.File)))/sourceDirs">sourceDirs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

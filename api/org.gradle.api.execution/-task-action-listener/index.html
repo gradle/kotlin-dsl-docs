@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TaskActionListener - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.execution</a>&nbsp;/&nbsp;<a href=".">TaskActionListener</a><br/>
+<br/>
+<h1>TaskActionListener</h1>
+<code><span class="keyword">interface </span><span class="identifier">TaskActionListener</span></code>
+<p>
+<p>A <code>TaskActionListener</code> is notified of the actions that a task performs.</p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="after-actions.html">afterActions</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">afterActions</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.execution.TaskActionListener$afterActions(org.gradle.api.Task)/task">task</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>This method is called immediately after the task has completed performing its actions.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="before-actions.html">beforeActions</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">beforeActions</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.execution.TaskActionListener$beforeActions(org.gradle.api.Task)/task">task</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>This method is called immediately before the task starts performing its actions.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

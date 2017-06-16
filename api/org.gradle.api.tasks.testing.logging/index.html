@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api.tasks.testing.logging - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.tasks.testing.logging</a><br/>
+<br/>
+<h2>Package org.gradle.api.tasks.testing.logging</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-test-exception-format/index.html">TestExceptionFormat</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">TestExceptionFormat</span></code>
+<p>Determines how exceptions are formatted in test logging.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-test-log-event/index.html">TestLogEvent</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">TestLogEvent</span></code>
+<p>Test events that can be logged.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-test-logging/index.html">TestLogging</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TestLogging</span></code>
+<p>Options that determine which test events get logged, and at which detail.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-test-logging-container/index.html">TestLoggingContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TestLoggingContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-test-logging/index.html"><span class="identifier">TestLogging</span></a></code>
+<p>Container for all test logging related options. Different options can be set for each log level. Options that are set directly (without specifying a log level) apply to log level LIFECYCLE. Example: <pre><code> apply plugin: 'java' test { testLogging { // set options for log level LIFECYCLE events "failed" exceptionFormat "short" // set options for log level DEBUG debug { events "started", "skipped", "failed" exceptionFormat "full" } // remove standard output/error logging from --info builds // by assigning only 'failed' and 'skipped' events info.events = ["failed", "skipped"] } } </code></pre> The defaults that are in place show progressively more information on log levels WARN, LIFECYCLE, INFO, and DEBUG, respectively.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-test-stack-trace-filter/index.html">TestStackTraceFilter</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">TestStackTraceFilter</span></code>
+<p>Stack trace filters for test logging. Multiple filters can be combined.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

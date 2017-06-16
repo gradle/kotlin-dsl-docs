@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GradleConnectionException - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling</a>&nbsp;/&nbsp;<a href=".">GradleConnectionException</a><br/>
+<br/>
+<h1>GradleConnectionException</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GradleConnectionException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/RuntimeException.html"><span class="identifier">RuntimeException</span></a></code>
+<p>Thrown when there is some problem using a Gradle connection.</p>
+<p><strong>Since</strong><br/>
+1.0-milestone-3</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">GradleConnectionException</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.GradleConnectionException$<init>(kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code><br/>
+<code><span class="identifier">GradleConnectionException</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.GradleConnectionException$<init>(kotlin.String, kotlin.Throwable)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.GradleConnectionException$<init>(kotlin.String, kotlin.Throwable)/throwable">throwable</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-build-action-failure-exception/index.html">BuildActionFailureException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BuildActionFailureException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleConnectionException</span></code>
+<p>Thrown when a BuildAction fails.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-build-cancelled-exception/index.html">BuildCancelledException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BuildCancelledException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleConnectionException</span></code>
+<p>Thrown when a org.gradle.tooling.LongRunningOperation is cancelled before the operation completes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-build-exception/index.html">BuildException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BuildException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleConnectionException</span></code>
+<p>Thrown when a Gradle build fails or when a model cannot be built.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-listener-failed-exception/index.html">ListenerFailedException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ListenerFailedException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleConnectionException</span></code>
+<p>Thrown whenever a listener fails with an exception, which in general implies that the build completed like it should, but that one of the listeners failed with an exception.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-execution-exception/index.html">TestExecutionException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">TestExecutionException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleConnectionException</span></code>
+<p>Thrown when the org.gradle.tooling.TestLauncher cannot run tests, or when one or more tests fail. </p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.exceptions/-unsupported-build-argument-exception/index.html">UnsupportedBuildArgumentException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">UnsupportedBuildArgumentException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleConnectionException</span></code>
+<p>Thrown when the org.gradle.tooling.LongRunningOperation has been configured with unsupported build arguments. For more information see the <code><a href="#">org.gradle.tooling.LongRunningOperation#withArguments(String...)</a></code> method.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-unsupported-version-exception/index.html">UnsupportedVersionException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">UnsupportedVersionException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GradleConnectionException</span></code>
+<p>Thrown when the target Gradle version does not support a particular feature.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,154 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>RuleSource - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.model</a>&nbsp;/&nbsp;<a href=".">RuleSource</a><br/>
+<br/>
+<h1>RuleSource</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">RuleSource</span></code>
+<p>A marker type for a class that is a collection of rules. 
+<p> A rule source is not used like a regular Java object. It is a stateless container of methods and possibly constants. </p>
+<p> Please consult the “Rule based model configuration” chapter of the Gradle User Guide for general information about “rules”. </p>
+Rule methods 
+<p> Each method that is annotated with one of the following is considered a rule: </p>
+<ul> <li>Model</li>
+ <li>Defaults</li>
+ <li>Mutate</li>
+ <li>Finalize</li>
+ <li>Validate</li>
+ <li>Rules</li>
+ <li>org.gradle.platform.base.ComponentType</li>
+ <li>org.gradle.platform.base.ComponentBinaries</li>
+ <li>org.gradle.platform.base.BinaryTasks</li>
+ </ul>
+ 
+<p> Each annotation specifies the type of the rule, which affects when it will be executed. </p>
+<p> The following constraints apply to all rule methods: </p>
+<ul> <li>A method may only be annotated by at most one of the above annotations.</li>
+ <li>A rule method may be <code>static</code> or not; it makes no difference.</li>
+ <li>A rule method cannot be generic (i.e. cannot have type parameters).</li>
+ <li>With the exception of Model methods, all methods must have at least one parameter.</li>
+ <li>With the exception of Model methods, all methods must have a <code>void</code> return type.</li>
+ </ul>
+ 
+<p> See Model for information on the significance of the return type of a Model method. </p>
+Subjects and inputs 
+<p> Method rules declare the subject and any inputs as parameters to the method. With the exception of Model methods, the subject of the rule is the, required, first parameter and all subsequent parameters are inputs. For a non-void Model method, the subject (i.e. model element being created) is the return object. For a void Model method, the subject is the first method parameter. </p>
+<p> The Path annotation can be placed on any parameter (except the subject of Model rules) to indicate the model element to bind to. If there is no Path annotation, a “by-type” binding will be attempted. The binding scope is determined by how the rule source is applied. </p>
+General class constraints 
+<p> Along with the constraints on individual rule methods by their associated annotation, the following are general constraints of rule source implementations: </p>
+<ul> <li>Constructors are not allowed.</li>
+ <li>Inheritance hierarchies are not allowed (i.e. all rules sources must directly extend RuleSource).</li>
+ <li>Instance variables are not allowed.</li>
+ <li>Non-final static variables are not allowed (i.e. constants are allowed).</li>
+ <li>Methods cannot be overloaded.</li>
+ <li>Implementations cannot be generic (i.e. cannot use type parameters).</li>
+ </ul>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">RuleSource</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>A marker type for a class that is a collection of rules. 
+<p> A rule source is not used like a regular Java object. It is a stateless container of methods and possibly constants. </p>
+<p> Please consult the “Rule based model configuration” chapter of the Gradle User Guide for general information about “rules”. </p>
+Rule methods 
+<p> Each method that is annotated with one of the following is considered a rule: </p>
+<ul> <li>Model</li>
+ <li>Defaults</li>
+ <li>Mutate</li>
+ <li>Finalize</li>
+ <li>Validate</li>
+ <li>Rules</li>
+ <li>org.gradle.platform.base.ComponentType</li>
+ <li>org.gradle.platform.base.ComponentBinaries</li>
+ <li>org.gradle.platform.base.BinaryTasks</li>
+ </ul>
+ 
+<p> Each annotation specifies the type of the rule, which affects when it will be executed. </p>
+<p> The following constraints apply to all rule methods: </p>
+<ul> <li>A method may only be annotated by at most one of the above annotations.</li>
+ <li>A rule method may be <code>static</code> or not; it makes no difference.</li>
+ <li>A rule method cannot be generic (i.e. cannot have type parameters).</li>
+ <li>With the exception of Model methods, all methods must have at least one parameter.</li>
+ <li>With the exception of Model methods, all methods must have a <code>void</code> return type.</li>
+ </ul>
+ 
+<p> See Model for information on the significance of the return type of a Model method. </p>
+Subjects and inputs 
+<p> Method rules declare the subject and any inputs as parameters to the method. With the exception of Model methods, the subject of the rule is the, required, first parameter and all subsequent parameters are inputs. For a non-void Model method, the subject (i.e. model element being created) is the return object. For a void Model method, the subject is the first method parameter. </p>
+<p> The Path annotation can be placed on any parameter (except the subject of Model rules) to indicate the model element to bind to. If there is no Path annotation, a “by-type” binding will be attempted. The binding scope is determined by how the rule source is applied. </p>
+General class constraints 
+<p> Along with the constraints on individual rule methods by their associated annotation, the following are general constraints of rule source implementations: </p>
+<ul> <li>Constructors are not allowed.</li>
+ <li>Inheritance hierarchies are not allowed (i.e. all rules sources must directly extend RuleSource).</li>
+ <li>Instance variables are not allowed.</li>
+ <li>Non-final static variables are not allowed (i.e. constants are allowed).</li>
+ <li>Methods cannot be overloaded.</li>
+ <li>Implementations cannot be generic (i.e. cannot use type parameters).</li>
+ </ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm.plugins/-jvm-test-suite-base-plugin/index.html">JvmTestSuiteBasePlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JvmTestSuiteBasePlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">RuleSource</span></code>
+<p>The base plugin that needs to be applied by all plugins which provide testing support for the Java software model.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.play.plugins/-play-distribution-plugin/index.html">PlayDistributionPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PlayDistributionPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">RuleSource</span></code>
+<p>A plugin that adds a distribution zip to a Play application build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.play.plugins/-play-routes-plugin/index.html">PlayRoutesPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PlayRoutesPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">RuleSource</span></code>
+<p>Plugin for compiling Play routes sources in a Play application.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.play.plugins/-play-test-plugin/index.html">PlayTestPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PlayTestPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">RuleSource</span></code>
+<p>Plugin for executing tests from a Play Framework application.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.play.plugins/-play-twirl-plugin/index.html">PlayTwirlPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PlayTwirlPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">RuleSource</span></code>
+<p>Plugin for compiling Twirl sources in a Play application.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

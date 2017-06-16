@@ -1,0 +1,63 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Action - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href=".">Action</a><br/>
+<br/>
+<h1>Action</h1>
+<code><span class="identifier">@HasImplicitReceiver</span> <span class="keyword">interface </span><span class="identifier">Action</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Performs some action against objects of type T.</p>
+<h3>Parameters</h3>
+<a name="&lt;T&gt;"></a>
+<code><T></code> - The type of object which this action accepts.
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="execute.html">execute</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">execute</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Action$execute(org.gradle.api.Action.T)/t">t</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Performs this action against the given object.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.attributes/-attribute-compatibility-rule.html">AttributeCompatibilityRule</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">AttributeCompatibilityRule</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Action</span><span class="symbol">&lt;</span><a href="../../org.gradle.api.attributes/-compatibility-check-details/index.html"><span class="identifier">CompatibilityCheckDetails</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>A rule that determines whether a given attribute value is compatible some provided attribute value.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.attributes/-attribute-disambiguation-rule.html">AttributeDisambiguationRule</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">AttributeDisambiguationRule</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Action</span><span class="symbol">&lt;</span><a href="../../org.gradle.api.attributes/-multiple-candidates-details/index.html"><span class="identifier">MultipleCandidatesDetails</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>A rule that selects the best value out of a set of two or more candidates.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.artifacts/-component-metadata-supplier/index.html">ComponentMetadataSupplier</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentMetadataSupplier</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Action</span><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-component-metadata-supplier-details/index.html"><span class="identifier">ComponentMetadataSupplierDetails</span></a><span class="symbol">&gt;</span></code>
+<p>A component metadata rule is responsible for providing the initial metadata of a component from a remote repository, in place of parsing the descriptor. Users may implement a provider to make dependency resolution faster.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

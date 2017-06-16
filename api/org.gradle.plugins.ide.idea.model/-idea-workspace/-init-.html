@@ -1,0 +1,17 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>IdeaWorkspace.<init> - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.idea.model</a>&nbsp;/&nbsp;<a href="index.html">IdeaWorkspace</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.gradle.plugins.ide.idea.model.IdeaWorkspace$&lt;init&gt;()"></a>
+<code><span class="identifier">IdeaWorkspace</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Enables fine-tuning workspace details (*.iws file) of the IDEA plugin. 
+<p> At the moment, the only practical way of manipulating the resulting content is via the withXml hook: </p>
+<pre><code> apply plugin: 'java' apply plugin: 'idea' idea.workspace.iws.withXml { provider -&gt; provider.asNode().appendNode('gradleRocks', 'true') } </code></pre></p>
+</BODY>
+</HTML>

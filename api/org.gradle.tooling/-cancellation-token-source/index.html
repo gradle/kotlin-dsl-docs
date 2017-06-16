@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CancellationTokenSource - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling</a>&nbsp;/&nbsp;<a href=".">CancellationTokenSource</a><br/>
+<br/>
+<h1>CancellationTokenSource</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">CancellationTokenSource</span></code>
+<p>A <code>CancellationTokenSource</code> allows you to issue cancellation requests to one or more org.gradle.tooling.LongRunningOperation instances. To use a token source: <ul> <li>Create a token source using <code><a href="../-gradle-connector/new-cancellation-token-source.html">GradleConnector#newCancellationTokenSource()</a></code>.</li>
+ <li>Attach the token to one or more operations using <code><a href="../-long-running-operation/with-cancellation-token.html">org.gradle.tooling.LongRunningOperation#withCancellationToken(CancellationToken)</a></code>. You need to do this before you start the operation. </li>
+ <li>Later, you can cancel the associated operations by calling <code><a href="cancel.html">#cancel()</a></code> on this token source.</li>
+ </ul>
+ 
+<p>All implementations of this interface are required to be thread safe.</p>
+</p>
+<p><strong>Since</strong><br/>
+2.1</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="cancel.html">cancel</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">cancel</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Initiates cancel request. All operations that have been associated with this token will be cancelled. 
+<p>It is assumed that the implementation will do 'best-effort' attempt to perform cancellation. This method returns immediately and if the cancellation is successful the cancelled operation will notify its <code><a href="../-result-handler/on-failure.html">org.gradle.tooling.ResultHandler#onFailure(GradleConnectionException)</a></code> with a BuildCancelledException describing how it was cancelled. </p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="token.html">token</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">token</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-cancellation-token/index.html"><span class="identifier">CancellationToken</span></a></code>
+<p>Returns a token associated with this <code>CancellationTokenSource</code>. Always returns the same instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

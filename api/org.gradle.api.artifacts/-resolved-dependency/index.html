@@ -1,0 +1,136 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResolvedDependency - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">ResolvedDependency</a><br/>
+<br/>
+<h1>ResolvedDependency</h1>
+<code><span class="keyword">interface </span><span class="identifier">ResolvedDependency</span></code>
+<p>Information about a resolved dependency.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-all-artifacts.html">getAllArtifacts</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAllArtifacts</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolvedDependency$getAllArtifacts(org.gradle.api.artifacts.ResolvedDependency)/parent">parent</span><span class="symbol">:</span>&nbsp;<span class="identifier">ResolvedDependency</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-resolved-artifact/index.html"><span class="identifier">ResolvedArtifact</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the parent artifacts of this dependency and its children. Never returns null.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-all-module-artifacts.html">getAllModuleArtifacts</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAllModuleArtifacts</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-resolved-artifact/index.html"><span class="identifier">ResolvedArtifact</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the module artifacts belonging to this ResolvedDependency and recursively to its children. Returns never null.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-artifacts.html">getArtifacts</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getArtifacts</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolvedDependency$getArtifacts(org.gradle.api.artifacts.ResolvedDependency)/parent">parent</span><span class="symbol">:</span>&nbsp;<span class="identifier">ResolvedDependency</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-resolved-artifact/index.html"><span class="identifier">ResolvedArtifact</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the parent artifacts of this dependency. Never returns null.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-children.html">getChildren</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getChildren</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">ResolvedDependency</span><span class="symbol">&gt;</span></code>
+<p>Returns the transitive ResolvedDependency instances of this resolved dependency. Returns never null.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-configuration.html">getConfiguration</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getConfiguration</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the configuration under which this instance was resolved.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-module.html">getModule</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getModule</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-resolved-module-version/index.html"><span class="identifier">ResolvedModuleVersion</span></a></code>
+<p>Returns the module which this resolved dependency belongs to.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-module-artifacts.html">getModuleArtifacts</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getModuleArtifacts</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-resolved-artifact/index.html"><span class="identifier">ResolvedArtifact</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the module artifacts belonging to this ResolvedDependency. A module artifact is an artifact that belongs to a ResolvedDependency independent of a particular parent. Returns never null.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-module-group.html">getModuleGroup</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getModuleGroup</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the module group of the resolved dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-module-name.html">getModuleName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getModuleName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the module name of the resolved dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-module-version.html">getModuleVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getModuleVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the module version of the resolved dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the resolved dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-parent-artifacts.html">getParentArtifacts</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getParentArtifacts</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolvedDependency$getParentArtifacts(org.gradle.api.artifacts.ResolvedDependency)/parent">parent</span><span class="symbol">:</span>&nbsp;<span class="identifier">ResolvedDependency</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-resolved-artifact/index.html"><span class="identifier">ResolvedArtifact</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the artifacts belonging to this ResolvedDependency which it only has for a particular parent. Returns never null.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-parents.html">getParents</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getParents</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">ResolvedDependency</span><span class="symbol">&gt;</span></code>
+<p>Returns the ResolvedDependency instances that have this instance as a transitive dependency. Returns never null.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

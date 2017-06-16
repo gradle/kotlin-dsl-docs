@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GradleRunner.withGradleDistribution - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.testkit.runner</a>&nbsp;/&nbsp;<a href="index.html">GradleRunner</a>&nbsp;/&nbsp;<a href=".">withGradleDistribution</a><br/>
+<br/>
+<h1>withGradleDistribution</h1>
+<a name="org.gradle.testkit.runner.GradleRunner$withGradleDistribution(java.net.URI)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withGradleDistribution</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$withGradleDistribution(java.net.URI)/distribution">distribution</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/net/URI.html"><span class="identifier">URI</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">GradleRunner</span></a></code>
+<p>Configures the runner to execute the build using the distribution of Gradle specified. 
+<p> The given URI must point to a valid Gradle distribution ZIP file. This method is typically used as an alternative to <code><a href="#">#withGradleVersion(String)</a></code>, where it is preferable to obtain the Gradle runtime from “local” servers. </p>
+<p> Unless previously downloaded, this method will cause the Gradle runtime at the given URI to be downloaded. The download will be cached beneath the Gradle User Home directory, the location of which is determined by the following in order of precedence: </p>
+<ol> <li>The system property <code>"gradle.user.home"</code></li>
+ <li>The environment variable <code>"GRADLE_USER_HOME"</code></li>
+ </ol>
+ 
+<p> If neither are present, <code>"~/.gradle"</code> will be used, where <code>"~"</code> is the value advertised by the JVM's <code>"user.dir"</code> system property. The system property and environment variable are read in the process using the runner, not the build process.</p>
+</p>
+<h3>Parameters</h3>
+<a name="distribution"></a>
+<code>distribution</code> - a URI pointing at a valid Gradle distribution zip file
+<p><strong>Return</strong><br/>
+this</p>
+<p><strong>Since</strong><br/>
+2.9</p>
+<p><strong>See Also</strong><br/>
+<a href="#">#withGradleVersion(String)</a><a href="with-gradle-installation.html">#withGradleInstallation(File)</a></p>
+</BODY>
+</HTML>

@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Project.findProperty - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">Project</a>&nbsp;/&nbsp;<a href=".">findProperty</a><br/>
+<br/>
+<h1>findProperty</h1>
+<a name="org.gradle.api.Project$findProperty(kotlin.String)"></a>
+<code><span class="identifier">@Incubating</span> <span class="identifier">@Nullable</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">findProperty</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$findProperty(kotlin.String)/propertyName">propertyName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>
+<p>Returns the value of the given property or null if not found. This method locates a property as follows:</p>
+ <ol> <li>If this project object has a property with the given name, return the value of the property.</li>
+ <li>If this project has an extension with the given name, return the extension.</li>
+ <li>If this project's convention object has a property with the given name, return the value of the property.</li>
+ <li>If this project has an extra property with the given name, return the value of the property.</li>
+ <li>If this project has a task with the given name, return the task.</li>
+ <li>Search up through this project's ancestor projects for a convention property or extra property with the given name.</li>
+ <li>If not found, null value is returned.</li>
+ </ol>
+</p>
+<h3>Parameters</h3>
+<a name="propertyName"></a>
+<code>propertyName</code> - The name of the property.
+<p><strong>Return</strong><br/>
+The value of the property, possibly null or null if not found.</p>
+<p><strong>See Also</strong><br/>
+<a href="#">Project#property(String)</a></p>
+</BODY>
+</HTML>

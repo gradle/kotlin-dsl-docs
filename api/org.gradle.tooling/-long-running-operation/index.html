@@ -1,0 +1,175 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>LongRunningOperation - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling</a>&nbsp;/&nbsp;<a href=".">LongRunningOperation</a><br/>
+<br/>
+<h1>LongRunningOperation</h1>
+<code><span class="keyword">interface </span><span class="identifier">LongRunningOperation</span></code>
+<p>Offers ways to communicate both ways with a Gradle operation, be it building a model or running tasks. 
+<p> Enables tracking progress via listeners that will receive events from the Gradle operation. </p>
+<p> Allows providing standard output streams that will receive output if the Gradle operation writes to standard streams. </p>
+<p> Allows providing standard input that can be consumed by the gradle operation (useful for interactive builds). </p>
+<p> Enables configuring the build run / model request with options like the Java home or JVM arguments. Those settings might not be supported by the target Gradle version. Refer to Javadoc for those methods to understand what kind of exception throw and when is it thrown.</p>
+</p>
+<p><strong>Since</strong><br/>
+1.0-milestone-7</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-progress-listener.html">addProgressListener</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addProgressListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.LongRunningOperation$addProgressListener(org.gradle.tooling.ProgressListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../-progress-listener/index.html"><span class="identifier">ProgressListener</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">LongRunningOperation</span></code>
+<p>Adds a progress listener which will receive progress events as the operation runs. 
+<p>This method is intended to be replaced by <code><a href="add-progress-listener.html">#addProgressListener(org.gradle.tooling.events.ProgressListener)</a></code>. The new progress listener type provides much richer information and much better handling of parallel operations that run during the build, such as tasks that run in parallel. You should prefer using the new listener interface where possible. Note, however, that the new interface is supported only for Gradle 2.5 and later and is currently Incubating. It may change in later Gradle releases. </p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addProgressListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.LongRunningOperation$addProgressListener(org.gradle.tooling.events.ProgressListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.events/-progress-listener/index.html"><span class="identifier">ProgressListener</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">LongRunningOperation</span></code>
+<p>Adds a progress listener which will receive progress events of all types as the operation runs. 
+<p>This method is intended to replace <code><a href="add-progress-listener.html">#addProgressListener(ProgressListener)</a></code>. You should prefer using the new progress listener method where possible, as the new interface provides much richer information and much better handling of parallel operations that run during the build. </p>
+ 
+<p>Supported by Gradle 2.5 or later. Gradle 2.4 supports <code><a href="#">OperationType#TEST</a></code> operations only. Ignored for older versions.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addProgressListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.LongRunningOperation$addProgressListener(org.gradle.tooling.events.ProgressListener, kotlin.collections.MutableSet((org.gradle.tooling.events.OperationType)))/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.events/-progress-listener/index.html"><span class="identifier">ProgressListener</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.LongRunningOperation$addProgressListener(org.gradle.tooling.events.ProgressListener, kotlin.collections.MutableSet((org.gradle.tooling.events.OperationType)))/operationTypes">operationTypes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.tooling.events/-operation-type/index.html"><span class="identifier">OperationType</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">LongRunningOperation</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addProgressListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.LongRunningOperation$addProgressListener(org.gradle.tooling.events.ProgressListener, kotlin.Array((org.gradle.tooling.events.OperationType)))/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.events/-progress-listener/index.html"><span class="identifier">ProgressListener</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.tooling.LongRunningOperation$addProgressListener(org.gradle.tooling.events.ProgressListener, kotlin.Array((org.gradle.tooling.events.OperationType)))/operationTypes">operationTypes</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.events/-operation-type/index.html"><span class="identifier">OperationType</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">LongRunningOperation</span></code>
+<p>Adds a progress listener which will receive progress events as the operations of the requested type run. 
+<p>This method is intended to replace <code><a href="add-progress-listener.html">#addProgressListener(ProgressListener)</a></code>. You should prefer using the new progress listener method where possible, as the new interface provides much richer information and much better handling of parallel operations that run during the build. </p>
+ 
+<p>Supported by Gradle 2.5 or later. Gradle 2.4 supports <code><a href="#">OperationType#TEST</a></code> operations only. Ignored for older versions.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-color-output.html">setColorOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setColorOutput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.LongRunningOperation$setColorOutput(kotlin.Boolean)/colorOutput">colorOutput</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">LongRunningOperation</span></code>
+<p>Specifies whether to generate colored (ANSI encoded) output for logging. The default is to not generate color output. 
+<p>Supported by Gradle 2.3 or later. Ignored for older versions.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-environment-variables.html">setEnvironmentVariables</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setEnvironmentVariables</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.LongRunningOperation$setEnvironmentVariables(kotlin.collections.MutableMap((kotlin.String, )))/envVariables">envVariables</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">LongRunningOperation</span></code>
+<p>Specifies the environment variables to use for this operation. 
+<p> org.gradle.tooling.model.build.BuildEnvironment model contains information such as Java or Gradle environment. If you want to get hold of this information you can ask tooling API to build this model. </p>
+<p> If not configured or null is passed, then the reasonable default will be used.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-java-home.html">setJavaHome</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setJavaHome</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.LongRunningOperation$setJavaHome(java.io.File)/javaHome">javaHome</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">LongRunningOperation</span></code>
+<p>Specifies the Java home directory to use for this operation. 
+<p> org.gradle.tooling.model.build.BuildEnvironment model contains information such as Java or Gradle environment. If you want to get hold of this information you can ask tooling API to build this model. </p>
+<p> If not configured or null is passed, then the sensible default will be used.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-jvm-arguments.html">setJvmArguments</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setJvmArguments</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.tooling.LongRunningOperation$setJvmArguments(kotlin.Array((kotlin.String)))/jvmArguments">jvmArguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">LongRunningOperation</span></code>
+<p>Specifies the Java VM arguments to use for this operation. 
+<p> org.gradle.tooling.model.build.BuildEnvironment model contains information such as Java or Gradle environment. If you want to get hold of this information you can ask tooling API to build this model. </p>
+<p> If not configured, null, or an empty array is passed, then the reasonable default will be used.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setJvmArguments</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.LongRunningOperation$setJvmArguments(kotlin.collections.MutableIterable((kotlin.String)))/jvmArguments">jvmArguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">LongRunningOperation</span></code>
+<p>Specifies the Java VM arguments to use for this operation. 
+<p> org.gradle.tooling.model.build.BuildEnvironment model contains information such as Java or Gradle environment. If you want to get hold of this information you can ask tooling API to build this model. </p>
+<p> If not configured, null, or an empty list is passed, then the reasonable default will be used.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-standard-error.html">setStandardError</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setStandardError</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.LongRunningOperation$setStandardError(java.io.OutputStream)/outputStream">outputStream</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">LongRunningOperation</span></code>
+<p>Sets the OutputStream which should receive standard error logging generated while running the operation. The default is to discard the output.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-standard-input.html">setStandardInput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setStandardInput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.LongRunningOperation$setStandardInput(java.io.InputStream)/inputStream">inputStream</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">LongRunningOperation</span></code>
+<p>Sets the java.io.InputStream that will be used as standard input for this operation. Defaults to an empty input stream.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-standard-output.html">setStandardOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setStandardOutput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.LongRunningOperation$setStandardOutput(java.io.OutputStream)/outputStream">outputStream</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">LongRunningOperation</span></code>
+<p>Sets the java.io.OutputStream which should receive standard output logging generated while running the operation. The default is to discard the output.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="with-arguments.html">withArguments</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withArguments</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.tooling.LongRunningOperation$withArguments(kotlin.Array((kotlin.String)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">LongRunningOperation</span></code>
+<p>Specify the command line build arguments. Useful mostly for running tasks via BuildLauncher. 
+<p> Be aware that not all of the Gradle command line options are supported! Only the build arguments that configure the build execution are supported. They are modelled in the Gradle API via org.gradle.StartParameter. Examples of supported build arguments: '--info', '-u', '-p'. The command line instructions that are actually separate commands (like '-?' and '-v') are not supported. Some other instructions like '--daemon' are also not supported - the tooling API always runs with the daemon. </p>
+<p> If an unknown or unsupported command line option is specified, org.gradle.tooling.exceptions.UnsupportedBuildArgumentException will be thrown at the time the operation is executed via <code><a href="../-build-launcher/run.html">BuildLauncher#run()</a></code> or <code><a href="../-model-builder/get.html">ModelBuilder#get()</a></code>. </p>
+<p> For the list of all Gradle command line options please refer to the user guide or take a look at the output of the 'gradle -?' command. Majority of arguments modeled by org.gradle.StartParameter are supported. </p>
+<p> The arguments can potentially override some other settings you have configured. For example, the project directory or Gradle user home directory that are configured in the GradleConnector. Also, the task names configured by <code><a href="#">BuildLauncher#forTasks(String...)</a></code> can be overridden if you happen to specify other tasks via the build arguments. </p>
+<p> See the example in the docs for BuildLauncher If not configured, null, or an empty array is passed, then the reasonable default will be used. </p>
+<p>Requires Gradle 1.0 or later.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withArguments</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.LongRunningOperation$withArguments(kotlin.collections.MutableIterable((kotlin.String)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">LongRunningOperation</span></code>
+<p>Specify the command line build arguments. Useful mostly for running tasks via BuildLauncher. 
+<p> If not configured, null, or an empty list is passed, then the reasonable default will be used. </p>
+<p>Requires Gradle 1.0 or later.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="with-cancellation-token.html">withCancellationToken</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withCancellationToken</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.LongRunningOperation$withCancellationToken(org.gradle.tooling.CancellationToken)/cancellationToken">cancellationToken</span><span class="symbol">:</span>&nbsp;<a href="../-cancellation-token/index.html"><span class="identifier">CancellationToken</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">LongRunningOperation</span></code>
+<p>Sets the cancellation token to use to cancel the operation if required. 
+<p>Supported by Gradle 2.1 or later. Ignored for older versions.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-configurable-launcher/index.html">ConfigurableLauncher</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ConfigurableLauncher</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-configurable-launcher/index.html"><span class="identifier">ConfigurableLauncher</span></a><span class="symbol">&lt;</span><a href="../-configurable-launcher/index.html"><span class="identifier">ConfigurableLauncher</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">LongRunningOperation</span></code>
+<p>A <code>ConfigurableLauncher</code> allows you to configure a long running operation.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

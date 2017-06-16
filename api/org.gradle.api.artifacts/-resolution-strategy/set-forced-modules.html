@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResolutionStrategy.setForcedModules - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="index.html">ResolutionStrategy</a>&nbsp;/&nbsp;<a href=".">setForcedModules</a><br/>
+<br/>
+<h1>setForcedModules</h1>
+<a name="org.gradle.api.artifacts.ResolutionStrategy$setForcedModules(kotlin.Array((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setForcedModules</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$setForcedModules(kotlin.Array((kotlin.Any)))/moduleVersionSelectorNotations">moduleVersionSelectorNotations</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">ResolutionStrategy</span></a></code>
+<p>Allows forcing certain versions of dependencies, including transitive dependencies. <strong>Replaces</strong> existing forced modules with the input. 
+<p> For information on notations see <code><a href="#">#force(Object...)</a></code> </p>
+<p> Example: </p>
+<pre><code> apply plugin: 'java' //so that there are some configurations configurations.all { resolutionStrategy.forcedModules = ['asm:asm-all:3.3.1', 'commons-io:commons-io:1.4'] } </code></pre></p>
+<h3>Parameters</h3>
+<a name="moduleVersionSelectorNotations"></a>
+<code>moduleVersionSelectorNotations</code> - typically group:name:version notations to set
+<p><strong>Return</strong><br/>
+this ResolutionStrategy instance</p>
+<p><strong>Since</strong><br/>
+1.0-milestone-7</p>
+</BODY>
+</HTML>

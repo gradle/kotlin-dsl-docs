@@ -1,0 +1,17 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GroovyCompileOptions.getOptimizationOptions - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.compile</a>&nbsp;/&nbsp;<a href="index.html">GroovyCompileOptions</a>&nbsp;/&nbsp;<a href=".">getOptimizationOptions</a><br/>
+<br/>
+<h1>getOptimizationOptions</h1>
+<a name="org.gradle.api.tasks.compile.GroovyCompileOptions$getOptimizationOptions()"></a>
+<code><span class="identifier">@Optional</span> <span class="identifier">@Input</span> <span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOptimizationOptions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">&gt;</span></code>
+<p>Returns optimization options for the Groovy compiler. Allowed values for an option are <code>true</code> and <code>false</code>. Only takes effect when compiling against Groovy 1.8 or higher. 
+<p>Known options are: </p>
+ indy Use the invokedynamic bytecode instruction. Requires JDK7 or higher and Groovy 2.0 or higher. Disabled by default. int Optimize operations on primitive types (e.g. integers). Enabled by default. all Enable or disable all optimizations. Note that some optimizations might be mutually exclusive. </p>
+</BODY>
+</HTML>

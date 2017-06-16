@@ -1,0 +1,129 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CreateStaticLibrary - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform.tasks</a>&nbsp;/&nbsp;<a href=".">CreateStaticLibrary</a><br/>
+<br/>
+<h1>CreateStaticLibrary</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CreateStaticLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a><span class="symbol">, </span><a href="../-object-files-to-binary/index.html"><span class="identifier">ObjectFilesToBinary</span></a></code>
+<p>Assembles a static library from object files.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">CreateStaticLibrary</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-operation-logger-factory.html">getOperationLoggerFactory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOperationLoggerFactory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BuildOperationLoggerFactory</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-output-file.html">getOutputFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOutputFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The file where the output binary will be located.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-source.html">getSource</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>The source object files to be passed to the archiver.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-static-lib-args.html">getStaticLibArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getStaticLibArgs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Additional arguments passed to the archiver.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-target-platform.html">getTargetPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a></code>
+<p>The platform being targeted.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-tool-chain.html">getToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getToolChain</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a></code>
+<p>The tool chain used for creating the static library.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="link.html">link</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">link</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-output-file.html">setOutputFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOutputFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.CreateStaticLibrary$setOutputFile(java.io.File)/outputFile">outputFile</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-static-lib-args.html">setStaticLibArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setStaticLibArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.CreateStaticLibrary$setStaticLibArgs(kotlin.collections.MutableList((kotlin.String)))/staticLibArgs">staticLibArgs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-target-platform.html">setTargetPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTargetPlatform</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.CreateStaticLibrary$setTargetPlatform(org.gradle.nativeplatform.platform.NativePlatform)/targetPlatform">targetPlatform</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-tool-chain.html">setToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setToolChain</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.CreateStaticLibrary$setToolChain(org.gradle.nativeplatform.toolchain.NativeToolChain)/toolChain">toolChain</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="source.html">source</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">source</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.CreateStaticLibrary$source(kotlin.Any)/source">source</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a set of object files to be linked. 
+<p> The provided source object is evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code>.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

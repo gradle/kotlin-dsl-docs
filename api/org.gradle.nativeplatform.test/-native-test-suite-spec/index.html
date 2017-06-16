@@ -1,0 +1,90 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NativeTestSuiteSpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform.test</a>&nbsp;/&nbsp;<a href=".">NativeTestSuiteSpec</a><br/>
+<br/>
+<h1>NativeTestSuiteSpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">NativeTestSuiteSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.testing.base/-test-suite-spec/index.html"><span class="identifier">TestSuiteSpec</span></a><span class="symbol">, </span><a href="../../org.gradle.nativeplatform/-native-component-spec/index.html"><span class="identifier">NativeComponentSpec</span></a></code>
+<p>A component representing a suite of tests that will be executed together.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-tested-component.html">getTestedComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTestedComponent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform/-native-component-spec/index.html"><span class="identifier">NativeComponentSpec</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-native-component-spec/get-base-name.html">getBaseName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBaseName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name that is used to construct the output file names when building this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-native-component-spec/set-base-name.html">setBaseName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setBaseName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.NativeComponentSpec$setBaseName(kotlin.String)/baseName">baseName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the name that is used to construct the output file names when building this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.testing.base/-test-suite-spec/set-tested-component.html">setTestedComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setTestedComponent</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.base.TestSuiteSpec$setTestedComponent(org.gradle.platform.base.ComponentSpec)/testedComponent">testedComponent</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.platform.base/-component-spec/index.html"><span class="identifier">ComponentSpec</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the tested component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.testing.base/-test-suite-spec/testing.html">testing</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">testing</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.base.TestSuiteSpec$testing(org.gradle.platform.base.ComponentSpec)/testedComponent">testedComponent</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.platform.base/-component-spec/index.html"><span class="identifier">ComponentSpec</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the tested component.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.test.cunit/-c-unit-test-suite-spec.html">CUnitTestSuiteSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CUnitTestSuiteSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NativeTestSuiteSpec</span></code>
+<p>Test suite of CUnit tests.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.test.googletest/-google-test-test-suite-spec.html">GoogleTestTestSuiteSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">GoogleTestTestSuiteSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NativeTestSuiteSpec</span></code>
+<p>Test suite of Google Test tests.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

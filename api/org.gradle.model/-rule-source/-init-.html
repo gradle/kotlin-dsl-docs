@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>RuleSource.<init> - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.model</a>&nbsp;/&nbsp;<a href="index.html">RuleSource</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.gradle.model.RuleSource$&lt;init&gt;()"></a>
+<code><span class="identifier">RuleSource</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>A marker type for a class that is a collection of rules. 
+<p> A rule source is not used like a regular Java object. It is a stateless container of methods and possibly constants. </p>
+<p> Please consult the “Rule based model configuration” chapter of the Gradle User Guide for general information about “rules”. </p>
+Rule methods 
+<p> Each method that is annotated with one of the following is considered a rule: </p>
+<ul> <li>Model</li>
+ <li>Defaults</li>
+ <li>Mutate</li>
+ <li>Finalize</li>
+ <li>Validate</li>
+ <li>Rules</li>
+ <li>org.gradle.platform.base.ComponentType</li>
+ <li>org.gradle.platform.base.ComponentBinaries</li>
+ <li>org.gradle.platform.base.BinaryTasks</li>
+ </ul>
+ 
+<p> Each annotation specifies the type of the rule, which affects when it will be executed. </p>
+<p> The following constraints apply to all rule methods: </p>
+<ul> <li>A method may only be annotated by at most one of the above annotations.</li>
+ <li>A rule method may be <code>static</code> or not; it makes no difference.</li>
+ <li>A rule method cannot be generic (i.e. cannot have type parameters).</li>
+ <li>With the exception of Model methods, all methods must have at least one parameter.</li>
+ <li>With the exception of Model methods, all methods must have a <code>void</code> return type.</li>
+ </ul>
+ 
+<p> See Model for information on the significance of the return type of a Model method. </p>
+Subjects and inputs 
+<p> Method rules declare the subject and any inputs as parameters to the method. With the exception of Model methods, the subject of the rule is the, required, first parameter and all subsequent parameters are inputs. For a non-void Model method, the subject (i.e. model element being created) is the return object. For a void Model method, the subject is the first method parameter. </p>
+<p> The Path annotation can be placed on any parameter (except the subject of Model rules) to indicate the model element to bind to. If there is no Path annotation, a “by-type” binding will be attempted. The binding scope is determined by how the rule source is applied. </p>
+General class constraints 
+<p> Along with the constraints on individual rule methods by their associated annotation, the following are general constraints of rule source implementations: </p>
+<ul> <li>Constructors are not allowed.</li>
+ <li>Inheritance hierarchies are not allowed (i.e. all rules sources must directly extend RuleSource).</li>
+ <li>Instance variables are not allowed.</li>
+ <li>Non-final static variables are not allowed (i.e. constants are allowed).</li>
+ <li>Methods cannot be overloaded.</li>
+ <li>Implementations cannot be generic (i.e. cannot use type parameters).</li>
+ </ul>
+</p>
+</BODY>
+</HTML>

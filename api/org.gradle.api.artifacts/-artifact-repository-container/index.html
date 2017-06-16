@@ -1,0 +1,153 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ArtifactRepositoryContainer - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">ArtifactRepositoryContainer</a><br/>
+<br/>
+<h1>ArtifactRepositoryContainer</h1>
+<code><span class="keyword">interface </span><span class="identifier">ArtifactRepositoryContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-named-domain-object-list/index.html"><span class="identifier">NamedDomainObjectList</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts.repositories/-artifact-repository/index.html"><span class="identifier">ArtifactRepository</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">Configurable</span></code>
+<p>
+<p>A <code>ResolverContainer</code> is responsible for managing a set of ArtifactRepository instances. Repositories are arranged in a sequence.</p>
+ 
+<p>You can obtain a <code>ResolverContainer</code> instance by calling <code><a href="../../org.gradle.api/-project/get-repositories.html">org.gradle.api.Project#getRepositories()</a></code> or using the <code>repositories</code> property in your build script.</p>
+ 
+<p>The resolvers in a container are accessible as read-only properties of the container, using the name of the resolver as the property name. For example:</p>
+ <pre><code> repositories.maven { name 'myResolver' } repositories.myResolver.url = 'some-url' </code></pre> 
+<p>A dynamic method is added for each resolver which takes a configuration closure. This is equivalent to calling <code><a href="#">#getByName(String, groovy.lang.Closure)</a></code>. For example:</p>
+ <pre><code> repositories.maven { name 'myResolver' } repositories.myResolver { url 'some-url' } </code></pre></p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-d-e-f-a-u-l-t_-m-a-v-e-n_-c-e-n-t-r-a-l_-r-e-p-o_-n-a-m-e.html">DEFAULT_MAVEN_CENTRAL_REPO_NAME</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">DEFAULT_MAVEN_CENTRAL_REPO_NAME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-d-e-f-a-u-l-t_-m-a-v-e-n_-l-o-c-a-l_-r-e-p-o_-n-a-m-e.html">DEFAULT_MAVEN_LOCAL_REPO_NAME</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">DEFAULT_MAVEN_LOCAL_REPO_NAME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-g-o-o-g-l-e_-u-r-l.html">GOOGLE_URL</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">GOOGLE_URL</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-m-a-v-e-n_-c-e-n-t-r-a-l_-u-r-l.html">MAVEN_CENTRAL_URL</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">MAVEN_CENTRAL_URL</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add.html">add</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ArtifactRepositoryContainer$add(org.gradle.api.artifacts.repositories.ArtifactRepository)/element">element</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts.repositories/-artifact-repository/index.html"><span class="identifier">ArtifactRepository</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Adds a repository to this container, at the end of the repository sequence.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="add-first.html">addFirst</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addFirst</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ArtifactRepositoryContainer$addFirst(org.gradle.api.artifacts.repositories.ArtifactRepository)/repository">repository</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts.repositories/-artifact-repository/index.html"><span class="identifier">ArtifactRepository</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a repository to this container, at the start of the repository sequence.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="add-last.html">addLast</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addLast</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ArtifactRepositoryContainer$addLast(org.gradle.api.artifacts.repositories.ArtifactRepository)/repository">repository</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts.repositories/-artifact-repository/index.html"><span class="identifier">ArtifactRepository</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a repository to this container, at the end of the repository sequence.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-at.html">getAt</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAt</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ArtifactRepositoryContainer$getAt(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.repositories/-artifact-repository/index.html"><span class="identifier">ArtifactRepository</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-by-name.html">getByName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getByName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ArtifactRepositoryContainer$getByName(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.repositories/-artifact-repository/index.html"><span class="identifier">ArtifactRepository</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getByName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ArtifactRepositoryContainer$getByName(kotlin.String, groovy.lang.Closure((kotlin.Any)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.ArtifactRepositoryContainer$getByName(kotlin.String, groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.repositories/-artifact-repository/index.html"><span class="identifier">ArtifactRepository</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getByName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ArtifactRepositoryContainer$getByName(kotlin.String, org.gradle.api.Action((org.gradle.api.artifacts.repositories.ArtifactRepository)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.ArtifactRepositoryContainer$getByName(kotlin.String, org.gradle.api.Action((org.gradle.api.artifacts.repositories.ArtifactRepository)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.artifacts.repositories/-artifact-repository/index.html"><span class="identifier">ArtifactRepository</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.repositories/-artifact-repository/index.html"><span class="identifier">ArtifactRepository</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-named-domain-object-list/find-all.html">findAll</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">findAll</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectList$findAll(groovy.lang.Closure((kotlin.Any)))/spec">spec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-named-domain-object-list/matching.html">matching</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectList$matching(groovy.lang.Closure((kotlin.Any)))/spec">spec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-named-domain-object-list/index.html"><span class="identifier">NamedDomainObjectList</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-named-domain-object-list/with-type.html">withType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">withType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectList$withType(java.lang.Class((org.gradle.api.NamedDomainObjectList.withType.S)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-named-domain-object-list/index.html"><span class="identifier">NamedDomainObjectList</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.artifacts.dsl/-repository-handler/index.html">RepositoryHandler</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">RepositoryHandler</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ArtifactRepositoryContainer</span></code>
+<p>A <code>RepositoryHandler</code> manages a set of repositories, allowing repositories to be defined and queried.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

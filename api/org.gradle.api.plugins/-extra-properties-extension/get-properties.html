@@ -1,0 +1,17 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ExtraPropertiesExtension.getProperties - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href="index.html">ExtraPropertiesExtension</a>&nbsp;/&nbsp;<a href=".">getProperties</a><br/>
+<br/>
+<h1>getProperties</h1>
+<a name="org.gradle.api.plugins.ExtraPropertiesExtension$getProperties()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProperties</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Returns all of the registered properties and their current values as a map. The returned map is detached from the extension. That is, any changes made to the map do not change the extension from which it originated. <pre><code> project.version = "1.0" assert project.hasProperty("version") assert project.ext.properties.containsKey("version") == false project.ext.foo = "bar" assert project.ext.properties.containsKey("foo") assert project.ext.properties.foo == project.ext.foo assert project.ext.properties.every { key, value -&gt; project.properties[key] == value } </code></pre></p>
+<p><strong>Return</strong><br/>
+All of the registered properties and their current values as a map.</p>
+</BODY>
+</HTML>

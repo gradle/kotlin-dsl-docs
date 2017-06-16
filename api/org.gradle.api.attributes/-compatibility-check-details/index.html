@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CompatibilityCheckDetails - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.attributes</a>&nbsp;/&nbsp;<a href=".">CompatibilityCheckDetails</a><br/>
+<br/>
+<h1>CompatibilityCheckDetails</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">CompatibilityCheckDetails</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Provides context about attribute compatibility checks, and allows the user to define when an attribute is compatible with another.</p>
+<h3>Parameters</h3>
+<a name="&lt;T&gt;"></a>
+<code><T></code> - the concrete type of the attribute
+<p><strong>Since</strong><br/>
+3.3</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="compatible.html">compatible</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">compatible</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Calling this method will indicate that the attributes are compatible.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-consumer-value.html">getConsumerValue</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getConsumerValue</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>The value of the attribute as found on the consumer side.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-producer-value.html">getProducerValue</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProducerValue</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>The value of the attribute as found on the producer side.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="incompatible.html">incompatible</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">incompatible</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Calling this method will indicate that the attributes are incompatible.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,185 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResolutionStrategy - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">ResolutionStrategy</a><br/>
+<br/>
+<h1>ResolutionStrategy</h1>
+<code><span class="keyword">interface </span><span class="identifier">ResolutionStrategy</span></code>
+<p>Defines the strategies around dependency resolution. For example, forcing certain dependency versions, substitutions, conflict resolutions or snapshot timeouts. 
+<p> Examples: </p>
+<pre><code> apply plugin: 'java' //so that there are some configurations configurations.all { resolutionStrategy { // fail eagerly on version conflict (includes transitive dependencies) // e.g. multiple different versions of the same dependency (group and name are equal) failOnVersionConflict() // prefer modules that are part of this build (multi-project or composite build) over external modules preferProjectModules() // force certain versions of dependencies (including transitive) // *append new forced modules: force 'asm:asm-all:3.3.1', 'commons-io:commons-io:1.4' // *replace existing forced modules with new ones: forcedModules = ['asm:asm-all:3.3.1'] // add dependency substitution rules dependencySubstitution { substitute module('org.gradle:api') with project(':api') substitute project(':util') with module('org.gradle:util:3.0') } // cache dynamic versions for 10 minutes cacheDynamicVersionsFor 10*60, 'seconds' // don't cache changing modules at all cacheChangingModulesFor 0, 'seconds' } } </code></pre></p>
+<p><strong>Since</strong><br/>
+1.0-milestone-6</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-sort-order/index.html">SortOrder</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">SortOrder</span></code>
+<p>Defines the sort order for components and artifacts produced by the configuration.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="cache-changing-modules-for.html">cacheChangingModulesFor</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">cacheChangingModulesFor</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$cacheChangingModulesFor(kotlin.Int, kotlin.String)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$cacheChangingModulesFor(kotlin.Int, kotlin.String)/units">units</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the length of time that changing modules will be cached, with units expressed as a String. 
+<p>A convenience method for <code><a href="#">#cacheChangingModulesFor(int, java.util.concurrent.TimeUnit)</a></code> with units expressed as a String. Units are resolved by calling the <code>valueOf(String)</code> method of java.util.concurrent.TimeUnit with the upper-cased string value.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">cacheChangingModulesFor</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$cacheChangingModulesFor(kotlin.Int, java.util.concurrent.TimeUnit)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$cacheChangingModulesFor(kotlin.Int, java.util.concurrent.TimeUnit)/units">units</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html"><span class="identifier">TimeUnit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the length of time that changing modules will be cached. 
+<p>Gradle caches the contents and artifacts of changing modules. By default, these cached values are kept for 24 hours, after which the cached entry is expired and the module is resolved again.</p>
+ 
+<p>Use this method to provide a custom expiry time after which the cached entries for any changing module will be expired.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="cache-dynamic-versions-for.html">cacheDynamicVersionsFor</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">cacheDynamicVersionsFor</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$cacheDynamicVersionsFor(kotlin.Int, kotlin.String)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$cacheDynamicVersionsFor(kotlin.Int, kotlin.String)/units">units</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the length of time that dynamic versions will be cached, with units expressed as a String. 
+<p>A convenience method for <code><a href="#">#cacheDynamicVersionsFor(int, java.util.concurrent.TimeUnit)</a></code> with units expressed as a String. Units are resolved by calling the <code>valueOf(String)</code> method of java.util.concurrent.TimeUnit with the upper-cased string value.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">cacheDynamicVersionsFor</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$cacheDynamicVersionsFor(kotlin.Int, java.util.concurrent.TimeUnit)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$cacheDynamicVersionsFor(kotlin.Int, java.util.concurrent.TimeUnit)/units">units</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html"><span class="identifier">TimeUnit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the length of time that dynamic versions will be cached. 
+<p>Gradle keeps a cache of dynamic version =&gt; resolved version (ie 2.+ =&gt; 2.3). By default, these cached values are kept for 24 hours, after which the cached entry is expired and the dynamic version is resolved again.</p>
+ 
+<p>Use this method to provide a custom expiry time after which the cached value for any dynamic version will be expired.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="component-selection.html">componentSelection</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">componentSelection</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$componentSelection(org.gradle.api.Action((org.gradle.api.artifacts.ComponentSelectionRules)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-component-selection-rules/index.html"><span class="identifier">ComponentSelectionRules</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ResolutionStrategy</span></code>
+<p>The componentSelection block provides rules to filter or blacklist certain components from appearing in the resolution result.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="dependency-substitution.html">dependencySubstitution</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">dependencySubstitution</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$dependencySubstitution(org.gradle.api.Action((org.gradle.api.artifacts.DependencySubstitutions)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency-substitutions/index.html"><span class="identifier">DependencySubstitutions</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ResolutionStrategy</span></code>
+<p>Configures the set of dependency substitution rules for this configuration. The action receives an instance of DependencySubstitutions which can then be configured with substitution rules.  Examples: <pre><code> // add dependency substitution rules configurations.all { resolutionStrategy.dependencySubstitution { // Substitute project and module dependencies substitute module('org.gradle:api') with project(':api') substitute project(':util') with module('org.gradle:util:3.0') // Substitute one module dependency for another substitute module('org.gradle:api:2.0') with module('org.gradle:api:2.1') } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="each-dependency.html">eachDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">eachDependency</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$eachDependency(org.gradle.api.Action((org.gradle.api.artifacts.DependencyResolveDetails)))/rule">rule</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency-resolve-details/index.html"><span class="identifier">DependencyResolveDetails</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ResolutionStrategy</span></code>
+<p>Adds a dependency substitution rule that is triggered for every dependency (including transitive) when the configuration is being resolved. The action receives an instance of DependencyResolveDetails that can be used to find out what dependency is being resolved and to influence the resolution process. Example: <pre><code> configurations { compile.resolutionStrategy { eachDependency { DependencyResolveDetails details -&gt; //specifying a fixed version for all libraries with 'org.gradle' group if (details.requested.group == 'org.gradle') { details.useVersion '1.4' } } eachDependency { details -&gt; //multiple actions can be specified if (details.requested.name == 'groovy-all') { //changing the name: details.useTarget group: details.requested.group, name: 'groovy', version: details.requested.version } } } } </code></pre> The rules are evaluated in order they are declared. Rules are evaluated after forced modules are applied (see <code><a href="#">#force(Object...)</a></code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="fail-on-version-conflict.html">failOnVersionConflict</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">failOnVersionConflict</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ResolutionStrategy</span></code>
+<p>In case of conflict, Gradle by default uses the newest of conflicting versions. However, you can change this behavior. Use this method to configure the resolution to fail eagerly on any version conflict, e.g. multiple different versions of the same dependency (group and name are equal) in the same Configuration. The check includes both first level and transitive dependencies. See example below: <pre><code> apply plugin: 'java' //so that there are some configurations configurations.all { resolutionStrategy.failOnVersionConflict() } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="force.html">force</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">force</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$force(kotlin.Array((kotlin.Any)))/moduleVersionSelectorNotations">moduleVersionSelectorNotations</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ResolutionStrategy</span></code>
+<p>Allows forcing certain versions of dependencies, including transitive dependencies. <strong>Appends</strong> new forced modules to be considered when resolving dependencies. 
+<p> It accepts following notations: </p>
+<ul> <li>String in a format of: 'group:name:version', for example: 'org.gradle:gradle-core:1.0'</li>
+ <li>instance of ModuleVersionSelector</li>
+ <li>any collection or array of above will be automatically flattened</li>
+ </ul>
+ Example: <pre><code> apply plugin: 'java' //so that there are some configurations configurations.all { resolutionStrategy.force 'asm:asm-all:3.3.1', 'commons-io:commons-io:1.4' } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-component-selection.html">getComponentSelection</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getComponentSelection</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-component-selection-rules/index.html"><span class="identifier">ComponentSelectionRules</span></a></code>
+<p>Returns the currently configured version selection rules object.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-dependency-substitution.html">getDependencySubstitution</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDependencySubstitution</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-dependency-substitutions/index.html"><span class="identifier">DependencySubstitutions</span></a></code>
+<p>Returns the set of dependency substitution rules that are set for this configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-forced-modules.html">getForcedModules</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getForcedModules</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-module-version-selector/index.html"><span class="identifier">ModuleVersionSelector</span></a><span class="symbol">&gt;</span></code>
+<p>Returns currently configured forced modules. For more information on forcing versions see <code><a href="#">#force(Object...)</a></code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="prefer-project-modules.html">preferProjectModules</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">preferProjectModules</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Gradle can resolve conflicts purely by version number or prioritize project dependencies over binary. The default is <strong>by version number</strong>.
+<p> This applies to both first level and transitive dependencies. See example below: </p>
+<pre><code> apply plugin: 'java' //so that there are some configurations configurations.all { resolutionStrategy.preferProjectModules() } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-forced-modules.html">setForcedModules</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setForcedModules</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$setForcedModules(kotlin.Array((kotlin.Any)))/moduleVersionSelectorNotations">moduleVersionSelectorNotations</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ResolutionStrategy</span></code>
+<p>Allows forcing certain versions of dependencies, including transitive dependencies. <strong>Replaces</strong> existing forced modules with the input. 
+<p> For information on notations see <code><a href="#">#force(Object...)</a></code> </p>
+<p> Example: </p>
+<pre><code> apply plugin: 'java' //so that there are some configurations configurations.all { resolutionStrategy.forcedModules = ['asm:asm-all:3.3.1', 'commons-io:commons-io:1.4'] } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="sort-artifacts.html">sortArtifacts</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">sortArtifacts</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$sortArtifacts(org.gradle.api.artifacts.ResolutionStrategy.SortOrder)/sortOrder">sortOrder</span><span class="symbol">:</span>&nbsp;<a href="-sort-order/index.html"><span class="identifier">SortOrder</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies the ordering for resolved artifacts. Options are: <ul> <li><code><a href="#">SortOrder#DEFAULT</a></code> : Don't specify the sort order. Gradle will provide artifacts in the default order.</li>
+ <li><code><a href="#">SortOrder#CONSUMER_FIRST</a></code> : Artifacts for a consuming component should appear <em>before</em> artifacts for it's dependencies.</li>
+ <li><code><a href="#">SortOrder#DEPENDENCY_FIRST</a></code> : Artifacts for a consuming component should appear <em>after</em> artifacts for it's dependencies.</li>
+ </ul>
+ A best attempt will be made to sort artifacts according the supplied SortOrder, but no guarantees will be made in the presence of dependency cycles. NOTE: For a particular Gradle version, artifact ordering will be consistent. Multiple resolves for the same inputs will result in the same outputs in the same order.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

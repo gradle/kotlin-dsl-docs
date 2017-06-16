@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PreprocessingTool - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform</a>&nbsp;/&nbsp;<a href=".">PreprocessingTool</a><br/>
+<br/>
+<h1>PreprocessingTool</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">PreprocessingTool</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-tool/index.html"><span class="identifier">Tool</span></a></code>
+<p>A tool that permits configuration of the C preprocessor.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="define.html">define</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">define</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.PreprocessingTool$define(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Defines a named preprocessor macros to use when compiling this binary. The macro will be supplied to the compiler as '-D name'.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">define</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.PreprocessingTool$define(kotlin.String, kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.nativeplatform.PreprocessingTool$define(kotlin.String, kotlin.String)/definition">definition</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Defines a named preprocessor macro with a value, which will be used when compiling this binary. The macro will be supplied to the compiler as '-D name=definition'.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-macros.html">getMacros</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getMacros</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The set of preprocessor macros to define when compiling this binary.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-tool/args.html">args</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">args</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.nativeplatform.Tool$args(kotlin.Array((kotlin.String)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a number of arguments to be passed to the tool.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-tool/get-args.html">getArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getArgs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The arguments passed when executing this tool.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

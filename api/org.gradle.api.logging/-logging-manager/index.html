@@ -1,0 +1,107 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>LoggingManager - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.logging</a>&nbsp;/&nbsp;<a href=".">LoggingManager</a><br/>
+<br/>
+<h1>LoggingManager</h1>
+<code><span class="keyword">interface </span><span class="identifier">LoggingManager</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-logging-output/index.html"><span class="identifier">LoggingOutput</span></a></code>
+<p>
+<p>A <code>LoggingManager</code> provides access to and control over the Gradle logging system. Using this interface, you can control the current logging level and standard output and error capture.</p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="capture-standard-error.html">captureStandardError</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">captureStandardError</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.LoggingManager$captureStandardError(org.gradle.api.logging.LogLevel)/level">level</span><span class="symbol">:</span>&nbsp;<a href="../-log-level/index.html"><span class="identifier">LogLevel</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">LoggingManager</span></code>
+<p>Requests that output written to System.err be routed to Gradle's logging system. The default is that System.err is routed to <code><a href="#">LogLevel#ERROR</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="capture-standard-output.html">captureStandardOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">captureStandardOutput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.LoggingManager$captureStandardOutput(org.gradle.api.logging.LogLevel)/level">level</span><span class="symbol">:</span>&nbsp;<a href="../-log-level/index.html"><span class="identifier">LogLevel</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">LoggingManager</span></code>
+<p>Requests that output written to System.out be routed to Gradle's logging system. The default is that System.out is routed to <code><a href="#">LogLevel#QUIET</a></code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-level.html">getLevel</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLevel</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-log-level/index.html"><span class="identifier">LogLevel</span></a></code>
+<p>Returns the current logging level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-standard-error-capture-level.html">getStandardErrorCaptureLevel</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getStandardErrorCaptureLevel</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-log-level/index.html"><span class="identifier">LogLevel</span></a></code>
+<p>Returns the log level that output written to System.err will be mapped to.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-standard-output-capture-level.html">getStandardOutputCaptureLevel</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getStandardOutputCaptureLevel</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-log-level/index.html"><span class="identifier">LogLevel</span></a></code>
+<p>Returns the log level that output written to System.out will be mapped to.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-logging-output/add-standard-error-listener.html">addStandardErrorListener</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addStandardErrorListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.LoggingOutput$addStandardErrorListener(org.gradle.api.logging.StandardOutputListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../-standard-output-listener/index.html"><span class="identifier">StandardOutputListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a listener which receives output written to standard error by the Gradle logging system.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-logging-output/add-standard-output-listener.html">addStandardOutputListener</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addStandardOutputListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.LoggingOutput$addStandardOutputListener(org.gradle.api.logging.StandardOutputListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../-standard-output-listener/index.html"><span class="identifier">StandardOutputListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a listener which receives output written to standard output by the Gradle logging system.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-logging-output/remove-standard-error-listener.html">removeStandardErrorListener</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">removeStandardErrorListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.LoggingOutput$removeStandardErrorListener(org.gradle.api.logging.StandardOutputListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../-standard-output-listener/index.html"><span class="identifier">StandardOutputListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Removes a listener from standard error.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-logging-output/remove-standard-output-listener.html">removeStandardOutputListener</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">removeStandardOutputListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.LoggingOutput$removeStandardOutputListener(org.gradle.api.logging.StandardOutputListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../-standard-output-listener/index.html"><span class="identifier">StandardOutputListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Removes a listener from standard output.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

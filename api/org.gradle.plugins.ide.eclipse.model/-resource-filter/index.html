@@ -1,0 +1,93 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResourceFilter - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.eclipse.model</a>&nbsp;/&nbsp;<a href=".">ResourceFilter</a><br/>
+<br/>
+<h1>ResourceFilter</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ResourceFilter</span></code>
+<p>The gradle DSL model of an Eclipse resource filter. This allows specifying a filter with a custom matcher and configuring whether it is an include/exclude filter that applies to files, folders, or both. The following example excludes the 'node_modules' folder. <pre><code> apply plugin: 'java' apply plugin: 'eclipse' eclipse { project { resourceFilter { appliesTo = 'FOLDERS' type = 'EXCLUDE_ALL' matcher { id = 'org.eclipse.ui.ide.multiFilter' // to find out which arguments to use, configure the desired // filter with Eclipse's UI and copy the arguments string over arguments = '1.0-name-matches-false-false-node_modules' } } } } </code></pre></p>
+<p><strong>Since</strong><br/>
+3.5</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-applies-to.html">getAppliesTo</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAppliesTo</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-resource-filter-applies-to/index.html"><span class="identifier">ResourceFilterAppliesTo</span></a></code>
+<p>Indicates whether this ResourceFilter applies to files, folders, or both. Default is FILES_AND_FOLDERS</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-matcher.html">getMatcher</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getMatcher</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-resource-filter-matcher/index.html"><span class="identifier">ResourceFilterMatcher</span></a></code>
+<p>Gets the matcher of this ResourceFilter.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-type.html">getType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getType</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-resource-filter-type/index.html"><span class="identifier">ResourceFilterType</span></a></code>
+<p>Specifies whether this ResourceFilter is including or excluding resources. Default is EXCLUDE_ALL</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-recursive.html">isRecursive</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isRecursive</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Indicates whether this ResourceFilter applies recursively to all children of the project it is created on. Default is true.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="matcher.html">matcher</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matcher</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.ResourceFilter$matcher(org.gradle.api.Action((org.gradle.plugins.ide.eclipse.model.ResourceFilterMatcher)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-resource-filter-matcher/index.html"><span class="identifier">ResourceFilterMatcher</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-resource-filter-matcher/index.html"><span class="identifier">ResourceFilterMatcher</span></a></code>
+<p>Configures the matcher of this resource filter. Will create the matcher if it does not yet exist, or configure the existing matcher if it already exists.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-applies-to.html">setAppliesTo</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setAppliesTo</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.ResourceFilter$setAppliesTo(org.gradle.plugins.ide.eclipse.model.ResourceFilterAppliesTo)/appliesTo">appliesTo</span><span class="symbol">:</span>&nbsp;<a href="../-resource-filter-applies-to/index.html"><span class="identifier">ResourceFilterAppliesTo</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Indicates whether this ResourceFilter applies to files, folders, or both. Default is FILES_AND_FOLDERS</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-recursive.html">setRecursive</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setRecursive</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.ResourceFilter$setRecursive(kotlin.Boolean)/recursive">recursive</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets whether this ResourceFilter applies recursively or not.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-type.html">setType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.ResourceFilter$setType(org.gradle.plugins.ide.eclipse.model.ResourceFilterType)/type">type</span><span class="symbol">:</span>&nbsp;<a href="../-resource-filter-type/index.html"><span class="identifier">ResourceFilterType</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the ResourceFilterType</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

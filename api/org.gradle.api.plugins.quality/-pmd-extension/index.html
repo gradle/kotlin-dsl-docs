@@ -1,0 +1,237 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PmdExtension - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins.quality</a>&nbsp;/&nbsp;<a href=".">PmdExtension</a><br/>
+<br/>
+<h1>PmdExtension</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PmdExtension</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-code-quality-extension/index.html"><span class="identifier">CodeQualityExtension</span></a></code>
+<p>Configuration options for the PMD plugin.</p>
+<p><strong>See Also</strong><br/>
+PmdPlugin</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">PmdExtension</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.PmdExtension$<init>(org.gradle.api.Project)/project">project</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-rule-priority.html">getRulePriority</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getRulePriority</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>The rule priority threshold; violations for rules with a lower priority will not be reported. Default value is 5, which means that all violations will be reported. This is equivalent to PMD's Ant task minimumPriority property. See the official documentation for the <a href="#">list of priorities</a>. Example: rulePriority = 3</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-rule-set-config.html">getRuleSetConfig</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getRuleSetConfig</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.resources/-text-resource/index.html"><span class="identifier">TextResource</span></a></code>
+<p>The custom rule set to be used (if any). Replaces <code>ruleSetFiles</code>, except that it does not currently support multiple rule sets. See the <a href="#">official documentation</a> for how to author a rule set. Example: ruleSetConfig = resources.text.fromFile("config/pmd/myRuleSet.xml")</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-rule-set-files.html">getRuleSetFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getRuleSetFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>The custom rule set files to be used. See the <a href="#">official documentation</a> for how to author a rule set file. Example: ruleSetFiles = files("config/pmd/myRuleSet.xml")</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-rule-sets.html">getRuleSets</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getRuleSets</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The built-in rule sets to be used. See the <a href="#">official list</a> of built-in rule sets. Example: ruleSets = ["basic", "braces"]</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-target-jdk.html">getTargetJdk</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTargetJdk</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-target-jdk/index.html"><span class="identifier">TargetJdk</span></a></code>
+<p>The target jdk to use with pmd, 1.3, 1.4, 1.5, 1.6, 1.7 or jsp</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-console-output.html">isConsoleOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isConsoleOutput</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether or not to write PMD results to <code>System.out</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="rule-set-files.html">ruleSetFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">ruleSetFiles</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.plugins.quality.PmdExtension$ruleSetFiles(kotlin.Array((kotlin.Any)))/ruleSetFiles">ruleSetFiles</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Convenience method for adding rule set files. Example: ruleSetFiles "config/pmd/myRuleSet.xml"</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="rule-sets.html">ruleSets</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">ruleSets</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.plugins.quality.PmdExtension$ruleSets(kotlin.Array((kotlin.String)))/ruleSets">ruleSets</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Convenience method for adding rule sets. Example: ruleSets "basic", "braces"</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-console-output.html">setConsoleOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setConsoleOutput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.PmdExtension$setConsoleOutput(kotlin.Boolean)/consoleOutput">consoleOutput</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Whether or not to write PMD results to <code>System.out</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-rule-priority.html">setRulePriority</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setRulePriority</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.PmdExtension$setRulePriority(kotlin.Int)/intValue">intValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the rule priority threshold.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-rule-set-config.html">setRuleSetConfig</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setRuleSetConfig</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.PmdExtension$setRuleSetConfig(org.gradle.api.resources.TextResource)/ruleSetConfig">ruleSetConfig</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.resources/-text-resource/index.html"><span class="identifier">TextResource</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The custom rule set to be used (if any). Replaces <code>ruleSetFiles</code>, except that it does not currently support multiple rule sets. See the <a href="#">official documentation</a> for how to author a rule set. Example: ruleSetConfig = resources.text.fromFile("config/pmd/myRuleSet.xml")</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-rule-set-files.html">setRuleSetFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setRuleSetFiles</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.PmdExtension$setRuleSetFiles(org.gradle.api.file.FileCollection)/ruleSetFiles">ruleSetFiles</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The custom rule set files to be used. See the <a href="#">official documentation</a> for how to author a rule set file. Example: ruleSetFiles = files("config/pmd/myRuleSet.xml")</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-rule-sets.html">setRuleSets</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setRuleSets</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.PmdExtension$setRuleSets(kotlin.collections.MutableList((kotlin.String)))/ruleSets">ruleSets</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The built-in rule sets to be used. See the <a href="#">official list</a> of built-in rule sets. Example: ruleSets = ["basic", "braces"]</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-target-jdk.html">setTargetJdk</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTargetJdk</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.PmdExtension$setTargetJdk(org.gradle.api.plugins.quality.TargetJdk)/targetJdk">targetJdk</span><span class="symbol">:</span>&nbsp;<a href="../-target-jdk/index.html"><span class="identifier">TargetJdk</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTargetJdk</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.PmdExtension$setTargetJdk(kotlin.Any)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the target jdk used with pmd.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/get-reports-dir.html">getReportsDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getReportsDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The directory where reports will be generated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/get-source-sets.html">getSourceSets</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSourceSets</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.tasks/-source-set/index.html"><span class="identifier">SourceSet</span></a><span class="symbol">&gt;</span></code>
+<p>The source sets to be analyzed as part of the check and build tasks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/get-tool-version.html">getToolVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getToolVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The version of the code quality tool to be used.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/is-ignore-failures.html">isIgnoreFailures</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isIgnoreFailures</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether to allow the build to continue if there are warnings. Example: ignoreFailures = true</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/set-ignore-failures.html">setIgnoreFailures</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setIgnoreFailures</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeQualityExtension$setIgnoreFailures(kotlin.Boolean)/ignoreFailures">ignoreFailures</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Whether to allow the build to continue if there are warnings. Example: ignoreFailures = true</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/set-reports-dir.html">setReportsDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setReportsDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeQualityExtension$setReportsDir(java.io.File)/reportsDir">reportsDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The directory where reports will be generated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/set-source-sets.html">setSourceSets</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSourceSets</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeQualityExtension$setSourceSets(kotlin.collections.MutableCollection((org.gradle.api.tasks.SourceSet)))/sourceSets">sourceSets</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.tasks/-source-set/index.html"><span class="identifier">SourceSet</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The source sets to be analyzed as part of the check and build tasks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/set-tool-version.html">setToolVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setToolVersion</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeQualityExtension$setToolVersion(kotlin.String)/toolVersion">toolVersion</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The version of the code quality tool to be used.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

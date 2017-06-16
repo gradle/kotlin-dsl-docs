@@ -1,0 +1,751 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api.tasks - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.tasks</a><br/>
+<br/>
+<h2>Package org.gradle.api.tasks</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-abstract-copy-task/index.html">AbstractCopyTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractCopyTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><a href="../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a><span class="symbol">, </span><span class="identifier">CopySpecSource</span></code>
+<p><code>AbstractCopyTask</code> is the base class for all copy tasks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-abstract-exec-task/index.html">AbstractExecTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractExecTask</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-exec-task/index.html"><span class="identifier">AbstractExecTask</span></a><span class="symbol">&lt;</span><a href="-abstract-exec-task/index.html"><span class="identifier">AbstractExecTask</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><a href="../org.gradle.process/-exec-spec/index.html"><span class="identifier">ExecSpec</span></a></code>
+<p><code>AbstractExecTask</code> is the base class for all exec tasks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-ant-builder-aware/index.html">AntBuilderAware</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">AntBuilderAware</span></code>
+<p>An <code>AntBuilderAware</code> represents an object which can add itself to Ant tasks, using an org.gradle.api.AntBuilder.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-compatibility-adapter-for-task-inputs/index.html">CompatibilityAdapterForTaskInputs</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CompatibilityAdapterForTaskInputs</span></code>
+<p>Helper interface for binary compatibility with Gradle 2.x version of the TaskInputs interface.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-compatibility-adapter-for-task-outputs/index.html">CompatibilityAdapterForTaskOutputs</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CompatibilityAdapterForTaskOutputs</span></code>
+<p>Helper interface for binary compatibility with Gradle 2.x version of the TaskOutputs interface.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-copy/index.html">Copy</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Copy</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code>
+<p>Copies files into a destination directory. This task can also rename and filter files as it copies. The task implements org.gradle.api.file.CopySpec for specifying what to copy. 
+<p> Examples: </p>
+<pre><code> task copyDocs(type: Copy) { from 'src/main/doc' into 'build/target/doc' } //for Ant filter import org.apache.tools.ant.filters.ReplaceTokens //for including in the copy task def dataContent = copySpec { from 'src/data' include '*.data' } task initConfig(type: Copy) { from('src/main/config') { include '**/*.properties' include '**/*.xml' filter(ReplaceTokens, tokens: [version: '2.3.1']) } from('src/main/config') { exclude '**/*.properties', '**/*.xml' } from('src/main/languages') { rename 'EN_US_(.*)', '$1' } into 'build/target/config' exclude '**/*.bak' includeEmptyDirs = false with dataContent } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-delete/index.html">Delete</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Delete</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><a href="../org.gradle.api.file/-delete-spec/index.html"><span class="identifier">DeleteSpec</span></a></code>
+<p>
+<p>Deletes files or directories. Example:</p>
+ <pre><code> task makePretty(type: Delete) { delete 'uglyFolder', 'uglyFile' followSymlinks = true } </code></pre> Be default symlinks will not be followed when deleting files. To change this behavior call <code><a href="-delete/set-follow-symlinks.html">Delete#setFollowSymlinks(boolean)</a></code> with true. On systems that do not support symlinks, this will have no effect.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-exec/index.html">Exec</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Exec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-exec-task/index.html"><span class="identifier">AbstractExecTask</span></a><span class="symbol">&lt;</span><a href="-abstract-exec-task/index.html"><span class="identifier">AbstractExecTask</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>Executes a command line process. Example: <pre><code> task stopTomcat(type:Exec) { workingDir '../tomcat/bin' //on windows: commandLine 'cmd', '/c', 'stop.bat' //on linux commandLine './stop.sh' //store the output instead of printing to the console: standardOutput = new ByteArrayOutputStream() //extension method stopTomcat.output() can be used to obtain the output: ext.output = { return standardOutput.toString() } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-gradle-build/index.html">GradleBuild</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GradleBuild</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span></code>
+<p>Executes a Gradle build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-groovy-runtime/index.html">GroovyRuntime</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GroovyRuntime</span></code>
+<p>Provides information related to the Groovy runtime(s) used in a project. Added by the org.gradle.api.plugins.GroovyBasePlugin as a project extension named <code>groovyRuntime</code>. 
+<p>Example usage: </p>
+<pre><code> apply plugin: "groovy" repositories { mavenCentral() } dependencies { compile "org.codehaus.groovy:groovy-all:2.1.2" } def groovyClasspath = groovyRuntime.inferGroovyClasspath(configurations.compile) // The returned class path can be used to configure the 'groovyClasspath' property of tasks // such as 'GroovyCompile' or 'Groovydoc', or to execute these and other Groovy tools directly. </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-groovy-source-set/index.html">GroovySourceSet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">GroovySourceSet</span></code>
+<p>A <code>GroovySourceSetConvention</code> defines the properties and methods added to a SourceSet by the .</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-java-exec/index.html">JavaExec</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JavaExec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><a href="../org.gradle.process/-java-exec-spec/index.html"><span class="identifier">JavaExecSpec</span></a></code>
+<p>Executes a Java application in a child process. 
+<p> Similar to org.gradle.api.tasks.Exec, but starts a JVM with the given classpath and application class. </p>
+ <pre><code> apply plugin: 'java' task runApp(type: JavaExec) { classpath = sourceSets.main.runtimeClasspath main = 'package.Main' // arguments to pass to the application args 'appArg1' } </code></pre> 
+<p> The process can be started in debug mode (see <code><a href="-java-exec/get-debug.html">#getDebug()</a></code>) in an ad-hoc manner by supplying the `--debug-jvm` switch when invoking the build. </p>
+<pre><code> gradle someJavaExecTask --debug-jvm </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-path-sensitivity/index.html">PathSensitivity</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">PathSensitivity</span></code>
+<p>Enumeration of different path handling strategies for task properties.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-scala-runtime/index.html">ScalaRuntime</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ScalaRuntime</span></code>
+<p>Provides information related to the Scala runtime(s) used in a project. Added by the <code>org.gradle.api.plugins.scala.ScalaBasePlugin</code> as a project extension named <code>scalaRuntime</code>. 
+<p>Example usage: </p>
+<pre><code> apply plugin: "scala" repositories { mavenCentral() } dependencies { compile "org.scala-lang:scala-library:2.10.1" } def scalaClasspath = scalaRuntime.inferScalaClasspath(configurations.compile) // The returned class path can be used to configure the 'scalaClasspath' property of tasks // such as 'ScalaCompile' or 'ScalaDoc', or to execute these and other Scala tools directly. </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-scala-source-set/index.html">ScalaSourceSet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ScalaSourceSet</span></code>
+<p>A <code>ScalaSourceSetConvention</code> defines the properties and methods added to a by the <code>ScalaPlugin</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-source-set/index.html">SourceSet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SourceSet</span></code>
+<p>A <code>SourceSet</code> represents a logical group of Java source and resources. 
+<p> See the example below how SourceSet 'main' is accessed and how the SourceDirectorySet 'java' is configured to exclude some package from compilation. </p>
+<pre><code> apply plugin: 'java' sourceSets { main { java { exclude 'some/unwanted/package/**' } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-source-set-container.html">SourceSetContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SourceSetContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named-domain-object-container/index.html"><span class="identifier">NamedDomainObjectContainer</span></a><span class="symbol">&lt;</span><a href="-source-set/index.html"><span class="identifier">SourceSet</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../org.gradle.api/-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><a href="-source-set/index.html"><span class="identifier">SourceSet</span></a><span class="symbol">&gt;</span></code>
+<p>A <code>SourceSetContainer</code> manages a set of SourceSet objects.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-source-set-output/index.html">SourceSetOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SourceSetOutput</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>A collection of all output directories (compiled classes, processed resources, etc.) - notice that SourceSetOutput extends FileCollection. 
+<p> Provides output information of the source set. Allows configuring the default output dirs and specify additional output dirs. </p>
+<pre><code> apply plugin: 'java' sourceSets { main { //if you truly want to override the defaults: output.resourcesDir = file('out/bin') // Compiled Java classes should use this directory java.outputDir = file('out/bin') } } </code></pre> Working with generated resources. 
+<p> In general, we recommend generating resources into folders different than the regular resourcesDir and classesDir. Usually, it makes the build easier to understand and maintain. Also it gives some additional benefits because other Gradle plugins can take advantage of the output dirs 'registered' in the SourceSet.output. For example: Java plugin will use those dirs in calculating class paths and for jarring the content; IDEA and Eclipse plugins will put those folders on relevant classpath. </p>
+<p> An example how to work with generated resources: </p>
+<pre><code> apply plugin: 'java' def generatedResources = "$buildDir/generated-resources/main" sourceSets { main { //let's register an output folder on the main SourceSet: output.dir(generatedResources, builtBy: 'generateMyResources') //it is now a part of the 'main' classpath and will be a part of the jar } } //a task that generates the resources: task generateMyResources { doLast { def generated = new File(generatedResources, "myGeneratedResource.properties") generated.text = "message=Stay happy!" } } //Java plugin task 'classes' and 'testClasses' will automatically depend on relevant tasks registered with 'builtBy' //Eclipse/IDEA plugins will automatically depend on 'generateMyResources' //because the output dir was registered with 'builtBy' information apply plugin: 'idea'; apply plugin: 'eclipse' </code></pre> Find more information in <code><a href="#">#dir(java.util.Map, Object)</a></code> and <code><a href="-source-set-output/get-dirs.html">#getDirs()</a></code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-source-task/index.html">SourceTask</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SourceTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><a href="../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a></code>
+<p>A <code>SourceTask</code> performs some operation on source files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-sync/index.html">Sync</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Sync</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-copy-task/index.html"><span class="identifier">AbstractCopyTask</span></a></code>
+<p>Synchronizes the contents of a destination directory with some source directories and files. 
+<p> This task is like the Copy task, except the destination directory will only contain the files copied. All files that exist in the destination directory will be deleted before copying files, unless a <code><a href="#">#preserve(Action)</a></code> is specified. </p>
+<p> Examples: </p>
+<pre><code> // Sync can be used like a Copy task // See the Copy documentation for more examples task syncDependencies(type: Sync) { from 'my/shared/dependencyDir' into 'build/deps/compile' } // You can preserve output that already exists in the // destination directory. Files matching the preserve // filter will not be deleted. task sync(type: Sync) { from 'source' into 'dest' preserve { include 'extraDir/**' include 'dir1/**' exclude 'dir1/extra.txt' } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-collection/index.html">TaskCollection</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskCollection</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>A <code>TaskCollection</code> contains a set of Task instances, and provides a number of query methods.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-container/index.html">TaskContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-task-collection/index.html"><span class="identifier">TaskCollection</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../org.gradle.api/-polymorphic-domain-object-container/index.html"><span class="identifier">PolymorphicDomainObjectContainer</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span></code>
+<p>
+<p>A <code>TaskContainer</code> is responsible for managing a set of Task instances.</p>
+ 
+<p>You can obtain a <code>TaskContainer</code> instance by calling <code><a href="../org.gradle.api/-project/get-tasks.html">org.gradle.api.Project#getTasks()</a></code>, or using the <code>tasks</code> property in your build script.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-dependency/index.html">TaskDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskDependency</span></code>
+<p>
+<p>A <code>TaskDependency</code> represents an <em>unordered</em> set of tasks which a Task depends on. Gradle ensures that all the dependencies of a task are executed before the task itself is executed.</p>
+ 
+<p>You can add a <code>TaskDependency</code> to a task by calling the task's <code><a href="#">Task#dependsOn(Object...)</a></code> method.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-destroyables/index.html">TaskDestroyables</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskDestroyables</span></code>
+<p>Represents the files or directories that a org.gradle.api.Task destroys (removes).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-file-property-builder/index.html">TaskFilePropertyBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskFilePropertyBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-task-property-builder/index.html"><span class="identifier">TaskPropertyBuilder</span></a></code>
+<p>Describes a property of a task that contains zero or more files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-input-file-property-builder/index.html">TaskInputFilePropertyBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskInputFilePropertyBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-task-file-property-builder/index.html"><span class="identifier">TaskFilePropertyBuilder</span></a><span class="symbol">, </span><a href="-task-inputs/index.html"><span class="identifier">TaskInputs</span></a></code>
+<p>Describes an input property of a task that contains zero or more files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-inputs/index.html">TaskInputs</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskInputs</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-compatibility-adapter-for-task-inputs/index.html"><span class="identifier">CompatibilityAdapterForTaskInputs</span></a></code>
+<p>
+<p>A <code>TaskInputs</code> represents the inputs for a task.</p>
+ 
+<p>You can obtain a <code>TaskInputs</code> instance using <code><a href="../org.gradle.api/-task/get-inputs.html">org.gradle.api.Task#getInputs()</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-output-file-property-builder/index.html">TaskOutputFilePropertyBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskOutputFilePropertyBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-task-file-property-builder/index.html"><span class="identifier">TaskFilePropertyBuilder</span></a><span class="symbol">, </span><a href="-task-outputs/index.html"><span class="identifier">TaskOutputs</span></a></code>
+<p>Describes an output property of a task that contains zero or more files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-outputs/index.html">TaskOutputs</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskOutputs</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-compatibility-adapter-for-task-outputs/index.html"><span class="identifier">CompatibilityAdapterForTaskOutputs</span></a></code>
+<p>
+<p>A <code>TaskOutputs</code> represents the outputs of a task.</p>
+ 
+<p>You can obtain a <code>TaskOutputs</code> instance using <code><a href="../org.gradle.api/-task/get-outputs.html">org.gradle.api.Task#getOutputs()</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-property-builder/index.html">TaskPropertyBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskPropertyBuilder</span></code>
+<p>Describes a property of a task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-reference.html">TaskReference</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskReference</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
+<p>A lightweight reference to a task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-state/index.html">TaskState</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskState</span></code>
+<p><code>TaskState</code> provides information about the execution state of a org.gradle.api.Task. You can obtain a <code>TaskState</code> instance by calling <code><a href="../org.gradle.api/-task/get-state.html">org.gradle.api.Task#getState()</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-validation-exception/index.html">TaskValidationException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">TaskValidationException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultMultiCauseException</span></code>
+<p>A <code>TaskValidationException</code> is thrown when there is some validation problem with a task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-upload/index.html">Upload</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Upload</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span></code>
+<p>Uploads the artifacts of a Configuration to a set of repositories.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-verification-task/index.html">VerificationTask</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VerificationTask</span></code>
+<p>A <code>VerificationTask</code> is a task which performs some verification of the artifacts produced by a build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-work-result/index.html">WorkResult</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">WorkResult</span></code>
+<p>Provides information about some work which was performed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-write-properties/index.html">WriteProperties</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WriteProperties</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a></code>
+<p>Writes a java.util.Properties in a way that the results can be expected to be reproducible. 
+<p>There are a number of differences compared to how properties are stored:</p>
+ <ul> <li>no timestamp comment is generated at the beginning of the file</li>
+ <li>the lines in the resulting files are separated by a pre-set separator (defaults to '\n') instead of the system default line separator</li>
+ <li>the properties are sorted alphabetically</li>
+ </ul>
+ 
+<p>Like with java.util.Properties, Unicode characters are escaped when using the default Latin-1 (ISO-8559-1) encoding.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Annotations</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-cacheable-task/index.html">CacheableTask</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">CacheableTask</span></code>
+<p>
+<p>Attached to a task type to indicate that task output caching should be enabled by default for tasks of this type.</p>
+ 
+<p>Only tasks that produce reproducible and relocatable output should be marked with <code>CacheableTask</code>.</p>
+ 
+<p>Caching for individual task instances can be disabled via TaskOutputs#cacheIf(String, Spec) or TaskOutputs#doNotCacheIf(String, Spec).</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-classpath/index.html">Classpath</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Classpath</span></code>
+<p>
+<p>Marks a property as specifying a JVM classpath for a task.</p>
+ 
+<p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
+ 
+<p><strong>Note:</strong> to stay compatible with versions prior to Gradle 3.2, classpath properties need to be annotated with @InputFiles as well.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-compile-classpath/index.html">CompileClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">CompileClasspath</span></code>
+<p>
+<p>Marks a property as specifying a Java compile classpath for a task. Attaching this annotation to a property means that changes that do not affect the API of the classes in classpath will be ignored. The following kinds of changes to the classpath will be ignored:</p>
+ <ul> <li>Changes to the path of jar or top level directories.</li>
+ <li>Changes to timestamps and the order of entries in Jars.</li>
+ <li>Changes to resources and Jar manifests, including adding or removing resources.</li>
+ <li>Changes to private class elements, such as private fields, methods and inner classes.</li>
+ <li>Changes to code, such as method bodies, static initializers and field initializers (except for constants).</li>
+ <li>Changes to debug information, for example when a change to a comment affects the line numbers in class debug information.</li>
+ <li>Changes to directories, including directory entries in Jars.</li>
+ </ul>
+ 
+<p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
+ 
+<p><strong>Note:</strong> to stay compatible with versions prior to Gradle 3.4, classpath properties need to be annotated with @InputFiles as well.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-console/index.html">Console</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Console</span></code>
+<p>
+<p>Attached to a task property to indicate that the property is not to be taken into account for up-to-date checking, because its value only influences the console output of the task.</p>
+ 
+<p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
+ 
+<p>This will cause the task <em>not</em> to be considered out-of-date when the property has changed.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-destroys/index.html">Destroys</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Destroys</span></code>
+<p>
+<p>Marks a property as specifying a file or directory that a task destroys.</p>
+ 
+<p>This annotation should be attached to the getter method or the field for the property.</p>
+ 
+<p>This will cause the task to have exclusive access to this file or directory while running. This means that other tasks that either create or consume this file (by specifying the file or directory as an input or output) cannot execute concurrently with a task that destroys this file.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-input/index.html">Input</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Input</span></code>
+<p>
+<p>Attached to a task property to indicate that the property specifies some input value for the task.</p>
+ 
+<p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
+ 
+<p>This will cause the task to be considered out-of-date when the property has changed. When used on a java.io.File object that refers to a file or directory, the up-to-date check is only dependent on the path and not the contents of the file or directory. To make it depend on the contents, use org.gradle.api.tasks.InputFile or org.gradle.api.tasks.InputDirectory respectively.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-input-directory/index.html">InputDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">InputDirectory</span></code>
+<p>
+<p>Marks a property as specifying an input directory for a task.</p>
+ 
+<p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
+ 
+<p>This will cause the task to be considered out-of-date when the directory location or contents have changed. To make the task dependent on the directory location but not the contents, use an org.gradle.api.tasks.Input annotation instead.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-input-file/index.html">InputFile</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">InputFile</span></code>
+<p>
+<p>Marks a property as specifying an input file for a task.</p>
+ 
+<p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
+ 
+<p>This will cause the task to be considered out-of-date when the file path or contents have changed. To make the up-to-date check only dependent on the path and not the contents of the file or directory, annotate it instead with org.gradle.api.tasks.Input.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-input-files/index.html">InputFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">InputFiles</span></code>
+<p>
+<p>Marks a property as specifying the input files for a task.</p>
+ 
+<p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
+ 
+<p>This will cause the task to be considered out-of-date when the file paths or contents have changed. Also see org.gradle.api.tasks.InputDirectory.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-internal/index.html">Internal</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Internal</span></code>
+<p>
+<p>Attached to a task property to indicate that the property is not to be taken into account for up-to-date checking.</p>
+ 
+<p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
+ 
+<p>This will cause the task <em>not</em> to be considered out-of-date when the property has changed.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-nested/index.html">Nested</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Nested</span></code>
+<p>
+<p>Marks a property as specifying a nested bean, whose properties should be checked for annotations.</p>
+ 
+<p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-optional/index.html">Optional</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Optional</span></code>
+<p>
+<p>Marks a task property as optional. This means that a value does not have to be specified for the property, but any value specified must meet the validation constraints for the property.</p>
+ 
+<p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
+ <ul> <li>org.gradle.api.tasks.Input</li>
+ <li>org.gradle.api.tasks.InputFile</li>
+ <li>org.gradle.api.tasks.InputDirectory</li>
+ <li>org.gradle.api.tasks.InputFiles</li>
+ <li>org.gradle.api.tasks.OutputFile</li>
+ <li>org.gradle.api.tasks.OutputDirectory</li>
+ </ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-output-directories/index.html">OutputDirectories</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">OutputDirectories</span></code>
+<p>
+<p>Marks a property as specifying one or more output directories for a task.</p>
+ 
+<p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
+ 
+<p>This will cause the task to be considered out-of-date when the directory paths or task output to those directories have been modified since the task was last run.</p>
+ 
+<p>When the annotated property is a java.util.Map, then each output directory will be associated with an identity. For cacheable tasks this is a requirement. The keys of the map must be <a href="#">valid Java identifiers</a>. The values of the map will be evaluated to individual directories as per <code><a href="#">org.gradle.api.Project#file(Object)</a></code>.</p>
+ 
+<p>Otherwise the given directories will be evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code>, and task output caching will be disabled for the task.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-output-directory/index.html">OutputDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">OutputDirectory</span></code>
+<p>
+<p>Marks a property as specifying an output directory for a task.</p>
+ 
+<p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
+ 
+<p>This will cause the task to be considered out-of-date when the directory path or task output to that directory has been modified since the task was last run.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-output-file/index.html">OutputFile</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">OutputFile</span></code>
+<p>
+<p>Marks a property as specifying an output file for a task.</p>
+ 
+<p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
+ 
+<p>This will cause the task to be considered out-of-date when the file path or contents are different to when the task was last run.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-output-files/index.html">OutputFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">OutputFiles</span></code>
+<p>
+<p>Marks a property as specifying one or more output files for a task.</p>
+ 
+<p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
+ 
+<p>This will cause the task to be considered out-of-date when the file paths or contents are different to when the task was last run.</p>
+ 
+<p>When the annotated property is a java.util.Map, then each output file will be associated with an identity. For cacheable tasks this is a requirement. The keys of the map must be <a href="#">valid Java identifiers</a>. The values of the map will be evaluated to individual files as per <code><a href="#">org.gradle.api.Project#file(Object)</a></code>.</p>
+ 
+<p>Otherwise the given files will be evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code>, and task output caching will be disabled for the task.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-path-sensitive/index.html">PathSensitive</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">PathSensitive</span></code>
+<p>Annotates a task file property, specifying which part of the file paths should be considered during up-to-date checks. 
+<p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-skip-when-empty/index.html">SkipWhenEmpty</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">SkipWhenEmpty</span></code>
+<p>
+<p>Attached to a task property to indicate that the task should be skipped when the value of the property is an empty org.gradle.api.file.FileCollection or directory.</p>
+ 
+<p>If all of the inputs declared with this annotation are empty, the task will be skipped with a "NO-SOURCE" message.</p>
+ 
+<p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
+ <ul><li>org.gradle.api.tasks.InputFiles</li>
+ <li>org.gradle.api.tasks.InputDirectory</li>
+ </ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-action/index.html">TaskAction</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">TaskAction</span></code>
+<p>Marks a method as the action to run when the task is executed.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Exceptions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-stop-action-exception/index.html">StopActionException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">StopActionException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>
+<p>A <code>StopActionException</code> is be thrown by a task org.gradle.api.Action or task action closure to stop its own execution and to start execution of the task's next action. An action can usually be stopped by just calling return inside the action closure. But if the action works with helper methods that can lead to redundant code. For example:</p>
+ <pre><code> List existentSourceDirs = HelperUtil.getExistentSourceDirs() if (!existentSourceDirs) {return} </code></pre> 
+<p>If the <code>getExistentSourceDirs()</code> throws a <code>StopActionException</code> instead, the tasks does not need the if statement.</p>
+ 
+<p>Note that throwing this exception does not fail the execution of the task or the build.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-stop-execution-exception/index.html">StopExecutionException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">StopExecutionException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/RuntimeException.html"><span class="identifier">RuntimeException</span></a></code>
+<p>
+<p>A <code>StopExecutionException</code> is thrown by a org.gradle.api.Action or task action closure to stop execution of the current task and start execution of the next task. This allows, for example, precondition actions to be added to a task which abort execution of the task if the preconditions are not met.</p>
+ 
+<p>Note that throwing this exception does not fail the execution of the task or the build.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-execution-exception/index.html">TaskExecutionException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">TaskExecutionException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>
+<p>A <code>TaskExecutionException</code> is thrown when a task fails to execute successfully.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-instantiation-exception/index.html">TaskInstantiationException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">TaskInstantiationException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>A <code>TaskInstantiationException</code> is thrown when a task cannot be instantiated for some reason.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

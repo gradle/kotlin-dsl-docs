@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GradleRunner.forwardStdError - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.testkit.runner</a>&nbsp;/&nbsp;<a href="index.html">GradleRunner</a>&nbsp;/&nbsp;<a href=".">forwardStdError</a><br/>
+<br/>
+<h1>forwardStdError</h1>
+<a name="org.gradle.testkit.runner.GradleRunner$forwardStdError(java.io.Writer)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">forwardStdError</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$forwardStdError(java.io.Writer)/writer">writer</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/Writer.html"><span class="identifier">Writer</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">GradleRunner</span></a></code>
+<p>Configures the runner to forward standard error output from builds to the given writer. 
+<p> The output of the build is always available via <code><a href="../-build-result/get-output.html">BuildResult#getOutput()</a></code>. This method can be used to additionally capture the error output. </p>
+<p> Calling this method will negate the effect of previously calling <code><a href="forward-output.html">#forwardOutput()</a></code>. </p>
+<p> The given writer will not be closed by the runner.</p>
+</p>
+<h3>Parameters</h3>
+<a name="writer"></a>
+<code>writer</code> - the writer that build standard error output should be forwarded to
+<p><strong>Return</strong><br/>
+this</p>
+<p><strong>Since</strong><br/>
+2.9</p>
+<p><strong>See Also</strong><br/>
+<a href="forward-output.html">#forwardOutput()</a><a href="forward-std-output.html">#forwardStdOutput(Writer)</a></p>
+</BODY>
+</HTML>

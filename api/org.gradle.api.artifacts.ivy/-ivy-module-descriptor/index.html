@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>IvyModuleDescriptor - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.ivy</a>&nbsp;/&nbsp;<a href=".">IvyModuleDescriptor</a><br/>
+<br/>
+<h1>IvyModuleDescriptor</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">IvyModuleDescriptor</span></code>
+<p>The metadata about an Ivy module that acts as an input to a component metadata rule.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-branch.html">getBranch</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBranch</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>* Returns the branch attribute of the info element in this descriptor.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-extra-info.html">getExtraInfo</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExtraInfo</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-ivy-extra-info/index.html"><span class="identifier">IvyExtraInfo</span></a></code>
+<p>Returns an org.gradle.api.artifacts.ivy.IvyExtraInfo representing the "extra" info declared in this descriptor. 
+<p> The extra info is the set of all non-standard subelements of the <em>info</em> element.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-ivy-status.html">getIvyStatus</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getIvyStatus</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the status attribute of the info element in this descriptor. Note that this <em>always</em> represents the status from the ivy.xml for this module. It is not affected by changes to the status made via the org.gradle.api.artifacts.ComponentMetadataDetails interface in a component metadata rule.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

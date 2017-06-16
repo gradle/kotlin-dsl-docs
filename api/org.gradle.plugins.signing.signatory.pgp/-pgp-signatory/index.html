@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PgpSignatory - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.signing.signatory.pgp</a>&nbsp;/&nbsp;<a href=".">PgpSignatory</a><br/>
+<br/>
+<h1>PgpSignatory</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PgpSignatory</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.signing.signatory/-signatory-support/index.html"><span class="identifier">SignatorySupport</span></a></code>
+<p>PGP signatory from PGP key and password.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">PgpSignatory</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.signatory.pgp.PgpSignatory$<init>(kotlin.String, PGPSecretKey, kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.signing.signatory.pgp.PgpSignatory$<init>(kotlin.String, PGPSecretKey, kotlin.String)/secretKey">secretKey</span><span class="symbol">:</span>&nbsp;<span class="identifier">PGPSecretKey</span><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.signing.signatory.pgp.PgpSignatory$<init>(kotlin.String, PGPSecretKey, kotlin.String)/password">password</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="create-signature-generator.html">createSignatureGenerator</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">createSignatureGenerator</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">PGPSignatureGenerator</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-key-id.html">getKeyId</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getKeyId</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-pgp-key-id/index.html"><span class="identifier">PgpKeyId</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="sign.html">sign</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.signatory.pgp.PgpSignatory$sign(java.io.InputStream, java.io.OutputStream)/toSign">toSign</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.signing.signatory.pgp.PgpSignatory$sign(java.io.InputStream, java.io.OutputStream)/signatureDestination">signatureDestination</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Exhausts <code>toSign</code>, and writes the signature to <code>signatureDestination</code>. The caller is responsible for closing the streams, though the output WILL be flushed.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.plugins.signing.signatory/-signatory-support/sign.html">sign</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.signatory.SignatorySupport$sign(java.io.InputStream)/toSign">toSign</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

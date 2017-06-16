@@ -1,0 +1,19 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Wrapper.setDistributionUrl - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.wrapper</a>&nbsp;/&nbsp;<a href="index.html">Wrapper</a>&nbsp;/&nbsp;<a href=".">setDistributionUrl</a><br/>
+<br/>
+<h1>setDistributionUrl</h1>
+<a name="org.gradle.api.tasks.wrapper.Wrapper$setDistributionUrl(kotlin.String)"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDistributionUrl</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.wrapper.Wrapper$setDistributionUrl(kotlin.String)/url">url</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The URL to download the gradle distribution from. 
+<p>If not set, the download URL is the default for the specified <code><a href="get-gradle-version.html">#getGradleVersion()</a></code>. </p>
+<p>If <code><a href="get-gradle-version.html">#getGradleVersion()</a></code> is not set, will return null. </p>
+<p>The wrapper downloads a certain distribution only once and caches it. If your distribution base is the project, you might submit the distribution to your version control system. That way no download is necessary at all. This might be in particular interesting, if you provide a custom gradle snapshot to the wrapper, because you don't need to provide a download server then.</p>
+</p>
+</BODY>
+</HTML>

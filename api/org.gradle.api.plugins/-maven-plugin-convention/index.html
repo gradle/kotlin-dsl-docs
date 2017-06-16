@@ -1,0 +1,77 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MavenPluginConvention - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href=".">MavenPluginConvention</a><br/>
+<br/>
+<h1>MavenPluginConvention</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">MavenPluginConvention</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">MavenPomMetaInfoProvider</span></code>
+<p>Properties and methods added by the org.gradle.api.plugins.MavenPlugin.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">MavenPluginConvention</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.MavenPluginConvention$<init>(ProjectInternal, MavenFactory)/project">project</span><span class="symbol">:</span>&nbsp;<span class="identifier">ProjectInternal</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.plugins.MavenPluginConvention$<init>(ProjectInternal, MavenFactory)/mavenFactory">mavenFactory</span><span class="symbol">:</span>&nbsp;<span class="identifier">MavenFactory</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-conf2-scope-mappings.html">getConf2ScopeMappings</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getConf2ScopeMappings</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.maven/-conf2-scope-mapping-container/index.html"><span class="identifier">Conf2ScopeMappingContainer</span></a></code>
+<p>Returns the set of rules for how to map Gradle dependencies to Maven scopes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-maven-pom-dir.html">getMavenPomDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMavenPomDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the directory to generate Maven POMs into.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="pom.html">pom</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">pom</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.maven/-maven-pom/index.html"><span class="identifier">MavenPom</span></a></code>
+<p>Creates a new MavenPom.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">pom</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.MavenPluginConvention$pom(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.maven/-maven-pom/index.html"><span class="identifier">MavenPom</span></a></code>
+<p>Creates and configures a new MavenPom. The given closure is executed to configure the new POM instance.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-conf2-scope-mappings.html">setConf2ScopeMappings</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setConf2ScopeMappings</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.MavenPluginConvention$setConf2ScopeMappings(org.gradle.api.artifacts.maven.Conf2ScopeMappingContainer)/conf2ScopeMappings">conf2ScopeMappings</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts.maven/-conf2-scope-mapping-container/index.html"><span class="identifier">Conf2ScopeMappingContainer</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-maven-pom-dir.html">setMavenPomDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMavenPomDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.MavenPluginConvention$setMavenPomDir(java.io.File)/pomDir">pomDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMavenPomDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.MavenPluginConvention$setMavenPomDir(kotlin.Any)/pomDir">pomDir</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the directory to generate Maven POMs into.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

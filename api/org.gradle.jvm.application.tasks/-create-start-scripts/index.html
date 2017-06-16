@@ -1,0 +1,286 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CreateStartScripts - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.jvm.application.tasks</a>&nbsp;/&nbsp;<a href=".">CreateStartScripts</a><br/>
+<br/>
+<h1>CreateStartScripts</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CreateStartScripts</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span></code>
+<p>Creates start scripts for launching JVM applications. 
+<p> Example: </p>
+<pre><code> task createStartScripts(type: CreateStartScripts) { outputDir = file('build/sample') mainClassName = 'org.gradle.test.Main' applicationName = 'myApp' classpath = files('path/to/some.jar') } </code></pre> 
+<p> Note: the Gradle <code>"application"</code> plugin adds a pre-configured task of this type named <code>"createStartScripts"</code>. </p>
+<p> The task generates separate scripts targeted at Microsoft Windows environments and UNIX-like environments (e.g. Linux, Mac OS X). The actual generation is implemented by the <code><a href="get-windows-start-script-generator.html">#getWindowsStartScriptGenerator()</a></code> and <code><a href="get-unix-start-script-generator.html">#getUnixStartScriptGenerator()</a></code> properties, of type ScriptGenerator. </p>
+<p> Example: </p>
+<pre><code> task createStartScripts(type: CreateStartScripts) { unixStartScriptGenerator = new CustomUnixStartScriptGenerator() windowsStartScriptGenerator = new CustomWindowsStartScriptGenerator() } class CustomUnixStartScriptGenerator implements ScriptGenerator { void generateScript(JavaAppStartScriptGenerationDetails details, Writer destination) { // implementation } } class CustomWindowsStartScriptGenerator implements ScriptGenerator { void generateScript(JavaAppStartScriptGenerationDetails details, Writer destination) { // implementation } } </code></pre> 
+<p> The default generators are of the type org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator, with default templates. This templates can be changed via the <code><a href="../../org.gradle.jvm.application.scripts/-template-based-script-generator/set-template.html">org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator#setTemplate(org.gradle.api.resources.TextResource)</a></code> method. </p>
+<p> The default implementations used by this task use <a href="#">Groovy's SimpleTemplateEngine</a> to parse the template, with the following variables available: </p>
+<p> </p>
+<ul> <li><code>applicationName</code></li>
+ <li><code>optsEnvironmentVar</code></li>
+ <li><code>exitEnvironmentVar</code></li>
+ <li><code>mainClassName</code></li>
+ <li><code>defaultJvmOpts</code></li>
+ <li><code>appNameSystemProperty</code></li>
+ <li><code>appHomeRelativePath</code></li>
+ <li><code>classpath</code></li>
+ </ul>
+ 
+<p> Example: </p>
+<p> </p>
+<pre><code> task createStartScripts(type: CreateStartScripts) { unixStartScriptGenerator.template = resources.text.fromFile('customUnixStartScript.txt') windowsStartScriptGenerator.template = resources.text.fromFile('customWindowsStartScript.txt') } </code></pre></p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">CreateStartScripts</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Creates start scripts for launching JVM applications. 
+<p> Example: </p>
+<pre><code> task createStartScripts(type: CreateStartScripts) { outputDir = file('build/sample') mainClassName = 'org.gradle.test.Main' applicationName = 'myApp' classpath = files('path/to/some.jar') } </code></pre> 
+<p> Note: the Gradle <code>"application"</code> plugin adds a pre-configured task of this type named <code>"createStartScripts"</code>. </p>
+<p> The task generates separate scripts targeted at Microsoft Windows environments and UNIX-like environments (e.g. Linux, Mac OS X). The actual generation is implemented by the <code><a href="get-windows-start-script-generator.html">#getWindowsStartScriptGenerator()</a></code> and <code><a href="get-unix-start-script-generator.html">#getUnixStartScriptGenerator()</a></code> properties, of type ScriptGenerator. </p>
+<p> Example: </p>
+<pre><code> task createStartScripts(type: CreateStartScripts) { unixStartScriptGenerator = new CustomUnixStartScriptGenerator() windowsStartScriptGenerator = new CustomWindowsStartScriptGenerator() } class CustomUnixStartScriptGenerator implements ScriptGenerator { void generateScript(JavaAppStartScriptGenerationDetails details, Writer destination) { // implementation } } class CustomWindowsStartScriptGenerator implements ScriptGenerator { void generateScript(JavaAppStartScriptGenerationDetails details, Writer destination) { // implementation } } </code></pre> 
+<p> The default generators are of the type org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator, with default templates. This templates can be changed via the <code><a href="../../org.gradle.jvm.application.scripts/-template-based-script-generator/set-template.html">org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator#setTemplate(org.gradle.api.resources.TextResource)</a></code> method. </p>
+<p> The default implementations used by this task use <a href="#">Groovy's SimpleTemplateEngine</a> to parse the template, with the following variables available: </p>
+<p> </p>
+<ul> <li><code>applicationName</code></li>
+ <li><code>optsEnvironmentVar</code></li>
+ <li><code>exitEnvironmentVar</code></li>
+ <li><code>mainClassName</code></li>
+ <li><code>defaultJvmOpts</code></li>
+ <li><code>appNameSystemProperty</code></li>
+ <li><code>appHomeRelativePath</code></li>
+ <li><code>classpath</code></li>
+ </ul>
+ 
+<p> Example: </p>
+<p> </p>
+<pre><code> task createStartScripts(type: CreateStartScripts) { unixStartScriptGenerator.template = resources.text.fromFile('customUnixStartScript.txt') windowsStartScriptGenerator.template = resources.text.fromFile('customWindowsStartScript.txt') } </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="generate.html">generate</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">generate</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-application-name.html">getApplicationName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getApplicationName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The application's name.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-classpath.html">getClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getClasspath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>The class path for the application.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-default-jvm-opts.html">getDefaultJvmOpts</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDefaultJvmOpts</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The application's default JVM options. Defaults to an empty list.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-exit-environment-var.html">getExitEnvironmentVar</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getExitEnvironmentVar</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The environment variable to use to control exit value (Windows only).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-main-class-name.html">getMainClassName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMainClassName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The main classname used to start the Java application.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-opts-environment-var.html">getOptsEnvironmentVar</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOptsEnvironmentVar</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The environment variable to use to provide additional options to the JVM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-output-dir.html">getOutputDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOutputDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The directory to write the scripts into.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-unix-script.html">getUnixScript</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getUnixScript</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the full path to the Unix script. The target directory is represented by the output directory, the file name is the application name without a file extension.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-unix-start-script-generator.html">getUnixStartScriptGenerator</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getUnixStartScriptGenerator</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.jvm.application.scripts/-script-generator/index.html"><span class="identifier">ScriptGenerator</span></a></code>
+<p>The UNIX-like start script generator. 
+<p> Defaults to an implementation of org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-windows-script.html">getWindowsScript</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getWindowsScript</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the full path to the Windows script. The target directory is represented by the output directory, the file name is the application name plus the file extension .bat.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-windows-start-script-generator.html">getWindowsStartScriptGenerator</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getWindowsStartScriptGenerator</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.jvm.application.scripts/-script-generator/index.html"><span class="identifier">ScriptGenerator</span></a></code>
+<p>The Windows start script generator. 
+<p> Defaults to an implementation of org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-application-name.html">setApplicationName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setApplicationName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.application.tasks.CreateStartScripts$setApplicationName(kotlin.String)/applicationName">applicationName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-classpath.html">setClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setClasspath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.application.tasks.CreateStartScripts$setClasspath(org.gradle.api.file.FileCollection)/classpath">classpath</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-default-jvm-opts.html">setDefaultJvmOpts</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDefaultJvmOpts</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.application.tasks.CreateStartScripts$setDefaultJvmOpts(kotlin.collections.MutableIterable((kotlin.String)))/defaultJvmOpts">defaultJvmOpts</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-exit-environment-var.html">setExitEnvironmentVar</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExitEnvironmentVar</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.application.tasks.CreateStartScripts$setExitEnvironmentVar(kotlin.String)/exitEnvironmentVar">exitEnvironmentVar</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-main-class-name.html">setMainClassName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMainClassName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.application.tasks.CreateStartScripts$setMainClassName(kotlin.String)/mainClassName">mainClassName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-opts-environment-var.html">setOptsEnvironmentVar</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOptsEnvironmentVar</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.application.tasks.CreateStartScripts$setOptsEnvironmentVar(kotlin.String)/optsEnvironmentVar">optsEnvironmentVar</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-output-dir.html">setOutputDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOutputDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.application.tasks.CreateStartScripts$setOutputDir(java.io.File)/outputDir">outputDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-unix-start-script-generator.html">setUnixStartScriptGenerator</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setUnixStartScriptGenerator</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.application.tasks.CreateStartScripts$setUnixStartScriptGenerator(org.gradle.jvm.application.scripts.ScriptGenerator)/unixStartScriptGenerator">unixStartScriptGenerator</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.jvm.application.scripts/-script-generator/index.html"><span class="identifier">ScriptGenerator</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-windows-start-script-generator.html">setWindowsStartScriptGenerator</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setWindowsStartScriptGenerator</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.application.tasks.CreateStartScripts$setWindowsStartScriptGenerator(org.gradle.jvm.application.scripts.ScriptGenerator)/windowsStartScriptGenerator">windowsStartScriptGenerator</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.jvm.application.scripts/-script-generator/index.html"><span class="identifier">ScriptGenerator</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.application/-create-start-scripts/index.html">CreateStartScripts</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CreateStartScripts</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">CreateStartScripts</span></code>
+<p>Creates start scripts for launching JVM applications. 
+<p> Example: </p>
+<pre><code> task createStartScripts(type: CreateStartScripts) { outputDir = file('build/sample') mainClassName = 'org.gradle.test.Main' applicationName = 'myApp' classpath = files('path/to/some.jar') } </code></pre> 
+<p> Note: the Gradle <code>"application"</code> plugin adds a pre-configured task of this type named <code>"createStartScripts"</code>. </p>
+<p> The task generates separate scripts targeted at Microsoft Windows environments and UNIX-like environments (e.g. Linux, Mac OS X). The actual generation is implemented by the <code><a href="get-windows-start-script-generator.html">#getWindowsStartScriptGenerator()</a></code> and <code><a href="get-unix-start-script-generator.html">#getUnixStartScriptGenerator()</a></code> properties, of type org.gradle.jvm.application.scripts.ScriptGenerator. </p>
+<p> Example: </p>
+<pre><code> task createStartScripts(type: CreateStartScripts) { unixStartScriptGenerator = new CustomUnixStartScriptGenerator() windowsStartScriptGenerator = new CustomWindowsStartScriptGenerator() } class CustomUnixStartScriptGenerator implements ScriptGenerator { void generateScript(JavaAppStartScriptGenerationDetails details, Writer destination) { // implementation } } class CustomWindowsStartScriptGenerator implements ScriptGenerator { void generateScript(JavaAppStartScriptGenerationDetails details, Writer destination) { // implementation } } </code></pre> 
+<p> The default generators are of the type org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator, with default templates. This templates can be changed via the <code><a href="../../org.gradle.jvm.application.scripts/-template-based-script-generator/set-template.html">org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator#setTemplate(org.gradle.api.resources.TextResource)</a></code> method. </p>
+<p> The default implementations used by this task use <a href="#">Groovy's SimpleTemplateEngine</a> to parse the template, with the following variables available: </p>
+<p> </p>
+<ul> <li><code>applicationName</code></li>
+ <li><code>optsEnvironmentVar</code></li>
+ <li><code>exitEnvironmentVar</code></li>
+ <li><code>mainClassName</code></li>
+ <li><code>defaultJvmOpts</code></li>
+ <li><code>appNameSystemProperty</code></li>
+ <li><code>appHomeRelativePath</code></li>
+ <li><code>classpath</code></li>
+ </ul>
+ 
+<p> Example: </p>
+<p> </p>
+<pre><code> task createStartScripts(type: CreateStartScripts) { unixStartScriptGenerator.template = resources.text.fromFile('customUnixStartScript.txt') windowsStartScriptGenerator.template = resources.text.fromFile('customWindowsStartScript.txt') } </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

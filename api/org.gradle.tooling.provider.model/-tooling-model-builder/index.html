@@ -1,0 +1,43 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ToolingModelBuilder - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.provider.model</a>&nbsp;/&nbsp;<a href=".">ToolingModelBuilder</a><br/>
+<br/>
+<h1>ToolingModelBuilder</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ToolingModelBuilder</span></code>
+<p>Responsible for building tooling models to return to the tooling API client. 
+<p>The <code><a href="#">#buildAll(String, Project)</a></code> method is called to create a model for a given project. The model is serialized to the client process and passed to the client application.</p>
+ 
+<p>The model object is adapted to the Java type that is used by the client by generating a view, or wrapper object, over the model object. The model object does not need to implement the client Java type, but it does need to have the same structure as the client type. This means that the model object should have the same properties and methods as those defined on the client type. The tooling API deals with missing properties and methods, to allow evolution of the models. It will also adapt the values returned by the methods of the model object to the types used by the client. </p>
+ 
+<p>Although it is not enforced, the model object should be immutable, as the tooling API will do some caching and other performance optimizations on the assumption that the model is effectively immutable. The tooling API does not make any guarantees about how the client application will use the model object.</p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="build-all.html">buildAll</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">buildAll</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.provider.model.ToolingModelBuilder$buildAll(kotlin.String, org.gradle.api.Project)/modelName">modelName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.provider.model.ToolingModelBuilder$buildAll(kotlin.String, org.gradle.api.Project)/project">project</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Creates the model of the given type for the given project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="can-build.html">canBuild</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">canBuild</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.provider.model.ToolingModelBuilder$canBuild(kotlin.String)/modelName">modelName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Indicates whether this builder can construct the given model.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

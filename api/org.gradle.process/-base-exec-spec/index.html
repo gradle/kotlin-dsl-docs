@@ -1,0 +1,223 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BaseExecSpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.process</a>&nbsp;/&nbsp;<a href=".">BaseExecSpec</a><br/>
+<br/>
+<h1>BaseExecSpec</h1>
+<code><span class="keyword">interface </span><span class="identifier">BaseExecSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-process-fork-options/index.html"><span class="identifier">ProcessForkOptions</span></a></code>
+<p>Specifies options for launching a child process.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-command-line.html">getCommandLine</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCommandLine</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the full command line, including the executable plus its arguments.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-error-output.html">getErrorOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getErrorOutput</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a></code>
+<p>Returns the output stream to consume standard error from the process executing the command. Default to <code>System.err</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-standard-input.html">getStandardInput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getStandardInput</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a></code>
+<p>Returns the standard input stream for the process executing the command. The stream is closed after the process completes. Defaults to an empty stream.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-standard-output.html">getStandardOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getStandardOutput</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a></code>
+<p>Returns the output stream to consume standard output from the process executing the command. Defaults to <code>System.out</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-ignore-exit-value.html">isIgnoreExitValue</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isIgnoreExitValue</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Tells whether a non-zero exit value is ignored, or an exception thrown. Defaults to <code>false</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-error-output.html">setErrorOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setErrorOutput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.BaseExecSpec$setErrorOutput(java.io.OutputStream)/outputStream">outputStream</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BaseExecSpec</span></code>
+<p>Sets the output stream to consume standard error from the process executing the command. The stream is closed after the process completes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-ignore-exit-value.html">setIgnoreExitValue</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setIgnoreExitValue</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.BaseExecSpec$setIgnoreExitValue(kotlin.Boolean)/ignoreExitValue">ignoreExitValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BaseExecSpec</span></code>
+<p>Sets whether a non-zero exit value is ignored, or an exception thrown.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-standard-input.html">setStandardInput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setStandardInput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.BaseExecSpec$setStandardInput(java.io.InputStream)/inputStream">inputStream</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BaseExecSpec</span></code>
+<p>Sets the standard input stream for the process executing the command. The stream is closed after the process completes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-standard-output.html">setStandardOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setStandardOutput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.BaseExecSpec$setStandardOutput(java.io.OutputStream)/outputStream">outputStream</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BaseExecSpec</span></code>
+<p>Sets the output stream to consume standard output from the process executing the command. The stream is closed after the process completes.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-process-fork-options/copy-to.html">copyTo</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copyTo</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.ProcessForkOptions$copyTo(org.gradle.process.ProcessForkOptions)/options">options</span><span class="symbol">:</span>&nbsp;<a href="../-process-fork-options/index.html"><span class="identifier">ProcessForkOptions</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-process-fork-options/index.html"><span class="identifier">ProcessForkOptions</span></a></code>
+<p>Copies these options to the given target options.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-process-fork-options/environment.html">environment</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">environment</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.ProcessForkOptions$environment(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/environmentVariables">environmentVariables</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-process-fork-options/index.html"><span class="identifier">ProcessForkOptions</span></a></code>
+<p>Adds some environment variables to the environment for this process.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">environment</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.ProcessForkOptions$environment(kotlin.String, kotlin.Any)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.process.ProcessForkOptions$environment(kotlin.String, kotlin.Any)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-process-fork-options/index.html"><span class="identifier">ProcessForkOptions</span></a></code>
+<p>Adds an environment variable to the environment for this process.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-process-fork-options/executable.html">executable</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">executable</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.ProcessForkOptions$executable(kotlin.Any)/executable">executable</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-process-fork-options/index.html"><span class="identifier">ProcessForkOptions</span></a></code>
+<p>Sets the name of the executable to use.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-process-fork-options/get-environment.html">getEnvironment</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getEnvironment</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>The environment variables to use for the process. Defaults to the environment of this process.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-process-fork-options/get-executable.html">getExecutable</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExecutable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the executable to use.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-process-fork-options/get-working-dir.html">getWorkingDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getWorkingDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the working directory for the process. Defaults to the project directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-process-fork-options/set-environment.html">setEnvironment</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setEnvironment</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.ProcessForkOptions$setEnvironment(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/environmentVariables">environmentVariables</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the environment variable to use for the process.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-process-fork-options/set-executable.html">setExecutable</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setExecutable</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.ProcessForkOptions$setExecutable(kotlin.String)/executable">executable</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setExecutable</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.ProcessForkOptions$setExecutable(kotlin.Any)/executable">executable</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the name of the executable to use.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-process-fork-options/set-working-dir.html">setWorkingDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setWorkingDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.ProcessForkOptions$setWorkingDir(java.io.File)/dir">dir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the working directory for the process.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setWorkingDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.ProcessForkOptions$setWorkingDir(kotlin.Any)/dir">dir</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the working directory for the process. The supplied argument is evaluated as per <code><a href="#"> </a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-process-fork-options/working-dir.html">workingDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">workingDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.ProcessForkOptions$workingDir(kotlin.Any)/dir">dir</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-process-fork-options/index.html"><span class="identifier">ProcessForkOptions</span></a></code>
+<p>Sets the working directory for the process. The supplied argument is evaluated as per <code><a href="#"> </a></code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-exec-spec/index.html">ExecSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ExecSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BaseExecSpec</span></code>
+<p>Specified the options for executing some command.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-exec-spec/index.html">JavaExecSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">JavaExecSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-java-fork-options/index.html"><span class="identifier">JavaForkOptions</span></a><span class="symbol">, </span><span class="identifier">BaseExecSpec</span></code>
+<p>Specifies the options for executing a Java application.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Project.files - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">Project</a>&nbsp;/&nbsp;<a href=".">files</a><br/>
+<br/>
+<h1>files</h1>
+<a name="org.gradle.api.Project$files(kotlin.Array((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">files</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.Project$files(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code>
+<p>
+<p>Returns a ConfigurableFileCollection containing the given files. You can pass any of the following types to this method:</p>
+ <ul> <li>A CharSequence, including String or groovy.lang.GString. Interpreted relative to the project directory, as per <code><a href="#">#file(Object)</a></code>. A string that starts with <code>file:</code> is treated as a file URL.</li>
+ <li>A File. Interpreted relative to the project directory, as per <code><a href="#">#file(Object)</a></code>.</li>
+ <li>A java.nio.file.Path as defined by <code><a href="#">#file(Object)</a></code>.</li>
+ <li>A java.net.URI or java.net.URL. The URL's path is interpreted as a file path. Currently, only <code>file:</code> URLs are supported.</li>
+ <li>A java.util.Collection, Iterable, or an array. May contain any of the types listed here. The elements of the collection are recursively converted to files.</li>
+ <li>A org.gradle.api.file.FileCollection. The contents of the collection are included in the returned collection.</li>
+ <li>A java.util.concurrent.Callable. The <code>call()</code> method may return any of the types listed here. The return value of the <code>call()</code> method is recursively converted to files. A <code>null</code> return value is treated as an empty collection.</li>
+ <li>A Closure. May return any of the types listed here. The return value of the closure is recursively converted to files. A <code>null</code> return value is treated as an empty collection.</li>
+ <li>A Task. Converted to the task's output files.</li>
+ <li>A org.gradle.api.tasks.TaskOutputs. Converted to the output files the related task.</li>
+ <li>Anything else is treated as a failure.</li>
+ </ul>
+ 
+<p>The returned file collection is lazy, so that the paths are evaluated only when the contents of the file collection are queried. The file collection is also live, so that it evaluates the above each time the contents of the collection is queried.</p>
+ 
+<p>The returned file collection maintains the iteration order of the supplied paths.</p>
+</p>
+<h3>Parameters</h3>
+<a name="paths"></a>
+<code>paths</code> - The paths to the files. May be empty.
+<p><strong>Return</strong><br/>
+The file collection. Never returns null.</p>
+<a name="org.gradle.api.Project$files(kotlin.Any, groovy.lang.Closure((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">files</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$files(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">@DelegatesTo</span><span class="symbol">(</span>ConfigurableFileCollection<span class="symbol">, </span>1<span class="symbol">)</span> <span class="identifier" id="org.gradle.api.Project$files(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code>
+<p>
+<p>Creates a new <code>ConfigurableFileCollection</code> using the given paths. The paths are evaluated as per <code><a href="#"> </a></code>. The file collection is configured using the given closure. The file collection is passed to the closure as its delegate. Example:</p>
+ <pre><code> files "$buildDir/classes" { builtBy 'compile' } </code></pre> 
+<p>The returned file collection is lazy, so that the paths are evaluated only when the contents of the file collection are queried. The file collection is also live, so that it evaluates the above each time the contents of the collection is queried.</p>
+</p>
+<h3>Parameters</h3>
+<a name="paths"></a>
+<code>paths</code> - The contents of the file collection. Evaluated as per <code><a href="#">#files(Object...)</a></code>.<a name="configureClosure"></a>
+<code>configureClosure</code> - The closure to use to configure the file collection.
+<p><strong>Return</strong><br/>
+the configured file tree. Never returns null.</p>
+<a name="org.gradle.api.Project$files(kotlin.Any, org.gradle.api.Action((org.gradle.api.file.ConfigurableFileCollection)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">files</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$files(kotlin.Any, org.gradle.api.Action((org.gradle.api.file.ConfigurableFileCollection)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Project$files(kotlin.Any, org.gradle.api.Action((org.gradle.api.file.ConfigurableFileCollection)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code>
+<p>
+<p>Creates a new <code>ConfigurableFileCollection</code> using the given paths. The paths are evaluated as per <code><a href="#"> </a></code>. The file collection is configured using the given action. Example:</p>
+ <pre><code> files "$buildDir/classes" { builtBy 'compile' } </code></pre> 
+<p>The returned file collection is lazy, so that the paths are evaluated only when the contents of the file collection are queried. The file collection is also live, so that it evaluates the above each time the contents of the collection is queried.</p>
+</p>
+<h3>Parameters</h3>
+<a name="paths"></a>
+<code>paths</code> - The contents of the file collection. Evaluated as per <code><a href="#">#files(Object...)</a></code>.<a name="configureAction"></a>
+<code>configureAction</code> - The action to use to configure the file collection.
+<p><strong>Return</strong><br/>
+the configured file tree. Never returns null.</p>
+<p><strong>Since</strong><br/>
+3.5</p>
+</BODY>
+</HTML>

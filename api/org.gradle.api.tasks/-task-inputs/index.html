@@ -1,0 +1,133 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TaskInputs - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks</a>&nbsp;/&nbsp;<a href=".">TaskInputs</a><br/>
+<br/>
+<h1>TaskInputs</h1>
+<code><span class="keyword">interface </span><span class="identifier">TaskInputs</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-compatibility-adapter-for-task-inputs/index.html"><span class="identifier">CompatibilityAdapterForTaskInputs</span></a></code>
+<p>
+<p>A <code>TaskInputs</code> represents the inputs for a task.</p>
+ 
+<p>You can obtain a <code>TaskInputs</code> instance using <code><a href="../../org.gradle.api/-task/get-inputs.html">org.gradle.api.Task#getInputs()</a></code>.</p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="dir.html">dir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">dir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.TaskInputs$dir(kotlin.Any)/dirPath">dirPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-task-input-file-property-builder/index.html"><span class="identifier">TaskInputFilePropertyBuilder</span></a></code>
+<p>Registers an input directory hierarchy. All files found under the given directory are treated as input files for this task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="file.html">file</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.TaskInputs$file(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-task-input-file-property-builder/index.html"><span class="identifier">TaskInputFilePropertyBuilder</span></a></code>
+<p>Registers some input file for this task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="files.html">files</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">files</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.tasks.TaskInputs$files(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-task-input-file-property-builder/index.html"><span class="identifier">TaskInputFilePropertyBuilder</span></a></code>
+<p>Registers some input files for this task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-files.html">getFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the input files of this task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-has-inputs.html">getHasInputs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getHasInputs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if this task has declared the inputs that it consumes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-has-source-files.html">getHasSourceFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getHasSourceFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if this task has declared that it accepts source files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-properties.html">getProperties</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProperties</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the set of input properties for this task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-source-files.html">getSourceFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSourceFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the set of source files for this task. These are the subset of input files which the task actually does work on. A task is skipped if it has declared it accepts source files, and this collection is empty.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="properties.html">properties</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">properties</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.TaskInputs$properties(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/properties">properties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TaskInputs</span></code>
+<p>Registers a set of input properties for this task. See <code><a href="#">#property(String, Object)</a></code> for details.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="property.html">property</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">property</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.TaskInputs$property(kotlin.String, kotlin.Any)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.TaskInputs$property(kotlin.String, kotlin.Any)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TaskInputs</span></code>
+<p>
+<p>Registers an input property for this task. This value is persisted when the task executes, and is compared against the property value for later invocations of the task, to determine if the task is up-to-date.</p>
+ 
+<p>The given value for the property must be Serializable, so that it can be persisted. It should also provide a useful <code>equals()</code> method.</p>
+ 
+<p>You can specify a closure or <code>Callable</code> as the value of the property. In which case, the closure or <code>Callable</code> is executed to determine the actual property value.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-task-input-file-property-builder/index.html">TaskInputFilePropertyBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskInputFilePropertyBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-task-file-property-builder/index.html"><span class="identifier">TaskFilePropertyBuilder</span></a><span class="symbol">, </span><span class="identifier">TaskInputs</span></code>
+<p>Describes an input property of a task that contains zero or more files.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

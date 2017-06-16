@@ -1,0 +1,45 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ProviderFactory - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.provider</a>&nbsp;/&nbsp;<a href=".">ProviderFactory</a><br/>
+<br/>
+<h1>ProviderFactory</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ProviderFactory</span></code>
+<p>A factory for creating instances of <code>Provider</code> and <code>PropertyState</code>. 
+<p> An instance of the factory can be injected into a task or plugin by annotating a public constructor or method with <code>javax.inject.Inject</code>. </p>
+<pre><code> public class MyTask extends DefaultTask { // injection into a constructor @javax.inject.Inject public MyTask(ProviderFactory providerFactory) { } // injection into a method @javax.inject.Inject public ProviderFactory getProviderFactory() { throw new UnsupportedOperationException(); } } </code></pre> 
+<p>An instance of the factory is also available using <code><a href="../../org.gradle.api/-project/get-providers.html">Project#getProviders()</a></code></p>
+</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="property.html">property</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">property</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.ProviderFactory$property(java.lang.Class((org.gradle.api.provider.ProviderFactory.property.T)))/clazz">clazz</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-property-state/index.html"><span class="identifier">PropertyState</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Creates a <code>PropertyState</code> implementation based on the provided class. The value returned by the property state is the default value of the standard Java data type. Please see <a href="#">Oracle's Java manual</a> for more information. 
+<p> Any other data type than the standard Java data types returns null as default value.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="provider.html">provider</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">provider</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.ProviderFactory$provider(java.util.concurrent.Callable((org.gradle.api.provider.ProviderFactory.provider.T)))/value">value</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Callable.html"><span class="identifier">Callable</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Creates a <code>Provider</code> implementation based on the provided value.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

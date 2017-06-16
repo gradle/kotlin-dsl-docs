@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TestDescriptor - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.testing</a>&nbsp;/&nbsp;<a href=".">TestDescriptor</a><br/>
+<br/>
+<h1>TestDescriptor</h1>
+<code><span class="keyword">interface </span><span class="identifier">TestDescriptor</span></code>
+<p>Describes a test. A test may be a single atomic test, such as the execution of a test method, or it may be a composite test, made up of zero or more tests.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-class-name.html">getClassName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getClassName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the test class name for this test, if any.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the test. Not guaranteed to be unique.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-parent.html">getParent</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getParent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TestDescriptor</span></code>
+<p>Returns the parent of this test, if any.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-composite.html">isComposite</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isComposite</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Is this test a composite test?</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

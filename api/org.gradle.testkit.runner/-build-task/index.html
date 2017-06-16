@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BuildTask - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.testkit.runner</a>&nbsp;/&nbsp;<a href=".">BuildTask</a><br/>
+<br/>
+<h1>BuildTask</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">BuildTask</span></code>
+<p>A task that was executed when running a specific build.</p>
+<p><strong>Since</strong><br/>
+2.6</p>
+<p><strong>See Also</strong><br/>
+BuildResult</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-outcome.html">getOutcome</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOutcome</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-task-outcome/index.html"><span class="identifier">TaskOutcome</span></a></code>
+<p>The outcome of attempting to execute this task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-path.html">getPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The unique path of the task. 
+<p> The task path is a combination of its enclosing project's path and its name. For example, in multi project build the <code>bar</code> task of the <code>foo</code> project has a path of <code>:foo:bar</code>. In a single project build, the <code>bar</code> task of the lone project has a path of <code>:bar</code>. </p>
+<p> This value corresponds to the value output by Gradle for the task during its normal progress logging.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

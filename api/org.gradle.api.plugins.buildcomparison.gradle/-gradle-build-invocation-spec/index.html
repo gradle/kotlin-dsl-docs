@@ -1,0 +1,94 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GradleBuildInvocationSpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins.buildcomparison.gradle</a>&nbsp;/&nbsp;<a href=".">GradleBuildInvocationSpec</a><br/>
+<br/>
+<h1>GradleBuildInvocationSpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">GradleBuildInvocationSpec</span></code>
+<p>A specification for launching a Gradle build with a specified Gradle version.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-arguments.html">getArguments</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getArguments</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The command line arguments (excluding tasks) to invoke the build with.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-gradle-version.html">getGradleVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGradleVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The Gradle version to run the build with. Defaults to the current Gradle version of the running build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project-dir.html">getProjectDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The “root” directory of the build. Defaults to the current build's root directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-tasks.html">getTasks</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTasks</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The tasks to execute. Defaults to an empty list.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-arguments.html">setArguments</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setArguments</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.buildcomparison.gradle.GradleBuildInvocationSpec$setArguments(kotlin.collections.MutableIterable((kotlin.String)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the command line arguments (excluding tasks) to invoke the build with.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-gradle-version.html">setGradleVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setGradleVersion</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.buildcomparison.gradle.GradleBuildInvocationSpec$setGradleVersion(kotlin.String)/gradleVersion">gradleVersion</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the Gradle version to run the build with. The value must be a valid, published, Gradle version number. Examples are: <ul> <li><code>"1.1"</code></li>
+ <li><code>"1.0-rc-1"</code></li>
+ </ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-project-dir.html">setProjectDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setProjectDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.buildcomparison.gradle.GradleBuildInvocationSpec$setProjectDir(kotlin.Any)/projectDir">projectDir</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the “root” directory of the build. This should not be the project directory of child project in a multi project build. It should always be the root of the multiproject build. The value is interpreted as a file as per <code><a href="#">org.gradle.api.Project#file(Object)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-tasks.html">setTasks</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setTasks</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.buildcomparison.gradle.GradleBuildInvocationSpec$setTasks(kotlin.collections.MutableIterable((kotlin.String)))/tasks">tasks</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the tasks to execute.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

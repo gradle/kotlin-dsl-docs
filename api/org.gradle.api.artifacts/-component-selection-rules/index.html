@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ComponentSelectionRules - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">ComponentSelectionRules</a><br/>
+<br/>
+<h1>ComponentSelectionRules</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ComponentSelectionRules</span></code>
+<p>* Represents a container for component selection rules. Rules can be applied as part of the resolutionStrategy of a configuration and individual components can be explicitly accepted or rejected by rule. Components that are neither accepted or rejected will be subject to the default version matching strategies. <pre><code> configurations { conf { resolutionStrategy { componentSelection { all { ComponentSelection selection -&gt; if (selection.candidate.module == 'someModule' &amp;&amp; selection.candidate.version == '1.1') { selection.reject("bad version '1.1' for 'someModule'") } } all { ComponentSelection selection, IvyModuleDescriptor descriptor, ComponentMetadata metadata -&gt; if (selection.candidate.module == 'someModule' &amp;&amp; descriptor.branch == 'testing') { if (metadata.status != 'milestone') { selection.reject("only use milestones for someModule:testing") } } } withModule("org.sample:api") { ComponentSelection selection -&gt; if (selection.candidate.version == "1.1") { selection.reject("known bad version") } } } } } } </code></pre></p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="all.html">all</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">all</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ComponentSelectionRules$all(org.gradle.api.Action((org.gradle.api.artifacts.ComponentSelection)))/selectionAction">selectionAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-component-selection/index.html"><span class="identifier">ComponentSelection</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ComponentSelectionRules</span></code>
+<p>Adds a simple component selection rule that will apply to all resolved components. Each rule will receive a ComponentSelection object as an argument.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">all</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ComponentSelectionRules$all(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ComponentSelectionRules</span></code>
+<p>Adds a component selection rule that will apply to all resolved components. Each rule will receive a ComponentSelection object as an argument as well as any other arguments specified for the closure. Allowable closure arguments are ComponentSelection (required), org.gradle.api.artifacts.ComponentMetadata and/or org.gradle.api.artifacts.ivy.IvyModuleDescriptor.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">all</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ComponentSelectionRules$all(kotlin.Any)/ruleSource">ruleSource</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ComponentSelectionRules</span></code>
+<p>Adds a rule-source backed component selection rule that will apply to all resolved components. The ruleSource provides the rule as exactly one rule method annotated with org.gradle.model.Mutate. This rule method: <ul> <li>must return void.</li>
+ <li>must have org.gradle.api.artifacts.ComponentSelection as the first parameter.</li>
+ <li>may have additional parameters of type org.gradle.api.artifacts.ComponentMetadata and/or org.gradle.api.artifacts.ivy.IvyModuleDescriptor.</li>
+ </ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="with-module.html">withModule</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withModule</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ComponentSelectionRules$withModule(kotlin.Any, org.gradle.api.Action((org.gradle.api.artifacts.ComponentSelection)))/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.ComponentSelectionRules$withModule(kotlin.Any, org.gradle.api.Action((org.gradle.api.artifacts.ComponentSelection)))/selectionAction">selectionAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-component-selection/index.html"><span class="identifier">ComponentSelection</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ComponentSelectionRules</span></code>
+<p>Adds a component selection rule that will apply to the specified module. Each rule will receive a ComponentSelection object as an argument.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withModule</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ComponentSelectionRules$withModule(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.ComponentSelectionRules$withModule(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ComponentSelectionRules</span></code>
+<p>Adds a component selection rule that will apply to the specified module. Each rule will receive a ComponentSelection object as an argument as well as any other arguments specified for the closure. Allowable closure arguments are ComponentSelection (required), org.gradle.api.artifacts.ComponentMetadata and/or org.gradle.api.artifacts.ivy.IvyModuleDescriptor.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withModule</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ComponentSelectionRules$withModule(kotlin.Any, kotlin.Any)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.ComponentSelectionRules$withModule(kotlin.Any, kotlin.Any)/ruleSource">ruleSource</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ComponentSelectionRules</span></code>
+<p>Adds a rule-source backed component selection rule that will apply to the specified module. The ruleSource provides the rule as exactly one rule method annotated with org.gradle.model.Mutate. This rule method: <ul> <li>must return void.</li>
+ <li>must have org.gradle.api.artifacts.ComponentSelection as the first parameter.</li>
+ <li>may have additional parameters of type org.gradle.api.artifacts.ComponentMetadata and/or org.gradle.api.artifacts.ivy.IvyModuleDescriptor.</li>
+ </ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

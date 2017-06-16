@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DependencyResult - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.result</a>&nbsp;/&nbsp;<a href=".">DependencyResult</a><br/>
+<br/>
+<h1>DependencyResult</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">DependencyResult</span></code>
+<p>An edge in the dependency graph. Provides information about the origin of the dependency and the requested component.</p>
+<p><strong>See Also</strong><br/>
+ResolutionResult</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-from.html">getFrom</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFrom</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-resolved-component-result/index.html"><span class="identifier">ResolvedComponentResult</span></a></code>
+<p>Returns the origin of the dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-requested.html">getRequested</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRequested</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.component/-component-selector/index.html"><span class="identifier">ComponentSelector</span></a></code>
+<p>
+<p>Returns the requested component. </p>
+<p>The return type is declared as an opaque org.gradle.api.artifacts.component.ComponentSelector, however the selector may also implement one of the following interfaces:</p>
+ <ul> <li>org.gradle.api.artifacts.component.ProjectComponentSelector for those dependencies that request a component from some other project in the current build.</li>
+ <li>org.gradle.api.artifacts.component.ModuleComponentSelector for those dependencies that request a component to be found in some repository.</li>
+ </ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-resolved-dependency-result/index.html">ResolvedDependencyResult</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ResolvedDependencyResult</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DependencyResult</span></code>
+<p>A dependency that was resolved successfully.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-unresolved-dependency-result/index.html">UnresolvedDependencyResult</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">UnresolvedDependencyResult</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DependencyResult</span></code>
+<p>A dependency that could not be resolved.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

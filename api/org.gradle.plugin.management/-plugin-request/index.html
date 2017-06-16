@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PluginRequest - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugin.management</a>&nbsp;/&nbsp;<a href=".">PluginRequest</a><br/>
+<br/>
+<h1>PluginRequest</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">PluginRequest</span></code>
+<p>Contains information about a plugin that has been requested for resolution.</p>
+<p><strong>Since</strong><br/>
+3.5</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-id.html">getId</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getId</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.plugin.use/-plugin-id/index.html"><span class="identifier">PluginId</span></a></code>
+<p>The ID of the plugin requested. Never null.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-module.html">getModule</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getModule</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts/-module-version-selector/index.html"><span class="identifier">ModuleVersionSelector</span></a></code>
+<p>The implementation module of the plugin if one was explicitly specified, otherwise null.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-version.html">getVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The version of the plugin if one was specified, otherwise null.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

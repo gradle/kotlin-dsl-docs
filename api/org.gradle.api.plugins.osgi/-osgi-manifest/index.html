@@ -1,0 +1,289 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>OsgiManifest - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins.osgi</a>&nbsp;/&nbsp;<a href=".">OsgiManifest</a><br/>
+<br/>
+<h1>OsgiManifest</h1>
+<code><span class="keyword">interface </span><span class="identifier">OsgiManifest</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.java.archives/-manifest/index.html"><span class="identifier">Manifest</span></a></code>
+<p>Represents a manifest file for a JAR containing an OSGi bundle.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-classes-dir.html">getClassesDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getClassesDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the classes dir.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-classpath.html">getClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getClasspath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the classpath.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-description.html">getDescription</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDescription</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the description.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-doc-u-r-l.html">getDocURL</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDocURL</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the docURL value.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-instructions.html">getInstructions</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getInstructions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>Returns all existing instruction.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-license.html">getLicense</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLicense</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the license.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-symbolic-name.html">getSymbolicName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSymbolicName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the symbolic name.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-vendor.html">getVendor</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getVendor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the vendor.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-version.html">getVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the version.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="instruction.html">instruction</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">instruction</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.osgi.OsgiManifest$instruction(kotlin.String, kotlin.Array((kotlin.String)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.plugins.osgi.OsgiManifest$instruction(kotlin.String, kotlin.Array((kotlin.String)))/values">values</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">OsgiManifest</span></code>
+<p>Adds arguments to an instruction. If the instruction does not exists, it is created. If it does exists, the arguments are appended to the existing arguments.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="instruction-first.html">instructionFirst</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">instructionFirst</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.osgi.OsgiManifest$instructionFirst(kotlin.String, kotlin.Array((kotlin.String)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.plugins.osgi.OsgiManifest$instructionFirst(kotlin.String, kotlin.Array((kotlin.String)))/values">values</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">OsgiManifest</span></code>
+<p>Adds arguments to an instruction. If the instruction does not exists, it is created. If it does exists, the arguments are inserted before the existing arguments.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="instruction-replace.html">instructionReplace</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">instructionReplace</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.osgi.OsgiManifest$instructionReplace(kotlin.String, kotlin.Array((kotlin.String)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.plugins.osgi.OsgiManifest$instructionReplace(kotlin.String, kotlin.Array((kotlin.String)))/values">values</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">OsgiManifest</span></code>
+<p>Sets the values for an instruction. If the instruction does not exists, it is created. If it does exists, the values replace the existing values.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="instruction-value.html">instructionValue</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">instructionValue</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.osgi.OsgiManifest$instructionValue(kotlin.String)/instructionName">instructionName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the list of arguments for a particular instruction.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-classes-dir.html">setClassesDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setClassesDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.osgi.OsgiManifest$setClassesDir(java.io.File)/classesDir">classesDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the classes dir. This directory is the major source of input for generation the OSGi manifest. All classes are analyzed for its packages and package dependencies. Based on this the Import-Package value is set. This auto generated value can be overwritten by explicitly setting an instruction.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-classpath.html">setClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setClasspath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.osgi.OsgiManifest$setClasspath(org.gradle.api.file.FileCollection)/classpath">classpath</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>A convenient method for setting a Bundle-Classpath instruction. The information of the classpath elements are only used if they are OSGi bundles. In this case for example the version information provided by the bundle is used in the Import-Package of the generated OSGi bundle.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-description.html">setDescription</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setDescription</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.osgi.OsgiManifest$setDescription(kotlin.String)/description">description</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>A convenient method for setting a Bundle-Description instruction.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-doc-u-r-l.html">setDocURL</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setDocURL</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.osgi.OsgiManifest$setDocURL(kotlin.String)/docURL">docURL</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>A convenient method for setting a Bundle-DocURL instruction.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-license.html">setLicense</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setLicense</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.osgi.OsgiManifest$setLicense(kotlin.String)/license">license</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>A convenient method for setting a Bundle-License instruction.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-name.html">setName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.osgi.OsgiManifest$setName(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>A convenient method for setting a Bundle-Name instruction.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-symbolic-name.html">setSymbolicName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setSymbolicName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.osgi.OsgiManifest$setSymbolicName(kotlin.String)/symbolicName">symbolicName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>A convenient method for setting a Bundle-SymbolicName instruction.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-vendor.html">setVendor</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setVendor</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.osgi.OsgiManifest$setVendor(kotlin.String)/vendor">vendor</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>A convenient method for setting a Bundle-Vendor instruction.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-version.html">setVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setVersion</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.osgi.OsgiManifest$setVersion(kotlin.String)/version">version</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>A convenient method for setting a Bundle-Version instruction.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.java.archives/-manifest/attributes.html">attributes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">attributes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.java.archives.Manifest$attributes(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/attributes">attributes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.java.archives/-manifest/index.html"><span class="identifier">Manifest</span></a></code>
+<p>Adds content to the main attributes of the manifest.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">attributes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.java.archives.Manifest$attributes(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), kotlin.String)/attributes">attributes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.java.archives.Manifest$attributes(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), kotlin.String)/sectionName">sectionName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.java.archives/-manifest/index.html"><span class="identifier">Manifest</span></a></code>
+<p>Adds content to the given section of the manifest.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.java.archives/-manifest/from.html">from</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.java.archives.Manifest$from(kotlin.Array((kotlin.Any)))/mergePath">mergePath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.java.archives/-manifest/index.html"><span class="identifier">Manifest</span></a></code>
+<p>Specifies other manifests to be merged into this manifest. A merge path can either be another instance of org.gradle.api.java.archives.Manifest or a file path as interpreted by <code><a href="#">org.gradle.api.Project#files(Object...)</a></code>. The merge is not happening instantaneously. It happens either before writing or when <code><a href="../../org.gradle.api.java.archives/-manifest/get-effective-manifest.html">#getEffectiveManifest()</a></code> is called.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.java.archives.Manifest$from(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/mergePath">mergePath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.java.archives.Manifest$from(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.java.archives/-manifest/index.html"><span class="identifier">Manifest</span></a></code>
+<p>Specifies other manifests to be merged into this manifest. A merge path is interpreted as described in <code><a href="#">#from(Object...)</a></code>. The merge is not happening instantaneously. It happens either before writing or when <code><a href="../../org.gradle.api.java.archives/-manifest/get-effective-manifest.html">#getEffectiveManifest()</a></code> is called. The closure configures the underlying org.gradle.api.java.archives.ManifestMergeSpec.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.java.archives/-manifest/get-attributes.html">getAttributes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAttributes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.java.archives/-attributes.html"><span class="identifier">Attributes</span></a></code>
+<p>Returns the main attributes of the manifest.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.java.archives/-manifest/get-effective-manifest.html">getEffectiveManifest</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getEffectiveManifest</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.java.archives/-manifest/index.html"><span class="identifier">Manifest</span></a></code>
+<p>Returns a new manifest instance where all the attribute values are expanded (e.g. their toString method is called). The returned manifest also contains all the attributes of the to be merged manifests specified in <code><a href="#">#from(Object...)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.java.archives/-manifest/get-sections.html">getSections</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSections</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="../../org.gradle.api.java.archives/-attributes.html"><span class="identifier">Attributes</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the sections of the manifest (excluding the main section).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.java.archives/-manifest/write-to.html">writeTo</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">writeTo</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.java.archives.Manifest$writeTo(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.java.archives/-manifest/index.html"><span class="identifier">Manifest</span></a></code>
+<p>Writes the manifest into a file. The path's are resolved as defined by <code><a href="#">org.gradle.api.Project#files(Object...)</a></code> The manifest will be encoded using the character set defined by the <code><a href="../../org.gradle.jvm.tasks/-jar/get-manifest-content-charset.html">org.gradle.jvm.tasks.Jar#getManifestContentCharset()</a></code> property.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

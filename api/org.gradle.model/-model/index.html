@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Model - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.model</a>&nbsp;/&nbsp;<a href=".">Model</a><br/>
+<br/>
+<h1>Model</h1>
+<code><span class="identifier">@Target</span><span class="symbol">(</span>[AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.PROPERTY_SETTER]<span class="symbol">)</span> <span class="identifier">@Incubating</span> <span class="keyword">class </span><span class="identifier">Model</span></code>
+<p>Denotes that the RuleSource method rule carrying this annotation creates a new top level element in the model space. 
+<p> The method must advertise a name and type for the model element. The name is defined either by the name of the method, or the <code><a href="#">#value</a></code> of this annotation. The type is defined differently depending on whether the new element is Managed or not. </p>
+Creating managed model elements 
+<p> If the element is to be of a managed type, the method must return <code>void</code> and receive the newly created instance as the <strong>first</strong> parameter. All other parameters are considered <em>inputs</em>. </p>
+<p> It is an error for a <code>@Model</code> rule to return <code>void</code> and specify a non-managed type as the first parameter. It is an error for a <code>@Model</code> rule to return <code>void</code> and for the first parameter to be annotated with Path. It is an error for a <code>@Model</code> rule to specify a managed type as the return type. </p>
+Creating non-managed model elements 
+<p> If the element is to be of a non-managed type, the method must return the newly created instance. All parameters are considered <em>inputs</em>. Please see RuleSource for more information on method rules.</p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">Model</span><span class="symbol">(</span><span class="identifier" id="org.gradle.model.Model$<init>(kotlin.String)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code>
+<p>Denotes that the RuleSource method rule carrying this annotation creates a new top level element in the model space. 
+<p> The method must advertise a name and type for the model element. The name is defined either by the name of the method, or the <code><a href="#">#value</a></code> of this annotation. The type is defined differently depending on whether the new element is Managed or not. </p>
+Creating managed model elements 
+<p> If the element is to be of a managed type, the method must return <code>void</code> and receive the newly created instance as the <strong>first</strong> parameter. All other parameters are considered <em>inputs</em>. </p>
+<p> It is an error for a <code>@Model</code> rule to return <code>void</code> and specify a non-managed type as the first parameter. It is an error for a <code>@Model</code> rule to return <code>void</code> and for the first parameter to be annotated with Path. It is an error for a <code>@Model</code> rule to specify a managed type as the return type. </p>
+Creating non-managed model elements 
+<p> If the element is to be of a non-managed type, the method must return the newly created instance. All parameters are considered <em>inputs</em>. Please see RuleSource for more information on method rules.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="value.html">value</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">value</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Denotes the name by which the model element will be available. 
+<p> If the value is the empty string, the exact name of the annotated method will be used. </p>
+<p> The value must: </p>
+<p> </p>
+<ul> <li>Start with a lower case letter</li>
+ <li>Contain only ASCII letters, numbers and the '_' character</li>
+ </ul>
+ 
+<p> This restriction also applies when the name is being derived from the method name. </p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

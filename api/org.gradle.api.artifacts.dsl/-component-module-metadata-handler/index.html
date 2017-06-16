@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ComponentModuleMetadataHandler - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.dsl</a>&nbsp;/&nbsp;<a href=".">ComponentModuleMetadataHandler</a><br/>
+<br/>
+<h1>ComponentModuleMetadataHandler</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ComponentModuleMetadataHandler</span></code>
+<p>Allows to modify the metadata of depended-on software components. 
+<p> Example: </p>
+<pre><code> dependencies { modules { //Configuring component module metadata for the entire "google-collections" module, // declaring that legacy library was replaced with "guava". //This way, Gradle's conflict resolution can use this information and use "guava" // in case both libraries appear in the same dependency tree. module("com.google.collections:google-collections") { replacedBy("com.google.guava:guava") } } } </code></pre></p>
+<p><strong>Since</strong><br/>
+2.2</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="module.html">module</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">module</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.dsl.ComponentModuleMetadataHandler$module(kotlin.Any, org.gradle.api.Action((org.gradle.api.artifacts.ComponentModuleMetadata)))/moduleNotation">moduleNotation</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.dsl.ComponentModuleMetadataHandler$module(kotlin.Any, org.gradle.api.Action((org.gradle.api.artifacts.ComponentModuleMetadata)))/rule">rule</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.artifacts/-component-module-metadata/index.html"><span class="identifier">ComponentModuleMetadata</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Enables configuring component module metadata. This metadata applies to the entire component module (e.g. "group:name", like "org.gradle:gradle-core") regardless of the component version. <pre><code> //declaring that google collections are replaced by guava //so that conflict resolution can take advantage of this information: dependencies.modules.module('com.google.collections:google-collections') { replacedBy('com.google.guava:guava') } </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

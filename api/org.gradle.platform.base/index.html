@@ -1,0 +1,360 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.platform.base - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.platform.base</a><br/>
+<br/>
+<h2>Package org.gradle.platform.base</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-application.html">Application</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Application</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.component/-component.html"><span class="identifier">Component</span></a></code>
+<p>A software application.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-application-binary-spec/index.html">ApplicationBinarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ApplicationBinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-binary-spec/index.html"><span class="identifier">BinarySpec</span></a></code>
+<p>A binary produced from a `org.gradle.platform.base.ApplicationSpec`.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-application-spec.html">ApplicationSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ApplicationSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-general-component-spec.html"><span class="identifier">GeneralComponentSpec</span></a></code>
+<p>A specification of a org.gradle.platform.base.Application.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-binary/index.html">Binary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Binary</span></code>
+<p>A physical binary artifact, which can run on a particular platform or runtime.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-binary-container.html">BinaryContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BinaryContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.model/-model-map/index.html"><span class="identifier">ModelMap</span></a><span class="symbol">&lt;</span><a href="-binary-spec/index.html"><span class="identifier">BinarySpec</span></a><span class="symbol">&gt;</span></code>
+<p>A container for project binaries, which represent physical artifacts that can run on a particular platform or runtime.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-binary-spec/index.html">BinarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-buildable-component-spec/index.html"><span class="identifier">BuildableComponentSpec</span></a><span class="symbol">, </span><a href="../org.gradle.api/-checkable-component-spec/index.html"><span class="identifier">CheckableComponentSpec</span></a><span class="symbol">, </span><a href="-binary/index.html"><span class="identifier">Binary</span></a></code>
+<p>Represents a binary that is the result of building a component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-binary-tasks-collection/index.html">BinaryTasksCollection</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BinaryTasksCollection</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span></code>
+<p>A collection of tasks associated to a binary</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-component-spec/index.html">ComponentSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.model/-model-element/index.html"><span class="identifier">ModelElement</span></a></code>
+<p>A software component that is built by Gradle.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-component-spec-container.html">ComponentSpecContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentSpecContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.model/-model-map/index.html"><span class="identifier">ModelMap</span></a><span class="symbol">&lt;</span><a href="-component-spec/index.html"><span class="identifier">ComponentSpec</span></a><span class="symbol">&gt;</span></code>
+<p>A container of software components.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency-spec/index.html">DependencySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DependencySpec</span></code>
+<p>A dependency onto a Gradle component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency-spec-builder/index.html">DependencySpecBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DependencySpecBuilder</span></code>
+<p>A builder of a DependencySpec. Implementations are required to return immutable dependency specs.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency-spec-container/index.html">DependencySpecContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DependencySpecContainer</span></code>
+<p>A container for dependency specifications.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-general-component-spec.html">GeneralComponentSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">GeneralComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-component-spec/index.html"><span class="identifier">ComponentSpec</span></a><span class="symbol">, </span><a href="-source-component-spec/index.html"><span class="identifier">SourceComponentSpec</span></a><span class="symbol">, </span><a href="-variant-component-spec/index.html"><span class="identifier">VariantComponentSpec</span></a></code>
+<p>A general purpose component specification, that can be used to represent some software component built from source and producing multiple output variants.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-library.html">Library</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Library</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.component/-component.html"><span class="identifier">Component</span></a></code>
+<p>A library that can be linked into or depended on by another software element.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-library-binary-dependency-spec/index.html">LibraryBinaryDependencySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">LibraryBinaryDependencySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependency-spec/index.html"><span class="identifier">DependencySpec</span></a></code>
+<p>A dependency onto a specific binary of a library published by a project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-library-binary-spec/index.html">LibraryBinarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">LibraryBinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-binary-spec/index.html"><span class="identifier">BinarySpec</span></a></code>
+<p>A binary produced from a `org.gradle.platform.base.LibrarySpec`.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-library-spec.html">LibrarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">LibrarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-general-component-spec.html"><span class="identifier">GeneralComponentSpec</span></a></code>
+<p>A specification of a org.gradle.platform.base.Library.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-module-dependency-spec/index.html">ModuleDependencySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ModuleDependencySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependency-spec/index.html"><span class="identifier">DependencySpec</span></a></code>
+<p>A dependency onto a module.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-module-dependency-spec-builder/index.html">ModuleDependencySpecBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ModuleDependencySpecBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependency-spec-builder/index.html"><span class="identifier">DependencySpecBuilder</span></a></code>
+<p>A builder of a ModuleDependencySpec.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-platform/index.html">Platform</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Platform</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
+<p>The platform or runtime that a binary is designed to run on. Examples: the JvmPlatform defines a java runtime, while the NativePlatform defines the Operating System and Architecture for a native app.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-platform-aware-component-spec/index.html">PlatformAwareComponentSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PlatformAwareComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-variant-component-spec/index.html"><span class="identifier">VariantComponentSpec</span></a></code>
+<p>Defines Platform specific operations for ComponentSpecs</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-platform-container.html">PlatformContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PlatformContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-extensible-polymorphic-domain-object-container/index.html"><span class="identifier">ExtensiblePolymorphicDomainObjectContainer</span></a><span class="symbol">&lt;</span><a href="-platform/index.html"><span class="identifier">Platform</span></a><span class="symbol">&gt;</span></code>
+<p>A container of Platforms.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-project-dependency-spec/index.html">ProjectDependencySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ProjectDependencySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependency-spec/index.html"><span class="identifier">DependencySpec</span></a></code>
+<p>A dependency onto a library published by a project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-project-dependency-spec-builder/index.html">ProjectDependencySpecBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ProjectDependencySpecBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependency-spec-builder/index.html"><span class="identifier">DependencySpecBuilder</span></a></code>
+<p>A builder of a ProjectDependencySpec.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-source-component-spec/index.html">SourceComponentSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SourceComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-component-spec/index.html"><span class="identifier">ComponentSpec</span></a></code>
+<p>Represents some component whose implementation can be represented as a collection of source files, and whose other outputs are built from this source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-tool-chain/index.html">ToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ToolChain</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
+<p>A set of compilers that are used together to construct binaries.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-tool-chain-registry/index.html">ToolChainRegistry</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ToolChainRegistry</span><span class="symbol">&lt;</span><span class="identifier">P</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-platform/index.html"><span class="identifier">Platform</span></a><span class="symbol">, </span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-tool-chain/index.html"><span class="identifier">ToolChain</span></a><span class="symbol">&gt;</span></code>
+<p>A Provider of ToolChains.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-transformation-file-type.html">TransformationFileType</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TransformationFileType</span></code>
+<p>The type of a file of a transformation</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-type-builder/index.html">TypeBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TypeBuilder</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>A TypeBuilder to configure the registration of a type.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-variant-component/index.html">VariantComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VariantComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.model/-model-element/index.html"><span class="identifier">ModelElement</span></a></code>
+<p>A component that has one or more mutually exclusive variants.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-variant-component-spec/index.html">VariantComponentSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VariantComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-component-spec/index.html"><span class="identifier">ComponentSpec</span></a><span class="symbol">, </span><a href="-variant-component/index.html"><span class="identifier">VariantComponent</span></a></code>
+<p>Represents a component spec that is made up of one or more mutually exclusive variants.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Annotations</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-binary-tasks/index.html">BinaryTasks</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">BinaryTasks</span></code>
+<p>Declares the tasks to build a custom org.gradle.platform.base.BinarySpec binary. The following example demonstrates how to register multiple tasks for custom binary using a plugin with a org.gradle.platform.base.BinaryTasks annotation. <pre><code> @Managed interface SampleComponent extends ComponentSpec {} @Managed interface SampleBinary extends BinarySpec {} apply plugin: MyCustomBinariesPlugin class MyCustomBinaryCreationTask extends DefaultTask { @TaskAction void build() { //building the binary } } class MyCustomBinariesPlugin extends RuleSource { @ComponentType void register(TypeBuilder&lt;SampleBinary&gt; builder) {} @BinaryTasks void createBinaryTasks(ModelMap&lt;Task&gt; tasks, SampleBinary binary) { tasks.create("${binary.name}Task1", MyCustomBinaryCreationTask) tasks.create("${binary.name}Task2") { dependsOn "${binary.name}Task1" } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-component-binaries/index.html">ComponentBinaries</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">ComponentBinaries</span></code>
+<p>Declares the binaries that should be built for a custom org.gradle.platform.base.ComponentSpec type. The following example demonstrates how to register a binary for a custom component type using a plugin with a org.gradle.platform.base.ComponentBinaries annotation. Furthermore the plugin registers 'DefaultSampleBinary' as implementation for org.gradle.platform.base.BinarySpec. <pre><code> interface SampleComponent extends VariantComponentSpec {} interface SampleBinary extends BinarySpec {} class DefaultSampleBinary extends BaseBinarySpec implements SampleBinary {} apply plugin: MyCustomBinariesPlugin class MyCustomBinariesPlugin extends RuleSource { @ComponentType void register(TypeBuilder builder) { builder.defaultImplementation(DefaultSampleBinary) } @ComponentBinaries void createBinariesForSampleLibrary(ModelMap binaries, SampleComponent component) { binaries.create("${component.name}Binary", SampleBinary) } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-component-type/index.html">ComponentType</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">ComponentType</span></code>
+<p>Declares a custom org.gradle.platform.base.ComponentSpec type. The following example demonstrates how to register a custom component type using a plugin with a ComponentType annotation. Furthermore the plugin creates an instance of SampleComponent named 'sampleComponent'. <pre><code> interface SampleComponent extends ComponentSpec {} class DefaultSampleComponent extends BaseComponentSpec implements SampleComponent {} apply plugin: MySamplePlugin class MySamplePlugin extends RuleSource { @ComponentType void register(TypeBuilder&lt;SampleComponent&gt; builder) { builder.defaultImplementation(DefaultSampleComponent) } @Mutate void createSampleLibraryComponents(ModelMap&lt;SampleComponent&gt; componentSpecs) { componentSpecs.create("sampleComponent") } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-variant/index.html">Variant</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Variant</span></code>
+<p>Declares that a property represents a variant dimension. Variants are used in dependency resolution to discriminate between various binaries that may match the requirements (such as a platform, a build type, ...). This annotation must be set on a getter. The return type of the getter must either be a String or a class implementing org.gradle.api.Named.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Exceptions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-invalid-model-exception/index.html">InvalidModelException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InvalidModelException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>Thrown when a component model is declared in an invalid way.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-model-instantiation-exception/index.html">ModelInstantiationException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ModelInstantiationException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>Thrown when a model element cannot be instantiated for some reason.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

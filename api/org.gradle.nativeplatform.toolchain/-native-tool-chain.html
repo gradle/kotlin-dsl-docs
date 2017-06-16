@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NativeToolChain - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.nativeplatform.toolchain</a>&nbsp;/&nbsp;<a href=".">NativeToolChain</a><br/>
+<br/>
+<h1>NativeToolChain</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">NativeToolChain</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.platform.base/-tool-chain/index.html"><span class="identifier">ToolChain</span></a></code>
+<p>A set of compilers and linkers that are used together to construct a native binary.</p>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../org.gradle.platform.base/-tool-chain/get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns a human consumable name for this tool chain.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-gcc-compatible-tool-chain/index.html">GccCompatibleToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">GccCompatibleToolChain</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NativeToolChain</span></code>
+<p>A ToolChain that can handle additional platforms simply by configuring the NativeBinary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-visual-cpp/index.html">VisualCpp</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VisualCpp</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NativeToolChain</span></code>
+<p>The Visual C++ tool chain.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

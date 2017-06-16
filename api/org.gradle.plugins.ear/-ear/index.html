@@ -1,0 +1,126 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Ear - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ear</a>&nbsp;/&nbsp;<a href=".">Ear</a><br/>
+<br/>
+<h1>Ear</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Ear</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks.bundling/-jar/index.html"><span class="identifier">Jar</span></a></code>
+<p>Assembles an EAR archive.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">Ear</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-e-a-r_-e-x-t-e-n-s-i-o-n.html">EAR_EXTENSION</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">EAR_EXTENSION</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="deployment-descriptor.html">deploymentDescriptor</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">deploymentDescriptor</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.Ear$deploymentDescriptor(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Ear</span></code>
+<p>Configures the deployment descriptor for this EAR archive. 
+<p>The given closure is executed to configure the deployment descriptor. The DeploymentDescriptor is passed to the closure as its delegate.</p>
+</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">deploymentDescriptor</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.Ear$deploymentDescriptor(org.gradle.api.Action((org.gradle.plugins.ear.descriptor.DeploymentDescriptor)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.plugins.ear.descriptor/-deployment-descriptor/index.html"><span class="identifier">DeploymentDescriptor</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Ear</span></code>
+<p>Configures the deployment descriptor for this EAR archive. 
+<p>The given action is executed to configure the deployment descriptor.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-deployment-descriptor.html">getDeploymentDescriptor</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDeploymentDescriptor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.plugins.ear.descriptor/-deployment-descriptor/index.html"><span class="identifier">DeploymentDescriptor</span></a></code>
+<p>The deployment descriptor configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-lib.html">getLib</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLib</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a></code>
+<p>A location for dependency libraries to include in the 'lib' directory of the EAR archive.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-lib-dir-name.html">getLibDirName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLibDirName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name of the library directory in the EAR file. Default is "lib".</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="lib.html">lib</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">lib</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.Ear$lib(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a></code>
+<p>Adds dependency libraries to include in the 'lib' directory of the EAR archive. 
+<p>The given closure is executed to configure a <code>CopySpec</code>. The CopySpec is passed to the closure as its delegate.</p>
+</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">lib</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.Ear$lib(org.gradle.api.Action((org.gradle.api.file.CopySpec)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a></code>
+<p>Adds dependency libraries to include in the 'lib' directory of the EAR archive. 
+<p>The given action is executed to configure a <code>CopySpec</code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-deployment-descriptor.html">setDeploymentDescriptor</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDeploymentDescriptor</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.Ear$setDeploymentDescriptor(org.gradle.plugins.ear.descriptor.DeploymentDescriptor)/deploymentDescriptor">deploymentDescriptor</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.ear.descriptor/-deployment-descriptor/index.html"><span class="identifier">DeploymentDescriptor</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-lib-dir-name.html">setLibDirName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setLibDirName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.Ear$setLibDirName(kotlin.String)/libDirName">libDirName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.bundling/-jar/manifest.html">manifest</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">manifest</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.bundling.Jar$manifest(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.bundling/-jar/index.html"><span class="identifier">Jar</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

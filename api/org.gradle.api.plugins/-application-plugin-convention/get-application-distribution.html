@@ -1,0 +1,21 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ApplicationPluginConvention.getApplicationDistribution - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href="index.html">ApplicationPluginConvention</a>&nbsp;/&nbsp;<a href=".">getApplicationDistribution</a><br/>
+<br/>
+<h1>getApplicationDistribution</h1>
+<a name="org.gradle.api.plugins.ApplicationPluginConvention$getApplicationDistribution()"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getApplicationDistribution</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a></code>
+<p>
+<p>The specification of the contents of the distribution.</p>
+ 
+<p> Use this org.gradle.api.file.CopySpec to include extra files/resource in the application distribution. </p>
+<pre><code> apply plugin: 'application' applicationDistribution.from("some/dir") { include "*.txt" } </code></pre> 
+<p> Note that the application plugin pre configures this spec to; include the contents of "<code>src/dist</code>", copy the application start scripts into the "<code>bin</code>" directory, and copy the built jar and its dependencies into the "<code>lib</code>" directory.</p>
+</p>
+</BODY>
+</HTML>

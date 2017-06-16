@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TestFinishEvent - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.events.test</a>&nbsp;/&nbsp;<a href=".">TestFinishEvent</a><br/>
+<br/>
+<h1>TestFinishEvent</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">TestFinishEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-test-progress-event/index.html"><span class="identifier">TestProgressEvent</span></a><span class="symbol">, </span><a href="../../org.gradle.tooling.events/-finish-event/index.html"><span class="identifier">FinishEvent</span></a></code>
+<p>An event that informs about a test having finished its execution. You can query the result of the test using <code><a href="get-result.html">#getResult()</a></code>.</p>
+<p><strong>Since</strong><br/>
+2.4</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-result.html">getResult</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getResult</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-test-operation-result.html"><span class="identifier">TestOperationResult</span></a></code>
+<p>Returns the result of the finished test operation. Currently, the result will be one of the following sub-types: <ul> <li>TestSuccessResult</li>
+ <li>TestSkippedResult</li>
+ <li>TestFailureResult</li>
+ </ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-test-progress-event/get-descriptor.html">getDescriptor</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDescriptor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-test-operation-descriptor.html"><span class="identifier">TestOperationDescriptor</span></a></code>
+<p>Returns the description of the test for which progress is reported. For JVM-based tests, the descriptor is of sub-type <code>JvmTestOperationDescriptor</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

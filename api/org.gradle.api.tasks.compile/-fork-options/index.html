@@ -1,0 +1,150 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ForkOptions - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.compile</a>&nbsp;/&nbsp;<a href=".">ForkOptions</a><br/>
+<br/>
+<h1>ForkOptions</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ForkOptions</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-base-fork-options/index.html"><span class="identifier">BaseForkOptions</span></a></code>
+<p>Fork options for Java compilation. Only take effect if <code>CompileOptions.fork</code> is <code>true</code>.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ForkOptions</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Fork options for Java compilation. Only take effect if <code>CompileOptions.fork</code> is <code>true</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-executable.html">getExecutable</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getExecutable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the compiler executable to be used. If set, a new compiler process will be forked for every compile task. Defaults to <code>null</code>. 
+<p>Setting the executable disables task output caching.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-java-home.html">getJavaHome</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getJavaHome</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the Java home which contains the compiler to use. If set, a new compiler process will be forked for every compile task. Defaults to <code>null</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-temp-dir.html">getTempDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTempDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the directory used for temporary files that may be created to pass command line arguments to the compiler process. Defaults to <code>null</code>, in which case the directory will be chosen automatically.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-executable.html">setExecutable</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExecutable</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.compile.ForkOptions$setExecutable(kotlin.String)/executable">executable</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the compiler executable to be used. If set, a new compiler process will be forked for every compile task. Defaults to <code>null</code>. 
+<p>Setting the executable disables task output caching.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-java-home.html">setJavaHome</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setJavaHome</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.compile.ForkOptions$setJavaHome(java.io.File)/javaHome">javaHome</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the Java home which contains the compiler to use. If set, a new compiler process will be forked for every compile task. Defaults to <code>null</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-temp-dir.html">setTempDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTempDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.compile.ForkOptions$setTempDir(kotlin.String)/tempDir">tempDir</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the directory used for temporary files that may be created to pass command line arguments to the compiler process. Defaults to <code>null</code>, in which case the directory will be chosen automatically.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-base-fork-options/get-jvm-args.html">getJvmArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getJvmArgs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns any additional JVM arguments for the compiler process. Defaults to the empty list.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-fork-options/get-memory-initial-size.html">getMemoryInitialSize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMemoryInitialSize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the initial heap size for the compiler process. Defaults to <code>null</code>, in which case the JVM's default will be used.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-fork-options/get-memory-maximum-size.html">getMemoryMaximumSize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMemoryMaximumSize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the maximum heap size for the compiler process. Defaults to <code>null</code>, in which case the JVM's default will be used.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-fork-options/set-jvm-args.html">setJvmArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setJvmArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.compile.BaseForkOptions$setJvmArgs(kotlin.collections.MutableList((kotlin.String)))/jvmArgs">jvmArgs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets any additional JVM arguments for the compiler process. Defaults to the empty list.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-fork-options/set-memory-initial-size.html">setMemoryInitialSize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMemoryInitialSize</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.compile.BaseForkOptions$setMemoryInitialSize(kotlin.String)/memoryInitialSize">memoryInitialSize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the initial heap size for the compiler process. Defaults to <code>null</code>, in which case the JVM's default will be used.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-fork-options/set-memory-maximum-size.html">setMemoryMaximumSize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMemoryMaximumSize</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.compile.BaseForkOptions$setMemoryMaximumSize(kotlin.String)/memoryMaximumSize">memoryMaximumSize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the maximum heap size for the compiler process. Defaults to <code>null</code>, in which case the JVM's default will be used.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

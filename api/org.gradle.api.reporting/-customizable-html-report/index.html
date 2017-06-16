@@ -1,0 +1,58 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CustomizableHtmlReport - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.reporting</a>&nbsp;/&nbsp;<a href=".">CustomizableHtmlReport</a><br/>
+<br/>
+<h1>CustomizableHtmlReport</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">CustomizableHtmlReport</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-single-file-report/index.html"><span class="identifier">SingleFileReport</span></a></code>
+<p>A HTML Report whose generation can be customized with a XSLT stylesheet.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-stylesheet.html">getStylesheet</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getStylesheet</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.resources/-text-resource/index.html"><span class="identifier">TextResource</span></a></code>
+<p>The stylesheet to use to generate the HTML report.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-stylesheet.html">setStylesheet</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setStylesheet</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.reporting.CustomizableHtmlReport$setStylesheet(org.gradle.api.resources.TextResource)/stylesheet">stylesheet</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.resources/-text-resource/index.html"><span class="identifier">TextResource</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The stylesheet to use to generate the report.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-single-file-report/get-destination.html">getDestination</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDestination</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-single-file-report/get-output-type.html">getOutputType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOutputType</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-report/-output-type/index.html"><span class="identifier">OutputType</span></a></code>
+<p>Always returns <code><a href="#">Report.OutputType#FILE</a></code></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

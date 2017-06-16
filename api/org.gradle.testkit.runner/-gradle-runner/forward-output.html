@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GradleRunner.forwardOutput - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.testkit.runner</a>&nbsp;/&nbsp;<a href="index.html">GradleRunner</a>&nbsp;/&nbsp;<a href=".">forwardOutput</a><br/>
+<br/>
+<h1>forwardOutput</h1>
+<a name="org.gradle.testkit.runner.GradleRunner$forwardOutput()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">forwardOutput</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">GradleRunner</span></a></code>
+<p>Forwards the output of executed builds to the <code><a href="#">System.out</a></code> stream. 
+<p> The output of the build is always available via <code><a href="../-build-result/get-output.html">BuildResult#getOutput()</a></code>. This method can be used to additionally forward the output to <code>System.out</code> of the process using the runner. </p>
+<p> This method does not separate the standard output and error output. The two streams will be merged as they typically are when using Gradle from a command line interface. If you require separation of the streams, you can use <code><a href="forward-std-output.html">#forwardStdOutput(Writer)</a></code> and <code><a href="forward-std-error.html">#forwardStdError(Writer)</a></code> directly. </p>
+<p> Calling this method will negate the effect of previously calling <code><a href="forward-std-output.html">#forwardStdOutput(Writer)</a></code> and/or <code><a href="forward-std-error.html">#forwardStdError(Writer)</a></code>.</p>
+</p>
+<p><strong>Return</strong><br/>
+this</p>
+<p><strong>Since</strong><br/>
+2.9</p>
+<p><strong>See Also</strong><br/>
+<a href="forward-std-output.html">#forwardStdOutput(Writer)</a><a href="forward-std-error.html">#forwardStdError(Writer)</a></p>
+</BODY>
+</HTML>

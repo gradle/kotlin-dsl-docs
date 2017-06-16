@@ -1,0 +1,19 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Project.getAnt - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">Project</a>&nbsp;/&nbsp;<a href=".">getAnt</a><br/>
+<br/>
+<h1>getAnt</h1>
+<a name="org.gradle.api.Project$getAnt()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAnt</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-ant-builder/index.html"><span class="identifier">AntBuilder</span></a></code>
+<p>
+<p>Returns the <code>AntBuilder</code> for this project. You can use this in your build file to execute ant tasks. See example below.</p>
+ <pre><code> task printChecksum { doLast { ant { //using ant checksum task to store the file checksum in the checksumOut ant property checksum(property: 'checksumOut', file: 'someFile.txt') //we can refer to the ant property created by checksum task: println "The checksum is: " + checksumOut } //we can refer to the ant property later as well: println "I just love to print checksums: " + ant.checksumOut } } </code></pre> Consider following example of ant target: <pre><code> &lt;target name='printChecksum'&gt; &lt;checksum property='checksumOut'&gt; &lt;fileset dir='.'&gt; &lt;include name='agile.txt'/&gt; &lt;/fileset&gt; &lt;/checksum&gt; &lt;echo&gt;The checksum is: ${checksumOut}&lt;/echo&gt; &lt;/target&gt; </code></pre> Here's how it would look like in gradle. Observe how the ant XML is represented in groovy by the ant builder <pre><code> task printChecksum { doLast { ant { checksum(property: 'checksumOut') { fileset(dir: '.') { include name: 'agile1.txt' } } } logger.lifecycle("The checksum is $ant.checksumOut") } } </code></pre></p>
+<p><strong>Return</strong><br/>
+The <code>AntBuilder</code> for this project. Never returns null.</p>
+</BODY>
+</HTML>

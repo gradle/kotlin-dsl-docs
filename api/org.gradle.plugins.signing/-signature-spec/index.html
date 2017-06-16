@@ -1,0 +1,103 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>SignatureSpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.signing</a>&nbsp;/&nbsp;<a href=".">SignatureSpec</a><br/>
+<br/>
+<h1>SignatureSpec</h1>
+<code><span class="keyword">interface </span><span class="identifier">SignatureSpec</span></code>
+<p>Specifies how objects will be signed.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-signatory.html">getSignatory</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSignatory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.plugins.signing.signatory/-signatory/index.html"><span class="identifier">Signatory</span></a></code>
+<p>The signatory that will be performing the signing.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-signature-type.html">getSignatureType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSignatureType</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.plugins.signing.type/-signature-type/index.html"><span class="identifier">SignatureType</span></a></code>
+<p>The signature representation that will be created.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-required.html">isRequired</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isRequired</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether or not it is required that this signature be generated. A signature may not be able to be generated if a signatory and/or a signature type have not been specified. If it is required and cannot be generated, an exception will be thrown. Otherwise, it will not be generated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-required.html">setRequired</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setRequired</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SignatureSpec$setRequired(kotlin.Boolean)/required">required</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Whether or not it is required that this signature be generated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-signatory.html">setSignatory</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setSignatory</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SignatureSpec$setSignatory(org.gradle.plugins.signing.signatory.Signatory)/signatory">signatory</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.signing.signatory/-signatory/index.html"><span class="identifier">Signatory</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the signatory that will be signing the input.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-signature-type.html">setSignatureType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setSignatureType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SignatureSpec$setSignatureType(org.gradle.plugins.signing.type.SignatureType)/type">type</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.signing.type/-signature-type/index.html"><span class="identifier">SignatureType</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the signature representation that the signatures will be produced as.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-sign/index.html">Sign</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Sign</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a><span class="symbol">, </span><span class="identifier">SignatureSpec</span></code>
+<p>A task for creating digital signature files for one or more; tasks, files, publishable artifacts or configurations. 
+<p>The task produces Signature</p>
+ objects that are publishable artifacts and can be assigned to another configuration. 
+<p> The signature objects are created with defaults and using this tasks signatory and signature type.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-sign-operation/index.html">SignOperation</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SignOperation</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">SignatureSpec</span></code>
+<p>A sign operation creates digital signatures for one or more files or PublishArtifact. 
+<p>The external representation of the signature is specified by the <code><a href="../-sign-operation/get-signature-type.html">signature type property</a></code>, while the <code><a href="#">#signatory</a></code> property specifies who is to sign. </p>
+<p> A sign operation manages one or more Signature objects. The <code>sign</code> methods are used to register things to generate signatures for. The <code><a href="../-sign-operation/execute.html">#execute()</a></code> method generates the signatures for all of the registered items at that time.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

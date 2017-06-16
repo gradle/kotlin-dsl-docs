@@ -1,0 +1,107 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api.tasks.compile - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.tasks.compile</a><br/>
+<br/>
+<h2>Package org.gradle.api.tasks.compile</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-abstract-compile/index.html">AbstractCompile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractCompile</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a></code>
+<p>The base class for all JVM-based language compilation tasks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-abstract-options/index.html">AbstractOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractOptions</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code>
+<p>Base class for compilation-related options.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-base-fork-options/index.html">BaseForkOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BaseForkOptions</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-options/index.html"><span class="identifier">AbstractOptions</span></a></code>
+<p>Fork options for compilation. Only take effect if <code>fork</code> is <code>true</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-compile-options/index.html">CompileOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CompileOptions</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-options/index.html"><span class="identifier">AbstractOptions</span></a></code>
+<p>Main options for Java compilation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-debug-options/index.html">DebugOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">DebugOptions</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-options/index.html"><span class="identifier">AbstractOptions</span></a></code>
+<p>Debug options for Java compilation. Only take effect if <code><a href="#">CompileOptions#debug</a></code> is set to <code>true</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-fork-options/index.html">ForkOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ForkOptions</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-base-fork-options/index.html"><span class="identifier">BaseForkOptions</span></a></code>
+<p>Fork options for Java compilation. Only take effect if <code>CompileOptions.fork</code> is <code>true</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-groovy-compile/index.html">GroovyCompile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GroovyCompile</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-compile/index.html"><span class="identifier">AbstractCompile</span></a></code>
+<p>Compiles Groovy source files, and optionally, Java source files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-groovy-compile-options/index.html">GroovyCompileOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GroovyCompileOptions</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-options/index.html"><span class="identifier">AbstractOptions</span></a></code>
+<p>Compilation options to be passed to the Groovy compiler.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-groovy-fork-options/index.html">GroovyForkOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GroovyForkOptions</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-base-fork-options/index.html"><span class="identifier">BaseForkOptions</span></a></code>
+<p>Fork options for Groovy compilation. Only take effect if <code>GroovyCompileOptions.fork</code> is <code>true</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-java-compile/index.html">JavaCompile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JavaCompile</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-compile/index.html"><span class="identifier">AbstractCompile</span></a></code>
+<p>Compiles Java source files. <pre><code> apply plugin: 'java' tasks.withType(JavaCompile) { //enable compilation in a separate daemon process options.fork = true //enable incremental compilation options.incremental = true } </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

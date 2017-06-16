@@ -1,0 +1,134 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api.tasks.testing - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.tasks.testing</a><br/>
+<br/>
+<h2>Package org.gradle.api.tasks.testing</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-j-unit-xml-report/index.html">JUnitXmlReport</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">JUnitXmlReport</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.reporting/-directory-report/index.html"><span class="identifier">DirectoryReport</span></a></code>
+<p>The JUnit XML files, commonly used to communicate results to CI servers.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-test/index.html">Test</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Test</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><a href="../org.gradle.process/-java-fork-options/index.html"><span class="identifier">JavaForkOptions</span></a><span class="symbol">, </span><a href="../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">, </span><a href="../org.gradle.api.tasks/-verification-task/index.html"><span class="identifier">VerificationTask</span></a><span class="symbol">, </span><a href="../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="-test-task-reports/index.html"><span class="identifier">TestTaskReports</span></a><span class="symbol">&gt;</span></code>
+<p>Executes JUnit (3.8.x or 4.x) or TestNG tests. Test are always run in (one or more) separate JVMs. The sample below shows various configuration options. <pre><code> apply plugin: 'java' // adds 'test' task test { // enable TestNG support (default is JUnit) useTestNG() // set a system property for the test JVM(s) systemProperty 'some.prop', 'value' // explicitly include or exclude tests include 'org/foo/**' exclude 'org/boo/**' // show standard out and standard error of the test JVM(s) on the console testLogging.showStandardStreams = true // set heap size for the test JVM(s) minHeapSize = "128m" maxHeapSize = "512m" // set JVM arguments for the test JVM(s) jvmArgs '-XX:MaxPermSize=256m' // listen to events in the test execution lifecycle beforeTest { descriptor -&gt; logger.lifecycle("Running test: " + descriptor) } // listen to standard out and standard error of the test JVM(s) onOutput { descriptor, event -&gt; logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message ) } } </code></pre> 
+<p> The test process can be started in debug mode (see <code><a href="-test/get-debug.html">#getDebug()</a></code>) in an ad-hoc manner by supplying the `--debug-jvm` switch when invoking the build. </p>
+<pre><code> gradle someTestTask --debug-jvm </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-test-descriptor/index.html">TestDescriptor</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TestDescriptor</span></code>
+<p>Describes a test. A test may be a single atomic test, such as the execution of a test method, or it may be a composite test, made up of zero or more tests.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-test-filter/index.html">TestFilter</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TestFilter</span></code>
+<p>Allows filtering tests for execution. Some examples: <pre><code> apply plugin: 'java' test { filter { //specific test method includeTestsMatching "org.gradle.SomeTest.someSpecificFeature" //specific test method, use wildcard for packages includeTestsMatching "*SomeTest.someSpecificFeature" //specific test class includeTestsMatching "org.gradle.SomeTest" //specific test class, wildcard for packages includeTestsMatching "*.SomeTest" //all classes in package, recursively includeTestsMatching "com.gradle.tooling.*" //all integration tests, by naming convention includeTestsMatching "*IntegTest" //only ui tests from integration tests, by some naming convention includeTestsMatching "*IntegTest*ui" //specific test class and test method includeTest "org.gradle.SomeTest", "someTestMethod" } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-test-framework-options/index.html">TestFrameworkOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">TestFrameworkOptions</span></code>
+<p>The base class for any test framework specific options.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-test-listener/index.html">TestListener</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TestListener</span></code>
+<p>Interface for listening to test execution. The intent is to be framework agnostic. Currently this interface can support feedback from JUnit and TestNG tests.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-test-output-event/index.html">TestOutputEvent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TestOutputEvent</span></code>
+<p>Standard output or standard error message logged during the execution of the test</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-test-output-listener/index.html">TestOutputListener</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TestOutputListener</span></code>
+<p>Listens to the output events like printing to standard output or error</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-test-report/index.html">TestReport</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">TestReport</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a></code>
+<p>Generates an HTML test report from the results of one or more Test tasks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-test-result/index.html">TestResult</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TestResult</span></code>
+<p>Describes a test result.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-test-task-reports/index.html">TestTaskReports</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TestTaskReports</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.reporting/-report-container/index.html"><span class="identifier">ReportContainer</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api.reporting/-report/index.html"><span class="identifier">Report</span></a><span class="symbol">&gt;</span></code>
+<p>The reports produced by the Test task.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Exceptions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-test-execution-exception/index.html">TestExecutionException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">TestExecutionException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>
+<p>A <code>TestExecutionException</code> is thrown when no tests can be found that match the specified test filters.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

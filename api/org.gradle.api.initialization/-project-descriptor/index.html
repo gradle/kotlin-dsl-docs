@@ -1,0 +1,113 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ProjectDescriptor - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.initialization</a>&nbsp;/&nbsp;<a href=".">ProjectDescriptor</a><br/>
+<br/>
+<h1>ProjectDescriptor</h1>
+<code><span class="keyword">interface </span><span class="identifier">ProjectDescriptor</span></code>
+<p>
+<p>A <code>ProjectDescriptor</code> declares the configuration required to create and evaluate a .</p>
+ 
+<p> A <code>ProjectDescriptor</code> is created when you add a project to the build from the settings script, using <code><a href="#"> </a></code> or <code><a href="#">Settings#includeFlat(String[])</a></code>. You can access the descriptors using one of the lookup methods on the Settings object.</p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-build-file.html">getBuildFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the build file for this project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-build-file-name.html">getBuildFileName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildFileName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the build file for this project. This name is interpreted relative to the project directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-children.html">getChildren</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getChildren</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">ProjectDescriptor</span><span class="symbol">&gt;</span></code>
+<p>Returns the children of this project, if any.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of this project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-parent.html">getParent</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getParent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ProjectDescriptor</span></code>
+<p>Returns the parent of this project, if any. Returns null if this project is the root project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-path.html">getPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the path of this project. The path can be used as a unique identifier for this project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project-dir.html">getProjectDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the project directory of this project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-build-file-name.html">setBuildFileName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setBuildFileName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.initialization.ProjectDescriptor$setBuildFileName(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the name of the build file. This name is interpreted relative to the project directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-name.html">setName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.initialization.ProjectDescriptor$setName(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the name of this project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-project-dir.html">setProjectDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setProjectDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.initialization.ProjectDescriptor$setProjectDir(java.io.File)/dir">dir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the project directory of this project.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,69 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle</a><br/>
+<br/>
+<h2>Package org.gradle</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-build-adapter/index.html">BuildAdapter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BuildAdapter</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-build-listener/index.html"><span class="identifier">BuildListener</span></a></code>
+<p>A BuildListener adapter class for receiving build events. The methods in this class are empty. This class exists as convenience for creating listener objects.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-build-listener/index.html">BuildListener</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BuildListener</span></code>
+<p>
+<p>A <code>BuildListener</code> is notified of the major lifecycle events as a build is executed.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-build-result/index.html">BuildResult</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BuildResult</span></code>
+<p>
+<p>A <code>BuildResult</code> packages up the results of a build executed by a org.gradle.initialization.GradleLauncher instance.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-start-parameter/index.html">StartParameter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">StartParameter</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.logging.configuration/-logging-configuration/index.html"><span class="identifier">LoggingConfiguration</span></a><span class="symbol">, </span><span class="identifier">ParallelismConfiguration</span><span class="symbol">, </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code>
+<p>
+<p><code>StartParameter</code> defines the configuration used by a Gradle instance to execute a build. The properties of <code>StartParameter</code> generally correspond to the command-line options of Gradle. </p>
+<p>You can obtain an instance of a <code>StartParameter</code> by either creating a new one, or duplicating an existing one using <code><a href="-start-parameter/new-instance.html">#newInstance</a></code> or <code><a href="-start-parameter/new-build.html">#newBuild</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-execution-request/index.html">TaskExecutionRequest</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskExecutionRequest</span></code>
+<p>A request to execute some tasks, along with an optional project path context to provide information necessary to select the tasks</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

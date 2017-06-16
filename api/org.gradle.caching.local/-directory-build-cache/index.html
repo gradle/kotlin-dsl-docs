@@ -1,0 +1,116 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DirectoryBuildCache - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.caching.local</a>&nbsp;/&nbsp;<a href=".">DirectoryBuildCache</a><br/>
+<br/>
+<h1>DirectoryBuildCache</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">DirectoryBuildCache</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.caching.configuration/-abstract-build-cache/index.html"><span class="identifier">AbstractBuildCache</span></a></code>
+<p>Configuration object for the local directory build cache.</p>
+<p><strong>Since</strong><br/>
+3.5</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">DirectoryBuildCache</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Configuration object for the local directory build cache.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-directory.html">getDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDirectory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Returns the directory to use to store the build cache.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-target-size-in-m-b.html">getTargetSizeInMB</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTargetSizeInMB</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code>
+<p>The target size of the build cache in megabytes. Defaults to 5 GB. 
+<p> Must be greater than or equal to 1, although larger cache sizes will be more useful.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-directory.html">setDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDirectory</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.local.DirectoryBuildCache$setDirectory(kotlin.Any)/directory">directory</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the directory to use to store the build cache. The directory is evaluated as per <code><a href="#">org.gradle.api.Project#file(Object)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-target-size-in-m-b.html">setTargetSizeInMB</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTargetSizeInMB</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.local.DirectoryBuildCache$setTargetSizeInMB(kotlin.Long)/targetSizeInMB">targetSizeInMB</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The target size of the build cache in megabytes. Defaults to 5 GB. 
+<p> Must be greater than or equal to 1, although larger cache sizes will be more useful.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.caching.configuration/-abstract-build-cache/is-enabled.html">isEnabled</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isEnabled</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.caching.configuration/-abstract-build-cache/is-push.html">isPush</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isPush</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.caching.configuration/-abstract-build-cache/set-enabled.html">setEnabled</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setEnabled</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.configuration.AbstractBuildCache$setEnabled(kotlin.Boolean)/enabled">enabled</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.caching.configuration/-abstract-build-cache/set-push.html">setPush</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setPush</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.configuration.AbstractBuildCache$setPush(kotlin.Boolean)/push">push</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

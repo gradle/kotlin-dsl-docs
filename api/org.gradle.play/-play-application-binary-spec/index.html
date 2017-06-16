@@ -1,0 +1,94 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PlayApplicationBinarySpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.play</a>&nbsp;/&nbsp;<a href=".">PlayApplicationBinarySpec</a><br/>
+<br/>
+<h1>PlayApplicationBinarySpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">PlayApplicationBinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.platform.base/-application-binary-spec/index.html"><span class="identifier">ApplicationBinarySpec</span></a></code>
+<p>Represents a binary artifact that is the result of building a Play application software component.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-application.html">getApplication</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getApplication</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-play-application-spec/index.html"><span class="identifier">PlayApplicationSpec</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-assets.html">getAssets</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAssets</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-public-assets/index.html"><span class="identifier">PublicAssets</span></a></code>
+<p>A buildable object representing the public assets that will be included in the assets jar file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-assets-jar-file.html">getAssetsJarFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAssetsJarFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The assets jar file produced for this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-classes.html">getClasses</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getClasses</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-jvm-classes/index.html"><span class="identifier">JvmClasses</span></a></code>
+<p>A buildable object representing the class files and resources that will be included in the application jar file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-generated-java-script.html">getGeneratedJavaScript</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGeneratedJavaScript</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.language.base/-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a><span class="symbol">,</span>&nbsp;<a href="../../org.gradle.language.javascript/-java-script-source-set.html"><span class="identifier">JavaScriptSourceSet</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-generated-scala.html">getGeneratedScala</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGeneratedScala</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.language.base/-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a><span class="symbol">,</span>&nbsp;<a href="../../org.gradle.language.scala/-scala-language-source-set/index.html"><span class="identifier">ScalaLanguageSourceSet</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-jar-file.html">getJarFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getJarFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The application jar file produced for this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-target-platform.html">getTargetPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.play.platform/-play-platform/index.html"><span class="identifier">PlayPlatform</span></a></code>
+<p>The PlayPlatform this binary is built for.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-tool-chain.html">getToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getToolChain</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.play.toolchain/-play-tool-chain.html"><span class="identifier">PlayToolChain</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MapBasedBuildCacheService - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.caching</a>&nbsp;/&nbsp;<a href=".">MapBasedBuildCacheService</a><br/>
+<br/>
+<h1>MapBasedBuildCacheService</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">MapBasedBuildCacheService</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-build-cache-service/index.html"><span class="identifier">BuildCacheService</span></a></code>
+<p>Simple build cache implementation that delegates to a ConcurrentMap.</p>
+<p><strong>Since</strong><br/>
+3.5</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">MapBasedBuildCacheService</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.MapBasedBuildCacheService$<init>(java.util.concurrent.ConcurrentMap((kotlin.String, kotlin.ByteArray)))/delegate">delegate</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ConcurrentMap.html"><span class="identifier">ConcurrentMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a><span class="symbol">&gt;</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="close.html">close</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">close</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="load.html">load</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">load</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.MapBasedBuildCacheService$load(org.gradle.caching.BuildCacheKey, org.gradle.caching.BuildCacheEntryReader)/key">key</span><span class="symbol">:</span>&nbsp;<a href="../-build-cache-key/index.html"><span class="identifier">BuildCacheKey</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.caching.MapBasedBuildCacheService$load(org.gradle.caching.BuildCacheKey, org.gradle.caching.BuildCacheEntryReader)/reader">reader</span><span class="symbol">:</span>&nbsp;<a href="../-build-cache-entry-reader/index.html"><span class="identifier">BuildCacheEntryReader</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="store.html">store</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">store</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.MapBasedBuildCacheService$store(org.gradle.caching.BuildCacheKey, org.gradle.caching.BuildCacheEntryWriter)/key">key</span><span class="symbol">:</span>&nbsp;<a href="../-build-cache-key/index.html"><span class="identifier">BuildCacheKey</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.caching.MapBasedBuildCacheService$store(org.gradle.caching.BuildCacheKey, org.gradle.caching.BuildCacheEntryWriter)/output">output</span><span class="symbol">:</span>&nbsp;<a href="../-build-cache-entry-writer/index.html"><span class="identifier">BuildCacheEntryWriter</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

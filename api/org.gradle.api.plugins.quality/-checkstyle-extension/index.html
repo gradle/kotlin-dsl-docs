@@ -1,0 +1,244 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CheckstyleExtension - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins.quality</a>&nbsp;/&nbsp;<a href=".">CheckstyleExtension</a><br/>
+<br/>
+<h1>CheckstyleExtension</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CheckstyleExtension</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-code-quality-extension/index.html"><span class="identifier">CodeQualityExtension</span></a></code>
+<p>Configuration options for the Checkstyle plugin.</p>
+<p><strong>See Also</strong><br/>
+CheckstylePlugin</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">CheckstyleExtension</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CheckstyleExtension$<init>(org.gradle.api.Project)/project">project</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-config.html">getConfig</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getConfig</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.resources/-text-resource/index.html"><span class="identifier">TextResource</span></a></code>
+<p>The Checkstyle configuration to use. Replaces the <code>configFile</code> property.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-config-dir.html">getConfigDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getConfigDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Path to other Checkstyle configuration files. By default, this path is <code>$projectDir/config/checkstyle</code> 
+<p> This path will be exposed as the variable <code>config_loc</code> in Checkstyle's configuration files. </p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-config-file.html">getConfigFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getConfigFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The Checkstyle configuration file to use.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-config-properties.html">getConfigProperties</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getConfigProperties</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>The properties available for use in the configuration file. These are substituted into the configuration file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-max-errors.html">getMaxErrors</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMaxErrors</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>The maximum number of errors that are tolerated before breaking the build or setting the failure property. Defaults to 0. 
+<p> Example: maxErrors = 42</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-max-warnings.html">getMaxWarnings</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMaxWarnings</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>The maximum number of warnings that are tolerated before breaking the build or setting the failure property. Defaults to Integer.MAX_VALUE. 
+<p> Example: maxWarnings = 1000</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-show-violations.html">isShowViolations</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isShowViolations</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether rule violations are to be displayed on the console. Defaults to true. Example: showViolations = false</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-config.html">setConfig</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setConfig</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CheckstyleExtension$setConfig(org.gradle.api.resources.TextResource)/config">config</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.resources/-text-resource/index.html"><span class="identifier">TextResource</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The Checkstyle configuration to use. Replaces the <code>configFile</code> property.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-config-dir.html">setConfigDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setConfigDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CheckstyleExtension$setConfigDir(java.io.File)/configDir">configDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Path to other Checkstyle configuration files. By default, this path is <code>$projectDir/config/checkstyle</code> 
+<p> This path will be exposed as the variable <code>config_loc</code> in Checkstyle's configuration files. </p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-config-file.html">setConfigFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setConfigFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CheckstyleExtension$setConfigFile(java.io.File)/configFile">configFile</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The Checkstyle configuration file to use.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-config-properties.html">setConfigProperties</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setConfigProperties</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CheckstyleExtension$setConfigProperties(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/configProperties">configProperties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The properties available for use in the configuration file. These are substituted into the configuration file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-max-errors.html">setMaxErrors</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMaxErrors</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CheckstyleExtension$setMaxErrors(kotlin.Int)/maxErrors">maxErrors</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the maximum number of errors that are tolerated before breaking the build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-max-warnings.html">setMaxWarnings</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMaxWarnings</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CheckstyleExtension$setMaxWarnings(kotlin.Int)/maxWarnings">maxWarnings</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the maximum number of warnings that are tolerated before breaking the build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-show-violations.html">setShowViolations</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setShowViolations</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CheckstyleExtension$setShowViolations(kotlin.Boolean)/showViolations">showViolations</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Whether rule violations are to be displayed on the console. Defaults to true. Example: showViolations = false</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/get-reports-dir.html">getReportsDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getReportsDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The directory where reports will be generated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/get-source-sets.html">getSourceSets</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSourceSets</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.tasks/-source-set/index.html"><span class="identifier">SourceSet</span></a><span class="symbol">&gt;</span></code>
+<p>The source sets to be analyzed as part of the check and build tasks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/get-tool-version.html">getToolVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getToolVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The version of the code quality tool to be used.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/is-ignore-failures.html">isIgnoreFailures</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isIgnoreFailures</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether to allow the build to continue if there are warnings. Example: ignoreFailures = true</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/set-ignore-failures.html">setIgnoreFailures</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setIgnoreFailures</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeQualityExtension$setIgnoreFailures(kotlin.Boolean)/ignoreFailures">ignoreFailures</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Whether to allow the build to continue if there are warnings. Example: ignoreFailures = true</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/set-reports-dir.html">setReportsDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setReportsDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeQualityExtension$setReportsDir(java.io.File)/reportsDir">reportsDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The directory where reports will be generated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/set-source-sets.html">setSourceSets</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSourceSets</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeQualityExtension$setSourceSets(kotlin.collections.MutableCollection((org.gradle.api.tasks.SourceSet)))/sourceSets">sourceSets</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.tasks/-source-set/index.html"><span class="identifier">SourceSet</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The source sets to be analyzed as part of the check and build tasks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/set-tool-version.html">setToolVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setToolVersion</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeQualityExtension$setToolVersion(kotlin.String)/toolVersion">toolVersion</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The version of the code quality tool to be used.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,105 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Task - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.model</a>&nbsp;/&nbsp;<a href=".">Task</a><br/>
+<br/>
+<h1>Task</h1>
+<code><span class="keyword">interface </span><span class="identifier">Task</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-launchable/index.html"><span class="identifier">Launchable</span></a></code>
+<p>Represents a task which is executable by Gradle. 
+<p>Note: <code>Task</code> extends <code>Launchable</code> since 1.12.</p>
+</p>
+<p><strong>Since</strong><br/>
+1.0-milestone-3</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-description.html">getDescription</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDescription</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the description of this task, or <code>null</code> if it has no description.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-group.html">getGroup</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGroup</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the group a task belongs to.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of this task. Note that the name is not necessarily a unique identifier for the task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-path.html">getPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the path of this task. This is a fully qualified unique name for this task.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-launchable/get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns a human-consumable display name for this launchable.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-launchable/get-project-identifier.html">getProjectIdentifier</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectIdentifier</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-project-identifier/index.html"><span class="identifier">ProjectIdentifier</span></a></code>
+<p>Returns the identifier for the Gradle project that this model originated from.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-launchable/is-public.html">isPublic</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isPublic</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns whether launchable is public or not. A public launchable is one that is considered a public 'entry point' to the build, that is interesting for an end user of the build to run.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-gradle-task/index.html">GradleTask</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">GradleTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Task</span></code>
+<p>Represents a task which is executable by Gradle.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

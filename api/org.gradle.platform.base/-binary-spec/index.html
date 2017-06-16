@@ -1,0 +1,171 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BinarySpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.platform.base</a>&nbsp;/&nbsp;<a href=".">BinarySpec</a><br/>
+<br/>
+<h1>BinarySpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">BinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-buildable-component-spec/index.html"><span class="identifier">BuildableComponentSpec</span></a><span class="symbol">, </span><a href="../../org.gradle.api/-checkable-component-spec/index.html"><span class="identifier">CheckableComponentSpec</span></a><span class="symbol">, </span><a href="../-binary/index.html"><span class="identifier">Binary</span></a></code>
+<p>Represents a binary that is the result of building a component.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-inputs.html">getInputs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getInputs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.language.base/-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a><span class="symbol">&gt;</span></code>
+<p>Returns all inputs of the binary. This includes source sets owned by the binary, and other source sets created elsewhere (e.g. inherited from the binary's component).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-sources.html">getSources</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSources</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.model/-model-map/index.html"><span class="identifier">ModelMap</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.language.base/-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a><span class="symbol">&gt;</span></code>
+<p>The sources owned by this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-tasks.html">getTasks</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTasks</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-binary-tasks-collection/index.html"><span class="identifier">BinaryTasksCollection</span></a></code>
+<p>The set of tasks associated with this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-buildable.html">isBuildable</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isBuildable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Can this binary be built in the current environment?</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-buildable-component-spec/built-by.html">builtBy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">builtBy</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.BuildableComponentSpec$builtBy(kotlin.Array((kotlin.Any)))/tasks">tasks</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds tasks required to build this component. Tasks added this way are subsequently added as dependencies of this component's <code><a href="../../org.gradle.api/-buildable-component-spec/get-build-task.html">build task</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-checkable-component-spec/checked-by.html">checkedBy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">checkedBy</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.CheckableComponentSpec$checkedBy(kotlin.Array((kotlin.Any)))/tasks">tasks</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds tasks required to check this component. Tasks added this way are subsequently added as dependencies of this component's <code><a href="../../org.gradle.api/-checkable-component-spec/get-check-task.html">check task</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-buildable-component-spec/get-build-task.html">getBuildTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildTask</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a></code>
+<p>Returns the task responsible for building this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-checkable-component-spec/get-check-task.html">getCheckTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCheckTask</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a></code>
+<p>Returns the task responsible for checking this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-buildable-component-spec/has-build-dependencies.html">hasBuildDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">hasBuildDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-buildable-component-spec/set-build-task.html">setBuildTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setBuildTask</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.BuildableComponentSpec$setBuildTask(org.gradle.api.Task)/buildTask">buildTask</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies the task responsible for building this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-checkable-component-spec/set-check-task.html">setCheckTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setCheckTask</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.CheckableComponentSpec$setCheckTask(org.gradle.api.Task)/checkTask">checkTask</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies the task responsible for checking this component.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-application-binary-spec/index.html">ApplicationBinarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ApplicationBinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BinarySpec</span></code>
+<p>A binary produced from a `org.gradle.platform.base.ApplicationSpec`.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm/-jvm-binary-spec/index.html">JvmBinarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">JvmBinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BinarySpec</span></code>
+<p>Represents a binary artifact that is the result of building a jvm component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-library-binary-spec/index.html">LibraryBinarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">LibraryBinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BinarySpec</span></code>
+<p>A binary produced from a `org.gradle.platform.base.LibrarySpec`.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-native-binary-spec/index.html">NativeBinarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">NativeBinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BinarySpec</span></code>
+<p>Represents a binary artifact that is the result of building a native component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.testing.base/-test-suite-binary-spec/index.html">TestSuiteBinarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TestSuiteBinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BinarySpec</span></code>
+<p>A binary which runs a suite of tests.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

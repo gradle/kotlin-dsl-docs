@@ -1,0 +1,535 @@
+<html><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Working With Files - Gradle User Guide Version 4.1-20170616095913+0000</title><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="base.css"><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="docs.css"><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="userguide.css"><meta content="DocBook XSL Stylesheets V1.75.2" name="generator"><link rel="home" href="userguide.html" title="Gradle User Guide Version 4.1-20170616095913+0000"><link rel="up" href="pt03.html" title="Part&nbsp;III.&nbsp;Writing Gradle build scripts"><link rel="prev" href="more_about_tasks.html" title="More about Tasks - Gradle User Guide Version 4.1-20170616095913+0000"><link rel="next" href="ant.html" title="Using Ant from Gradle - Gradle User Guide Version 4.1-20170616095913+0000"></head><body><div class="navheader"><div><div class="navbar"><a xmlns:xslthl="http://xslthl.sf.net" href="more_about_tasks.html" title="More about Tasks - Gradle User Guide Version 4.1-20170616095913+0000">Previous</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="Gradle User Guide Version 4.1-20170616095913+0000">Contents</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="ant.html" title="Using Ant from Gradle - Gradle User Guide Version 4.1-20170616095913+0000">Next</a></div></div></div><div class="chapter"><div class="titlepage"><div><div><h1 xmlns:xslthl="http://xslthl.sf.net"><a name="working_with_files"></a>Chapter&nbsp;20.&nbsp;Working With Files</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="working_with_files.html#sec:locating_files">20.1. Locating files</a></span></dt><dt><span class="section"><a href="working_with_files.html#sec:file_collections">20.2. File collections</a></span></dt><dt><span class="section"><a href="working_with_files.html#sec:file_trees">20.3. File trees</a></span></dt><dt><span class="section"><a href="working_with_files.html#sec:archive_contents">20.4. Using the contents of an archive as a file tree</a></span></dt><dt><span class="section"><a href="working_with_files.html#sec:specifying_multiple_files">20.5. Specifying a set of input files</a></span></dt><dt><span class="section"><a href="working_with_files.html#sec:copying_files">20.6. Copying files</a></span></dt><dt><span class="section"><a href="working_with_files.html#sec:sync_task">20.7. Using the <code class="literal">Sync</code> task</a></span></dt><dt><span class="section"><a href="working_with_files.html#sec:archives">20.8. Creating archives</a></span></dt><dt><span class="section"><a href="working_with_files.html#sec:properties_files">20.9. Properties files</a></span></dt></dl></div><p>
+        Most builds work with files. Gradle adds some concepts and APIs to help you achieve this.
+    </p><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:locating_files" class="section-anchor" href="#sec:locating_files"></a>20.1.&nbsp;Locating files</h2></div></div></div><p>You can locate a file relative to the project directory using the
+            <a class="ulink" href="../dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.lang.Object)" target="_top"><code class="classname">Project.file(java.lang.Object)</code></a> method.
+        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="resolveFile"></a><p class="title"><b>Example&nbsp;20.1.&nbsp;Locating files</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// ERROR: kotlin.NotImplementedError: An operation is not implemented: visitDeclarationExpression</span>
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Using a relative path</span>
+File configFile = file(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src/config.xml'</span>)
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Using an absolute path</span>
+configFile = file(configFile.absolutePath)
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Using a File object with a relative path</span>
+configFile = file(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">new</span> File(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src/config.xml'</span>))
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Using a java.nio.file.Path object with a relative path</span>
+configFile = file(Paths.get(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'config.xml'</span>))
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Using an absolute java.nio.file.Path object</span>
+configFile = file(Paths.get(System.getProperty(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'user.home'</span>)).resolve(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'global-config.xml'</span>))
+</pre></div></div><br class="example-break"><p>You can pass any object to the <code class="literal">file()</code> method, and it will attempt to convert the value
+            to an absolute <code class="classname">File</code> object. Usually, you would pass it a
+            <code class="classname">String</code>, <code class="classname">File</code> or <code class="classname">Path</code> instance. If this
+            path is an absolute path, it is used to construct a <code class="classname">File</code> instance. Otherwise,
+            a <code class="classname">File</code> instance is
+            constructed by prepending the project directory path to the supplied path. The <code class="literal">file()</code>
+            method also understands URLs, such as <code class="literal">file:/some/path.xml</code>.
+        </p><p>Using this method is a useful way to convert some user provided value into an absolute <code class="classname">File</code>.
+            It is preferable to using <code class="literal">new File(somePath)</code>, as <code class="literal">file()</code> always evaluates
+            the supplied path relative to the project directory, which is fixed, rather than the current working
+            directory, which can change depending on how the user runs Gradle.
+        </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:file_collections" class="section-anchor" href="#sec:file_collections"></a>20.2.&nbsp;File collections</h2></div></div></div><p>
+            A <em class="firstterm">file collection</em> is simply a set of files. It is represented by the
+            <a class="ulink" href="../javadoc/org/gradle/api/file/FileCollection.html" target="_top"><code class="classname">FileCollection</code></a> interface. Many objects in the Gradle API implement
+            this interface. For example, <a class="link" href="dependency_management.html#sub:configurations">dependency configurations</a> implement
+            <code class="literal">FileCollection</code>.
+        </p><p>
+            One way to obtain a <code class="literal">FileCollection</code> instance is to use the
+            <a class="ulink" href="../dsl/org.gradle.api.Project.html#org.gradle.api.Project:files(java.lang.Object[])" target="_top"><code class="classname">Project.files(java.lang.Object[])</code></a> method. You can pass this method any number of
+            objects, which are then converted into a set of <code class="classname">File</code> objects. The
+            <code class="literal">files()</code> method accepts any type of object as its parameters. These are evaluated relative
+            to the project directory, as per the <code class="literal">file()</code> method, described in <a class="xref" href="working_with_files.html#sec:locating_files">Section&nbsp;20.1, &ldquo;Locating files&rdquo;</a>.
+            You can also pass collections, iterables, maps and arrays to the <code class="literal">files()</code> method. These are flattened
+            and the contents converted to <code class="classname">File</code> instances.
+        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="fileCollections"></a><p class="title"><b>Example&nbsp;20.2.&nbsp;Creating a file collection</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// ERROR: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> FileCollection 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">16.</span>
+   FileCollection collection = files(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src/file1.txt'</span>,
+                  ^
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1</span> error
+
+
+FileCollection collection = files(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src/file1.txt'</span>,
+                                  <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">new</span> File(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src/file2.txt'</span>),
+                                  [<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src/file3.txt'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src/file4.txt'</span>],
+                                  Paths.get(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'file5.txt'</span>))
+</pre></div></div><br class="example-break"><p>A file collection is iterable, and can be converted to a number of other types using the <code class="literal">as</code>
+            operator. You can also add 2 file collections together using the <code class="literal">+</code> operator, or subtract one
+            file collection from another using the <code class="literal">-</code> operator.
+            Here are some examples of what you can do with a file collection.
+        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="fileCollections"></a><p class="title"><b>Example&nbsp;20.3.&nbsp;Using a file collection</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// ERROR: kotlin.NotImplementedError: An operation is not implemented: visitDeclarationExpression</span>
+
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Iterate over the files in the collection</span>
+        collection.each { File file -&gt;
+            println file.name
+        }
+
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Convert the collection to various types</span>
+        Set set = collection.files
+        Set set2 = collection as Set
+        List list = collection as List
+        String path = collection.asPath
+        File file = collection.singleFile
+        File file2 = collection as File
+
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Add and subtract collections</span>
+        def union = collection + files(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src/file3.txt'</span>)
+        def different = collection - files(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src/file3.txt'</span>)
+
+</pre></div></div><br class="example-break"><p>You can also pass the <code class="literal">files()</code> method a closure or a <code class="classname">Callable</code>
+            instance. This is called when the contents of the collection are queried, and its return value is converted
+            to a set of <code class="classname">File</code> instances. The return value can be an object of any of the types
+            supported by the <code class="literal">files()</code> method. This is a simple way to 'implement' the
+            <code class="classname">FileCollection</code> interface.
+        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="fileCollections"></a><p class="title"><b>Example&nbsp;20.4.&nbsp;Implementing a file collection</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// ERROR: kotlin.NotImplementedError: An operation is not implemented: visitDeclarationExpression</span>
+
+task list {
+    doLast {
+        File srcDir
+
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Create a file collection using a closure</span>
+        collection = files { srcDir.listFiles() }
+
+        srcDir = file(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src'</span>)
+        println <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"Contents of $srcDir.name"</span>
+        collection.collect { relativePath(it) }.sort().each { println it }
+
+        srcDir = file(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src2'</span>)
+        println <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"Contents of $srcDir.name"</span>
+        collection.collect { relativePath(it) }.sort().each { println it }
+    }
+}
+</pre><p>Output of <strong class="userinput"><code>gradle -q list</code></strong></p><pre class="screen">&gt; gradle -q list
+Contents of src
+src/dir1
+src/file1.txt
+Contents of src2
+src2/dir1
+src2/dir2
+</pre></div></div><br class="example-break"><p>
+            Some other types of things you can pass to <code class="literal">files()</code>:
+        </p><div class="variablelist"><dl><dt><span class="term"><code class="classname">FileCollection</code></span></dt><dd><p>These are flattened and the contents included in the file collection.</p></dd><dt><span class="term"><code class="classname">Task</code></span></dt><dd><p>The output files of the task are included in the file collection.</p></dd><dt><span class="term"><code class="classname">TaskOutputs</code></span></dt><dd><p>The output files of the TaskOutputs are included in the file collection.</p></dd></dl></div><p>It is important to note that the content of a file collection is evaluated lazily, when it is needed.
+            This means you can, for example, create a <code class="literal">FileCollection</code> that represents files which
+            will be created in the future by, say, some task.
+        </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:file_trees" class="section-anchor" href="#sec:file_trees"></a>20.3.&nbsp;File trees</h2></div></div></div><p>
+            A <em class="firstterm">file tree</em> is a collection of files arranged in a hierarchy. For example, a file tree
+            might represent a directory tree or the contents of a ZIP file. It is represented
+            by the <a class="ulink" href="../javadoc/org/gradle/api/file/FileTree.html" target="_top"><code class="classname">FileTree</code></a> interface. The <code class="literal">FileTree</code> interface
+            extends <code class="literal">FileCollection</code>, so you can treat a file tree exactly the same way as you would a
+            file collection. Several objects in Gradle implement the <code class="literal">FileTree</code> interface, such as
+            <a class="link" href="software_model_extend.html#sec:source_sets">source sets</a>.
+        </p><p>
+            One way to obtain a <code class="literal">FileTree</code> instance is to use the
+            <a class="ulink" href="../dsl/org.gradle.api.Project.html#org.gradle.api.Project:fileTree(java.util.Map)" target="_top"><code class="classname">Project.fileTree(java.util.Map)</code></a> method.
+            This creates a <code class="literal">FileTree</code> defined with a base directory, and optionally some Ant-style
+            include and exclude patterns.
+        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="fileTrees"></a><p class="title"><b>Example&nbsp;20.5.&nbsp;Creating a file tree</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// ERROR: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">2</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> FileTree 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">2</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">10.</span>
+   FileTree tree = fileTree(dir: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src/main'</span>)
+            ^
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1</span> error
+
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Create a file tree with a base directory</span>
+FileTree tree = fileTree(dir: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src/main'</span>)
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Add include and exclude patterns to the tree</span>
+tree.include <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'**/*.java'</span>
+tree.exclude <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'**/Abstract*'</span>
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Create a tree using path</span>
+tree = fileTree(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src'</span>).include(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'**/*.java'</span>)
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Create a tree using closure</span>
+tree = fileTree(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src'</span>) {
+    include <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'**/*.java'</span>
+}
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Create a tree using a map</span>
+tree = fileTree(dir: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src'</span>, include: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'**/*.java'</span>)
+tree = fileTree(dir: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src'</span>, includes: [<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'**/*.java'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'**/*.xml'</span>])
+tree = fileTree(dir: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src'</span>, include: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'**/*.java'</span>, exclude: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'**/*test*/**'</span>)
+</pre></div></div><br class="example-break"><p>You use a file tree in the same way you use a file collection. You can also visit the contents of the
+            tree, and select a sub-tree using Ant-style patterns:
+        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="fileTrees"></a><p class="title"><b>Example&nbsp;20.6.&nbsp;Using a file tree</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// ERROR: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">7</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> FileTree 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">7</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">10.</span>
+   FileTree filtered = tree.matching {
+            ^
+
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">12</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> FileTree 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">12</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">10.</span>
+   FileTree sum = tree + fileTree(dir: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src/test'</span>)
+            ^
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">2</span> errors
+
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Iterate over the contents of a tree</span>
+tree.each {File file -&gt;
+    println file
+}
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Filter a tree</span>
+FileTree filtered = tree.matching {
+    include <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'org/gradle/api/**'</span>
+}
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Add trees together</span>
+FileTree sum = tree + fileTree(dir: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src/test'</span>)
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Visit the elements of the tree</span>
+tree.visit {element -&gt;
+    println <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"$element.relativePath =&gt; $element.file"</span>
+}
+</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:archive_contents" class="section-anchor" href="#sec:archive_contents"></a>20.4.&nbsp;Using the contents of an archive as a file tree</h2></div></div></div><p>You can use the contents of an archive, such as a ZIP or TAR file, as a file tree. You do this using
+            the <a class="ulink" href="../dsl/org.gradle.api.Project.html#org.gradle.api.Project:zipTree(java.lang.Object)" target="_top"><code class="classname">Project.zipTree(java.lang.Object)</code></a> and
+            <a class="ulink" href="../dsl/org.gradle.api.Project.html#org.gradle.api.Project:tarTree(java.lang.Object)" target="_top"><code class="classname">Project.tarTree(java.lang.Object)</code></a> methods. These methods return a <code class="literal">FileTree</code>
+            instance which you can use like any other file tree or file collection. For example, you can use it to expand
+            the archive by copying the contents, or to merge some archives into another.
+        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="fileTrees"></a><p class="title"><b>Example&nbsp;20.7.&nbsp;Using an archive as a file tree</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// ERROR: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">2</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> FileTree 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">2</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">10.</span>
+   FileTree zip = zipTree(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'someFile.zip'</span>)
+            ^
+
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">5</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> FileTree 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">5</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">10.</span>
+   FileTree tar = tarTree(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'someFile.tar'</span>)
+            ^
+
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">9</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> FileTree 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">9</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">10.</span>
+   FileTree someTar = tarTree(resources.gzip(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'someTar.ext'</span>))
+            ^
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">3</span> errors
+
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Create a ZIP file tree using path</span>
+FileTree zip = zipTree(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'someFile.zip'</span>)
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Create a TAR file tree using path</span>
+FileTree tar = tarTree(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'someFile.tar'</span>)
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">//tar tree attempts to guess the compression based on the file extension</span>
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">//however if you must specify the compression explicitly you can:</span>
+FileTree someTar = tarTree(resources.gzip(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'someTar.ext'</span>))
+
+</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:specifying_multiple_files" class="section-anchor" href="#sec:specifying_multiple_files"></a>20.5.&nbsp;Specifying a set of input files</h2></div></div></div><p>Many objects in Gradle have properties which accept a set of input files. For example, the
+            <a class="ulink" href="../dsl/org.gradle.api.tasks.compile.JavaCompile.html" target="_top"><code class="classname">JavaCompile</code></a> task has a <code class="literal">source</code> property,
+            which defines the source files to compile. You can set the value of this property using any of the types
+            supported by the <a class="link" href="working_with_files.html#sec:file_collections">files()</a> method, which was shown above.
+            This means you can set the property using, for example, a <code class="classname">File</code>, <code class="classname">String</code>,
+            collection, <code class="classname">FileCollection</code> or even a closure.
+            Here are some examples:
+        </p><p>Usually, there is a method with the same name as the property, which appends to the set of files. Again,
+            this method accepts any of the types supported by the <a class="link" href="working_with_files.html#sec:file_collections">files()</a>
+            method.
+        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="inputFiles"></a><p class="title"><b>Example&nbsp;20.8.&nbsp;Specifying a set of files</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">val compile by tasks.creating {
+    type(JavaCompile)
+}
+compile {
+    source = file(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"src/main/java"</span>)
+}
+compile {
+    source = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"src/main/java"</span>
+}
+compile {
+    source = listOf(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"src/main/java"</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"../shared/java"</span>)
+}
+compile {
+    source = matching {
+        include(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"org/gradle/api/**"</span>)
+    }
+}
+compile {
+    source = {
+        collect {
+            zipTree(it)
+        }
+    }
+}</pre><p><code class="filename">build.gradle</code></p><pre class="programlisting">compile {
+    source(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"src/main/java"</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"src/main/groovy"</span>)
+    source(file(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"../shared/java"</span>))
+    source {
+        listFiles()
+    }
+}</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:copying_files" class="section-anchor" href="#sec:copying_files"></a>20.6.&nbsp;Copying files</h2></div></div></div><p>You can use the <a class="ulink" href="../dsl/org.gradle.api.tasks.Copy.html" target="_top"><code class="classname">Copy</code></a> task to copy files. The copy task is very flexible, and allows
+            you to, for example, filter the contents of the files as they are copied, and map to the file names.
+        </p><p>To use the <code class="literal">Copy</code> task, you must provide a set of source files to copy, and a destination directory to copy
+            the files to. You may also specify how to transform the files as they are copied. You do all this using a
+            <em class="firstterm">copy spec</em>. A copy spec is represented by the <a class="ulink" href="../javadoc/org/gradle/api/file/CopySpec.html" target="_top"><code class="classname">CopySpec</code></a> interface. The
+            <code class="literal">Copy</code> task implements this interface.
+            You specify the source files using the <a class="ulink" href="../javadoc/org/gradle/api/file/CopySpec.html#from(java.lang.Object[])" target="_top"><code class="classname">CopySpec.from(java.lang.Object[])</code></a>
+            method. To specify the destination directory, use the <a class="ulink" href="../javadoc/org/gradle/api/file/CopySpec.html#into(java.lang.Object)" target="_top"><code class="classname">CopySpec.into(java.lang.Object)</code></a>
+            method.
+        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="copy"></a><p class="title"><b>Example&nbsp;20.9.&nbsp;Copying files using the copy task</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">val copyTask by tasks.creating {
+    type(Copy)
+    from(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"src/main/webapp"</span>)
+    into(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"build/explodedWar"</span>)
+}</pre></div></div><br class="example-break"><p>The <code class="literal">from()</code> method accepts any of the arguments that the
+            <a class="link" href="working_with_files.html#sec:file_collections">files()</a> method does. When an argument resolves to a directory,
+            everything under that directory (but not the directory itself) is recursively copied into the destination
+            directory. When an argument resolves to a file, that file is copied into the destination directory.
+            When an argument resolves to a non-existing file, that argument is ignored. If the argument is
+            a task, the output files (i.e. the files the task creates) of the task are copied and the task is automatically
+            added as a dependency of the <code class="literal">Copy</code> task.
+            The <code class="literal">into()</code> accepts
+            any of the arguments that the <a class="link" href="working_with_files.html#sec:locating_files">file()</a> method does. Here is another
+            example:
+        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="copy"></a><p class="title"><b>Example&nbsp;20.10.&nbsp;Specifying copy task source files and destination directory</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">val anotherCopyTask by tasks.creating {
+    type(Copy)
+    from(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"src/main/webapp"</span>)
+    from(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"src/staging/index.html"</span>)
+    from(copyTask)
+    from(copyTaskWithPatterns.outputs)
+    from(zipTree(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"src/main/assets.zip"</span>))
+    into {
+        getDestDir()
+    }
+}</pre></div></div><br class="example-break"><p>You can select the files to copy using Ant-style include or exclude patterns, or using a closure:</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="copy"></a><p class="title"><b>Example&nbsp;20.11.&nbsp;Selecting the files to copy</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">val copyTaskWithPatterns by tasks.creating {
+    type(Copy)
+    from(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"src/main/webapp"</span>)
+    into(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"build/explodedWar"</span>)
+    include(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"**/*.html"</span>)
+    include(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"**/*.jsp"</span>)
+    exclude {
+        endsWith(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">".html"</span>) &amp;&amp; contains(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"staging"</span>)
+    }
+}</pre></div></div><br class="example-break"><p>You can also use the <a class="ulink" href="../dsl/org.gradle.api.Project.html#org.gradle.api.Project:copy(org.gradle.api.Action)" target="_top"><code class="classname">Project.copy(org.gradle.api.Action)</code></a> method to copy files. It works the
+            same way as the task with some major limitations though. First, the <code class="literal">copy()</code> is not incremental
+            (see <a class="xref" href="more_about_tasks.html#sec:up_to_date_checks">Section&nbsp;19.10, &ldquo;Up-to-date checks (AKA Incremental Build)&rdquo;</a>).
+        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="copy"></a><p class="title"><b>Example&nbsp;20.12.&nbsp;Copying files using the copy() method without up-to-date check</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">val copyMethod by tasks.creating {
+    doLast {
+        copy {
+            from(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"src/main/webapp"</span>)
+            into(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"build/explodedWar"</span>)
+            include(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"**/*.html"</span>)
+            include(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"**/*.jsp"</span>)
+        }
+    }
+}</pre></div></div><br class="example-break"><p>Secondly, the <code class="literal">copy()</code> method can not honor task dependencies when a task is used as a copy source
+            (i.e. as an argument to <code class="literal">from()</code>) because it's a method and not a task.
+            As such, if you are using the <code class="literal">copy()</code> method as part of a task action, you must explicitly
+            declare all inputs and outputs in order to get the correct behavior.
+        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="copy"></a><p class="title"><b>Example&nbsp;20.13.&nbsp;Copying files using the copy() method with up-to-date check</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">val copyMethodWithExplicitDependencies by tasks.creating {
+    file(copyTask)
+    dir(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"some-dir"</span>)
+    doLast {
+        copy {
+            from(copyTask)
+            into(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"some-dir"</span>)
+        }
+    }
+}</pre></div></div><br class="example-break"><p>
+            It is preferable to use the <code class="literal">Copy</code> task wherever possible, as it supports incremental building and task dependency inference
+            without any extra effort on your part. The <code class="literal">copy()</code> method can be used to copy files as <span class="emphasis"><em>part</em></span> of a task's
+            implementation. That is, the copy method is intended to be used by custom tasks (see <a class="xref" href="custom_tasks.html">Chapter&nbsp;40, <i>Writing Custom Task Classes</i></a>) that need to copy files
+            as part of their function. In such a scenario, the custom task should sufficiently declare the inputs/outputs relevant to the copy action.
+        </p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:renaming_files" class="section-anchor" href="#sec:renaming_files"></a>20.6.1.&nbsp;Renaming files</h3></div></div></div><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="renameOnCopy"></a><p class="title"><b>Example&nbsp;20.14.&nbsp;Renaming files as they are copied</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">val rename by tasks.creating {
+    type(Copy)
+    from(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"src/main/webapp"</span>)
+    into(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"build/explodedWar"</span>)
+    rename {
+        replace(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"-staging-"</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">""</span>)
+    }
+    rename(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"(.+)-staging-(.+)"</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"$1$2"</span>)
+    rename(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"(.+)-staging-(.+)"</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"$1$2"</span>)
+}</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:filtering_files" class="section-anchor" href="#sec:filtering_files"></a>20.6.2.&nbsp;Filtering files</h3></div></div></div><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="filterOnCopy"></a><p class="title"><b>Example&nbsp;20.15.&nbsp;Filtering files as they are copied</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// ERROR: kotlin.NotImplementedError: An operation is not implemented: visitClassExpression</span>
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">import</span> org.apache.tools.ant.filters.FixCrLfFilter
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">import</span> org.apache.tools.ant.filters.ReplaceTokens
+
+task filter(type: Copy) {
+    from <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src/main/webapp'</span>
+    into <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'build/explodedWar'</span>
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Substitute property tokens in files</span>
+    expand(copyright: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'2009'</span>, version: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'2.3.1'</span>)
+    expand(project.properties)
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Use some of the filters provided by Ant</span>
+    filter(FixCrLfFilter)
+    filter(ReplaceTokens, tokens: [copyright: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'2009'</span>, version: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'2.3.1'</span>])
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Use a closure to filter each line</span>
+    filter { String line -&gt;
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"[$line]"</span>
+    }
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Use a closure to remove lines</span>
+    filter { String line -&gt;
+        line.startsWith(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'-'</span>) ? null : line
+    }
+    filteringCharset = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'UTF-8'</span>
+}
+</pre></div></div><br class="example-break"><p>When you use the <code class="literal">ReplaceTokens</code> class with the &ldquo;filter&rdquo; operation, the result is a template engine that replaces tokens of the form &ldquo;@tokenName@&rdquo; (the Apache Ant-style token) with a set of given values. The &ldquo;expand&rdquo; operation does the same thing except it treats the source files as
+                <a class="ulink" href="http://docs.groovy-lang.org/latest/html/api/groovy/text/SimpleTemplateEngine.html" target="_top">Groovy templates</a>
+                in which tokens take the form &ldquo;${tokenName}&rdquo;. Be aware that you may need to escape parts of your source files when
+                using this option, for example if it contains literal &ldquo;$&rdquo; or &ldquo;&lt;%&rdquo; strings.</p><p>It's a good practice to specify the charset when reading and writing the file, using the <code class="literal">filteringCharset</code>
+                property. If not specified, the JVM default charset is used, which might not match with the actual charset of the files
+                to filter, and might be different from one machine to another.
+            </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:using_the_copyspec_class" class="section-anchor" href="#sec:using_the_copyspec_class"></a>20.6.3.&nbsp;Using the <code class="classname">CopySpec</code> class</h3></div></div></div><p>Copy specs form a hierarchy. A copy spec inherits its destination path, include patterns, exclude patterns, copy actions,
+                name mappings and filters.</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="nestedCopySpecs"></a><p class="title"><b>Example&nbsp;20.16.&nbsp;Nested copy specs</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">val nestedSpecs by tasks.creating {
+    type(Copy)
+    into(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"build/explodedWar"</span>)
+    exclude(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"**/*staging*"</span>)
+    from(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"src/dist"</span>) {
+        include(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"**/*.html"</span>)
+    }
+    into(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"libs"</span>) {
+        from(configurations.runtime)
+    }
+}</pre></div></div><br class="example-break"></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:sync_task" class="section-anchor" href="#sec:sync_task"></a>20.7.&nbsp;Using the <code class="literal">Sync</code> task</h2></div></div></div><p>The <a class="ulink" href="../dsl/org.gradle.api.tasks.Sync.html" target="_top"><code class="classname">Sync</code></a> task extends the <code class="literal">Copy</code> task. When it
+            executes, it copies the source files into the destination directory, and then removes any files from the
+            destination directory which it did not copy. This can be useful for doing things such as installing your
+            application, creating an exploded copy of your archives, or maintaining a copy of the project's dependencies.
+        </p><p>Here is an example which maintains a copy of the project's runtime dependencies in the <code class="filename">build/libs</code>
+            directory.</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="syncDependencies"></a><p class="title"><b>Example&nbsp;20.17.&nbsp;Using the Sync task to copy dependencies</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">val libs by tasks.creating {
+    type(Sync)
+    from(configurations.runtime)
+    into(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"$buildDir/libs"</span>)
+}</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:archives" class="section-anchor" href="#sec:archives"></a>20.8.&nbsp;Creating archives</h2></div></div></div><p>
+            A project can have as many JAR archives as you want. You can also add WAR, ZIP and TAR archives to your project.
+            Archives are created using the various archive tasks:
+            <a class="ulink" href="../dsl/org.gradle.api.tasks.bundling.Zip.html" target="_top"><code class="classname">Zip</code></a>,
+            <a class="ulink" href="../dsl/org.gradle.api.tasks.bundling.Tar.html" target="_top"><code class="classname">Tar</code></a>,
+            <a class="ulink" href="../dsl/org.gradle.api.tasks.bundling.Jar.html" target="_top"><code class="classname">Jar</code></a>,
+            <a class="ulink" href="../dsl/org.gradle.api.tasks.bundling.War.html" target="_top"><code class="classname">War</code></a>, and
+            <a class="ulink" href="../dsl/org.gradle.plugins.ear.Ear.html" target="_top"><code class="classname">Ear</code></a>.
+            They all work the same way, so let's look at how you create a ZIP file.
+        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="createZip"></a><p class="title"><b>Example&nbsp;20.18.&nbsp;Creating a ZIP archive</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">apply(mapOf(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"plugin"</span> to <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"java"</span>))
+val zip by tasks.creating {
+    type(Zip)
+    from(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"src/dist"</span>)
+    into(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"libs"</span>) {
+        from(configurations.runtime)
+    }
+}</pre></div></div><br class="example-break"><div class="tip"><h3 class="title">Why are you using the Java plugin?</h3><p>The Java plugin adds a number of default values for the archive tasks. You can use the archive
+                tasks without using the Java plugin, if you like. You will need to provide values for some additional
+                properties.
+            </p></div><p>
+            The archive tasks all work exactly the same way as the <code class="literal">Copy</code> task, and implement the same
+            <code class="classname">CopySpec</code> interface. As with the <code class="literal">Copy</code> task, you specify the input
+            files using the <code class="literal">from()</code> method, and can optionally specify where they end up in the
+            archive using the <code class="literal">into()</code> method. You can filter the contents of file, rename files, and
+            all the other things you can do with a copy spec.
+        </p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:archive_naming" class="section-anchor" href="#sec:archive_naming"></a>20.8.1.&nbsp;Archive naming</h3></div></div></div><p>The format of <code class="filename"><em class="replaceable"><code>projectName</code></em>-<em class="replaceable"><code>version</code></em>.<em class="replaceable"><code>type</code></em></code>
+                is used for generated archive file names.
+                For example:
+            </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="archiveNaming"></a><p class="title"><b>Example&nbsp;20.19.&nbsp;Creation of ZIP archive</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">apply(mapOf(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"plugin"</span> to <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"java"</span>))
+version = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1.0</span>
+val myZip by tasks.creating {
+    type(Zip)
+    from(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"somedir"</span>)
+}
+println(myZip.archiveName)
+println(relativePath(myZip.destinationDir))
+println(relativePath(myZip.archivePath))</pre><p>Output of <strong class="userinput"><code>gradle -q myZip</code></strong></p><pre class="screen">&gt; gradle -q myZip
+zipProject-1.0.zip
+build/distributions
+build/distributions/zipProject-1.0.zip
+</pre></div></div><br class="example-break"><p>This adds a <code class="classname">Zip</code> archive task with the name <code class="literal">myZip</code> which produces
+                ZIP file <code class="filename">zipProject-1.0.zip</code>. It is important to distinguish between the name of the archive task
+                and the name of the archive generated by the archive task. The default name for archives can be
+                changed with the <code class="literal">archivesBaseName</code> project property. The name of the archive can also be
+                changed at any time later on.</p><p>There are a number of properties which you can set on an archive task. These are listed below in <a class="xref" href="working_with_files.html#archiveTasksNamingProperties" title="Table&nbsp;20.1.&nbsp;Archive tasks - naming properties">Table&nbsp;20.1, &ldquo;Archive tasks - naming properties&rdquo;</a>.
+                You can, for example, change the name of the archive:
+            </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="zipWithCustomName"></a><p class="title"><b>Example&nbsp;20.20.&nbsp;Configuration of archive task - custom archive name</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">apply(mapOf(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"plugin"</span> to <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"java"</span>))
+version = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1.0</span>
+val myZip by tasks.creating {
+    type(Zip)
+    from(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"somedir"</span>)
+    baseName = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"customName"</span>
+}
+println(myZip.archiveName)</pre><p>Output of <strong class="userinput"><code>gradle -q myZip</code></strong></p><pre class="screen">&gt; gradle -q myZip
+customName-1.0.zip
+</pre></div></div><br class="example-break"><p>You can further customize the archive names:</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="zipWithArguments"></a><p class="title"><b>Example&nbsp;20.21.&nbsp;Configuration of archive task - appendix &amp; classifier</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">apply(mapOf(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"plugin"</span> to <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"java"</span>))
+archivesBaseName = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"gradle"</span>
+version = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1.0</span>
+val myZip by tasks.creating {
+    type(Zip)
+    appendix = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"wrapper"</span>
+    classifier = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"src"</span>
+    from(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"somedir"</span>)
+}
+println(myZip.archiveName)</pre><p>Output of <strong class="userinput"><code>gradle -q myZip</code></strong></p><pre class="screen">&gt; gradle -q myZip
+gradle-wrapper-1.0-src.zip
+</pre></div></div><br class="example-break"><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;20.1.&nbsp;Archive tasks - naming properties</b></p><div class="table-contents"><table id="archiveTasksNamingProperties"><thead><tr>
+                        <td>Property name</td>
+                        <td>Type</td>
+                        <td>Default value</td>
+                        <td>Description</td>
+                    </tr></thead><tr>
+                    <td><code class="literal">archiveName</code></td>
+                    <td><code class="classname">String</code></td>
+                    <td>
+                        <code class="filename"><em class="replaceable"><code>baseName</code></em>-<em class="replaceable"><code>appendix</code></em>-<em class="replaceable"><code>version</code></em>-<em class="replaceable"><code>classifier</code></em>.<em class="replaceable"><code>extension</code></em></code>
+                        <p>If any of these properties is empty the trailing <code class="filename">-</code> is not added to the name.</p>
+                    </td>
+                    <td>The base file name of the generated archive</td>
+                </tr><tr>
+                    <td><code class="literal">archivePath</code></td>
+                    <td><code class="classname">File</code></td>
+                    <td><code class="filename"><em class="replaceable"><code>destinationDir</code></em>/<em class="replaceable"><code>archiveName</code></em></code></td>
+                    <td>The absolute path of the generated archive.</td>
+                </tr><tr>
+                    <td><code class="literal">destinationDir</code></td>
+                    <td><code class="classname">File</code></td>
+                    <td>Depends on the archive type. JARs and WARs go into <code class="filename"><em class="replaceable"><code>project.buildDir</code></em>/libraries</code>.
+                        ZIPs and TARs go into <code class="filename"><em class="replaceable"><code>project.buildDir</code></em>/distributions</code>.
+                    </td>
+                    <td>The directory to generate the archive into</td>
+                </tr><tr>
+                    <td><code class="literal">baseName</code></td>
+                    <td><code class="classname">String</code></td>
+                    <td><code class="filename"><em class="replaceable"><code>project.name</code></em></code></td>
+                    <td>The base name portion of the archive file name.</td>
+                </tr><tr>
+                    <td><code class="literal">appendix</code></td>
+                    <td><code class="classname">String</code></td>
+                    <td><code class="literal">null</code></td>
+                    <td>The appendix portion of the archive file name.</td>
+                </tr><tr>
+                    <td><code class="literal">version</code></td>
+                    <td><code class="classname">String</code></td>
+                    <td><code class="filename"><em class="replaceable"><code>project.version</code></em></code></td>
+                    <td>The version portion of the archive file name.</td>
+                </tr><tr>
+                    <td><code class="literal">classifier</code></td>
+                    <td><code class="classname">String</code></td>
+                    <td><code class="literal">null</code></td>
+                    <td>The classifier portion of the archive file name,</td>
+                </tr><tr>
+                    <td><code class="literal">extension</code></td>
+                    <td><code class="classname">String</code></td>
+                    <td>Depends on the archive type, and for TAR files, the compression type as well: <code class="filename">zip</code>, <code class="filename">jar</code>,
+                        <code class="filename">war</code>, <code class="filename">tar</code>, <code class="filename">tgz</code> or <code class="filename">tbz2</code>.</td>
+                    <td>The extension of the archive file name.</td>
+                </tr></table></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:sharing_content_between_multiple_archives" class="section-anchor" href="#sec:sharing_content_between_multiple_archives"></a>20.8.2.&nbsp;Sharing content between multiple archives</h3></div></div></div><p>You can use the <a class="ulink" href="../dsl/org.gradle.api.Project.html#org.gradle.api.Project:copySpec(org.gradle.api.Action)" target="_top"><code class="classname">Project.copySpec(org.gradle.api.Action)</code></a> method to share content between archives.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:reproducible_archives" class="section-anchor" href="#sec:reproducible_archives"></a>20.8.3.&nbsp;Reproducible archives</h3></div></div></div><p>Sometimes it can be desirable to recreate archives in a byte for byte way on different machines.
+                You want to be sure that building an artifact from source code produces the same result, byte for byte, no matter when and where it is built.
+                This is necessary for projects like <a class="ulink" href="https://reproducible-builds.org/" target="_top">reproducible-builds.org</a>.
+            </p><p>
+                Reproducing the same archive byte for byte poses some challenges since the order of the files in an archive is influenced by the underlying filesystem.
+                Each time a zip, tar, jar, war or ear is built from source, the order of the files inside the archive may change.
+                Files that only have a different timestamp also causes archives to be slightly different between builds.
+                All <a class="ulink" href="../dsl/org.gradle.api.tasks.bundling.AbstractArchiveTask.html" target="_top"><code class="classname">AbstractArchiveTask</code></a> (e.g. Jar, Zip) tasks shipped with Gradle include <a class="link" href="feature_lifecycle.html">incubating</a> support producing reproducible archives.
+            </p><p>
+                For example, to make a <code class="literal">Zip</code> task reproducible you need to set
+                <a class="ulink" href="../dsl/org.gradle.api.tasks.bundling.Zip.html#org.gradle.api.tasks.bundling.Zip:reproducibleFileOrder" target="_top"><code class="classname">Zip.isReproducibleFileOrder()</code></a> to <code class="literal">true</code>
+                and <a class="ulink" href="../dsl/org.gradle.api.tasks.bundling.Zip.html#org.gradle.api.tasks.bundling.Zip:preserveFileTimestamps" target="_top"><code class="classname">Zip.isPreserveFileTimestamps()</code></a> to <code class="literal">false</code>.
+                In order to make all archive tasks in your build reproducible, consider adding the following configuration to your build file:
+            </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="createZip"></a><p class="title"><b>Example&nbsp;20.22.&nbsp;Activating reproducible archives</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">withType(AbstractArchiveTask) {
+    preserveFileTimestamps = false
+    reproducibleFileOrder = true
+}</pre></div></div><br class="example-break"></div><p>Often you will want to publish an archive, so that it is usable from another project. This process is
+            described in <a class="xref" href="artifact_management.html">Chapter&nbsp;32, <i>Publishing artifacts</i></a>
+        </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:properties_files" class="section-anchor" href="#sec:properties_files"></a>20.9.&nbsp;Properties files</h2></div></div></div><p>Properties files are used in many places during Java development. Gradle makes it easy to create properties files as a normal part of the build.
+            You can use the <a class="ulink" href="../dsl/org.gradle.api.tasks.WriteProperties.html" target="_top"><code class="classname">WriteProperties</code></a> task to create properties files.
+        </p><p>The <code class="literal">WriteProperties</code> task also fixes a well-known problem with <code class="literal">Properties.store()</code>
+            that can reduce the usefulness of incremental builds (see <a class="xref" href="more_about_tasks.html#sec:up_to_date_checks">Section&nbsp;19.10, &ldquo;Up-to-date checks (AKA Incremental Build)&rdquo;</a>). The standard Java way to write a properties
+            file produces a unique file every time, even when the same properties and values are used, because it includes a timestamp in the comments.
+            Gradle's <code class="literal">WriteProperties</code> task generates exactly the same output byte-for-byte if none of the properties have changed.
+            This is achieved by a few tweaks to how a properties file is generated:
+        </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">no timestamp comment is added to the output</li><li class="listitem">the line separator is system independent, but can be configured explicitly (it defaults to <code class="literal">'\n'</code>)</li><li class="listitem">the properties are sorted alphabetically</li></ul></div></div></div><div class="navfooter"><div><div class="navbar"><a xmlns:xslthl="http://xslthl.sf.net" href="more_about_tasks.html" title="More about Tasks - Gradle User Guide Version 4.1-20170616095913+0000">Previous</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="Gradle User Guide Version 4.1-20170616095913+0000">Contents</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="ant.html" title="Using Ant from Gradle - Gradle User Guide Version 4.1-20170616095913+0000">Next</a></div></div></div></body></html>

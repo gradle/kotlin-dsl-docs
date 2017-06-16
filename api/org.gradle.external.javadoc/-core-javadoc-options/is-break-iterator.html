@@ -1,0 +1,18 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CoreJavadocOptions.isBreakIterator - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.external.javadoc</a>&nbsp;/&nbsp;<a href="index.html">CoreJavadocOptions</a>&nbsp;/&nbsp;<a href=".">isBreakIterator</a><br/>
+<br/>
+<h1>isBreakIterator</h1>
+<a name="org.gradle.external.javadoc.CoreJavadocOptions$isBreakIterator()"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isBreakIterator</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Overrides <a href="../-minimal-javadoc-options/is-break-iterator.html">MinimalJavadocOptions.isBreakIterator</a></p>
+<p>-breakiterator Uses the internationalized sentence boundary of java.text.BreakIterator to determine the end of the first sentence for English (all other locales already use BreakIterator), rather than an English language, locale-specific algorithm. By first sentence, we mean the first sentence in the main description of a package, class or member. This sentence is copied to the package, class or member summary, and to the alphabetic index. From JDK 1.2 forward, the BreakIterator class is already used to determine the end of sentence for all languages but English. Therefore, the -breakiterator option has no effect except for English from 1.2 forward. English has its own default algorithm: * English default sentence-break algorithm - Stops at a period followed by a space or a HTML block tag, such as 
+<p>. * Breakiterator sentence-break algorithm - In general, stops at a period, question mark or exclamation mark followed by a space if the next word starts with a capital letter. This is meant to handle most abbreviations (such as "The serial no. is valid", but won't handle "Mr. Smith"). Doesn't stop at HTML tags or sentences that begin with numbers or symbols. Stops at the last period in "../filename", even if embedded in an HTML tag. NOTE: We have removed from 1.5.0 the breakiterator warning messages that were in 1.4.x and have left the default sentence-break algorithm unchanged. That is, the -breakiterator option is not the default in 1.5.0, nor do we expect it to become the default. This is a reversal from our former intention that the default would change in the "next major release" (1.5.0). This means if you have not modified your source code to eliminate the breakiterator warnings in 1.4.x, then you don't have to do anything, and the warnings go away starting with 1.5.0. The reason for this reversal is because any benefit to having breakiterator become the default would be outweighed by the incompatible source change it would require. We regret any extra work and confusion this has caused.</p>
+</p>
+</BODY>
+</HTML>

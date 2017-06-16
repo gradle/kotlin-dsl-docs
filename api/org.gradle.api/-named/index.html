@@ -1,0 +1,242 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Named - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href=".">Named</a><br/>
+<br/>
+<h1>Named</h1>
+<code><span class="keyword">interface </span><span class="identifier">Named</span></code>
+<p>Types can implement this interface and use the embedded Namer implementation, to satisfy API that calls for a namer.</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-namer/index.html">Namer</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Namer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-namer/index.html"><span class="identifier">Namer</span></a><span class="symbol">&lt;</span><span class="identifier">Named</span><span class="symbol">&gt;</span></code>
+<p>An implementation of the namer interface for objects implementing the named interface.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The object's name. 
+<p> Must be constant for the life of the object.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.platform/-architecture/index.html">Architecture</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Architecture</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Named</span></code>
+<p>A cpu architecture.   Instruction Set 32-bit names 64-bit names   Intel x86 "x86", "i386", "ia-32", "i686" "x86_64", "amd64", "x64", "x86-64"   Intel Itanium N/A "ia-64", "ia64"   Power PC "ppc" "ppc64"   Sparc "sparc", "sparc32", "sparc-v8" "sparc64", "ultrasparc", "sparc-v9"   ARM "arm", "arm-v7", "armv7", "arm32" "arm64", "arm-v8"  </p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.artifacts.type/-artifact-type-definition/index.html">ArtifactTypeDefinition</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ArtifactTypeDefinition</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.attributes/-has-attributes/index.html"><span class="identifier">HasAttributes</span></a><span class="symbol">, </span><span class="identifier">Named</span></code>
+<p>Meta-data about a particular type of artifacts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.attributes/-attribute/index.html">Attribute</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Attribute</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Named</span></code>
+<p>An attribute is a named entity with a type. It is used in conjunction with a AttributeContainer to provide a type safe container for attributes. This class isn't intended to store the value of an attribute, but only represent the identity of the attribute. It means that an attribute must be immutable and can potentially be pooled. Attributes can be created using the <code><a href="#">factory method</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.authentication/-authentication.html">Authentication</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Authentication</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Named</span></code>
+<p>Base interface for transport authentication schemes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-build-type/index.html">BuildType</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BuildType</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Named</span></code>
+<p>Specifies a build-type for a native binary. Common build types are 'debug' and 'release', but others may be defined.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.artifacts/-configuration-variant/index.html">ConfigurationVariant</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ConfigurationVariant</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Named</span><span class="symbol">, </span><a href="../../org.gradle.api.attributes/-has-configurable-attributes/index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-configuration-variant/index.html"><span class="identifier">ConfigurationVariant</span></a><span class="symbol">&gt;</span></code>
+<p>Represents some variant of an outgoing configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.distribution/-distribution/index.html">Distribution</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Distribution</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Named</span></code>
+<p>A distribution allow to bundle an application or a library including dependencies,sources...</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-flavor/index.html">Flavor</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Flavor</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Named</span></code>
+<p>Defines a custom variant that differentiate a NativeBinary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.publish.ivy/-ivy-configuration/index.html">IvyConfiguration</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">IvyConfiguration</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Named</span></code>
+<p>A configuration included in an IvyPublication, which will be published in the ivy descriptor file generated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm.toolchain/-local-java/index.html">LocalJava</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">LocalJava</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Named</span></code>
+<p>A local JDK, JRE or Java 9+ installation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.model/-model-element/index.html">ModelElement</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ModelElement</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Named</span></code>
+<p>Represents an element in a model. Elements are arranged in a hierarchy.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.platform/-operating-system/index.html">OperatingSystem</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">OperatingSystem</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Named</span></code>
+<p>A machine operating system.   Operating System Aliases   Windows "windows"   GNU/Linux "linux"   Mac OS X "osx", "mac os x", "darwin"   Solaris "solaris", "sunos"  </p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.platform.base/-platform/index.html">Platform</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Platform</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Named</span></code>
+<p>The platform or runtime that a binary is designed to run on. Examples: the JvmPlatform defines a java runtime, while the NativePlatform defines the Operating System and Architecture for a native app.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.plugin.devel/-plugin-declaration/index.html">PluginDeclaration</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PluginDeclaration</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Named</span><span class="symbol">, </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code>
+<p>Describes a Gradle plugin under development.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-prebuilt-library/index.html">PrebuiltLibrary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PrebuiltLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Named</span><span class="symbol">, </span><a href="../../org.gradle.nativeplatform/-native-library.html"><span class="identifier">NativeLibrary</span></a></code>
+<p>A library component that is not built by gradle.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.publish/-publication.html">Publication</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Publication</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Named</span></code>
+<p>A publication is a description of a consumable representation of one or more artifacts, and possibly associated metadata.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.component/-software-component.html">SoftwareComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SoftwareComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Named</span></code>
+<p>A software component produced by a Gradle software project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.file/-source-directory-set/index.html">SourceDirectorySet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SourceDirectorySet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-tree/index.html"><span class="identifier">FileTree</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">, </span><span class="identifier">Named</span><span class="symbol">, </span><a href="../-describable/index.html"><span class="identifier">Describable</span></a></code>
+<p>
+<p>A <code>SourceDirectorySet</code> represents a set of source files composed from a set of source directories, along with associated include and exclude patterns.</p>
+ 
+<p><code>SourceDirectorySet</code> extends FileTree. The contents of the file tree represent the source files of this set, arranged in a hierarchy. The file tree is live and reflects changes to the source directories and their contents.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks/-task-reference.html">TaskReference</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskReference</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Named</span></code>
+<p>A lightweight reference to a task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.platform.base/-tool-chain/index.html">ToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ToolChain</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Named</span></code>
+<p>A set of compilers that are used together to construct binaries.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.attributes/-usage/index.html">Usage</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Usage</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Named</span></code>
+<p>Represents the usage of a configuration. Typical usages include compilation or runtime. This interface allows the user to customize usages by implementing this interface.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

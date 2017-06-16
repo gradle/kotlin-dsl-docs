@@ -1,0 +1,583 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Configuration - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">Configuration</a><br/>
+<br/>
+<h1>Configuration</h1>
+<code><span class="keyword">interface </span><span class="identifier">Configuration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">, </span><a href="../../org.gradle.api.attributes/-has-configurable-attributes/index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><span class="identifier">Configuration</span><span class="symbol">&gt;</span></code>
+<p>A <code>Configuration</code> represents a group of artifacts and their dependencies. Find more information about declaring dependencies to a configuration or about managing configurations in docs for ConfigurationContainer 
+<p> Configuration is an instance of a FileCollection that contains all dependencies (see also <code><a href="get-all-dependencies.html">#getAllDependencies()</a></code>) but not artifacts. If you want to refer to the artifacts declared in this configuration please use <code><a href="get-artifacts.html">#getArtifacts()</a></code> or <code><a href="get-all-artifacts.html">#getAllArtifacts()</a></code>. Read more about declaring artifacts in the configuration in docs for org.gradle.api.artifacts.dsl.ArtifactHandler </p>
+</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-namer/index.html">Namer</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Namer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-namer/index.html"><span class="identifier">Namer</span></a><span class="symbol">&lt;</span><span class="identifier">Configuration</span><span class="symbol">&gt;</span></code>
+<p>A org.gradle.api.Namer namer for configurations that returns <code><a href="get-name.html">#getName()</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-state/index.html">State</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">State</span></code>
+<p>The states a configuration can be into. A configuration is only mutable as long as it is in the unresolved state.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="copy.html">copy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<p>Creates a copy of this configuration that only contains the dependencies directly in this configuration (without contributions from superconfigurations). The new configuration will be in the UNRESOLVED state, but will retain all other attributes of this configuration except superconfigurations. <code><a href="get-hierarchy.html">#getHierarchy()</a></code> for the copy will not include any superconfigurations.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$copy(org.gradle.api.specs.Spec((org.gradle.api.artifacts.Dependency)))/dependencySpec">dependencySpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<p>Creates a copy of this configuration ignoring superconfigurations (see <code><a href="copy.html">#copy()</a></code> but filtering the dependencies using the specified dependency spec.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$copy(groovy.lang.Closure((kotlin.Any)))/dependencySpec">dependencySpec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<p>Takes a closure which gets coerced into a Spec. Behaves otherwise in the same way as <code><a href="#">#copy(org.gradle.api.specs.Spec)</a></code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="copy-recursive.html">copyRecursive</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copyRecursive</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<p>Creates a copy of this configuration that contains the dependencies directly in this configuration and those derived from superconfigurations. The new configuration will be in the UNRESOLVED state, but will retain all other attributes of this configuration except superconfigurations. <code><a href="get-hierarchy.html">#getHierarchy()</a></code> for the copy will not include any superconfigurations.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copyRecursive</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$copyRecursive(org.gradle.api.specs.Spec((org.gradle.api.artifacts.Dependency)))/dependencySpec">dependencySpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<p>Creates a copy of this configuration with dependencies from superconfigurations (see <code><a href="copy-recursive.html">#copyRecursive()</a></code>) but filtering the dependencies using the dependencySpec.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copyRecursive</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$copyRecursive(groovy.lang.Closure((kotlin.Any)))/dependencySpec">dependencySpec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<p>Takes a closure which gets coerced into a Spec. Behaves otherwise in the same way as <code><a href="#">#copyRecursive(org.gradle.api.specs.Spec)</a></code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="default-dependencies.html">defaultDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">defaultDependencies</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$defaultDependencies(org.gradle.api.Action((org.gradle.api.artifacts.DependencySet)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency-set.html"><span class="identifier">DependencySet</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<p>Execute the given action if the configuration has no defined dependencies when it first participates in dependency resolution. A <code>Configuration</code> will participate in dependency resolution when: <ul> <li>The Configuration itself is resolved</li>
+ <li>Another Configuration that extends this one is resolved</li>
+ <li>Another Configuration that references this one as a project dependency is resolved</li>
+ </ul>
+ This method is useful for specifying default dependencies for a configuration: <pre><code> configurations { conf } configurations['conf'].defaultDependencies { dependencies -&gt; dependencies.add(owner.project.dependencies.create("org.gradle:my-util:1.0")) } </code></pre> A <code>Configuration</code> is considered empty even if it extends another, non-empty <code>Configuration</code>. If multiple actions are supplied, each action will be executed until the set of dependencies is no longer empty. Remaining actions will be ignored.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="exclude.html">exclude</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$exclude(kotlin.collections.MutableMap((kotlin.String, )))/excludeProperties">excludeProperties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<p>Adds an exclude rule to exclude transitive dependencies for all dependencies of this configuration. You can also add exclude rules per-dependency. See <code><a href="#">ModuleDependency#exclude(java.util.Map)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="extends-from.html">extendsFrom</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">extendsFrom</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.artifacts.Configuration$extendsFrom(kotlin.Array((org.gradle.api.artifacts.Configuration)))/superConfigs">superConfigs</span><span class="symbol">:</span>&nbsp;<span class="identifier">Configuration</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<p>Adds the given configurations to the set of configuration which this configuration extends from.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="file-collection.html">fileCollection</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">fileCollection</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$fileCollection(org.gradle.api.specs.Spec((org.gradle.api.artifacts.Dependency)))/dependencySpec">dependencySpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Resolves this configuration lazily. The resolve happens when the elements of the returned FileCollection get accessed the first time. This locates and downloads the files which make up this configuration. Only the resulting set of files belonging to the subset of dependencies specified by the dependencySpec is contained in the FileCollection.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">fileCollection</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$fileCollection(groovy.lang.Closure((kotlin.Any)))/dependencySpecClosure">dependencySpecClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Takes a closure which gets coerced into a Spec. Behaves otherwise in the same way as <code><a href="#">#fileCollection(org.gradle.api.specs.Spec)</a></code>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">fileCollection</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.artifacts.Configuration$fileCollection(kotlin.Array((org.gradle.api.artifacts.Dependency)))/dependencies">dependencies</span><span class="symbol">:</span>&nbsp;<a href="../-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Resolves this configuration lazily. The resolve happens when the elements of the returned FileCollection get accessed the first time. This locates and downloads the files which make up this configuration. Only the resulting set of files belonging to specified dependencies is contained in the FileCollection.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="files.html">files</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">files</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$files(groovy.lang.Closure((kotlin.Any)))/dependencySpecClosure">dependencySpecClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>Takes a closure which gets coerced into a Spec. Behaves otherwise in the same way as <code><a href="#">#files(org.gradle.api.specs.Spec)</a></code>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">files</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$files(org.gradle.api.specs.Spec((org.gradle.api.artifacts.Dependency)))/dependencySpec">dependencySpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>Resolves this configuration. This locates and downloads the files which make up this configuration. But only the resulting set of files belonging to the subset of dependencies specified by the dependencySpec is returned.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">files</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.artifacts.Configuration$files(kotlin.Array((org.gradle.api.artifacts.Dependency)))/dependencies">dependencies</span><span class="symbol">:</span>&nbsp;<a href="../-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>Resolves this configuration. This locates and downloads the files which make up this configuration. But only the resulting set of files belonging to the specified dependencies is returned.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-all.html">getAll</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAll</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">Configuration</span><span class="symbol">&gt;</span></code>
+<p>Returns all the configurations belonging to the same configuration container as this configuration (including this configuration).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-all-artifacts.html">getAllArtifacts</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAllArtifacts</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-publish-artifact-set/index.html"><span class="identifier">PublishArtifactSet</span></a></code>
+<p>Returns the artifacts of this configuration including the artifacts of extended configurations.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-all-dependencies.html">getAllDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAllDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-dependency-set.html"><span class="identifier">DependencySet</span></a></code>
+<p>
+<p>Gets the complete set of dependencies including those contributed by superconfigurations.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-artifacts.html">getArtifacts</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getArtifacts</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-publish-artifact-set/index.html"><span class="identifier">PublishArtifactSet</span></a></code>
+<p>Returns the artifacts of this configuration excluding the artifacts of extended configurations.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-build-dependencies.html">getBuildDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-task-dependency/index.html"><span class="identifier">TaskDependency</span></a></code>
+<p>Returns a <code>TaskDependency</code> object containing all required dependencies to build the local dependencies (e.g. project dependencies) belonging to this configuration or to one of its super configurations.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-dependencies.html">getDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-dependency-set.html"><span class="identifier">DependencySet</span></a></code>
+<p>Gets the set of dependencies directly contained in this configuration (ignoring superconfigurations).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-description.html">getDescription</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDescription</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the description for this configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-exclude-rules.html">getExcludeRules</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExcludeRules</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-exclude-rule/index.html"><span class="identifier">ExcludeRule</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the exclude rules applied for resolving any dependency of this configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-extends-from.html">getExtendsFrom</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExtendsFrom</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">Configuration</span><span class="symbol">&gt;</span></code>
+<p>Returns the names of the configurations which this configuration extends from. The artifacts of the super configurations are also available in this configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-hierarchy.html">getHierarchy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getHierarchy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">Configuration</span><span class="symbol">&gt;</span></code>
+<p>Gets a ordered set including this configuration and all superconfigurations recursively.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-incoming.html">getIncoming</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getIncoming</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-resolvable-dependencies/index.html"><span class="identifier">ResolvableDependencies</span></a></code>
+<p>Returns the incoming dependencies of this configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of this configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-outgoing.html">getOutgoing</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOutgoing</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-configuration-publications/index.html"><span class="identifier">ConfigurationPublications</span></a></code>
+<p>Returns the outgoing artifacts of this configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-resolution-strategy.html">getResolutionStrategy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getResolutionStrategy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-resolution-strategy/index.html"><span class="identifier">ResolutionStrategy</span></a></code>
+<p>Returns the resolution strategy used by this configuration. The resolution strategy provides extra details on how to resolve this configuration. See docs for ResolutionStrategy for more info and examples.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-resolved-configuration.html">getResolvedConfiguration</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getResolvedConfiguration</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-resolved-configuration/index.html"><span class="identifier">ResolvedConfiguration</span></a></code>
+<p>Resolves this configuration. This locates and downloads the files which make up this configuration, and returns a ResolvedConfiguration that may be used to determine information about the resolve (including errors).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-state.html">getState</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getState</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-state/index.html"><span class="identifier">State</span></a></code>
+<p>Returns the state of the configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-task-dependency-from-project-dependency.html">getTaskDependencyFromProjectDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTaskDependencyFromProjectDependency</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$getTaskDependencyFromProjectDependency(kotlin.Boolean, kotlin.String)/useDependedOn">useDependedOn</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.Configuration$getTaskDependencyFromProjectDependency(kotlin.Boolean, kotlin.String)/taskName">taskName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-task-dependency/index.html"><span class="identifier">TaskDependency</span></a></code>
+<p>Returns a TaskDependency object containing dependencies on all tasks with the specified name from project dependencies related to this configuration or one of its super configurations. These other projects may be projects this configuration depends on or projects with a similarly named configuration that depend on this one based on the useDependOn argument.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-upload-task-name.html">getUploadTaskName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getUploadTaskName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the task that upload the artifacts of this configuration to repositories declared by the user.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-can-be-consumed.html">isCanBeConsumed</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isCanBeConsumed</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if this configuration can be consumed from another project, or published. Defaults to true.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-can-be-resolved.html">isCanBeResolved</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isCanBeResolved</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if it is allowed to query or resolve this configuration. Defaults to true.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-transitive.html">isTransitive</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isTransitive</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns the transitivity of this configuration. A transitive configuration contains the transitive closure of its direct dependencies, and all their dependencies. An intransitive configuration contains only the direct dependencies. The default value is true.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-visible.html">isVisible</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isVisible</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if this is a visible configuration. A visible configuration is usable outside the project it belongs to. The default value is true.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="outgoing.html">outgoing</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">outgoing</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$outgoing(org.gradle.api.Action((org.gradle.api.artifacts.ConfigurationPublications)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-configuration-publications/index.html"><span class="identifier">ConfigurationPublications</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the outgoing artifacts of this configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="resolution-strategy.html">resolutionStrategy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">resolutionStrategy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$resolutionStrategy(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">resolutionStrategy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$resolutionStrategy(org.gradle.api.Action((org.gradle.api.artifacts.ResolutionStrategy)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-resolution-strategy/index.html"><span class="identifier">ResolutionStrategy</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<p>The resolution strategy provides extra details on how to resolve this configuration. See docs for ResolutionStrategy for more info and examples.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="resolve.html">resolve</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">resolve</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>Resolves this configuration. This locates and downloads the files which make up this configuration, and returns the resulting set of files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-can-be-consumed.html">setCanBeConsumed</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setCanBeConsumed</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$setCanBeConsumed(kotlin.Boolean)/allowed">allowed</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures if a configuration can be consumed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-can-be-resolved.html">setCanBeResolved</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setCanBeResolved</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$setCanBeResolved(kotlin.Boolean)/allowed">allowed</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures if a configuration can be resolved.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-description.html">setDescription</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setDescription</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$setDescription(kotlin.String)/description">description</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<p>Sets the description for this configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-extends-from.html">setExtendsFrom</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setExtendsFrom</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$setExtendsFrom(kotlin.collections.MutableIterable((org.gradle.api.artifacts.Configuration)))/superConfigs">superConfigs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">Configuration</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<p>Sets the configurations which this configuration extends from.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-transitive.html">setTransitive</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setTransitive</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$setTransitive(kotlin.Boolean)/t">t</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<p>Sets the transitivity of this configuration. When set to true, this configuration will contain the transitive closure of its dependencies and their dependencies. The default value is true.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-visible.html">setVisible</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setVisible</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$setVisible(kotlin.Boolean)/visible">visible</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<p>Sets the visibility of this configuration. When visible is set to true, this configuration is visible outside the project it belongs to. The default value is true.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.file/-file-collection/add.html">add</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$add(org.gradle.api.file.FileCollection)/collection">collection</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>
+<p>Adds another collection to this collection. This is an optional operation.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.file/-file-collection/add-to-ant-builder.html">addToAntBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addToAntBuilder</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$addToAntBuilder(kotlin.Any, kotlin.String, org.gradle.api.file.FileCollection.AntType)/builder">builder</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.file.FileCollection$addToAntBuilder(kotlin.Any, kotlin.String, org.gradle.api.file.FileCollection.AntType)/nodeName">nodeName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.file.FileCollection$addToAntBuilder(kotlin.Any, kotlin.String, org.gradle.api.file.FileCollection.AntType)/type">type</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/-ant-type/index.html"><span class="identifier">AntType</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds this collection to an Ant task as a nested node. The given type determines how this collection is added: <ul> <li><code><a href="#">AntType#MatchingTask</a></code>: adds this collection to an Ant MatchingTask. The collection is converted to a set of source directories and include and exclude patterns. The source directories as added as an Ant Path with the given node name. The patterns are added using 'include' and 'exclude' nodes.</li>
+ <li><code><a href="#">AntType#FileSet</a></code>: adds this collection as zero or more Ant FileSets with the given node name.</li>
+ <li><code><a href="#">AntType#ResourceCollection</a></code>: adds this collection as zero or more Ant ResourceCollections with the given node name.</li>
+ </ul>
+ You should prefer using <code><a href="#">AntType#ResourceCollection</a></code>, if the target Ant task supports it, as this is generally the most efficient. Using the other types may involve copying the contents of this collection to a temporary directory.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addToAntBuilder</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$addToAntBuilder(kotlin.Any, kotlin.String)/builder">builder</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.file.FileCollection$addToAntBuilder(kotlin.Any, kotlin.String)/nodeName">nodeName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Adds this collection to an Ant task as a nested node. Equivalent to calling <code>addToAntBuilder(builder, nodeName,AntType.ResourceCollection)</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.file/-file-collection/as-type.html">asType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">asType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$asType(java.lang.Class((kotlin.Any)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>
+<p>Converts this collection into an object of the specified type. Supported types are: <code>Collection</code>, <code>List</code>, <code>Set</code>, <code>Object[]</code>, <code>File[]</code>, <code>File</code>, and FileTree.</p>
+ 
+<p>You can call this method in your build script using the <code>as</code> operator.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.attributes/-has-configurable-attributes/attributes.html">attributes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">attributes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.attributes.HasConfigurableAttributes$attributes(org.gradle.api.Action((org.gradle.api.attributes.AttributeContainer)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.attributes/-attribute-container/index.html"><span class="identifier">AttributeContainer</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SELF</span></code>
+<p>Configure the attribute container that provides the attributes associated with this domain object.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.file/-file-collection/contains.html">contains</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">contains</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$contains(java.io.File)/file">file</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Determines whether this collection contains the given file. Generally, this method is more efficient than calling <code>getFiles().contains(file)</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.file/-file-collection/filter.html">filter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$filter(groovy.lang.Closure((kotlin.Any)))/filterClosure">filterClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>
+<p>Restricts the contents of this collection to those files which match the given criteria. The filtered collection is live, so that it reflects any changes to this collection.</p>
+ 
+<p>The given closure is passed the File as a parameter, and should return a boolean value.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$filter(org.gradle.api.specs.Spec((java.io.File)))/filterSpec">filterSpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>
+<p>Restricts the contents of this collection to those files which match the given criteria. The filtered collection is live, so that it reflects any changes to this collection.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.file/-file-collection/get-as-file-tree.html">getAsFileTree</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAsFileTree</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<p>Converts this collection to a FileTree. Generally, for each file in this collection, the resulting file tree will contain the source file at the root of the tree. For each directory in this collection, the resulting file tree will contain all the files under the source directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.file/-file-collection/get-as-path.html">getAsPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAsPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the contents of this collection as a platform-specific path. This can be used, for example, in an Ant  element.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.file/-file-collection/get-files.html">getFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the contents of this collection as a Set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.file/-file-collection/get-single-file.html">getSingleFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSingleFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the content of this collection, asserting it contains exactly one file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.file/-file-collection/is-empty.html">isEmpty</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isEmpty</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if this collection is empty. Generally, calling this method is more efficient than calling <code>getFiles().isEmpty()</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.file/-file-collection/minus.html">minus</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">minus</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$minus(org.gradle.api.file.FileCollection)/collection">collection</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>
+<p>Returns a <code>FileCollection</code> which contains the difference between this collection and the given collection. The returned collection is live, and tracks changes to both source collections.</p>
+ 
+<p>You can call this method in your build script using the <code>-</code> operator.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.file/-file-collection/plus.html">plus</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$plus(org.gradle.api.file.FileCollection)/collection">collection</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>
+<p>Returns a <code>FileCollection</code> which contains the union of this collection and the given collection. The returned collection is live, and tracks changes to both source collections.</p>
+ 
+<p>You can call this method in your build script using the <code>+</code> operator.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.file/-file-collection/stop-execution-if-empty.html">stopExecutionIfEmpty</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">stopExecutionIfEmpty</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Throws a StopExecutionException if this collection is empty.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.script.lang.kotlin/org.gradle.api.artifacts.-configuration/exclude.html">exclude</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">Configuration</span><span class="symbol">.</span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.script.lang.kotlin$exclude(org.gradle.api.artifacts.Configuration, kotlin.String, kotlin.String)/group">group</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="org.gradle.script.lang.kotlin$exclude(org.gradle.api.artifacts.Configuration, kotlin.String, kotlin.String)/module">module</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<p>Adds an exclude rule to exclude transitive dependencies for all dependencies of this configuration.
+You can also add exclude rules per-dependency. See <a href="../-module-dependency/exclude.html">ModuleDependency.exclude</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Script.file - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">Script</a>&nbsp;/&nbsp;<a href=".">file</a><br/>
+<br/>
+<h1>file</h1>
+<a name="org.gradle.api.Script$file(kotlin.Any)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$file(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>
+<p>Resolves a file path relative to the directory containing this script. This works as described for <code><a href="#"> </a></code></p>
+</p>
+<h3>Parameters</h3>
+<a name="path"></a>
+<code>path</code> - The object to resolve as a File.
+<p><strong>Return</strong><br/>
+The resolved file. Never returns null.</p>
+<a name="org.gradle.api.Script$file(kotlin.Any, org.gradle.api.PathValidation)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$file(kotlin.Any, org.gradle.api.PathValidation)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Script$file(kotlin.Any, org.gradle.api.PathValidation)/validation">validation</span><span class="symbol">:</span>&nbsp;<a href="../-path-validation/index.html"><span class="identifier">PathValidation</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>
+<p>Resolves a file path relative to the directory containing this script and validates it using the given scheme. See PathValidation for the list of possible validations.</p>
+</p>
+<h3>Parameters</h3>
+<a name="path"></a>
+<code>path</code> - An object to resolve as a File.<a name="validation"></a>
+<code>validation</code> - The validation to perform on the file.
+<h3>Exceptions</h3>
+<a name="InvalidUserDataException"></a>
+<code>InvalidUserDataException</code> - When the file does not meet the given validation constraint.
+<p><strong>Return</strong><br/>
+The resolved file. Never returns null.</p>
+</BODY>
+</HTML>

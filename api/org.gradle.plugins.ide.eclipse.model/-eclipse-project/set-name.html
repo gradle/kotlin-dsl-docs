@@ -1,0 +1,20 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>EclipseProject.setName - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.eclipse.model</a>&nbsp;/&nbsp;<a href="index.html">EclipseProject</a>&nbsp;/&nbsp;<a href=".">setName</a><br/>
+<br/>
+<h1>setName</h1>
+<a name="org.gradle.plugins.ide.eclipse.model.EclipseProject$setName(kotlin.String)"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseProject$setName(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures eclipse project name. It is <strong>optional</strong> because the task should configure it correctly for you. By default it will try to use the <strong>project.name</strong> or prefix it with a part of a <strong>project.path</strong> to make sure the moduleName is unique in the scope of a multi-module build. The 'uniqueness' of a module name is required for correct import into Eclipse and the task will make sure the name is unique. 
+<p> The logic that makes sure project names are unique is available <strong>since</strong> 1.0-milestone-2 </p>
+<p> If your project has problems with unique names it is recommended to always run gradle eclipse from the root, e.g. for all subprojects, including generation of .classpath. If you run the generation of the eclipse project only for a single subproject then you may have different results because the unique names are calculated based on eclipse projects that are involved in the specific build run. </p>
+<p> If you update the project names then make sure you run gradle eclipse from the root, e.g. for all subprojects. The reason is that there may be subprojects that depend on the subproject with amended eclipse project name. So you want them to be generated as well because the project dependencies in .classpath need to refer to the amended project name. Basically, for non-trivial projects it is recommended to always run gradle eclipse from the root. </p>
+<p> For example see docs for EclipseProject</p>
+</p>
+</BODY>
+</HTML>

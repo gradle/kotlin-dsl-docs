@@ -1,0 +1,91 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TestSuiteTaskCollection - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.testing.base</a>&nbsp;/&nbsp;<a href=".">TestSuiteTaskCollection</a><br/>
+<br/>
+<h1>TestSuiteTaskCollection</h1>
+<code><span class="keyword">interface </span><span class="identifier">TestSuiteTaskCollection</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.platform.base/-binary-tasks-collection/index.html"><span class="identifier">BinaryTasksCollection</span></a></code>
+<p>Provides access to key tasks used by a test suite.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-run.html">getRun</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRun</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a></code>
+<p>The run task.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.platform.base/-binary-tasks-collection/create.html">create</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span> <span class="identifier">create</span><span class="symbol">(</span><span class="identifier" id="org.gradle.platform.base.BinaryTasksCollection$create(kotlin.String, java.lang.Class((org.gradle.platform.base.BinaryTasksCollection.create.T)), org.gradle.api.Action((org.gradle.platform.base.BinaryTasksCollection.create.T)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.platform.base.BinaryTasksCollection$create(kotlin.String, java.lang.Class((org.gradle.platform.base.BinaryTasksCollection.create.T)), org.gradle.api.Action((org.gradle.platform.base.BinaryTasksCollection.create.T)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.platform.base.BinaryTasksCollection$create(kotlin.String, java.lang.Class((org.gradle.platform.base.BinaryTasksCollection.create.T)), org.gradle.api.Action((org.gradle.platform.base.BinaryTasksCollection.create.T)))/config">config</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.platform.base/-binary-tasks-collection/get-build.html">getBuild</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuild</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a></code>
+<p>The task that can be used to assemble this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.platform.base/-binary-tasks-collection/get-check.html">getCheck</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCheck</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a></code>
+<p>The task that can be used to check this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.platform.base/-binary-tasks-collection/task-name.html">taskName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">taskName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.platform.base.BinaryTasksCollection$taskName(kotlin.String)/verb">verb</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">taskName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.platform.base.BinaryTasksCollection$taskName(kotlin.String, kotlin.String)/verb">verb</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.platform.base.BinaryTasksCollection$taskName(kotlin.String, kotlin.String)/object">object</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Generates a name for a task that performs some action on the binary.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm.test/-jvm-test-suite-binary-spec/-jvm-test-suite-tasks/index.html">JvmTestSuiteTasks</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">JvmTestSuiteTasks</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">TestSuiteTaskCollection</span></code>
+<p>Provides direct access to important build tasks of JVM test suites.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.test/-native-test-suite-binary-spec/-tasks-collection/index.html">TasksCollection</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TasksCollection</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">TestSuiteTaskCollection</span></code>
+<p>Provides access to key tasks used for building the binary.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>SelfResolvingDependency.resolve - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="index.html">SelfResolvingDependency</a>&nbsp;/&nbsp;<a href=".">resolve</a><br/>
+<br/>
+<h1>resolve</h1>
+<a name="org.gradle.api.artifacts.SelfResolvingDependency$resolve()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">resolve</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>Resolves this dependency. A org.gradle.api.artifacts.ProjectDependency is resolved with transitive equals true by this method.</p>
+<p><strong>Return</strong><br/>
+The files which make up this dependency.</p>
+<p><strong>See Also</strong><br/>
+#resolve(boolean)</p>
+<a name="org.gradle.api.artifacts.SelfResolvingDependency$resolve(kotlin.Boolean)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">resolve</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.SelfResolvingDependency$resolve(kotlin.Boolean)/transitive">transitive</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>Resolves this dependency by specifying the transitive mode. This mode has only an effect if the self resolved dependency is of type org.gradle.api.artifacts.ProjectDependency. In this case, if transitive is <code>false</code>, only the self resolving dependencies of the project configuration which are no project dependencies are resolved. If transitive is set to true, other project dependencies belonging to the configuration of the resolved project dependency are resolved recursively.</p>
+<h3>Parameters</h3>
+<a name="transitive"></a>
+<code>transitive</code> - Whether to resolve transitively. Has only an effect on a org.gradle.api.artifacts.ProjectDependency
+<p><strong>Return</strong><br/>
+The files which make up this dependency.</p>
+</BODY>
+</HTML>

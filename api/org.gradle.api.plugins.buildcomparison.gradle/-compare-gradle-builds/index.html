@@ -1,0 +1,117 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CompareGradleBuilds - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins.buildcomparison.gradle</a>&nbsp;/&nbsp;<a href=".">CompareGradleBuilds</a><br/>
+<br/>
+<h1>CompareGradleBuilds</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CompareGradleBuilds</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks/-verification-task/index.html"><span class="identifier">VerificationTask</span></a></code>
+<p>Executes two Gradle builds (that can be the same build) with specified versions and compares the outcomes. Please see the “Comparing Builds” chapter of the Gradle User Guide for more information.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">CompareGradleBuilds</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-d-e-f-a-u-l-t_-t-a-s-k-s.html">DEFAULT_TASKS</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">DEFAULT_TASKS</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-ignore-failures.html">getIgnoreFailures</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getIgnoreFailures</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether a comparison between non identical builds will fail the task execution.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-report-dir.html">getReportDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getReportDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The directory that will contain the HTML comparison report and any other report files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-source-build.html">getSourceBuild</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSourceBuild</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-gradle-build-invocation-spec/index.html"><span class="identifier">GradleBuildInvocationSpec</span></a></code>
+<p>The specification of how to invoke the source build. Defaults to <code><a href="../../org.gradle.api/-project/get-root-dir.html">project.rootDir</a></code> with the current Gradle version and the tasks “clean assemble”. The <code>projectDir</code> must be the project directory of the root project if this is a multi project build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-target-build.html">getTargetBuild</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTargetBuild</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-gradle-build-invocation-spec/index.html"><span class="identifier">GradleBuildInvocationSpec</span></a></code>
+<p>The specification of how to invoke the target build. Defaults to <code><a href="../../org.gradle.api/-project/get-root-dir.html">project.rootDir</a></code> with the current Gradle version and the tasks “clean assemble”. The <code>projectDir</code> must be the project directory of the root project if this is a multi project build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-ignore-failures.html">setIgnoreFailures</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setIgnoreFailures</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.buildcomparison.gradle.CompareGradleBuilds$setIgnoreFailures(kotlin.Boolean)/ignoreFailures">ignoreFailures</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets whether a comparison between non identical builds will fail the task execution.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-report-dir.html">setReportDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setReportDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.buildcomparison.gradle.CompareGradleBuilds$setReportDir(java.io.File)/reportDir">reportDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the directory that will contain the HTML comparison report and any other report files.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setReportDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.buildcomparison.gradle.CompareGradleBuilds$setReportDir(kotlin.Any)/reportDir">reportDir</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the directory that will contain the HTML comparison report and any other report files. The value will be evaluated by <code><a href="#">project.file()</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="source-build.html">sourceBuild</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sourceBuild</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.buildcomparison.gradle.CompareGradleBuilds$sourceBuild(org.gradle.api.Action((org.gradle.api.plugins.buildcomparison.gradle.GradleBuildInvocationSpec)))/config">config</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><a href="../-gradle-build-invocation-spec/index.html"><span class="identifier">GradleBuildInvocationSpec</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the source build. A Groovy closure can be used as the action. <pre><code> sourceBuild { gradleVersion = "1.1" } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="target-build.html">targetBuild</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">targetBuild</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.buildcomparison.gradle.CompareGradleBuilds$targetBuild(org.gradle.api.Action((org.gradle.api.plugins.buildcomparison.gradle.GradleBuildInvocationSpec)))/config">config</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><a href="../-gradle-build-invocation-spec/index.html"><span class="identifier">GradleBuildInvocationSpec</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the target build. A Groovy closure can be used as the action. <pre><code> targetBuild { gradleVersion = "1.1" } </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

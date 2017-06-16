@@ -1,0 +1,157 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CodeQualityExtension - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins.quality</a>&nbsp;/&nbsp;<a href=".">CodeQualityExtension</a><br/>
+<br/>
+<h1>CodeQualityExtension</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">CodeQualityExtension</span></code>
+<p>Base Code Quality Extension.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">CodeQualityExtension</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Base Code Quality Extension.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-reports-dir.html">getReportsDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getReportsDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The directory where reports will be generated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-source-sets.html">getSourceSets</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSourceSets</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.tasks/-source-set/index.html"><span class="identifier">SourceSet</span></a><span class="symbol">&gt;</span></code>
+<p>The source sets to be analyzed as part of the check and build tasks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-tool-version.html">getToolVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getToolVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The version of the code quality tool to be used.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-ignore-failures.html">isIgnoreFailures</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isIgnoreFailures</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether to allow the build to continue if there are warnings. Example: ignoreFailures = true</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-ignore-failures.html">setIgnoreFailures</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setIgnoreFailures</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeQualityExtension$setIgnoreFailures(kotlin.Boolean)/ignoreFailures">ignoreFailures</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Whether to allow the build to continue if there are warnings. Example: ignoreFailures = true</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-reports-dir.html">setReportsDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setReportsDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeQualityExtension$setReportsDir(java.io.File)/reportsDir">reportsDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The directory where reports will be generated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-source-sets.html">setSourceSets</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSourceSets</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeQualityExtension$setSourceSets(kotlin.collections.MutableCollection((org.gradle.api.tasks.SourceSet)))/sourceSets">sourceSets</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.tasks/-source-set/index.html"><span class="identifier">SourceSet</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The source sets to be analyzed as part of the check and build tasks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-tool-version.html">setToolVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setToolVersion</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeQualityExtension$setToolVersion(kotlin.String)/toolVersion">toolVersion</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The version of the code quality tool to be used.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-checkstyle-extension/index.html">CheckstyleExtension</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CheckstyleExtension</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">CodeQualityExtension</span></code>
+<p>Configuration options for the Checkstyle plugin.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-narc-extension/index.html">CodeNarcExtension</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CodeNarcExtension</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">CodeQualityExtension</span></code>
+<p>Configuration options for the CodeNarc plugin.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-find-bugs-extension/index.html">FindBugsExtension</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">FindBugsExtension</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">CodeQualityExtension</span></code>
+<p>Configuration options for the FindBugs plugin. All options have sensible defaults. See the <a href="#">FindBugs Manual</a> for additional information on these options. 
+<p>Below is a full configuration example. Since all properties have sensible defaults, typically only selected properties will be configured. </p>
+<pre><code> apply plugin: "java" apply plugin: "findbugs" findbugs { toolVersion = "2.0.1" sourceSets = [sourceSets.main] ignoreFailures = true reportsDir = file("$project.buildDir/findbugsReports") effort = "max" reportLevel = "high" visitors = ["FindSqlInjection", "SwitchFallthrough"] omitVisitors = ["FindNonShortCircuit"] includeFilter = file("$rootProject.projectDir/config/findbugs/includeFilter.xml") excludeFilter = file("$rootProject.projectDir/config/findbugs/excludeFilter.xml") excludeBugsFilter = file("$rootProject.projectDir/config/findbugs/excludeBugsFilter.xml") } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-j-depend-extension/index.html">JDependExtension</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JDependExtension</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">CodeQualityExtension</span></code>
+<p>Configuration options for the JDepend plugin.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-pmd-extension/index.html">PmdExtension</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PmdExtension</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">CodeQualityExtension</span></code>
+<p>Configuration options for the PMD plugin.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

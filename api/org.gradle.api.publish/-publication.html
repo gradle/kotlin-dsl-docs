@@ -1,0 +1,75 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Publication - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.api.publish</a>&nbsp;/&nbsp;<a href=".">Publication</a><br/>
+<br/>
+<h1>Publication</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">Publication</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
+<p>A publication is a description of a consumable representation of one or more artifacts, and possibly associated metadata.</p>
+<p><strong>Since</strong><br/>
+1.3</p>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../org.gradle.api/-named/get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The object's name. 
+<p> Must be constant for the life of the object.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../org.gradle.api.publish.ivy/-ivy-publication/index.html">IvyPublication</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">IvyPublication</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Publication</span></code>
+<p>A <code>IvyPublication</code> is the representation/configuration of how Gradle should publish something in Ivy format, to an Ivy repository. You directly add a named Ivy Publication the project's <code>publishing.publications</code> container by providing IvyPublication as the type. <pre><code> publishing { publications { myPublicationName(IvyPublication) { // Configure the publication here } } } </code></pre> 
+<p> The Ivy module identifying attributes of the publication are mapped as follows: </p>
+<ul> <li><code>module</code> - <code>project.name</code></li>
+ <li><code>organisation</code> - <code>project.group</code></li>
+ <li><code>revision</code> - <code>project.version</code></li>
+ <li><code>status</code> - <code>project.status</code></li>
+ </ul>
+  
+<p> For certain common use cases, it's often sufficient to specify the component to publish, using (<code><a href="../org.gradle.api.publish.ivy/-ivy-publication/from.html">#from(org.gradle.api.component.SoftwareComponent)</a></code>. The published component is used to determine which artifacts to publish, and which configurations and dependencies should be listed in the generated ivy descriptor file. </p>
+<p> You can add configurations to the generated ivy descriptor file, by supplying a Closure to the <code><a href="#">#configurations(org.gradle.api.Action)</a></code> method. </p>
+<p> To add additional artifacts to the set published, use the <code><a href="#">#artifact(Object)</a></code> and <code><a href="#">#artifact(Object, org.gradle.api.Action)</a></code> methods. You can also completely replace the set of published artifacts using <code><a href="#">#setArtifacts(Iterable)</a></code>. Together, these methods give you full control over the artifacts to be published. </p>
+<p> For any other tweaks to the publication, it is possible to modify the generated Ivy descriptor file prior to publication. This is done using the <code><a href="#">IvyModuleDescriptorSpec#withXml(org.gradle.api.Action)</a></code> method, normally via a Closure passed to the <code><a href="#">#descriptor(org.gradle.api.Action)</a></code> method. </p>
+ Example of publishing a java component with an added source jar and custom module description <pre><code> apply plugin: "java" apply plugin: "ivy-publish" task sourceJar(type: Jar) { from sourceSets.main.allJava } publishing { publications { myPublication(IvyPublication) { from components.java artifact(sourceJar) { type "source" extension "src.jar" conf "runtime" } descriptor.withXml { asNode().info[0].appendNode("description", "custom-description") } } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.api.publish.maven/-maven-publication/index.html">MavenPublication</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MavenPublication</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Publication</span></code>
+<p>A <code>MavenPublication</code> is the representation/configuration of how Gradle should publish something in Maven format. You directly add a named Maven Publication the project's <code>publishing.publications</code> container by providing MavenPublication as the type. <pre><code> publishing { publications { myPublicationName(MavenPublication) { // Configure the publication here } } } </code></pre> The default Maven POM identifying attributes are mapped as follows: <ul> <li><code>groupId</code> - <code>project.group</code></li>
+ <li><code>artifactId</code> - <code>project.name</code></li>
+ <li><code>version</code> - <code>project.version</code></li>
+ </ul>
+ 
+<p> For certain common use cases, it's often sufficient to specify the component to publish, and nothing more (<code><a href="../org.gradle.api.publish.maven/-maven-publication/from.html">#from(org.gradle.api.component.SoftwareComponent)</a></code>. The published component is used to determine which artifacts to publish, and which dependencies should be listed in the generated POM file. </p>
+<p> To add additional artifacts to the set published, use the <code><a href="#">#artifact(Object)</a></code> and <code><a href="#">#artifact(Object, org.gradle.api.Action)</a></code> methods. You can also completely replace the set of published artifacts using <code><a href="#">#setArtifacts(Iterable)</a></code>. Together, these methods give you full control over what artifacts will be published. </p>
+<p> For any other tweaks to the publication, it is possible to modify the generated POM prior to publication. This is done using the <code><a href="#">MavenPom#withXml(org.gradle.api.Action)</a></code> method of the POM returned via the <code><a href="../org.gradle.api.publish.maven/-maven-publication/get-pom.html">#getPom()</a></code> method, or directly by an action (or closure) passed into <code><a href="#">#pom(org.gradle.api.Action)</a></code>. </p>
+ Example of publishing a java module with a source artifact and custom POM description <pre><code> apply plugin: "java" apply plugin: "maven-publish" task sourceJar(type: Jar) { from sourceSets.main.allJava classifier "sources" } publishing { publications { myPublication(MavenPublication) { from components.java artifact sourceJar pom.withXml { asNode().appendNode('description', 'A demonstration of Maven POM customization') } } } } </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

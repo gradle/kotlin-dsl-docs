@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.language.rc - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.language.rc</a><br/>
+<br/>
+<h2>Package org.gradle.language.rc</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-windows-resource-set.html">WindowsResourceSet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">WindowsResourceSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.language.base/-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-header-exporting-source-set/index.html"><span class="identifier">HeaderExportingSourceSet</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-native-resource-set.html"><span class="identifier">NativeResourceSet</span></a></code>
+<p>A set of Windows Resource definition files. 
+<p>A Windows Resource set contains a set of script files, together with an optional set of header files.</p>
+ <pre><code> apply plugin: "windows-resources" model { components { main(NativeLibrarySpec) { sources { rc { source { srcDirs "src/main/rc" include "**/*.rc" } exportedHeaders { srcDirs "src/main/include" } } } } } } </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>SigningExtension.sign - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.signing</a>&nbsp;/&nbsp;<a href="index.html">SigningExtension</a>&nbsp;/&nbsp;<a href=".">sign</a><br/>
+<br/>
+<h1>sign</h1>
+<a name="org.gradle.plugins.signing.SigningExtension$sign(kotlin.Array((org.gradle.api.Task)))"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.plugins.signing.SigningExtension$sign(kotlin.Array((org.gradle.api.Task)))/tasks">tasks</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-sign/index.html"><span class="identifier">Sign</span></a><span class="symbol">&gt;</span></code>
+<p>Creates signing tasks that depend on and sign the "archive" produced by the given tasks. 
+<p>The created tasks will be named "sign<em>&lt;input task name capitalized&gt;</em>". That is, given a task with the name "jar" the created task will be named "signJar". </p>
+<p> If the task is not an org.gradle.api.tasks.bundling.AbstractArchiveTask, an InvalidUserDataException will be thrown.</p>
+ 
+<p> The signature artifact for the created task is added to the <code><a href="get-configuration.html"> </a></code>.</p>
+</p>
+<h3>Parameters</h3>
+<a name="tasks"></a>
+<code>tasks</code> - The tasks whose archives are to be signed
+<p><strong>Return</strong><br/>
+the created tasks.</p>
+<a name="org.gradle.plugins.signing.SigningExtension$sign(kotlin.Array((org.gradle.api.artifacts.Configuration)))"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.plugins.signing.SigningExtension$sign(kotlin.Array((org.gradle.api.artifacts.Configuration)))/configurations">configurations</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-sign/index.html"><span class="identifier">Sign</span></a><span class="symbol">&gt;</span></code>
+<p>Creates signing tasks that sign <code><a href="../../org.gradle.api.artifacts/-configuration/get-all-artifacts.html">all of the artifacts</a></code> of the given configurations. 
+<p>The created tasks will be named "sign<em>&lt;configuration name capitalized&gt;</em>". That is, given a configuration with the name "archives" the created task will be named "signArchives". The signature artifact for the created task is added to the <code><a href="get-configuration.html">for this settings object</a></code>.</p>
+</p>
+<h3>Parameters</h3>
+<a name="configurations"></a>
+<code>configurations</code> - The configurations whose archives are to be signed
+<p><strong>Return</strong><br/>
+the created tasks.</p>
+<a name="org.gradle.plugins.signing.SigningExtension$sign(kotlin.Array((org.gradle.api.artifacts.PublishArtifact)))"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.plugins.signing.SigningExtension$sign(kotlin.Array((org.gradle.api.artifacts.PublishArtifact)))/publishArtifacts">publishArtifacts</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts/-publish-artifact/index.html"><span class="identifier">PublishArtifact</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-sign-operation/index.html"><span class="identifier">SignOperation</span></a></code>
+<p>Digitally signs the publish artifacts, generating signature files alongside them. 
+<p>The project's default signatory and default signature type from the SigningExtension will be used to generate the signature. The returned SignOperation gives access to the created signature files. </p>
+<p> If there is no configured default signatory available, the sign operation will fail.</p>
+</p>
+<h3>Parameters</h3>
+<a name="publishArtifacts"></a>
+<code>publishArtifacts</code> - The publish artifacts to sign
+<p><strong>Return</strong><br/>
+The executed SignOperation</p>
+<a name="org.gradle.plugins.signing.SigningExtension$sign(kotlin.Array((java.io.File)))"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.plugins.signing.SigningExtension$sign(kotlin.Array((java.io.File)))/files">files</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-sign-operation/index.html"><span class="identifier">SignOperation</span></a></code>
+<p>Digitally signs the files, generating signature files alongside them. 
+<p>The project's default signatory and default signature type from the SigningExtension will be used to generate the signature. The returned SignOperation gives access to the created signature files. </p>
+<p> If there is no configured default signatory available, the sign operation will fail.</p>
+</p>
+<h3>Parameters</h3>
+<a name="files"></a>
+<code>files</code> - The files to sign.
+<p><strong>Return</strong><br/>
+The executed SignOperation.</p>
+<a name="org.gradle.plugins.signing.SigningExtension$sign(kotlin.String, kotlin.Array((java.io.File)))"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SigningExtension$sign(kotlin.String, kotlin.Array((java.io.File)))/classifier">classifier</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.plugins.signing.SigningExtension$sign(kotlin.String, kotlin.Array((java.io.File)))/files">files</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-sign-operation/index.html"><span class="identifier">SignOperation</span></a></code>
+<p>Digitally signs the files, generating signature files alongside them. 
+<p>The project's default signatory and default signature type from the SigningExtension will be used to generate the signature. The returned SignOperation gives access to the created signature files. </p>
+<p> If there is no configured default signatory available, the sign operation will fail.</p>
+</p>
+<h3>Parameters</h3>
+<a name="classifier"></a>
+<code>classifier</code> - The classifier to assign to the created signature artifacts.<a name="files"></a>
+<code>files</code> - The publish artifacts to sign.
+<p><strong>Return</strong><br/>
+The executed SignOperation.</p>
+<a name="org.gradle.plugins.signing.SigningExtension$sign(groovy.lang.Closure((kotlin.Any)))"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SigningExtension$sign(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-sign-operation/index.html"><span class="identifier">SignOperation</span></a></code>
+<p>Creates a new SignOperation using the given closure to configure it before executing it. 
+<p>The project's default signatory and default signature type from the SigningExtension will be used to generate the signature. The returned SignOperation gives access to the created signature files. </p>
+<p> If there is no configured default signatory available (and one is not explicitly specified in this operation's configuration), the sign operation will fail.</p>
+</p>
+<h3>Parameters</h3>
+<a name="closure"></a>
+<code>closure</code> - The configuration of the SignOperation.
+<p><strong>Return</strong><br/>
+The executed SignOperation.</p>
+</BODY>
+</HTML>

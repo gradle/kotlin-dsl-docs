@@ -1,0 +1,243 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DeploymentDescriptor - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ear.descriptor</a>&nbsp;/&nbsp;<a href=".">DeploymentDescriptor</a><br/>
+<br/>
+<h1>DeploymentDescriptor</h1>
+<code><span class="keyword">interface </span><span class="identifier">DeploymentDescriptor</span></code>
+<p>A deployment descriptor such as application.xml.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-application-name.html">getApplicationName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getApplicationName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The application name. Optional. Only valid with version 6.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-description.html">getDescription</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDescription</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The application description. Optional.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The application display name. Optional.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-file-name.html">getFileName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFileName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name of the descriptor file, typically "application.xml"</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-initialize-in-order.html">getInitializeInOrder</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getInitializeInOrder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether to initialize modules in the order they appear in the descriptor, with the exception of client modules. Optional. Only valid with version 6.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-library-directory.html">getLibraryDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLibraryDirectory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name of the directory to look for libraries in. Optional. If not specified, <code><a href="../../org.gradle.plugins.ear/-ear/get-lib-dir-name.html">org.gradle.plugins.ear.Ear#getLibDirName()</a></code> is used. Typically, this should be set via <code><a href="#">org.gradle.plugins.ear.EarPluginConvention#setLibDirName(String)</a></code> instead of this property when using the <code>ear</code> plugin.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-module-type-mappings.html">getModuleTypeMappings</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getModuleTypeMappings</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Mapping of module paths to module types. Non-null by default. For example, to specify that a module is a java module, set <code>moduleTypeMappings["myJavaModule.jar"] = "java"</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-modules.html">getModules</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getModules</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-ear-module/index.html"><span class="identifier">EarModule</span></a><span class="symbol">&gt;</span></code>
+<p>List of module descriptors. Must not be empty. Non-null and order-maintaining by default. Must maintain order if initializeInOrder is <code>true</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-security-roles.html">getSecurityRoles</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSecurityRoles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-ear-security-role/index.html"><span class="identifier">EarSecurityRole</span></a><span class="symbol">&gt;</span></code>
+<p>List of security roles. Optional. Non-null and order-maintaining by default.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-version.html">getVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The version of application.xml. Required. Valid versions are "1.3", "1.4", "5" and "6". Defaults to "6".</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="module.html">module</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">module</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$module(org.gradle.plugins.ear.descriptor.EarModule, kotlin.String)/module">module</span><span class="symbol">:</span>&nbsp;<a href="../-ear-module/index.html"><span class="identifier">EarModule</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$module(org.gradle.plugins.ear.descriptor.EarModule, kotlin.String)/type">type</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">DeploymentDescriptor</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">module</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$module(kotlin.String, kotlin.String)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$module(kotlin.String, kotlin.String)/type">type</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">DeploymentDescriptor</span></code>
+<p>Add a module to the deployment descriptor.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="read-from.html">readFrom</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">readFrom</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$readFrom(java.io.Reader)/reader">reader</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/Reader.html"><span class="identifier">Reader</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">DeploymentDescriptor</span></code>
+<p>Reads the deployment descriptor from a reader.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">readFrom</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$readFrom(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Reads the deployment descriptor from a file. The paths are resolved as defined by <code><a href="#">org.gradle.api.Project#file(Object)</a></code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="security-role.html">securityRole</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">securityRole</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$securityRole(org.gradle.plugins.ear.descriptor.EarSecurityRole)/role">role</span><span class="symbol">:</span>&nbsp;<a href="../-ear-security-role/index.html"><span class="identifier">EarSecurityRole</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">DeploymentDescriptor</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">securityRole</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$securityRole(kotlin.String)/role">role</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">DeploymentDescriptor</span></code>
+<p>Add a security role to the deployment descriptor.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">securityRole</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$securityRole(org.gradle.api.Action((org.gradle.plugins.ear.descriptor.EarSecurityRole)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-ear-security-role/index.html"><span class="identifier">EarSecurityRole</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">DeploymentDescriptor</span></code>
+<p>Add a security role to the deployment descriptor after configuring it with the given action.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-application-name.html">setApplicationName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setApplicationName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$setApplicationName(kotlin.String)/applicationName">applicationName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-description.html">setDescription</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setDescription</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$setDescription(kotlin.String)/description">description</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-display-name.html">setDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setDisplayName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$setDisplayName(kotlin.String)/displayName">displayName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-file-name.html">setFileName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setFileName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$setFileName(kotlin.String)/fileName">fileName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-initialize-in-order.html">setInitializeInOrder</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setInitializeInOrder</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$setInitializeInOrder(kotlin.Boolean)/initializeInOrder">initializeInOrder</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-library-directory.html">setLibraryDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setLibraryDirectory</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$setLibraryDirectory(kotlin.String)/libraryDirectory">libraryDirectory</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-module-type-mappings.html">setModuleTypeMappings</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setModuleTypeMappings</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$setModuleTypeMappings(kotlin.collections.MutableMap((kotlin.String, )))/moduleTypeMappings">moduleTypeMappings</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-modules.html">setModules</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setModules</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$setModules(kotlin.collections.MutableSet((org.gradle.plugins.ear.descriptor.EarModule)))/modules">modules</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-ear-module/index.html"><span class="identifier">EarModule</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-security-roles.html">setSecurityRoles</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setSecurityRoles</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$setSecurityRoles(kotlin.collections.MutableSet((org.gradle.plugins.ear.descriptor.EarSecurityRole)))/securityRoles">securityRoles</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-ear-security-role/index.html"><span class="identifier">EarSecurityRole</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-version.html">setVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setVersion</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$setVersion(kotlin.String)/version">version</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="web-module.html">webModule</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">webModule</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$webModule(kotlin.String, kotlin.String)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$webModule(kotlin.String, kotlin.String)/contextRoot">contextRoot</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">DeploymentDescriptor</span></code>
+<p>Add a web module to the deployment descriptor.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="with-xml.html">withXml</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withXml</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$withXml(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">DeploymentDescriptor</span></code>
+<p>Adds a closure to be called when the XML document has been created. The XML is passed to the closure as a parameter in form of a groovy.util.Node. The closure can modify the XML before it is written to the output file. This allows additional JavaEE version 6 elements like "data-source" or "resource-ref" to be included.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withXml</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$withXml(org.gradle.api.Action((org.gradle.api.XmlProvider)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api/-xml-provider/index.html"><span class="identifier">XmlProvider</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">DeploymentDescriptor</span></code>
+<p>Adds an action to be called when the XML document has been created. The XML is passed to the action as a parameter in form of a groovy.util.Node. The action can modify the XML before it is written to the output file. This allows additional JavaEE version 6 elements like "data-source" or "resource-ref" to be included.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="write-to.html">writeTo</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">writeTo</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$writeTo(java.io.Writer)/writer">writer</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/Writer.html"><span class="identifier">Writer</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">DeploymentDescriptor</span></code>
+<p>Writes the deployment descriptor into a writer.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">writeTo</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.DeploymentDescriptor$writeTo(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">DeploymentDescriptor</span></code>
+<p>Writes the deployment descriptor into a file. The paths are resolved as defined by <code><a href="#">org.gradle.api.Project#file(Object)</a></code></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

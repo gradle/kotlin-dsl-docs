@@ -1,0 +1,95 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>FlatDirectoryArtifactRepository - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.repositories</a>&nbsp;/&nbsp;<a href=".">FlatDirectoryArtifactRepository</a><br/>
+<br/>
+<h1>FlatDirectoryArtifactRepository</h1>
+<code><span class="keyword">interface </span><span class="identifier">FlatDirectoryArtifactRepository</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-artifact-repository/index.html"><span class="identifier">ArtifactRepository</span></a></code>
+<p>A repository that looks into a number of directories for artifacts. The artifacts are expected to be located in the root of the specified directories. The repository ignores any group/organization information specified in the dependency section of your build script. If you only use this kind of resolver you can specify your dependencies like <code>:junit:4.8.1</code> instead of <code>junit:junit:4.8.1</code>. 
+<p>To resolve a dependency, this resolver looks for one of the following files. It will return the first match it finds: </p>
+<ul> <li>[artifact]-[version].[ext] </li>
+<li>[artifact]-[version]-[classifier].[ext] </li>
+<li>[artifact].[ext] </li>
+<li>[artifact]-[classifier].[ext] </li>
+</ul>
+ So, for example, to resolve <code>:junit:junit:4.8.1</code>, this repository will look for <code>junit-4.8.1.jar</code> and then <code>junit.jar</code>.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="dir.html">dir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">dir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.FlatDirectoryArtifactRepository$dir(kotlin.Any)/dir">dir</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a directory where this repository will look for artifacts. 
+<p>The provided value are evaluated as per <code><a href="#">org.gradle.api.Project#file(Object)</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="dirs.html">dirs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">dirs</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.artifacts.repositories.FlatDirectoryArtifactRepository$dirs(kotlin.Array((kotlin.Any)))/dirs">dirs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds some directories where this repository will look for artifacts. 
+<p>The provided values are evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-dirs.html">getDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDirs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the directories where this repository will look for artifacts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-dirs.html">setDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setDirs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.FlatDirectoryArtifactRepository$setDirs(kotlin.collections.MutableSet((java.io.File)))/dirs">dirs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the directories where this repository will look for artifacts.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setDirs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.FlatDirectoryArtifactRepository$setDirs(kotlin.collections.MutableIterable((kotlin.Any)))/dirs">dirs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the directories where this repository will look for artifacts. 
+<p>The provided values are evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code>.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-artifact-repository/get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name for this repository. A name must be unique amongst a repository set. A default name is provided for the repository if none is provided. 
+<p>The name is used in logging output and error reporting to point to information related to this repository.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-artifact-repository/set-name.html">setName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.ArtifactRepository$setName(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the name for this repository. If this repository is to be added to an org.gradle.api.artifacts.ArtifactRepositoryContainer (including org.gradle.api.artifacts.dsl.RepositoryHandler), its name cannot be changed after it has been added to the container.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

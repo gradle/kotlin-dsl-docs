@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ScriptGenerator - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.jvm.application.scripts</a>&nbsp;/&nbsp;<a href=".">ScriptGenerator</a><br/>
+<br/>
+<h1>ScriptGenerator</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ScriptGenerator</span></code>
+<p>Generates a script to start a JVM application.</p>
+<p><strong>See Also</strong><br/>
+TemplateBasedScriptGenerator</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="generate-script.html">generateScript</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">generateScript</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.application.scripts.ScriptGenerator$generateScript(org.gradle.jvm.application.scripts.JavaAppStartScriptGenerationDetails, java.io.Writer)/details">details</span><span class="symbol">:</span>&nbsp;<a href="../-java-app-start-script-generation-details/index.html"><span class="identifier">JavaAppStartScriptGenerationDetails</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.jvm.application.scripts.ScriptGenerator$generateScript(org.gradle.jvm.application.scripts.JavaAppStartScriptGenerationDetails, java.io.Writer)/destination">destination</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/Writer.html"><span class="identifier">Writer</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Generate the script. 
+<p> Implementations should not close the given writer. It is the responsibility of the caller to close the stream.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-template-based-script-generator/index.html">TemplateBasedScriptGenerator</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TemplateBasedScriptGenerator</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ScriptGenerator</span></code>
+<p>Interface for generating scripts with the provided details based on a provided template.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

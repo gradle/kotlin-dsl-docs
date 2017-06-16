@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NativePlatform - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform.platform</a>&nbsp;/&nbsp;<a href=".">NativePlatform</a><br/>
+<br/>
+<h1>NativePlatform</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">NativePlatform</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.platform.base/-platform/index.html"><span class="identifier">Platform</span></a></code>
+<p>A target platform for building native binaries. Each target platform is given a name, and may optionally be given a specific Architecture and/or OperatingSystem to target. <pre><code> model { platforms { windows_x86 { architecture "i386" operatingSystem "windows" } } } </code></pre></p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="architecture.html">architecture</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">architecture</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.platform.NativePlatform$architecture(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the cpu architecture being targeted. 
+<p> The architecture is provided as a string name, which is translated into one of the supported architecture types. </p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-architecture.html">getArchitecture</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getArchitecture</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-architecture/index.html"><span class="identifier">Architecture</span></a></code>
+<p>The cpu architecture being targeted. Defaults to the default architecture produced by the tool chain.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-operating-system.html">getOperatingSystem</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOperatingSystem</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-operating-system/index.html"><span class="identifier">OperatingSystem</span></a></code>
+<p>The operating system being targeted. Defaults to the default operating system targeted by the tool chain (normally the current operating system).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="operating-system.html">operatingSystem</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">operatingSystem</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.platform.NativePlatform$operatingSystem(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the operating system being targeted. 
+<p> The operating system is provided as a string name, which is translated into one of the supported operating system types. </p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.platform.base/-platform/get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns a human consumable name for this platform.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.platform.base/-platform/get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

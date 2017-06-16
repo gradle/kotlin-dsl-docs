@@ -1,0 +1,185 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>JavaPluginConvention - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href=".">JavaPluginConvention</a><br/>
+<br/>
+<h1>JavaPluginConvention</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JavaPluginConvention</span></code>
+<p>Is mixed into the project when applying the org.gradle.api.plugins.JavaBasePlugin or the org.gradle.api.plugins.JavaPlugin.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">JavaPluginConvention</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.JavaPluginConvention$<init>(ProjectInternal, Instantiator)/project">project</span><span class="symbol">:</span>&nbsp;<span class="identifier">ProjectInternal</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.plugins.JavaPluginConvention$<init>(ProjectInternal, Instantiator)/instantiator">instantiator</span><span class="symbol">:</span>&nbsp;<span class="identifier">Instantiator</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-docs-dir.html">getDocsDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDocsDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns a file pointing to the root directory supposed to be used for all docs.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-docs-dir-name.html">getDocsDirName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDocsDirName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name of the docs directory. Can be a name or a path relative to the build dir.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project.html">getProject</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getProject</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ProjectInternal</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-source-compatibility.html">getSourceCompatibility</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSourceCompatibility</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-java-version/index.html"><span class="identifier">JavaVersion</span></a></code>
+<p>Returns the source compatibility used for compiling Java sources.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-source-sets.html">getSourceSets</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSourceSets</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-source-set-container.html"><span class="identifier">SourceSetContainer</span></a></code>
+<p>The source sets container.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-target-compatibility.html">getTargetCompatibility</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTargetCompatibility</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-java-version/index.html"><span class="identifier">JavaVersion</span></a></code>
+<p>Returns the target compatibility used for compiling Java sources.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-test-report-dir.html">getTestReportDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTestReportDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns a file pointing to the root directory to be used for reports.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-test-report-dir-name.html">getTestReportDirName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTestReportDirName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name of the test reports directory. Can be a name or a path relative to <code><a href="../../org.gradle.api.reporting/-reporting-extension/get-base-dir.html">org.gradle.api.reporting.ReportingExtension#getBaseDir</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-test-results-dir.html">getTestResultsDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTestResultsDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns a file pointing to the root directory of the test results.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-test-results-dir-name.html">getTestResultsDirName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTestResultsDirName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name of the test results directory. Can be a name or a path relative to the build dir.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="manifest.html">manifest</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">manifest</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.java.archives/-manifest/index.html"><span class="identifier">Manifest</span></a></code>
+<p>Creates a new instance of a Manifest.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">manifest</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.JavaPluginConvention$manifest(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.java.archives/-manifest/index.html"><span class="identifier">Manifest</span></a></code>
+<p>Creates and configures a new instance of a Manifest. The given closure configures the new manifest instance before it is returned.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">manifest</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.JavaPluginConvention$manifest(org.gradle.api.Action((org.gradle.api.java.archives.Manifest)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.java.archives/-manifest/index.html"><span class="identifier">Manifest</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.java.archives/-manifest/index.html"><span class="identifier">Manifest</span></a></code>
+<p>Creates and configures a new instance of a Manifest.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-docs-dir-name.html">setDocsDirName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDocsDirName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.JavaPluginConvention$setDocsDirName(kotlin.String)/docsDirName">docsDirName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-source-compatibility.html">setSourceCompatibility</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSourceCompatibility</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.JavaPluginConvention$setSourceCompatibility(kotlin.Any)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSourceCompatibility</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.JavaPluginConvention$setSourceCompatibility(org.gradle.api.JavaVersion)/value">value</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-java-version/index.html"><span class="identifier">JavaVersion</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the source compatibility used for compiling Java sources.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-target-compatibility.html">setTargetCompatibility</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTargetCompatibility</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.JavaPluginConvention$setTargetCompatibility(kotlin.Any)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTargetCompatibility</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.JavaPluginConvention$setTargetCompatibility(org.gradle.api.JavaVersion)/value">value</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-java-version/index.html"><span class="identifier">JavaVersion</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the target compatibility used for compiling Java sources.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-test-report-dir-name.html">setTestReportDirName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTestReportDirName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.JavaPluginConvention$setTestReportDirName(kotlin.String)/testReportDirName">testReportDirName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-test-results-dir-name.html">setTestResultsDirName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTestResultsDirName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.JavaPluginConvention$setTestResultsDirName(kotlin.String)/testResultsDirName">testResultsDirName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="source-sets.html">sourceSets</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sourceSets</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.JavaPluginConvention$sourceSets(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Configures the source sets of this project. 
+<p>The given closure is executed to configure the SourceSetContainer. The SourceSetContainer is passed to the closure as its delegate. </p>
+<p> See the example below how org.gradle.api.tasks.SourceSet 'main' is accessed and how the org.gradle.api.file.SourceDirectorySet 'java' is configured to exclude some package from compilation. </p>
+<pre><code> apply plugin: 'java' sourceSets { main { java { exclude 'some/unwanted/package/**' } } } </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

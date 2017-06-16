@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ExecResult - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.process</a>&nbsp;/&nbsp;<a href=".">ExecResult</a><br/>
+<br/>
+<h1>ExecResult</h1>
+<code><span class="keyword">interface </span><span class="identifier">ExecResult</span></code>
+<p>Represents the result of running an external process.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="assert-normal-exit-value.html">assertNormalExitValue</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">assertNormalExitValue</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ExecResult</span></code>
+<p>Throws an org.gradle.process.internal.ExecException if the process exited with a non-zero exit value.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-exit-value.html">getExitValue</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExitValue</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>Returns the exit value of the process.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="rethrow-failure.html">rethrowFailure</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">rethrowFailure</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ExecResult</span></code>
+<p>Re-throws any failure executing this process.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,153 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>EclipseProject - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.model.eclipse</a>&nbsp;/&nbsp;<a href=".">EclipseProject</a><br/>
+<br/>
+<h1>EclipseProject</h1>
+<code><span class="keyword">interface </span><span class="identifier">EclipseProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-hierarchical-eclipse-project/index.html"><span class="identifier">HierarchicalEclipseProject</span></a></code>
+<p>The complete model of an Eclipse project. 
+<p>Note that the names of Eclipse projects are unique, and can be used as an identifier for the project.</p>
+</p>
+<p><strong>Since</strong><br/>
+1.0-milestone-3</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-build-commands.html">getBuildCommands</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildCommands</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-eclipse-build-command/index.html"><span class="identifier">EclipseBuildCommand</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the Eclipse build commands configured on the project. 
+<p> Some build commands are automatically added to the result based on the Gradle plugins applied on the project. For example, if the project applies the 'java' plugin the result will contain the <code>"org.eclipse.jdt.core.javabuilder"</code> build command. Note, that the exact list of automatically added build commands is not part of the API and can vary between Gradle releases. </p>
+<p> The result can be customized via the 'eclipse' plugin configuration.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-children.html">getChildren</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getChildren</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">EclipseProject</span><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-classpath.html">getClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getClasspath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-eclipse-external-dependency.html"><span class="identifier">EclipseExternalDependency</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the external dependencies which make up the classpath of this project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-classpath-containers.html">getClasspathContainers</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getClasspathContainers</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-eclipse-classpath-container/index.html"><span class="identifier">EclipseClasspathContainer</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the Eclipse classpath containers defined on the project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-gradle-project.html">getGradleProject</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGradleProject</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-gradle-project/index.html"><span class="identifier">GradleProject</span></a></code>
+<p>The gradle project that is associated with this project. Typically, a single Eclipse project corresponds to a single gradle project. 
+<p> See HasGradleProject</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-java-source-settings.html">getJavaSourceSettings</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getJavaSourceSettings</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-eclipse-java-source-settings/index.html"><span class="identifier">EclipseJavaSourceSettings</span></a></code>
+<p>Returns the Java source settings for this project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-output-location.html">getOutputLocation</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOutputLocation</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-eclipse-output-location/index.html"><span class="identifier">EclipseOutputLocation</span></a></code>
+<p>Returns the output location of this project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-parent.html">getParent</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getParent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">EclipseProject</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project-natures.html">getProjectNatures</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectNatures</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-eclipse-project-nature/index.html"><span class="identifier">EclipseProjectNature</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the Eclipse natures configured on the project. 
+<p> Some natures are automatically added to the result based on the Gradle plugins applied on the project. For example, if the project applies the 'java' plugin the result will contain the <code>"org.eclipse.jdt.core.javanature"</code> entry. Note, that the exact list of automatically added natures is not part of the API and can vary between Gradle releases. </p>
+<p> The result can be customized via the 'eclipse' plugin configuration.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-hierarchical-eclipse-project/get-linked-resources.html">getLinkedResources</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLinkedResources</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-eclipse-linked-resource/index.html"><span class="identifier">EclipseLinkedResource</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the linked resources for this project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-hierarchical-eclipse-project/get-project-dependencies.html">getProjectDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-eclipse-project-dependency/index.html"><span class="identifier">EclipseProjectDependency</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the project dependencies for this project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-hierarchical-eclipse-project/get-project-directory.html">getProjectDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectDirectory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the project directory for this project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-hierarchical-eclipse-project/get-source-directories.html">getSourceDirectories</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSourceDirectories</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-eclipse-source-directory/index.html"><span class="identifier">EclipseSourceDirectory</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the source directories for this project.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ArtifactTypeDefinition - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.type</a>&nbsp;/&nbsp;<a href=".">ArtifactTypeDefinition</a><br/>
+<br/>
+<h1>ArtifactTypeDefinition</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ArtifactTypeDefinition</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.attributes/-has-attributes/index.html"><span class="identifier">HasAttributes</span></a><span class="symbol">, </span><a href="../../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
+<p>Meta-data about a particular type of artifacts.</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-j-a-r_-t-y-p-e.html">JAR_TYPE</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">JAR_TYPE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Represents a JAR file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-j-v-m_-c-l-a-s-s_-d-i-r-e-c-t-o-r-y.html">JVM_CLASS_DIRECTORY</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">JVM_CLASS_DIRECTORY</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Represents a directory tree containing class files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-j-v-m_-r-e-s-o-u-r-c-e-s_-d-i-r-e-c-t-o-r-y.html">JVM_RESOURCES_DIRECTORY</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">JVM_RESOURCES_DIRECTORY</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Represents a directory tree containing jvm classpath resource files.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-attributes.html">getAttributes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAttributes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.attributes/-attribute-container/index.html"><span class="identifier">AttributeContainer</span></a></code>
+<p>Defines the set of attributes to apply to a component that is packaged as an artifact of this type, when no other attributes are defined. For example, these attributes are applied when a Maven module contains an artifact with one of the extensions listed in <code><a href="get-file-name-extensions.html">#getFileNameExtensions()</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-file-name-extensions.html">getFileNameExtensions</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFileNameExtensions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the set of file name extensions that should be mapped to this artifact type. Defaults to the name of this type.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-named/get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The object's name. 
+<p> Must be constant for the life of the object.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>OsgiPluginConvention.osgiManifest - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins.osgi</a>&nbsp;/&nbsp;<a href="index.html">OsgiPluginConvention</a>&nbsp;/&nbsp;<a href=".">osgiManifest</a><br/>
+<br/>
+<h1>osgiManifest</h1>
+<a name="org.gradle.api.plugins.osgi.OsgiPluginConvention$osgiManifest()"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">osgiManifest</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-osgi-manifest/index.html"><span class="identifier">OsgiManifest</span></a></code>
+<p>Creates a new instance of org.gradle.api.plugins.osgi.OsgiManifest. The returned object is preconfigured with: <pre><code> version: project.version name: project.archivesBaseName symbolicName: project.group + "." + project.archivesBaseName (see below for exceptions to this rule) </code></pre> The symbolic name is usually the group + "." + archivesBaseName, with the following exceptions <ul> <li>if group has only one section (no dots) and archivesBaseName is not null then the first package name with classes is returned. eg. commons-logging:commons-logging -&gt; org.apache.commons.logging</li>
+ <li>if archivesBaseName is equal to last section of group then group is returned. eg. org.gradle:gradle -&gt; org.gradle</li>
+ <li>if archivesBaseName starts with last section of group that portion is removed. eg. org.gradle:gradle-core -&gt; org.gradle.core</li>
+ </ul>
+</p>
+<a name="org.gradle.api.plugins.osgi.OsgiPluginConvention$osgiManifest(groovy.lang.Closure((kotlin.Any)))"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">osgiManifest</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.osgi.OsgiPluginConvention$osgiManifest(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-osgi-manifest/index.html"><span class="identifier">OsgiManifest</span></a></code>
+<p>Creates and configures a new instance of an org.gradle.api.plugins.osgi.OsgiManifest . The closure configures the new manifest instance before it is returned.</p>
+<a name="org.gradle.api.plugins.osgi.OsgiPluginConvention$osgiManifest(org.gradle.api.Action((org.gradle.api.plugins.osgi.OsgiManifest)))"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">osgiManifest</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.osgi.OsgiPluginConvention$osgiManifest(org.gradle.api.Action((org.gradle.api.plugins.osgi.OsgiManifest)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-osgi-manifest/index.html"><span class="identifier">OsgiManifest</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-osgi-manifest/index.html"><span class="identifier">OsgiManifest</span></a></code>
+<p>Creates and configures a new instance of an org.gradle.api.plugins.osgi.OsgiManifest. The action configures the new manifest instance before it is returned.</p>
+<p><strong>Since</strong><br/>
+3.5</p>
+</BODY>
+</HTML>

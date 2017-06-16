@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Task.dependsOn - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">Task</a>&nbsp;/&nbsp;<a href=".">dependsOn</a><br/>
+<br/>
+<h1>dependsOn</h1>
+<a name="org.gradle.api.Task$dependsOn(kotlin.Array((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">dependsOn</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.Task$dependsOn(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">Task</span></a></code>
+<p>
+<p>Adds the given dependencies to this task. See <a href="#">here</a> for a description of the types of objects which can be used as task dependencies.</p>
+</p>
+<h3>Parameters</h3>
+<a name="paths"></a>
+<code>paths</code> - The dependencies to add to this task. The path can be defined by: <li>A <code>String</code>, <code>CharSequence</code> or <code>groovy.lang.GString</code> task path or name. A relative path is interpreted relative to the task's Project. This allows you to refer to tasks in other projects.</li>
+ <li>A Task.</li>
+ <li>A closure. The closure may take a <code>Task</code> as parameter. It may return any of the types listed here. Its return value is recursively converted to tasks. A <code>null</code> return value is treated as an empty collection.</li>
+ <li>A TaskDependency object.</li>
+ <li>A org.gradle.api.tasks.TaskReference object.</li>
+ <li>A Buildable object.</li>
+ <li>A <code>Iterable</code>, <code>Collection</code>, <code>Map</code> or array. May contain any of the types listed here. The elements of the iterable/collection/map/array are recursively converted to tasks.</li>
+ <li>A <code>Callable</code>. The <code>call()</code> method may return any of the types listed here. Its return value is recursively converted to tasks. A <code>null</code> return value is treated as an empty collection.</li>
+ <li>Anything else is treated as a failure.</li>
+<p><strong>Return</strong><br/>
+the task object this method is applied to</p>
+</BODY>
+</HTML>

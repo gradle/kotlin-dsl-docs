@@ -1,0 +1,81 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>SignatorySupport - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.signing.signatory</a>&nbsp;/&nbsp;<a href=".">SignatorySupport</a><br/>
+<br/>
+<h1>SignatorySupport</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">SignatorySupport</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-signatory/index.html"><span class="identifier">Signatory</span></a></code>
+<p>Convenience base class for Signatory implementations.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">SignatorySupport</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Convenience base class for Signatory implementations.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="sign.html">sign</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.signatory.SignatorySupport$sign(java.io.InputStream)/toSign">toSign</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-signatory/get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>
+<p>An identifying name for this signatory.</p>
+ 
+<p>The name must be constant for the life of the signatory and should uniquely identify it within a project.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-signatory/sign.html">sign</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.signatory.Signatory$sign(java.io.InputStream, java.io.OutputStream)/toSign">toSign</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.signing.signatory.Signatory$sign(java.io.InputStream, java.io.OutputStream)/destination">destination</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Exhausts <code>toSign</code>, and writes the signature to <code>signatureDestination</code>. The caller is responsible for closing the streams, though the output WILL be flushed.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.plugins.signing.signatory.pgp/-pgp-signatory/index.html">PgpSignatory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PgpSignatory</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">SignatorySupport</span></code>
+<p>PGP signatory from PGP key and password.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

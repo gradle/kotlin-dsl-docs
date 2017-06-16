@@ -1,0 +1,18 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>EclipseWtp.<init> - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.eclipse.model</a>&nbsp;/&nbsp;<a href="index.html">EclipseWtp</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.gradle.plugins.ide.eclipse.model.EclipseWtp$&lt;init&gt;()"></a>
+<code><span class="identifier">EclipseWtp</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Enables fine-tuning wtp/wst details of the Eclipse plugin 
+<p> For projects applying the eclipse plugin and either one of the ear or war plugins, this plugin is auto-applied. </p>
+<p> More interesting examples you will find in docs for EclipseWtpComponent and EclipseWtpFacet </p>
+<pre><code> apply plugin: 'war' //or 'ear' or 'java' apply plugin: 'eclipse-wtp' eclipse { //if you want parts of paths in resulting file(s) to be replaced by variables (files): pathVariables 'GRADLE_HOME': file('/best/software/gradle'), 'TOMCAT_HOME': file('../tomcat') wtp { component { //for examples see docs for EclipseWtpComponent } facet { //for examples see docs for EclipseWtpFacet } } } </code></pre></p>
+</BODY>
+</HTML>

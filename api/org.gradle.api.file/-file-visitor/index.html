@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>FileVisitor - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href=".">FileVisitor</a><br/>
+<br/>
+<h1>FileVisitor</h1>
+<code><span class="keyword">interface </span><span class="identifier">FileVisitor</span></code>
+<p>
+<p>A <code>FileVisitor</code> is used to visit each of the files in a FileTree.</p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="visit-dir.html">visitDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">visitDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileVisitor$visitDir(org.gradle.api.file.FileVisitDetails)/dirDetails">dirDetails</span><span class="symbol">:</span>&nbsp;<a href="../-file-visit-details/index.html"><span class="identifier">FileVisitDetails</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Visits a directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="visit-file.html">visitFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">visitFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileVisitor$visitFile(org.gradle.api.file.FileVisitDetails)/fileDetails">fileDetails</span><span class="symbol">:</span>&nbsp;<a href="../-file-visit-details/index.html"><span class="identifier">FileVisitDetails</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Visits a file.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-empty-file-visitor/index.html">EmptyFileVisitor</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">EmptyFileVisitor</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">FileVisitor</span></code>
+<p>The EmptyFileVisitor can be extends by implementations that only require to implement one of the 2 visit methods (dir or file). This is just to limit the amount of code clutter when not both visit methods need to be implemented.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-reproducible-file-visitor/index.html">ReproducibleFileVisitor</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ReproducibleFileVisitor</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">FileVisitor</span></code>
+<p>Visitor which can request a reproducible file order.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

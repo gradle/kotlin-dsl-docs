@@ -1,0 +1,15 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BinaryTasks.<init> - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.platform.base</a>&nbsp;/&nbsp;<a href="index.html">BinaryTasks</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.gradle.platform.base.BinaryTasks$&lt;init&gt;()"></a>
+<code><span class="identifier">BinaryTasks</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Declares the tasks to build a custom org.gradle.platform.base.BinarySpec binary. The following example demonstrates how to register multiple tasks for custom binary using a plugin with a org.gradle.platform.base.BinaryTasks annotation. <pre><code> @Managed interface SampleComponent extends ComponentSpec {} @Managed interface SampleBinary extends BinarySpec {} apply plugin: MyCustomBinariesPlugin class MyCustomBinaryCreationTask extends DefaultTask { @TaskAction void build() { //building the binary } } class MyCustomBinariesPlugin extends RuleSource { @ComponentType void register(TypeBuilder&lt;SampleBinary&gt; builder) {} @BinaryTasks void createBinaryTasks(ModelMap&lt;Task&gt; tasks, SampleBinary binary) { tasks.create("${binary.name}Task1", MyCustomBinaryCreationTask) tasks.create("${binary.name}Task2") { dependsOn "${binary.name}Task1" } } } </code></pre></p>
+</BODY>
+</HTML>

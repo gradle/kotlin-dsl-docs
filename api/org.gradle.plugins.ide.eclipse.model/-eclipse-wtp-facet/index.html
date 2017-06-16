@@ -1,0 +1,94 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>EclipseWtpFacet - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.eclipse.model</a>&nbsp;/&nbsp;<a href=".">EclipseWtpFacet</a><br/>
+<br/>
+<h1>EclipseWtpFacet</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">EclipseWtpFacet</span></code>
+<p>Enables fine-tuning wtp facet details of the Eclipse plugin 
+<p> Advanced configuration closures beforeMerged and whenMerged receive WtpFacet object as parameter. </p>
+<pre><code> apply plugin: 'war' //or 'ear' or 'java' apply plugin: 'eclipse-wtp' eclipse { wtp { facet { //you can add some extra wtp facets; mandatory keys: 'name', 'version': facet name: 'someCoolFacet', version: '1.3' file { //if you want to mess with the resulting XML in whatever way you fancy withXml { def node = it.asNode() node.appendNode('xml', 'is what I love') } //beforeMerged and whenMerged closures are the highest voodoo for the tricky edge cases. //the type passed to the closures is WtpFacet //closure executed after wtp facet file content is loaded from existing file //but before gradle build information is merged beforeMerged { wtpFacet -&gt; //tinker with WtpFacet here } //closure executed after wtp facet file content is loaded from existing file //and after gradle build information is merged whenMerged { wtpFacet -&gt; //you can tinker with the WtpFacet here } } } } } </code></pre></p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">EclipseWtpFacet</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpFacet$<init>(org.gradle.plugins.ide.api.XmlFileContentMerger)/file">file</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.ide.api/-xml-file-content-merger/index.html"><span class="identifier">XmlFileContentMerger</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="facet.html">facet</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">facet</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpFacet$facet(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a facet. 
+<p> For examples see docs for EclipseWtpFacet</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="file.html">file</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpFacet$file(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Enables advanced configuration like tinkering with the output XML or affecting the way existing wtp facet file content is merged with gradle build information 
+<p> The object passed to whenMerged{} and beforeMerged{} closures is of type WtpFacet </p>
+<p> For example see docs for EclipseWtpFacet</p>
+</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpFacet$file(org.gradle.api.Action((org.gradle.plugins.ide.api.XmlFileContentMerger)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.plugins.ide.api/-xml-file-content-merger/index.html"><span class="identifier">XmlFileContentMerger</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Enables advanced configuration like tinkering with the output XML or affecting the way existing wtp facet file content is merged with gradle build information. 
+<p> For example see docs for EclipseWtpFacet</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-facets.html">getFacets</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getFacets</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-facet/index.html"><span class="identifier">Facet</span></a><span class="symbol">&gt;</span></code>
+<p>The facets to be added as elements. 
+<p> For examples see docs for EclipseWtpFacet</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-file.html">getFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.plugins.ide.api/-xml-file-content-merger/index.html"><span class="identifier">XmlFileContentMerger</span></a></code>
+<p>See <code><a href="#">#file(Action)</a></code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="merge-xml-facet.html">mergeXmlFacet</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">mergeXmlFacet</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpFacet$mergeXmlFacet(org.gradle.plugins.ide.eclipse.model.WtpFacet)/xmlFacet">xmlFacet</span><span class="symbol">:</span>&nbsp;<a href="../-wtp-facet/index.html"><span class="identifier">WtpFacet</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-facets.html">setFacets</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setFacets</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.EclipseWtpFacet$setFacets(kotlin.collections.MutableList((org.gradle.plugins.ide.eclipse.model.Facet)))/facets">facets</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-facet/index.html"><span class="identifier">Facet</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

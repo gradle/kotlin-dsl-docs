@@ -1,0 +1,347 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.plugins.ide.eclipse.model - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.plugins.ide.eclipse.model</a><br/>
+<br/>
+<h2>Package org.gradle.plugins.ide.eclipse.model</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-abstract-classpath-entry/index.html">AbstractClasspathEntry</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractClasspathEntry</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-classpath-entry/index.html"><span class="identifier">ClasspathEntry</span></a></code>
+<p>Common superclass for all ClasspathEntry instances.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-abstract-library/index.html">AbstractLibrary</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-classpath-entry/index.html"><span class="identifier">AbstractClasspathEntry</span></a></code>
+<p>Common superclass for the library elements.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-access-rule/index.html">AccessRule</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">AccessRule</span></code>
+<p>Access rule associated to a classpath entry.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-build-command/index.html">BuildCommand</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BuildCommand</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code>
+<p>A build command.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-classpath/index.html">Classpath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Classpath</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">XmlPersistableConfigurationObject</span></code>
+<p>Represents the customizable elements of an eclipse classpath file. (via XML hooks everything is customizable).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-classpath-entry/index.html">ClasspathEntry</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ClasspathEntry</span></code>
+<p>Represents an entry in the Eclipse classpath.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-container/index.html">Container</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Container</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-classpath-entry/index.html"><span class="identifier">AbstractClasspathEntry</span></a></code>
+<p>A container classpath entry.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-eclipse-classpath/index.html">EclipseClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">EclipseClasspath</span></code>
+<p>The build path settings for the generated Eclipse project. Used by the org.gradle.plugins.ide.eclipse.GenerateEclipseClasspath task to generate an Eclipse .classpath file. 
+<p> The following example demonstrates the various configuration options. Keep in mind that all properties have sensible defaults; only configure them explicitly if the defaults don't match your needs. </p>
+<pre><code> apply plugin: 'java' apply plugin: 'eclipse' configurations { provided someBoringConfig } eclipse { //if you want parts of paths in resulting file to be replaced by variables (files): pathVariables 'GRADLE_HOME': file('/best/software/gradle'), 'TOMCAT_HOME': file('../tomcat') classpath { //you can tweak the classpath of the Eclipse project by adding extra configurations: plusConfigurations += [ configurations.provided ] //you can also remove configurations from the classpath: minusConfigurations += [ configurations.someBoringConfig ] //if you want to append extra containers: containers 'someFriendlyContainer', 'andYetAnotherContainer' //customizing the classes output directory: defaultOutputDir = file('build-eclipse') //default settings for downloading sources and Javadoc: downloadSources = true downloadJavadoc = false } } </code></pre> For tackling edge cases, users can perform advanced configuration on the resulting XML file. It is also possible to affect the way that the Eclipse plugin merges the existing configuration via beforeMerged and whenMerged closures. 
+<p> The beforeMerged and whenMerged closures receive a Classpath object. </p>
+<p> Examples of advanced configuration: </p>
+<pre><code> apply plugin: 'java' apply plugin: 'eclipse' eclipse { classpath { file { //if you want to mess with the resulting XML in whatever way you fancy withXml { def node = it.asNode() node.appendNode('xml', 'is what I love') } //closure executed after .classpath content is loaded from existing file //but before gradle build information is merged beforeMerged { classpath -&gt; //you can tinker with the Classpath here } //closure executed after .classpath content is loaded from existing file //and after gradle build information is merged whenMerged { classpath -&gt; //you can tinker with the Classpath here } } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-eclipse-jdt/index.html">EclipseJdt</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">EclipseJdt</span></code>
+<p>Enables fine-tuning jdt details of the Eclipse plugin <pre><code> apply plugin: 'java' apply plugin: 'eclipse' eclipse { jdt { //if you want to alter the java versions (by default they are configured with gradle java plugin settings): sourceCompatibility = 1.6 targetCompatibility = 1.5 javaRuntimeName = "J2SE-1.5" file { //whenMerged closure is the highest voodoo //and probably should be used only to solve tricky edge cases. //the type passed to the closure is Jdt //closure executed after jdt file content is loaded from existing file //and after gradle build information is merged whenMerged { jdt //you can tinker with the Jdt here } //withProperties allows addition of properties not currently //modeled by Gradle withProperties { properties -&gt; //you can tinker with the java.util.Properties here } } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-eclipse-model/index.html">EclipseModel</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">EclipseModel</span></code>
+<p>DSL-friendly model of the Eclipse project information. First point of entry for customizing Eclipse project generation. <pre><code> apply plugin: 'java' apply plugin: 'eclipse' apply plugin: 'eclipse-wtp' //for web projects only eclipse { pathVariables 'GRADLE_HOME': file('/best/software/gradle'), 'TOMCAT_HOME': file('../tomcat') project { //see docs for EclipseProject } classpath { //see docs for EclipseClasspath } wtp { //see docs for EclipseWtp } } </code></pre> More examples in docs for EclipseProject, EclipseClasspath, EclipseWtp</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-eclipse-project/index.html">EclipseProject</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">EclipseProject</span></code>
+<p>Enables fine-tuning project details (.project file) of the Eclipse plugin 
+<p> Example of use with a blend of all possible properties. Bear in mind that usually you don't have configure eclipse project directly because Gradle configures it for free! </p>
+<pre><code> apply plugin: 'java' apply plugin: 'eclipse' eclipse { project { //if you don't like the name Gradle has chosen name = 'someBetterName' //if you want to specify the Eclipse project's comment comment = 'Very interesting top secret project' //if you want to append some extra referenced projects in a declarative fashion: referencedProjects 'someProject', 'someOtherProject' //if you want to assign referenced projects referencedProjects = ['someProject'] as Set //if you want to append some extra natures in a declarative fashion: natures 'some.extra.eclipse.nature', 'some.another.interesting.nature' //if you want to assign natures in a groovy fashion: natures = ['some.extra.eclipse.nature', 'some.another.interesting.nature'] //if you want to append some extra build command: buildCommand 'buildThisLovelyProject' //if you want to append a build command with parameters: buildCommand 'buildItWithTheArguments', argumentOne: "I'm first", argumentTwo: "I'm second" //if you want to create an extra link in the eclipse project, //by location uri: linkedResource name: 'someLinkByLocationUri', type: 'someLinkType', locationUri: 'file://someUri' //by location: linkedResource name: 'someLinkByLocation', type: 'someLinkType', location: '/some/location' //if you don't want any node_modules folder to appear in Eclipse, you can filter it out: resourceFilter { appliesTo = 'FOLDERS' type = 'EXCLUDE_ALL' matcher { id = 'org.eclipse.ui.ide.multiFilter' arguments = '1.0-name-matches-false-false-node_modules' } } } } </code></pre> For tackling edge cases users can perform advanced configuration on resulting XML file. It is also possible to affect the way eclipse plugin merges the existing configuration via beforeMerged and whenMerged closures. 
+<p> beforeMerged and whenMerged closures receive Project object </p>
+<p> Examples of advanced configuration: </p>
+<pre><code> apply plugin: 'java' apply plugin: 'eclipse' eclipse { project { file { //if you want to mess with the resulting XML in whatever way you fancy withXml { def node = it.asNode() node.appendNode('xml', 'is what I love') } //closure executed after .project content is loaded from existing file //but before gradle build information is merged beforeMerged { project -&gt; //if you want skip merging natures... (a very abstract example) project.natures.clear() } //closure executed after .project content is loaded from existing file //and after gradle build information is merged whenMerged { project -&gt; //you can tinker with the Project here } } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-eclipse-wtp/index.html">EclipseWtp</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">EclipseWtp</span></code>
+<p>Enables fine-tuning wtp/wst details of the Eclipse plugin 
+<p> For projects applying the eclipse plugin and either one of the ear or war plugins, this plugin is auto-applied. </p>
+<p> More interesting examples you will find in docs for EclipseWtpComponent and EclipseWtpFacet </p>
+<pre><code> apply plugin: 'war' //or 'ear' or 'java' apply plugin: 'eclipse-wtp' eclipse { //if you want parts of paths in resulting file(s) to be replaced by variables (files): pathVariables 'GRADLE_HOME': file('/best/software/gradle'), 'TOMCAT_HOME': file('../tomcat') wtp { component { //for examples see docs for EclipseWtpComponent } facet { //for examples see docs for EclipseWtpFacet } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-eclipse-wtp-component/index.html">EclipseWtpComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">EclipseWtpComponent</span></code>
+<p>Enables fine-tuning wtp component details of the Eclipse plugin 
+<p> Example of use with a blend of all possible properties. Bear in mind that usually you don't have to configure them directly because Gradle configures it for free! </p>
+<pre><code> apply plugin: 'war' //or 'ear' or 'java' apply plugin: 'eclipse-wtp' configurations { someInterestingConfiguration anotherConfiguration } eclipse { //if you want parts of paths in resulting file(s) to be replaced by variables (files): pathVariables 'GRADLE_HOME': file('/best/software/gradle'), 'TOMCAT_HOME': file('../tomcat') wtp { component { //you can configure the context path: contextPath = 'someContextPath' //you can configure the deployName: deployName = 'killerApp' //you can alter the wb-resource elements. sourceDirs is a ConventionProperty. //non-existing source dirs won't be added to the component file. sourceDirs += file('someExtraFolder') // dependencies to mark as deployable with lib folder deploy path libConfigurations += [ configurations.someInterestingConfiguration ] // dependencies to mark as deployable with root folder deploy path rootConfigurations += [ configurations.someInterestingConfiguration ] // dependencies to exclude from wtp deployment minusConfigurations &lt;&lt; configurations.anotherConfiguration //you can add a wb-resource elements; mandatory keys: 'sourcePath', 'deployPath': //if sourcePath points to non-existing folder it will *not* be added. resource sourcePath: 'extra/resource', deployPath: 'deployment/resource' //you can add a wb-property elements; mandatory keys: 'name', 'value': property name: 'moodOfTheDay', value: ':-D' } } } </code></pre> For tackling edge cases users can perform advanced configuration on resulting XML file. It is also possible to affect the way eclipse plugin merges the existing configuration via beforeMerged and whenMerged closures. 
+<p> beforeMerged and whenMerged closures receive WtpComponent object </p>
+<p> Examples of advanced configuration: </p>
+<pre><code> apply plugin: 'war' apply plugin: 'eclipse-wtp' eclipse { wtp { component { file { //if you want to mess with the resulting XML in whatever way you fancy withXml { def node = it.asNode() node.appendNode('xml', 'is what I love') } //closure executed after wtp component file content is loaded from existing file //but before gradle build information is merged beforeMerged { wtpComponent -&gt; //tinker with WtpComponent here } //closure executed after wtp component file content is loaded from existing file //and after gradle build information is merged whenMerged { wtpComponent -&gt; //you can tinker with the WtpComponent here } } } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-eclipse-wtp-facet/index.html">EclipseWtpFacet</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">EclipseWtpFacet</span></code>
+<p>Enables fine-tuning wtp facet details of the Eclipse plugin 
+<p> Advanced configuration closures beforeMerged and whenMerged receive WtpFacet object as parameter. </p>
+<pre><code> apply plugin: 'war' //or 'ear' or 'java' apply plugin: 'eclipse-wtp' eclipse { wtp { facet { //you can add some extra wtp facets; mandatory keys: 'name', 'version': facet name: 'someCoolFacet', version: '1.3' file { //if you want to mess with the resulting XML in whatever way you fancy withXml { def node = it.asNode() node.appendNode('xml', 'is what I love') } //beforeMerged and whenMerged closures are the highest voodoo for the tricky edge cases. //the type passed to the closures is WtpFacet //closure executed after wtp facet file content is loaded from existing file //but before gradle build information is merged beforeMerged { wtpFacet -&gt; //tinker with WtpFacet here } //closure executed after wtp facet file content is loaded from existing file //and after gradle build information is merged whenMerged { wtpFacet -&gt; //you can tinker with the WtpFacet here } } } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-facet/index.html">Facet</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Facet</span></code>
+<p>A project facet.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-file-reference/index.html">FileReference</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">FileReference</span></code>
+<p>A reference to a file in eclipse.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-jdt/index.html">Jdt</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Jdt</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">PropertiesPersistableConfigurationObject</span></code>
+<p>Represents the Eclipse JDT settings.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-library/index.html">Library</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Library</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-library/index.html"><span class="identifier">AbstractLibrary</span></a></code>
+<p>A classpath entry representing a library.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-link/index.html">Link</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Link</span></code>
+<p>Link.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-output/index.html">Output</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Output</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-classpath-entry/index.html"><span class="identifier">ClasspathEntry</span></a></code>
+<p>A classpath entry representing an output folder.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-project/index.html">Project</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Project</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">XmlPersistableConfigurationObject</span></code>
+<p>Represents the customizable elements of an eclipse project file. (via XML hooks everything is customizable).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-project-dependency/index.html">ProjectDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ProjectDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-classpath-entry/index.html"><span class="identifier">AbstractClasspathEntry</span></a></code>
+<p>A classpath entry representing a project dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-resource-filter/index.html">ResourceFilter</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ResourceFilter</span></code>
+<p>The gradle DSL model of an Eclipse resource filter. This allows specifying a filter with a custom matcher and configuring whether it is an include/exclude filter that applies to files, folders, or both. The following example excludes the 'node_modules' folder. <pre><code> apply plugin: 'java' apply plugin: 'eclipse' eclipse { project { resourceFilter { appliesTo = 'FOLDERS' type = 'EXCLUDE_ALL' matcher { id = 'org.eclipse.ui.ide.multiFilter' // to find out which arguments to use, configure the desired // filter with Eclipse's UI and copy the arguments string over arguments = '1.0-name-matches-false-false-node_modules' } } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-resource-filter-applies-to/index.html">ResourceFilterAppliesTo</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">ResourceFilterAppliesTo</span></code>
+<p>Specifies the type of resource that the Eclipse ResourceFilter applies to.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-resource-filter-matcher/index.html">ResourceFilterMatcher</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ResourceFilterMatcher</span></code>
+<p>The model of an Eclipse resource filter matcher. 
+<p> The matcher decides when the containing filter (or containing matcher) applies. The matcher configures things like whether this ResourceFilter matches resources by name, project relative path, location, last modified, etc. Eclipse has many types of built-in matchers and it is possible to specify the id and arguments for custom matchers using this model. </p>
+<p> A matcher must have an id. It may have either a custom string argument or a set of nested child matchers (e.g. an 'or' matcher will have several nested condition matchers). </p>
+<p> For more documentation on usage with examples, see ResourceFilter.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-resource-filter-type/index.html">ResourceFilterType</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">ResourceFilterType</span></code>
+<p>Specifies whether an Eclipse ResourceFilter is including or excluding resources.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-source-folder/index.html">SourceFolder</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SourceFolder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-classpath-entry/index.html"><span class="identifier">AbstractClasspathEntry</span></a></code>
+<p>SourceFolder.path contains only project relative path.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-variable/index.html">Variable</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Variable</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-library/index.html"><span class="identifier">AbstractLibrary</span></a></code>
+<p>A variable library entry.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-wb-dependent-module/index.html">WbDependentModule</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WbDependentModule</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-wb-module-entry/index.html"><span class="identifier">WbModuleEntry</span></a></code>
+<p>A wtp descriptor dependent module entry.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-wb-module-entry/index.html">WbModuleEntry</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">WbModuleEntry</span></code>
+<p>Represents an entry in <code>wb-module</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-wb-property/index.html">WbProperty</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WbProperty</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-wb-module-entry/index.html"><span class="identifier">WbModuleEntry</span></a></code>
+<p>A wtp descriptor property entry.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-wb-resource/index.html">WbResource</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WbResource</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-wb-module-entry/index.html"><span class="identifier">WbModuleEntry</span></a></code>
+<p>A wtp descriptor resource entry.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-wtp-component/index.html">WtpComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WtpComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">XmlPersistableConfigurationObject</span></code>
+<p>Creates the .settings/org.eclipse.wst.common.component file for WTP projects.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-wtp-facet/index.html">WtpFacet</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WtpFacet</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">XmlPersistableConfigurationObject</span></code>
+<p>Creates the .settings/org.eclipse.wst.common.project.facet.core.xml file for WTP projects.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

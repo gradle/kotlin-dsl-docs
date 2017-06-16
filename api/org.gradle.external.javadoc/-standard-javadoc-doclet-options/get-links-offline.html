@@ -1,0 +1,15 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>StandardJavadocDocletOptions.getLinksOffline - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.external.javadoc</a>&nbsp;/&nbsp;<a href="index.html">StandardJavadocDocletOptions</a>&nbsp;/&nbsp;<a href=".">getLinksOffline</a><br/>
+<br/>
+<h1>getLinksOffline</h1>
+<a name="org.gradle.external.javadoc.StandardJavadocDocletOptions$getLinksOffline()"></a>
+<code><span class="identifier">@Optional</span> <span class="identifier">@Input</span> <span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLinksOffline</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-javadoc-offline-link/index.html"><span class="identifier">JavadocOfflineLink</span></a><span class="symbol">&gt;</span></code>
+<p>-linkoffline extdocURL packagelistLoc This option is a variation of -link; they both create links to javadoc-generated documentation for external referenced classes. Use the -linkoffline option when linking to a document on the web when the Javadoc tool itself is "offline" -- that is, it cannot access the document through a web connection. More specifically, use -linkoffline if the external document's package-list file is not accessible or does not exist at the extdocURL location but does exist at a different location, which can be specified by packageListLoc (typically local). Thus, if extdocURL is accessible only on the World Wide Web, -linkoffline removes the constraint that the Javadoc tool have a web connection when generating the documentation.  Another use is as a "hack" to update docs: After you have run javadoc on a full set of packages, then you can run javadoc again on only a smaller set of changed packages, so that the updated files can be inserted back into the original set. Examples are given below.  The -linkoffline option takes two arguments -- the first for the string to be embedded in the &lt;a href&gt; links, the second telling it where to find package-list:  extdocURL is the absolute or relative URL of the directory containing the external javadoc-generated documentation you want to link to. If relative, the value should be the relative path from the destination directory (specified with -d) to the root of the packages being linked to. For more details, see extdocURL in the -link option. packagelistLoc is the path or URL to the directory containing the package-list file for the external documentation. This can be a URL (http: or file:) or file path, and can be absolute or relative. If relative, make it relative to the current directory from where javadoc was run. Do not include the package-list filename.</p>
+</BODY>
+</HTML>

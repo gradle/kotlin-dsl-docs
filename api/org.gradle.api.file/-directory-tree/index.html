@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DirectoryTree - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href=".">DirectoryTree</a><br/>
+<br/>
+<h1>DirectoryTree</h1>
+<code><span class="keyword">interface </span><span class="identifier">DirectoryTree</span></code>
+<p>
+<p>A directory with some associated include and exclude patterns.</p>
+ 
+<p>This interface does not allow mutation. However, the actual implementation may not be immutable.</p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-dir.html">getDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the base directory of this tree.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-patterns.html">getPatterns</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPatterns</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.util/-pattern-set/index.html"><span class="identifier">PatternSet</span></a></code>
+<p>Returns the patterns which select the files under the base directory.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-configurable-file-tree/index.html">ConfigurableFileTree</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ConfigurableFileTree</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-file-tree/index.html"><span class="identifier">FileTree</span></a><span class="symbol">, </span><span class="identifier">DirectoryTree</span><span class="symbol">, </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">, </span><a href="../../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<p>
+<p>A FileTree with a single base directory, which can be configured and modified.</p>
+ 
+<p>You can obtain a <code>ConfigurableFileTree</code> instance by calling <code><a href="#">org.gradle.api.Project#fileTree(java.util.Map)</a></code>.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

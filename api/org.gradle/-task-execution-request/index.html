@@ -1,0 +1,48 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TaskExecutionRequest - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle</a>&nbsp;/&nbsp;<a href=".">TaskExecutionRequest</a><br/>
+<br/>
+<h1>TaskExecutionRequest</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">TaskExecutionRequest</span></code>
+<p>A request to execute some tasks, along with an optional project path context to provide information necessary to select the tasks</p>
+<p><strong>Since</strong><br/>
+2.0</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-args.html">getArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getArgs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The arguments to use to select and optionally configure the tasks, as if provided on the command-line.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project-path.html">getProjectPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Project path associated with this task request if any.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-root-dir.html">getRootDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRootDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The root folder of the build that this task was defined in.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

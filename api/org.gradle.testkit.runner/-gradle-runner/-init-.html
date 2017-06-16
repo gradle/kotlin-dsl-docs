@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GradleRunner.<init> - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.testkit.runner</a>&nbsp;/&nbsp;<a href="index.html">GradleRunner</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.gradle.testkit.runner.GradleRunner$&lt;init&gt;()"></a>
+<code><span class="identifier">GradleRunner</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Executes a Gradle build, allowing inspection of the outcome. 
+<p> A Gradle runner can be used to functionally test build logic, by executing a contrived build. Assertions can then be made on the outcome of the build, such as the state of files created by the build, or what tasks were actually executed during the build. </p>
+<p> A runner can be created via the <code><a href="create.html">#create()</a></code> method. </p>
+<p> Typically, the test code using the runner will programmatically create a build (e.g. by writing Gradle build files to a temporary space) to execute. The build to execute is effectively specified by the <code><a href="with-project-dir.html">#withProjectDir(File)</a></code>} method. It is a requirement that a project directory be set. </p>
+<p> The <code><a href="#">#withArguments(String...)</a></code> method allows the build arguments to be specified, just as they would be on the command line. </p>
+<p> The <code><a href="build.html">#build()</a></code> method can be used to invoke the build when it is expected to succeed, while the <code><a href="build-and-fail.html">#buildAndFail()</a></code> method can be used when the build is expected to fail. </p>
+<p> GradleRunner instances are not thread safe and cannot be used concurrently. However, multiple instances are able to be used concurrently. </p>
+<p> Please see <a href="#">the Gradle TestKit User Guide chapter</a> for more information.</p>
+</p>
+<p><strong>Since</strong><br/>
+2.6</p>
+</BODY>
+</HTML>

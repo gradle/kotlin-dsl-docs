@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>RepositoryHandler.mavenCentral - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.dsl</a>&nbsp;/&nbsp;<a href="index.html">RepositoryHandler</a>&nbsp;/&nbsp;<a href=".">mavenCentral</a><br/>
+<br/>
+<h1>mavenCentral</h1>
+<a name="org.gradle.api.artifacts.dsl.RepositoryHandler$mavenCentral(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">mavenCentral</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.dsl.RepositoryHandler$mavenCentral(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.repositories/-maven-artifact-repository/index.html"><span class="identifier">MavenArtifactRepository</span></a></code>
+<p>Adds a repository which looks in the Maven central repository for dependencies. The URL used to access this repository is {@value org.gradle.api.artifacts.ArtifactRepositoryContainer#MAVEN_CENTRAL_URL}. 
+<p>The following parameter are accepted as keys for the map: </p>
+ Key Description of Associated Value <code>name</code> <em>(optional)</em> The name of the repository. The default is {@value org.gradle.api.artifacts.ArtifactRepositoryContainer#DEFAULT_MAVEN_CENTRAL_REPO_NAME} is used as the name. A name must be unique amongst a repository group.  <code>artifactUrls</code> A single jar repository or a collection of jar repositories containing additional artifacts not found in the Maven central repository. But be aware that the POM must exist in Maven central. The provided values are evaluated as per <code><a href="#">org.gradle.api.Project#uri(Object)</a></code>.  
+<p>Examples: </p>
+<pre><code> repositories { mavenCentral artifactUrls: ["http://www.mycompany.com/artifacts1", "http://www.mycompany.com/artifacts2"] mavenCentral name: "nonDefaultName", artifactUrls: ["http://www.mycompany.com/artifacts1"] } </code></pre> </p>
+<h3>Parameters</h3>
+<a name="args"></a>
+<code>args</code> - A list of urls of repositories to look for artifacts only.
+<p><strong>Return</strong><br/>
+the added repository</p>
+<a name="org.gradle.api.artifacts.dsl.RepositoryHandler$mavenCentral()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">mavenCentral</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.repositories/-maven-artifact-repository/index.html"><span class="identifier">MavenArtifactRepository</span></a></code>
+<p>Adds a repository which looks in the Maven central repository for dependencies. The URL used to access this repository is {@value org.gradle.api.artifacts.ArtifactRepositoryContainer#MAVEN_CENTRAL_URL}. The name of the repository is {@value org.gradle.api.artifacts.ArtifactRepositoryContainer#DEFAULT_MAVEN_CENTRAL_REPO_NAME}. 
+<p>Examples: </p>
+<pre><code> repositories { mavenCentral() } </code></pre> </p>
+<p><strong>Return</strong><br/>
+the added resolver</p>
+<p><strong>See Also</strong><br/>
+<a href="#">#mavenCentral(java.util.Map)</a></p>
+</BODY>
+</HTML>

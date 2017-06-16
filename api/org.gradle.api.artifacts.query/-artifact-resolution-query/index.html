@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ArtifactResolutionQuery - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.query</a>&nbsp;/&nbsp;<a href=".">ArtifactResolutionQuery</a><br/>
+<br/>
+<h1>ArtifactResolutionQuery</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ArtifactResolutionQuery</span></code>
+<p>A builder to construct a query that can resolve selected software artifacts of the specified components. <pre><code> apply plugin: 'java' task resolveCompileSources { doLast { def componentIds = configurations.compile.incoming.resolutionResult.allDependencies.collect { it.selected.id } def result = dependencies.createArtifactResolutionQuery() .forComponents(componentIds) .withArtifacts(JvmLibrary, SourcesArtifact, JavadocArtifact) .execute() for (component in result.resolvedComponents) { component.getArtifacts(SourcesArtifact).each { println "Source artifact for ${component.id}: ${it.file}" } } } } </code></pre></p>
+<p><strong>Since</strong><br/>
+2.0</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="execute.html">execute</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">execute</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.result/-artifact-resolution-result/index.html"><span class="identifier">ArtifactResolutionResult</span></a></code>
+<p>Actually execute the query, returning a query result. Note that <code><a href="#">#withArtifacts(Class, Class[])</a></code> must be called before executing the query.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="for-components.html">forComponents</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">forComponents</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.query.ArtifactResolutionQuery$forComponents(kotlin.collections.MutableIterable((org.gradle.api.artifacts.component.ComponentIdentifier)))/componentIds">componentIds</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts.component/-component-identifier/index.html"><span class="identifier">ComponentIdentifier</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ArtifactResolutionQuery</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">forComponents</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.artifacts.query.ArtifactResolutionQuery$forComponents(kotlin.Array((org.gradle.api.artifacts.component.ComponentIdentifier)))/componentIds">componentIds</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts.component/-component-identifier/index.html"><span class="identifier">ComponentIdentifier</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ArtifactResolutionQuery</span></code>
+<p>Specifies the set of components to include in the result.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="with-artifacts.html">withArtifacts</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withArtifacts</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.query.ArtifactResolutionQuery$withArtifacts(java.lang.Class((org.gradle.api.component.Component)), kotlin.Array((java.lang.Class((org.gradle.api.component.Artifact)))))/componentType">componentType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.api.component/-component.html"><span class="identifier">Component</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.artifacts.query.ArtifactResolutionQuery$withArtifacts(java.lang.Class((org.gradle.api.component.Component)), kotlin.Array((java.lang.Class((org.gradle.api.component.Artifact)))))/artifactTypes">artifactTypes</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.api.component/-artifact.html"><span class="identifier">Artifact</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ArtifactResolutionQuery</span></code>
+<p>Defines the type of component that is expected in the result, and the artifacts to retrieve for components of this type. Presently, only a single component type and set of artifacts is permitted.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

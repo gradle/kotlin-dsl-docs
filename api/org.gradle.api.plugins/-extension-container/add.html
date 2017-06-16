@@ -1,0 +1,41 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ExtensionContainer.add - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href="index.html">ExtensionContainer</a>&nbsp;/&nbsp;<a href=".">add</a><br/>
+<br/>
+<h1>add</h1>
+<a name="org.gradle.api.plugins.ExtensionContainer$add(java.lang.Class((org.gradle.api.plugins.ExtensionContainer.add.T)), kotlin.String, org.gradle.api.plugins.ExtensionContainer.add.T)"></a>
+<code><span class="identifier">@Incubating</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.ExtensionContainer$add(java.lang.Class((org.gradle.api.plugins.ExtensionContainer.add.T)), kotlin.String, org.gradle.api.plugins.ExtensionContainer.add.T)/publicType">publicType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.plugins.ExtensionContainer$add(java.lang.Class((org.gradle.api.plugins.ExtensionContainer.add.T)), kotlin.String, org.gradle.api.plugins.ExtensionContainer.add.T)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.plugins.ExtensionContainer$add(java.lang.Class((org.gradle.api.plugins.ExtensionContainer.add.T)), kotlin.String, org.gradle.api.plugins.ExtensionContainer.add.T)/extension">extension</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<a name="org.gradle.api.plugins.ExtensionContainer$add(org.gradle.api.reflect.TypeOf((org.gradle.api.plugins.ExtensionContainer.add.T)), kotlin.String, org.gradle.api.plugins.ExtensionContainer.add.T)"></a>
+<code><span class="identifier">@Incubating</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.ExtensionContainer$add(org.gradle.api.reflect.TypeOf((org.gradle.api.plugins.ExtensionContainer.add.T)), kotlin.String, org.gradle.api.plugins.ExtensionContainer.add.T)/publicType">publicType</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.reflect/-type-of/index.html"><span class="identifier">TypeOf</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.plugins.ExtensionContainer$add(org.gradle.api.reflect.TypeOf((org.gradle.api.plugins.ExtensionContainer.add.T)), kotlin.String, org.gradle.api.plugins.ExtensionContainer.add.T)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.plugins.ExtensionContainer$add(org.gradle.api.reflect.TypeOf((org.gradle.api.plugins.ExtensionContainer.add.T)), kotlin.String, org.gradle.api.plugins.ExtensionContainer.add.T)/extension">extension</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a new extension to this container. Adding an extension of name 'foo' will: <li> add 'foo' dynamic property </li>
+<li> add 'foo' dynamic method that accepts a closure that is a configuration script block The extension will be exposed as <code>publicType</code>.</li>
+</p>
+<h3>Parameters</h3>
+<a name="publicType"></a>
+<code>publicType</code> - The extension public type<a name="name"></a>
+<code>name</code> - The name for the extension<a name="extension"></a>
+<code>extension</code> - Any object implementing <code>publicType</code>
+<h3>Exceptions</h3>
+<a name="IllegalArgumentException"></a>
+<code>IllegalArgumentException</code> - When an extension with the given name already exists.
+<p><strong>Since</strong><br/>
+3.5</p>
+<a name="org.gradle.api.plugins.ExtensionContainer$add(kotlin.String, kotlin.Any)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.ExtensionContainer$add(kotlin.String, kotlin.Any)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.plugins.ExtensionContainer$add(kotlin.String, kotlin.Any)/extension">extension</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a new extension to this container. Adding an extension of name 'foo' will: <li> add 'foo' dynamic property </li>
+<li> add 'foo' dynamic method that accepts a closure that is a configuration script block The extension will be exposed as <code>extension.getClass()</code> unless the extension itself declares a preferred public type via the org.gradle.api.reflect.HasPublicType protocol.</li>
+</p>
+<h3>Parameters</h3>
+<a name="name"></a>
+<code>name</code> - The name for the extension<a name="extension"></a>
+<code>extension</code> - Any object
+<h3>Exceptions</h3>
+<a name="IllegalArgumentException"></a>
+<code>IllegalArgumentException</code> - When an extension with the given name already exists
+</BODY>
+</HTML>

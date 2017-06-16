@@ -1,0 +1,50 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BuildEnvironment - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.model.build</a>&nbsp;/&nbsp;<a href=".">BuildEnvironment</a><br/>
+<br/>
+<h1>BuildEnvironment</h1>
+<code><span class="keyword">interface </span><span class="identifier">BuildEnvironment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.model/-model.html"><span class="identifier">Model</span></a><span class="symbol">, </span><a href="../../org.gradle.tooling.model/-build-model/index.html"><span class="identifier">BuildModel</span></a></code>
+<p>Informs about the build environment, like Gradle version or the Java home in use. 
+<p> Example: </p>
+<pre><code> ProjectConnection connection = GradleConnector.newConnector() .forProjectDirectory(new File("someProjectFolder")) .connect(); try { BuildEnvironment env = connection.getModel(BuildEnvironment.class); System.out.println("Gradle version: " + env.getGradle().getGradleVersion()); System.out.println("Java home: " + env.getJava().getJavaHome()); } finally { connection.close(); } </code></pre></p>
+<p><strong>Since</strong><br/>
+1.0-milestone-8</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-build-identifier.html">getBuildIdentifier</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildIdentifier</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-build-identifier/index.html"><span class="identifier">BuildIdentifier</span></a></code>
+<p>Returns the identifier for the Gradle build that this environment is used by.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-gradle.html">getGradle</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGradle</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-gradle-environment/index.html"><span class="identifier">GradleEnvironment</span></a></code>
+<p>Returns information about the Gradle environment, for example the Gradle version.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-java.html">getJava</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getJava</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-java-environment/index.html"><span class="identifier">JavaEnvironment</span></a></code>
+<p>Returns information about the Java environment, for example the Java home or the JVM args used.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

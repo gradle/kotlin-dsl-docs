@@ -1,0 +1,702 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Task - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href=".">Task</a><br/>
+<br/>
+<h1>Task</h1>
+<code><span class="keyword">interface </span><span class="identifier">Task</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><span class="identifier">Task</span><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../../org.gradle.api.plugins/-extension-aware/index.html"><span class="identifier">ExtensionAware</span></a></code>
+<p>
+<p>A <code>Task</code> represents a single atomic piece of work for a build, such as compiling classes or generating javadoc.</p>
+ 
+<p>Each task belongs to a Project. You can use the various methods on to create and lookup task instances. For example, <code><a href="#"> </a></code> creates an empty task with the given name. You can also use the <code>task</code> keyword in your build file: </p>
+ <pre><code> task myTask task myTask { configure closure } task myTask(type: SomeType) task myTask(type: SomeType) { configure closure } </code></pre> 
+<p>Each task has a name, which can be used to refer to the task within its owning project, and a fully qualified path, which is unique across all tasks in all projects. The path is the concatenation of the owning project's path and the task's name. Path elements are separated using the {@value org.gradle.api.Project#PATH_SEPARATOR} character.</p>
+ Task Actions 
+<p>A <code>Task</code> is made up of a sequence of Action objects. When the task is executed, each of the actions is executed in turn, by calling <code><a href="#">Action#execute</a></code>. You can add actions to a task by calling <code><a href="#"> </a></code> or <code><a href="#">#doLast(Action)</a></code>.</p>
+ 
+<p>Groovy closures can also be used to provide a task action. When the action is executed, the closure is called with the task as parameter. You can add action closures to a task by calling <code><a href="#">#doFirst(groovy.lang.Closure)</a></code> or <code><a href="#">#doLast(groovy.lang.Closure)</a></code>.</p>
+ 
+<p>There are 2 special exceptions which a task action can throw to abort execution and continue without failing the build. A task action can abort execution of the action and continue to the next action of the task by throwing a org.gradle.api.tasks.StopActionException. A task action can abort execution of the task and continue to the next task by throwing a org.gradle.api.tasks.StopExecutionException. Using these exceptions allows you to have precondition actions which skip execution of the task, or part of the task, if not true.</p>
+ <a href="#"></a>Task Dependencies and Task Ordering 
+<p>A task may have dependencies on other tasks or might be scheduled to always run after another task. Gradle ensures that all task dependencies and ordering rules are honored when executing tasks, so that the task is executed after all of its dependencies and any "must run after" tasks have been executed.</p>
+ 
+<p>Dependencies to a task are controlled using <code><a href="#">#dependsOn(Object...)</a></code> or <code><a href="#">#setDependsOn(Iterable)</a></code>, and <code><a href="#">#mustRunAfter(Object...)</a></code>, <code><a href="#">#setMustRunAfter(Iterable)</a></code>, <code><a href="#">#shouldRunAfter(Object...)</a></code> and <code><a href="#">#setShouldRunAfter(Iterable)</a></code> are used to specify ordering between tasks. You can use objects of any of the following types to specify dependencies and ordering:</p>
+ <ul> <li>A <code>String</code>, <code>CharSequence</code> or <code>groovy.lang.GString</code> task path or name. A relative path is interpreted relative to the task's Project. This allows you to refer to tasks in other projects.</li>
+ <li>A Task.</li>
+ <li>A closure. The closure may take a <code>Task</code> as parameter. It may return any of the types listed here. Its return value is recursively converted to tasks. A <code>null</code> return value is treated as an empty collection.</li>
+ <li>A TaskDependency object.</li>
+ <li>A Buildable object.</li>
+ <li>A <code>Iterable</code>, <code>Collection</code>, <code>Map</code> or array. May contain any of the types listed here. The elements of the iterable/collection/map/array are recursively converted to tasks.</li>
+ <li>A <code>Callable</code>. The <code>call()</code> method may return any of the types listed here. Its return value is recursively converted to tasks. A <code>null</code> return value is treated as an empty collection.</li>
+ </ul>
+ Using a Task in a Build File <a href="#"></a> Dynamic Properties 
+<p>A <code>Task</code> has 4 'scopes' for properties. You can access these properties by name from the build file or by calling the <code><a href="#">#property(String)</a></code> method. You can change the value of these properties by calling the <code><a href="#">#setProperty(String, Object)</a></code> method.</p>
+ <ul> <li>The <code>Task</code> object itself. This includes any property getters and setters declared by the <code>Task</code> implementation class. The properties of this scope are readable or writable based on the presence of the corresponding getter and setter methods.</li>
+ <li>The <em>extensions</em> added to the task by plugins. Each extension is available as a read-only property with the same name as the extension.</li>
+ <li>The <em>convention</em> properties added to the task by plugins. A plugin can add properties and methods to a task through the task's Convention object. The properties of this scope may be readable or writable, depending on the convention objects.</li>
+ <li>The <em>extra properties</em> of the task. Each task object maintains a map of additional properties. These are arbitrary name -&gt; value pairs which you can use to dynamically add properties to a task object. Once defined, the properties of this scope are readable and writable.</li>
+ </ul>
+ Dynamic Methods 
+<p>A Plugin may add methods to a <code>Task</code> using its Convention object.</p>
+ Parallel Execution 
+<p> By default, tasks are not executed in parallel unless a task is waiting on asynchronous work and another task (which is not dependent) is ready to execute. Parallel execution can be enabled by the <code>--parallel</code> flag when the build is initiated. In parallel mode, the tasks of different projects (i.e. in a multi project build) are able to be executed in parallel.</p>
+</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-namer/index.html">Namer</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Namer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-namer/index.html"><span class="identifier">Namer</span></a><span class="symbol">&lt;</span><span class="identifier">Task</span><span class="symbol">&gt;</span></code>
+<p>A org.gradle.api.Namer namer for tasks that returns <code><a href="get-name.html">#getName()</a></code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-t-a-s-k_-a-c-t-i-o-n.html">TASK_ACTION</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">TASK_ACTION</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-t-a-s-k_-d-e-p-e-n-d-s_-o-n.html">TASK_DEPENDS_ON</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">TASK_DEPENDS_ON</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-t-a-s-k_-d-e-s-c-r-i-p-t-i-o-n.html">TASK_DESCRIPTION</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">TASK_DESCRIPTION</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-t-a-s-k_-g-r-o-u-p.html">TASK_GROUP</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">TASK_GROUP</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-t-a-s-k_-n-a-m-e.html">TASK_NAME</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">TASK_NAME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-t-a-s-k_-o-v-e-r-w-r-i-t-e.html">TASK_OVERWRITE</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">TASK_OVERWRITE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-t-a-s-k_-t-y-p-e.html">TASK_TYPE</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">TASK_TYPE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="configure.html">configure</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">configure</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$configure(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Task</span></code>
+<p>
+<p>Applies the statements of the closure against this task object. The delegate object for the closure is set to this task.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="delete-all-actions.html">deleteAllActions</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">deleteAllActions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Task</span></code>
+<p>
+<p>Removes all the actions of this task.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="depends-on.html">dependsOn</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">dependsOn</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.Task$dependsOn(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Task</span></code>
+<p>
+<p>Adds the given dependencies to this task. See <a href="#">here</a> for a description of the types of objects which can be used as task dependencies.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="depends-on-task-did-work.html">dependsOnTaskDidWork</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">dependsOnTaskDidWork</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>
+<p>Checks if any of the tasks that this task depends on <code><a href="get-did-work.html">didWork</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="do-first.html">doFirst</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">doFirst</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$doFirst(org.gradle.api.Action((org.gradle.api.Task)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">Task</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Task</span></code>
+<p>
+<p>Adds the given Action to the beginning of this task's action list.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">doFirst</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$doFirst(groovy.lang.Closure((kotlin.Any)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Task</span></code>
+<p>
+<p>Adds the given closure to the beginning of this task's action list. The closure is passed this task as a parameter when executed.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="do-last.html">doLast</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">doLast</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$doLast(org.gradle.api.Action((org.gradle.api.Task)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">Task</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Task</span></code>
+<p>
+<p>Adds the given Action to the end of this task's action list.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">doLast</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$doLast(groovy.lang.Closure((kotlin.Any)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Task</span></code>
+<p>
+<p>Adds the given closure to the end of this task's action list. The closure is passed this task as a parameter when executed.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="finalized-by.html">finalizedBy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">finalizedBy</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.Task$finalizedBy(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Task</span></code>
+<p>
+<p>Adds the given finalizer tasks for this task.</p>
+ <pre><code> task taskY { finalizedBy "taskX" } </code></pre> 
+<p>See <a href="#">here</a> for a description of the types of objects which can be used to specify a finalizer task.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-actions.html">getActions</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getActions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">Task</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>
+<p>Returns the sequence of Action objects which will be executed by this task, in the order of execution.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-ant.html">getAnt</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAnt</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-ant-builder/index.html"><span class="identifier">AntBuilder</span></a></code>
+<p>
+<p>Returns the <code>AntBuilder</code> for this task. You can use this in your build file to execute ant tasks.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-convention.html">getConvention</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getConvention</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins/-convention/index.html"><span class="identifier">Convention</span></a></code>
+<p>
+<p>Returns the Convention object for this task. A Plugin can use the convention object to contribute properties and methods to this task.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-depends-on.html">getDependsOn</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDependsOn</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>
+<p>Returns the dependencies of this task.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-description.html">getDescription</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDescription</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the description of this task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-destroyables.html">getDestroyables</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDestroyables</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-task-destroyables/index.html"><span class="identifier">TaskDestroyables</span></a></code>
+<p>
+<p>Returns the destroyables of this task.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-did-work.html">getDidWork</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDidWork</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>
+<p>Checks if the task actually did any work. Even if a Task executes, it may determine that it has nothing to do. For example, a compilation task may determine that source files have not changed since the last time a the task was run.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-enabled.html">getEnabled</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getEnabled</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>
+<p>Returns if this task is enabled or not.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-finalized-by.html">getFinalizedBy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFinalizedBy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-task-dependency/index.html"><span class="identifier">TaskDependency</span></a></code>
+<p>
+<p>Returns tasks that finalize this task.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-group.html">getGroup</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGroup</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the task group which this task belongs to. The task group is used in reports and user interfaces to group related tasks together when presenting a list of tasks to the user.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-inputs.html">getInputs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getInputs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-task-inputs/index.html"><span class="identifier">TaskInputs</span></a></code>
+<p>
+<p>Returns the inputs of this task.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-logger.html">getLogger</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLogger</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.logging/-logger/index.html"><span class="identifier">Logger</span></a></code>
+<p>
+<p>Returns the logger for this task. You can use this in your build file to write log messages.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-logging.html">getLogging</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLogging</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.logging/-logging-manager/index.html"><span class="identifier">LoggingManager</span></a></code>
+<p>Returns the org.gradle.api.logging.LoggingManager which can be used to receive logging and to control the standard output/error capture for this task. By default, System.out is redirected to the Gradle logging system at the QUIET log level, and System.err is redirected at the ERROR log level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-must-run-after.html">getMustRunAfter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getMustRunAfter</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-task-dependency/index.html"><span class="identifier">TaskDependency</span></a></code>
+<p>
+<p>Returns tasks that this task must run after.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>
+<p>Returns the name of this task. The name uniquely identifies the task within its Project.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-outputs.html">getOutputs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOutputs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-task-outputs/index.html"><span class="identifier">TaskOutputs</span></a></code>
+<p>
+<p>Returns the outputs of this task.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-path.html">getPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>
+<p>Returns the path of the task, which is a fully qualified name for the task. The path of a task is the path of its Project plus the name of the task, separated by <code>:</code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project.html">getProject</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProject</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-project/index.html"><span class="identifier">Project</span></a></code>
+<p>
+<p>Returns the Project which this task belongs to.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-should-run-after.html">getShouldRunAfter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getShouldRunAfter</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-task-dependency/index.html"><span class="identifier">TaskDependency</span></a></code>
+<p>
+<p>Returns tasks that this task should run after.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-state.html">getState</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getState</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-task-state/index.html"><span class="identifier">TaskState</span></a></code>
+<p>Returns the execution state of this task. This provides information about the execution of this task, such as whether it has executed, been skipped, has failed, etc.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-task-dependencies.html">getTaskDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTaskDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-task-dependency/index.html"><span class="identifier">TaskDependency</span></a></code>
+<p>
+<p>Returns a TaskDependency which contains all the tasks that this task depends on.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-temporary-dir.html">getTemporaryDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTemporaryDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>
+<p>Returns a directory which this task can use to write temporary files to. Each task instance is provided with a separate temporary directory. There are no guarantees that the contents of this directory will be kept beyond the execution of the task.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="has-property.html">hasProperty</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">hasProperty</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$hasProperty(kotlin.String)/propertyName">propertyName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>
+<p>Determines if this task has the given property. See <a href="#">here</a> for details of the properties which are available for a task.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="left-shift.html">leftShift</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">leftShift</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$leftShift(groovy.lang.Closure((kotlin.Any)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Task</span></code>
+<p>
+<p>Adds the given closure to the end of this task's action list. The closure is passed this task as a parameter when executed. You can call this method from your build script using the &lt;&lt; left shift operator.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="must-run-after.html">mustRunAfter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">mustRunAfter</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.Task$mustRunAfter(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Task</span></code>
+<p>
+<p>Specifies that this task must run after all of the supplied tasks.</p>
+ <pre><code> task taskY { mustRunAfter "taskX" } </code></pre> 
+<p>For each supplied task, this action adds a task 'ordering', and does not specify a 'dependency' between the tasks. As such, it is still possible to execute 'taskY' without first executing the 'taskX' in the example.</p>
+ 
+<p>See <a href="#">here</a> for a description of the types of objects which can be used to specify an ordering relationship.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="only-if.html">onlyIf</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">onlyIf</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$onlyIf(groovy.lang.Closure((kotlin.Any)))/onlyIfClosure">onlyIfClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Execute the task only if the given closure returns true. The closure will be evaluated at task execution time, not during configuration. The closure will be passed a single parameter, this task. If the closure returns false, the task will be skipped.</p>
+ 
+<p>You may add multiple such predicates. The task is skipped if any of the predicates return false.</p>
+ 
+<p>Typical usage:<code>myTask.onlyIf{ dependsOnTaskDidWork() } </code></p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">onlyIf</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$onlyIf(org.gradle.api.specs.Spec((org.gradle.api.Task)))/onlyIfSpec">onlyIfSpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">Task</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Execute the task only if the given spec is satisfied. The spec will be evaluated at task execution time, not during configuration. If the Spec is not satisfied, the task will be skipped.</p>
+ 
+<p>You may add multiple such predicates. The task is skipped if any of the predicates return false.</p>
+ 
+<p>Typical usage (from Java):</p>
+ <pre><code>myTask.onlyIf(new Spec&lt;Task&gt;() { boolean isSatisfiedBy(Task task) { return task.dependsOnTaskDidWork(); } }); </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="property.html">property</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">property</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$property(kotlin.String)/propertyName">propertyName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>
+<p>Returns the value of the given property of this task. This method locates a property as follows:</p>
+ <ol> <li>If this task object has a property with the given name, return the value of the property.</li>
+ <li>If this task has an extension with the given name, return the extension. </li>
+ <li>If this task's convention object has a property with the given name, return the value of the property.</li>
+ <li>If this task has an extra property with the given name, return the value of the property.</li>
+ <li>If not found, throw MissingPropertyException</li>
+ </ol>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-actions.html">setActions</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setActions</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$setActions(kotlin.collections.MutableList((org.gradle.api.Action((org.gradle.api.Task)))))/actions">actions</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">Task</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Sets the sequence of Action objects which will be executed by this task.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-depends-on.html">setDependsOn</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setDependsOn</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$setDependsOn(kotlin.collections.MutableIterable((kotlin.Any)))/dependsOnTasks">dependsOnTasks</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Sets the dependencies of this task. See <a href="#">here</a> for a description of the types of objects which can be used as task dependencies.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-description.html">setDescription</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setDescription</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$setDescription(kotlin.String)/description">description</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets a description for this task. This should describe what the task does to the user of the build. The description will be displayed when <code>gradle tasks</code> is called.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-did-work.html">setDidWork</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setDidWork</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$setDidWork(kotlin.Boolean)/didWork">didWork</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets whether the task actually did any work. Most built-in tasks will set this automatically, but it may be useful to manually indicate this for custom user tasks. 
+<p>This is useful when combined with onlyIf { dependsOnTaskDidWork() }.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-enabled.html">setEnabled</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setEnabled</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$setEnabled(kotlin.Boolean)/enabled">enabled</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Set the enabled state of a task. If a task is disabled none of the its actions are executed. Note that disabling a task does not prevent the execution of the tasks which this task depends on.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-finalized-by.html">setFinalizedBy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setFinalizedBy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$setFinalizedBy(kotlin.collections.MutableIterable((kotlin.Any)))/finalizedBy">finalizedBy</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Specifies the set of finalizer tasks for this task.</p>
+ <pre><code> task taskY { finalizedBy = ["taskX1", "taskX2"] } </code></pre> 
+<p>See <a href="#">here</a> for a description of the types of objects which can be used to specify a finalizer task.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-group.html">setGroup</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setGroup</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$setGroup(kotlin.String)/group">group</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the task group which this task belongs to. The task group is used in reports and user interfaces to group related tasks together when presenting a list of tasks to the user.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-must-run-after.html">setMustRunAfter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setMustRunAfter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$setMustRunAfter(kotlin.collections.MutableIterable((kotlin.Any)))/mustRunAfter">mustRunAfter</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Specifies the set of tasks that this task must run after.</p>
+ <pre><code> task taskY { mustRunAfter = ["taskX1", "taskX2"] } </code></pre> 
+<p>For each supplied task, this action adds a task 'ordering', and does not specify a 'dependency' between the tasks. As such, it is still possible to execute 'taskY' without first executing the 'taskX' in the example.</p>
+ 
+<p>See <a href="#">here</a> for a description of the types of objects which can be used to specify an ordering relationship.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-only-if.html">setOnlyIf</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setOnlyIf</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$setOnlyIf(groovy.lang.Closure((kotlin.Any)))/onlyIfClosure">onlyIfClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Execute the task only if the given closure returns true. The closure will be evaluated at task execution time, not during configuration. The closure will be passed a single parameter, this task. If the closure returns false, the task will be skipped.</p>
+ 
+<p>The given predicate replaces all such predicates for this task.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setOnlyIf</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$setOnlyIf(org.gradle.api.specs.Spec((org.gradle.api.Task)))/onlyIfSpec">onlyIfSpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">Task</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Execute the task only if the given spec is satisfied. The spec will be evaluated at task execution time, not during configuration. If the Spec is not satisfied, the task will be skipped.</p>
+ 
+<p>The given predicate replaces all such predicates for this task.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-property.html">setProperty</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setProperty</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$setProperty(kotlin.String, kotlin.Any)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Task$setProperty(kotlin.String, kotlin.Any)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Sets a property of this task. This method searches for a property with the given name in the following locations, and sets the property on the first location where it finds the property.</p>
+ <ol> <li>The task object itself. For example, the <code>enabled</code> project property.</li>
+ <li>The task's convention object.</li>
+ <li>The task's extra properties.</li>
+ </ol>
+ If the property is not found, a groovy.lang.MissingPropertyException is thrown.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-should-run-after.html">setShouldRunAfter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setShouldRunAfter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$setShouldRunAfter(kotlin.collections.MutableIterable((kotlin.Any)))/shouldRunAfter">shouldRunAfter</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Specifies the set of tasks that this task should run after.</p>
+ <pre><code> task taskY { shouldRunAfter = ["taskX1", "taskX2"] } </code></pre> 
+<p>For each supplied task, this action adds a task 'ordering', and does not specify a 'dependency' between the tasks. As such, it is still possible to execute 'taskY' without first executing the 'taskX' in the example.</p>
+ 
+<p>See <a href="#">here</a> for a description of the types of objects which can be used to specify an ordering relationship.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="should-run-after.html">shouldRunAfter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">shouldRunAfter</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.Task$shouldRunAfter(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-task-dependency/index.html"><span class="identifier">TaskDependency</span></a></code>
+<p>
+<p>Specifies that this task should run after all of the supplied tasks.</p>
+ <pre><code> task taskY { shouldRunAfter "taskX" } </code></pre> 
+<p>For each supplied task, this action adds a task 'ordering', and does not specify a 'dependency' between the tasks. As such, it is still possible to execute 'taskY' without first executing the 'taskX' in the example.</p>
+ 
+<p>See <a href="#">here</a> for a description of the types of objects which can be used to specify an ordering relationship.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.plugins/-extension-aware/get-extensions.html">getExtensions</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExtensions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins/-extension-container/index.html"><span class="identifier">ExtensionContainer</span></a></code>
+<p>The container of extensions.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.tasks/-object-files-to-binary/index.html">ObjectFilesToBinary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ObjectFilesToBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Task</span></code>
+<p>A task that combines a set of object files into a single binary.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,19 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>IvyPublication.getArtifacts - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.publish.ivy</a>&nbsp;/&nbsp;<a href="index.html">IvyPublication</a>&nbsp;/&nbsp;<a href=".">getArtifacts</a><br/>
+<br/>
+<h1>getArtifacts</h1>
+<a name="org.gradle.api.publish.ivy.IvyPublication$getArtifacts()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getArtifacts</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-ivy-artifact-set/index.html"><span class="identifier">IvyArtifactSet</span></a></code>
+<p>The complete set of artifacts for this publication. 
+<p> Setting this property will clear any previously added artifacts and create artifacts from the specified sources. Each supplied source is interpreted as per <code><a href="#">#artifact(Object)</a></code>. For example, to exclude the dependencies declared by a component and instead use a custom set of artifacts: </p>
+<pre><code> apply plugin: "java" apply plugin: "ivy-publish" task sourceJar(type: Jar) { classifier "source" } publishing { publications { ivy(IvyPublication) { from components.java artifacts = ["my-custom-jar.jar", sourceJar] } } } </code></pre></p>
+<p><strong>Return</strong><br/>
+the artifacts.</p>
+</BODY>
+</HTML>

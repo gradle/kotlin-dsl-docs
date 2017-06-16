@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PublicationContainer - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.api.publish</a>&nbsp;/&nbsp;<a href=".">PublicationContainer</a><br/>
+<br/>
+<h1>PublicationContainer</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">PublicationContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-extensible-polymorphic-domain-object-container/index.html"><span class="identifier">ExtensiblePolymorphicDomainObjectContainer</span></a><span class="symbol">&lt;</span><a href="-publication.html"><span class="identifier">Publication</span></a><span class="symbol">&gt;</span></code>
+<p>A <code>PublicationContainer</code> is responsible for creating and managing Publication instances. The set of available publication types is dependent on the application of particular plugins: <ul> <li>The org.gradle.api.publish.maven.plugins.MavenPublishPlugin makes it possible to create org.gradle.api.publish.maven.MavenPublication instances.</li>
+ <li>The org.gradle.api.publish.ivy.plugins.IvyPublishPlugin makes it possible to create org.gradle.api.publish.ivy.IvyPublication instances.</li>
+ </ul>
+ <pre><code> apply plugin: 'ivy-publish' publishing.publications.create('publication-name', IvyPublication) { // Configure the ivy publication here } </code></pre> The usual way to add publications is via a configuration block. See the documentation for <code><a href="#">PublishingExtension#publications(org.gradle.api.Action)</a></code> for examples of how to create and configure publications.</p>
+<p><strong>Since</strong><br/>
+1.3</p>
+<p><strong>See Also</strong><br/>
+PublicationPublishingExtension</p>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../org.gradle.api/-extensible-polymorphic-domain-object-container/register-binding.html">registerBinding</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">U</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">registerBinding</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.ExtensiblePolymorphicDomainObjectContainer$registerBinding(java.lang.Class((org.gradle.api.ExtensiblePolymorphicDomainObjectContainer.registerBinding.U)), java.lang.Class((org.gradle.api.ExtensiblePolymorphicDomainObjectContainer.registerBinding.U)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">U</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.ExtensiblePolymorphicDomainObjectContainer$registerBinding(java.lang.Class((org.gradle.api.ExtensiblePolymorphicDomainObjectContainer.registerBinding.U)), java.lang.Class((org.gradle.api.ExtensiblePolymorphicDomainObjectContainer.registerBinding.U)))/implementationType">implementationType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">U</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Registers a binding from the specified "public" domain object type to the specified implementation type. Whenever the container is asked to create an element with the binding's public type, it will instantiate the binding's implementation type. If the implementation type has a constructor annotated with javax.inject.Inject, its arguments will be injected. 
+<p>In general, registering a binding is preferable over implementing and registering a factory.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.api/-extensible-polymorphic-domain-object-container/register-factory.html">registerFactory</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">U</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">registerFactory</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.ExtensiblePolymorphicDomainObjectContainer$registerFactory(java.lang.Class((org.gradle.api.ExtensiblePolymorphicDomainObjectContainer.registerFactory.U)), org.gradle.api.NamedDomainObjectFactory((org.gradle.api.ExtensiblePolymorphicDomainObjectContainer.registerFactory.U)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">U</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.ExtensiblePolymorphicDomainObjectContainer$registerFactory(java.lang.Class((org.gradle.api.ExtensiblePolymorphicDomainObjectContainer.registerFactory.U)), org.gradle.api.NamedDomainObjectFactory((org.gradle.api.ExtensiblePolymorphicDomainObjectContainer.registerFactory.U)))/factory">factory</span><span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named-domain-object-factory/index.html"><span class="identifier">NamedDomainObjectFactory</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">U</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">U</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">registerFactory</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.ExtensiblePolymorphicDomainObjectContainer$registerFactory(java.lang.Class((org.gradle.api.ExtensiblePolymorphicDomainObjectContainer.registerFactory.U)), groovy.lang.Closure((org.gradle.api.ExtensiblePolymorphicDomainObjectContainer.registerFactory.U)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">U</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.ExtensiblePolymorphicDomainObjectContainer$registerFactory(java.lang.Class((org.gradle.api.ExtensiblePolymorphicDomainObjectContainer.registerFactory.U)), groovy.lang.Closure((org.gradle.api.ExtensiblePolymorphicDomainObjectContainer.registerFactory.U)))/factory">factory</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">U</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Registers a factory for creating elements of the specified type. Typically, the specified type is an interface type.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

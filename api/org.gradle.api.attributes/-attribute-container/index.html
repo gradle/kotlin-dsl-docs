@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AttributeContainer - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.attributes</a>&nbsp;/&nbsp;<a href=".">AttributeContainer</a><br/>
+<br/>
+<h1>AttributeContainer</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">AttributeContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-has-attributes/index.html"><span class="identifier">HasAttributes</span></a></code>
+<p>An attribute container is a container of Attribute, which are strongly typed named entities. Such a container is responsible for storing and getting attributes in a type safe way. In particular, attributes are strongly typed, meaning that when we get a value from the container, the returned value type is inferred from the type of the attribute. In a way, an attribute container is similar to a java.util.Map where the entry is a "typed String" and the value is of the string type. However the set of methods available to the container is much more limited. It is not allowed to have two attributes with the same name but different types in the container.</p>
+<p><strong>Since</strong><br/>
+3.3</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="attribute.html">attribute</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">attribute</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.attributes.AttributeContainer$attribute(org.gradle.api.attributes.Attribute((org.gradle.api.attributes.AttributeContainer.attribute.T)), org.gradle.api.attributes.AttributeContainer.attribute.T)/key">key</span><span class="symbol">:</span>&nbsp;<a href="../-attribute/index.html"><span class="identifier">Attribute</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.attributes.AttributeContainer$attribute(org.gradle.api.attributes.Attribute((org.gradle.api.attributes.AttributeContainer.attribute.T)), org.gradle.api.attributes.AttributeContainer.attribute.T)/value">value</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">AttributeContainer</span></code>
+<p>Sets an attribute value. It is not allowed to use <code>null</code> as an attribute value.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="contains.html">contains</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">contains</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.attributes.AttributeContainer$contains(org.gradle.api.attributes.Attribute((kotlin.Any)))/key">key</span><span class="symbol">:</span>&nbsp;<a href="../-attribute/index.html"><span class="identifier">Attribute</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Tells if a specific attribute is found in this container.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-attribute.html">getAttribute</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">getAttribute</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.attributes.AttributeContainer$getAttribute(org.gradle.api.attributes.Attribute((org.gradle.api.attributes.AttributeContainer.getAttribute.T)))/key">key</span><span class="symbol">:</span>&nbsp;<a href="../-attribute/index.html"><span class="identifier">Attribute</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Returns the value of an attribute found in this container, or <code>null</code> if this container doesn't have it.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-empty.html">isEmpty</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isEmpty</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if this container is empty.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="key-set.html">keySet</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">keySet</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-attribute/index.html"><span class="identifier">Attribute</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>Returns the set of attribute keys of this container.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-has-attributes/get-attributes.html">getAttributes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAttributes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">AttributeContainer</span></code>
+<p>Returns the attributes</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>EarModule - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ear.descriptor</a>&nbsp;/&nbsp;<a href=".">EarModule</a><br/>
+<br/>
+<h1>EarModule</h1>
+<code><span class="keyword">interface </span><span class="identifier">EarModule</span></code>
+<p>A module element in a deployment descriptor like application.xml.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-alt-deploy-descriptor.html">getAltDeployDescriptor</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAltDeployDescriptor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The alt-dd element specifies an optional URI to the post-assembly version of the deployment descriptor file for a particular Java EE module. The URI must specify the full pathname of the deployment descriptor file relative to the application's root directory. If alt-dd is not specified, the deployer must read the deployment descriptor from the default location and file name required by the respective component specification.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-path.html">getPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The connector element specifies the URI of an archive file, relative to the top level of the application package.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-alt-deploy-descriptor.html">setAltDeployDescriptor</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setAltDeployDescriptor</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.EarModule$setAltDeployDescriptor(kotlin.String)/altDeployDescriptor">altDeployDescriptor</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-path.html">setPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setPath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.EarModule$setPath(kotlin.String)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="to-xml-node.html">toXmlNode</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">toXmlNode</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ear.descriptor.EarModule$toXmlNode(groovy.util.Node, kotlin.Any)/parentModule">parentModule</span><span class="symbol">:</span>&nbsp;<span class="identifier">Node</span><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.ear.descriptor.EarModule$toXmlNode(groovy.util.Node, kotlin.Any)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Node</span></code>
+<p>Convert this object to an XML Node (or two nodes if altDeployDescriptor is not null).</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-ear-web-module/index.html">EarWebModule</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">EarWebModule</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">EarModule</span></code>
+<p>A module element in a deployment descriptor like application.xml that has a web child element.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

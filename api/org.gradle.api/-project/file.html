@@ -1,0 +1,43 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Project.file - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">Project</a>&nbsp;/&nbsp;<a href=".">file</a><br/>
+<br/>
+<h1>file</h1>
+<a name="org.gradle.api.Project$file(kotlin.Any)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$file(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>
+<p>Resolves a file path relative to the project directory of this project. This method converts the supplied path based on its type:</p>
+ <ul> <li>A CharSequence, including String or groovy.lang.GString. Interpreted relative to the project directory. A string that starts with <code>file:</code> is treated as a file URL.</li>
+ <li>A File. If the file is an absolute file, it is returned as is. Otherwise, the file's path is interpreted relative to the project directory.</li>
+ <li>A java.nio.file.Path. The path must be associated with the default provider and is treated the same way as an instance of <code>File</code>.</li>
+ <li>A java.net.URI or java.net.URL. The URL's path is interpreted as the file path. Currently, only <code>file:</code> URLs are supported.</li>
+ <li>A Closure. The closure's return value is resolved recursively.</li>
+ <li>A java.util.concurrent.Callable. The callable's return value is resolved recursively.</li>
+ </ul>
+</p>
+<h3>Parameters</h3>
+<a name="path"></a>
+<code>path</code> - The object to resolve as a File.
+<p><strong>Return</strong><br/>
+The resolved file. Never returns null.</p>
+<a name="org.gradle.api.Project$file(kotlin.Any, org.gradle.api.PathValidation)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$file(kotlin.Any, org.gradle.api.PathValidation)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Project$file(kotlin.Any, org.gradle.api.PathValidation)/validation">validation</span><span class="symbol">:</span>&nbsp;<a href="../-path-validation/index.html"><span class="identifier">PathValidation</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>
+<p>Resolves a file path relative to the project directory of this project and validates it using the given scheme. See PathValidation for the list of possible validations.</p>
+</p>
+<h3>Parameters</h3>
+<a name="path"></a>
+<code>path</code> - An object which toString method value is interpreted as a relative path to the project directory.<a name="validation"></a>
+<code>validation</code> - The validation to perform on the file.
+<h3>Exceptions</h3>
+<a name="InvalidUserDataException"></a>
+<code>InvalidUserDataException</code> - When the file does not meet the given validation constraint.
+<p><strong>Return</strong><br/>
+The resolved file. Never returns null.</p>
+</BODY>
+</HTML>

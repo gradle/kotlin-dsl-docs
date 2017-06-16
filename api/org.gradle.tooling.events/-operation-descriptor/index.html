@@ -1,0 +1,75 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>OperationDescriptor - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.events</a>&nbsp;/&nbsp;<a href=".">OperationDescriptor</a><br/>
+<br/>
+<h1>OperationDescriptor</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">OperationDescriptor</span></code>
+<p>Describes an operation for which an event has occurred. 
+<p>You can use <code>equals()</code> to determine whether 2 different descriptors refer to the same operation.</p>
+ 
+<p>The subtypes of this interface define specific types of operations, such as task execution.</p>
+</p>
+<p><strong>Since</strong><br/>
+2.4</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns a human consumable display name for the operation. This display name provides enough context for a human to uniquely identify the operation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the operation. This name does not necessarily uniquely identify the operation. However, the name can be used by a human to disambiguate between the children of a given operation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-parent.html">getParent</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getParent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">OperationDescriptor</span></code>
+<p>Returns the parent operation, if any.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.events.task/-task-operation-descriptor/index.html">TaskOperationDescriptor</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskOperationDescriptor</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">OperationDescriptor</span></code>
+<p>Describes a task operation for which an event has occurred.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.events.test/-test-operation-descriptor.html">TestOperationDescriptor</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TestOperationDescriptor</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">OperationDescriptor</span></code>
+<p>Describes a test operation for which an event has occurred.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

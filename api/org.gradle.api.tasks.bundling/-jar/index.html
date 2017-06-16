@@ -1,0 +1,167 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Jar - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.bundling</a>&nbsp;/&nbsp;<a href=".">Jar</a><br/>
+<br/>
+<h1>Jar</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Jar</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.jvm.tasks/-jar/index.html"><span class="identifier">Jar</span></a></code>
+<p>Assembles a JAR archive.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">Jar</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Assembles a JAR archive.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm.tasks/-jar/-d-e-f-a-u-l-t_-e-x-t-e-n-s-i-o-n.html">DEFAULT_EXTENSION</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">DEFAULT_EXTENSION</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="manifest.html">manifest</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">manifest</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.bundling.Jar$manifest(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Jar</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm.tasks/-jar/get-manifest.html">getManifest</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getManifest</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.java.archives/-manifest/index.html"><span class="identifier">Manifest</span></a></code>
+<p>Returns the manifest for this JAR archive.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm.tasks/-jar/get-manifest-content-charset.html">getManifestContentCharset</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getManifestContentCharset</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The character set used to encode the manifest content. Defaults to UTF-8. You can change this property but it is not recommended as JVMs expect manifests content to be encoded using UTF-8.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm.tasks/-jar/get-meta-inf.html">getMetaInf</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMetaInf</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm.tasks/-jar/get-metadata-charset.html">getMetadataCharset</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMetadataCharset</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The character set used to encode JAR metadata like file names. Defaults to UTF-8. You can change this property but it is not recommended as JVMs expect JAR metadata to be encoded using UTF-8</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm.tasks/-jar/manifest.html">manifest</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">manifest</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.tasks.Jar$manifest(org.gradle.api.Action((org.gradle.api.java.archives.Manifest)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.java.archives/-manifest/index.html"><span class="identifier">Manifest</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.jvm.tasks/-jar/index.html"><span class="identifier">Jar</span></a></code>
+<p>Configures the manifest for this JAR archive. 
+<p>The given action is executed to configure the manifest.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm.tasks/-jar/meta-inf.html">metaInf</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">metaInf</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.tasks.Jar$metaInf(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a></code>
+<p>Adds content to this JAR archive's META-INF directory. 
+<p>The given closure is executed to configure a <code>CopySpec</code>. The org.gradle.api.file.CopySpec is passed to the closure as its delegate.</p>
+</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">metaInf</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.tasks.Jar$metaInf(org.gradle.api.Action((org.gradle.api.file.CopySpec)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a></code>
+<p>Adds content to this JAR archive's META-INF directory. 
+<p>The given action is executed to configure a <code>CopySpec</code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm.tasks/-jar/set-manifest.html">setManifest</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setManifest</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.tasks.Jar$setManifest(org.gradle.api.java.archives.Manifest)/manifest">manifest</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.java.archives/-manifest/index.html"><span class="identifier">Manifest</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the manifest for this JAR archive.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm.tasks/-jar/set-manifest-content-charset.html">setManifestContentCharset</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setManifestContentCharset</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.tasks.Jar$setManifestContentCharset(kotlin.String)/manifestContentCharset">manifestContentCharset</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The character set used to encode the manifest content.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm.tasks/-jar/set-metadata-charset.html">setMetadataCharset</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMetadataCharset</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.tasks.Jar$setMetadataCharset(kotlin.String)/metadataCharset">metadataCharset</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The character set used to encode JAR metadata like file names. Defaults to UTF-8. You can change this property but it is not recommended as JVMs expect JAR metadata to be encoded using UTF-8</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.plugins.ear/-ear/index.html">Ear</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Ear</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Jar</span></code>
+<p>Assembles an EAR archive.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-war/index.html">War</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">War</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Jar</span></code>
+<p>Assembles a WAR archive.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

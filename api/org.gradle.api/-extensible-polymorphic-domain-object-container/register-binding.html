@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ExtensiblePolymorphicDomainObjectContainer.registerBinding - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">ExtensiblePolymorphicDomainObjectContainer</a>&nbsp;/&nbsp;<a href=".">registerBinding</a><br/>
+<br/>
+<h1>registerBinding</h1>
+<a name="org.gradle.api.ExtensiblePolymorphicDomainObjectContainer$registerBinding(java.lang.Class((org.gradle.api.ExtensiblePolymorphicDomainObjectContainer.registerBinding.U)), java.lang.Class((org.gradle.api.ExtensiblePolymorphicDomainObjectContainer.registerBinding.U)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">U</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">registerBinding</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.ExtensiblePolymorphicDomainObjectContainer$registerBinding(java.lang.Class((org.gradle.api.ExtensiblePolymorphicDomainObjectContainer.registerBinding.U)), java.lang.Class((org.gradle.api.ExtensiblePolymorphicDomainObjectContainer.registerBinding.U)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">U</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.ExtensiblePolymorphicDomainObjectContainer$registerBinding(java.lang.Class((org.gradle.api.ExtensiblePolymorphicDomainObjectContainer.registerBinding.U)), java.lang.Class((org.gradle.api.ExtensiblePolymorphicDomainObjectContainer.registerBinding.U)))/implementationType">implementationType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">U</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Registers a binding from the specified "public" domain object type to the specified implementation type. Whenever the container is asked to create an element with the binding's public type, it will instantiate the binding's implementation type. If the implementation type has a constructor annotated with javax.inject.Inject, its arguments will be injected. 
+<p>In general, registering a binding is preferable over implementing and registering a factory.</p>
+</p>
+<h3>Parameters</h3>
+<a name="type"></a>
+<code>type</code> - a public domain object type<a name="implementationType"></a>
+<code>implementationType</code> - the corresponding implementation type<a name="&lt;U&gt;"></a>
+<code><U></code> - a public domain object type
+</BODY>
+</HTML>

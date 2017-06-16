@@ -1,0 +1,17 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CancellationTokenSource.cancel - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling</a>&nbsp;/&nbsp;<a href="index.html">CancellationTokenSource</a>&nbsp;/&nbsp;<a href=".">cancel</a><br/>
+<br/>
+<h1>cancel</h1>
+<a name="org.gradle.tooling.CancellationTokenSource$cancel()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">cancel</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Initiates cancel request. All operations that have been associated with this token will be cancelled. 
+<p>It is assumed that the implementation will do 'best-effort' attempt to perform cancellation. This method returns immediately and if the cancellation is successful the cancelled operation will notify its <code><a href="../-result-handler/on-failure.html">org.gradle.tooling.ResultHandler#onFailure(GradleConnectionException)</a></code> with a BuildCancelledException describing how it was cancelled. </p>
+</p>
+</BODY>
+</HTML>

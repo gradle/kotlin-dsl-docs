@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PluginDependenciesSpec.id - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugin.use</a>&nbsp;/&nbsp;<a href="index.html">PluginDependenciesSpec</a>&nbsp;/&nbsp;<a href=".">id</a><br/>
+<br/>
+<h1>id</h1>
+<a name="org.gradle.plugin.use.PluginDependenciesSpec$id(kotlin.String)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">id</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.use.PluginDependenciesSpec$id(kotlin.String)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-plugin-dependency-spec/index.html"><span class="identifier">PluginDependencySpec</span></a></code>
+<p>Add a dependency on the plugin with the given id. 
+<p> </p>
+<pre><code> plugins { id "org.company.myplugin" } </code></pre> Further constraints (e.g. version number) can be specified by the methods of the return value. <pre><code> plugins { id "org.company.myplugin" version "1.3" } </code></pre> Plugins are automatically applied to the current script by default. This can be disabled using the <code>apply false</code> option: <pre><code> plugins { id "org.company.myplugin" version "1.3" apply false } </code></pre> This is useful to reuse task classes from a plugin or to apply it to some other target than the current script.</p>
+<h3>Parameters</h3>
+<a name="id"></a>
+<code>id</code> - the id of the plugin to depend on
+<p><strong>Return</strong><br/>
+a mutable plugin dependency specification that can be used to further refine the dependency</p>
+</BODY>
+</HTML>

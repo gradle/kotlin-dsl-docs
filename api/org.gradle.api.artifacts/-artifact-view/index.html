@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ArtifactView - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">ArtifactView</a><br/>
+<br/>
+<h1>ArtifactView</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ArtifactView</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.attributes/-has-attributes/index.html"><span class="identifier">HasAttributes</span></a></code>
+<p>A view over the artifacts resolved for this set of dependencies. By default, the view returns all files and artifacts, but this can be restricted by component identifier or by attributes.</p>
+<p><strong>Since</strong><br/>
+3.4</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-view-configuration/index.html">ViewConfiguration</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ViewConfiguration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.attributes/-has-configurable-attributes/index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="-view-configuration/index.html"><span class="identifier">ViewConfiguration</span></a><span class="symbol">&gt;</span></code>
+<p>Configuration for a defined artifact view.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-artifacts.html">getArtifacts</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getArtifacts</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-artifact-collection/index.html"><span class="identifier">ArtifactCollection</span></a></code>
+<p>Returns the collection of artifacts matching the requested attributes that are sourced from Components matching the specified filter.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-files.html">getFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the collection of artifact files matching the requested attributes that are sourced from Components matching the specified filter.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.attributes/-has-attributes/get-attributes.html">getAttributes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAttributes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.attributes/-attribute-container/index.html"><span class="identifier">AttributeContainer</span></a></code>
+<p>Returns the attributes</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-resolvable-dependencies/index.html">ResolvableDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ResolvableDependencies</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ArtifactView</span></code>
+<p>A set of Dependency objects which can be resolved to a set of files. There are various methods on this type that you can use to get the result in different forms: <ul> <li><code><a href="../-resolvable-dependencies/get-files.html">#getFiles()</a></code> returns a FileCollection that provides the result as a set of java.io.File instances.</li>
+ <li><code><a href="../-resolvable-dependencies/get-resolution-result.html">#getResolutionResult()</a></code> returns a ResolutionResult that provides information about the dependency graph.</li>
+ <li><code><a href="../-resolvable-dependencies/get-artifacts.html">#getArtifacts()</a></code> returns an ArtifactCollection that provides the files with additional metadata.</li>
+ </ul>
+ 
+<p>The dependencies are resolved once only, when the result is first requested. The result is reused and returned for subsequent calls. Once resolved, any mutation to the dependencies will result in an error.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

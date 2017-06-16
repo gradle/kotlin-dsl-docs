@@ -1,0 +1,17 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Buildable.getBuildDependencies - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">Buildable</a>&nbsp;/&nbsp;<a href=".">getBuildDependencies</a><br/>
+<br/>
+<h1>getBuildDependencies</h1>
+<a name="org.gradle.api.Buildable$getBuildDependencies()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-task-dependency/index.html"><span class="identifier">TaskDependency</span></a></code>
+<p>Returns a dependency which contains the tasks which build this artifact. All <code>Buildable</code> implementations must ensure that the returned dependency object is live, so that it tracks changes to the dependencies of this buildable.</p>
+<p><strong>Return</strong><br/>
+The dependency. Never returns null. Returns an empty dependency when this artifact is not built by any tasks.</p>
+</BODY>
+</HTML>

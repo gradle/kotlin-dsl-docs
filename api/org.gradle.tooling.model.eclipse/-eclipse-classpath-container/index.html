@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>EclipseClasspathContainer - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.model.eclipse</a>&nbsp;/&nbsp;<a href=".">EclipseClasspathContainer</a><br/>
+<br/>
+<h1>EclipseClasspathContainer</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">EclipseClasspathContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-eclipse-classpath-entry/index.html"><span class="identifier">EclipseClasspathEntry</span></a></code>
+<p>Eclipse classpath entry used by third-party plugins to contribute to the project's classpath.</p>
+<p><strong>Since</strong><br/>
+3.0</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-path.html">getPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the path of this container.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-exported.html">isExported</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isExported</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Marks this container as exported.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-eclipse-classpath-entry/get-access-rules.html">getAccessRules</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAccessRules</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-access-rule/index.html"><span class="identifier">AccessRule</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the access rules associated with this classpath entry.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-eclipse-classpath-entry/get-classpath-attributes.html">getClasspathAttributes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getClasspathAttributes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-classpath-attribute/index.html"><span class="identifier">ClasspathAttribute</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the classpath attributes associated with this classpath entry.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

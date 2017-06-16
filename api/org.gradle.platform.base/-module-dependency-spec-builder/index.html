@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ModuleDependencySpecBuilder - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.platform.base</a>&nbsp;/&nbsp;<a href=".">ModuleDependencySpecBuilder</a><br/>
+<br/>
+<h1>ModuleDependencySpecBuilder</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ModuleDependencySpecBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-dependency-spec-builder/index.html"><span class="identifier">DependencySpecBuilder</span></a></code>
+<p>A builder of a ModuleDependencySpec.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="group.html">group</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">group</span><span class="symbol">(</span><span class="identifier" id="org.gradle.platform.base.ModuleDependencySpecBuilder$group(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ModuleDependencySpecBuilder</span></code>
+<p>Narrows this dependency specification down to a specific group.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="module.html">module</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">module</span><span class="symbol">(</span><span class="identifier" id="org.gradle.platform.base.ModuleDependencySpecBuilder$module(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ModuleDependencySpecBuilder</span></code>
+<p>Narrows this dependency specification down to a specific module.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="version.html">version</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">version</span><span class="symbol">(</span><span class="identifier" id="org.gradle.platform.base.ModuleDependencySpecBuilder$version(kotlin.String)/range">range</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ModuleDependencySpecBuilder</span></code>
+<p>Narrows this dependency specification down to a specific version range.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-dependency-spec-builder/build.html">build</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">build</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-dependency-spec/index.html"><span class="identifier">DependencySpec</span></a></code>
+<p>Builds a concrete immutable DependencySpec instance.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

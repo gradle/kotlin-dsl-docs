@@ -1,0 +1,220 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ConfigurableFileTree - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href=".">ConfigurableFileTree</a><br/>
+<br/>
+<h1>ConfigurableFileTree</h1>
+<code><span class="keyword">interface </span><span class="identifier">ConfigurableFileTree</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-file-tree/index.html"><span class="identifier">FileTree</span></a><span class="symbol">, </span><a href="../-directory-tree/index.html"><span class="identifier">DirectoryTree</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">, </span><a href="../../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<p>
+<p>A FileTree with a single base directory, which can be configured and modified.</p>
+ 
+<p>You can obtain a <code>ConfigurableFileTree</code> instance by calling <code><a href="#">org.gradle.api.Project#fileTree(java.util.Map)</a></code>.</p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="built-by.html">builtBy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">builtBy</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.file.ConfigurableFileTree$builtBy(kotlin.Array((kotlin.Any)))/tasks">tasks</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ConfigurableFileTree</span></code>
+<p>Registers some tasks which build the files of this collection.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="from.html">from</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.ConfigurableFileTree$from(kotlin.Any)/dir">dir</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ConfigurableFileTree</span></code>
+<p>Specifies base directory for this file tree using the given path. The path is evaluated as per <code><a href="#"> </a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-built-by.html">getBuiltBy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuiltBy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the set of tasks which build the files of this collection.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-dir.html">getDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the base directory of this file tree.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-built-by.html">setBuiltBy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setBuiltBy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.ConfigurableFileTree$setBuiltBy(kotlin.collections.MutableIterable((kotlin.Any)))/tasks">tasks</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ConfigurableFileTree</span></code>
+<p>Sets the tasks which build the files of this collection.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-dir.html">setDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.ConfigurableFileTree$setDir(kotlin.Any)/dir">dir</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ConfigurableFileTree</span></code>
+<p>Specifies base directory for this file tree using the given path. The path is evaluated as per <code><a href="#"> </a></code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.util/-pattern-filterable/exclude.html">exclude</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.tasks.util.PatternFilterable$exclude(kotlin.Array((kotlin.String)))/excludes">excludes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.util.PatternFilterable$exclude(kotlin.collections.MutableIterable((kotlin.String)))/excludes">excludes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a></code>
+<p>Adds an ANT style exclude pattern. This method may be called multiple times to append new patterns and multiple patterns may be specified in a single call. If excludes are not provided, then no files will be excluded. If excludes are provided, then files must not match any exclude pattern to be processed.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.util.PatternFilterable$exclude(org.gradle.api.specs.Spec((org.gradle.api.file.FileTreeElement)))/excludeSpec">excludeSpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><a href="../-file-tree-element/index.html"><span class="identifier">FileTreeElement</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a></code>
+<p>Adds an exclude spec. This method may be called multiple times to append new specs. If excludes are not provided, then no files will be excluded. If excludes are provided, then files must not match any exclude pattern to be processed.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.util.PatternFilterable$exclude(groovy.lang.Closure((kotlin.Any)))/excludeSpec">excludeSpec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a></code>
+<p>Adds an exclude spec. This method may be called multiple times to append new specs.The given closure is passed a org.gradle.api.file.FileTreeElement as its parameter. The closure should return true or false. Example: <pre><code> copySpec { from 'source' into 'destination' //an example of excluding files from certain configuration: exclude { it.file in configurations.someConf.files } } </code></pre> If excludes are not provided, then no files will be excluded. If excludes are provided, then files must not match any exclude pattern to be processed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-tree/get-as-file-tree.html">getAsFileTree</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAsFileTree</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<p>Returns this.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.util/-pattern-filterable/get-excludes.html">getExcludes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExcludes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the set of exclude patterns.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-tree/get-files.html">getFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the contents of this tree as a flattened Set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.util/-pattern-filterable/get-includes.html">getIncludes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getIncludes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the set of include patterns.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-directory-tree/get-patterns.html">getPatterns</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPatterns</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.util/-pattern-set/index.html"><span class="identifier">PatternSet</span></a></code>
+<p>Returns the patterns which select the files under the base directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.util/-pattern-filterable/include.html">include</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">include</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.tasks.util.PatternFilterable$include(kotlin.Array((kotlin.String)))/includes">includes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">include</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.util.PatternFilterable$include(kotlin.collections.MutableIterable((kotlin.String)))/includes">includes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a></code>
+<p>Adds an ANT style include pattern. This method may be called multiple times to append new patterns and multiple patterns may be specified in a single call. If includes are not provided, then all files in this container will be included. If includes are provided, then a file must match at least one of the include patterns to be processed.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">include</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.util.PatternFilterable$include(org.gradle.api.specs.Spec((org.gradle.api.file.FileTreeElement)))/includeSpec">includeSpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><a href="../-file-tree-element/index.html"><span class="identifier">FileTreeElement</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a></code>
+<p>Adds an include spec. This method may be called multiple times to append new specs. If includes are not provided, then all files in this container will be included. If includes are provided, then a file must match at least one of the include patterns or specs to be included.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">include</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.util.PatternFilterable$include(groovy.lang.Closure((kotlin.Any)))/includeSpec">includeSpec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a></code>
+<p>Adds an include spec. This method may be called multiple times to append new specs. The given closure is passed a org.gradle.api.file.FileTreeElement as its parameter. If includes are not provided, then all files in this container will be included. If includes are provided, then a file must match at least one of the include patterns or specs to be included.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-tree/matching.html">matching</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$matching(groovy.lang.Closure((kotlin.Any)))/filterConfigClosure">filterConfigClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<p>
+<p>Restricts the contents of this tree to those files matching the given filter. The filtered tree is live, so that any changes to this tree are reflected in the filtered tree.</p>
+ 
+<p>The given closure is used to configure the filter. A org.gradle.api.tasks.util.PatternFilterable is passed to the closure as its delegate. Only files which match the specified include patterns will be included in the filtered tree. Any files which match the specified exclude patterns will be excluded from the filtered tree.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$matching(org.gradle.api.Action((org.gradle.api.tasks.util.PatternFilterable)))/filterConfigAction">filterConfigAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<p>
+<p>Restricts the contents of this tree to those files matching the given filter. The filtered tree is live, so that any changes to this tree are reflected in the filtered tree.</p>
+ 
+<p>The given action is used to configure the filter. A org.gradle.api.tasks.util.PatternFilterable is passed to the action. Only files which match the specified include patterns will be included in the filtered tree. Any files which match the specified exclude patterns will be excluded from the filtered tree.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$matching(org.gradle.api.tasks.util.PatternFilterable)/patterns">patterns</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<p>
+<p>Restricts the contents of this tree to those files matching the given filter. The filtered tree is live, so that any changes to this tree are reflected in the filtered tree.</p>
+ 
+<p>The given pattern set is used to configure the filter. Only files which match the specified include patterns will be included in the filtered tree. Any files which match the specified exclude patterns will be excluded from the filtered tree.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-tree/plus.html">plus</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$plus(org.gradle.api.file.FileTree)/fileTree">fileTree</span><span class="symbol">:</span>&nbsp;<a href="../-file-tree/index.html"><span class="identifier">FileTree</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<p>Returns a <code>FileTree</code> which contains the union of this tree and the given tree. The returned tree is live, so that changes to either this tree or the other source tree are reflected in the returned tree.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.util/-pattern-filterable/set-excludes.html">setExcludes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setExcludes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.util.PatternFilterable$setExcludes(kotlin.collections.MutableIterable((kotlin.String)))/excludes">excludes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a></code>
+<p>Set the allowable exclude patterns. Note that unlike <code><a href="#">#exclude(Iterable)</a></code> this replaces any previously defined excludes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.util/-pattern-filterable/set-includes.html">setIncludes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setIncludes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.util.PatternFilterable$setIncludes(kotlin.collections.MutableIterable((kotlin.String)))/includes">includes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a></code>
+<p>Set the allowable include patterns. Note that unlike <code><a href="#">#include(Iterable)</a></code> this replaces any previously defined includes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-tree/visit.html">visit</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">visit</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$visit(org.gradle.api.file.FileVisitor)/visitor">visitor</span><span class="symbol">:</span>&nbsp;<a href="../-file-visitor/index.html"><span class="identifier">FileVisitor</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<p>Visits the files and directories in this file tree. Files are visited in depth-first prefix order, so that a directory is visited before its children.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">visit</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$visit(groovy.lang.Closure((kotlin.Any)))/visitor">visitor</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<p>Visits the files and directories in this file tree. Files are visited in depth-first prefix order, so that a directory is visited before its children. The file/directory to be visited is passed to the given closure as a</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">visit</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$visit(org.gradle.api.Action((org.gradle.api.file.FileVisitDetails)))/visitor">visitor</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-file-visit-details/index.html"><span class="identifier">FileVisitDetails</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<p>Visits the files and directories in this file tree. Files are visited in depth-first prefix order, so that a directory is visited before its children. The file/directory to be visited is passed to the given action as a</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

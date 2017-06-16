@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.tooling.events.task - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.tooling.events.task</a><br/>
+<br/>
+<h2>Package org.gradle.tooling.events.task</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-task-failure-result.html">TaskFailureResult</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskFailureResult</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-task-operation-result.html"><span class="identifier">TaskOperationResult</span></a><span class="symbol">, </span><a href="../org.gradle.tooling.events/-failure-result/index.html"><span class="identifier">FailureResult</span></a></code>
+<p>Describes how a task operation finished with failures.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-finish-event/index.html">TaskFinishEvent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskFinishEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-task-progress-event/index.html"><span class="identifier">TaskProgressEvent</span></a><span class="symbol">, </span><a href="../org.gradle.tooling.events/-finish-event/index.html"><span class="identifier">FinishEvent</span></a></code>
+<p>An event that informs about a task having finished its execution. You can query the result of the task using <code><a href="-task-finish-event/get-result.html">#getResult()</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-operation-descriptor/index.html">TaskOperationDescriptor</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskOperationDescriptor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.tooling.events/-operation-descriptor/index.html"><span class="identifier">OperationDescriptor</span></a></code>
+<p>Describes a task operation for which an event has occurred.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-operation-result.html">TaskOperationResult</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskOperationResult</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.tooling.events/-operation-result/index.html"><span class="identifier">OperationResult</span></a></code>
+<p>Describes the result of running a task operation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-progress-event/index.html">TaskProgressEvent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskProgressEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.tooling.events/-progress-event/index.html"><span class="identifier">ProgressEvent</span></a></code>
+<p>Root interface for all events that signal progress while executing a task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-skipped-result/index.html">TaskSkippedResult</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskSkippedResult</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-task-operation-result.html"><span class="identifier">TaskOperationResult</span></a><span class="symbol">, </span><a href="../org.gradle.tooling.events/-skipped-result.html"><span class="identifier">SkippedResult</span></a></code>
+<p>Describes how a task operation was skipped.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-start-event.html">TaskStartEvent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskStartEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-task-progress-event/index.html"><span class="identifier">TaskProgressEvent</span></a><span class="symbol">, </span><a href="../org.gradle.tooling.events/-start-event.html"><span class="identifier">StartEvent</span></a></code>
+<p>An event that informs about a task having started its execution.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-success-result/index.html">TaskSuccessResult</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskSuccessResult</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-task-operation-result.html"><span class="identifier">TaskOperationResult</span></a><span class="symbol">, </span><a href="../org.gradle.tooling.events/-success-result.html"><span class="identifier">SuccessResult</span></a></code>
+<p>Describes how a task operation finished successfully.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

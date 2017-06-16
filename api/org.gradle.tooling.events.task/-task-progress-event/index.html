@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TaskProgressEvent - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.events.task</a>&nbsp;/&nbsp;<a href=".">TaskProgressEvent</a><br/>
+<br/>
+<h1>TaskProgressEvent</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">TaskProgressEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.events/-progress-event/index.html"><span class="identifier">ProgressEvent</span></a></code>
+<p>Root interface for all events that signal progress while executing a task.</p>
+<p><strong>Since</strong><br/>
+2.5</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-descriptor.html">getDescriptor</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDescriptor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-task-operation-descriptor/index.html"><span class="identifier">TaskOperationDescriptor</span></a></code>
+<p>Returns the description of the task for which progress is reported.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.events/-progress-event/get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns a human consumable short description of the event.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.events/-progress-event/get-event-time.html">getEventTime</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getEventTime</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code>
+<p>Returns the time this event was triggered.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-task-finish-event/index.html">TaskFinishEvent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskFinishEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">TaskProgressEvent</span><span class="symbol">, </span><a href="../../org.gradle.tooling.events/-finish-event/index.html"><span class="identifier">FinishEvent</span></a></code>
+<p>An event that informs about a task having finished its execution. You can query the result of the task using <code><a href="../-task-finish-event/get-result.html">#getResult()</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-task-start-event.html">TaskStartEvent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskStartEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">TaskProgressEvent</span><span class="symbol">, </span><a href="../../org.gradle.tooling.events/-start-event.html"><span class="identifier">StartEvent</span></a></code>
+<p>An event that informs about a task having started its execution.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

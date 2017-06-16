@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Binary - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.platform.base</a>&nbsp;/&nbsp;<a href=".">Binary</a><br/>
+<br/>
+<h1>Binary</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">Binary</span></code>
+<p>A physical binary artifact, which can run on a particular platform or runtime.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns a human-consumable display name for this binary.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-binary-spec/index.html">BinarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-buildable-component-spec/index.html"><span class="identifier">BuildableComponentSpec</span></a><span class="symbol">, </span><a href="../../org.gradle.api/-checkable-component-spec/index.html"><span class="identifier">CheckableComponentSpec</span></a><span class="symbol">, </span><span class="identifier">Binary</span></code>
+<p>Represents a binary that is the result of building a component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-native-binary/index.html">NativeBinary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">NativeBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Binary</span></code>
+<p>Represents a particular binary artifact.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

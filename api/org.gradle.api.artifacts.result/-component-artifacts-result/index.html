@@ -1,0 +1,50 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ComponentArtifactsResult - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.result</a>&nbsp;/&nbsp;<a href=".">ComponentArtifactsResult</a><br/>
+<br/>
+<h1>ComponentArtifactsResult</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ComponentArtifactsResult</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-component-result/index.html"><span class="identifier">ComponentResult</span></a></code>
+<p>The result of successfully resolving a component with a set of artifacts.</p>
+<p><strong>Since</strong><br/>
+2.0</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-artifacts.html">getArtifacts</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getArtifacts</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.result.ComponentArtifactsResult$getArtifacts(java.lang.Class((org.gradle.api.component.Artifact)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.api.component/-artifact.html"><span class="identifier">Artifact</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-artifact-result/index.html"><span class="identifier">ArtifactResult</span></a><span class="symbol">&gt;</span></code>
+<p>
+<p>Returns the artifacts of the specified type that belong to this component. Includes resolved and unresolved artifacts (if any). </p>
+<p>The elements of the returned collection are declared as ArtifactResult, however the artifact instances will also implement one of the following instances:</p>
+ <ul> <li>ResolvedArtifactResult for artifacts which were successfully resolved.</li>
+ <li>UnresolvedArtifactResult for artifacts which could not be resolved for some reason.</li>
+ </ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-component-result/get-id.html">getId</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getId</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.component/-component-identifier/index.html"><span class="identifier">ComponentIdentifier</span></a></code>
+<p>Returns an identifier for the requested component.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

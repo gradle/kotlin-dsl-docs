@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.testing.jacoco.tasks - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.testing.jacoco.tasks</a><br/>
+<br/>
+<h2>Package org.gradle.testing.jacoco.tasks</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-jacoco-base/index.html">JacocoBase</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">JacocoBase</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a></code>
+<p>Base class for Jacoco tasks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-jacoco-coverage-verification/index.html">JacocoCoverageVerification</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JacocoCoverageVerification</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-jacoco-report-base/index.html"><span class="identifier">JacocoReportBase</span></a></code>
+<p>Task for verifying code coverage metrics. Fails the task if violations are detected based on specified rules. 
+<p> Requires JaCoCo version &gt;= 0.6.3.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-jacoco-merge/index.html">JacocoMerge</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JacocoMerge</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-jacoco-base/index.html"><span class="identifier">JacocoBase</span></a></code>
+<p>Task to merge multiple execution data files into one.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-jacoco-report/index.html">JacocoReport</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JacocoReport</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-jacoco-report-base/index.html"><span class="identifier">JacocoReportBase</span></a><span class="symbol">, </span><a href="../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="-jacoco-reports-container/index.html"><span class="identifier">JacocoReportsContainer</span></a><span class="symbol">&gt;</span></code>
+<p>Task to generate HTML, Xml and CSV reports of Jacoco coverage data.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-jacoco-report-base/index.html">JacocoReportBase</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">JacocoReportBase</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-jacoco-base/index.html"><span class="identifier">JacocoBase</span></a></code>
+<p>Base class for Jacoco report tasks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-jacoco-reports-container/index.html">JacocoReportsContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">JacocoReportsContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.reporting/-report-container/index.html"><span class="identifier">ReportContainer</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api.reporting/-configurable-report/index.html"><span class="identifier">ConfigurableReport</span></a><span class="symbol">&gt;</span></code>
+<p>The reporting configuration for the JacocoReport task.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

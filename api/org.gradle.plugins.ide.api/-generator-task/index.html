@@ -1,0 +1,110 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GeneratorTask - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.api</a>&nbsp;/&nbsp;<a href=".">GeneratorTask</a><br/>
+<br/>
+<h1>GeneratorTask</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GeneratorTask</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span></code>
+<p>
+<p>A <code>GeneratorTask</code> generates a configuration file based on a domain object of type T. When executed the task: </p>
+<ul> <li>loads the object from the input file, if it exists.</li>
+ <li>Calls the beforeConfigured actions, passing the object to each action.</li>
+ <li>Configures the object in some task-specific way.</li>
+ <li>Calls the afterConfigured actions, passing the object to each action.</li>
+ <li>writes the object to the output file.</li>
+ </ul>
+</p>
+<h3>Parameters</h3>
+<a name="&lt;T&gt;"></a>
+<code><T></code> - The domain object for the configuration file.
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">GeneratorTask</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-input-file.html">getInputFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getInputFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The input file to load the initial configuration from. Defaults to the output file. If the specified input file does not exist, this task uses some default initial configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-output-file.html">getOutputFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOutputFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The output file to write the final configuration to.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-input-file.html">setInputFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setInputFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.api.GeneratorTask$setInputFile(java.io.File)/inputFile">inputFile</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the input file to load the initial configuration from.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-output-file.html">setOutputFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOutputFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.api.GeneratorTask$setOutputFile(java.io.File)/outputFile">outputFile</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the output file to write the final configuration to.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.ide.visualstudio.tasks/-generate-solution-file-task/index.html">GenerateSolutionFileTask</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GenerateSolutionFileTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GeneratorTask</span><span class="symbol">&lt;</span><span class="identifier">VisualStudioSolutionFile</span><span class="symbol">&gt;</span></code>
+<p>Task for generating a solution file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-properties-generator-task/index.html">PropertiesGeneratorTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">PropertiesGeneratorTask</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">PersistableConfigurationObject</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GeneratorTask</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>A convenience superclass for those tasks which generate Properties configuration files from a domain object of type T.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-xml-generator-task/index.html">XmlGeneratorTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">XmlGeneratorTask</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">PersistableConfigurationObject</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GeneratorTask</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>A convenience superclass for those tasks which generate XML configuration files from a domain object of type T.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

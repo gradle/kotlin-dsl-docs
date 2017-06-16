@@ -1,0 +1,85 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>IdeaModuleIml - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.idea.model</a>&nbsp;/&nbsp;<a href=".">IdeaModuleIml</a><br/>
+<br/>
+<h1>IdeaModuleIml</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">IdeaModuleIml</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.ide.api/-xml-file-content-merger/index.html"><span class="identifier">XmlFileContentMerger</span></a></code>
+<p>Models the generation/parsing/merging capabilities of an IDEA module. 
+<p> For examples, see docs for IdeaModule.</p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">IdeaModuleIml</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModuleIml$<init>(XmlTransformer, java.io.File)/xmlTransformer">xmlTransformer</span><span class="symbol">:</span>&nbsp;<span class="identifier">XmlTransformer</span><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModuleIml$<init>(XmlTransformer, java.io.File)/generateTo">generateTo</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-generate-to.html">getGenerateTo</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getGenerateTo</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Folder where the *.iml file will be generated to 
+<p> For example see docs for IdeaModule</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-generate-to.html">setGenerateTo</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setGenerateTo</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModuleIml$setGenerateTo(java.io.File)/generateTo">generateTo</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.plugins.ide.api/-xml-file-content-merger/get-xml-transformer.html">getXmlTransformer</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getXmlTransformer</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">XmlTransformer</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.plugins.ide.api/-xml-file-content-merger/set-xml-transformer.html">setXmlTransformer</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setXmlTransformer</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.api.XmlFileContentMerger$setXmlTransformer(XmlTransformer)/xmlTransformer">xmlTransformer</span><span class="symbol">:</span>&nbsp;<span class="identifier">XmlTransformer</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.plugins.ide.api/-xml-file-content-merger/with-xml.html">withXml</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">withXml</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.api.XmlFileContentMerger$withXml(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a closure to be called when the file has been created. The XML is passed to the closure as a parameter in form of a XmlProvider. The closure can modify the XML before it is written to the output file. 
+<p> For examples see docs for org.gradle.plugins.ide.eclipse.model.EclipseProject or org.gradle.plugins.ide.idea.model.IdeaProject and others.</p>
+</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">withXml</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.api.XmlFileContentMerger$withXml(org.gradle.api.Action((org.gradle.api.XmlProvider)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api/-xml-provider/index.html"><span class="identifier">XmlProvider</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an action to be called when the file has been created. 
+<p> See <code><a href="#">#withXml(Closure)</a></code></p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

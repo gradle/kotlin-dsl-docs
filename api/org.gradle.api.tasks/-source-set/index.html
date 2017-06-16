@@ -1,0 +1,317 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>SourceSet - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks</a>&nbsp;/&nbsp;<a href=".">SourceSet</a><br/>
+<br/>
+<h1>SourceSet</h1>
+<code><span class="keyword">interface </span><span class="identifier">SourceSet</span></code>
+<p>A <code>SourceSet</code> represents a logical group of Java source and resources. 
+<p> See the example below how SourceSet 'main' is accessed and how the SourceDirectorySet 'java' is configured to exclude some package from compilation. </p>
+<pre><code> apply plugin: 'java' sourceSets { main { java { exclude 'some/unwanted/package/**' } } } </code></pre></p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-m-a-i-n_-s-o-u-r-c-e_-s-e-t_-n-a-m-e.html">MAIN_SOURCE_SET_NAME</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">MAIN_SOURCE_SET_NAME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name of the main source set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-t-e-s-t_-s-o-u-r-c-e_-s-e-t_-n-a-m-e.html">TEST_SOURCE_SET_NAME</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">TEST_SOURCE_SET_NAME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name of the test source set.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="compiled-by.html">compiledBy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">compiledBy</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.tasks.SourceSet$compiledBy(kotlin.Array((kotlin.Any)))/taskPaths">taskPaths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SourceSet</span></code>
+<p>Registers a set of tasks which are responsible for compiling this source set into the classes directory. The paths are evaluated as per <code><a href="#">org.gradle.api.Task#dependsOn(Object...)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-all-java.html">getAllJava</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAllJava</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-source-directory-set/index.html"><span class="identifier">SourceDirectorySet</span></a></code>
+<p>All Java source files for this source set. This includes, for example, source which is directly compiled, and source which is indirectly compiled through joint compilation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-all-source.html">getAllSource</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAllSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-source-directory-set/index.html"><span class="identifier">SourceDirectorySet</span></a></code>
+<p>All source files for this source set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-api-configuration-name.html">getApiConfigurationName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getApiConfigurationName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the API configuration for this source set. The API configuration contains dependencies which are exported by this source set, and is not transitive by default. This configuration is not meant to be resolved and should only contain dependencies that are required when compiling against this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-api-elements-configuration-name.html">getApiElementsConfigurationName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getApiElementsConfigurationName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the configuration that should be used when compiling against the API of this component. This configuration is meant to be consumed by other components when they need to compile against it.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-classes-task-name.html">getClassesTaskName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getClassesTaskName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the classes task for this source set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-compile-classpath.html">getCompileClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCompileClasspath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the classpath used to compile this source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-compile-classpath-configuration-name.html">getCompileClasspathConfigurationName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCompileClasspathConfigurationName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the compile classpath configuration for this source set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-compile-configuration-name.html">getCompileConfigurationName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCompileConfigurationName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the compile configuration for this source set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-compile-java-task-name.html">getCompileJavaTaskName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCompileJavaTaskName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the compile Java task for this source set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-compile-only-configuration-name.html">getCompileOnlyConfigurationName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCompileOnlyConfigurationName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the compile only configuration for this source set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-compile-task-name.html">getCompileTaskName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCompileTaskName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.SourceSet$getCompileTaskName(kotlin.String)/language">language</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of a compile task for this source set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-implementation-configuration-name.html">getImplementationConfigurationName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getImplementationConfigurationName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the implementation configuration for this source set. The implementation configuration should contain dependencies which are specific to the implementation of the component (internal APIs).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-jar-task-name.html">getJarTaskName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getJarTaskName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the Jar task for this source set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-java.html">getJava</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getJava</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-source-directory-set/index.html"><span class="identifier">SourceDirectorySet</span></a></code>
+<p>Returns the Java source which is to be compiled by the Java compiler into the class output directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of this source set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-output.html">getOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOutput</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-source-set-output/index.html"><span class="identifier">SourceSetOutput</span></a></code>
+<p>SourceSetOutput is a FileCollection of all output directories (compiled classes, processed resources, etc.) and it provides means to configure the default output dirs and register additional output dirs. See examples in SourceSetOutput</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-process-resources-task-name.html">getProcessResourcesTaskName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProcessResourcesTaskName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the resource process task for this source set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-resources.html">getResources</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getResources</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-source-directory-set/index.html"><span class="identifier">SourceDirectorySet</span></a></code>
+<p>Returns the non-Java resources which are to be copied into the resources output directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-runtime-classpath.html">getRuntimeClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRuntimeClasspath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the classpath used to execute this source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-runtime-classpath-configuration-name.html">getRuntimeClasspathConfigurationName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRuntimeClasspathConfigurationName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the runtime classpath configuration of this component: the runtime classpath contains elements of the implementation, as well as runtime only elements.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-runtime-configuration-name.html">getRuntimeConfigurationName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRuntimeConfigurationName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the runtime configuration for this source set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-runtime-elements-configuration-name.html">getRuntimeElementsConfigurationName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRuntimeElementsConfigurationName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the configuration containing elements that are stricly required at runtime. Consumers of this configuration will get all the mandatory elements for this component to execute at runtime.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-runtime-only-configuration-name.html">getRuntimeOnlyConfigurationName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRuntimeOnlyConfigurationName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the configuration that contains dependencies that are only required at runtime of the component. Dependencies found in this configuration are visible to the runtime classpath of the component, but not to consumers.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-task-name.html">getTaskName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTaskName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.SourceSet$getTaskName(kotlin.String, kotlin.String)/verb">verb</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.SourceSet$getTaskName(kotlin.String, kotlin.String)/target">target</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of a task for this source set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="java.html">java</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">java</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.SourceSet$java(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SourceSet</span></code>
+<p>Configures the Java source for this set. 
+<p>The given closure is used to configure the SourceDirectorySet which contains the Java source.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">java</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.SourceSet$java(org.gradle.api.Action((org.gradle.api.file.SourceDirectorySet)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.file/-source-directory-set/index.html"><span class="identifier">SourceDirectorySet</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SourceSet</span></code>
+<p>Configures the Java source for this set. 
+<p>The given action is used to configure the SourceDirectorySet which contains the Java source.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="resources.html">resources</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">resources</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.SourceSet$resources(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SourceSet</span></code>
+<p>Configures the non-Java resources for this set. 
+<p>The given closure is used to configure the SourceDirectorySet which contains the resources.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">resources</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.SourceSet$resources(org.gradle.api.Action((org.gradle.api.file.SourceDirectorySet)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.file/-source-directory-set/index.html"><span class="identifier">SourceDirectorySet</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SourceSet</span></code>
+<p>Configures the non-Java resources for this set. 
+<p>The given action is used to configure the SourceDirectorySet which contains the resources.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-compile-classpath.html">setCompileClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setCompileClasspath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.SourceSet$setCompileClasspath(org.gradle.api.file.FileCollection)/classpath">classpath</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the classpath used to compile this source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-runtime-classpath.html">setRuntimeClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setRuntimeClasspath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.SourceSet$setRuntimeClasspath(org.gradle.api.file.FileCollection)/classpath">classpath</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the classpath used to execute this source.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,105 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api.tasks.diagnostics - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.tasks.diagnostics</a><br/>
+<br/>
+<h2>Package org.gradle.api.tasks.diagnostics</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-abstract-dependency-report-task/index.html">AbstractDependencyReportTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractDependencyReportTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-report-task/index.html"><span class="identifier">AbstractReportTask</span></a></code>
+<p>Displays the dependency tree for a configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-abstract-report-task/index.html">AbstractReportTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractReportTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span></code>
+<p>The base class for all project report tasks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-build-environment-report-task/index.html">BuildEnvironmentReportTask</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BuildEnvironmentReportTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a></code>
+<p>Provides information about the build environment for the project that the task is associated with. 
+<p> Currently, this information is limited to the project's declared build script dependencies visualised in a similar manner as provided by DependencyReportTask. </p>
+<p> It is not necessary to manually add a task of this type to your project, as every project automatically has a task of this type by the name <code>"buildEnvironment"</code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency-insight-report-task/index.html">DependencyInsightReportTask</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">DependencyInsightReportTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a></code>
+<p>Generates a report that attempts to answer questions like: <ul> <li>Why is this dependency in the dependency graph?</li>
+ <li>Exactly which dependencies are pulling this dependency into the graph?</li>
+ <li>What is the actual version (i.e. *selected* version) of the dependency that will be used? Is it the same as what was *requested*?</li>
+ <li>Why is the *selected* version of a dependency different to the *requested*?</li>
+ </ul>
+ Use this task to get insight into a particular dependency (or dependencies) and find out what exactly happens during dependency resolution and conflict resolution. If the dependency version was forced or selected by the conflict resolution this information will be available in the report. 
+<p> While the regular dependencies report (DependencyReportTask) shows the path from the top level dependencies down through the transitive dependencies, the dependency insight report shows the path from a particular dependency to the dependencies that pulled it in. That is, it is an inverted view of the regular dependencies report. </p>
+<p> The task requires setting the dependency spec and the configuration. For more information on how to configure those please refer to docs for <code><a href="#">DependencyInsightReportTask#setDependencySpec(Object)</a></code> and <code><a href="#">DependencyInsightReportTask#setConfiguration(String)</a></code>. </p>
+<p> The task can also be configured from the command line. For more information please refer to <code><a href="#">DependencyInsightReportTask#setDependencySpec(Object)</a></code> and <code><a href="#">DependencyInsightReportTask#setConfiguration(String)</a></code></p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency-report-task/index.html">DependencyReportTask</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">DependencyReportTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-dependency-report-task/index.html"><span class="identifier">AbstractDependencyReportTask</span></a></code>
+<p>Displays the dependency tree for a project. An instance of this type is used when you execute the <code>dependencies</code> task from the command-line.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-project-report-task/index.html">ProjectReportTask</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ProjectReportTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-report-task/index.html"><span class="identifier">AbstractReportTask</span></a></code>
+<p>
+<p>Displays a list of projects in the build. An instance of this type is used when you execute the <code>projects</code> task from the command-line.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-property-report-task/index.html">PropertyReportTask</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PropertyReportTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-report-task/index.html"><span class="identifier">AbstractReportTask</span></a></code>
+<p>Displays the properties of a project. An instance of this type is used when you execute the <code>properties</code> task from the command-line.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-report-task/index.html">TaskReportTask</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">TaskReportTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-report-task/index.html"><span class="identifier">AbstractReportTask</span></a></code>
+<p>
+<p>Displays a list of tasks in the project. An instance of this type is used when you execute the <code>tasks</code> task from the command-line.</p>
+ By default, this report shows only those tasks which have been assigned to a task group, so-called <em>visible</em> tasks. Tasks which have not been assigned to a task group, so-called <em>hidden</em> tasks, can be included in the report by enabling the command line option <code>--all</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

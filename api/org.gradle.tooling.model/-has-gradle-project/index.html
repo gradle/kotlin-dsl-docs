@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>HasGradleProject - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.model</a>&nbsp;/&nbsp;<a href=".">HasGradleProject</a><br/>
+<br/>
+<h1>HasGradleProject</h1>
+<code><span class="keyword">interface </span><span class="identifier">HasGradleProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-project-model/index.html"><span class="identifier">ProjectModel</span></a></code>
+<p>An element that is associated with a Gradle project. Via the Gradle project you can access (list, run, etc.) Gradle tasks.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-gradle-project.html">getGradleProject</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGradleProject</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-gradle-project/index.html"><span class="identifier">GradleProject</span></a></code>
+<p>The associated Gradle project. Via the gradle project you can access (list, run, etc.) Gradle tasks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project-identifier.html">getProjectIdentifier</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectIdentifier</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-project-identifier/index.html"><span class="identifier">ProjectIdentifier</span></a></code>
+<p>Returns the identifier for the project that this model is associated with.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.model.eclipse/-hierarchical-eclipse-project/index.html">HierarchicalEclipseProject</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">HierarchicalEclipseProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-hierarchical-element/index.html"><span class="identifier">HierarchicalElement</span></a><span class="symbol">, </span><span class="identifier">HasGradleProject</span></code>
+<p>Represents the basic information about an Eclipse project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.model.idea/-idea-module/index.html">IdeaModule</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">IdeaModule</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-hierarchical-element/index.html"><span class="identifier">HierarchicalElement</span></a><span class="symbol">, </span><span class="identifier">HasGradleProject</span></code>
+<p>Represents information about the IDEA module.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

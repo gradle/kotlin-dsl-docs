@@ -1,0 +1,141 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PlayRun - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.play.tasks</a>&nbsp;/&nbsp;<a href=".">PlayRun</a><br/>
+<br/>
+<h1>PlayRun</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PlayRun</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span></code>
+<p>Task to run a Play application.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">PlayRun</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Task to run a Play application.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-application-jar.html">getApplicationJar</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getApplicationJar</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The Play application jar to run.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-assets-dirs.html">getAssetsDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAssetsDirs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>The directories of the assets for the Play application (for live reload functionality).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-assets-jar.html">getAssetsJar</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAssetsJar</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The assets jar to run with the Play application.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-deployment-registry.html">getDeploymentRegistry</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDeploymentRegistry</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">DeploymentRegistry</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-fork-options.html">getForkOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getForkOptions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.compile/-base-fork-options/index.html"><span class="identifier">BaseForkOptions</span></a></code>
+<p>fork options for the running a Play application.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-http-port.html">getHttpPort</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getHttpPort</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>The HTTP port listened to by the Play application. This port should be available. The Play application will fail to start if the port is already in use.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="run.html">run</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">run</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-application-jar.html">setApplicationJar</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setApplicationJar</span><span class="symbol">(</span><span class="identifier" id="org.gradle.play.tasks.PlayRun$setApplicationJar(java.io.File)/applicationJar">applicationJar</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-assets-dirs.html">setAssetsDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setAssetsDirs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.play.tasks.PlayRun$setAssetsDirs(kotlin.collections.MutableSet((java.io.File)))/assetsDirs">assetsDirs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-assets-jar.html">setAssetsJar</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setAssetsJar</span><span class="symbol">(</span><span class="identifier" id="org.gradle.play.tasks.PlayRun$setAssetsJar(java.io.File)/assetsJar">assetsJar</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-changing-classpath.html">setChangingClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setChangingClasspath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.play.tasks.PlayRun$setChangingClasspath(org.gradle.api.file.FileCollection)/changingClasspath">changingClasspath</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-http-port.html">setHttpPort</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setHttpPort</span><span class="symbol">(</span><span class="identifier" id="org.gradle.play.tasks.PlayRun$setHttpPort(kotlin.Int)/httpPort">httpPort</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-play-tool-provider.html">setPlayToolProvider</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setPlayToolProvider</span><span class="symbol">(</span><span class="identifier" id="org.gradle.play.tasks.PlayRun$setPlayToolProvider(PlayToolProvider)/playToolProvider">playToolProvider</span><span class="symbol">:</span>&nbsp;<span class="identifier">PlayToolProvider</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-runtime-classpath.html">setRuntimeClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setRuntimeClasspath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.play.tasks.PlayRun$setRuntimeClasspath(org.gradle.api.file.FileCollection)/runtimeClasspath">runtimeClasspath</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

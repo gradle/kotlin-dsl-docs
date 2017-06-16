@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NamedDomainObjectCollection.getByName - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">NamedDomainObjectCollection</a>&nbsp;/&nbsp;<a href=".">getByName</a><br/>
+<br/>
+<h1>getByName</h1>
+<a name="org.gradle.api.NamedDomainObjectCollection$getByName(kotlin.String)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getByName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectCollection$getByName(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Locates an object by name, failing if there is no such object.</p>
+<h3>Parameters</h3>
+<a name="name"></a>
+<code>name</code> - The object name
+<h3>Exceptions</h3>
+<a name="UnknownDomainObjectException"></a>
+<code>UnknownDomainObjectException</code> - when there is no such object in this collection.
+<p><strong>Return</strong><br/>
+The object with the given name. Never returns null.</p>
+<a name="org.gradle.api.NamedDomainObjectCollection$getByName(kotlin.String, groovy.lang.Closure((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getByName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectCollection$getByName(kotlin.String, groovy.lang.Closure((kotlin.Any)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.NamedDomainObjectCollection$getByName(kotlin.String, groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Locates an object by name, failing if there is no such object. The given configure closure is executed against the object before it is returned from this method. The object is passed to the closure as its delegate.</p>
+<h3>Parameters</h3>
+<a name="name"></a>
+<code>name</code> - The object name<a name="configureClosure"></a>
+<code>configureClosure</code> - The closure to use to configure the object.
+<h3>Exceptions</h3>
+<a name="UnknownDomainObjectException"></a>
+<code>UnknownDomainObjectException</code> - when there is no such object in this collection.
+<p><strong>Return</strong><br/>
+The object with the given name, after the configure closure has been applied to it. Never returns null.</p>
+<a name="org.gradle.api.NamedDomainObjectCollection$getByName(kotlin.String, org.gradle.api.Action((org.gradle.api.NamedDomainObjectCollection.T)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getByName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectCollection$getByName(kotlin.String, org.gradle.api.Action((org.gradle.api.NamedDomainObjectCollection.T)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.NamedDomainObjectCollection$getByName(kotlin.String, org.gradle.api.Action((org.gradle.api.NamedDomainObjectCollection.T)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Locates an object by name, failing if there is no such object. The given configure action is executed against the object before it is returned from this method.</p>
+<h3>Parameters</h3>
+<a name="name"></a>
+<code>name</code> - The object name<a name="configureAction"></a>
+<code>configureAction</code> - The action to use to configure the object.
+<h3>Exceptions</h3>
+<a name="UnknownDomainObjectException"></a>
+<code>UnknownDomainObjectException</code> - when there is no such object in this collection.
+<p><strong>Return</strong><br/>
+The object with the given name, after the configure action has been applied to it. Never returns null.</p>
+<p><strong>Since</strong><br/>
+3.1</p>
+</BODY>
+</HTML>

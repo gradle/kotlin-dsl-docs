@@ -1,0 +1,169 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ExecSpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.process</a>&nbsp;/&nbsp;<a href=".">ExecSpec</a><br/>
+<br/>
+<h1>ExecSpec</h1>
+<code><span class="keyword">interface </span><span class="identifier">ExecSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-base-exec-spec/index.html"><span class="identifier">BaseExecSpec</span></a></code>
+<p>Specified the options for executing some command.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="args.html">args</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">args</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.process.ExecSpec$args(kotlin.Array((kotlin.Any)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ExecSpec</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">args</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.ExecSpec$args(kotlin.collections.MutableIterable((kotlin.Any)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ExecSpec</span></code>
+<p>Adds arguments for the command to be executed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="command-line.html">commandLine</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">commandLine</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.process.ExecSpec$commandLine(kotlin.Array((kotlin.Any)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ExecSpec</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">commandLine</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.ExecSpec$commandLine(kotlin.collections.MutableIterable((kotlin.Any)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ExecSpec</span></code>
+<p>Sets the full command line, including the executable to be executed plus its arguments.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-args.html">getArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getArgs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the arguments for the command to be executed. Defaults to an empty list.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-args.html">setArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.ExecSpec$setArgs(kotlin.collections.MutableList((kotlin.String)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ExecSpec</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.ExecSpec$setArgs(kotlin.collections.MutableIterable((kotlin.Any)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ExecSpec</span></code>
+<p>Sets the arguments for the command to be executed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-command-line.html">setCommandLine</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setCommandLine</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.ExecSpec$setCommandLine(kotlin.collections.MutableList((kotlin.String)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setCommandLine</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.process.ExecSpec$setCommandLine(kotlin.Array((kotlin.Any)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setCommandLine</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.ExecSpec$setCommandLine(kotlin.collections.MutableIterable((kotlin.Any)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the full command line, including the executable to be executed plus its arguments.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-base-exec-spec/get-command-line.html">getCommandLine</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCommandLine</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the full command line, including the executable plus its arguments.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-exec-spec/get-error-output.html">getErrorOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getErrorOutput</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a></code>
+<p>Returns the output stream to consume standard error from the process executing the command. Default to <code>System.err</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-exec-spec/get-standard-input.html">getStandardInput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getStandardInput</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a></code>
+<p>Returns the standard input stream for the process executing the command. The stream is closed after the process completes. Defaults to an empty stream.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-exec-spec/get-standard-output.html">getStandardOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getStandardOutput</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a></code>
+<p>Returns the output stream to consume standard output from the process executing the command. Defaults to <code>System.out</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-exec-spec/is-ignore-exit-value.html">isIgnoreExitValue</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isIgnoreExitValue</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Tells whether a non-zero exit value is ignored, or an exception thrown. Defaults to <code>false</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-exec-spec/set-error-output.html">setErrorOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setErrorOutput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.BaseExecSpec$setErrorOutput(java.io.OutputStream)/outputStream">outputStream</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-base-exec-spec/index.html"><span class="identifier">BaseExecSpec</span></a></code>
+<p>Sets the output stream to consume standard error from the process executing the command. The stream is closed after the process completes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-exec-spec/set-ignore-exit-value.html">setIgnoreExitValue</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setIgnoreExitValue</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.BaseExecSpec$setIgnoreExitValue(kotlin.Boolean)/ignoreExitValue">ignoreExitValue</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-base-exec-spec/index.html"><span class="identifier">BaseExecSpec</span></a></code>
+<p>Sets whether a non-zero exit value is ignored, or an exception thrown.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-exec-spec/set-standard-input.html">setStandardInput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setStandardInput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.BaseExecSpec$setStandardInput(java.io.InputStream)/inputStream">inputStream</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-base-exec-spec/index.html"><span class="identifier">BaseExecSpec</span></a></code>
+<p>Sets the standard input stream for the process executing the command. The stream is closed after the process completes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-base-exec-spec/set-standard-output.html">setStandardOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setStandardOutput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.BaseExecSpec$setStandardOutput(java.io.OutputStream)/outputStream">outputStream</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-base-exec-spec/index.html"><span class="identifier">BaseExecSpec</span></a></code>
+<p>Sets the output stream to consume standard output from the process executing the command. The stream is closed after the process completes.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks/-abstract-exec-task/index.html">AbstractExecTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractExecTask</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks/-abstract-exec-task/index.html"><span class="identifier">AbstractExecTask</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.tasks/-abstract-exec-task/index.html"><span class="identifier">AbstractExecTask</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><span class="identifier">ExecSpec</span></code>
+<p><code>AbstractExecTask</code> is the base class for all exec tasks.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

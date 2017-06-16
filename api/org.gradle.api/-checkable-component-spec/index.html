@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CheckableComponentSpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href=".">CheckableComponentSpec</a><br/>
+<br/>
+<h1>CheckableComponentSpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">CheckableComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.platform.base/-component-spec/index.html"><span class="identifier">ComponentSpec</span></a></code>
+<p>A ComponentSpec that is directly checkable via a specified task.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="checked-by.html">checkedBy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">checkedBy</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.CheckableComponentSpec$checkedBy(kotlin.Array((kotlin.Any)))/tasks">tasks</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds tasks required to check this component. Tasks added this way are subsequently added as dependencies of this component's <code><a href="get-check-task.html">check task</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-check-task.html">getCheckTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCheckTask</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-task/index.html"><span class="identifier">Task</span></a></code>
+<p>Returns the task responsible for checking this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-check-task.html">setCheckTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setCheckTask</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.CheckableComponentSpec$setCheckTask(org.gradle.api.Task)/checkTask">checkTask</span><span class="symbol">:</span>&nbsp;<a href="../-task/index.html"><span class="identifier">Task</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies the task responsible for checking this component.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.platform.base/-component-spec/get-project-path.html">getProjectPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The path to the project containing this component.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.platform.base/-binary-spec/index.html">BinarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-buildable-component-spec/index.html"><span class="identifier">BuildableComponentSpec</span></a><span class="symbol">, </span><span class="identifier">CheckableComponentSpec</span><span class="symbol">, </span><a href="../../org.gradle.platform.base/-binary/index.html"><span class="identifier">Binary</span></a></code>
+<p>Represents a binary that is the result of building a component.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,75 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>UnresolvedDependencyResult - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.result</a>&nbsp;/&nbsp;<a href=".">UnresolvedDependencyResult</a><br/>
+<br/>
+<h1>UnresolvedDependencyResult</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">UnresolvedDependencyResult</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-dependency-result/index.html"><span class="identifier">DependencyResult</span></a></code>
+<p>A dependency that could not be resolved.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-attempted.html">getAttempted</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAttempted</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.component/-component-selector/index.html"><span class="identifier">ComponentSelector</span></a></code>
+<p>Returns the selector that was attempted to be resolved. This may not be the same as the requested component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-attempted-reason.html">getAttemptedReason</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAttemptedReason</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-component-selection-reason/index.html"><span class="identifier">ComponentSelectionReason</span></a></code>
+<p>Returns the reasons why the failed selector was attempted.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-failure.html">getFailure</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFailure</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a></code>
+<p>The failure that occurred.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-dependency-result/get-from.html">getFrom</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFrom</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-resolved-component-result/index.html"><span class="identifier">ResolvedComponentResult</span></a></code>
+<p>Returns the origin of the dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-dependency-result/get-requested.html">getRequested</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRequested</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.component/-component-selector/index.html"><span class="identifier">ComponentSelector</span></a></code>
+<p>
+<p>Returns the requested component. </p>
+<p>The return type is declared as an opaque org.gradle.api.artifacts.component.ComponentSelector, however the selector may also implement one of the following interfaces:</p>
+ <ul> <li>org.gradle.api.artifacts.component.ProjectComponentSelector for those dependencies that request a component from some other project in the current build.</li>
+ <li>org.gradle.api.artifacts.component.ModuleComponentSelector for those dependencies that request a component to be found in some repository.</li>
+ </ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

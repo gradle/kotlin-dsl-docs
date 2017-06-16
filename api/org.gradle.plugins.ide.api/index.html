@@ -1,0 +1,85 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.plugins.ide.api - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.plugins.ide.api</a><br/>
+<br/>
+<h2>Package org.gradle.plugins.ide.api</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-file-content-merger/index.html">FileContentMerger</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">FileContentMerger</span></code>
+<p>Models the generation/parsing/merging capabilities. 
+<p> For examples see docs for org.gradle.plugins.ide.eclipse.model.EclipseProject or org.gradle.plugins.ide.idea.model.IdeaProject and others.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-generator-task/index.html">GeneratorTask</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GeneratorTask</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span></code>
+<p>
+<p>A <code>GeneratorTask</code> generates a configuration file based on a domain object of type T. When executed the task: </p>
+<ul> <li>loads the object from the input file, if it exists.</li>
+ <li>Calls the beforeConfigured actions, passing the object to each action.</li>
+ <li>Configures the object in some task-specific way.</li>
+ <li>Calls the afterConfigured actions, passing the object to each action.</li>
+ <li>writes the object to the output file.</li>
+ </ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-properties-file-content-merger/index.html">PropertiesFileContentMerger</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PropertiesFileContentMerger</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-file-content-merger/index.html"><span class="identifier">FileContentMerger</span></a></code>
+<p>Models the generation/parsing/merging capabilities. Adds properties-related hooks. 
+<p> For examples see docs for org.gradle.plugins.ide.eclipse.model.EclipseJdt and others.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-properties-generator-task/index.html">PropertiesGeneratorTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">PropertiesGeneratorTask</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">PersistableConfigurationObject</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-generator-task/index.html"><span class="identifier">GeneratorTask</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>A convenience superclass for those tasks which generate Properties configuration files from a domain object of type T.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-xml-file-content-merger/index.html">XmlFileContentMerger</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">XmlFileContentMerger</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-file-content-merger/index.html"><span class="identifier">FileContentMerger</span></a></code>
+<p>Models the generation/parsing/merging capabilities. Adds XML-related hooks. 
+<p> For examples see docs for org.gradle.plugins.ide.eclipse.model.EclipseProject or org.gradle.plugins.ide.idea.model.IdeaProject and others.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-xml-generator-task/index.html">XmlGeneratorTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">XmlGeneratorTask</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">PersistableConfigurationObject</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-generator-task/index.html"><span class="identifier">GeneratorTask</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>A convenience superclass for those tasks which generate XML configuration files from a domain object of type T.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

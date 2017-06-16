@@ -1,0 +1,228 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NamedDomainObjectContainer - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href=".">NamedDomainObjectContainer</a><br/>
+<br/>
+<h1>NamedDomainObjectContainer</h1>
+<code><span class="keyword">interface </span><span class="identifier">NamedDomainObjectContainer</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">Configurable</span></code>
+<p>
+<p>A named domain object container is a specialisation of NamedDomainObjectSet that adds the ability to create instances of the element type.</p>
+ 
+<p>Implementations may use different strategies for creating new object instances.</p>
+ 
+<p>Note that a container is an implementation of java.util.SortedSet, which means that the container is guaranteed to only contain elements with unique names within this container. Furthermore, items are ordered by their name.</p>
+</p>
+<h3>Parameters</h3>
+<a name="&lt;T&gt;"></a>
+<code><T></code> - The type of domain objects in this container.
+<p><strong>See Also</strong><br/>
+NamedDomainObjectSet</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="configure.html">configure</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">configure</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectContainer$configure(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">NamedDomainObjectContainer</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>
+<p>Allows the container to be configured, creating missing objects as they are referenced.</p>
+ 
+<p>TODO: example usage</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="create.html">create</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">create</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectContainer$create(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Creates a new item with the given name, adding it to this container.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">create</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectContainer$create(kotlin.String, groovy.lang.Closure((kotlin.Any)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.NamedDomainObjectContainer$create(kotlin.String, groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Creates a new item with the given name, adding it to this container, then configuring it with the given closure.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">create</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectContainer$create(kotlin.String, org.gradle.api.Action((org.gradle.api.NamedDomainObjectContainer.T)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.NamedDomainObjectContainer$create(kotlin.String, org.gradle.api.Action((org.gradle.api.NamedDomainObjectContainer.T)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Creates a new item with the given name, adding it to this container, then configuring it with the given action.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="maybe-create.html">maybeCreate</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">maybeCreate</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectContainer$maybeCreate(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Looks for an item with the given name, creating and adding it to this container if it does not exist.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-named-domain-object-set/find-all.html">findAll</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">findAll</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectSet$findAll(groovy.lang.Closure((kotlin.Any)))/spec">spec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-named-domain-object-set/matching.html">matching</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectSet$matching(groovy.lang.Closure((kotlin.Any)))/spec">spec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-named-domain-object-set/with-type.html">withType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">withType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectSet$withType(java.lang.Class((org.gradle.api.NamedDomainObjectSet.withType.S)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.script.lang.kotlin/org.gradle.api.-named-domain-object-container/creating.html">creating</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">NamedDomainObjectContainer</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">creating</span><span class="symbol">: </span><a href="../../org.gradle.script.lang.kotlin/-named-domain-object-container-delegate-provider/index.html"><span class="identifier">NamedDomainObjectContainerDelegateProvider</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Provides a property delegate that creates elements of the default collection type.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.script.lang.kotlin/org.gradle.api.-named-domain-object-container/creating.html">creating</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">NamedDomainObjectContainer</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">creating</span><span class="symbol">(</span><span class="identifier" id="org.gradle.script.lang.kotlin$creating(org.gradle.api.NamedDomainObjectContainer((org.gradle.script.lang.kotlin.creating.T)), kotlin.Function1((org.gradle.script.lang.kotlin.creating.T, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.script.lang.kotlin/-named-domain-object-container-delegate-provider/index.html"><span class="identifier">NamedDomainObjectContainerDelegateProvider</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Provides a property delegate that creates elements of the default collection type with the given <a href="../../org.gradle.script.lang.kotlin/org.gradle.api.-named-domain-object-container/creating.html#org.gradle.script.lang.kotlin$creating(org.gradle.api.NamedDomainObjectContainer((org.gradle.script.lang.kotlin.creating.T)), kotlin.Function1((org.gradle.script.lang.kotlin.creating.T, kotlin.Unit)))/configuration">configuration</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.script.lang.kotlin/invoke.html">invoke</a></p>
+</td>
+<td>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NamedDomainObjectContainer</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">C</span><span class="symbol">.</span><span class="identifier">invoke</span><span class="symbol">(</span><span class="identifier" id="org.gradle.script.lang.kotlin$invoke(org.gradle.script.lang.kotlin.invoke.C, kotlin.Function1((org.gradle.script.lang.kotlin.NamedDomainObjectContainerScope((org.gradle.script.lang.kotlin.invoke.T)), kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.script.lang.kotlin/-named-domain-object-container-scope/index.html"><span class="identifier">NamedDomainObjectContainerScope</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">C</span></code>
+<p>Allows the container to be configured, creating missing objects as they are referenced.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.artifacts.type/-artifact-type-container.html">ArtifactTypeContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ArtifactTypeContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NamedDomainObjectContainer</span><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts.type/-artifact-type-definition/index.html"><span class="identifier">ArtifactTypeDefinition</span></a><span class="symbol">&gt;</span></code>
+<p>Defines a set of known artifact types and related meta-data. This allows you to fine tune how dependency resolution handles artifacts of a specific type. Each entry in this container defines a particular artifact type, such as a JAR or an AAR, and some information about that artifact type.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-build-type-container.html">BuildTypeContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BuildTypeContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NamedDomainObjectContainer</span><span class="symbol">&lt;</span><a href="../../org.gradle.nativeplatform/-build-type/index.html"><span class="identifier">BuildType</span></a><span class="symbol">&gt;</span></code>
+<p>A container of BuildTypes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.artifacts/-configuration-container/index.html">ConfigurationContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ConfigurationContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NamedDomainObjectContainer</span><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span></code>
+<p>
+<p>A <code>ConfigurationContainer</code> is responsible for declaring and managing configurations. See also Configuration.</p>
+ 
+<p>You can obtain a <code>ConfigurationContainer</code> instance by calling <code><a href="../-project/get-configurations.html">org.gradle.api.Project#getConfigurations()</a></code>, or using the <code>configurations</code> property in your build script.</p>
+ 
+<p>The configurations in a container are accessible as read-only properties of the container, using the name of the configuration as the property name. For example:</p>
+ <pre><code> configurations.create('myConfiguration') configurations.myConfiguration.transitive = false </code></pre> 
+<p>A dynamic method is added for each configuration which takes a configuration closure. This is equivalent to calling <code><a href="#">#getByName(String, groovy.lang.Closure)</a></code>. For example:</p>
+ <pre><code> configurations.create('myConfiguration') configurations.myConfiguration { transitive = false } </code></pre> Examples An example showing how to refer to a given configuration by name in order to get hold of all dependencies (e.g. jars, but only) <pre><code> apply plugin: 'java' //so that I can use 'compile' configuration //copying all dependencies attached to 'compile' into a specific folder task copyAllDependencies(type: Copy) { //referring to the 'compile' configuration from configurations.compile into 'allLibs' } </code></pre> An example showing how to declare and configure configurations <pre><code> apply plugin: 'java' //so that I can use 'compile', 'testCompile' configurations configurations { //adding a configuration: myConfiguration //adding a configuration that extends existing configuration: //(testCompile was added by the java plugin) myIntegrationTestsCompile.extendsFrom(testCompile) //configuring existing configurations not to put transitive dependencies on the compile classpath //this way you can avoid issues with implicit dependencies to transitive libraries compile.transitive = false testCompile.transitive = false } </code></pre> Examples on configuring the <strong>resolution strategy</strong> - see docs for ResolutionStrategy</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.distribution/-distribution-container.html">DistributionContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DistributionContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NamedDomainObjectContainer</span><span class="symbol">&lt;</span><a href="../../org.gradle.api.distribution/-distribution/index.html"><span class="identifier">Distribution</span></a><span class="symbol">&gt;</span></code>
+<p>A <code>DistributionContainer</code> manages a set of Distribution objects.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-flavor-container.html">FlavorContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">FlavorContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NamedDomainObjectContainer</span><span class="symbol">&lt;</span><a href="../../org.gradle.nativeplatform/-flavor/index.html"><span class="identifier">Flavor</span></a><span class="symbol">&gt;</span></code>
+<p>A container of Flavors.  If no flavor is explicitly configured, will contain a single Flavor named 'default'. Any flavors explicitly configured will overwrite the default flavor.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.publish.ivy/-ivy-configuration-container.html">IvyConfigurationContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">IvyConfigurationContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NamedDomainObjectContainer</span><span class="symbol">&lt;</span><a href="../../org.gradle.api.publish.ivy/-ivy-configuration/index.html"><span class="identifier">IvyConfiguration</span></a><span class="symbol">&gt;</span></code>
+<p>The set of IvyConfigurations that will be included in the IvyPublication. Being a org.gradle.api.NamedDomainObjectContainer, a <code>IvyConfigurationContainer</code> provides convenient methods for adding, querying, filtering, and applying actions to the set of IvyConfigurations. <pre><code> apply plugin: 'ivy-publish' def publication = publishing.publications.create("my-pub", IvyPublication) def configurations = publication.configurations configurations.create("extended", { extend "default"}) configurations.all { extend "base" } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.script.lang.kotlin/-named-domain-object-container-scope/index.html">NamedDomainObjectContainerScope</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">NamedDomainObjectContainerScope</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NamedDomainObjectContainer</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Receiver for NamedDomainObjectContainer configuration blocks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-polymorphic-domain-object-container/index.html">PolymorphicDomainObjectContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PolymorphicDomainObjectContainer</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NamedDomainObjectContainer</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>A NamedDomainObjectContainer that allows to create domain objects with different types.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks/-source-set-container.html">SourceSetContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SourceSetContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NamedDomainObjectContainer</span><span class="symbol">&lt;</span><a href="../../org.gradle.api.tasks/-source-set/index.html"><span class="identifier">SourceSet</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.tasks/-source-set/index.html"><span class="identifier">SourceSet</span></a><span class="symbol">&gt;</span></code>
+<p>A <code>SourceSetContainer</code> manages a set of SourceSet objects.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

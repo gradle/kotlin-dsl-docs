@@ -1,0 +1,225 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MavenPom - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.maven</a>&nbsp;/&nbsp;<a href=".">MavenPom</a><br/>
+<br/>
+<h1>MavenPom</h1>
+<code><span class="keyword">interface </span><span class="identifier">MavenPom</span></code>
+<p>Is used for generating a Maven POM file and customizing the generation. To learn about the Maven POM see: <a href="#">http://maven.apache.org/pom.html</a></p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-p-o-m_-f-i-l-e_-e-n-c-o-d-i-n-g.html">POM_FILE_ENCODING</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">POM_FILE_ENCODING</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-artifact-id.html">getArtifactId</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getArtifactId</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the artifact id for this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-configurations.html">getConfigurations</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getConfigurations</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts/-configuration-container/index.html"><span class="identifier">ConfigurationContainer</span></a></code>
+<p>Returns the configuration container used for mapping configurations to Maven scopes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-dependencies.html">getDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span></code>
+<p>Returns the dependencies for this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-effective-pom.html">getEffectivePom</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getEffectivePom</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MavenPom</span></code>
+<p>Returns a POM with the generated dependencies and the <code><a href="#">#whenConfigured(org.gradle.api.Action)</a></code> actions applied.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-group-id.html">getGroupId</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGroupId</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the group id for this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-model.html">getModel</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getModel</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Returns the underlying native Maven org.apache.maven.model.Model object. The MavenPom object delegates all the configuration information to this object. There Gradle MavenPom objects provides delegation methods just for setting the groupId, artifactId, version and packaging. For all other elements, either use the model object or <code><a href="#">#project(groovy.lang.Closure)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-packaging.html">getPackaging</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPackaging</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the packaging for this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-scope-mappings.html">getScopeMappings</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getScopeMappings</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-conf2-scope-mapping-container/index.html"><span class="identifier">Conf2ScopeMappingContainer</span></a></code>
+<p>Returns the scope mappings used for generating this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-version.html">getVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the version for this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="project.html">project</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">project</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenPom$project(groovy.lang.Closure((kotlin.Any)))/pom">pom</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MavenPom</span></code>
+<p>Provides a builder for the Maven POM for adding or modifying properties of the Maven <code><a href="get-model.html">#getModel()</a></code>. The syntax is exactly the same as used by polyglot Maven. For example: <pre><code> pom.project { inceptionYear '2008' licenses { license { name 'The Apache Software License, Version 2.0' url 'http://www.apache.org/licenses/LICENSE-2.0.txt' distribution 'repo' } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-artifact-id.html">setArtifactId</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setArtifactId</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenPom$setArtifactId(kotlin.String)/artifactId">artifactId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MavenPom</span></code>
+<p>Sets the artifact id for this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-configurations.html">setConfigurations</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setConfigurations</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenPom$setConfigurations(org.gradle.api.artifacts.ConfigurationContainer)/configurations">configurations</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts/-configuration-container/index.html"><span class="identifier">ConfigurationContainer</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MavenPom</span></code>
+<p>Sets the configuration container used for mapping configurations to Maven scopes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-dependencies.html">setDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setDependencies</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenPom$setDependencies(kotlin.collections.MutableList((kotlin.Any)))/dependencies">dependencies</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MavenPom</span></code>
+<p>Sets the dependencies for this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-group-id.html">setGroupId</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setGroupId</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenPom$setGroupId(kotlin.String)/groupId">groupId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MavenPom</span></code>
+<p>Sets the group id for this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-model.html">setModel</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setModel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenPom$setModel(kotlin.Any)/model">model</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MavenPom</span></code>
+<p>Sets the underlying native Maven org.apache.maven.model.Model object.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-packaging.html">setPackaging</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setPackaging</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenPom$setPackaging(kotlin.String)/packaging">packaging</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MavenPom</span></code>
+<p>Sets the packaging for this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-version.html">setVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setVersion</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenPom$setVersion(kotlin.String)/version">version</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MavenPom</span></code>
+<p>Sets the version for this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="when-configured.html">whenConfigured</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">whenConfigured</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenPom$whenConfigured(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MavenPom</span></code>
+<p>
+<p>Adds a closure to be called when the POM has been configured. The POM is passed to the closure as a parameter.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">whenConfigured</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenPom$whenConfigured(org.gradle.api.Action((org.gradle.api.artifacts.maven.MavenPom)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="identifier">MavenPom</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MavenPom</span></code>
+<p>
+<p>Adds an action to be called when the POM has been configured. The POM is passed to the action as a parameter.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="with-xml.html">withXml</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withXml</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenPom$withXml(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MavenPom</span></code>
+<p>
+<p>Adds a closure to be called when the POM XML has been created. The XML is passed to the closure as a parameter in form of a org.gradle.api.XmlProvider. The action can modify the XML.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withXml</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenPom$withXml(org.gradle.api.Action((org.gradle.api.XmlProvider)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-xml-provider/index.html"><span class="identifier">XmlProvider</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MavenPom</span></code>
+<p>
+<p>Adds an action to be called when the POM XML has been created. The XML is passed to the action as a parameter in form of a org.gradle.api.XmlProvider. The action can modify the XML.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="write-to.html">writeTo</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">writeTo</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenPom$writeTo(java.io.Writer)/writer">writer</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/Writer.html"><span class="identifier">Writer</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MavenPom</span></code>
+<p>Writes the <code><a href="get-effective-pom.html">#getEffectivePom()</a></code> XML to a writer while applying the <code><a href="#">#withXml(org.gradle.api.Action)</a></code> actions. Closes the supplied Writer when finished.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">writeTo</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenPom$writeTo(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MavenPom</span></code>
+<p>Writes the <code><a href="get-effective-pom.html">#getEffectivePom()</a></code> XML to a file while applying the <code><a href="#">#withXml(org.gradle.api.Action)</a></code> actions. The path is resolved as defined by <code><a href="#">org.gradle.api.Project#files(Object...)</a></code> The file will be encoded as UTF-8.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>StaticLibraryBinary - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform</a>&nbsp;/&nbsp;<a href=".">StaticLibraryBinary</a><br/>
+<br/>
+<h1>StaticLibraryBinary</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">StaticLibraryBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-native-library-binary/index.html"><span class="identifier">NativeLibraryBinary</span></a></code>
+<p>A NativeLibrary that has been compiled and archived into a static library.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-static-library-file.html">getStaticLibraryFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getStaticLibraryFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The static library file.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-native-library-binary/get-header-dirs.html">getHeaderDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getHeaderDirs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-native-library-binary/get-link-files.html">getLinkFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLinkFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-native-library-binary/get-runtime-files.html">getRuntimeFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRuntimeFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-prebuilt-static-library-binary/index.html">PrebuiltStaticLibraryBinary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PrebuiltStaticLibraryBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">StaticLibraryBinary</span></code>
+<p>A static library that exists at a known location on the filesystem.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

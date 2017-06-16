@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.tooling.provider.model - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.tooling.provider.model</a><br/>
+<br/>
+<h2>Package org.gradle.tooling.provider.model</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-tooling-model-builder/index.html">ToolingModelBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ToolingModelBuilder</span></code>
+<p>Responsible for building tooling models to return to the tooling API client. 
+<p>The <code><a href="#">#buildAll(String, Project)</a></code> method is called to create a model for a given project. The model is serialized to the client process and passed to the client application.</p>
+ 
+<p>The model object is adapted to the Java type that is used by the client by generating a view, or wrapper object, over the model object. The model object does not need to implement the client Java type, but it does need to have the same structure as the client type. This means that the model object should have the same properties and methods as those defined on the client type. The tooling API deals with missing properties and methods, to allow evolution of the models. It will also adapt the values returned by the methods of the model object to the types used by the client. </p>
+ 
+<p>Although it is not enforced, the model object should be immutable, as the tooling API will do some caching and other performance optimizations on the assumption that the model is effectively immutable. The tooling API does not make any guarantees about how the client application will use the model object.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-tooling-model-builder-registry/index.html">ToolingModelBuilderRegistry</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ToolingModelBuilderRegistry</span></code>
+<p>A registry of tooling model builders. Adding a builder to this registry makes a model (or models) available via the tooling API.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Exceptions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-unknown-model-exception/index.html">UnknownModelException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">UnknownModelException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>Thrown when an unknown tooling model is requested.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

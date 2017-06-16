@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.language.base - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.language.base</a><br/>
+<br/>
+<h2>Package org.gradle.language.base</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-dependent-source-set/index.html">DependentSourceSet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DependentSourceSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a></code>
+<p>A source set that can have dependencies on other Libraries.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-functional-source-set.html">FunctionalSourceSet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">FunctionalSourceSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.model/-model-map/index.html"><span class="identifier">ModelMap</span></a><span class="symbol">&lt;</span><a href="-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a><span class="symbol">&gt;</span></code>
+<p>A container holding LanguageSourceSets with a similar function (production code, test code, etc.).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-language-source-set/index.html">LanguageSourceSet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">LanguageSourceSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-buildable-component-spec/index.html"><span class="identifier">BuildableComponentSpec</span></a></code>
+<p>A set of sources for a programming language.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-project-source-set.html">ProjectSourceSet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ProjectSourceSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><a href="-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a><span class="symbol">&gt;</span></code>
+<p>A container of org.gradle.language.base.LanguageSourceSets. Added to a project by the org.gradle.language.base.plugins.LanguageBasePlugin.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,20 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>SigningExtension.setRequired - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.signing</a>&nbsp;/&nbsp;<a href="index.html">SigningExtension</a>&nbsp;/&nbsp;<a href=".">setRequired</a><br/>
+<br/>
+<h1>setRequired</h1>
+<a name="org.gradle.plugins.signing.SigningExtension$setRequired(kotlin.Boolean)"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setRequired</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SigningExtension$setRequired(kotlin.Boolean)/required">required</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Whether or not this task should fail if no signatory or signature type are configured at generation time.</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<a name="org.gradle.plugins.signing.SigningExtension$setRequired(kotlin.Any)"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setRequired</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SigningExtension$setRequired(kotlin.Any)/required">required</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Whether or not this task should fail if no signatory or signature type are configured at generation time. If <code>required</code> is a Callable, it will be stored and "called" on demand (i.e. when <code><a href="is-required.html">#isRequired()</a></code> is called) and the return value will be interpreting according to the Groovy Truth. For example: <pre><code> signing { required = { gradle.taskGraph.hasTask("uploadArchives") } } </code></pre> Because the task graph is not known until Gradle starts executing, we must use defer the decision. We can do this via using a Closure (which is a Callable). For any other type, the value will be stored and evaluated on demand according to the Groovy Truth. <pre><code> signing { required = false } </code></pre></p>
+</BODY>
+</HTML>

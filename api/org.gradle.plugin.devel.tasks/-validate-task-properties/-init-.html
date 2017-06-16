@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ValidateTaskProperties.<init> - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugin.devel.tasks</a>&nbsp;/&nbsp;<a href="index.html">ValidateTaskProperties</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.gradle.plugin.devel.tasks.ValidateTaskProperties$&lt;init&gt;()"></a>
+<code><span class="identifier">ValidateTaskProperties</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Validates task property annotations. 
+<p> Task properties must be annotated with one of: </p>
+ <ul> <li> <strong>Properties taken into account during up-to-date checks:</strong> <ul> <li> @org.gradle.api.tasks.Input, @org.gradle.api.tasks.Nested, @org.gradle.api.tasks.InputFile, @org.gradle.api.tasks.InputDirectory, @org.gradle.api.tasks.InputFiles to mark it as an input to the task. </li>
+ <li> @org.gradle.api.tasks.OutputFile, @org.gradle.api.tasks.OutputDirectory to mark it as an output of the task. </li>
+ </ul>
+ </li>
+ <li> <strong>Properties ignored during up-to-date checks:</strong> <ul> <li>@javax.inject.Inject marks a Gradle service used by the task.</li>
+ <li>@org.gradle.api.tasks.Console marks a property that only influences the console output of the task.</li>
+ <li>@org.gradle.api.tasks.Internal mark an internal property of the task.</li>
+ </ul>
+ </li>
+ </ul>
+</p>
+<p><strong>Since</strong><br/>
+3.0</p>
+</BODY>
+</HTML>

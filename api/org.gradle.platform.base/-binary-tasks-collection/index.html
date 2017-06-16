@@ -1,0 +1,136 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BinaryTasksCollection - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.platform.base</a>&nbsp;/&nbsp;<a href=".">BinaryTasksCollection</a><br/>
+<br/>
+<h1>BinaryTasksCollection</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">BinaryTasksCollection</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span></code>
+<p>A collection of tasks associated to a binary</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="create.html">create</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span> <span class="identifier">create</span><span class="symbol">(</span><span class="identifier" id="org.gradle.platform.base.BinaryTasksCollection$create(kotlin.String, java.lang.Class((org.gradle.platform.base.BinaryTasksCollection.create.T)), org.gradle.api.Action((org.gradle.platform.base.BinaryTasksCollection.create.T)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.platform.base.BinaryTasksCollection$create(kotlin.String, java.lang.Class((org.gradle.platform.base.BinaryTasksCollection.create.T)), org.gradle.api.Action((org.gradle.platform.base.BinaryTasksCollection.create.T)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.platform.base.BinaryTasksCollection$create(kotlin.String, java.lang.Class((org.gradle.platform.base.BinaryTasksCollection.create.T)), org.gradle.api.Action((org.gradle.platform.base.BinaryTasksCollection.create.T)))/config">config</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-build.html">getBuild</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuild</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a></code>
+<p>The task that can be used to assemble this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-check.html">getCheck</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCheck</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a></code>
+<p>The task that can be used to check this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="task-name.html">taskName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">taskName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.platform.base.BinaryTasksCollection$taskName(kotlin.String)/verb">verb</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">taskName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.platform.base.BinaryTasksCollection$taskName(kotlin.String, kotlin.String)/verb">verb</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.platform.base.BinaryTasksCollection$taskName(kotlin.String, kotlin.String)/object">object</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Generates a name for a task that performs some action on the binary.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-domain-object-set/find-all.html">findAll</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">findAll</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.DomainObjectSet$findAll(groovy.lang.Closure((kotlin.Any)))/spec">spec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-domain-object-set/matching.html">matching</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.DomainObjectSet$matching(groovy.lang.Closure((kotlin.Any)))/spec">spec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-domain-object-set/with-type.html">withType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">withType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.DomainObjectSet$withType(java.lang.Class((org.gradle.api.DomainObjectSet.withType.S)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm/-jar-binary-spec/-tasks-collection/index.html">TasksCollection</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TasksCollection</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BinaryTasksCollection</span></code>
+<p>Provides access to key tasks used for building the binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-native-executable-binary-spec/-tasks-collection/index.html">TasksCollection</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TasksCollection</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BinaryTasksCollection</span></code>
+<p>Provides access to key tasks used for building the binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-shared-library-binary-spec/-tasks-collection/index.html">TasksCollection</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TasksCollection</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BinaryTasksCollection</span></code>
+<p>Provides access to key tasks used for building the binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-static-library-binary-spec/-tasks-collection/index.html">TasksCollection</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TasksCollection</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BinaryTasksCollection</span></code>
+<p>Provides access to key tasks used for building the binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.testing.base/-test-suite-task-collection/index.html">TestSuiteTaskCollection</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TestSuiteTaskCollection</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BinaryTasksCollection</span></code>
+<p>Provides access to key tasks used by a test suite.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

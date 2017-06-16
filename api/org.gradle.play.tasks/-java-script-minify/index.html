@@ -1,0 +1,170 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>JavaScriptMinify - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.play.tasks</a>&nbsp;/&nbsp;<a href=".">JavaScriptMinify</a><br/>
+<br/>
+<h1>JavaScriptMinify</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JavaScriptMinify</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a></code>
+<p>Task to minify JavaScript assets.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">JavaScriptMinify</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-destination-dir.html">getDestinationDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDestinationDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the output directory that processed JavaScript is written to.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-fork-options.html">getForkOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getForkOptions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.compile/-base-fork-options/index.html"><span class="identifier">BaseForkOptions</span></a></code>
+<p>The fork options to be applied to the JavaScript compiler.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-tool-chain.html">getToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getToolChain</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.play.toolchain/-play-tool-chain.html"><span class="identifier">PlayToolChain</span></a></code>
+<p>Returns the tool chain that will be used to compile the JavaScript source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-destination-dir.html">setDestinationDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDestinationDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.play.tasks.JavaScriptMinify$setDestinationDir(java.io.File)/destinationDir">destinationDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the output directory where processed JavaScript should be written.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-play-platform.html">setPlayPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setPlayPlatform</span><span class="symbol">(</span><span class="identifier" id="org.gradle.play.tasks.JavaScriptMinify$setPlayPlatform(org.gradle.play.platform.PlayPlatform)/playPlatform">playPlatform</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.play.platform/-play-platform/index.html"><span class="identifier">PlayPlatform</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the target Play platform.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks/-source-task/exclude.html">exclude</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.tasks.SourceTask$exclude(kotlin.Array((kotlin.String)))/excludes">excludes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.SourceTask$exclude(kotlin.collections.MutableIterable((kotlin.String)))/excludes">excludes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.SourceTask$exclude(org.gradle.api.specs.Spec((org.gradle.api.file.FileTreeElement)))/excludeSpec">excludeSpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.file/-file-tree-element/index.html"><span class="identifier">FileTreeElement</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.SourceTask$exclude(groovy.lang.Closure((kotlin.Any)))/excludeSpec">excludeSpec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks/-source-task/get-excludes.html">getExcludes</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getExcludes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks/-source-task/get-includes.html">getIncludes</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getIncludes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks/-source-task/get-source.html">getSource</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<p>Returns the source for this task, after the include and exclude patterns have been applied. Ignores source files which do not exist.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks/-source-task/include.html">include</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">include</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.tasks.SourceTask$include(kotlin.Array((kotlin.String)))/includes">includes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">include</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.SourceTask$include(kotlin.collections.MutableIterable((kotlin.String)))/includes">includes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">include</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.SourceTask$include(org.gradle.api.specs.Spec((org.gradle.api.file.FileTreeElement)))/includeSpec">includeSpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.file/-file-tree-element/index.html"><span class="identifier">FileTreeElement</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">include</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.SourceTask$include(groovy.lang.Closure((kotlin.Any)))/includeSpec">includeSpec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks/-source-task/set-excludes.html">setExcludes</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExcludes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.SourceTask$setExcludes(kotlin.collections.MutableIterable((kotlin.String)))/excludes">excludes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks/-source-task/set-includes.html">setIncludes</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setIncludes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.SourceTask$setIncludes(kotlin.collections.MutableIterable((kotlin.String)))/includes">includes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks/-source-task/set-source.html">setSource</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSource</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.SourceTask$setSource(org.gradle.api.file.FileTree)/source">source</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-tree/index.html"><span class="identifier">FileTree</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the source for this task.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSource</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.SourceTask$setSource(kotlin.Any)/source">source</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the source for this task. The given source object is evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks/-source-task/source.html">source</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">source</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.tasks.SourceTask$source(kotlin.Array((kotlin.Any)))/sources">sources</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a></code>
+<p>Adds some source to this task. The given source objects will be evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

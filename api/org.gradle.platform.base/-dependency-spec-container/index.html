@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DependencySpecContainer - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.platform.base</a>&nbsp;/&nbsp;<a href=".">DependencySpecContainer</a><br/>
+<br/>
+<h1>DependencySpecContainer</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">DependencySpecContainer</span></code>
+<p>A container for dependency specifications.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-dependencies.html">getDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="../-dependency-spec/index.html"><span class="identifier">DependencySpec</span></a><span class="symbol">&gt;</span></code>
+<p>Returns an immutable view of dependencies stored in this container.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="group.html">group</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">group</span><span class="symbol">(</span><span class="identifier" id="org.gradle.platform.base.DependencySpecContainer$group(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-module-dependency-spec-builder/index.html"><span class="identifier">ModuleDependencySpecBuilder</span></a></code>
+<p>Defines a new module dependency, based on a module group name. The returned dependency can be mutated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-empty.html">isEmpty</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isEmpty</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if this container doesn't hold any dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="library.html">library</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">library</span><span class="symbol">(</span><span class="identifier" id="org.gradle.platform.base.DependencySpecContainer$library(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-project-dependency-spec-builder/index.html"><span class="identifier">ProjectDependencySpecBuilder</span></a></code>
+<p>Defines a new dependency, based on a library name. The returned dependency can be mutated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="module.html">module</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">module</span><span class="symbol">(</span><span class="identifier" id="org.gradle.platform.base.DependencySpecContainer$module(kotlin.String)/moduleIdOrName">moduleIdOrName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-module-dependency-spec-builder/index.html"><span class="identifier">ModuleDependencySpecBuilder</span></a></code>
+<p>Defines a new module dependency, based on a module id or a simple name. The returned dependency can be mutated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="project.html">project</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">project</span><span class="symbol">(</span><span class="identifier" id="org.gradle.platform.base.DependencySpecContainer$project(kotlin.String)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-project-dependency-spec-builder/index.html"><span class="identifier">ProjectDependencySpecBuilder</span></a></code>
+<p>Defines a new dependency, based on a project path. The returned dependency can be mutated.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

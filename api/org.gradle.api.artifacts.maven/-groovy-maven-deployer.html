@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GroovyMavenDeployer - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.api.artifacts.maven</a>&nbsp;/&nbsp;<a href=".">GroovyMavenDeployer</a><br/>
+<br/>
+<h1>GroovyMavenDeployer</h1>
+<code><span class="keyword">interface </span><span class="identifier">GroovyMavenDeployer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-maven-deployer/index.html"><span class="identifier">MavenDeployer</span></a></code>
+<p>Adds Groovy configuration convenience methods on top of the MavenDeployer. This class provides also a builder for repository and snapshot-repository: <pre><code> mavenUploader.repository(url: 'file://repoDir') { authentication(userName: 'myName') releases(updatePolicy: 'never') snapshots(updatePolicy: 'always') } </code></pre> This call set the repository object and also returns an instance of this object. If you use 'snapshotRepository' instead of repository, the snapshot repository is build.</p>
+<p><strong>See Also</strong><br/>
+MavenDeployer</p>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-maven-deployer/add-protocol-provider-jars.html">addProtocolProviderJars</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addProtocolProviderJars</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenDeployer$addProtocolProviderJars(kotlin.collections.MutableCollection((java.io.File)))/jars">jars</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Out of the box only uploading to the filesysten and via http is supported. If other protocolls should be used, the appropriate Maven wagon jars have to be passed via this method.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-deployer/get-repository.html">getRepository</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRepository</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Returns the repository to be used for uploading artifacts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-deployer/get-snapshot-repository.html">getSnapshotRepository</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSnapshotRepository</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Returns the repository to be used for uploading snapshot artifacts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-deployer/is-unique-version.html">isUniqueVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isUniqueVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns whether to assign snapshots a unique version comprised of the timestamp and build number, or to use the same version each time. Defaults to true.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-deployer/set-repository.html">setRepository</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setRepository</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenDeployer$setRepository(kotlin.Any)/repository">repository</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the repository to be used for uploading artifacts. If <code><a href="-maven-deployer/get-snapshot-repository.html">#getSnapshotRepository()</a></code> is not set, this repository is also used for uploading snapshot artifacts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-deployer/set-snapshot-repository.html">setSnapshotRepository</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setSnapshotRepository</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenDeployer$setSnapshotRepository(kotlin.Any)/snapshotRepository">snapshotRepository</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the repository to be used for uploading snapshot artifacts. If this is not set, the <code><a href="-maven-deployer/get-repository.html">#getRepository()</a></code> is used for uploading snapshot artifacts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-deployer/set-unique-version.html">setUniqueVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setUniqueVersion</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenDeployer$setUniqueVersion(kotlin.Boolean)/uniqueVersion">uniqueVersion</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets whether to assign snapshots a unique version comprised of the timestamp and build number, or to use the same version each time. Defaults to true.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PluginManager.findPlugin - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href="index.html">PluginManager</a>&nbsp;/&nbsp;<a href=".">findPlugin</a><br/>
+<br/>
+<h1>findPlugin</h1>
+<a name="org.gradle.api.plugins.PluginManager$findPlugin(kotlin.String)"></a>
+<code><span class="identifier">@Nullable</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">findPlugin</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginManager$findPlugin(kotlin.String)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-applied-plugin/index.html"><span class="identifier">AppliedPlugin</span></a></code>
+<p>Returns the information about the plugin that has been applied with the given ID, or null if no plugin has been applied with the given ID. 
+<p> Plugins in the <code>"org.gradle"</code> namespace (that is, core Gradle plugins) can be specified by either name (e.g. <code>"java"</code>) or ID <code>"org.gradle.java"</code>. All other plugins must be queried for by their full ID (e.g. <code>"org.company.some-plugin"</code>). </p>
+<p> Some Gradle plugins have not yet migrated to fully qualified plugin IDs. Such plugins can be detected with this method by simply using the unqualified ID (e.g. <code>"some-third-party-plugin"</code>.</p>
+</p>
+<h3>Parameters</h3>
+<a name="id"></a>
+<code>id</code> - the plugin ID
+<p><strong>Return</strong><br/>
+information about the applied plugin, or <code>null</code> if no plugin has been applied with the given ID</p>
+<p><strong>Since</strong><br/>
+2.3</p>
+</BODY>
+</HTML>

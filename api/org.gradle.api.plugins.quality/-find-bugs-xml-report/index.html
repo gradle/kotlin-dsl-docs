@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>FindBugsXmlReport - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins.quality</a>&nbsp;/&nbsp;<a href=".">FindBugsXmlReport</a><br/>
+<br/>
+<h1>FindBugsXmlReport</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">FindBugsXmlReport</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.reporting/-single-file-report/index.html"><span class="identifier">SingleFileReport</span></a></code>
+<p>The single file XML report for FindBugs.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="is-with-messages.html">isWithMessages</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isWithMessages</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether or not FindBugs should generate XML augmented with human-readable messages. You should use this format if you plan to generate a report using an XSL stylesheet. 
+<p> If <code>true</code>, FindBugs will augment the XML with human-readable messages. If <code>false</code>, FindBugs will not augment the XML with human-readable messages.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-with-messages.html">setWithMessages</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setWithMessages</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.FindBugsXmlReport$setWithMessages(kotlin.Boolean)/withMessages">withMessages</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Whether or not FindBugs should generate XML augmented with human-readable messages.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.reporting/-single-file-report/get-destination.html">getDestination</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDestination</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.reporting/-single-file-report/get-output-type.html">getOutputType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOutputType</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.reporting/-report/-output-type/index.html"><span class="identifier">OutputType</span></a></code>
+<p>Always returns <code><a href="#">Report.OutputType#FILE</a></code></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Tool - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform</a>&nbsp;/&nbsp;<a href=".">Tool</a><br/>
+<br/>
+<h1>Tool</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">Tool</span></code>
+<p>Configuration of the arguments of a ToolChain executable.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="args.html">args</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">args</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.nativeplatform.Tool$args(kotlin.Array((kotlin.String)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a number of arguments to be passed to the tool.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-args.html">getArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getArgs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The arguments passed when executing this tool.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-preprocessing-tool/index.html">PreprocessingTool</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PreprocessingTool</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Tool</span></code>
+<p>A tool that permits configuration of the C preprocessor.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.plugin.devel.tasks - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.plugin.devel.tasks</a><br/>
+<br/>
+<h2>Package org.gradle.plugin.devel.tasks</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-generate-plugin-descriptors/index.html">GeneratePluginDescriptors</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GeneratePluginDescriptors</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span></code>
+<p>Generates plugin descriptors from plugin declarations.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-plugin-under-test-metadata/index.html">PluginUnderTestMetadata</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PluginUnderTestMetadata</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a></code>
+<p>Custom task for generating the metadata for a plugin user test.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-validate-task-properties/index.html">ValidateTaskProperties</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ValidateTaskProperties</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><a href="../org.gradle.api.tasks/-verification-task/index.html"><span class="identifier">VerificationTask</span></a></code>
+<p>Validates task property annotations. 
+<p> Task properties must be annotated with one of: </p>
+ <ul> <li> <strong>Properties taken into account during up-to-date checks:</strong> <ul> <li> @org.gradle.api.tasks.Input, @org.gradle.api.tasks.Nested, @org.gradle.api.tasks.InputFile, @org.gradle.api.tasks.InputDirectory, @org.gradle.api.tasks.InputFiles to mark it as an input to the task. </li>
+ <li> @org.gradle.api.tasks.OutputFile, @org.gradle.api.tasks.OutputDirectory to mark it as an output of the task. </li>
+ </ul>
+ </li>
+ <li> <strong>Properties ignored during up-to-date checks:</strong> <ul> <li>@javax.inject.Inject marks a Gradle service used by the task.</li>
+ <li>@org.gradle.api.tasks.Console marks a property that only influences the console output of the task.</li>
+ <li>@org.gradle.api.tasks.Internal mark an internal property of the task.</li>
+ </ul>
+ </li>
+ </ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

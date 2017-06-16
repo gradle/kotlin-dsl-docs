@@ -1,0 +1,157 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ValidateTaskProperties - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugin.devel.tasks</a>&nbsp;/&nbsp;<a href=".">ValidateTaskProperties</a><br/>
+<br/>
+<h1>ValidateTaskProperties</h1>
+<code><span class="identifier">@Incubating</span> <span class="identifier">@CacheableTask</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ValidateTaskProperties</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><a href="../../org.gradle.api.tasks/-verification-task/index.html"><span class="identifier">VerificationTask</span></a></code>
+<p>Validates task property annotations. 
+<p> Task properties must be annotated with one of: </p>
+ <ul> <li> <strong>Properties taken into account during up-to-date checks:</strong> <ul> <li> @org.gradle.api.tasks.Input, @org.gradle.api.tasks.Nested, @org.gradle.api.tasks.InputFile, @org.gradle.api.tasks.InputDirectory, @org.gradle.api.tasks.InputFiles to mark it as an input to the task. </li>
+ <li> @org.gradle.api.tasks.OutputFile, @org.gradle.api.tasks.OutputDirectory to mark it as an output of the task. </li>
+ </ul>
+ </li>
+ <li> <strong>Properties ignored during up-to-date checks:</strong> <ul> <li>@javax.inject.Inject marks a Gradle service used by the task.</li>
+ <li>@org.gradle.api.tasks.Console marks a property that only influences the console output of the task.</li>
+ <li>@org.gradle.api.tasks.Internal mark an internal property of the task.</li>
+ </ul>
+ </li>
+ </ul>
+</p>
+<p><strong>Since</strong><br/>
+3.0</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ValidateTaskProperties</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Validates task property annotations. 
+<p> Task properties must be annotated with one of: </p>
+ <ul> <li> <strong>Properties taken into account during up-to-date checks:</strong> <ul> <li> @org.gradle.api.tasks.Input, @org.gradle.api.tasks.Nested, @org.gradle.api.tasks.InputFile, @org.gradle.api.tasks.InputDirectory, @org.gradle.api.tasks.InputFiles to mark it as an input to the task. </li>
+ <li> @org.gradle.api.tasks.OutputFile, @org.gradle.api.tasks.OutputDirectory to mark it as an output of the task. </li>
+ </ul>
+ </li>
+ <li> <strong>Properties ignored during up-to-date checks:</strong> <ul> <li>@javax.inject.Inject marks a Gradle service used by the task.</li>
+ <li>@org.gradle.api.tasks.Console marks a property that only influences the console output of the task.</li>
+ <li>@org.gradle.api.tasks.Internal mark an internal property of the task.</li>
+ </ul>
+ </li>
+ </ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-classes.html">getClasses</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getClasses</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>The classes to validate.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-classpath.html">getClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getClasspath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>The classpath used to load the classes under validation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-fail-on-warning.html">getFailOnWarning</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getFailOnWarning</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns whether the build should break when the verifications performed by this task detects a warning.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-ignore-failures.html">getIgnoreFailures</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getIgnoreFailures</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-output-file.html">getOutputFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOutputFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the output file to store the report in.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-classes.html">setClasses</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setClasses</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.devel.tasks.ValidateTaskProperties$setClasses(org.gradle.api.file.FileCollection)/classes">classes</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the classes to validate.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-classpath.html">setClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setClasspath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.devel.tasks.ValidateTaskProperties$setClasspath(org.gradle.api.file.FileCollection)/classpath">classpath</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the classpath used to load the classes under validation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-fail-on-warning.html">setFailOnWarning</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setFailOnWarning</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.devel.tasks.ValidateTaskProperties$setFailOnWarning(kotlin.Boolean)/failOnWarning">failOnWarning</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies whether the build should break when the verifications performed by this task detects a warning.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-ignore-failures.html">setIgnoreFailures</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setIgnoreFailures</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.devel.tasks.ValidateTaskProperties$setIgnoreFailures(kotlin.Boolean)/ignoreFailures">ignoreFailures</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-output-file.html">setOutputFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOutputFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.devel.tasks.ValidateTaskProperties$setOutputFile(java.io.File)/outputFile">outputFile</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOutputFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.devel.tasks.ValidateTaskProperties$setOutputFile(kotlin.Any)/outputFile">outputFile</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the output file to store the report in.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="validate-task-classes.html">validateTaskClasses</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">validateTaskClasses</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>XmlProvider - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href=".">XmlProvider</a><br/>
+<br/>
+<h1>XmlProvider</h1>
+<code><span class="keyword">interface </span><span class="identifier">XmlProvider</span></code>
+<p>Provides various ways to access the content of an XML document.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="as-element.html">asElement</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">asElement</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/org.w3c.dom/-element/index.html"><span class="identifier">Element</span></a></code>
+<p>Returns the XML document as a DOM org.w3c.dom.Element. Changes to the returned instance will be applied to the XML. The returned instance is only valid until one of the other methods on this interface are called.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="as-node.html">asNode</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">asNode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Node</span></code>
+<p>Returns the XML document as a Groovy groovy.util.Node. Changes to the returned instance will be applied to the XML. The returned instance is only valid until one of the other methods on this interface are called.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="as-string.html">asString</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">asString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html"><span class="identifier">StringBuilder</span></a></code>
+<p>Returns the XML document as a StringBuilder. Changes to the returned instance will be applied to the XML. The returned instance is only valid until one of the other methods on this interface are called.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Logger - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.logging</a>&nbsp;/&nbsp;<a href=".">Logger</a><br/>
+<br/>
+<h1>Logger</h1>
+<code><span class="keyword">interface </span><span class="identifier">Logger</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Logger</span></code>
+<p>
+<p>An extension to the SLF4J <code>Logger</code> interface, which adds the <code>quiet</code> and <code>lifecycle</code> log levels.</p>
+ 
+<p>You can obtain a <code>Logger</code> instance using <code><a href="#">Logging#getLogger(Class)</a></code> or <code><a href="#"> </a></code>. A <code>Logger</code> instance is also available through <code><a href="../../org.gradle.api/-project/get-logger.html"> </a></code>, <code><a href="../../org.gradle.api/-task/get-logger.html">org.gradle.api.Task#getLogger()</a></code> and <code><a href="../../org.gradle.api/-script/get-logger.html"> </a></code>.</p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="debug.html">debug</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">debug</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.Logger$debug(kotlin.String, kotlin.Array((kotlin.Any)))/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.logging.Logger$debug(kotlin.String, kotlin.Array((kotlin.Any)))/objects">objects</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Multiple-parameters friendly debug method</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="info.html">info</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">info</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.Logger$info(kotlin.String, kotlin.Array((kotlin.Any)))/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.logging.Logger$info(kotlin.String, kotlin.Array((kotlin.Any)))/objects">objects</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Logs the given message at info log level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-enabled.html">isEnabled</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isEnabled</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.Logger$isEnabled(org.gradle.api.logging.LogLevel)/level">level</span><span class="symbol">:</span>&nbsp;<a href="../-log-level/index.html"><span class="identifier">LogLevel</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if the given log level is enabled for this logger.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-lifecycle-enabled.html">isLifecycleEnabled</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isLifecycleEnabled</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if lifecycle log level is enabled for this logger.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-quiet-enabled.html">isQuietEnabled</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isQuietEnabled</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if quiet log level is enabled for this logger.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="lifecycle.html">lifecycle</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">lifecycle</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.Logger$lifecycle(kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">lifecycle</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.Logger$lifecycle(kotlin.String, kotlin.Array((kotlin.Any)))/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.logging.Logger$lifecycle(kotlin.String, kotlin.Array((kotlin.Any)))/objects">objects</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">lifecycle</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.Logger$lifecycle(kotlin.String, kotlin.Throwable)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.logging.Logger$lifecycle(kotlin.String, kotlin.Throwable)/throwable">throwable</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Logs the given message at lifecycle log level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="log.html">log</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">log</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.Logger$log(org.gradle.api.logging.LogLevel, kotlin.String)/level">level</span><span class="symbol">:</span>&nbsp;<a href="../-log-level/index.html"><span class="identifier">LogLevel</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.logging.Logger$log(org.gradle.api.logging.LogLevel, kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">log</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.Logger$log(org.gradle.api.logging.LogLevel, kotlin.String, kotlin.Array((kotlin.Any)))/level">level</span><span class="symbol">:</span>&nbsp;<a href="../-log-level/index.html"><span class="identifier">LogLevel</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.logging.Logger$log(org.gradle.api.logging.LogLevel, kotlin.String, kotlin.Array((kotlin.Any)))/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.logging.Logger$log(org.gradle.api.logging.LogLevel, kotlin.String, kotlin.Array((kotlin.Any)))/objects">objects</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">log</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.Logger$log(org.gradle.api.logging.LogLevel, kotlin.String, kotlin.Throwable)/level">level</span><span class="symbol">:</span>&nbsp;<a href="../-log-level/index.html"><span class="identifier">LogLevel</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.logging.Logger$log(org.gradle.api.logging.LogLevel, kotlin.String, kotlin.Throwable)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.logging.Logger$log(org.gradle.api.logging.LogLevel, kotlin.String, kotlin.Throwable)/throwable">throwable</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Logs the given message at the given log level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="quiet.html">quiet</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">quiet</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.Logger$quiet(kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">quiet</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.Logger$quiet(kotlin.String, kotlin.Array((kotlin.Any)))/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.logging.Logger$quiet(kotlin.String, kotlin.Array((kotlin.Any)))/objects">objects</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">quiet</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.Logger$quiet(kotlin.String, kotlin.Throwable)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.logging.Logger$quiet(kotlin.String, kotlin.Throwable)/throwable">throwable</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Logs the given message at quiet log level.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

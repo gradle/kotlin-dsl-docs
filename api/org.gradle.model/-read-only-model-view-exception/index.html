@@ -1,0 +1,43 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ReadOnlyModelViewException - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.model</a>&nbsp;/&nbsp;<a href=".">ReadOnlyModelViewException</a><br/>
+<br/>
+<h1>ReadOnlyModelViewException</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ReadOnlyModelViewException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>Thrown when an attempt is made to change the value of a model element that is not writable at the time.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ReadOnlyModelViewException</span><span class="symbol">(</span><span class="identifier" id="org.gradle.model.ReadOnlyModelViewException$<init>(kotlin.String)/message">message</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code><br/>
+<code><span class="identifier">ReadOnlyModelViewException</span><span class="symbol">(</span><span class="identifier" id="org.gradle.model.ReadOnlyModelViewException$<init>(ModelPath, ModelType, ModelRuleDescriptor)/path">path</span><span class="symbol">:</span>&nbsp;<span class="identifier">ModelPath</span><span class="symbol">, </span><span class="identifier" id="org.gradle.model.ReadOnlyModelViewException$<init>(ModelPath, ModelType, ModelRuleDescriptor)/type">type</span><span class="symbol">:</span>&nbsp;<span class="identifier">ModelType</span><span class="symbol">, </span><span class="identifier" id="org.gradle.model.ReadOnlyModelViewException$<init>(ModelPath, ModelType, ModelRuleDescriptor)/ruleDescriptor">ruleDescriptor</span><span class="symbol">:</span>&nbsp;<span class="identifier">ModelRuleDescriptor</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-model-view-closed-exception/index.html">ModelViewClosedException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ModelViewClosedException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ReadOnlyModelViewException</span></code>
+<p>Thrown when at attempt is made to mutate a subject of a rule after the rule has completed. 
+<p> This can potentially happen when a reference to the subject is retained during a rule and then used afterwards, Such as when an anonymous inner class or closure “closes over” the subject.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

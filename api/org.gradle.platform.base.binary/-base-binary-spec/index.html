@@ -1,0 +1,143 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BaseBinarySpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.platform.base.binary</a>&nbsp;/&nbsp;<a href=".">BaseBinarySpec</a><br/>
+<br/>
+<h1>BaseBinarySpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BaseBinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractBuildableComponentSpec</span><span class="symbol">, </span><span class="identifier">BinarySpecInternal</span></code>
+<p>Base class that may be used for custom BinarySpec implementations. However, it is generally better to use an interface annotated with org.gradle.model.Managed and not use an implementation class at all.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">BaseBinarySpec</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="create.html">create</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">static</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BaseBinarySpec</span><span class="symbol">&gt;</span> <span class="identifier">create</span><span class="symbol">(</span><span class="identifier" id="org.gradle.platform.base.binary.BaseBinarySpec$create(java.lang.Class((org.gradle.platform.base.BinarySpec)), java.lang.Class((org.gradle.platform.base.binary.BaseBinarySpec.create.T)), ComponentSpecIdentifier, MutableModelNode, MutableModelNode, Instantiator, ITaskFactory)/publicType">publicType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.platform.base/-binary-spec/index.html"><span class="identifier">BinarySpec</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.platform.base.binary.BaseBinarySpec$create(java.lang.Class((org.gradle.platform.base.BinarySpec)), java.lang.Class((org.gradle.platform.base.binary.BaseBinarySpec.create.T)), ComponentSpecIdentifier, MutableModelNode, MutableModelNode, Instantiator, ITaskFactory)/implementationType">implementationType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.platform.base.binary.BaseBinarySpec$create(java.lang.Class((org.gradle.platform.base.BinarySpec)), java.lang.Class((org.gradle.platform.base.binary.BaseBinarySpec.create.T)), ComponentSpecIdentifier, MutableModelNode, MutableModelNode, Instantiator, ITaskFactory)/componentId">componentId</span><span class="symbol">:</span>&nbsp;<span class="identifier">ComponentSpecIdentifier</span><span class="symbol">, </span><span class="identifier" id="org.gradle.platform.base.binary.BaseBinarySpec$create(java.lang.Class((org.gradle.platform.base.BinarySpec)), java.lang.Class((org.gradle.platform.base.binary.BaseBinarySpec.create.T)), ComponentSpecIdentifier, MutableModelNode, MutableModelNode, Instantiator, ITaskFactory)/modelNode">modelNode</span><span class="symbol">:</span>&nbsp;<span class="identifier">MutableModelNode</span><span class="symbol">, </span><span class="identifier" id="org.gradle.platform.base.binary.BaseBinarySpec$create(java.lang.Class((org.gradle.platform.base.BinarySpec)), java.lang.Class((org.gradle.platform.base.binary.BaseBinarySpec.create.T)), ComponentSpecIdentifier, MutableModelNode, MutableModelNode, Instantiator, ITaskFactory)/componentNode">componentNode</span><span class="symbol">:</span>&nbsp;<span class="identifier">MutableModelNode</span><span class="symbol">, </span><span class="identifier" id="org.gradle.platform.base.binary.BaseBinarySpec$create(java.lang.Class((org.gradle.platform.base.BinarySpec)), java.lang.Class((org.gradle.platform.base.binary.BaseBinarySpec.create.T)), ComponentSpecIdentifier, MutableModelNode, MutableModelNode, Instantiator, ITaskFactory)/instantiator">instantiator</span><span class="symbol">:</span>&nbsp;<span class="identifier">Instantiator</span><span class="symbol">, </span><span class="identifier" id="org.gradle.platform.base.binary.BaseBinarySpec$create(java.lang.Class((org.gradle.platform.base.BinarySpec)), java.lang.Class((org.gradle.platform.base.binary.BaseBinarySpec.create.T)), ComponentSpecIdentifier, MutableModelNode, MutableModelNode, Instantiator, ITaskFactory)/taskFactory">taskFactory</span><span class="symbol">:</span>&nbsp;<span class="identifier">ITaskFactory</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-build-ability.html">getBuildAbility</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getBuildAbility</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BinaryBuildAbility</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-component.html">getComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getComponent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.platform.base/-component-spec/index.html"><span class="identifier">ComponentSpec</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-id.html">getId</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getId</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.component/-library-binary-identifier/index.html"><span class="identifier">LibraryBinaryIdentifier</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-inputs.html">getInputs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getInputs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.language.base/-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-naming-scheme.html">getNamingScheme</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getNamingScheme</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BinaryNamingScheme</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project-scoped-name.html">getProjectScopedName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getProjectScopedName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-public-type.html">getPublicType</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getPublicType</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.platform.base/-binary-spec/index.html"><span class="identifier">BinarySpec</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-sources.html">getSources</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSources</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.model/-model-map/index.html"><span class="identifier">ModelMap</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.language.base/-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-tasks.html">getTasks</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTasks</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.platform.base/-binary-tasks-collection/index.html"><span class="identifier">BinaryTasksCollection</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="has-codependent-sources.html">hasCodependentSources</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">hasCodependentSources</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-buildable.html">isBuildable</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">isBuildable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-legacy-binary.html">isLegacyBinary</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isLegacyBinary</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="replace-single-directory.html">replaceSingleDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">static</span> <span class="keyword">fun </span><span class="identifier">replaceSingleDirectory</span><span class="symbol">(</span><span class="identifier" id="org.gradle.platform.base.binary.BaseBinarySpec$replaceSingleDirectory(kotlin.collections.MutableSet((java.io.File)), java.io.File)/dirs">dirs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.platform.base.binary.BaseBinarySpec$replaceSingleDirectory(kotlin.collections.MutableSet((java.io.File)), java.io.File)/dir">dir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-buildable.html">setBuildable</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setBuildable</span><span class="symbol">(</span><span class="identifier" id="org.gradle.platform.base.binary.BaseBinarySpec$setBuildable(kotlin.Boolean)/buildable">buildable</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-naming-scheme.html">setNamingScheme</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setNamingScheme</span><span class="symbol">(</span><span class="identifier" id="org.gradle.platform.base.binary.BaseBinarySpec$setNamingScheme(BinaryNamingScheme)/namingScheme">namingScheme</span><span class="symbol">:</span>&nbsp;<span class="identifier">BinaryNamingScheme</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

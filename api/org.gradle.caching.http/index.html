@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.caching.http - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.caching.http</a><br/>
+<br/>
+<h2>Package org.gradle.caching.http</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-http-build-cache/index.html">HttpBuildCache</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">HttpBuildCache</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.caching.configuration/-abstract-build-cache/index.html"><span class="identifier">AbstractBuildCache</span></a></code>
+<p>Configuration object for the HTTP build cache. The build cache only supports BASIC authentication currently. 
+<p>Cache entries are loaded via GET and stored via PUT requests.</p>
+ For a GET request we expect a 200 or 404 response and for PUT we expect any 2xx response. Other responses are treated as recoverable or non-recoverable errors, depending on the status code. E.g. we treat authentication failures (401 and 409) as non-recoverable while an internal server error (500) is recoverable.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-http-build-cache-credentials/index.html">HttpBuildCacheCredentials</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">HttpBuildCacheCredentials</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.credentials/-password-credentials/index.html"><span class="identifier">PasswordCredentials</span></a></code>
+<p>Password credentials for a HTTP build cache backend.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

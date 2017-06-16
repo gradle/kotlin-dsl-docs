@@ -1,0 +1,269 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Settings - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.initialization</a>&nbsp;/&nbsp;<a href=".">Settings</a><br/>
+<br/>
+<h1>Settings</h1>
+<code><span class="keyword">interface </span><span class="identifier">Settings</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins/-plugin-aware/index.html"><span class="identifier">PluginAware</span></a></code>
+<p>
+<p>Declares the configuration required to instantiate and configure the hierarchy of instances which are to participate in a build.</p>
+ 
+<p>There is a one-to-one correspondence between a <code>Settings</code> instance and a <code>{@value * #DEFAULT_SETTINGS_FILE}</code> settings file. Before Gradle assembles the projects for a build, it creates a <code>Settings</code> instance and executes the settings file against it.</p>
+ Assembling a Multi-Project Build 
+<p>One of the purposes of the <code>Settings</code> object is to allow you to declare the projects which are to be included in the build. You add projects to the build using the <code><a href="#">#include(String[])</a></code> method. There is always a root project included in a build. It is added automatically when the <code>Settings</code> object is created. The root project's name defaults to the name of the directory containing the settings file. The root project's project directory defaults to the directory containing the settings file.</p>
+ 
+<p>When a project is included in the build, a ProjectDescriptor is created. You can use this descriptor to change the default values for several properties of the project.</p>
+ Using Settings in a Settings File Dynamic Properties 
+<p>In addition to the properties of this interface, the <code>Settings</code> object makes some additional read-only properties available to the settings script. This includes properties from the following sources:</p>
+ <ul> <li>Defined in the {@value org.gradle.api.Project#GRADLE_PROPERTIES} file located in the settings directory of the build.</li>
+ <li>Defined the {@value org.gradle.api.Project#GRADLE_PROPERTIES} file located in the user's <code>.gradle</code> directory.</li>
+ <li>Provided on the command-line using the -P option.</li>
+ </ul>
+</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-d-e-f-a-u-l-t_-s-e-t-t-i-n-g-s_-f-i-l-e.html">DEFAULT_SETTINGS_FILE</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">DEFAULT_SETTINGS_FILE</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>
+<p>The default name for the settings file.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="build-cache.html">buildCache</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">buildCache</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.initialization.Settings$buildCache(org.gradle.api.Action((org.gradle.caching.configuration.BuildCacheConfiguration)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.caching.configuration/-build-cache-configuration/index.html"><span class="identifier">BuildCacheConfiguration</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures build cache.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="find-project.html">findProject</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">findProject</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.initialization.Settings$findProject(kotlin.String)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-project-descriptor/index.html"><span class="identifier">ProjectDescriptor</span></a></code>
+<p>
+<p>Returns the project with the given path.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">findProject</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.initialization.Settings$findProject(java.io.File)/projectDir">projectDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-project-descriptor/index.html"><span class="identifier">ProjectDescriptor</span></a></code>
+<p>
+<p>Returns the project with the given project directory.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-build-cache.html">getBuildCache</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildCache</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.caching.configuration/-build-cache-configuration/index.html"><span class="identifier">BuildCacheConfiguration</span></a></code>
+<p>Returns the build cache configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-gradle.html">getGradle</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGradle</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.invocation/-gradle/index.html"><span class="identifier">Gradle</span></a></code>
+<p>Returns the Gradle instance for the current build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-plugin-management.html">getPluginManagement</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPluginManagement</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.plugin.management/-plugin-management-spec/index.html"><span class="identifier">PluginManagementSpec</span></a></code>
+<p>Returns the plugin management configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-root-dir.html">getRootDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRootDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>
+<p>Returns the root directory of the build. The root directory is the project directory of the root project.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-root-project.html">getRootProject</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRootProject</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-project-descriptor/index.html"><span class="identifier">ProjectDescriptor</span></a></code>
+<p>
+<p>Returns the root project of the build.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-settings.html">getSettings</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSettings</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Settings</span></code>
+<p>
+<p>Returns this settings object.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-settings-dir.html">getSettingsDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSettingsDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>
+<p>Returns the settings directory of the build. The settings directory is the directory containing the settings file.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-start-parameter.html">getStartParameter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getStartParameter</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle/-start-parameter/index.html"><span class="identifier">StartParameter</span></a></code>
+<p>
+<p>Returns the set of parameters used to invoke this instance of Gradle.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="include.html">include</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">include</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.initialization.Settings$include(kotlin.Array((kotlin.String)))/projectPaths">projectPaths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Adds the given projects to the build. Each path in the supplied list is treated as the path of a project to add to the build. Note that these path are not file paths, but instead specify the location of the new project in the project hierarchy. As such, the supplied paths must use the ':' character as separator.</p>
+ 
+<p>The last element of the supplied path is used as the project name. The supplied path is converted to a project directory relative to the root project directory.</p>
+ 
+<p>As an example, the path <code>a:b</code> adds a project with path <code>:a:b</code>, name <code>b</code> and project directory <code>$rootDir/a/b</code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="include-build.html">includeBuild</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">includeBuild</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.initialization.Settings$includeBuild(kotlin.Any)/rootProject">rootProject</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Includes a build at the specified path to the composite build.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">includeBuild</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.initialization.Settings$includeBuild(kotlin.Any, org.gradle.api.Action((ConfigurableIncludedBuild)))/rootProject">rootProject</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.initialization.Settings$includeBuild(kotlin.Any, org.gradle.api.Action((ConfigurableIncludedBuild)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="identifier">ConfigurableIncludedBuild</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Includes a build at the specified path to the composite build, with the supplied configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="include-flat.html">includeFlat</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">includeFlat</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.initialization.Settings$includeFlat(kotlin.Array((kotlin.String)))/projectNames">projectNames</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Adds the given projects to the build. Each name in the supplied list is treated as the name of a project to add to the build.</p>
+ 
+<p>The supplied name is converted to a project directory relative to the <em>parent</em> directory of the root project directory.</p>
+ 
+<p>As an example, the name <code>a</code> add a project with path <code>:a</code>, name <code>a</code> and project directory <code>$rootDir/../a</code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="plugin-management.html">pluginManagement</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">pluginManagement</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.initialization.Settings$pluginManagement(org.gradle.api.Action((org.gradle.plugin.management.PluginManagementSpec)))/pluginManagementSpec">pluginManagementSpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.plugin.management/-plugin-management-spec/index.html"><span class="identifier">PluginManagementSpec</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures plugin management.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="project.html">project</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">project</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.initialization.Settings$project(kotlin.String)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-project-descriptor/index.html"><span class="identifier">ProjectDescriptor</span></a></code>
+<p>
+<p>Returns the project with the given path.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">project</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.initialization.Settings$project(java.io.File)/projectDir">projectDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-project-descriptor/index.html"><span class="identifier">ProjectDescriptor</span></a></code>
+<p>
+<p>Returns the project with the given project directory.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.plugins/-plugin-aware/apply.html">apply</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginAware$apply(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginAware$apply(org.gradle.api.Action((org.gradle.api.plugins.ObjectConfigurationAction)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.plugins/-object-configuration-action/index.html"><span class="identifier">ObjectConfigurationAction</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies zero or more plugins or scripts. 
+<p> The given closure is used to configure an ObjectConfigurationAction, which “builds” the plugin application. </p>
+<p> This method differs from <code><a href="#">#apply(java.util.Map)</a></code> in that it allows methods of the configuration action to be invoked more than once.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginAware$apply(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/options">options</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies a plugin or script, using the given options provided as a map. Does nothing if the plugin has already been applied. 
+<p> The given map is applied as a series of method calls to a newly created ObjectConfigurationAction. That is, each key in the map is expected to be the name of a method ObjectConfigurationAction and the value to be compatible arguments to that method. </p>
+<p>The following options are available:</p>
+ <ul><li><code>from</code>: A script to apply. Accepts any path supported by <code><a href="#">org.gradle.api.Project#uri(Object)</a></code>.</li>
+ <li><code>plugin</code>: The id or implementation class of the plugin to apply.</li>
+ <li><code>to</code>: The target delegate object or objects. The default is this plugin aware object. Use this to configure objects other than this object.</li>
+</ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.plugins/-plugin-aware/get-plugin-manager.html">getPluginManager</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPluginManager</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins/-plugin-manager/index.html"><span class="identifier">PluginManager</span></a></code>
+<p>The plugin manager for this plugin aware object.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.plugins/-plugin-aware/get-plugins.html">getPlugins</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPlugins</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins/-plugin-container/index.html"><span class="identifier">PluginContainer</span></a></code>
+<p>The container of plugins that have been applied to this object. 
+<p> While not deprecated, it is preferred to use the methods of this interface or the <code><a href="../../org.gradle.api.plugins/-plugin-aware/get-plugin-manager.html">plugin manager</a></code> than use the plugin container. </p>
+<p> Use one of the 'apply' methods on this interface or on the <code><a href="../../org.gradle.api.plugins/-plugin-aware/get-plugin-manager.html">plugin manager</a></code> to apply plugins instead of applying via the plugin container. </p>
+<p> Use <code><a href="#">PluginManager#hasPlugin(String)</a></code> or similar to query for the application of plugins instead of doing so via the plugin container.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

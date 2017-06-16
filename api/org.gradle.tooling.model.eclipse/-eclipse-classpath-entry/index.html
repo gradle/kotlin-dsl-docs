@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>EclipseClasspathEntry - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.model.eclipse</a>&nbsp;/&nbsp;<a href=".">EclipseClasspathEntry</a><br/>
+<br/>
+<h1>EclipseClasspathEntry</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">EclipseClasspathEntry</span></code>
+<p>An element that can have classpath attributes.</p>
+<p><strong>Since</strong><br/>
+2.14</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-access-rules.html">getAccessRules</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAccessRules</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-access-rule/index.html"><span class="identifier">AccessRule</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the access rules associated with this classpath entry.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-classpath-attributes.html">getClasspathAttributes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getClasspathAttributes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-classpath-attribute/index.html"><span class="identifier">ClasspathAttribute</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the classpath attributes associated with this classpath entry.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-eclipse-classpath-container/index.html">EclipseClasspathContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">EclipseClasspathContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">EclipseClasspathEntry</span></code>
+<p>Eclipse classpath entry used by third-party plugins to contribute to the project's classpath.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-eclipse-external-dependency.html">EclipseExternalDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">EclipseExternalDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.model/-external-dependency/index.html"><span class="identifier">ExternalDependency</span></a><span class="symbol">, </span><span class="identifier">EclipseClasspathEntry</span></code>
+<p>Represents an Eclipse-specific external artifact dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-eclipse-project-dependency/index.html">EclipseProjectDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">EclipseProjectDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.model/-project-dependency.html"><span class="identifier">ProjectDependency</span></a><span class="symbol">, </span><span class="identifier">EclipseClasspathEntry</span></code>
+<p>Represents a dependency on another Eclipse project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-eclipse-source-directory/index.html">EclipseSourceDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">EclipseSourceDirectory</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.model/-source-directory/index.html"><span class="identifier">SourceDirectory</span></a><span class="symbol">, </span><span class="identifier">EclipseClasspathEntry</span></code>
+<p>A source directory in an Eclipse project.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,252 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>IdeaProject - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.idea.model</a>&nbsp;/&nbsp;<a href=".">IdeaProject</a><br/>
+<br/>
+<h1>IdeaProject</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">IdeaProject</span></code>
+<p>Enables fine-tuning project details (*.ipr file) of the IDEA plugin. 
+<p> Example of use with a blend of all possible properties. Typically you don't have to configure IDEA module directly because Gradle configures it for you. </p>
+<pre><code> import org.gradle.plugins.ide.idea.model.* apply plugin: 'java' apply plugin: 'idea' idea { project { //if you want to set specific jdk and language level jdkName = '1.6' languageLevel = '1.5' //you can update the source wildcards wildcards += '!?*.ruby' //you can configure the VCS used by the project vcs = 'Git' //you can change the modules of the *.ipr //modules = project(':someProject').idea.module //you can change the output file outputFile = new File(outputFile.parentFile, 'someBetterName.ipr') //you can add project-level libraries projectLibraries &lt;&lt; new ProjectLibrary(name: "my-library", classes: [new File("path/to/library")]) } } </code></pre> For tackling edge cases users can perform advanced configuration on resulting XML file. It is also possible to affect the way IDEA plugin merges the existing configuration via beforeMerged and whenMerged closures. 
+<p> beforeMerged and whenMerged closures receive Project object </p>
+<p> Examples of advanced configuration: </p>
+<pre><code> apply plugin: 'java' apply plugin: 'idea' idea { project { ipr { //you can tinker with the output *.ipr file before it's written out withXml { def node = it.asNode() node.appendNode('iLove', 'tinkering with the output *.ipr file!') } //closure executed after *.ipr content is loaded from existing file //but before gradle build information is merged beforeMerged { project -&gt; //you can tinker with Project } //closure executed after *.ipr content is loaded from existing file //and after gradle build information is merged whenMerged { project -&gt; //you can tinker with Project } } } } </code></pre></p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">IdeaProject</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaProject$<init>(org.gradle.api.Project, org.gradle.plugins.ide.api.XmlFileContentMerger)/project">project</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaProject$<init>(org.gradle.api.Project, org.gradle.plugins.ide.api.XmlFileContentMerger)/ipr">ipr</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.ide.api/-xml-file-content-merger/index.html"><span class="identifier">XmlFileContentMerger</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-ipr.html">getIpr</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getIpr</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.plugins.ide.api/-xml-file-content-merger/index.html"><span class="identifier">XmlFileContentMerger</span></a></code>
+<p>See <code><a href="#">#ipr(Action)</a></code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-jdk-name.html">getJdkName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getJdkName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The java version used for defining the project sdk. 
+<p> See the examples in the docs for IdeaProject</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-language-level.html">getLanguageLevel</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLanguageLevel</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-idea-language-level/index.html"><span class="identifier">IdeaLanguageLevel</span></a></code>
+<p>The default Java language Level to use for this project. 
+<p> Generally, it isn't recommended to change this value. Instead, you are encouraged to set <code>sourceCompatibility</code> and <code>targetCompatibility</code> for your Gradle projects which allows you to have full control over language levels in Gradle projects, and means that Gradle and IDEA will use the same settings when compiling. </p>
+<p> When not explicitly set, this is calculated as the maximum language level for the Idea modules of this Idea project.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-modules.html">getModules</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getModules</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-idea-module/index.html"><span class="identifier">IdeaModule</span></a><span class="symbol">&gt;</span></code>
+<p>A org.gradle.api.dsl.ConventionProperty that holds modules for the ipr file. 
+<p> See the examples in the docs for IdeaProject</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name of the IDEA project. It is a convenience property that returns the name of the output file (without the file extension). In IDEA, the project name is driven by the name of the 'ipr' file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-output-file.html">getOutputFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOutputFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Output *.ipr 
+<p> See the examples in the docs for IdeaProject.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-path-factory.html">getPathFactory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getPathFactory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-path-factory/index.html"><span class="identifier">PathFactory</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project.html">getProject</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getProject</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a></code>
+<p>An owner of this IDEA project. 
+<p> If IdeaProject requires some information from gradle this field should not be used for this purpose.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project-libraries.html">getProjectLibraries</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getProjectLibraries</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-project-library/index.html"><span class="identifier">ProjectLibrary</span></a><span class="symbol">&gt;</span></code>
+<p>The project-level libraries to be added to the IDEA project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-target-bytecode-version.html">getTargetBytecodeVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTargetBytecodeVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-java-version/index.html"><span class="identifier">JavaVersion</span></a></code>
+<p>The target bytecode version to use for this project. 
+<p> Generally, it isn't recommended to change this value. Instead, you are encouraged to set <code>sourceCompatibility</code> and <code>targetCompatibility</code> for your Gradle projects which allows you to have full control over language levels in Gradle projects, and means that Gradle and IDEA will use the same settings when compiling. </p>
+<p> When <code>languageLevel</code> is not explicitly set, this is calculated as the maximum target bytecode version for the Idea modules of this Idea project.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-vcs.html">getVcs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getVcs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The vcs for the project. 
+<p> Values are the same as used in IDEA's “Version Control” preference window (e.g. 'Git', 'Subversion'). </p>
+<p> See the examples in the docs for IdeaProject.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-wildcards.html">getWildcards</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getWildcards</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The wildcard resource patterns. 
+<p> See the examples in the docs for IdeaProject.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="ipr.html">ipr</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">ipr</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaProject$ipr(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">ipr</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaProject$ipr(org.gradle.api.Action((org.gradle.plugins.ide.api.XmlFileContentMerger)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.plugins.ide.api/-xml-file-content-merger/index.html"><span class="identifier">XmlFileContentMerger</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Enables advanced configuration like tinkering with the output XML or affecting the way existing *.ipr content is merged with Gradle build information. 
+<p> See the examples in the docs for IdeaProject</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="merge-xml-project.html">mergeXmlProject</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">mergeXmlProject</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaProject$mergeXmlProject(org.gradle.plugins.ide.idea.model.Project)/xmlProject">xmlProject</span><span class="symbol">:</span>&nbsp;<a href="../-project/index.html"><span class="identifier">Project</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-jdk-name.html">setJdkName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setJdkName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaProject$setJdkName(kotlin.String)/jdkName">jdkName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-language-level.html">setLanguageLevel</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setLanguageLevel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaProject$setLanguageLevel(org.gradle.plugins.ide.idea.model.IdeaLanguageLevel)/languageLevel">languageLevel</span><span class="symbol">:</span>&nbsp;<a href="../-idea-language-level/index.html"><span class="identifier">IdeaLanguageLevel</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the java language level for the project. 
+<p> When explicitly set in the build script, this setting overrides any calculated values for Idea project and Idea module.</p>
+</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setLanguageLevel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaProject$setLanguageLevel(kotlin.Any)/languageLevel">languageLevel</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the java language level for the project. Pass a valid Java version number (e.g. '1.5') or IDEA language level (e.g. 'JDK_1_5'). 
+<p> See the examples in the docs for IdeaProject. </p>
+<p> When explicitly set in the build script, this setting overrides any calculated values for Idea project and Idea module.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-modules.html">setModules</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setModules</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaProject$setModules(kotlin.collections.MutableList((org.gradle.plugins.ide.idea.model.IdeaModule)))/modules">modules</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-idea-module/index.html"><span class="identifier">IdeaModule</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-output-file.html">setOutputFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOutputFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaProject$setOutputFile(java.io.File)/outputFile">outputFile</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-path-factory.html">setPathFactory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setPathFactory</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaProject$setPathFactory(org.gradle.plugins.ide.idea.model.PathFactory)/pathFactory">pathFactory</span><span class="symbol">:</span>&nbsp;<a href="../-path-factory/index.html"><span class="identifier">PathFactory</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-project-libraries.html">setProjectLibraries</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setProjectLibraries</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaProject$setProjectLibraries(kotlin.collections.MutableSet((org.gradle.plugins.ide.idea.model.ProjectLibrary)))/projectLibraries">projectLibraries</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-project-library/index.html"><span class="identifier">ProjectLibrary</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-target-bytecode-version.html">setTargetBytecodeVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTargetBytecodeVersion</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaProject$setTargetBytecodeVersion(org.gradle.api.JavaVersion)/targetBytecodeVersion">targetBytecodeVersion</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-java-version/index.html"><span class="identifier">JavaVersion</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-vcs.html">setVcs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setVcs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaProject$setVcs(kotlin.String)/vcs">vcs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-wildcards.html">setWildcards</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setWildcards</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaProject$setWildcards(kotlin.collections.MutableSet((kotlin.String)))/wildcards">wildcards</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

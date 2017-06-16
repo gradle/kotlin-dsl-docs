@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CompatibilityAdapterForTaskOutputs - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks</a>&nbsp;/&nbsp;<a href=".">CompatibilityAdapterForTaskOutputs</a><br/>
+<br/>
+<h1>CompatibilityAdapterForTaskOutputs</h1>
+<code><span class="keyword">interface </span><span class="identifier">CompatibilityAdapterForTaskOutputs</span></code>
+<p>Helper interface for binary compatibility with Gradle 2.x version of the TaskOutputs interface.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="dir.html">dir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">dir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.CompatibilityAdapterForTaskOutputs$dir(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-task-outputs/index.html"><span class="identifier">TaskOutputs</span></a></code>
+<p>Registers an output directory for this task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="file.html">file</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.CompatibilityAdapterForTaskOutputs$file(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-task-outputs/index.html"><span class="identifier">TaskOutputs</span></a></code>
+<p>Registers some output file for this task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="files.html">files</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">files</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.tasks.CompatibilityAdapterForTaskOutputs$files(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-task-outputs/index.html"><span class="identifier">TaskOutputs</span></a></code>
+<p>Registers some output files for this task.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-task-outputs/index.html">TaskOutputs</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskOutputs</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">CompatibilityAdapterForTaskOutputs</span></code>
+<p>
+<p>A <code>TaskOutputs</code> represents the outputs of a task.</p>
+ 
+<p>You can obtain a <code>TaskOutputs</code> instance using <code><a href="../../org.gradle.api/-task/get-outputs.html">org.gradle.api.Task#getOutputs()</a></code>.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

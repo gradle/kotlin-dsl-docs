@@ -1,0 +1,44 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api.tasks.javadoc - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.tasks.javadoc</a><br/>
+<br/>
+<h2>Package org.gradle.api.tasks.javadoc</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-groovydoc/index.html">Groovydoc</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Groovydoc</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a></code>
+<p>
+<p>Generates HTML API documentation for Groovy source, and optionally, Java source. </p>
+<p>This task uses Groovy's Groovydoc tool to generate the API documentation. Please note that the Groovydoc tool has some limitations at the moment. The version of the Groovydoc that is used, is the one from the Groovy dependency defined in the build script.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-javadoc/index.html">Javadoc</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Javadoc</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a></code>
+<p>
+<p>Generates HTML API documentation for Java classes.</p>
+ 
+<p> If you create your own Javadoc tasks remember to specify the 'source' property! Without source the Javadoc task will not create any documentation. Example: </p>
+<pre><code> apply plugin: 'java' task myJavadocs(type: Javadoc) { source = sourceSets.main.allJava } </code></pre> 
+<p> An example how to create a task that runs a custom doclet implementation: </p>
+<pre><code> apply plugin: 'java' configurations { jaxDoclet } dependencies { //jaxDoclet "some.interesting:Dependency:1.0" } task generateRestApiDocs(type: Javadoc) { source = sourceSets.main.allJava destinationDir = reporting.file("rest-api-docs") options.docletpath = configurations.jaxDoclet.files.asType(List) options.doclet = "com.lunatech.doclets.jax.jaxrs.JAXRSDoclet" options.addStringOption("jaxrscontext", "http://localhost:8080/myapp") } </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

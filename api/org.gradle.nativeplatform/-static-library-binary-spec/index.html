@@ -1,0 +1,92 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>StaticLibraryBinarySpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform</a>&nbsp;/&nbsp;<a href=".">StaticLibraryBinarySpec</a><br/>
+<br/>
+<h1>StaticLibraryBinarySpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">StaticLibraryBinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-native-library-binary-spec/index.html"><span class="identifier">NativeLibraryBinarySpec</span></a></code>
+<p>A static library binary built by Gradle for a native library.</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-tasks-collection/index.html">TasksCollection</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TasksCollection</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.platform.base/-binary-tasks-collection/index.html"><span class="identifier">BinaryTasksCollection</span></a></code>
+<p>Provides access to key tasks used for building the binary.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="additional-link-files.html">additionalLinkFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">additionalLinkFiles</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.StaticLibraryBinarySpec$additionalLinkFiles(org.gradle.api.file.FileCollection)/files">files</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Add some additional files required by consumers of this library at link time.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-static-library-file.html">getStaticLibraryFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getStaticLibraryFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The static library file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-tasks.html">getTasks</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTasks</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-tasks-collection/index.html"><span class="identifier">TasksCollection</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-static-library-file.html">setStaticLibraryFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setStaticLibraryFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.StaticLibraryBinarySpec$setStaticLibraryFile(java.io.File)/staticLibraryFile">staticLibraryFile</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The static library binary file.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-native-library-binary-spec/get-component.html">getComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getComponent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-native-library-spec/index.html"><span class="identifier">NativeLibrarySpec</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-native-library-binary-spec/get-library.html">getLibrary</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLibrary</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-native-library-spec/index.html"><span class="identifier">NativeLibrarySpec</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

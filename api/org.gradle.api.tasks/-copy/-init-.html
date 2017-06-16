@@ -1,0 +1,17 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Copy.<init> - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks</a>&nbsp;/&nbsp;<a href="index.html">Copy</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.gradle.api.tasks.Copy$&lt;init&gt;()"></a>
+<code><span class="identifier">Copy</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Copies files into a destination directory. This task can also rename and filter files as it copies. The task implements org.gradle.api.file.CopySpec for specifying what to copy. 
+<p> Examples: </p>
+<pre><code> task copyDocs(type: Copy) { from 'src/main/doc' into 'build/target/doc' } //for Ant filter import org.apache.tools.ant.filters.ReplaceTokens //for including in the copy task def dataContent = copySpec { from 'src/data' include '*.data' } task initConfig(type: Copy) { from('src/main/config') { include '**/*.properties' include '**/*.xml' filter(ReplaceTokens, tokens: [version: '2.3.1']) } from('src/main/config') { exclude '**/*.properties', '**/*.xml' } from('src/main/languages') { rename 'EN_US_(.*)', '$1' } into 'build/target/config' exclude '**/*.bak' includeEmptyDirs = false with dataContent } </code></pre></p>
+</BODY>
+</HTML>

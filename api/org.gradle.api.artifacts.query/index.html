@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api.artifacts.query - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.artifacts.query</a><br/>
+<br/>
+<h2>Package org.gradle.api.artifacts.query</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-artifact-resolution-query/index.html">ArtifactResolutionQuery</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ArtifactResolutionQuery</span></code>
+<p>A builder to construct a query that can resolve selected software artifacts of the specified components. <pre><code> apply plugin: 'java' task resolveCompileSources { doLast { def componentIds = configurations.compile.incoming.resolutionResult.allDependencies.collect { it.selected.id } def result = dependencies.createArtifactResolutionQuery() .forComponents(componentIds) .withArtifacts(JvmLibrary, SourcesArtifact, JavadocArtifact) .execute() for (component in result.resolvedComponents) { component.getArtifacts(SourcesArtifact).each { println "Source artifact for ${component.id}: ${it.file}" } } } } </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

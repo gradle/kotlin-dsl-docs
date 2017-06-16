@@ -1,0 +1,138 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BaseForkOptions - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.compile</a>&nbsp;/&nbsp;<a href=".">BaseForkOptions</a><br/>
+<br/>
+<h1>BaseForkOptions</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BaseForkOptions</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-abstract-options/index.html"><span class="identifier">AbstractOptions</span></a></code>
+<p>Fork options for compilation. Only take effect if <code>fork</code> is <code>true</code>.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">BaseForkOptions</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Fork options for compilation. Only take effect if <code>fork</code> is <code>true</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-jvm-args.html">getJvmArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getJvmArgs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns any additional JVM arguments for the compiler process. Defaults to the empty list.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-memory-initial-size.html">getMemoryInitialSize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMemoryInitialSize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the initial heap size for the compiler process. Defaults to <code>null</code>, in which case the JVM's default will be used.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-memory-maximum-size.html">getMemoryMaximumSize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMemoryMaximumSize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the maximum heap size for the compiler process. Defaults to <code>null</code>, in which case the JVM's default will be used.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-jvm-args.html">setJvmArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setJvmArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.compile.BaseForkOptions$setJvmArgs(kotlin.collections.MutableList((kotlin.String)))/jvmArgs">jvmArgs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets any additional JVM arguments for the compiler process. Defaults to the empty list.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-memory-initial-size.html">setMemoryInitialSize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMemoryInitialSize</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.compile.BaseForkOptions$setMemoryInitialSize(kotlin.String)/memoryInitialSize">memoryInitialSize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the initial heap size for the compiler process. Defaults to <code>null</code>, in which case the JVM's default will be used.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-memory-maximum-size.html">setMemoryMaximumSize</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMemoryMaximumSize</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.compile.BaseForkOptions$setMemoryMaximumSize(kotlin.String)/memoryMaximumSize">memoryMaximumSize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the maximum heap size for the compiler process. Defaults to <code>null</code>, in which case the JVM's default will be used.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-abstract-options/define.html">define</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">define</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.compile.AbstractOptions$define(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-options/option-map.html">optionMap</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">optionMap</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-fork-options/index.html">ForkOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ForkOptions</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BaseForkOptions</span></code>
+<p>Fork options for Java compilation. Only take effect if <code>CompileOptions.fork</code> is <code>true</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-groovy-fork-options/index.html">GroovyForkOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GroovyForkOptions</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BaseForkOptions</span></code>
+<p>Fork options for Groovy compilation. Only take effect if <code>GroovyCompileOptions.fork</code> is <code>true</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.scala/-scala-fork-options/index.html">ScalaForkOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ScalaForkOptions</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BaseForkOptions</span></code>
+<p>Fork options for Scala compilation. Only take effect if <code>BaseScalaCompileOptions.fork</code> is <code>true</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

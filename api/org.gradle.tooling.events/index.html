@@ -1,0 +1,120 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.tooling.events - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.tooling.events</a><br/>
+<br/>
+<h2>Package org.gradle.tooling.events</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-failure-result/index.html">FailureResult</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">FailureResult</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-operation-result/index.html"><span class="identifier">OperationResult</span></a></code>
+<p>Describes how an operation finished with failures.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-finish-event/index.html">FinishEvent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">FinishEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-progress-event/index.html"><span class="identifier">ProgressEvent</span></a></code>
+<p>An event that informs about an operation having finished its execution.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-operation-descriptor/index.html">OperationDescriptor</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">OperationDescriptor</span></code>
+<p>Describes an operation for which an event has occurred. 
+<p>You can use <code>equals()</code> to determine whether 2 different descriptors refer to the same operation.</p>
+ 
+<p>The subtypes of this interface define specific types of operations, such as task execution.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-operation-result/index.html">OperationResult</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">OperationResult</span></code>
+<p>Describes the result of running an operation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-operation-type/index.html">OperationType</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">OperationType</span></code>
+<p>Enumerates the different types of operations for which progress events can be received.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-progress-event/index.html">ProgressEvent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ProgressEvent</span></code>
+<p>Root interface for all events that signal progress while executing an operation. For example, an operation can be the execution of a build, of a task, of a test, etc. A progress event can, for example, signal that a test has started, a task has finished, etc.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-progress-listener/index.html">ProgressListener</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ProgressListener</span></code>
+<p>A listener which is notified when operations that are executed as part of running a build make progress.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-skipped-result.html">SkippedResult</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SkippedResult</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-operation-result/index.html"><span class="identifier">OperationResult</span></a></code>
+<p>Describes how an operation was skipped.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-start-event.html">StartEvent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">StartEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-progress-event/index.html"><span class="identifier">ProgressEvent</span></a></code>
+<p>An event that informs about an operation having started its execution.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-status-event/index.html">StatusEvent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">StatusEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-progress-event/index.html"><span class="identifier">ProgressEvent</span></a></code>
+<p>An event that informs about an interim results of the operation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-success-result.html">SuccessResult</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SuccessResult</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-operation-result/index.html"><span class="identifier">OperationResult</span></a></code>
+<p>Describes how an operation finished successfully.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

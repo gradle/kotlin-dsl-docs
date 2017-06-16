@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PlayApplicationSpec.setInjectedRoutesGenerator - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.play</a>&nbsp;/&nbsp;<a href="index.html">PlayApplicationSpec</a>&nbsp;/&nbsp;<a href=".">setInjectedRoutesGenerator</a><br/>
+<br/>
+<h1>setInjectedRoutesGenerator</h1>
+<a name="org.gradle.play.PlayApplicationSpec$setInjectedRoutesGenerator(kotlin.Boolean)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setInjectedRoutesGenerator</span><span class="symbol">(</span><span class="identifier" id="org.gradle.play.PlayApplicationSpec$setInjectedRoutesGenerator(kotlin.Boolean)/injectedRoutesGenerator">injectedRoutesGenerator</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the style of router to use with this application. 
+<p> By default, a static routes generator is used to generate a singleton router. This requires that all the actions that the router invokes on the application's controllers are either Scala singleton objects, or Java static methods. </p>
+ 
+<p> In Play 2.4+, a injected routes generator is recommended. This requires that the router declares its dependencies to the application's controllers in its constructor. The controllers methods need to be instance methods. </p>
+</p>
+<h3>Parameters</h3>
+<a name="injectedRoutesGenerator"></a>
+<code>injectedRoutesGenerator</code> - false if a static router should be generated (default). true if an injected router should be generated.
+</BODY>
+</HTML>

@@ -1,0 +1,88 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ApiJar - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.jvm.tasks.api</a>&nbsp;/&nbsp;<a href=".">ApiJar</a><br/>
+<br/>
+<h1>ApiJar</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ApiJar</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a></code>
+<p>Assembles an "API Jar" containing only the members of a library's public API. 
+<p>This task and the Jar it produces are designed primarily for internal use in support of Gradle's "compile avoidance" performance feature. The task is automatically included in the task graph for any JVM library that declares an <code>api { ... }</code> specification, and the resulting Jar will automatically be placed on the compile time classpath of projects that depend on the library in lieu of the library's complete so-called "Runtime Jar".</p>
+ 
+<p>Swapping the API Jar in for the Runtime Jar at compile time is what makes "compile avoidance" possible: because the contents of the API Jar change only when actual API changes are made, the API Jar passes Gradle's up-to-date checks, even if the implementation in the Runtime Jar has changed. Ultimately, this means that projects depending on the library in question will need to recompile potentially far less often. </p>
+ 
+<p>In order to ensure that API Jars change as infrequently as possible, this task and its supporting classes ensure that only actual public API members are included in the API Jar, and that the methods among those members are stripped of their implementation. Because the members included in API Jars exist only for compilation purposes, they need no actual implementation, and for this reason, all such methods throw UnsupportedOperationException in the unlikely event that they are present on the classpath and invoked at runtime.</p>
+ 
+<p>The inputs to this task are Java class files which must be provided via org.gradle.api.tasks.TaskInputs.</p>
+</p>
+<p><strong>Since</strong><br/>
+2.10</p>
+<p><strong>See Also</strong><br/>
+org.gradle.jvm.plugins.JvmComponentPlugin</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ApiJar</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Assembles an "API Jar" containing only the members of a library's public API. 
+<p>This task and the Jar it produces are designed primarily for internal use in support of Gradle's "compile avoidance" performance feature. The task is automatically included in the task graph for any JVM library that declares an <code>api { ... }</code> specification, and the resulting Jar will automatically be placed on the compile time classpath of projects that depend on the library in lieu of the library's complete so-called "Runtime Jar".</p>
+ 
+<p>Swapping the API Jar in for the Runtime Jar at compile time is what makes "compile avoidance" possible: because the contents of the API Jar change only when actual API changes are made, the API Jar passes Gradle's up-to-date checks, even if the implementation in the Runtime Jar has changed. Ultimately, this means that projects depending on the library in question will need to recompile potentially far less often. </p>
+ 
+<p>In order to ensure that API Jars change as infrequently as possible, this task and its supporting classes ensure that only actual public API members are included in the API Jar, and that the methods among those members are stripped of their implementation. Because the members included in API Jars exist only for compilation purposes, they need no actual implementation, and for this reason, all such methods throw UnsupportedOperationException in the unlikely event that they are present on the classpath and invoked at runtime.</p>
+ 
+<p>The inputs to this task are Java class files which must be provided via org.gradle.api.tasks.TaskInputs.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="create-api-jar.html">createApiJar</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">createApiJar</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-exported-packages.html">getExportedPackages</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getExportedPackages</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-output-file.html">getOutputFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOutputFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-exported-packages.html">setExportedPackages</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExportedPackages</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.tasks.api.ApiJar$setExportedPackages(kotlin.collections.MutableSet((kotlin.String)))/exportedPackages">exportedPackages</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-output-file.html">setOutputFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOutputFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.tasks.api.ApiJar$setOutputFile(java.io.File)/outputFile">outputFile</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

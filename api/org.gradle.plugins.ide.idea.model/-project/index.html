@@ -1,0 +1,141 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Project - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.idea.model</a>&nbsp;/&nbsp;<a href=".">Project</a><br/>
+<br/>
+<h1>Project</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Project</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">XmlPersistableConfigurationObject</span></code>
+<p>Represents the customizable elements of an ipr (via XML hooks everything of the ipr is customizable).</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">Project</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Project$<init>(XmlTransformer, kotlin.Any)/xmlTransformer">xmlTransformer</span><span class="symbol">:</span>&nbsp;<span class="identifier">XmlTransformer</span><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Project$<init>(XmlTransformer, kotlin.Any)/pathFactory">pathFactory</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-module-path.html">addModulePath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addModulePath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Project$addModulePath(java.io.File)/moduleFile">moduleFile</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a module to the module paths included in the Project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="configure.html">configure</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">configure</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Project$configure(kotlin.collections.MutableList((org.gradle.plugins.ide.idea.model.IdeaModule)), kotlin.String, org.gradle.plugins.ide.idea.model.IdeaLanguageLevel, org.gradle.api.JavaVersion, kotlin.collections.MutableCollection((kotlin.String)), kotlin.collections.MutableCollection((org.gradle.plugins.ide.idea.model.ProjectLibrary)), kotlin.String)/modules">modules</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-idea-module/index.html"><span class="identifier">IdeaModule</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Project$configure(kotlin.collections.MutableList((org.gradle.plugins.ide.idea.model.IdeaModule)), kotlin.String, org.gradle.plugins.ide.idea.model.IdeaLanguageLevel, org.gradle.api.JavaVersion, kotlin.collections.MutableCollection((kotlin.String)), kotlin.collections.MutableCollection((org.gradle.plugins.ide.idea.model.ProjectLibrary)), kotlin.String)/jdkName">jdkName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Project$configure(kotlin.collections.MutableList((org.gradle.plugins.ide.idea.model.IdeaModule)), kotlin.String, org.gradle.plugins.ide.idea.model.IdeaLanguageLevel, org.gradle.api.JavaVersion, kotlin.collections.MutableCollection((kotlin.String)), kotlin.collections.MutableCollection((org.gradle.plugins.ide.idea.model.ProjectLibrary)), kotlin.String)/languageLevel">languageLevel</span><span class="symbol">:</span>&nbsp;<a href="../-idea-language-level/index.html"><span class="identifier">IdeaLanguageLevel</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Project$configure(kotlin.collections.MutableList((org.gradle.plugins.ide.idea.model.IdeaModule)), kotlin.String, org.gradle.plugins.ide.idea.model.IdeaLanguageLevel, org.gradle.api.JavaVersion, kotlin.collections.MutableCollection((kotlin.String)), kotlin.collections.MutableCollection((org.gradle.plugins.ide.idea.model.ProjectLibrary)), kotlin.String)/bytecodeVersion">bytecodeVersion</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-java-version/index.html"><span class="identifier">JavaVersion</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Project$configure(kotlin.collections.MutableList((org.gradle.plugins.ide.idea.model.IdeaModule)), kotlin.String, org.gradle.plugins.ide.idea.model.IdeaLanguageLevel, org.gradle.api.JavaVersion, kotlin.collections.MutableCollection((kotlin.String)), kotlin.collections.MutableCollection((org.gradle.plugins.ide.idea.model.ProjectLibrary)), kotlin.String)/wildcards">wildcards</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Project$configure(kotlin.collections.MutableList((org.gradle.plugins.ide.idea.model.IdeaModule)), kotlin.String, org.gradle.plugins.ide.idea.model.IdeaLanguageLevel, org.gradle.api.JavaVersion, kotlin.collections.MutableCollection((kotlin.String)), kotlin.collections.MutableCollection((org.gradle.plugins.ide.idea.model.ProjectLibrary)), kotlin.String)/projectLibraries">projectLibraries</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="../-project-library/index.html"><span class="identifier">ProjectLibrary</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Project$configure(kotlin.collections.MutableList((org.gradle.plugins.ide.idea.model.IdeaModule)), kotlin.String, org.gradle.plugins.ide.idea.model.IdeaLanguageLevel, org.gradle.api.JavaVersion, kotlin.collections.MutableCollection((kotlin.String)), kotlin.collections.MutableCollection((org.gradle.plugins.ide.idea.model.ProjectLibrary)), kotlin.String)/vcs">vcs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="equals.html">equals</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">equals</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Project$equals(kotlin.Any)/o">o</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-jdk.html">getJdk</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getJdk</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-jdk/index.html"><span class="identifier">Jdk</span></a></code>
+<p>Represent the jdk information of the project java sdk.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-module-paths.html">getModulePaths</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getModulePaths</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-path/index.html"><span class="identifier">Path</span></a><span class="symbol">&gt;</span></code>
+<p>A set of Path instances pointing to the modules contained in the ipr.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project-libraries.html">getProjectLibraries</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getProjectLibraries</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-project-library/index.html"><span class="identifier">ProjectLibrary</span></a><span class="symbol">&gt;</span></code>
+<p>The project-level libraries of the IDEA project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-vcs.html">getVcs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getVcs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The vcs used by the project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-wildcards.html">getWildcards</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getWildcards</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>A set of wildcard string to be included/excluded from the resources.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="hash-code.html">hashCode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">hashCode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-jdk.html">setJdk</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setJdk</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Project$setJdk(org.gradle.plugins.ide.idea.model.Jdk)/jdk">jdk</span><span class="symbol">:</span>&nbsp;<a href="../-jdk/index.html"><span class="identifier">Jdk</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-module-paths.html">setModulePaths</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setModulePaths</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Project$setModulePaths(kotlin.collections.MutableSet((org.gradle.plugins.ide.idea.model.Path)))/modulePaths">modulePaths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-path/index.html"><span class="identifier">Path</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-project-libraries.html">setProjectLibraries</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setProjectLibraries</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Project$setProjectLibraries(kotlin.collections.MutableSet((org.gradle.plugins.ide.idea.model.ProjectLibrary)))/projectLibraries">projectLibraries</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-project-library/index.html"><span class="identifier">ProjectLibrary</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-vcs.html">setVcs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setVcs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Project$setVcs(kotlin.String)/vcs">vcs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-wildcards.html">setWildcards</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setWildcards</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Project$setWildcards(kotlin.collections.MutableSet((kotlin.String)))/wildcards">wildcards</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

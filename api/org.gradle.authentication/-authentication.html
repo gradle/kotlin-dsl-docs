@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Authentication - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.authentication</a>&nbsp;/&nbsp;<a href=".">Authentication</a><br/>
+<br/>
+<h1>Authentication</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">Authentication</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
+<p>Base interface for transport authentication schemes.</p>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../org.gradle.api/-named/get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The object's name. 
+<p> Must be constant for the life of the object.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../org.gradle.authentication.aws/-aws-im-authentication.html">AwsImAuthentication</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">AwsImAuthentication</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Authentication</span></code>
+<p>Authentication scheme for digest access authentication over S3.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.authentication.http/-basic-authentication.html">BasicAuthentication</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BasicAuthentication</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Authentication</span></code>
+<p>Authentication scheme for basic access authentication over HTTP. When using this scheme, credentials are sent preemptively.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.authentication.http/-digest-authentication.html">DigestAuthentication</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DigestAuthentication</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Authentication</span></code>
+<p>Authentication scheme for digest access authentication over HTTP.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

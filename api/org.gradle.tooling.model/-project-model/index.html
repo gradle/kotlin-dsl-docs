@@ -1,0 +1,102 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ProjectModel - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.model</a>&nbsp;/&nbsp;<a href=".">ProjectModel</a><br/>
+<br/>
+<h1>ProjectModel</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ProjectModel</span></code>
+<p>Represents a model that is associated with some Gradle project.</p>
+<p><strong>Since</strong><br/>
+3.0</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-project-identifier.html">getProjectIdentifier</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectIdentifier</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-project-identifier/index.html"><span class="identifier">ProjectIdentifier</span></a></code>
+<p>Returns the identifier for the project that this model is associated with.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.model.gradle/-basic-gradle-project/index.html">BasicGradleProject</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BasicGradleProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-model.html"><span class="identifier">Model</span></a><span class="symbol">, </span><span class="identifier">ProjectModel</span></code>
+<p>Provides some basic details about a Gradle project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.model.gradle/-build-invocations/index.html">BuildInvocations</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BuildInvocations</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-model.html"><span class="identifier">Model</span></a><span class="symbol">, </span><span class="identifier">ProjectModel</span></code>
+<p>A model providing access to org.gradle.tooling.model.Launchable instances that can be used to initiate Gradle build. 
+<p>To launch a build, you pass one or more org.gradle.tooling.model.Launchable instances to either <code><a href="#">org.gradle.tooling.BuildLauncher#forTasks(Iterable)</a></code> or <code><a href="#">org.gradle.tooling.BuildLauncher#forLaunchables(Iterable)</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-gradle-project/index.html">GradleProject</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">GradleProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-hierarchical-element/index.html"><span class="identifier">HierarchicalElement</span></a><span class="symbol">, </span><a href="../-buildable-element/index.html"><span class="identifier">BuildableElement</span></a><span class="symbol">, </span><span class="identifier">ProjectModel</span></code>
+<p>Represents a Gradle project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.model.gradle/-gradle-publication/index.html">GradlePublication</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">GradlePublication</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ProjectModel</span></code>
+<p>Represents some publication produced by a Gradle project, typically to a Maven or Ivy repository.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-has-gradle-project/index.html">HasGradleProject</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">HasGradleProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ProjectModel</span></code>
+<p>An element that is associated with a Gradle project. Via the Gradle project you can access (list, run, etc.) Gradle tasks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-launchable/index.html">Launchable</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Launchable</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ProjectModel</span></code>
+<p>Represents an object that can be used to launch a Gradle build, such as a task. 
+<p>To launch a build, you pass one or more org.gradle.tooling.model.Launchable instances to either <code><a href="#">org.gradle.tooling.BuildLauncher#forTasks(Iterable)</a></code> or <code><a href="#">org.gradle.tooling.BuildLauncher#forLaunchables(Iterable)</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.model.gradle/-project-publications/index.html">ProjectPublications</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ProjectPublications</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-model.html"><span class="identifier">Model</span></a><span class="symbol">, </span><span class="identifier">ProjectModel</span></code>
+<p>A model providing information about the publications of a Gradle project.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,205 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>JacocoCoverageVerification - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.testing.jacoco.tasks</a>&nbsp;/&nbsp;<a href=".">JacocoCoverageVerification</a><br/>
+<br/>
+<h1>JacocoCoverageVerification</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JacocoCoverageVerification</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-jacoco-report-base/index.html"><span class="identifier">JacocoReportBase</span></a></code>
+<p>Task for verifying code coverage metrics. Fails the task if violations are detected based on specified rules. 
+<p> Requires JaCoCo version &gt;= 0.6.3.</p>
+</p>
+<p><strong>Since</strong><br/>
+3.4</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">JacocoCoverageVerification</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="check.html">check</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">check</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-violation-rules.html">getViolationRules</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getViolationRules</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.testing.jacoco.tasks.rules/-jacoco-violation-rules-container/index.html"><span class="identifier">JacocoViolationRulesContainer</span></a></code>
+<p>Returns the violation rules set for this task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="violation-rules.html">violationRules</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">violationRules</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.tasks.JacocoCoverageVerification$violationRules(org.gradle.api.Action((org.gradle.testing.jacoco.tasks.rules.JacocoViolationRulesContainer)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.testing.jacoco.tasks.rules/-jacoco-violation-rules-container/index.html"><span class="identifier">JacocoViolationRulesContainer</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.testing.jacoco.tasks.rules/-jacoco-violation-rules-container/index.html"><span class="identifier">JacocoViolationRulesContainer</span></a></code>
+<p>Configures the violation rules for this task.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-jacoco-report-base/additional-class-dirs.html">additionalClassDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">additionalClassDirs</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.testing.jacoco.tasks.JacocoReportBase$additionalClassDirs(kotlin.Array((java.io.File)))/dirs">dirs</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">additionalClassDirs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.tasks.JacocoReportBase$additionalClassDirs(org.gradle.api.file.FileCollection)/dirs">dirs</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds additional class directories to those that will be included in the report.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jacoco-report-base/additional-source-dirs.html">additionalSourceDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">additionalSourceDirs</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.testing.jacoco.tasks.JacocoReportBase$additionalSourceDirs(kotlin.Array((java.io.File)))/dirs">dirs</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">additionalSourceDirs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.tasks.JacocoReportBase$additionalSourceDirs(org.gradle.api.file.FileCollection)/dirs">dirs</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds additional source directories to be used for any classes included in the report.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jacoco-report-base/execution-data.html">executionData</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">executionData</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.testing.jacoco.tasks.JacocoReportBase$executionData(kotlin.Array((kotlin.Any)))/files">files</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds execution data files to be used during coverage analysis.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">executionData</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.testing.jacoco.tasks.JacocoReportBase$executionData(kotlin.Array((org.gradle.api.Task)))/tasks">tasks</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds execution data generated by a task to the list of those used during coverage analysis. Only tasks with a JacocoTaskExtension will be included; all others will be ignored.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">executionData</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.tasks.JacocoReportBase$executionData(org.gradle.api.tasks.TaskCollection((org.gradle.api.Task)))/tasks">tasks</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks/-task-collection/index.html"><span class="identifier">TaskCollection</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds execution data generated by the given tasks to the list of those used during coverage analysis. Only tasks with a JacocoTaskExtension will be included; all others will be ignored.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jacoco-report-base/get-additional-class-dirs.html">getAdditionalClassDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAdditionalClassDirs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Additional class dirs that coverage data should be reported for.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jacoco-report-base/get-additional-source-dirs.html">getAdditionalSourceDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAdditionalSourceDirs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Additional source dirs for the classes coverage data is being reported for.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jacoco-report-base/get-all-class-dirs.html">getAllClassDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAllClassDirs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Gets the class directories that coverage will be reported for. All classes in these directories will be included in the report.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jacoco-report-base/get-all-source-dirs.html">getAllSourceDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAllSourceDirs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Gets the source directories for the classes that will be reported on. Source will be obtained from these directories only for the classes included in the report.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jacoco-report-base/get-class-directories.html">getClassDirectories</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getClassDirectories</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Source sets that coverage should be reported for.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jacoco-report-base/get-execution-data.html">getExecutionData</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getExecutionData</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Collection of execution data files to analyze.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jacoco-report-base/get-source-directories.html">getSourceDirectories</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSourceDirectories</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Source sets that coverage should be reported for.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jacoco-report-base/set-additional-class-dirs.html">setAdditionalClassDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setAdditionalClassDirs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.tasks.JacocoReportBase$setAdditionalClassDirs(org.gradle.api.file.FileCollection)/additionalClassDirs">additionalClassDirs</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jacoco-report-base/set-additional-source-dirs.html">setAdditionalSourceDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setAdditionalSourceDirs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.tasks.JacocoReportBase$setAdditionalSourceDirs(org.gradle.api.file.FileCollection)/additionalSourceDirs">additionalSourceDirs</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jacoco-report-base/set-class-directories.html">setClassDirectories</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setClassDirectories</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.tasks.JacocoReportBase$setClassDirectories(org.gradle.api.file.FileCollection)/classDirectories">classDirectories</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jacoco-report-base/set-execution-data.html">setExecutionData</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExecutionData</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.tasks.JacocoReportBase$setExecutionData(org.gradle.api.file.FileCollection)/executionData">executionData</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jacoco-report-base/set-source-directories.html">setSourceDirectories</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSourceDirectories</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.tasks.JacocoReportBase$setSourceDirectories(org.gradle.api.file.FileCollection)/sourceDirectories">sourceDirectories</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jacoco-report-base/source-sets.html">sourceSets</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sourceSets</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.testing.jacoco.tasks.JacocoReportBase$sourceSets(kotlin.Array((org.gradle.api.tasks.SourceSet)))/sourceSets">sourceSets</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks/-source-set/index.html"><span class="identifier">SourceSet</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a source set to the list to be reported on. The output of this source set will be used as classes to include in the report. The source for this source set will be used for any classes included in the report.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

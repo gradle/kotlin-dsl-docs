@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>JacocoViolationRulesContainer - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.testing.jacoco.tasks.rules</a>&nbsp;/&nbsp;<a href=".">JacocoViolationRulesContainer</a><br/>
+<br/>
+<h1>JacocoViolationRulesContainer</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">JacocoViolationRulesContainer</span></code>
+<p>The violation rules configuration for the org.gradle.testing.jacoco.tasks.JacocoReport task.</p>
+<p><strong>Since</strong><br/>
+3.4</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-rules.html">getRules</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRules</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-jacoco-violation-rule/index.html"><span class="identifier">JacocoViolationRule</span></a><span class="symbol">&gt;</span></code>
+<p>Gets all violation rules. Defaults to an empty list.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-fail-on-violation.html">isFailOnViolation</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isFailOnViolation</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Specifies whether build should fail in case of rule violations. Defaults to true.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="rule.html">rule</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">rule</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.tasks.rules.JacocoViolationRulesContainer$rule(org.gradle.api.Action((org.gradle.testing.jacoco.tasks.rules.JacocoViolationRule)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-jacoco-violation-rule/index.html"><span class="identifier">JacocoViolationRule</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-jacoco-violation-rule/index.html"><span class="identifier">JacocoViolationRule</span></a></code>
+<p>Adds a violation rule. Any number of rules can be added.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-fail-on-violation.html">setFailOnViolation</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setFailOnViolation</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.tasks.rules.JacocoViolationRulesContainer$setFailOnViolation(kotlin.Boolean)/ignore">ignore</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Indicates whether build should fail in case of rule violation.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

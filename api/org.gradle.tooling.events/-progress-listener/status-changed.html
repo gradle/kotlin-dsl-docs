@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ProgressListener.statusChanged - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.events</a>&nbsp;/&nbsp;<a href="index.html">ProgressListener</a>&nbsp;/&nbsp;<a href=".">statusChanged</a><br/>
+<br/>
+<h1>statusChanged</h1>
+<a name="org.gradle.tooling.events.ProgressListener$statusChanged(org.gradle.tooling.events.ProgressEvent)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">statusChanged</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.events.ProgressListener$statusChanged(org.gradle.tooling.events.ProgressEvent)/event">event</span><span class="symbol">:</span>&nbsp;<a href="../-progress-event/index.html"><span class="identifier">ProgressEvent</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Called when the execution of an operation progresses. The following operation-specific events are currently issued: <ul> <li>org.gradle.tooling.events.test.TestStartEvent</li>
+ <li>org.gradle.tooling.events.test.TestFinishEvent</li>
+ <li>org.gradle.tooling.events.task.TaskStartEvent</li>
+ <li>org.gradle.tooling.events.task.TaskFinishEvent</li>
+ </ul>
+ For all other operations, the following generic events are currently issued : <ul> <li>StartEvent</li>
+ <li>FinishEvent</li>
+ </ul>
+ You can find out more about the operation for which progress is reported by querying the descriptor using <code><a href="../-progress-event/get-descriptor.html">org.gradle.tooling.events.ProgressEvent#getDescriptor()</a></code>.</p>
+<h3>Parameters</h3>
+<a name="event"></a>
+<code>event</code> - An event describing the operation progress.
+<p><strong>See Also</strong><br/>
+org.gradle.tooling.events.test.TestProgressEventorg.gradle.tooling.events.task.TaskProgressEventorg.gradle.tooling.events.ProgressEvent</p>
+</BODY>
+</HTML>

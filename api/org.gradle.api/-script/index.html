@@ -1,0 +1,274 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Script - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href=".">Script</a><br/>
+<br/>
+<h1>Script</h1>
+<code><span class="keyword">interface </span><span class="identifier">Script</span></code>
+<p>
+<p>This interface is implemented by all Gradle scripts to add in some Gradle-specific methods. As your compiled script class will implement this interface, you can use the methods and properties declared by this interface directly in your script.</p>
+ 
+<p>Generally, a <code>Script</code> object will have a delegate object attached to it. For example, a build script will have a Project instance attached to it, and an initialization script will have a instance attached to it. Any property reference or method call which is not found on this <code>Script</code> object is forwarded to the delegate object.</p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="apply.html">apply</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$apply(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Configures the delegate object for this script using plugins or scripts. </p>
+<p>The given closure is used to configure an org.gradle.api.plugins.ObjectConfigurationAction which is then used to configure the delegate object.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$apply(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/options">options</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Configures the delegate object for this script using plugins or scripts. </p>
+<p>The following options are available:</p>
+ <ul><li><code>from</code>: A script to apply to the delegate object. Accepts any path supported by <code><a href="#"> </a></code>.</li>
+ <li><code>plugin</code>: The id or implementation class of the plugin to apply to the delegate object.</li>
+ <li><code>to</code>: The target delegate object or objects.</li>
+</ul>
+  
+<p>For more detail, see .</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="buildscript.html">buildscript</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">buildscript</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$buildscript(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the classpath for this script. 
+<p>The given closure is executed against this script's ScriptHandler. The ScriptHandler is passed to the closure as the closure's delegate.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="copy.html">copy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$copy(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-work-result/index.html"><span class="identifier">WorkResult</span></a></code>
+<p>Copy the specified files. The given closure is used to configure a org.gradle.api.file.CopySpec, which is then used to copy the files. Example: <pre><code> copy { from configurations.runtime into 'build/deploy/lib' } </code></pre> Note that CopySpecs can be nested: <pre><code> copy { into 'build/webroot' exclude '**/.svn/**' from('src/main/webapp') { include '**/*.jsp' filter(ReplaceTokens, tokens:[copyright:'2009', version:'2.3.1']) } from('src/main/js') { include '**/*.js' } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="copy-spec.html">copySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copySpec</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$copySpec(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a></code>
+<p>Creates a org.gradle.api.file.CopySpec which can later be used to copy files or create an archive. The given closure is used to configure the org.gradle.api.file.CopySpec before it is returned by this method.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="delete.html">delete</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.Script$delete(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Deletes files and directories.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="exec.html">exec</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">exec</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$exec(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.process/-exec-result/index.html"><span class="identifier">ExecResult</span></a></code>
+<p>Executes an external command. The closure configures a org.gradle.process.ExecSpec.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">exec</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$exec(org.gradle.api.Action((org.gradle.process.ExecSpec)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.process/-exec-spec/index.html"><span class="identifier">ExecSpec</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.process/-exec-result/index.html"><span class="identifier">ExecResult</span></a></code>
+<p>Executes an external command.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="file.html">file</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$file(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>
+<p>Resolves a file path relative to the directory containing this script. This works as described for <code><a href="#"> </a></code></p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$file(kotlin.Any, org.gradle.api.PathValidation)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Script$file(kotlin.Any, org.gradle.api.PathValidation)/validation">validation</span><span class="symbol">:</span>&nbsp;<a href="../-path-validation/index.html"><span class="identifier">PathValidation</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>
+<p>Resolves a file path relative to the directory containing this script and validates it using the given scheme. See PathValidation for the list of possible validations.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="file-tree.html">fileTree</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">fileTree</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$fileTree(kotlin.Any)/baseDir">baseDir</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-tree/index.html"><span class="identifier">ConfigurableFileTree</span></a></code>
+<p>
+<p>Creates a new <code>ConfigurableFileTree</code> using the given base directory. The given baseDir path is evaluated as per <code><a href="#">#file(Object)</a></code>.</p>
+ 
+<p>The returned file tree is lazy, so that it scans for files only when the contents of the file tree are queried. The file tree is also live, so that it scans for files each time the contents of the file tree are queried.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">fileTree</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$fileTree(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-tree/index.html"><span class="identifier">ConfigurableFileTree</span></a></code>
+<p>
+<p>Creates a new <code>ConfigurableFileTree</code> using the provided map of arguments. The map will be applied as properties on the new file tree. Example:</p>
+ <pre><code> fileTree(dir:'src', excludes:['**/ignore/**','**/.svn/**']) </code></pre> 
+<p>The returned file tree is lazy, so that it scans for files only when the contents of the file tree are queried. The file tree is also live, so that it scans for files each time the contents of the file tree are queried.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">fileTree</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$fileTree(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/baseDir">baseDir</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Script$fileTree(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-tree/index.html"><span class="identifier">ConfigurableFileTree</span></a></code>
+<p>
+<p>Creates a new <code>ConfigurableFileTree</code> using the given base directory. The given baseDir path is evaluated as per <code><a href="#">#file(Object)</a></code>. The closure will be used to configure the new file tree. The file tree is passed to the closure as its delegate. Example:</p>
+ <pre><code> fileTree('src') { exclude '**/.svn/**' }.copy { into 'dest'} </code></pre> 
+<p>The returned file tree is lazy, so that it scans for files only when the contents of the file tree are queried. The file tree is also live, so that it scans for files each time the contents of the file tree are queried.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="files.html">files</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">files</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.Script$files(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code>
+<p>
+<p>Returns a ConfigurableFileCollection containing the given files. This works as described for <code><a href="#"> </a></code>. Relative paths are resolved relative to the directory containing this script.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">files</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$files(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Script$files(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code>
+<p>
+<p>Creates a new <code>ConfigurableFileCollection</code> using the given paths. The file collection is configured using the given closure. This method works as described for <code><a href="#">Project#files(Object, groovy.lang.Closure)</a></code>. Relative paths are resolved relative to the directory containing this script.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-buildscript.html">getBuildscript</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildscript</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.initialization.dsl/-script-handler/index.html"><span class="identifier">ScriptHandler</span></a></code>
+<p>Returns the script handler for this script. You can use this handler to manage the classpath used to compile and execute this script.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-logger.html">getLogger</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLogger</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.logging/-logger/index.html"><span class="identifier">Logger</span></a></code>
+<p>Returns the logger for this script. You can use this in your script to write log messages.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-logging.html">getLogging</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLogging</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.logging/-logging-manager/index.html"><span class="identifier">LoggingManager</span></a></code>
+<p>Returns the org.gradle.api.logging.LoggingManager which can be used to receive logging and to control the standard output/error capture for this script. By default, System.out is redirected to the Gradle logging system at the QUIET log level, and System.err is redirected at the ERROR log level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-resources.html">getResources</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getResources</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.resources/-resource-handler/index.html"><span class="identifier">ResourceHandler</span></a></code>
+<p>Provides access to resource-specific utility methods, for example factory methods that create various resources.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="javaexec.html">javaexec</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">javaexec</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$javaexec(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.process/-exec-result/index.html"><span class="identifier">ExecResult</span></a></code>
+<p>Executes a Java main class. The closure configures a org.gradle.process.JavaExecSpec.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">javaexec</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$javaexec(org.gradle.api.Action((org.gradle.process.JavaExecSpec)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.process/-java-exec-spec/index.html"><span class="identifier">JavaExecSpec</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.process/-exec-result/index.html"><span class="identifier">ExecResult</span></a></code>
+<p>Executes a Java main class.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="mkdir.html">mkdir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">mkdir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$mkdir(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Creates a directory and returns a file pointing to it.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="property.html">property</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">property</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$property(java.lang.Class((org.gradle.api.Script.property.T)))/clazz">clazz</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-property-state/index.html"><span class="identifier">PropertyState</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Creates a <code>PropertyState</code> implementation based on the provided class.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="provider.html">provider</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">provider</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$provider(java.util.concurrent.Callable((org.gradle.api.Script.provider.T)))/value">value</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Callable.html"><span class="identifier">Callable</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Creates a <code>Provider</code> implementation based on the provided value.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="relative-path.html">relativePath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">relativePath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$relativePath(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>
+<p>Returns the relative path from the directory containing this script to the given path. The given path object is (logically) resolved as described for <code><a href="#">#file(Object)</a></code>, from which a relative path is calculated.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="tar-tree.html">tarTree</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">tarTree</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$tarTree(kotlin.Any)/tarPath">tarPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<p>Creates a new <code>FileTree</code> which contains the contents of the given TAR file. The given tarPath path can be: <ul> <li>an instance of org.gradle.api.resources.Resource</li>
+ <li>any other object is evaluated as per <code><a href="#">#file(Object)</a></code></li>
+ </ul>
+ The returned file tree is lazy, so that it scans for files only when the contents of the file tree are queried. The file tree is also live, so that it scans for files each time the contents of the file tree are queried. 
+<p> Unless custom implementation of resources is passed, the tar tree attempts to guess the compression based on the file extension. </p>
+<p> You can combine this method with the <code><a href="#">#copy(groovy.lang.Closure)</a></code> method to untar a TAR file: </p>
+<pre><code> task untar(type: Copy) { from tarTree('someCompressedTar.gzip') //tar tree attempts to guess the compression based on the file extension //however if you must specify the compression explicitly you can: from tarTree(resources.gzip('someTar.ext')) //in case you work with unconventionally compressed tars //you can provide your own implementation of a ReadableResource: //from tarTree(yourOwnResource as ReadableResource) into 'dest' } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="uri.html">uri</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">uri</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$uri(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/net/URI.html"><span class="identifier">URI</span></a></code>
+<p>
+<p>Resolves a file path to a URI, relative to the directory containing this script. Evaluates the provided path object as described for <code><a href="#">#file(Object)</a></code>, with the exception that any URI scheme is supported, not just 'file:' URIs.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="zip-tree.html">zipTree</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">zipTree</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Script$zipTree(kotlin.Any)/zipPath">zipPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<p>
+<p>Creates a new <code>FileTree</code> which contains the contents of the given ZIP file. The given zipPath path is evaluated as per <code><a href="#">#file(Object)</a></code>. You can combine this method with the <code><a href="#">#copy(groovy.lang.Closure)</a></code> method to unzip a ZIP file.</p>
+ 
+<p>The returned file tree is lazy, so that it scans for files only when the contents of the file tree are queried. The file tree is also live, so that it scans for files each time the contents of the file tree are queried.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

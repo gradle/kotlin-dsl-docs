@@ -1,0 +1,129 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PropertiesFileContentMerger - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.api</a>&nbsp;/&nbsp;<a href=".">PropertiesFileContentMerger</a><br/>
+<br/>
+<h1>PropertiesFileContentMerger</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PropertiesFileContentMerger</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-file-content-merger/index.html"><span class="identifier">FileContentMerger</span></a></code>
+<p>Models the generation/parsing/merging capabilities. Adds properties-related hooks. 
+<p> For examples see docs for org.gradle.plugins.ide.eclipse.model.EclipseJdt and others.</p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">PropertiesFileContentMerger</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.api.PropertiesFileContentMerger$<init>(PropertiesTransformer)/transformer">transformer</span><span class="symbol">:</span>&nbsp;<span class="identifier">PropertiesTransformer</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-transformer.html">getTransformer</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTransformer</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">PropertiesTransformer</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-transformer.html">setTransformer</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTransformer</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.api.PropertiesFileContentMerger$setTransformer(PropertiesTransformer)/transformer">transformer</span><span class="symbol">:</span>&nbsp;<span class="identifier">PropertiesTransformer</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="with-properties.html">withProperties</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">withProperties</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.api.PropertiesFileContentMerger$withProperties(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a closure to be called when the file has been created. The Properties are passed to the closure as a parameter. The closure can modify the Properties before they are written to the output file. 
+<p> For examples see docs for org.gradle.plugins.ide.eclipse.model.EclipseJdt and others.</p>
+</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">withProperties</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.api.PropertiesFileContentMerger$withProperties(org.gradle.api.Action((java.util.Properties)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/util/Properties.html"><span class="identifier">Properties</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an action to be called when the file has been created. The Properties are passed to the action as a parameter. The action can modify the Properties before they are written to the output file. 
+<p> For examples see docs for org.gradle.plugins.ide.eclipse.model.EclipseJdt and others.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-file-content-merger/before-merged.html">beforeMerged</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">beforeMerged</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.api.FileContentMerger$beforeMerged(org.gradle.api.Action((kotlin.Any)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an action to be called after content is loaded from existing file but before gradle build information is merged. 
+<p> This is advanced api that gives access to internal implementation. It might be useful if you want to alter the way gradle build information is merged into existing file content. </p>
+<p> For examples see docs for org.gradle.plugins.ide.eclipse.model.EclipseProject or org.gradle.plugins.ide.idea.model.IdeaProject and others.</p>
+</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">beforeMerged</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.api.FileContentMerger$beforeMerged(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a closure to be called after content is loaded from existing file but before gradle build information is merged. 
+<p> This is advanced api that gives access to internal implementation. It might be useful if you want to alter the way gradle build information is merged into existing file content. </p>
+<p> For examples see docs for org.gradle.plugins.ide.eclipse.model.EclipseProject or org.gradle.plugins.ide.idea.model.IdeaProject and others.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-content-merger/get-before-merged.html">getBeforeMerged</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getBeforeMerged</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MutableActionSet</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-content-merger/get-when-merged.html">getWhenMerged</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getWhenMerged</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MutableActionSet</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-content-merger/set-before-merged.html">setBeforeMerged</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setBeforeMerged</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.api.FileContentMerger$setBeforeMerged(MutableActionSet)/beforeMerged">beforeMerged</span><span class="symbol">:</span>&nbsp;<span class="identifier">MutableActionSet</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-content-merger/set-when-merged.html">setWhenMerged</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setWhenMerged</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.api.FileContentMerger$setWhenMerged(MutableActionSet)/whenMerged">whenMerged</span><span class="symbol">:</span>&nbsp;<span class="identifier">MutableActionSet</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-content-merger/when-merged.html">whenMerged</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">whenMerged</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.api.FileContentMerger$whenMerged(org.gradle.api.Action((kotlin.Any)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an action to be called after content is loaded from existing file and after gradle build information is merged. 
+<p> This is advanced api that gives access to internal implementation of idea plugin. Use it only to tackle some tricky edge cases. </p>
+<p> For examples see docs for org.gradle.plugins.ide.eclipse.model.EclipseProject or org.gradle.plugins.ide.idea.model.IdeaProject and others.</p>
+</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">whenMerged</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.api.FileContentMerger$whenMerged(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a closure to be called after content is loaded from existing file and after gradle build information is merged. 
+<p> This is advanced api that gives access to internal implementation of idea plugin. Use it only to tackle some tricky edge cases. </p>
+<p> For examples see docs for org.gradle.plugins.ide.eclipse.model.EclipseProject or org.gradle.plugins.ide.idea.model.IdeaProject and others.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

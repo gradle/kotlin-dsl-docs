@@ -1,0 +1,363 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TestNGOptions - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.testing.testng</a>&nbsp;/&nbsp;<a href=".">TestNGOptions</a><br/>
+<br/>
+<h1>TestNGOptions</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">TestNGOptions</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks.testing/-test-framework-options/index.html"><span class="identifier">TestFrameworkOptions</span></a></code>
+<p>The TestNG specific test options.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">TestNGOptions</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$<init>(java.io.File)/projectDir">projectDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-d-e-f-a-u-l-t_-c-o-n-f-i-g_-f-a-i-l-u-r-e_-p-o-l-i-c-y.html">DEFAULT_CONFIG_FAILURE_POLICY</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">DEFAULT_CONFIG_FAILURE_POLICY</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="exclude-groups.html">excludeGroups</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">excludeGroups</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$excludeGroups(kotlin.Array((kotlin.String)))/excludeGroups">excludeGroups</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TestNGOptions</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-config-failure-policy.html">getConfigFailurePolicy</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getConfigFailurePolicy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Option for what to do for other tests that use a configuration step when that step fails. Can be "skip" or "continue", defaults to "skip".</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-exclude-groups.html">getExcludeGroups</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getExcludeGroups</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The set of groups to exclude.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-group-by-instances.html">getGroupByInstances</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getGroupByInstances</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-include-groups.html">getIncludeGroups</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getIncludeGroups</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The set of groups to run.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-listeners.html">getListeners</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getListeners</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Fully qualified classes that are TestNG listeners (instances of org.testng.ITestListener or org.testng.IReporter). By default, the listeners set is empty. Configuring extra listener: <pre><code> apply plugin: 'java' test { useTestNG() { // creates emailable HTML file // this reporter typically ships with TestNG library listeners &lt;&lt; 'org.testng.reporters.EmailableReporter' } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-output-directory.html">getOutputDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOutputDirectory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The location to write TestNG's output. 
+<p> Defaults to the owning test task's location for writing the HTML report.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-parallel.html">getParallel</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getParallel</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The parallel mode to use for running the tests - one of the following modes: methods, tests, classes or instances. Not required. If not present, parallel mode will not be selected</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-preserve-order.html">getPreserveOrder</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getPreserveOrder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-suite-name.html">getSuiteName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSuiteName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Sets the default name of the test suite, if one is not specified in a suite XML file or in the source code.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-suite-xml-builder.html">getSuiteXmlBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSuiteXmlBuilder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MarkupBuilder</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-suite-xml-files.html">getSuiteXmlFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSuiteXmlFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>The suiteXmlFiles to use for running TestNG. Note: The suiteXmlFiles can be used in conjunction with the suiteXmlBuilder.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-suite-xml-writer.html">getSuiteXmlWriter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSuiteXmlWriter</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/StringWriter.html"><span class="identifier">StringWriter</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-suites.html">getSuites</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSuites</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$getSuites(java.io.File)/testSuitesDir">testSuitesDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-test-name.html">getTestName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTestName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Sets the default name of the test, if one is not specified in a suite XML file or in the source code.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-thread-count.html">getThreadCount</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getThreadCount</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>The number of threads to use for this run. Ignored unless the parallel mode is also specified</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-use-default-listeners.html">getUseDefaultListeners</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getUseDefaultListeners</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="include-groups.html">includeGroups</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">includeGroups</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$includeGroups(kotlin.Array((kotlin.String)))/includeGroups">includeGroups</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TestNGOptions</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-group-by-instances.html">isGroupByInstances</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isGroupByInstances</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Indicates whether the tests should be grouped by instances. Grouping by instances will result in resolving test method dependencies for each instance instead of running the dependees of all instances before running the dependants. Not required. If not present, the tests will not be grouped by instances.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-preserve-order.html">isPreserveOrder</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isPreserveOrder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Indicates whether the tests should be run in deterministic order. Preserving the order guarantees that the complete test (including @BeforeXXX and @AfterXXX) is run in a test thread before the next test is run. Not required. If not present, the order will not be preserved.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-use-default-listeners.html">isUseDefaultListeners</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isUseDefaultListeners</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether the default listeners and reporters should be used. Since Gradle 1.4 it defaults to 'false' so that Gradle can own the reports generation and provide various improvements. This option might be useful for advanced TestNG users who prefer the reports generated by the TestNG library. If you cannot live without some specific TestNG reporter please use <code><a href="#">#listeners</a></code> property. If you really want to use all default TestNG reporters (e.g. generate the old reports): <pre><code> apply plugin: 'java' test { useTestNG() { // report generation delegated to TestNG library: useDefaultListeners = true } // turn off Gradle's HTML report to avoid replacing the // reports generated by TestNG library: reports.html.enabled = false } </code></pre> Please refer to the documentation of your version of TestNG what are the default listeners. At the moment of writing this documentation, the default listeners are a set of reporters that generate: TestNG variant of HTML results, TestNG variant of XML results in JUnit format, emailable HTML test report, XML results in TestNG format.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="method-missing.html">methodMissing</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">methodMissing</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$methodMissing(kotlin.String, kotlin.Any)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$methodMissing(kotlin.String, kotlin.Any)/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="property-missing.html">propertyMissing</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">propertyMissing</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$propertyMissing(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-config-failure-policy.html">setConfigFailurePolicy</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setConfigFailurePolicy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$setConfigFailurePolicy(kotlin.String)/configFailurePolicy">configFailurePolicy</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-exclude-groups.html">setExcludeGroups</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExcludeGroups</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$setExcludeGroups(kotlin.collections.MutableSet((kotlin.String)))/excludeGroups">excludeGroups</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-group-by-instances.html">setGroupByInstances</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setGroupByInstances</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$setGroupByInstances(kotlin.Boolean)/groupByInstances">groupByInstances</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-include-groups.html">setIncludeGroups</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setIncludeGroups</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$setIncludeGroups(kotlin.collections.MutableSet((kotlin.String)))/includeGroups">includeGroups</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-listeners.html">setListeners</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setListeners</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$setListeners(kotlin.collections.MutableSet((kotlin.String)))/listeners">listeners</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-output-directory.html">setOutputDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOutputDirectory</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$setOutputDirectory(java.io.File)/outputDirectory">outputDirectory</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-parallel.html">setParallel</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setParallel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$setParallel(kotlin.String)/parallel">parallel</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-preserve-order.html">setPreserveOrder</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setPreserveOrder</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$setPreserveOrder(kotlin.Boolean)/preserveOrder">preserveOrder</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-suite-name.html">setSuiteName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSuiteName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$setSuiteName(kotlin.String)/suiteName">suiteName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-suite-xml-builder.html">setSuiteXmlBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSuiteXmlBuilder</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$setSuiteXmlBuilder(groovy.xml.MarkupBuilder)/suiteXmlBuilder">suiteXmlBuilder</span><span class="symbol">:</span>&nbsp;<span class="identifier">MarkupBuilder</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-suite-xml-files.html">setSuiteXmlFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSuiteXmlFiles</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$setSuiteXmlFiles(kotlin.collections.MutableList((java.io.File)))/suiteXmlFiles">suiteXmlFiles</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-suite-xml-writer.html">setSuiteXmlWriter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSuiteXmlWriter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$setSuiteXmlWriter(java.io.StringWriter)/suiteXmlWriter">suiteXmlWriter</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/StringWriter.html"><span class="identifier">StringWriter</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-test-name.html">setTestName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTestName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$setTestName(kotlin.String)/testName">testName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-thread-count.html">setThreadCount</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setThreadCount</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$setThreadCount(kotlin.Int)/threadCount">threadCount</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-use-default-listeners.html">setUseDefaultListeners</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setUseDefaultListeners</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$setUseDefaultListeners(kotlin.Boolean)/useDefaultListeners">useDefaultListeners</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="suite-xml-builder.html">suiteXmlBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">suiteXmlBuilder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">MarkupBuilder</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="suites.html">suites</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">suites</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$suites(kotlin.Array((kotlin.String)))/suiteFiles">suiteFiles</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Add suite files by Strings. Each suiteFile String should be a path relative to the project root.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">suites</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$suites(kotlin.Array((java.io.File)))/suiteFiles">suiteFiles</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Add suite files by File objects.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="use-default-listeners.html">useDefaultListeners</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">useDefaultListeners</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TestNGOptions</span></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">useDefaultListeners</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.testng.TestNGOptions$useDefaultListeners(kotlin.Boolean)/useDefaultListeners">useDefaultListeners</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TestNGOptions</span></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

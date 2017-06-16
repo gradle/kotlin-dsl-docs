@@ -1,0 +1,98 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ProgressEvent - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.events</a>&nbsp;/&nbsp;<a href=".">ProgressEvent</a><br/>
+<br/>
+<h1>ProgressEvent</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ProgressEvent</span></code>
+<p>Root interface for all events that signal progress while executing an operation. For example, an operation can be the execution of a build, of a task, of a test, etc. A progress event can, for example, signal that a test has started, a task has finished, etc.</p>
+<p><strong>Since</strong><br/>
+2.4</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-descriptor.html">getDescriptor</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDescriptor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-operation-descriptor/index.html"><span class="identifier">OperationDescriptor</span></a></code>
+<p>Returns the description of the operation for which progress is reported.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns a human consumable short description of the event.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-event-time.html">getEventTime</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getEventTime</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code>
+<p>Returns the time this event was triggered.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-finish-event/index.html">FinishEvent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">FinishEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ProgressEvent</span></code>
+<p>An event that informs about an operation having finished its execution.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-start-event.html">StartEvent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">StartEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ProgressEvent</span></code>
+<p>An event that informs about an operation having started its execution.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-status-event/index.html">StatusEvent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">StatusEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ProgressEvent</span></code>
+<p>An event that informs about an interim results of the operation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.events.task/-task-progress-event/index.html">TaskProgressEvent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskProgressEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ProgressEvent</span></code>
+<p>Root interface for all events that signal progress while executing a task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.events.test/-test-progress-event/index.html">TestProgressEvent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TestProgressEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ProgressEvent</span></code>
+<p>Root interface for all events that signal progress while executing a test or test suite.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

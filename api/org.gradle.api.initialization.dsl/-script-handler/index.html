@@ -1,0 +1,139 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ScriptHandler - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.initialization.dsl</a>&nbsp;/&nbsp;<a href=".">ScriptHandler</a><br/>
+<br/>
+<h1>ScriptHandler</h1>
+<code><span class="keyword">interface </span><span class="identifier">ScriptHandler</span></code>
+<p>
+<p>A <code>ScriptHandler</code> allows you to manage the compilation and execution of a build script. You can declare the classpath used to compile and execute a build script. This classpath is also used to load the plugins which the build script uses.</p>
+ 
+<p>You can obtain a <code>ScriptHandler</code> instance using <code><a href="../../org.gradle.api/-project/get-buildscript.html">org.gradle.api.Project#getBuildscript()</a></code> or <code><a href="../../org.gradle.api/-script/get-buildscript.html"> </a></code>.</p>
+ 
+<p>To declare the script classpath, you use the org.gradle.api.artifacts.dsl.DependencyHandler provided by <code><a href="get-dependencies.html">#getDependencies()</a></code> to attach dependencies to the {@value #CLASSPATH_CONFIGURATION} configuration. These dependencies are resolved just prior to script compilation, and assembled into the classpath for the script.</p>
+ 
+<p>For most external dependencies you will also need to declare one or more repositories where the dependencies can be found, using the org.gradle.api.artifacts.dsl.RepositoryHandler provided by <code><a href="get-repositories.html"> </a></code>.</p>
+</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-c-l-a-s-s-p-a-t-h_-c-o-n-f-i-g-u-r-a-t-i-o-n.html">CLASSPATH_CONFIGURATION</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">CLASSPATH_CONFIGURATION</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name of the configuration used to assemble the script classpath.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="dependencies.html">dependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">dependencies</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.initialization.dsl.ScriptHandler$dependencies(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the dependencies for the script. Executes the given closure against the DependencyHandler for this handler. The DependencyHandler is passed to the closure as the closure's delegate.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-class-loader.html">getClassLoader</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getClassLoader</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/ClassLoader.html"><span class="identifier">ClassLoader</span></a></code>
+<p>Returns the <code>ClassLoader</code> which contains the classpath for this script.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-configurations.html">getConfigurations</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getConfigurations</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts/-configuration-container/index.html"><span class="identifier">ConfigurationContainer</span></a></code>
+<p>Returns the configurations of this handler. This usually contains a single configuration, called {@value * #CLASSPATH_CONFIGURATION}.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-dependencies.html">getDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.dsl/-dependency-handler/index.html"><span class="identifier">DependencyHandler</span></a></code>
+<p>Returns the dependencies of the script. The returned dependency handler instance can be used for adding new dependencies. For accessing already declared dependencies, the configurations can be used.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-repositories.html">getRepositories</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRepositories</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.dsl/-repository-handler/index.html"><span class="identifier">RepositoryHandler</span></a></code>
+<p>Returns a handler to create repositories which are used for retrieving dependencies for the script classpath.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-source-file.html">getSourceFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSourceFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the file containing the source for the script, if any.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-source-u-r-i.html">getSourceURI</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSourceURI</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/net/URI.html"><span class="identifier">URI</span></a></code>
+<p>Returns the URI for the script source, if any.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="repositories.html">repositories</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">repositories</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.initialization.dsl.ScriptHandler$repositories(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the repositories for the script dependencies. Executes the given closure against the for this handler. The RepositoryHandler is passed to the closure as the closure's delegate.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.script.lang.kotlin/org.gradle.api.initialization.dsl.-script-handler/repositories.html">repositories</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">ScriptHandler</span><span class="symbol">.</span><span class="identifier">repositories</span><span class="symbol">(</span><span class="identifier" id="org.gradle.script.lang.kotlin$repositories(org.gradle.api.initialization.dsl.ScriptHandler, kotlin.Function1((org.gradle.api.artifacts.dsl.RepositoryHandler, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts.dsl/-repository-handler/index.html"><span class="identifier">RepositoryHandler</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.script.lang.kotlin/-script-handler-scope/index.html">ScriptHandlerScope</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">ScriptHandlerScope</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ScriptHandler</span></code>
+<p>Receiver for the <code>buildscript</code> block.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

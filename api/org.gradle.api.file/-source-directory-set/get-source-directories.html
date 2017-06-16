@@ -1,0 +1,17 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>SourceDirectorySet.getSourceDirectories - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href="index.html">SourceDirectorySet</a>&nbsp;/&nbsp;<a href=".">getSourceDirectories</a><br/>
+<br/>
+<h1>getSourceDirectories</h1>
+<a name="org.gradle.api.file.SourceDirectorySet$getSourceDirectories()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSourceDirectories</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the source directories that make up this set, represented as a FileCollection. Does not filter source directories that do not exist. Generally, it is preferable to use this method instead of <code><a href="get-src-dirs.html">#getSrcDirs()</a></code>, as this method does not require the source directories to be calculated when it is called. Instead, the source directories are calculated when queried. The return value of this method also maintains dependency information. 
+<p>The returned collection is live and reflects changes to this source directory set.</p>
+</p>
+</BODY>
+</HTML>

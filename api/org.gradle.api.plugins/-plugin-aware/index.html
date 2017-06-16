@@ -1,0 +1,159 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PluginAware - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href=".">PluginAware</a><br/>
+<br/>
+<h1>PluginAware</h1>
+<code><span class="keyword">interface </span><span class="identifier">PluginAware</span></code>
+<p>Something that can have plugins applied to it. 
+<p> The <code><a href="get-plugin-manager.html">plugin manager</a></code> can be used for applying and detecting whether plugins have been applied. </p>
+<p> For more on writing and applying plugins, see org.gradle.api.Plugin.</p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="apply.html">apply</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginAware$apply(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginAware$apply(org.gradle.api.Action((org.gradle.api.plugins.ObjectConfigurationAction)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-object-configuration-action/index.html"><span class="identifier">ObjectConfigurationAction</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies zero or more plugins or scripts. 
+<p> The given closure is used to configure an ObjectConfigurationAction, which “builds” the plugin application. </p>
+<p> This method differs from <code><a href="#">#apply(java.util.Map)</a></code> in that it allows methods of the configuration action to be invoked more than once.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginAware$apply(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/options">options</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies a plugin or script, using the given options provided as a map. Does nothing if the plugin has already been applied. 
+<p> The given map is applied as a series of method calls to a newly created ObjectConfigurationAction. That is, each key in the map is expected to be the name of a method ObjectConfigurationAction and the value to be compatible arguments to that method. </p>
+<p>The following options are available:</p>
+ <ul><li><code>from</code>: A script to apply. Accepts any path supported by <code><a href="#">org.gradle.api.Project#uri(Object)</a></code>.</li>
+ <li><code>plugin</code>: The id or implementation class of the plugin to apply.</li>
+ <li><code>to</code>: The target delegate object or objects. The default is this plugin aware object. Use this to configure objects other than this object.</li>
+</ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-plugin-manager.html">getPluginManager</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPluginManager</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-plugin-manager/index.html"><span class="identifier">PluginManager</span></a></code>
+<p>The plugin manager for this plugin aware object.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-plugins.html">getPlugins</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPlugins</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-plugin-container/index.html"><span class="identifier">PluginContainer</span></a></code>
+<p>The container of plugins that have been applied to this object. 
+<p> While not deprecated, it is preferred to use the methods of this interface or the <code><a href="get-plugin-manager.html">plugin manager</a></code> than use the plugin container. </p>
+<p> Use one of the 'apply' methods on this interface or on the <code><a href="get-plugin-manager.html">plugin manager</a></code> to apply plugins instead of applying via the plugin container. </p>
+<p> Use <code><a href="#">PluginManager#hasPlugin(String)</a></code> or similar to query for the application of plugins instead of doing so via the plugin container.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.invocation/-gradle/index.html">Gradle</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Gradle</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">PluginAware</span></code>
+<p>Represents an invocation of Gradle. 
+<p>You can obtain a <code>Gradle</code> instance by calling <code><a href="../../org.gradle.api/-project/get-gradle.html">Project#getGradle()</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-project/index.html">Project</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Project</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../-extension-aware/index.html"><span class="identifier">ExtensionAware</span></a><span class="symbol">, </span><span class="identifier">PluginAware</span></code>
+<p>
+<p>This interface is the main API you use to interact with Gradle from your build file. From a <code>Project</code>, you have programmatic access to all of Gradle's features.</p>
+ Lifecycle 
+<p>There is a one-to-one relationship between a <code>Project</code> and a <code>{@value #DEFAULT_BUILD_FILE}</code> file. During build initialisation, Gradle assembles a <code>Project</code> object for each project which is to participate in the build, as follows:</p>
+ <ul> <li>Create a org.gradle.api.initialization.Settings instance for the build.</li>
+ <li>Evaluate the <code>{@value org.gradle.api.initialization.Settings#DEFAULT_SETTINGS_FILE}</code> script, if present, against the org.gradle.api.initialization.Settings object to configure it.</li>
+ <li>Use the configured org.gradle.api.initialization.Settings object to create the hierarchy of <code>Project</code> instances.</li>
+ <li>Finally, evaluate each <code>Project</code> by executing its <code>{@value #DEFAULT_BUILD_FILE}</code> file, if present, against the project. The projects are evaluated in breadth-wise order, such that a project is evaluated before its child projects. This order can be overridden by calling <code><code><a href="../../org.gradle.api/-project/evaluation-depends-on-children.html">#evaluationDependsOnChildren()</a></code></code> or by adding an explicit evaluation dependency using <code><code><a href="#">#evaluationDependsOn(String)</a></code></code>.</li>
+ </ul>
+ Tasks 
+<p>A project is essentially a collection of Task objects. Each task performs some basic piece of work, such as compiling classes, or running unit tests, or zipping up a WAR file. You add tasks to a project using one of the <code>create()</code> methods on TaskContainer, such as <code><a href="#">TaskContainer#create(String)</a></code>. You can locate existing tasks using one of the lookup methods on TaskContainer, such as <code><a href="#">org.gradle.api.tasks.TaskCollection#getByName(String)</a></code>.</p>
+ Dependencies 
+<p>A project generally has a number of dependencies it needs in order to do its work. Also, a project generally produces a number of artifacts, which other projects can use. Those dependencies are grouped in configurations, and can be retrieved and uploaded from repositories. You use the org.gradle.api.artifacts.ConfigurationContainer returned by <code><a href="../../org.gradle.api/-project/get-configurations.html">#getConfigurations()</a></code> method to manage the configurations. The returned by <code><a href="../../org.gradle.api/-project/get-dependencies.html">#getDependencies()</a></code> method to manage the dependencies. The org.gradle.api.artifacts.dsl.ArtifactHandler returned by <code><a href="../../org.gradle.api/-project/get-artifacts.html">#getArtifacts()</a></code> method to manage the artifacts. The org.gradle.api.artifacts.dsl.RepositoryHandler returned by <code><a href="../../org.gradle.api/-project/get-repositories.html"> </a></code> method to manage the repositories.</p>
+ Multi-project Builds 
+<p>Projects are arranged into a hierarchy of projects. A project has a name, and a fully qualified path which uniquely identifies it in the hierarchy.</p>
+ Plugins 
+<p> Plugins can be used to modularise and reuse project configuration. Plugins can be applied using the <code><a href="#">PluginAware#apply(java.util.Map)</a></code> method, or by using the org.gradle.plugin.use.PluginDependenciesSpec. </p>
+ <a href="#"></a> Properties 
+<p>Gradle executes the project's build file against the <code>Project</code> instance to configure the project. Any property or method which your script uses is delegated through to the associated <code>Project</code> object. This means, that you can use any of the methods and properties on the <code>Project</code> interface directly in your script. </p>
+<p>For example: </p>
+<pre><code> defaultTasks('some-task') // Delegates to Project.defaultTasks() reportsDir = file('reports') // Delegates to Project.file() and the Java Plugin </code></pre> 
+<p>You can also access the <code>Project</code> instance using the <code>project</code> property. This can make the script clearer in some cases. For example, you could use <code>project.name</code> rather than <code>name</code> to access the project's name.</p>
+ 
+<p>A project has 5 property 'scopes', which it searches for properties. You can access these properties by name in your build file, or by calling the project's <code><a href="#">#property(String)</a></code> method. The scopes are:</p>
+ <ul> <li>The <code>Project</code> object itself. This scope includes any property getters and setters declared by the <code>Project</code> implementation class. For example, <code><a href="../../org.gradle.api/-project/get-root-project.html">#getRootProject()</a></code> is accessible as the <code>rootProject</code> property. The properties of this scope are readable or writable depending on the presence of the corresponding getter or setter method.</li>
+ <li>The <em>extra</em> properties of the project. Each project maintains a map of extra properties, which can contain any arbitrary name -&gt; value pair. Once defined, the properties of this scope are readable and writable. See <a href="#">extra properties</a> for more details.</li>
+ <li>The <em>extensions</em> added to the project by the plugins. Each extension is available as a read-only property with the same name as the extension.</li>
+ <li>The <em>convention</em> properties added to the project by the plugins. A plugin can add properties and methods to a project through the project's Convention object. The properties of this scope may be readable or writable, depending on the convention objects.</li>
+ <li>The tasks of the project. A task is accessible by using its name as a property name. The properties of this scope are read-only. For example, a task called <code>compile</code> is accessible as the <code>compile</code> property.</li>
+ <li>The extra properties and convention properties inherited from the project's parent, recursively up to the root project. The properties of this scope are read-only.</li>
+ </ul>
+ 
+<p>When reading a property, the project searches the above scopes in order, and returns the value from the first scope it finds the property in. If not found, an exception is thrown. See <code><a href="#">#property(String)</a></code> for more details.</p>
+ 
+<p>When writing a property, the project searches the above scopes in order, and sets the property in the first scope it finds the property in. If not found, an exception is thrown. See <code><a href="#">#setProperty(String, Object)</a></code> for more details.</p>
+ <a href="#"></a> Extra Properties All extra properties must be defined through the "ext" namespace. Once an extra property has been defined, it is available directly on the owning object (in the below case the Project, Task, and sub-projects respectively) and can be read and updated. Only the initial declaration that needs to be done via the namespace. <pre><code> project.ext.prop1 = "foo" task doStuff { ext.prop2 = "bar" } subprojects { ext.${prop3} = false } </code></pre> Reading extra properties is done through the "ext" or through the owning object. <pre><code> ext.isSnapshot = version.endsWith("-SNAPSHOT") if (isSnapshot) { // do snapshot stuff } </code></pre> Dynamic Methods 
+<p>A project has 5 method 'scopes', which it searches for methods:</p>
+ <ul> <li>The <code>Project</code> object itself.</li>
+ <li>The build file. The project searches for a matching method declared in the build file.</li>
+ <li>The <em>extensions</em> added to the project by the plugins. Each extension is available as a method which takes a closure or org.gradle.api.Action as a parameter.</li>
+ <li>The <em>convention</em> methods added to the project by the plugins. A plugin can add properties and method to a project through the project's Convention object.</li>
+ <li>The tasks of the project. A method is added for each task, using the name of the task as the method name and taking a single closure or org.gradle.api.Action parameter. The method calls the <code><a href="#">Task#configure(groovy.lang.Closure)</a></code> method for the associated task with the provided closure. For example, if the project has a task called <code>compile</code>, then a method is added with the following signature: <code>void compile(Closure configureClosure)</code>.</li>
+ <li>The methods of the parent project, recursively up to the root project.</li>
+ <li>A property of the project whose value is a closure. The closure is treated as a method and called with the provided parameters. The property is located as described above.</li>
+ </ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.initialization/-settings/index.html">Settings</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Settings</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">PluginAware</span></code>
+<p>
+<p>Declares the configuration required to instantiate and configure the hierarchy of instances which are to participate in a build.</p>
+ 
+<p>There is a one-to-one correspondence between a <code>Settings</code> instance and a <code>{@value * #DEFAULT_SETTINGS_FILE}</code> settings file. Before Gradle assembles the projects for a build, it creates a <code>Settings</code> instance and executes the settings file against it.</p>
+ Assembling a Multi-Project Build 
+<p>One of the purposes of the <code>Settings</code> object is to allow you to declare the projects which are to be included in the build. You add projects to the build using the <code><a href="#">#include(String[])</a></code> method. There is always a root project included in a build. It is added automatically when the <code>Settings</code> object is created. The root project's name defaults to the name of the directory containing the settings file. The root project's project directory defaults to the directory containing the settings file.</p>
+ 
+<p>When a project is included in the build, a ProjectDescriptor is created. You can use this descriptor to change the default values for several properties of the project.</p>
+ Using Settings in a Settings File Dynamic Properties 
+<p>In addition to the properties of this interface, the <code>Settings</code> object makes some additional read-only properties available to the settings script. This includes properties from the following sources:</p>
+ <ul> <li>Defined in the {@value org.gradle.api.Project#GRADLE_PROPERTIES} file located in the settings directory of the build.</li>
+ <li>Defined the {@value org.gradle.api.Project#GRADLE_PROPERTIES} file located in the user's <code>.gradle</code> directory.</li>
+ <li>Provided on the command-line using the -P option.</li>
+ </ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

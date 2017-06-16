@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResolutionStrategy.cacheChangingModulesFor - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="index.html">ResolutionStrategy</a>&nbsp;/&nbsp;<a href=".">cacheChangingModulesFor</a><br/>
+<br/>
+<h1>cacheChangingModulesFor</h1>
+<a name="org.gradle.api.artifacts.ResolutionStrategy$cacheChangingModulesFor(kotlin.Int, kotlin.String)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">cacheChangingModulesFor</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$cacheChangingModulesFor(kotlin.Int, kotlin.String)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$cacheChangingModulesFor(kotlin.Int, kotlin.String)/units">units</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the length of time that changing modules will be cached, with units expressed as a String. 
+<p>A convenience method for <code><a href="#">#cacheChangingModulesFor(int, java.util.concurrent.TimeUnit)</a></code> with units expressed as a String. Units are resolved by calling the <code>valueOf(String)</code> method of java.util.concurrent.TimeUnit with the upper-cased string value.</p>
+</p>
+<h3>Parameters</h3>
+<a name="value"></a>
+<code>value</code> - The number of time units<a name="units"></a>
+<code>units</code> - The units
+<p><strong>Since</strong><br/>
+1.0-milestone-6</p>
+<a name="org.gradle.api.artifacts.ResolutionStrategy$cacheChangingModulesFor(kotlin.Int, java.util.concurrent.TimeUnit)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">cacheChangingModulesFor</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$cacheChangingModulesFor(kotlin.Int, java.util.concurrent.TimeUnit)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$cacheChangingModulesFor(kotlin.Int, java.util.concurrent.TimeUnit)/units">units</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/TimeUnit.html"><span class="identifier">TimeUnit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the length of time that changing modules will be cached. 
+<p>Gradle caches the contents and artifacts of changing modules. By default, these cached values are kept for 24 hours, after which the cached entry is expired and the module is resolved again.</p>
+ 
+<p>Use this method to provide a custom expiry time after which the cached entries for any changing module will be expired.</p>
+</p>
+<h3>Parameters</h3>
+<a name="value"></a>
+<code>value</code> - The number of time units<a name="units"></a>
+<code>units</code> - The units
+<p><strong>Since</strong><br/>
+1.0-milestone-6</p>
+</BODY>
+</HTML>

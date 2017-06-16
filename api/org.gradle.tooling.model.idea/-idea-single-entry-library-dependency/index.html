@@ -1,0 +1,89 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>IdeaSingleEntryLibraryDependency - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.model.idea</a>&nbsp;/&nbsp;<a href=".">IdeaSingleEntryLibraryDependency</a><br/>
+<br/>
+<h1>IdeaSingleEntryLibraryDependency</h1>
+<code><span class="keyword">interface </span><span class="identifier">IdeaSingleEntryLibraryDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-idea-dependency/index.html"><span class="identifier">IdeaDependency</span></a><span class="symbol">, </span><a href="../../org.gradle.tooling.model/-external-dependency/index.html"><span class="identifier">ExternalDependency</span></a></code>
+<p>"Single-Entry Module Library" as IDEA calls it. For example a single Jar file with sources Jar.</p>
+<p><strong>Since</strong><br/>
+1.0-milestone-5</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-file.html">getFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the file for this dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-javadoc.html">getJavadoc</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getJavadoc</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the Javadoc directory/archive for this dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-source.html">getSource</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the source directory/archive for this dependency.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-idea-dependency/get-exported.html">getExported</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExported</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Allows to check if current dependency is transitive, i.e. is visible to the module which depends on module that has current dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.model/-external-dependency/get-gradle-module-version.html">getGradleModuleVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGradleModuleVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-gradle-module-version/index.html"><span class="identifier">GradleModuleVersion</span></a></code>
+<p>Returns the Gradle module information for this dependency, or <code>null</code> if the dependency does not originate from a remote repository.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-idea-dependency/get-scope.html">getScope</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getScope</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-idea-dependency-scope/index.html"><span class="identifier">IdeaDependencyScope</span></a></code>
+<p>scope of the current dependency. Not-<code>null</code> all the time</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.model/-external-dependency/is-exported.html">isExported</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isExported</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Marks this dependency as exported.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,38 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.testfixtures - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.testfixtures</a><br/>
+<br/>
+<h2>Package org.gradle.testfixtures</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-project-builder/index.html">ProjectBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ProjectBuilder</span></code>
+<p>
+<p>Creates dummy instances of org.gradle.api.Project which you can use in testing custom task and plugin implementations.</p>
+ 
+<p>To create a project instance:</p>
+ <ol> <li>Create a <code>ProjectBuilder</code> instance by calling <code><a href="-project-builder/builder.html">#builder()</a></code>.</li>
+ <li>Optionally, configure the builder.</li>
+ <li>Call <code><a href="-project-builder/build.html">#build()</a></code> to create the <code>Project</code> instance.</li>
+ </ol>
+ 
+<p>You can reuse a builder to create multiple <code>Project</code> instances.</p>
+ 
+<p>The <code>ProjectBuilder</code> implementation bundled with Gradle 3.0 and 3.1 suffers from a binary compatibility issue exposed by applying plugins compiled with Gradle 2.7 and earlier. Applying those pre-compiled plugins in a ProjectBuilder context will result in a ClassNotFoundException.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

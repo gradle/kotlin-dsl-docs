@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Platform - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.platform.base</a>&nbsp;/&nbsp;<a href=".">Platform</a><br/>
+<br/>
+<h1>Platform</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">Platform</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
+<p>The platform or runtime that a binary is designed to run on. Examples: the JvmPlatform defines a java runtime, while the NativePlatform defines the Operating System and Architecture for a native app.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns a human consumable name for this platform.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm.platform/-java-platform/index.html">JavaPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">JavaPlatform</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Platform</span></code>
+<p>Defines and configures a Java SE runtime environment, consisting of a JVM runtime and a set of class libraries. <pre><code> plugins { id "jvm-component" id "java-lang" } model { components { myLib(JvmLibrarySpec) { targetPlatform "java6" } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.platform/-native-platform/index.html">NativePlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">NativePlatform</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Platform</span></code>
+<p>A target platform for building native binaries. Each target platform is given a name, and may optionally be given a specific Architecture and/or OperatingSystem to target. <pre><code> model { platforms { windows_x86 { architecture "i386" operatingSystem "windows" } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.play.platform/-play-platform/index.html">PlayPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PlayPlatform</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Platform</span></code>
+<p>Defines and configures a Play Framework environment including versions of Play, Scala and Java.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.scala/-scala-platform/index.html">ScalaPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ScalaPlatform</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Platform</span></code>
+<p>Defines and configures a Scala Platform.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

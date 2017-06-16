@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ScalaRuntime - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks</a>&nbsp;/&nbsp;<a href=".">ScalaRuntime</a><br/>
+<br/>
+<h1>ScalaRuntime</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ScalaRuntime</span></code>
+<p>Provides information related to the Scala runtime(s) used in a project. Added by the <code>org.gradle.api.plugins.scala.ScalaBasePlugin</code> as a project extension named <code>scalaRuntime</code>. 
+<p>Example usage: </p>
+<pre><code> apply plugin: "scala" repositories { mavenCentral() } dependencies { compile "org.scala-lang:scala-library:2.10.1" } def scalaClasspath = scalaRuntime.inferScalaClasspath(configurations.compile) // The returned class path can be used to configure the 'scalaClasspath' property of tasks // such as 'ScalaCompile' or 'ScalaDoc', or to execute these and other Scala tools directly. </code></pre></p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ScalaRuntime</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.ScalaRuntime$<init>(org.gradle.api.Project)/project">project</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="find-scala-jar.html">findScalaJar</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">findScalaJar</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.ScalaRuntime$findScalaJar(kotlin.collections.MutableIterable((java.io.File)), kotlin.String)/classpath">classpath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.ScalaRuntime$findScalaJar(kotlin.collections.MutableIterable((java.io.File)), kotlin.String)/appendix">appendix</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Searches the specified class path for a Scala Jar file (scala-compiler, scala-library, scala-jdbc, etc.) with the specified appendix (compiler, library, jdbc, etc.). If no such file is found, <code>null</code> is returned.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-scala-version.html">getScalaVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getScalaVersion</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.ScalaRuntime$getScalaVersion(java.io.File)/scalaJar">scalaJar</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Determines the version of a Scala Jar file (scala-compiler, scala-library, scala-jdbc, etc.). If the version cannot be determined, or the file is not a Scala Jar file, <code>null</code> is returned. 
+<p>Implementation note: The version is determined by parsing the file name, which is expected to match the pattern 'scala-[component]-[version].jar'.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="infer-scala-classpath.html">inferScalaClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">inferScalaClasspath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.ScalaRuntime$inferScalaClasspath(kotlin.collections.MutableIterable((java.io.File)))/classpath">classpath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Searches the specified class path for a 'scala-library' Jar, and returns a class path containing a corresponding (same version) 'scala-compiler' Jar and its dependencies. 
+<p>The returned class path may be empty, or may fail to resolve when asked for its contents.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

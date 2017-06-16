@@ -1,0 +1,68 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BuildCacheService - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.caching</a>&nbsp;/&nbsp;<a href=".">BuildCacheService</a><br/>
+<br/>
+<h1>BuildCacheService</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">BuildCacheService</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html"><span class="identifier">Closeable</span></a></code>
+<p>Protocol interface to be implemented by a client to a build cache backend. 
+<p> Build cache implementations should report a non-fatal failure as a BuildCacheException. Non-fatal failures could include failing to retrieve a cache entry or unsuccessfully completing an upload a new cache entry. Gradle will not fail the build when catching a <code>BuildCacheException</code>, but it may disable caching for the build if too many failures occur. </p>
+ 
+<p> All other failures will be considered fatal and cause the Gradle build to fail. Fatal failures could include failing to read or write cache entries due to file permissions, authentication or corruption errors. </p>
+ 
+<p> Every build cache implementation should define a org.gradle.caching.configuration.BuildCache configuration and BuildCacheServiceFactory factory. </p>
+</p>
+<p><strong>Since</strong><br/>
+3.5</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="close.html">close</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">close</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Clean up any resources held by the cache once it's not used anymore.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="load.html">load</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">load</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.BuildCacheService$load(org.gradle.caching.BuildCacheKey, org.gradle.caching.BuildCacheEntryReader)/key">key</span><span class="symbol">:</span>&nbsp;<a href="../-build-cache-key/index.html"><span class="identifier">BuildCacheKey</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.caching.BuildCacheService$load(org.gradle.caching.BuildCacheKey, org.gradle.caching.BuildCacheEntryReader)/reader">reader</span><span class="symbol">:</span>&nbsp;<a href="../-build-cache-entry-reader/index.html"><span class="identifier">BuildCacheEntryReader</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Load the cached entry corresponding to the given cache key. The <code>reader</code> will be called if an entry is found in the cache.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="store.html">store</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">store</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.BuildCacheService$store(org.gradle.caching.BuildCacheKey, org.gradle.caching.BuildCacheEntryWriter)/key">key</span><span class="symbol">:</span>&nbsp;<a href="../-build-cache-key/index.html"><span class="identifier">BuildCacheKey</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.caching.BuildCacheService$store(org.gradle.caching.BuildCacheKey, org.gradle.caching.BuildCacheEntryWriter)/writer">writer</span><span class="symbol">:</span>&nbsp;<a href="../-build-cache-entry-writer/index.html"><span class="identifier">BuildCacheEntryWriter</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Store the cache entry with the given cache key. The <code>writer</code> will be called to actually write the data.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-map-based-build-cache-service/index.html">MapBasedBuildCacheService</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">MapBasedBuildCacheService</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">BuildCacheService</span></code>
+<p>Simple build cache implementation that delegates to a ConcurrentMap.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

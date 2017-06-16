@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>FailureResult - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.events</a>&nbsp;/&nbsp;<a href=".">FailureResult</a><br/>
+<br/>
+<h1>FailureResult</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">FailureResult</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-operation-result/index.html"><span class="identifier">OperationResult</span></a></code>
+<p>Describes how an operation finished with failures.</p>
+<p><strong>Since</strong><br/>
+2.4</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-failures.html">getFailures</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFailures</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.tooling/-failure/index.html"><span class="identifier">Failure</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the failures that occurred while running the operation, if any.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-operation-result/get-end-time.html">getEndTime</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getEndTime</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code>
+<p>Returns the time when the operation finished its execution.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-operation-result/get-start-time.html">getStartTime</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getStartTime</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code>
+<p>Returns the time when the operation started its execution.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.events.task/-task-failure-result.html">TaskFailureResult</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskFailureResult</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.events.task/-task-operation-result.html"><span class="identifier">TaskOperationResult</span></a><span class="symbol">, </span><span class="identifier">FailureResult</span></code>
+<p>Describes how a task operation finished with failures.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.events.test/-test-failure-result.html">TestFailureResult</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TestFailureResult</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.events.test/-test-operation-result.html"><span class="identifier">TestOperationResult</span></a><span class="symbol">, </span><span class="identifier">FailureResult</span></code>
+<p>Describes how a test operation finished with failures.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

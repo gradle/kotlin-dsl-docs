@@ -1,0 +1,20 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BuildCacheServiceFactory.Describer.type - api</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">api</a>&nbsp;/&nbsp;<a href="../../index.html">org.gradle.caching</a>&nbsp;/&nbsp;<a href="../index.html">BuildCacheServiceFactory</a>&nbsp;/&nbsp;<a href="index.html">Describer</a>&nbsp;/&nbsp;<a href=".">type</a><br/>
+<br/>
+<h1>type</h1>
+<a name="org.gradle.caching.BuildCacheServiceFactory.Describer$type(kotlin.String)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">type</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.BuildCacheServiceFactory.Describer$type(kotlin.String)/type">type</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">Describer</span></a></code>
+<p>Sets the description of the type of cache being used. 
+<p> The value should not include particulars about the cache; only a human friendly description of the kind of cache. For example, instead of <code>"HTTP @ https://some/cache"</code> it should be just <code>"HTTP"</code>. Particular configuration should be set via <code><a href="#">#config(String, String)</a></code>. </p>
+<p> BuildCacheServiceFactory implementations should always return the same value for the same cache “type”. All implementations should call this method. </p>
+<p> Values should be lowercase, except where using an acronym (e.g. HTTP). </p>
+<p> Subsequent calls to this method replace the previously set value.</p>
+</p>
+</BODY>
+</HTML>

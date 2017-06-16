@@ -1,0 +1,174 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ConfigurableLauncher - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling</a>&nbsp;/&nbsp;<a href=".">ConfigurableLauncher</a><br/>
+<br/>
+<h1>ConfigurableLauncher</h1>
+<code><span class="keyword">interface </span><span class="identifier">ConfigurableLauncher</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConfigurableLauncher</span><span class="symbol">&lt;</span><span class="identifier">ConfigurableLauncher</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-long-running-operation/index.html"><span class="identifier">LongRunningOperation</span></a></code>
+<p>A <code>ConfigurableLauncher</code> allows you to configure a long running operation.</p>
+<h3>Parameters</h3>
+<a name="&lt;T&gt;"></a>
+<code><T></code> - the ConfigurableLauncher implementation to return as part of the fluent API.
+<p><strong>Since</strong><br/>
+2.6</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-progress-listener.html">addProgressListener</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addProgressListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.ConfigurableLauncher$addProgressListener(org.gradle.tooling.ProgressListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../-progress-listener/index.html"><span class="identifier">ProgressListener</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addProgressListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.ConfigurableLauncher$addProgressListener(org.gradle.tooling.events.ProgressListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.events/-progress-listener/index.html"><span class="identifier">ProgressListener</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addProgressListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.ConfigurableLauncher$addProgressListener(org.gradle.tooling.events.ProgressListener, kotlin.collections.MutableSet((org.gradle.tooling.events.OperationType)))/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.events/-progress-listener/index.html"><span class="identifier">ProgressListener</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.ConfigurableLauncher$addProgressListener(org.gradle.tooling.events.ProgressListener, kotlin.collections.MutableSet((org.gradle.tooling.events.OperationType)))/eventTypes">eventTypes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.tooling.events/-operation-type/index.html"><span class="identifier">OperationType</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addProgressListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.ConfigurableLauncher$addProgressListener(org.gradle.tooling.events.ProgressListener, kotlin.Array((org.gradle.tooling.events.OperationType)))/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.events/-progress-listener/index.html"><span class="identifier">ProgressListener</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.tooling.ConfigurableLauncher$addProgressListener(org.gradle.tooling.events.ProgressListener, kotlin.Array((org.gradle.tooling.events.OperationType)))/operationTypes">operationTypes</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.events/-operation-type/index.html"><span class="identifier">OperationType</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-color-output.html">setColorOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setColorOutput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.ConfigurableLauncher$setColorOutput(kotlin.Boolean)/colorOutput">colorOutput</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-environment-variables.html">setEnvironmentVariables</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setEnvironmentVariables</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.ConfigurableLauncher$setEnvironmentVariables(kotlin.collections.MutableMap((kotlin.String, )))/envVariables">envVariables</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-java-home.html">setJavaHome</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setJavaHome</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.ConfigurableLauncher$setJavaHome(java.io.File)/javaHome">javaHome</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-jvm-arguments.html">setJvmArguments</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setJvmArguments</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.tooling.ConfigurableLauncher$setJvmArguments(kotlin.Array((kotlin.String)))/jvmArguments">jvmArguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setJvmArguments</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.ConfigurableLauncher$setJvmArguments(kotlin.collections.MutableIterable((kotlin.String)))/jvmArguments">jvmArguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-standard-error.html">setStandardError</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setStandardError</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.ConfigurableLauncher$setStandardError(java.io.OutputStream)/outputStream">outputStream</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-standard-input.html">setStandardInput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setStandardInput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.ConfigurableLauncher$setStandardInput(java.io.InputStream)/inputStream">inputStream</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-standard-output.html">setStandardOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setStandardOutput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.ConfigurableLauncher$setStandardOutput(java.io.OutputStream)/outputStream">outputStream</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="with-arguments.html">withArguments</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withArguments</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.tooling.ConfigurableLauncher$withArguments(kotlin.Array((kotlin.String)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withArguments</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.ConfigurableLauncher$withArguments(kotlin.collections.MutableIterable((kotlin.String)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="with-cancellation-token.html">withCancellationToken</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withCancellationToken</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.ConfigurableLauncher$withCancellationToken(org.gradle.tooling.CancellationToken)/cancellationToken">cancellationToken</span><span class="symbol">:</span>&nbsp;<a href="../-cancellation-token/index.html"><span class="identifier">CancellationToken</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-build-action-executer/index.html">BuildActionExecuter</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BuildActionExecuter</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConfigurableLauncher</span><span class="symbol">&lt;</span><a href="../-build-action-executer/index.html"><span class="identifier">BuildActionExecuter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>Used to execute a BuildAction in the build process.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-build-launcher/index.html">BuildLauncher</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BuildLauncher</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConfigurableLauncher</span><span class="symbol">&lt;</span><a href="../-build-launcher/index.html"><span class="identifier">BuildLauncher</span></a><span class="symbol">&gt;</span></code>
+<p>A <code>BuildLauncher</code> allows you to configure and execute a Gradle build. 
+<p> Instances of <code>BuildLauncher</code> are not thread-safe. You use a <code>BuildLauncher</code> as follows: </p>
+<ul> <li>Create an instance of <code>BuildLauncher</code> by calling <code><a href="../-project-connection/new-build.html">org.gradle.tooling.ProjectConnection#newBuild()</a></code>. </li>
+<li>Configure the launcher as appropriate. </li>
+<li>Call either <code><a href="../-build-launcher/run.html">#run()</a></code> or <code><a href="#">#run(ResultHandler)</a></code> to execute the build. </li>
+<li>Optionally, you can reuse the launcher to launch additional builds. </li>
+</ul>
+ Example: <pre><code> ProjectConnection connection = GradleConnector.newConnector() .forProjectDirectory(new File("someFolder")) .connect(); try { BuildLauncher build = connection.newBuild(); //select tasks to run: build.forTasks("clean", "test"); //include some build arguments: build.withArguments("--no-search-upward", "-i", "--project-dir", "someProjectDir"); //configure the standard input: build.setStandardInput(new ByteArrayInputStream("consume this!".getBytes())); //in case you want the build to use java different than default: build.setJavaHome(new File("/path/to/java")); //if your build needs crazy amounts of memory: build.setJvmArguments("-Xmx2048m", "-XX:MaxPermSize=512m"); //if you want to listen to the progress events: ProgressListener listener = null; // use your implementation build.addProgressListener(listener); //kick the build off: build.run(); } finally { connection.close(); } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-model-builder/index.html">ModelBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ModelBuilder</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConfigurableLauncher</span><span class="symbol">&lt;</span><a href="../-model-builder/index.html"><span class="identifier">ModelBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>A <code>ModelBuilder</code> allows you to fetch a snapshot of some model for a project or a build. Instances of <code>ModelBuilder</code> are not thread-safe. 
+<p> You use a <code>ModelBuilder</code> as follows: </p>
+<ul> <li>Create an instance of <code>ModelBuilder</code> by calling <code><a href="#">org.gradle.tooling.ProjectConnection#model(Class)</a></code>. </li>
+<li>Configure the builder as appropriate. </li>
+<li>Call either <code><a href="../-model-builder/get.html">#get()</a></code> or <code><a href="#">#get(ResultHandler)</a></code> to build the model. </li>
+<li>Optionally, you can reuse the builder to build the model multiple times. </li>
+</ul>
+ Example: <pre><code> ProjectConnection connection = GradleConnector.newConnector() .forProjectDirectory(new File("someFolder")) .connect(); try { ModelBuilder&lt;GradleProject&gt; builder = connection.model(GradleProject.class); //if you use a different than usual build file name: builder.withArguments("--build-file", "theBuild.gradle"); //configure the standard input in case your build is interactive: builder.setStandardInput(new ByteArrayInputStream("consume this!".getBytes())); //if you want to listen to the progress events: ProgressListener listener = null; // use your implementation builder.addProgressListener(listener); //get the model: GradleProject project = builder.get(); //query the model for information: System.out.println("Available tasks: " + project.getTasks()); } finally { connection.close(); } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-launcher/index.html">TestLauncher</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TestLauncher</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConfigurableLauncher</span><span class="symbol">&lt;</span><a href="../-test-launcher/index.html"><span class="identifier">TestLauncher</span></a><span class="symbol">&gt;</span></code>
+<p>A <code>TestLauncher</code> allows you to execute tests in a Gradle build.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

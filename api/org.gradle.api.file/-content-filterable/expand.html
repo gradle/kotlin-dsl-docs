@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ContentFilterable.expand - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href="index.html">ContentFilterable</a>&nbsp;/&nbsp;<a href=".">expand</a><br/>
+<br/>
+<h1>expand</h1>
+<a name="org.gradle.api.file.ContentFilterable$expand(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">expand</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.ContentFilterable$expand(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/properties">properties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">ContentFilterable</span></a></code>
+<p>
+<p>Expands property references in each file as it is copied. More specifically, each file is transformed using Groovy's groovy.text.SimpleTemplateEngine. This means you can use simple property references, such as <code>$property</code> or <code>${property}</code> in the file. You can also include arbitrary Groovy code in the file, such as <code>${version ?: 'unknown'}</code> or <code>${classpath*.name.join(' ')}</code></p>
+</p>
+<h3>Parameters</h3>
+<a name="properties"></a>
+<code>properties</code> - to implement line based filtering
+<p><strong>Return</strong><br/>
+this</p>
+</BODY>
+</HTML>

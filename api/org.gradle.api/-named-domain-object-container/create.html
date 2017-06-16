@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NamedDomainObjectContainer.create - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">NamedDomainObjectContainer</a>&nbsp;/&nbsp;<a href=".">create</a><br/>
+<br/>
+<h1>create</h1>
+<a name="org.gradle.api.NamedDomainObjectContainer$create(kotlin.String)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">create</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectContainer$create(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Creates a new item with the given name, adding it to this container.</p>
+<h3>Parameters</h3>
+<a name="name"></a>
+<code>name</code> - The name to assign to the created object
+<h3>Exceptions</h3>
+<a name="InvalidUserDataException"></a>
+<code>InvalidUserDataException</code> - if an object with the given name already exists in this container.
+<p><strong>Return</strong><br/>
+The created object. Never null.</p>
+<a name="org.gradle.api.NamedDomainObjectContainer$create(kotlin.String, groovy.lang.Closure((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">create</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectContainer$create(kotlin.String, groovy.lang.Closure((kotlin.Any)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.NamedDomainObjectContainer$create(kotlin.String, groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Creates a new item with the given name, adding it to this container, then configuring it with the given closure.</p>
+<h3>Parameters</h3>
+<a name="name"></a>
+<code>name</code> - The name to assign to the created object<a name="configureClosure"></a>
+<code>configureClosure</code> - The closure to configure the created object with
+<h3>Exceptions</h3>
+<a name="InvalidUserDataException"></a>
+<code>InvalidUserDataException</code> - if an object with the given name already exists in this container.
+<p><strong>Return</strong><br/>
+The created object. Never null.</p>
+<a name="org.gradle.api.NamedDomainObjectContainer$create(kotlin.String, org.gradle.api.Action((org.gradle.api.NamedDomainObjectContainer.T)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">create</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectContainer$create(kotlin.String, org.gradle.api.Action((org.gradle.api.NamedDomainObjectContainer.T)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.NamedDomainObjectContainer$create(kotlin.String, org.gradle.api.Action((org.gradle.api.NamedDomainObjectContainer.T)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Creates a new item with the given name, adding it to this container, then configuring it with the given action.</p>
+<h3>Parameters</h3>
+<a name="name"></a>
+<code>name</code> - The name to assign to the created object<a name="configureAction"></a>
+<code>configureAction</code> - The action to configure the created object with
+<h3>Exceptions</h3>
+<a name="InvalidUserDataException"></a>
+<code>InvalidUserDataException</code> - if an object with the given name already exists in this container.
+<p><strong>Return</strong><br/>
+The created object. Never null.</p>
+</BODY>
+</HTML>

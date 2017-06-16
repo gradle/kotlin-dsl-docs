@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Project.copySpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">Project</a>&nbsp;/&nbsp;<a href=".">copySpec</a><br/>
+<br/>
+<h1>copySpec</h1>
+<a name="org.gradle.api.Project$copySpec(groovy.lang.Closure((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copySpec</span><span class="symbol">(</span><span class="identifier">@DelegatesTo</span><span class="symbol">(</span>CopySpec<span class="symbol">, </span>1<span class="symbol">)</span> <span class="identifier" id="org.gradle.api.Project$copySpec(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a></code>
+<p>Creates a CopySpec which can later be used to copy files or create an archive. The given closure is used to configure the CopySpec before it is returned by this method. <pre><code> def baseSpec = copySpec { from "source" include "**/*.java" } task copy(type: Copy) { into "target" with baseSpec } </code></pre></p>
+<h3>Parameters</h3>
+<a name="closure"></a>
+<code>closure</code> - Closure to configure the CopySpec
+<p><strong>Return</strong><br/>
+The CopySpec</p>
+<a name="org.gradle.api.Project$copySpec(org.gradle.api.Action((org.gradle.api.file.CopySpec)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copySpec</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$copySpec(org.gradle.api.Action((org.gradle.api.file.CopySpec)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a></code>
+<p>Creates a CopySpec which can later be used to copy files or create an archive. The given action is used to configure the CopySpec before it is returned by this method.</p>
+<h3>Parameters</h3>
+<a name="action"></a>
+<code>action</code> - Action to configure the CopySpec
+<p><strong>See Also</strong><br/>
+<a href="#">#copySpec(Closure)</a></p>
+<p><strong>Return</strong><br/>
+The CopySpec</p>
+<a name="org.gradle.api.Project$copySpec()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copySpec</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a></code>
+<p>Creates a CopySpec which can later be used to copy files or create an archive.</p>
+<p><strong>Return</strong><br/>
+a newly created copy spec</p>
+</BODY>
+</HTML>

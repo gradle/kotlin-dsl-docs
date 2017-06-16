@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>IdeaModuleDependency - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.model.idea</a>&nbsp;/&nbsp;<a href=".">IdeaModuleDependency</a><br/>
+<br/>
+<h1>IdeaModuleDependency</h1>
+<code><span class="keyword">interface </span><span class="identifier">IdeaModuleDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-idea-dependency/index.html"><span class="identifier">IdeaDependency</span></a></code>
+<p>Dependency on a module in a project.</p>
+<p><strong>Since</strong><br/>
+1.0-milestone-5</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-dependency-module.html">getDependencyModule</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><s><span class="identifier">getDependencyModule</span></s><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-idea-module/index.html"><span class="identifier">IdeaModule</span></a></code>
+<p>returns dependency module, or null if the dependency module is not in the same Gradle build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-target-module-name.html">getTargetModuleName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTargetModuleName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the target module</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-idea-dependency/get-exported.html">getExported</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExported</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Allows to check if current dependency is transitive, i.e. is visible to the module which depends on module that has current dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-idea-dependency/get-scope.html">getScope</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getScope</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-idea-dependency-scope/index.html"><span class="identifier">IdeaDependencyScope</span></a></code>
+<p>scope of the current dependency. Not-<code>null</code> all the time</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

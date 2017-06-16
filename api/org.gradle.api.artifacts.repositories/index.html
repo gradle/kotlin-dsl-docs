@@ -1,0 +1,133 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api.artifacts.repositories - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.artifacts.repositories</a><br/>
+<br/>
+<h2>Package org.gradle.api.artifacts.repositories</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-artifact-repository/index.html">ArtifactRepository</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ArtifactRepository</span></code>
+<p>A repository for resolving and publishing artifacts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-authentication-container.html">AuthenticationContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">AuthenticationContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-polymorphic-domain-object-container/index.html"><span class="identifier">PolymorphicDomainObjectContainer</span></a><span class="symbol">&lt;</span><a href="../org.gradle.authentication/-authentication.html"><span class="identifier">Authentication</span></a><span class="symbol">&gt;</span></code>
+<p>Container for configuring repository authentication schemes of type org.gradle.authentication.Authentication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-authentication-supported/index.html">AuthenticationSupported</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">AuthenticationSupported</span></code>
+<p>An artifact repository which supports username/password authentication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-flat-directory-artifact-repository/index.html">FlatDirectoryArtifactRepository</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">FlatDirectoryArtifactRepository</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-artifact-repository/index.html"><span class="identifier">ArtifactRepository</span></a></code>
+<p>A repository that looks into a number of directories for artifacts. The artifacts are expected to be located in the root of the specified directories. The repository ignores any group/organization information specified in the dependency section of your build script. If you only use this kind of resolver you can specify your dependencies like <code>:junit:4.8.1</code> instead of <code>junit:junit:4.8.1</code>. 
+<p>To resolve a dependency, this resolver looks for one of the following files. It will return the first match it finds: </p>
+<ul> <li>[artifact]-[version].[ext] </li>
+<li>[artifact]-[version]-[classifier].[ext] </li>
+<li>[artifact].[ext] </li>
+<li>[artifact]-[classifier].[ext] </li>
+</ul>
+ So, for example, to resolve <code>:junit:junit:4.8.1</code>, this repository will look for <code>junit-4.8.1.jar</code> and then <code>junit.jar</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-ivy-artifact-repository/index.html">IvyArtifactRepository</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">IvyArtifactRepository</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-artifact-repository/index.html"><span class="identifier">ArtifactRepository</span></a><span class="symbol">, </span><a href="-authentication-supported/index.html"><span class="identifier">AuthenticationSupported</span></a></code>
+<p>An artifact repository which uses an Ivy format to store artifacts and meta-data. 
+<p> When used to resolve metadata and artifact files, all available patterns will be searched. </p>
+<p> When used to upload metadata and artifact files, only a single, primary pattern will be used: </p>
+<ol> <li>If a URL is specified via <code><a href="#">#setUrl(Object)</a></code> then that URL will be used for upload, combined with the applied <code><a href="#">#layout(String)</a></code>.</li>
+ <li>If no URL has been specified but additional patterns have been added via <code><a href="#">#artifactPattern</a></code> or <code><a href="#">#ivyPattern</a></code>, then the first defined pattern will be used.</li>
+ </ol>
+ 
+<p> Repositories of this type are created by the <code><a href="#">org.gradle.api.artifacts.dsl.RepositoryHandler#ivy(org.gradle.api.Action)</a></code> group of methods.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-ivy-artifact-repository-meta-data-provider/index.html">IvyArtifactRepositoryMetaDataProvider</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">IvyArtifactRepositoryMetaDataProvider</span></code>
+<p>The meta-data provider for an Ivy repository. Uses the Ivy module descriptor (<code>ivy.xml</code>) to determine the meta-data for module versions and artifacts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-ivy-pattern-repository-layout/index.html">IvyPatternRepositoryLayout</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">IvyPatternRepositoryLayout</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-repository-layout.html"><span class="identifier">RepositoryLayout</span></a></code>
+<p>A repository layout that uses user-supplied patterns. Each pattern will be appended to the base URI for the repository. At least one artifact pattern must be specified. If no Ivy patterns are specified, then the artifact patterns will be used. Optionally supports a Maven style layout for the 'organisation' part, replacing any dots with forward slashes. For examples see the reference for <code><a href="#">org.gradle.api.artifacts.repositories.IvyArtifactRepository#layout(String, org.gradle.api.Action)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-artifact-repository/index.html">MavenArtifactRepository</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MavenArtifactRepository</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-artifact-repository/index.html"><span class="identifier">ArtifactRepository</span></a><span class="symbol">, </span><a href="-authentication-supported/index.html"><span class="identifier">AuthenticationSupported</span></a></code>
+<p>An artifact repository which uses a Maven format to store artifacts and meta-data. 
+<p> Repositories of this type are created by the <code><a href="#">org.gradle.api.artifacts.dsl.RepositoryHandler#maven(org.gradle.api.Action)</a></code> group of methods.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-password-credentials/index.html">PasswordCredentials</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PasswordCredentials</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.credentials/-password-credentials/index.html"><span class="identifier">PasswordCredentials</span></a></code>
+<p>A username/password credentials that can be used to login to password-protected remote repository.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-repository-layout.html">RepositoryLayout</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">RepositoryLayout</span></code>
+<p>Represents the directory structure for a repository. For examples see the reference for <code><a href="#">org.gradle.api.artifacts.repositories.IvyArtifactRepository#layout(String, org.gradle.api.Action)</a></code></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-repository-resource-accessor/index.html">RepositoryResourceAccessor</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">RepositoryResourceAccessor</span></code>
+<p>Provides access to resources on an artifact repository. Gradle takes care of caching the resources locally. The scope of the cache may depend on the accessor: users should refer to the javadocs of the methods providing an accessor to determine the scope.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

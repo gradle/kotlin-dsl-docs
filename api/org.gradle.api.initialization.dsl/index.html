@@ -1,0 +1,34 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api.initialization.dsl - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.initialization.dsl</a><br/>
+<br/>
+<h2>Package org.gradle.api.initialization.dsl</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-script-handler/index.html">ScriptHandler</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ScriptHandler</span></code>
+<p>
+<p>A <code>ScriptHandler</code> allows you to manage the compilation and execution of a build script. You can declare the classpath used to compile and execute a build script. This classpath is also used to load the plugins which the build script uses.</p>
+ 
+<p>You can obtain a <code>ScriptHandler</code> instance using <code><a href="../org.gradle.api/-project/get-buildscript.html">org.gradle.api.Project#getBuildscript()</a></code> or <code><a href="../org.gradle.api/-script/get-buildscript.html"> </a></code>.</p>
+ 
+<p>To declare the script classpath, you use the org.gradle.api.artifacts.dsl.DependencyHandler provided by <code><a href="-script-handler/get-dependencies.html">#getDependencies()</a></code> to attach dependencies to the {@value #CLASSPATH_CONFIGURATION} configuration. These dependencies are resolved just prior to script compilation, and assembled into the classpath for the script.</p>
+ 
+<p>For most external dependencies you will also need to declare one or more repositories where the dependencies can be found, using the org.gradle.api.artifacts.dsl.RepositoryHandler provided by <code><a href="-script-handler/get-repositories.html"> </a></code>.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,42 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BuildCacheConfiguration.remote - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.caching.configuration</a>&nbsp;/&nbsp;<a href="index.html">BuildCacheConfiguration</a>&nbsp;/&nbsp;<a href=".">remote</a><br/>
+<br/>
+<h1>remote</h1>
+<a name="org.gradle.caching.configuration.BuildCacheConfiguration$remote(java.lang.Class((org.gradle.caching.configuration.BuildCacheConfiguration.remote.T)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-build-cache/index.html"><span class="identifier">BuildCache</span></a><span class="symbol">&gt;</span> <span class="identifier">remote</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.configuration.BuildCacheConfiguration$remote(java.lang.Class((org.gradle.caching.configuration.BuildCacheConfiguration.remote.T)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Configures a remote cache with the given type. 
+<p> If a remote build cache has already been configured with a different type, this method replaces it. </p>
+ 
+<p> Push is disabled by default for the remote cache. </p>
+</p>
+<h3>Parameters</h3>
+<a name="type"></a>
+<code>type</code> - the type of remote cache to configure.<a name="org.gradle.caching.configuration.BuildCacheConfiguration$remote(java.lang.Class((org.gradle.caching.configuration.BuildCacheConfiguration.remote.T)), org.gradle.api.Action((org.gradle.caching.configuration.BuildCacheConfiguration.remote.T)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-build-cache/index.html"><span class="identifier">BuildCache</span></a><span class="symbol">&gt;</span> <span class="identifier">remote</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.configuration.BuildCacheConfiguration$remote(java.lang.Class((org.gradle.caching.configuration.BuildCacheConfiguration.remote.T)), org.gradle.api.Action((org.gradle.caching.configuration.BuildCacheConfiguration.remote.T)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.caching.configuration.BuildCacheConfiguration$remote(java.lang.Class((org.gradle.caching.configuration.BuildCacheConfiguration.remote.T)), org.gradle.api.Action((org.gradle.caching.configuration.BuildCacheConfiguration.remote.T)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Configures a remote cache with the given type. 
+<p> If a remote build cache has already been configured with a <strong>different</strong> type, this method replaces it. </p>
+ 
+<p> If a remote build cache has already been configured with the <strong>same</strong>, this method configures it. </p>
+ 
+<p> Push is disabled by default for the remote cache. </p>
+</p>
+<h3>Parameters</h3>
+<a name="type"></a>
+<code>type</code> - the type of remote cache to configure.<a name="configuration"></a>
+<code>configuration</code> - the configuration to execute against the remote cache.<a name="org.gradle.caching.configuration.BuildCacheConfiguration$remote(org.gradle.api.Action((org.gradle.caching.configuration.BuildCache)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">remote</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.configuration.BuildCacheConfiguration$remote(org.gradle.api.Action((org.gradle.caching.configuration.BuildCache)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-build-cache/index.html"><span class="identifier">BuildCache</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Executes the given action against the currently configured remote cache.</p>
+<h3>Parameters</h3>
+<a name="configuration"></a>
+<code>configuration</code> - the action to execute against the currently configured remote cache.
+<h3>Exceptions</h3>
+<a name="IllegalStateException"></a>
+<code>IllegalStateException</code> - If no remote cache has been assigned yet
+</BODY>
+</HTML>

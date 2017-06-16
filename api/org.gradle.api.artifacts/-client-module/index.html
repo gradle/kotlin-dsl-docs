@@ -1,0 +1,92 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ClientModule - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">ClientModule</a><br/>
+<br/>
+<h1>ClientModule</h1>
+<code><span class="keyword">interface </span><span class="identifier">ClientModule</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-external-module-dependency/index.html"><span class="identifier">ExternalModuleDependency</span></a></code>
+<p>To model a module in your dependency declarations. Usually you can either declare a single dependency artifact or you declare a module dependency that depends on a module descriptor in a repository. With a client module you can declare a module dependency without the need of a module descriptor in a remote repository.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-dependency.html">addDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addDependency</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ClientModule$addDependency(org.gradle.api.artifacts.ModuleDependency)/dependency">dependency</span><span class="symbol">:</span>&nbsp;<a href="../-module-dependency/index.html"><span class="identifier">ModuleDependency</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Add a dependency to the client module. Such a dependency is transitive dependency for the project that has a dependency on the client module.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="copy.html">copy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ClientModule</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-dependencies.html">getDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-module-dependency/index.html"><span class="identifier">ModuleDependency</span></a><span class="symbol">&gt;</span></code>
+<p>Returns all the dependencies added to the client module.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-id.html">getId</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getId</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the id of the client module. This is usually only used for internal handling of the client module.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-external-module-dependency/is-changing.html">isChanging</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isChanging</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns whether or not Gradle should always check for a change in the remote repository.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-external-module-dependency/set-changing.html">setChanging</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setChanging</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ExternalModuleDependency$setChanging(kotlin.Boolean)/changing">changing</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-external-module-dependency/index.html"><span class="identifier">ExternalModuleDependency</span></a></code>
+<p>Sets whether or not Gradle should always check for a change in the remote repository. If set to true, Gradle will check the remote repository even if a dependency with the same version is already in the local cache. Defaults to false.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.script.lang.kotlin/-client-module-scope/index.html">ClientModuleScope</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">ClientModuleScope</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ClientModule</span></code>
+<p>Receiver for ClientModule configuration blocks.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,71 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>LoggingOutput - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.logging</a>&nbsp;/&nbsp;<a href=".">LoggingOutput</a><br/>
+<br/>
+<h1>LoggingOutput</h1>
+<code><span class="keyword">interface </span><span class="identifier">LoggingOutput</span></code>
+<p>Provides access to the output of the Gradle logging system.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-standard-error-listener.html">addStandardErrorListener</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addStandardErrorListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.LoggingOutput$addStandardErrorListener(org.gradle.api.logging.StandardOutputListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../-standard-output-listener/index.html"><span class="identifier">StandardOutputListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a listener which receives output written to standard error by the Gradle logging system.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="add-standard-output-listener.html">addStandardOutputListener</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addStandardOutputListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.LoggingOutput$addStandardOutputListener(org.gradle.api.logging.StandardOutputListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../-standard-output-listener/index.html"><span class="identifier">StandardOutputListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a listener which receives output written to standard output by the Gradle logging system.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="remove-standard-error-listener.html">removeStandardErrorListener</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">removeStandardErrorListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.LoggingOutput$removeStandardErrorListener(org.gradle.api.logging.StandardOutputListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../-standard-output-listener/index.html"><span class="identifier">StandardOutputListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Removes a listener from standard error.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="remove-standard-output-listener.html">removeStandardOutputListener</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">removeStandardOutputListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.LoggingOutput$removeStandardOutputListener(org.gradle.api.logging.StandardOutputListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../-standard-output-listener/index.html"><span class="identifier">StandardOutputListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Removes a listener from standard output.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-logging-manager/index.html">LoggingManager</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">LoggingManager</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">LoggingOutput</span></code>
+<p>
+<p>A <code>LoggingManager</code> provides access to and control over the Gradle logging system. Using this interface, you can control the current logging level and standard output and error capture.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

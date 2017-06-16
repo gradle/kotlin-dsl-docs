@@ -1,0 +1,218 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CodeNarcExtension - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins.quality</a>&nbsp;/&nbsp;<a href=".">CodeNarcExtension</a><br/>
+<br/>
+<h1>CodeNarcExtension</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CodeNarcExtension</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-code-quality-extension/index.html"><span class="identifier">CodeQualityExtension</span></a></code>
+<p>Configuration options for the CodeNarc plugin.</p>
+<p><strong>See Also</strong><br/>
+CodeNarc</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">CodeNarcExtension</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeNarcExtension$<init>(org.gradle.api.Project)/project">project</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-config.html">getConfig</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getConfig</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.resources/-text-resource/index.html"><span class="identifier">TextResource</span></a></code>
+<p>The CodeNarc configuration to use. Replaces the <code>configFile</code> property.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-config-file.html">getConfigFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getConfigFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The CodeNarc configuration file to use.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-max-priority1-violations.html">getMaxPriority1Violations</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMaxPriority1Violations</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>The maximum number of priority 1 violations allowed before failing the build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-max-priority2-violations.html">getMaxPriority2Violations</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMaxPriority2Violations</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>The maximum number of priority 2 violations allowed before failing the build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-max-priority3-violations.html">getMaxPriority3Violations</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMaxPriority3Violations</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>The maximum number of priority 3 violations allowed before failing the build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-report-format.html">getReportFormat</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getReportFormat</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The format type of the CodeNarc report. One of html, xml, text, console.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-config.html">setConfig</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setConfig</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeNarcExtension$setConfig(org.gradle.api.resources.TextResource)/config">config</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.resources/-text-resource/index.html"><span class="identifier">TextResource</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The CodeNarc configuration to use. Replaces the <code>configFile</code> property.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-config-file.html">setConfigFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setConfigFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeNarcExtension$setConfigFile(java.io.File)/file">file</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The CodeNarc configuration file to use.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-max-priority1-violations.html">setMaxPriority1Violations</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMaxPriority1Violations</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeNarcExtension$setMaxPriority1Violations(kotlin.Int)/maxPriority1Violations">maxPriority1Violations</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The maximum number of priority 1 violations allowed before failing the build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-max-priority2-violations.html">setMaxPriority2Violations</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMaxPriority2Violations</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeNarcExtension$setMaxPriority2Violations(kotlin.Int)/maxPriority2Violations">maxPriority2Violations</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The maximum number of priority 2 violations allowed before failing the build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-max-priority3-violations.html">setMaxPriority3Violations</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMaxPriority3Violations</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeNarcExtension$setMaxPriority3Violations(kotlin.Int)/maxPriority3Violations">maxPriority3Violations</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The maximum number of priority 3 violations allowed before failing the build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-report-format.html">setReportFormat</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setReportFormat</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeNarcExtension$setReportFormat(kotlin.String)/reportFormat">reportFormat</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The format type of the CodeNarc report. One of html, xml, text, console.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/get-reports-dir.html">getReportsDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getReportsDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The directory where reports will be generated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/get-source-sets.html">getSourceSets</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSourceSets</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.tasks/-source-set/index.html"><span class="identifier">SourceSet</span></a><span class="symbol">&gt;</span></code>
+<p>The source sets to be analyzed as part of the check and build tasks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/get-tool-version.html">getToolVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getToolVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The version of the code quality tool to be used.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/is-ignore-failures.html">isIgnoreFailures</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isIgnoreFailures</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether to allow the build to continue if there are warnings. Example: ignoreFailures = true</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/set-ignore-failures.html">setIgnoreFailures</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setIgnoreFailures</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeQualityExtension$setIgnoreFailures(kotlin.Boolean)/ignoreFailures">ignoreFailures</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Whether to allow the build to continue if there are warnings. Example: ignoreFailures = true</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/set-reports-dir.html">setReportsDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setReportsDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeQualityExtension$setReportsDir(java.io.File)/reportsDir">reportsDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The directory where reports will be generated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/set-source-sets.html">setSourceSets</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSourceSets</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeQualityExtension$setSourceSets(kotlin.collections.MutableCollection((org.gradle.api.tasks.SourceSet)))/sourceSets">sourceSets</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.tasks/-source-set/index.html"><span class="identifier">SourceSet</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The source sets to be analyzed as part of the check and build tasks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/set-tool-version.html">setToolVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setToolVersion</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeQualityExtension$setToolVersion(kotlin.String)/toolVersion">toolVersion</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The version of the code quality tool to be used.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

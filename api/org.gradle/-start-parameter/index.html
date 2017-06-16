@@ -1,0 +1,713 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>StartParameter - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle</a>&nbsp;/&nbsp;<a href=".">StartParameter</a><br/>
+<br/>
+<h1>StartParameter</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">StartParameter</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.logging.configuration/-logging-configuration/index.html"><span class="identifier">LoggingConfiguration</span></a><span class="symbol">, </span><span class="identifier">ParallelismConfiguration</span><span class="symbol">, </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code>
+<p>
+<p><code>StartParameter</code> defines the configuration used by a Gradle instance to execute a build. The properties of <code>StartParameter</code> generally correspond to the command-line options of Gradle. </p>
+<p>You can obtain an instance of a <code>StartParameter</code> by either creating a new one, or duplicating an existing one using <code><a href="new-instance.html">#newInstance</a></code> or <code><a href="new-build.html">#newBuild</a></code>.</p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">StartParameter</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Creates a <code>StartParameter</code> with default values. This is roughly equivalent to running Gradle on the command-line with no arguments.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-d-e-f-a-u-l-t_-g-r-a-d-l-e_-u-s-e-r_-h-o-m-e.html">DEFAULT_GRADLE_USER_HOME</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">DEFAULT_GRADLE_USER_HOME</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The default user home directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-g-r-a-d-l-e_-u-s-e-r_-h-o-m-e_-p-r-o-p-e-r-t-y_-k-e-y.html">GRADLE_USER_HOME_PROPERTY_KEY</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">GRADLE_USER_HOME_PROPERTY_KEY</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-init-script.html">addInitScript</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addInitScript</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$addInitScript(java.io.File)/initScriptFile">initScriptFile</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds the given file to the list of init scripts that are run before the build starts. This list is in addition to the default init scripts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="equals.html">equals</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">equals</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$equals(kotlin.Any)/other">other</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-all-init-scripts.html">getAllInitScripts</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAllInitScripts</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>Returns all init scripts, including explicit init scripts and implicit init scripts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-build-file.html">getBuildFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getBuildFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the build file to use to select the default project. Returns null when the build file is not used to select the default project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-console-output.html">getConsoleOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getConsoleOutput</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.logging.configuration/-console-output/index.html"><span class="identifier">ConsoleOutput</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-current-dir.html">getCurrentDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getCurrentDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the directory to use to select the default project, and to search for the settings file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-excluded-task-names.html">getExcludedTaskNames</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getExcludedTaskNames</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the names of the tasks to be excluded from this build. When empty, no tasks are excluded from the build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-gradle-user-home-dir.html">getGradleUserHomeDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getGradleUserHomeDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the directory to use as the user home directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-included-builds.html">getIncludedBuilds</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getIncludedBuilds</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-init-scripts.html">getInitScripts</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getInitScripts</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>Returns all explicitly added init scripts that will be run before the build starts. This list does not contain the user init script located in ${user.home}/.gradle/init.gradle, even though that init script will also be run.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-log-level.html">getLogLevel</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLogLevel</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.logging/-log-level/index.html"><span class="identifier">LogLevel</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-max-worker-count.html">getMaxWorkerCount</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMaxWorkerCount</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project-cache-dir.html">getProjectCacheDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getProjectCacheDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the project's cache dir.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project-dir.html">getProjectDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getProjectDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the project dir to use to select the default project. Returns null when the build file is not used to select the default project</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project-properties.html">getProjectProperties</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getProjectProperties</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-settings-file.html">getSettingsFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSettingsFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the explicit settings file to use for the build, or null. Will return null if the default settings file is to be used. However, if <code><a href="is-use-empty-settings.html">#isUseEmptySettings()</a></code> returns true, then no settings file at all will be used.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-show-stacktrace.html">getShowStacktrace</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getShowStacktrace</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.logging.configuration/-show-stacktrace/index.html"><span class="identifier">ShowStacktrace</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-system-properties-args.html">getSystemPropertiesArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSystemPropertiesArgs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-task-names.html">getTaskNames</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTaskNames</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the names of the tasks to execute in this build. When empty, the default tasks for the project will be executed. If TaskExecutionRequests are set for this build then names from these task parameters are returned.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-task-requests.html">getTaskRequests</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTaskRequests</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-task-execution-request/index.html"><span class="identifier">TaskExecutionRequest</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the tasks to execute in this build. When empty, the default tasks for the project will be executed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="hash-code.html">hashCode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">hashCode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="include-build.html">includeBuild</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">includeBuild</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$includeBuild(java.io.File)/includedBuild">includedBuild</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-build-cache-enabled.html">isBuildCacheEnabled</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isBuildCacheEnabled</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if the build cache is enabled.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-build-project-dependencies.html">isBuildProjectDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isBuildProjectDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if project dependencies are to be built, false if they should not be. The default is true.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-build-scan.html">isBuildScan</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isBuildScan</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if build scan should be created.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-configure-on-demand.html">isConfigureOnDemand</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isConfigureOnDemand</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>If the configure-on-demand mode is active</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-continue-on-failure.html">isContinueOnFailure</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isContinueOnFailure</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Specifies whether the build should continue on task failure. The default is false.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-continuous.html">isContinuous</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isContinuous</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-dry-run.html">isDryRun</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isDryRun</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-no-build-scan.html">isNoBuildScan</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isNoBuildScan</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true when build scan creation is explicitly disabled.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-offline.html">isOffline</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isOffline</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Specifies whether the build should be performed offline (ie without network access).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-parallel-project-execution-enabled.html">isParallelProjectExecutionEnabled</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isParallelProjectExecutionEnabled</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-profile.html">isProfile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isProfile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if a profile report will be generated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-recompile-scripts.html">isRecompileScripts</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isRecompileScripts</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Specifies whether the build scripts should be recompiled.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-refresh-dependencies.html">isRefreshDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isRefreshDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Specifies whether the dependencies should be refreshed..</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-rerun-tasks.html">isRerunTasks</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isRerunTasks</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Specifies whether the cached task results should be ignored and each task should be forced to be executed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-search-upwards.html">isSearchUpwards</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isSearchUpwards</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-task-output-cache-enabled.html">isTaskOutputCacheEnabled</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isTaskOutputCacheEnabled</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if task output caching is enabled.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-use-empty-settings.html">isUseEmptySettings</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isUseEmptySettings</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns whether an empty settings script will be used regardless of whether one exists in the default location.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="new-build.html">newBuild</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">newBuild</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">StartParameter</span></code>
+<p>
+<p>Creates the parameters for a new build, using these parameters as a template. Copies the environmental properties from this parameter (eg Gradle user home dir, etc), but does not copy the build specific properties (eg task names).</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="new-instance.html">newInstance</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">newInstance</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">StartParameter</span></code>
+<p>Duplicates this <code>StartParameter</code> instance.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-build-cache-enabled.html">setBuildCacheEnabled</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setBuildCacheEnabled</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setBuildCacheEnabled(kotlin.Boolean)/buildCacheEnabled">buildCacheEnabled</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Enables/disables the build cache.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-build-file.html">setBuildFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setBuildFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setBuildFile(java.io.File)/buildFile">buildFile</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the build file to use to select the default project. Use null to disable selecting the default project using the build file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-build-project-dependencies.html">setBuildProjectDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setBuildProjectDependencies</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setBuildProjectDependencies(kotlin.Boolean)/build">build</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">StartParameter</span></code>
+<p>Specifies whether project dependencies should be built. Defaults to true.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-build-scan.html">setBuildScan</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setBuildScan</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setBuildScan(kotlin.Boolean)/buildScan">buildScan</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies whether a build scan should be created.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-configure-on-demand.html">setConfigureOnDemand</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setConfigureOnDemand</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setConfigureOnDemand(kotlin.Boolean)/configureOnDemand">configureOnDemand</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-console-output.html">setConsoleOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setConsoleOutput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setConsoleOutput(org.gradle.api.logging.configuration.ConsoleOutput)/consoleOutput">consoleOutput</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.logging.configuration/-console-output/index.html"><span class="identifier">ConsoleOutput</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-continue-on-failure.html">setContinueOnFailure</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setContinueOnFailure</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setContinueOnFailure(kotlin.Boolean)/continueOnFailure">continueOnFailure</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies whether the build should continue on task failure. The default is false.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-continuous.html">setContinuous</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setContinuous</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setContinuous(kotlin.Boolean)/enabled">enabled</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-current-dir.html">setCurrentDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setCurrentDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setCurrentDir(java.io.File)/currentDir">currentDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the directory to use to select the default project, and to search for the settings file. Set to null to use the default current directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-dry-run.html">setDryRun</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDryRun</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setDryRun(kotlin.Boolean)/dryRun">dryRun</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-excluded-task-names.html">setExcludedTaskNames</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExcludedTaskNames</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setExcludedTaskNames(kotlin.collections.MutableIterable((kotlin.String)))/excludedTaskNames">excludedTaskNames</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the tasks to exclude from this build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-gradle-user-home-dir.html">setGradleUserHomeDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setGradleUserHomeDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setGradleUserHomeDir(java.io.File)/gradleUserHomeDir">gradleUserHomeDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the directory to use as the user home directory. Set to null to use the default directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-included-builds.html">setIncludedBuilds</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setIncludedBuilds</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setIncludedBuilds(kotlin.collections.MutableList((java.io.File)))/includedBuilds">includedBuilds</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-init-scripts.html">setInitScripts</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setInitScripts</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setInitScripts(kotlin.collections.MutableList((java.io.File)))/initScripts">initScripts</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the list of init scripts to be run before the build starts. This list is in addition to the default init scripts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-log-level.html">setLogLevel</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setLogLevel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setLogLevel(org.gradle.api.logging.LogLevel)/logLevel">logLevel</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.logging/-log-level/index.html"><span class="identifier">LogLevel</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-max-worker-count.html">setMaxWorkerCount</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMaxWorkerCount</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setMaxWorkerCount(kotlin.Int)/maxWorkerCount">maxWorkerCount</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-no-build-scan.html">setNoBuildScan</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setNoBuildScan</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setNoBuildScan(kotlin.Boolean)/noBuildScan">noBuildScan</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies whether build scan creation is explicitly disabled.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-offline.html">setOffline</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOffline</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setOffline(kotlin.Boolean)/offline">offline</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies whether the build should be performed offline (ie without network access).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-parallel-project-execution-enabled.html">setParallelProjectExecutionEnabled</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setParallelProjectExecutionEnabled</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setParallelProjectExecutionEnabled(kotlin.Boolean)/parallelProjectExecution">parallelProjectExecution</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-profile.html">setProfile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setProfile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setProfile(kotlin.Boolean)/profile">profile</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies if a profile report should be generated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-project-cache-dir.html">setProjectCacheDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setProjectCacheDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setProjectCacheDir(java.io.File)/projectCacheDir">projectCacheDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the project's cache location. Set to null to use the default location.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-project-dir.html">setProjectDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setProjectDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setProjectDir(java.io.File)/projectDir">projectDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the project directory to use to select the default project. Use null to use the default criteria for selecting the default project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-project-properties.html">setProjectProperties</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setProjectProperties</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setProjectProperties(kotlin.collections.MutableMap((kotlin.String, )))/projectProperties">projectProperties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-recompile-scripts.html">setRecompileScripts</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setRecompileScripts</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setRecompileScripts(kotlin.Boolean)/recompileScripts">recompileScripts</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies whether the build scripts should be recompiled.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-refresh-dependencies.html">setRefreshDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setRefreshDependencies</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setRefreshDependencies(kotlin.Boolean)/refreshDependencies">refreshDependencies</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies whether the dependencies should be refreshed..</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-rerun-tasks.html">setRerunTasks</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setRerunTasks</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setRerunTasks(kotlin.Boolean)/rerunTasks">rerunTasks</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies whether the cached task results should be ignored and each task should be forced to be executed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-search-upwards.html">setSearchUpwards</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSearchUpwards</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setSearchUpwards(kotlin.Boolean)/searchUpwards">searchUpwards</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-settings-file.html">setSettingsFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSettingsFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setSettingsFile(java.io.File)/settingsFile">settingsFile</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the settings file to use for the build. Use null to use the default settings file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-show-stacktrace.html">setShowStacktrace</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setShowStacktrace</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setShowStacktrace(org.gradle.api.logging.configuration.ShowStacktrace)/showStacktrace">showStacktrace</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.logging.configuration/-show-stacktrace/index.html"><span class="identifier">ShowStacktrace</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-system-properties-args.html">setSystemPropertiesArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSystemPropertiesArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setSystemPropertiesArgs(kotlin.collections.MutableMap((kotlin.String, )))/systemPropertiesArgs">systemPropertiesArgs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-task-names.html">setTaskNames</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTaskNames</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setTaskNames(kotlin.collections.MutableIterable((kotlin.String)))/taskNames">taskNames</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Sets the tasks to execute in this build. Set to an empty list, or null, to execute the default tasks for the project. The tasks are executed in the order provided, subject to dependency between the tasks.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-task-output-cache-enabled.html">setTaskOutputCacheEnabled</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTaskOutputCacheEnabled</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setTaskOutputCacheEnabled(kotlin.Boolean)/buildCacheEnabled">buildCacheEnabled</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Enables/disables task output caching.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-task-requests.html">setTaskRequests</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTaskRequests</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setTaskRequests(kotlin.collections.MutableIterable((org.gradle.TaskExecutionRequest)))/taskParameters">taskParameters</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="../-task-execution-request/index.html"><span class="identifier">TaskExecutionRequest</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Sets the task parameters to execute in this build. Set to an empty list, to execute the default tasks for the project. The tasks are executed in the order provided, subject to dependency between the tasks.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="to-string.html">toString</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="use-empty-settings.html">useEmptySettings</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">useEmptySettings</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">StartParameter</span></code>
+<p>Specifies that an empty settings script should be used. This means that even if a settings file exists in the conventional location, or has been previously specified by <code><a href="set-settings-file.html">#setSettingsFile(java.io.File)</a></code>, it will not be used. If <code><a href="set-settings-file.html">#setSettingsFile(java.io.File)</a></code> is called after this, it will supersede calling this method.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

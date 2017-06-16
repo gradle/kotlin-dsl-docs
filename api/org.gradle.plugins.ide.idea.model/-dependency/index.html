@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Dependency - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.idea.model</a>&nbsp;/&nbsp;<a href=".">Dependency</a><br/>
+<br/>
+<h1>Dependency</h1>
+<code><span class="keyword">interface </span><span class="identifier">Dependency</span></code>
+<p>Represents a dependency of an IDEA module.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-to-node.html">addToNode</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addToNode</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Dependency$addToNode(groovy.util.Node)/parentNode">parentNode</span><span class="symbol">:</span>&nbsp;<span class="identifier">Node</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-module-dependency/index.html">ModuleDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ModuleDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Dependency</span></code>
+<p>Represents an orderEntry of type module in the iml XML.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-module-library/index.html">ModuleLibrary</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ModuleLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Dependency</span></code>
+<p>Represents an orderEntry of type module-library in the iml XML.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

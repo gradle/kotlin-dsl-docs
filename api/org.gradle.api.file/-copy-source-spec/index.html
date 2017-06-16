@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CopySourceSpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href=".">CopySourceSpec</a><br/>
+<br/>
+<h1>CopySourceSpec</h1>
+<code><span class="keyword">interface </span><span class="identifier">CopySourceSpec</span></code>
+<p>Specifies sources for a file copy.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="from.html">from</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.file.CopySourceSpec$from(kotlin.Array((kotlin.Any)))/sourcePaths">sourcePaths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CopySourceSpec</span></code>
+<p>Specifies source files or directories for a copy. The given paths are evaluated as per <code><a href="#"> </a></code>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.CopySourceSpec$from(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/sourcePath">sourcePath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.file.CopySourceSpec$from(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CopySourceSpec</span></code>
+<p>Specifies the source files or directories for a copy and creates a child <code>CopySourceSpec</code>. The given source path is evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code> .</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.CopySourceSpec$from(kotlin.Any, org.gradle.api.Action((org.gradle.api.file.CopySpec)))/sourcePath">sourcePath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.file.CopySourceSpec$from(kotlin.Any, org.gradle.api.Action((org.gradle.api.file.CopySpec)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-copy-spec/index.html"><span class="identifier">CopySpec</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">CopySourceSpec</span></code>
+<p>Specifies the source files or directories for a copy and creates a child <code>CopySpec</code>. The given source path is evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code> .</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-copy-spec/index.html">CopySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CopySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">CopySourceSpec</span><span class="symbol">, </span><a href="../-copy-processing-spec/index.html"><span class="identifier">CopyProcessingSpec</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a></code>
+<p>A set of specifications for copying files. This includes: <ul> <li>source directories (multiples allowed) </li>
+<li>destination directory </li>
+<li>ANT like include patterns </li>
+<li>ANT like exclude patterns </li>
+<li>File relocating rules </li>
+<li>renaming rules </li>
+<li>content filters </li>
+</ul>
+ CopySpecs may be nested by passing a closure to one of the from methods. The closure creates a child CopySpec and delegates methods in the closure to the child. Child CopySpecs inherit any values specified in the parent. This allows constructs like: <pre><code> def myCopySpec = project.copySpec { into('webroot') exclude('**/.data/**') from('src/main/webapp') { include '**/*.jsp' } from('src/main/js') { include '**/*.js' } } </code></pre> In this example, the <code>into</code> and <code>exclude</code> specifications at the root level are inherited by the two child CopySpecs. Copy specs can be reused in other copy specs via <code><a href="#">#with(CopySpec...)</a></code> method. This enables reuse of the copy spec instances. <pre><code> def contentSpec = copySpec { from("content") { include "**/*.txt" } } task copy(type: Copy) { into "$buildDir/copy" with contentSpec } </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

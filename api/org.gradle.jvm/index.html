@@ -1,0 +1,107 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.jvm - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.jvm</a><br/>
+<br/>
+<h2>Package org.gradle.jvm</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-class-directory-binary-spec.html">ClassDirectoryBinarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ClassDirectoryBinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-jvm-binary-spec/index.html"><span class="identifier">JvmBinarySpec</span></a></code>
+<p>An exploded binary containing resources and compiled class files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-classpath/index.html">Classpath</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Classpath</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<p>A collection of files to be used as a class path.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-jar-binary-spec/index.html">JarBinarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">JarBinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.platform.base/-library-binary-spec/index.html"><span class="identifier">LibraryBinarySpec</span></a><span class="symbol">, </span><a href="-jvm-binary-spec/index.html"><span class="identifier">JvmBinarySpec</span></a></code>
+<p>Definition of a Jar file binary that is to be built by Gradle.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-jvm-api-spec/index.html">JvmApiSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">JvmApiSpec</span></code>
+<p>Specifies the packages that constitute the API of a library. Facilitates separation of API and implementation binaries for that library. Backing object for the <code>api {}</code> DSL.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-jvm-binary-spec/index.html">JvmBinarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">JvmBinarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.platform.base/-binary-spec/index.html"><span class="identifier">BinarySpec</span></a></code>
+<p>Represents a binary artifact that is the result of building a jvm component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-jvm-byte-code/index.html">JvmByteCode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JvmByteCode</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.platform.base/-transformation-file-type.html"><span class="identifier">TransformationFileType</span></a></code>
+<p>LanguageOutputType marking Jvm byte code.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-jvm-component-spec.html">JvmComponentSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">JvmComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.platform.base/-component-spec/index.html"><span class="identifier">ComponentSpec</span></a></code>
+<p>Definition of a software component that is to be built by Gradle to run a on JVM platform.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-jvm-library.html">JvmLibrary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">JvmLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.platform.base/-library.html"><span class="identifier">Library</span></a></code>
+<p>A Library component that runs on the Java Virtual Machine.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-jvm-library-spec/index.html">JvmLibrarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">JvmLibrarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.platform.base/-library-spec.html"><span class="identifier">LibrarySpec</span></a><span class="symbol">, </span><a href="-jvm-component-spec.html"><span class="identifier">JvmComponentSpec</span></a><span class="symbol">, </span><a href="../org.gradle.platform.base/-platform-aware-component-spec/index.html"><span class="identifier">PlatformAwareComponentSpec</span></a></code>
+<p>Definition of a JVM library component that is to be built by Gradle.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-jvm-resources/index.html">JvmResources</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JvmResources</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.platform.base/-transformation-file-type.html"><span class="identifier">TransformationFileType</span></a></code>
+<p>LanguageOutputType marking Jvm Resource Output</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

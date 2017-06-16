@@ -1,0 +1,180 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>RelativePath - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href=".">RelativePath</a><br/>
+<br/>
+<h1>RelativePath</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">RelativePath</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a><span class="symbol">, </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><span class="identifier">RelativePath</span><span class="symbol">&gt;</span></code>
+<p>
+<p>Represents a relative path from some base directory to a file. Used in file copying to represent both a source and target file path when copying files.</p>
+ 
+<p><code>RelativePath</code> instances are immutable.</p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">RelativePath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.RelativePath$<init>(kotlin.Boolean, kotlin.Array((kotlin.String)))/endsWithFile">endsWithFile</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.file.RelativePath$<init>(kotlin.Boolean, kotlin.Array((kotlin.String)))/segments">segments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span></code>
+<p>Creates a <code>RelativePath</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-e-m-p-t-y_-r-o-o-t.html">EMPTY_ROOT</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">EMPTY_ROOT</span><span class="symbol">: </span><span class="identifier">RelativePath</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="append.html">append</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">append</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.RelativePath$append(org.gradle.api.file.RelativePath)/other">other</span><span class="symbol">:</span>&nbsp;<span class="identifier">RelativePath</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">RelativePath</span></code>
+<p>
+<p>Appends the given path to the end of this path.</p>
+</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">append</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.RelativePath$append(kotlin.Boolean, kotlin.Array((kotlin.String)))/endsWithFile">endsWithFile</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.file.RelativePath$append(kotlin.Boolean, kotlin.Array((kotlin.String)))/segments">segments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">RelativePath</span></code>
+<p>Appends the given names to the end of this path.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="compare-to.html">compareTo</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">compareTo</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.RelativePath$compareTo(org.gradle.api.file.RelativePath)/other">other</span><span class="symbol">:</span>&nbsp;<span class="identifier">RelativePath</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="equals.html">equals</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">equals</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.RelativePath$equals(kotlin.Any)/other">other</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-file.html">getFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.RelativePath$getFile(java.io.File)/baseDir">baseDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-last-name.html">getLastName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLastName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-parent.html">getParent</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getParent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">RelativePath</span></code>
+<p>Returns the parent of this path.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-path-string.html">getPathString</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getPathString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-segments.html">getSegments</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSegments</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="hash-code.html">hashCode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">hashCode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-file.html">isFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="parse.html">parse</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">static</span> <span class="keyword">fun </span><span class="identifier">parse</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.RelativePath$parse(kotlin.Boolean, kotlin.String)/isFile">isFile</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.file.RelativePath$parse(kotlin.Boolean, kotlin.String)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">RelativePath</span></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">static</span> <span class="keyword">fun </span><span class="identifier">parse</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.RelativePath$parse(kotlin.Boolean, org.gradle.api.file.RelativePath, kotlin.String)/isFile">isFile</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.file.RelativePath$parse(kotlin.Boolean, org.gradle.api.file.RelativePath, kotlin.String)/parent">parent</span><span class="symbol">:</span>&nbsp;<span class="identifier">RelativePath</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.file.RelativePath$parse(kotlin.Boolean, org.gradle.api.file.RelativePath, kotlin.String)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">RelativePath</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="plus.html">plus</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.RelativePath$plus(org.gradle.api.file.RelativePath)/other">other</span><span class="symbol">:</span>&nbsp;<span class="identifier">RelativePath</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">RelativePath</span></code>
+<p>
+<p>Appends the given path to the end of this path.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="prepend.html">prepend</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">prepend</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.file.RelativePath$prepend(kotlin.Array((kotlin.String)))/segments">segments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">RelativePath</span></code>
+<p>Prepends the given names to the start of this path.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="replace-last-name.html">replaceLastName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">replaceLastName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.RelativePath$replaceLastName(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">RelativePath</span></code>
+<p>
+<p>Returns a copy of this path, with the last name replaced with the given name.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="segment-iterator.html">segmentIterator</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">segmentIterator</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list-iterator/index.html"><span class="identifier">MutableListIterator</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="to-string.html">toString</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

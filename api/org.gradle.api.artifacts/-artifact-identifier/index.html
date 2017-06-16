@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ArtifactIdentifier - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">ArtifactIdentifier</a><br/>
+<br/>
+<h1>ArtifactIdentifier</h1>
+<code><span class="keyword">interface </span><span class="identifier">ArtifactIdentifier</span></code>
+<p>The identifier for a module artifact.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-classifier.html">getClassifier</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getClassifier</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the classifier of this artifact, if any.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-extension.html">getExtension</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExtension</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the extension of this artifact. Often the extension is the same as the type, but sometimes this is not the case. For example for an ivy XML module descriptor, the type is <em>ivy</em> and the extension is <em>xml</em>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-module-version-identifier.html">getModuleVersionIdentifier</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getModuleVersionIdentifier</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-module-version-identifier/index.html"><span class="identifier">ModuleVersionIdentifier</span></a></code>
+<p>Returns the identifier of the module that owns this artifact.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of this artifact.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-type.html">getType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getType</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the type of this artifact. Often the type is the same as the extension, but sometimes this is not the case. For example for an ivy XML module descriptor, the type is <em>ivy</em> and the extension is <em>xml</em>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

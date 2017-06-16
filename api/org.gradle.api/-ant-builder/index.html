@@ -1,0 +1,111 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AntBuilder - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href=".">AntBuilder</a><br/>
+<br/>
+<h1>AntBuilder</h1>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AntBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AntBuilder</span></code>
+<p>
+<p>An <code>AntBuilder</code> allows you to use Ant from your build script.</p>
+</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-ant-message-priority/index.html">AntMessagePriority</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">AntMessagePriority</span></code>
+<p>Represents the normal Ant message priorities.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">AntBuilder</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>
+<p>An <code>AntBuilder</code> allows you to use Ant from your build script.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-ant.html">getAnt</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAnt</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">AntBuilder</span></code>
+<p>Returns this AntBuilder. Useful when you need to pass this builder to methods from within closures.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-lifecycle-log-level.html">getLifecycleLogLevel</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLifecycleLogLevel</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-ant-message-priority/index.html"><span class="identifier">AntMessagePriority</span></a></code>
+<p>Returns the Ant message priority that corresponds to the Gradle "lifecycle" log level.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-properties.html">getProperties</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProperties</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the properties of the Ant project. This is a live map, you that you can make changes to the map and these changes are reflected in the Ant project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-references.html">getReferences</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getReferences</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the references of the Ant project. This is a live map, you that you can make changes to the map and these changes are reflected in the Ant project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="import-build.html">importBuild</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">importBuild</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.AntBuilder$importBuild(kotlin.Any)/antBuildFile">antBuildFile</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Imports an Ant build into the associated Gradle project.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">importBuild</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.AntBuilder$importBuild(kotlin.Any, org.gradle.api.Transformer((kotlin.String, )))/antBuildFile">antBuildFile</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.AntBuilder$importBuild(kotlin.Any, org.gradle.api.Transformer((kotlin.String, )))/taskNamer">taskNamer</span><span class="symbol">:</span>&nbsp;<a href="../-transformer/index.html"><span class="identifier">Transformer</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="keyword">in</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Imports an Ant build into the associated Gradle project, potentially providing alternative names for Gradle tasks that correspond to Ant targets. 
+<p> For each Ant target that is to be converted to a Gradle task, the given <code>taskNamer</code> receives the Ant target name as input and is expected to return the desired name for the corresponding Gradle task. The transformer may be called multiple times with the same input. Implementations should ensure uniqueness of the return value for a distinct input. That is, no two inputs should yield the same return value.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-lifecycle-log-level.html">setLifecycleLogLevel</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setLifecycleLogLevel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.AntBuilder$setLifecycleLogLevel(org.gradle.api.AntBuilder.AntMessagePriority)/logLevel">logLevel</span><span class="symbol">:</span>&nbsp;<a href="-ant-message-priority/index.html"><span class="identifier">AntMessagePriority</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the Ant message priority that should correspond to the Gradle "lifecycle" log level. Any messages logged at this priority (or more critical priority) will be logged at least at lifecycle in Gradle's logger. If the Ant priority already maps to a higher Gradle log level, it will continue to be logged at that level.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setLifecycleLogLevel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.AntBuilder$setLifecycleLogLevel(kotlin.String)/logLevel">logLevel</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the Ant message priority that should correspond to the Gradle "lifecycle" log level. Any messages logged at this priority (or more critical priority) will be logged at least at lifecycle in Gradle's logger. If the Ant priority already maps to a higher Gradle log level, it will continue to be logged at that level. Acceptable values are "VERBOSE", "DEBUG", "INFO", "WARN", and "ERROR".</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,251 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>FileTree - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href=".">FileTree</a><br/>
+<br/>
+<h1>FileTree</h1>
+<code><span class="keyword">interface </span><span class="identifier">FileTree</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>
+<p>A <code>FileTree</code> represents a hierarchy of files. It extends FileCollection to add hierarchy query and manipulation methods. You typically use a <code>FileTree</code> to represent files to copy or the contents of an archive.</p>
+ 
+<p>You can obtain a <code>FileTree</code> instance using <code><a href="#">org.gradle.api.Project#fileTree(java.util.Map)</a></code>, <code><a href="#">org.gradle.api.Project#zipTree(Object)</a></code> or <code><a href="#">org.gradle.api.Project#tarTree(Object)</a></code>. </p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-as-file-tree.html">getAsFileTree</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAsFileTree</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileTree</span></code>
+<p>Returns this.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-files.html">getFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the contents of this tree as a flattened Set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="matching.html">matching</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$matching(groovy.lang.Closure((kotlin.Any)))/filterConfigClosure">filterConfigClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileTree</span></code>
+<p>
+<p>Restricts the contents of this tree to those files matching the given filter. The filtered tree is live, so that any changes to this tree are reflected in the filtered tree.</p>
+ 
+<p>The given closure is used to configure the filter. A org.gradle.api.tasks.util.PatternFilterable is passed to the closure as its delegate. Only files which match the specified include patterns will be included in the filtered tree. Any files which match the specified exclude patterns will be excluded from the filtered tree.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$matching(org.gradle.api.Action((org.gradle.api.tasks.util.PatternFilterable)))/filterConfigAction">filterConfigAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileTree</span></code>
+<p>
+<p>Restricts the contents of this tree to those files matching the given filter. The filtered tree is live, so that any changes to this tree are reflected in the filtered tree.</p>
+ 
+<p>The given action is used to configure the filter. A org.gradle.api.tasks.util.PatternFilterable is passed to the action. Only files which match the specified include patterns will be included in the filtered tree. Any files which match the specified exclude patterns will be excluded from the filtered tree.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$matching(org.gradle.api.tasks.util.PatternFilterable)/patterns">patterns</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileTree</span></code>
+<p>
+<p>Restricts the contents of this tree to those files matching the given filter. The filtered tree is live, so that any changes to this tree are reflected in the filtered tree.</p>
+ 
+<p>The given pattern set is used to configure the filter. Only files which match the specified include patterns will be included in the filtered tree. Any files which match the specified exclude patterns will be excluded from the filtered tree.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="plus.html">plus</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$plus(org.gradle.api.file.FileTree)/fileTree">fileTree</span><span class="symbol">:</span>&nbsp;<span class="identifier">FileTree</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileTree</span></code>
+<p>Returns a <code>FileTree</code> which contains the union of this tree and the given tree. The returned tree is live, so that changes to either this tree or the other source tree are reflected in the returned tree.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="visit.html">visit</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">visit</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$visit(org.gradle.api.file.FileVisitor)/visitor">visitor</span><span class="symbol">:</span>&nbsp;<a href="../-file-visitor/index.html"><span class="identifier">FileVisitor</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileTree</span></code>
+<p>Visits the files and directories in this file tree. Files are visited in depth-first prefix order, so that a directory is visited before its children.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">visit</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$visit(groovy.lang.Closure((kotlin.Any)))/visitor">visitor</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileTree</span></code>
+<p>Visits the files and directories in this file tree. Files are visited in depth-first prefix order, so that a directory is visited before its children. The file/directory to be visited is passed to the given closure as a</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">visit</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$visit(org.gradle.api.Action((org.gradle.api.file.FileVisitDetails)))/visitor">visitor</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-file-visit-details/index.html"><span class="identifier">FileVisitDetails</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileTree</span></code>
+<p>Visits the files and directories in this file tree. Files are visited in depth-first prefix order, so that a directory is visited before its children. The file/directory to be visited is passed to the given action as a</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-file-collection/add.html">add</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$add(org.gradle.api.file.FileCollection)/collection">collection</span><span class="symbol">:</span>&nbsp;<a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>
+<p>Adds another collection to this collection. This is an optional operation.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-collection/add-to-ant-builder.html">addToAntBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addToAntBuilder</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$addToAntBuilder(kotlin.Any, kotlin.String, org.gradle.api.file.FileCollection.AntType)/builder">builder</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.file.FileCollection$addToAntBuilder(kotlin.Any, kotlin.String, org.gradle.api.file.FileCollection.AntType)/nodeName">nodeName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.file.FileCollection$addToAntBuilder(kotlin.Any, kotlin.String, org.gradle.api.file.FileCollection.AntType)/type">type</span><span class="symbol">:</span>&nbsp;<a href="../-file-collection/-ant-type/index.html"><span class="identifier">AntType</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds this collection to an Ant task as a nested node. The given type determines how this collection is added: <ul> <li><code><a href="#">AntType#MatchingTask</a></code>: adds this collection to an Ant MatchingTask. The collection is converted to a set of source directories and include and exclude patterns. The source directories as added as an Ant Path with the given node name. The patterns are added using 'include' and 'exclude' nodes.</li>
+ <li><code><a href="#">AntType#FileSet</a></code>: adds this collection as zero or more Ant FileSets with the given node name.</li>
+ <li><code><a href="#">AntType#ResourceCollection</a></code>: adds this collection as zero or more Ant ResourceCollections with the given node name.</li>
+ </ul>
+ You should prefer using <code><a href="#">AntType#ResourceCollection</a></code>, if the target Ant task supports it, as this is generally the most efficient. Using the other types may involve copying the contents of this collection to a temporary directory.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addToAntBuilder</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$addToAntBuilder(kotlin.Any, kotlin.String)/builder">builder</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.file.FileCollection$addToAntBuilder(kotlin.Any, kotlin.String)/nodeName">nodeName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Adds this collection to an Ant task as a nested node. Equivalent to calling <code>addToAntBuilder(builder, nodeName,AntType.ResourceCollection)</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-collection/as-type.html">asType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">asType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$asType(java.lang.Class((kotlin.Any)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>
+<p>Converts this collection into an object of the specified type. Supported types are: <code>Collection</code>, <code>List</code>, <code>Set</code>, <code>Object[]</code>, <code>File[]</code>, <code>File</code>, and FileTree.</p>
+ 
+<p>You can call this method in your build script using the <code>as</code> operator.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-collection/contains.html">contains</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">contains</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$contains(java.io.File)/file">file</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Determines whether this collection contains the given file. Generally, this method is more efficient than calling <code>getFiles().contains(file)</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-collection/filter.html">filter</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$filter(groovy.lang.Closure((kotlin.Any)))/filterClosure">filterClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>
+<p>Restricts the contents of this collection to those files which match the given criteria. The filtered collection is live, so that it reflects any changes to this collection.</p>
+ 
+<p>The given closure is passed the File as a parameter, and should return a boolean value.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$filter(org.gradle.api.specs.Spec((java.io.File)))/filterSpec">filterSpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>
+<p>Restricts the contents of this collection to those files which match the given criteria. The filtered collection is live, so that it reflects any changes to this collection.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-collection/get-as-path.html">getAsPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAsPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the contents of this collection as a platform-specific path. This can be used, for example, in an Ant  element.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-collection/get-single-file.html">getSingleFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSingleFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the content of this collection, asserting it contains exactly one file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-collection/is-empty.html">isEmpty</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isEmpty</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if this collection is empty. Generally, calling this method is more efficient than calling <code>getFiles().isEmpty()</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-collection/minus.html">minus</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">minus</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$minus(org.gradle.api.file.FileCollection)/collection">collection</span><span class="symbol">:</span>&nbsp;<a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>
+<p>Returns a <code>FileCollection</code> which contains the difference between this collection and the given collection. The returned collection is live, and tracks changes to both source collections.</p>
+ 
+<p>You can call this method in your build script using the <code>-</code> operator.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-collection/plus.html">plus</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$plus(org.gradle.api.file.FileCollection)/collection">collection</span><span class="symbol">:</span>&nbsp;<a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>
+<p>Returns a <code>FileCollection</code> which contains the union of this collection and the given collection. The returned collection is live, and tracks changes to both source collections.</p>
+ 
+<p>You can call this method in your build script using the <code>+</code> operator.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-collection/stop-execution-if-empty.html">stopExecutionIfEmpty</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">stopExecutionIfEmpty</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Throws a StopExecutionException if this collection is empty.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-configurable-file-tree/index.html">ConfigurableFileTree</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ConfigurableFileTree</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">FileTree</span><span class="symbol">, </span><a href="../-directory-tree/index.html"><span class="identifier">DirectoryTree</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">, </span><a href="../../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<p>
+<p>A FileTree with a single base directory, which can be configured and modified.</p>
+ 
+<p>You can obtain a <code>ConfigurableFileTree</code> instance by calling <code><a href="#">org.gradle.api.Project#fileTree(java.util.Map)</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-source-directory-set/index.html">SourceDirectorySet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SourceDirectorySet</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">FileTree</span><span class="symbol">, </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">, </span><a href="../../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a><span class="symbol">, </span><a href="../../org.gradle.api/-describable/index.html"><span class="identifier">Describable</span></a></code>
+<p>
+<p>A <code>SourceDirectorySet</code> represents a set of source files composed from a set of source directories, along with associated include and exclude patterns.</p>
+ 
+<p><code>SourceDirectorySet</code> extends FileTree. The contents of the file tree represent the source files of this set, arranged in a hierarchy. The file tree is live and reflects changes to the source directories and their contents.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

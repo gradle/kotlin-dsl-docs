@@ -1,0 +1,145 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.tooling.model.eclipse - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.tooling.model.eclipse</a><br/>
+<br/>
+<h2>Package org.gradle.tooling.model.eclipse</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-access-rule/index.html">AccessRule</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">AccessRule</span></code>
+<p>Access rule associated with an Eclipse classpath entry.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-classpath-attribute/index.html">ClasspathAttribute</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ClasspathAttribute</span></code>
+<p>Optional description associated with Eclipse classpath entries.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-eclipse-build-command/index.html">EclipseBuildCommand</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">EclipseBuildCommand</span></code>
+<p>An Eclipse build command is a reference to a project builder object which automatically executes whenever a resource in the associate project changes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-eclipse-classpath-container/index.html">EclipseClasspathContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">EclipseClasspathContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-eclipse-classpath-entry/index.html"><span class="identifier">EclipseClasspathEntry</span></a></code>
+<p>Eclipse classpath entry used by third-party plugins to contribute to the project's classpath.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-eclipse-classpath-entry/index.html">EclipseClasspathEntry</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">EclipseClasspathEntry</span></code>
+<p>An element that can have classpath attributes.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-eclipse-external-dependency.html">EclipseExternalDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">EclipseExternalDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.tooling.model/-external-dependency/index.html"><span class="identifier">ExternalDependency</span></a><span class="symbol">, </span><a href="-eclipse-classpath-entry/index.html"><span class="identifier">EclipseClasspathEntry</span></a></code>
+<p>Represents an Eclipse-specific external artifact dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-eclipse-java-source-settings/index.html">EclipseJavaSourceSettings</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">EclipseJavaSourceSettings</span></code>
+<p>Describes Eclipse Java source settings for compiling and running some Java source code.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-eclipse-linked-resource/index.html">EclipseLinkedResource</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">EclipseLinkedResource</span></code>
+<p>Linked resources are files and folders that are stored in locations in the file system outside of the project's location.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-eclipse-output-location/index.html">EclipseOutputLocation</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">EclipseOutputLocation</span></code>
+<p>The output location of an Eclipse project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-eclipse-project/index.html">EclipseProject</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">EclipseProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-hierarchical-eclipse-project/index.html"><span class="identifier">HierarchicalEclipseProject</span></a></code>
+<p>The complete model of an Eclipse project. 
+<p>Note that the names of Eclipse projects are unique, and can be used as an identifier for the project.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-eclipse-project-dependency/index.html">EclipseProjectDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">EclipseProjectDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.tooling.model/-project-dependency.html"><span class="identifier">ProjectDependency</span></a><span class="symbol">, </span><a href="-eclipse-classpath-entry/index.html"><span class="identifier">EclipseClasspathEntry</span></a></code>
+<p>Represents a dependency on another Eclipse project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-eclipse-project-nature/index.html">EclipseProjectNature</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">EclipseProjectNature</span></code>
+<p>An Eclipse project nature definition.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-eclipse-source-directory/index.html">EclipseSourceDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">EclipseSourceDirectory</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.tooling.model/-source-directory/index.html"><span class="identifier">SourceDirectory</span></a><span class="symbol">, </span><a href="-eclipse-classpath-entry/index.html"><span class="identifier">EclipseClasspathEntry</span></a></code>
+<p>A source directory in an Eclipse project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-hierarchical-eclipse-project/index.html">HierarchicalEclipseProject</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">HierarchicalEclipseProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.tooling.model/-hierarchical-element/index.html"><span class="identifier">HierarchicalElement</span></a><span class="symbol">, </span><a href="../org.gradle.tooling.model/-has-gradle-project/index.html"><span class="identifier">HasGradleProject</span></a></code>
+<p>Represents the basic information about an Eclipse project.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

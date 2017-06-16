@@ -1,0 +1,45 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AccessRule - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.model.eclipse</a>&nbsp;/&nbsp;<a href=".">AccessRule</a><br/>
+<br/>
+<h1>AccessRule</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">AccessRule</span></code>
+<p>Access rule associated with an Eclipse classpath entry.</p>
+<p><strong>See Also</strong><br/>
+&lt;a href="http://help.eclipse.org/mars/topic/org.eclipse.jdt.doc.isv/reference/api/org/eclipse/jdt/core/IAccessRule.html"&gt;IAccessRule Javadoc&lt;/a&gt;</p>
+<p><strong>Since</strong><br/>
+3.0</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-kind.html">getKind</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getKind</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>Returns the encoded type of the access rule. The meaning of the values: <ul> <li>0: the rule defines accessible paths</li>
+ <li>1: the rule defines inaccessible paths</li>
+ <li>2: the rule defines discouraged paths</li>
+ </ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-pattern.html">getPattern</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPattern</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the file pattern of this access rule.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

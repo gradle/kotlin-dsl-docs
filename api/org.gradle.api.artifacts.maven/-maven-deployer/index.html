@@ -1,0 +1,127 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MavenDeployer - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.maven</a>&nbsp;/&nbsp;<a href=".">MavenDeployer</a><br/>
+<br/>
+<h1>MavenDeployer</h1>
+<code><span class="keyword">interface </span><span class="identifier">MavenDeployer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-maven-resolver/index.html"><span class="identifier">MavenResolver</span></a></code>
+<p>
+<p>A resolver that can only be used for uploading artifacts to a Maven repository. If you use this resolver for getting dependencies from a Maven repository, an exception is thrown. This resolver support all aspects of Maven deployment, including snapshot deployment and metadata.xml manipulation.</p>
+ 
+<p>You have to specify at least one repository. Otherwise, if there is only one artifact, usually there is not more to do. If there is more than one artifact you have to decide what to do about this, as a Maven POM can only deal with one artifact. There are two strategies. If you want to deploy only one artifact you have to specify a filter to select this artifact. If you want to deploy more than one artifact, you have to specify filters which select each artifact. Associated with each filter is a separate configurable POM.</p>
+ 
+<p>You can create an instance of this type via the <code><a href="../../org.gradle.api.tasks/-upload/get-repositories.html">org.gradle.api.tasks.Upload#getRepositories()</a></code> container</p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-protocol-provider-jars.html">addProtocolProviderJars</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addProtocolProviderJars</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenDeployer$addProtocolProviderJars(kotlin.collections.MutableCollection((java.io.File)))/jars">jars</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Out of the box only uploading to the filesysten and via http is supported. If other protocolls should be used, the appropriate Maven wagon jars have to be passed via this method.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-repository.html">getRepository</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRepository</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Returns the repository to be used for uploading artifacts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-snapshot-repository.html">getSnapshotRepository</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSnapshotRepository</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Returns the repository to be used for uploading snapshot artifacts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-unique-version.html">isUniqueVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isUniqueVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns whether to assign snapshots a unique version comprised of the timestamp and build number, or to use the same version each time. Defaults to true.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-repository.html">setRepository</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setRepository</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenDeployer$setRepository(kotlin.Any)/repository">repository</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the repository to be used for uploading artifacts. If <code><a href="get-snapshot-repository.html">#getSnapshotRepository()</a></code> is not set, this repository is also used for uploading snapshot artifacts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-snapshot-repository.html">setSnapshotRepository</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setSnapshotRepository</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenDeployer$setSnapshotRepository(kotlin.Any)/snapshotRepository">snapshotRepository</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the repository to be used for uploading snapshot artifacts. If this is not set, the <code><a href="get-repository.html">#getRepository()</a></code> is used for uploading snapshot artifacts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-unique-version.html">setUniqueVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setUniqueVersion</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenDeployer$setUniqueVersion(kotlin.Boolean)/uniqueVersion">uniqueVersion</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets whether to assign snapshots a unique version comprised of the timestamp and build number, or to use the same version each time. Defaults to true.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-maven-resolver/before-deployment.html">beforeDeployment</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">beforeDeployment</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenResolver$beforeDeployment(org.gradle.api.Action((org.gradle.api.artifacts.maven.MavenDeployment)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-maven-deployment/index.html"><span class="identifier">MavenDeployment</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an action to be executed immediately before a deployment to this resolver. The action is executed after all artifacts have been build, including generation of the POM. The action can modify the set of artifacts to be deployed.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">beforeDeployment</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenResolver$beforeDeployment(groovy.lang.Closure((kotlin.Any)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a closure to be executed immediately before a deployment to this resolver. The closure is passed a as a parameter. The closure is executed after all artifacts have been build, including generation of the POM. The closure can modify the set of artifacts to be deployed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-maven-resolver/get-settings.html">getSettings</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSettings</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Returns a Maven settings object. This can be used for example to figure out where the local repository is located. This property is populated on demand.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-groovy-maven-deployer.html">GroovyMavenDeployer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">GroovyMavenDeployer</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">MavenDeployer</span></code>
+<p>Adds Groovy configuration convenience methods on top of the MavenDeployer. This class provides also a builder for repository and snapshot-repository: <pre><code> mavenUploader.repository(url: 'file://repoDir') { authentication(userName: 'myName') releases(updatePolicy: 'never') snapshots(updatePolicy: 'always') } </code></pre> This call set the repository object and also returns an instance of this object. If you use 'snapshotRepository' instead of repository, the snapshot repository is build.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

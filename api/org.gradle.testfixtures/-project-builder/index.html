@@ -1,0 +1,111 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ProjectBuilder - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.testfixtures</a>&nbsp;/&nbsp;<a href=".">ProjectBuilder</a><br/>
+<br/>
+<h1>ProjectBuilder</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ProjectBuilder</span></code>
+<p>
+<p>Creates dummy instances of org.gradle.api.Project which you can use in testing custom task and plugin implementations.</p>
+ 
+<p>To create a project instance:</p>
+ <ol> <li>Create a <code>ProjectBuilder</code> instance by calling <code><a href="builder.html">#builder()</a></code>.</li>
+ <li>Optionally, configure the builder.</li>
+ <li>Call <code><a href="build.html">#build()</a></code> to create the <code>Project</code> instance.</li>
+ </ol>
+ 
+<p>You can reuse a builder to create multiple <code>Project</code> instances.</p>
+ 
+<p>The <code>ProjectBuilder</code> implementation bundled with Gradle 3.0 and 3.1 suffers from a binary compatibility issue exposed by applying plugins compiled with Gradle 2.7 and earlier. Applying those pre-compiled plugins in a ProjectBuilder context will result in a ClassNotFoundException.</p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ProjectBuilder</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>
+<p>Creates dummy instances of org.gradle.api.Project which you can use in testing custom task and plugin implementations.</p>
+ 
+<p>To create a project instance:</p>
+ <ol> <li>Create a <code>ProjectBuilder</code> instance by calling <code><a href="builder.html">#builder()</a></code>.</li>
+ <li>Optionally, configure the builder.</li>
+ <li>Call <code><a href="build.html">#build()</a></code> to create the <code>Project</code> instance.</li>
+ </ol>
+ 
+<p>You can reuse a builder to create multiple <code>Project</code> instances.</p>
+ 
+<p>The <code>ProjectBuilder</code> implementation bundled with Gradle 3.0 and 3.1 suffers from a binary compatibility issue exposed by applying plugins compiled with Gradle 2.7 and earlier. Applying those pre-compiled plugins in a ProjectBuilder context will result in a ClassNotFoundException.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="build.html">build</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">build</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a></code>
+<p>Creates the project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="builder.html">builder</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">static</span> <span class="keyword">fun </span><span class="identifier">builder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ProjectBuilder</span></code>
+<p>Creates a project builder.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="with-gradle-user-home-dir.html">withGradleUserHomeDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">withGradleUserHomeDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testfixtures.ProjectBuilder$withGradleUserHomeDir(java.io.File)/dir">dir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ProjectBuilder</span></code>
+<p>Specifies the Gradle user home for the builder. If not set, an empty directory under the project directory will be used.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="with-name.html">withName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">withName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testfixtures.ProjectBuilder$withName(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ProjectBuilder</span></code>
+<p>Specifies the name for the project</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="with-parent.html">withParent</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">withParent</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testfixtures.ProjectBuilder$withParent(org.gradle.api.Project)/parent">parent</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ProjectBuilder</span></code>
+<p>Specifies the parent project. Use it to create multi-module projects.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="with-project-dir.html">withProjectDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">withProjectDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testfixtures.ProjectBuilder$withProjectDir(java.io.File)/dir">dir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ProjectBuilder</span></code>
+<p>Specifies the project directory for the project to build.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

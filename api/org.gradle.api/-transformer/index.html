@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Transformer - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href=".">Transformer</a><br/>
+<br/>
+<h1>Transformer</h1>
+<code><span class="keyword">interface </span><span class="identifier">Transformer</span><span class="symbol">&lt;</span><span class="identifier">OUT</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">IN</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>
+<p>A <code>Transformer</code> transforms objects of type.</p>
+ 
+<p>Implementations are free to return new objects or mutate the incoming value.</p>
+</p>
+<h3>Parameters</h3>
+<a name="&lt;OUT&gt;"></a>
+<code><OUT></code> - The type the value is transformed to.<a name="&lt;IN&gt;"></a>
+<code><IN></code> - The type of the value to be transformed.
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="transform.html">transform</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">transform</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Transformer$transform(org.gradle.api.Transformer.IN)/in">in</span><span class="symbol">:</span>&nbsp;<span class="identifier">IN</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">OUT</span></code>
+<p>Transforms the given object, and returns the transformed value.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

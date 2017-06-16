@@ -1,0 +1,117 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ExtraPropertiesExtension - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href=".">ExtraPropertiesExtension</a><br/>
+<br/>
+<h1>ExtraPropertiesExtension</h1>
+<code><span class="keyword">interface </span><span class="identifier">ExtraPropertiesExtension</span></code>
+<p>Additional, ad-hoc, properties for Gradle domain objects. 
+<p> Extra properties extensions allow new properties to be added to existing domain objects. They act like maps, allowing the storage of arbitrary key/value pairs. All ExtensionAware Gradle domain objects intrinsically have an extension named “{@value #EXTENSION_NAME}” of this type. </p>
+<p> An important feature of extra properties extensions is that all of its properties are exposed for reading and writing via the ExtensionAware object that owns the extension. </p>
+<pre><code> project.ext.set("myProp", "myValue") assert project.myProp == "myValue" project.myProp = "anotherValue" assert project.myProp == "anotherValue" assert project.ext.get("myProp") == "anotherValue" </code></pre> Extra properties extension objects support Groovy property syntax. That is, a property can be read via <code>extension.«name»</code> and set via <code>extension.«name» = "value"</code>. <strong>Wherever possible, the Groovy property syntax should be preferred over the <code><a href="#">#get(String)</a></code> and <code><a href="#">#set(String, Object)</a></code> methods.</strong> <pre><code> project.ext { myprop = "a" } assert project.myprop == "a" assert project.ext.myprop == "a" project.myprop = "b" assert project.myprop == "b" assert project.ext.myprop == "b" </code></pre> You can also use the Groovy accessor syntax to get and set properties on an extra properties extension. <pre><code> project.ext["otherProp"] = "a" assert project.otherProp == "a" assert project.ext["otherProp"] == "a" </code></pre> The exception that is thrown when an attempt is made to get the value of a property that does not exist is different depending on whether the Groovy syntax is used or not. If Groovy property syntax is used, the Groovy groovy.lang.MissingPropertyException will be thrown. When the <code><a href="#">#get(String)</a></code> method is used, an UnknownPropertyException will be thrown.</p>
+<h3>Exceptions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-unknown-property-exception/index.html">UnknownPropertyException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">UnknownPropertyException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-invalid-user-data-exception/index.html"><span class="identifier">InvalidUserDataException</span></a></code>
+<p>The exception that will be thrown when an attempt is made to read a property that is not set.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-e-x-t-e-n-s-i-o-n_-n-a-m-e.html">EXTENSION_NAME</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">EXTENSION_NAME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name of this extension in all ExtensionContainer, {@value}.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get.html">get</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.ExtraPropertiesExtension$get(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Returns the value for the registered property with the given name. When using an extra properties extension from Groovy, you can also get properties via Groovy's property syntax. All of the following lines of code are equivalent. <pre><code> project.ext { foo = "bar" } assert project.ext.get("foo") == "bar" assert project.ext.foo == "bar" assert project.ext["foo"] == "bar" assert project.foo == "bar" assert project["foo"] == "bar" </code></pre> When using the first form, an UnknownPropertyException exception will be thrown if the extension does not have a property called “<code>foo</code>”. When using the second forms (i.e. Groovy notation), Groovy's groovy.lang.MissingPropertyException will be thrown instead.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-properties.html">getProperties</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProperties</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Returns all of the registered properties and their current values as a map. The returned map is detached from the extension. That is, any changes made to the map do not change the extension from which it originated. <pre><code> project.version = "1.0" assert project.hasProperty("version") assert project.ext.properties.containsKey("version") == false project.ext.foo = "bar" assert project.ext.properties.containsKey("foo") assert project.ext.properties.foo == project.ext.foo assert project.ext.properties.every { key, value -&gt; project.properties[key] == value } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="has.html">has</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">has</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.ExtraPropertiesExtension$has(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns whether or not the extension has a property registered via the given name. <pre><code> assert project.ext.has("foo") == false assert project.hasProperty("foo") == false project.ext.foo = "bar" assert project.ext.has("foo") assert project.hasProperty("foo") </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set.html">set</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">set</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.ExtraPropertiesExtension$set(kotlin.String, kotlin.Any)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.plugins.ExtraPropertiesExtension$set(kotlin.String, kotlin.Any)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Updates the value for, or creates, the registered property with the given name to the given value. When using an extra properties extension from Groovy, you can also set properties via Groovy's property syntax. All of the following lines of code are equivalent. <pre><code> project.ext.set("foo", "bar") project.ext.foo = "bar" project.ext["foo"] = "bar" // Once the property has been created via the extension, it can be changed by the owner. project.foo = "bar" project["foo"] = "bar" </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.script.lang.kotlin/org.gradle.api.plugins.-extra-properties-extension/get-value.html">getValue</a></p>
+</td>
+<td>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">ExtraPropertiesExtension</span><span class="symbol">.</span><span class="identifier">getValue</span><span class="symbol">(</span><span class="identifier" id="org.gradle.script.lang.kotlin$getValue(org.gradle.api.plugins.ExtraPropertiesExtension, kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)))/receiver">receiver</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="org.gradle.script.lang.kotlin$getValue(org.gradle.api.plugins.ExtraPropertiesExtension, kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)))/property">property</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-property/index.html"><span class="identifier">KProperty</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.script.lang.kotlin/org.gradle.api.plugins.-extra-properties-extension/invoke.html">invoke</a></p>
+</td>
+<td>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">ExtraPropertiesExtension</span><span class="symbol">.</span><span class="identifier">invoke</span><span class="symbol">(</span><span class="identifier" id="org.gradle.script.lang.kotlin$invoke(org.gradle.api.plugins.ExtraPropertiesExtension, kotlin.Function0((org.gradle.script.lang.kotlin.invoke.T)))/initialValueProvider">initialValueProvider</span><span class="symbol">:</span>&nbsp;<span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.script.lang.kotlin/-extra-property-delegate-provider/index.html"><span class="identifier">ExtraPropertyDelegateProvider</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Returns a property delegate provider that will initialize the extra property to the value provided
+by <a href="../../org.gradle.script.lang.kotlin/org.gradle.api.plugins.-extra-properties-extension/invoke.html#org.gradle.script.lang.kotlin$invoke(org.gradle.api.plugins.ExtraPropertiesExtension, kotlin.Function0((org.gradle.script.lang.kotlin.invoke.T)))/initialValueProvider">initialValueProvider</a>.</p>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">ExtraPropertiesExtension</span><span class="symbol">.</span><span class="identifier">invoke</span><span class="symbol">(</span><span class="identifier" id="org.gradle.script.lang.kotlin$invoke(org.gradle.api.plugins.ExtraPropertiesExtension, org.gradle.script.lang.kotlin.invoke.T)/initialValue">initialValue</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.script.lang.kotlin/-extra-property-delegate-provider/index.html"><span class="identifier">ExtraPropertyDelegateProvider</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Returns a property delegate provider that will initialize the extra property to the given <a href="../../org.gradle.script.lang.kotlin/org.gradle.api.plugins.-extra-properties-extension/invoke.html#org.gradle.script.lang.kotlin$invoke(org.gradle.api.plugins.ExtraPropertiesExtension, org.gradle.script.lang.kotlin.invoke.T)/initialValue">initialValue</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.script.lang.kotlin/org.gradle.api.plugins.-extra-properties-extension/set-value.html">setValue</a></p>
+</td>
+<td>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">ExtraPropertiesExtension</span><span class="symbol">.</span><span class="identifier">setValue</span><span class="symbol">(</span><span class="identifier" id="org.gradle.script.lang.kotlin$setValue(org.gradle.api.plugins.ExtraPropertiesExtension, kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)), org.gradle.script.lang.kotlin.setValue.T)/receiver">receiver</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="org.gradle.script.lang.kotlin$setValue(org.gradle.api.plugins.ExtraPropertiesExtension, kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)), org.gradle.script.lang.kotlin.setValue.T)/property">property</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-property/index.html"><span class="identifier">KProperty</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.script.lang.kotlin$setValue(org.gradle.api.plugins.ExtraPropertiesExtension, kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)), org.gradle.script.lang.kotlin.setValue.T)/value">value</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

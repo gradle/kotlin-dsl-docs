@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CompileOptions.getSourcepath - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.compile</a>&nbsp;/&nbsp;<a href="index.html">CompileOptions</a>&nbsp;/&nbsp;<a href=".">getSourcepath</a><br/>
+<br/>
+<h1>getSourcepath</h1>
+<a name="org.gradle.api.tasks.compile.CompileOptions$getSourcepath()"></a>
+<code><span class="identifier">@PathSensitive</span><span class="symbol">(</span>PathSensitivity.RELATIVE<span class="symbol">)</span> <span class="identifier">@InputFiles</span> <span class="identifier">@Optional</span> <span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSourcepath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>The source path to use for the compilation. 
+<p> The source path indicates the location of source files that <em>may</em> be compiled if necessary. It is effectively a complement to the class path, where the classes to be compiled against are in source form. It does <strong>not</strong> indicate the actual primary source being compiled. </p>
+<p> The source path feature of the Java compiler is rarely needed for modern builds that use dependency management. </p>
+<p> The default value for the source path is <code>null</code>, which indicates an <em>empty</em> source path. Note that this is different to the default value for the <code>-sourcepath</code> option for <code>javac</code>, which is to use the value specified by <code>-classpath</code>. If you wish to use any source path, it must be explicitly set.</p>
+</p>
+<p><strong>Return</strong><br/>
+the source path</p>
+<p><strong>See Also</strong><br/>
+<a href="set-sourcepath.html">#setSourcepath(FileCollection)</a></p>
+</BODY>
+</HTML>

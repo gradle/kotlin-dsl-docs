@@ -1,0 +1,82 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Project.task - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">Project</a>&nbsp;/&nbsp;<a href=".">task</a><br/>
+<br/>
+<h1>task</h1>
+<a name="org.gradle.api.Project$task(kotlin.String)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">task</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$task(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-task/index.html"><span class="identifier">Task</span></a></code>
+<p>
+<p>Creates a Task with the given name and adds it to this project. Calling this method is equivalent to calling <code><a href="#">#task(java.util.Map, String)</a></code> with an empty options map.</p>
+ 
+<p>After the task is added to the project, it is made available as a property of the project, so that you can reference the task by name in your build file. See <a href="#">here</a> for more details</p>
+ 
+<p>If a task with the given name already exists in this project, an exception is thrown.</p>
+</p>
+<h3>Parameters</h3>
+<a name="name"></a>
+<code>name</code> - The name of the task to be created
+<h3>Exceptions</h3>
+<a name="InvalidUserDataException"></a>
+<code>InvalidUserDataException</code> - If a task with the given name already exists in this project.
+<p><strong>Return</strong><br/>
+The newly created task object</p>
+<a name="org.gradle.api.Project$task(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), kotlin.String)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">task</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$task(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), kotlin.String)/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Project$task(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-task/index.html"><span class="identifier">Task</span></a></code>
+<p>
+<p>Creates a Task with the given name and adds it to this project. A map of creation options can be passed to this method to control how the task is created. The following options are available:</p>
+  OptionDescriptionDefault Value <code>{@value org.gradle.api.Task#TASK_TYPE}</code>The class of the task to create.org.gradle.api.DefaultTask <code>{@value org.gradle.api.Task#TASK_OVERWRITE}</code>Replace an existing task?<code>false</code> <code>{@value org.gradle.api.Task#TASK_DEPENDS_ON}</code>A task name or set of task names which this task depends on<code>[]</code> <code>{@value org.gradle.api.Task#TASK_ACTION}</code>A closure or Action to add to the task.<code>null</code> <code>{@value org.gradle.api.Task#TASK_DESCRIPTION}</code>A description of the task. <code>null</code> <code>{@value org.gradle.api.Task#TASK_GROUP}</code>A task group which this task belongs to. <code>null</code>  
+<p>After the task is added to the project, it is made available as a property of the project, so that you can reference the task by name in your build file. See <a href="#">here</a> for more details</p>
+ 
+<p>If a task with the given name already exists in this project and the <code>override</code> option is not set to true, an exception is thrown.</p>
+</p>
+<h3>Parameters</h3>
+<a name="args"></a>
+<code>args</code> - The task creation options.<a name="name"></a>
+<code>name</code> - The name of the task to be created
+<h3>Exceptions</h3>
+<a name="InvalidUserDataException"></a>
+<code>InvalidUserDataException</code> - If a task with the given name already exists in this project.
+<p><strong>Return</strong><br/>
+The newly created task object</p>
+<a name="org.gradle.api.Project$task(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), kotlin.String, groovy.lang.Closure((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">task</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$task(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), kotlin.String, groovy.lang.Closure((kotlin.Any)))/args">args</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Project$task(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), kotlin.String, groovy.lang.Closure((kotlin.Any)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier">@DelegatesTo</span><span class="symbol">(</span>Task<span class="symbol">, </span>1<span class="symbol">)</span> <span class="identifier" id="org.gradle.api.Project$task(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), kotlin.String, groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-task/index.html"><span class="identifier">Task</span></a></code>
+<p>
+<p>Creates a Task with the given name and adds it to this project. Before the task is returned, the given closure is executed to configure the task. A map of creation options can be passed to this method to control how the task is created. See <code><a href="#">#task(java.util.Map, String)</a></code> for the available options.</p>
+ 
+<p>After the task is added to the project, it is made available as a property of the project, so that you can reference the task by name in your build file. See <a href="#">here</a> for more details</p>
+ 
+<p>If a task with the given name already exists in this project and the <code>override</code> option is not set to true, an exception is thrown.</p>
+</p>
+<h3>Parameters</h3>
+<a name="args"></a>
+<code>args</code> - The task creation options.<a name="name"></a>
+<code>name</code> - The name of the task to be created<a name="configureClosure"></a>
+<code>configureClosure</code> - The closure to use to configure the created task.
+<h3>Exceptions</h3>
+<a name="InvalidUserDataException"></a>
+<code>InvalidUserDataException</code> - If a task with the given name already exists in this project.
+<p><strong>Return</strong><br/>
+The newly created task object</p>
+<a name="org.gradle.api.Project$task(kotlin.String, groovy.lang.Closure((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">task</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$task(kotlin.String, groovy.lang.Closure((kotlin.Any)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier">@DelegatesTo</span><span class="symbol">(</span>Task<span class="symbol">, </span>1<span class="symbol">)</span> <span class="identifier" id="org.gradle.api.Project$task(kotlin.String, groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-task/index.html"><span class="identifier">Task</span></a></code>
+<p>
+<p>Creates a Task with the given name and adds it to this project. Before the task is returned, the given closure is executed to configure the task.</p>
+  
+<p>After the task is added to the project, it is made available as a property of the project, so that you can reference the task by name in your build file. See <a href="#">here</a> for more details</p>
+</p>
+<h3>Parameters</h3>
+<a name="name"></a>
+<code>name</code> - The name of the task to be created<a name="configureClosure"></a>
+<code>configureClosure</code> - The closure to use to configure the created task.
+<h3>Exceptions</h3>
+<a name="InvalidUserDataException"></a>
+<code>InvalidUserDataException</code> - If a task with the given name already exists in this project.
+<p><strong>Return</strong><br/>
+The newly created task object</p>
+</BODY>
+</HTML>

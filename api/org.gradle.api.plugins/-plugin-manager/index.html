@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PluginManager - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href=".">PluginManager</a><br/>
+<br/>
+<h1>PluginManager</h1>
+<code><span class="identifier">@Incubating</span> <span class="identifier">@NonExtensible</span> <span class="keyword">interface </span><span class="identifier">PluginManager</span></code>
+<p>Facilitates applying plugins and determining which plugins have been applied to a PluginAware object.</p>
+<p><strong>See Also</strong><br/>
+PluginAware</p>
+<p><strong>Since</strong><br/>
+2.3</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="apply.html">apply</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginManager$apply(kotlin.String)/pluginId">pluginId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies the plugin with the given ID. Does nothing if the plugin has already been applied. 
+<p> Plugins in the <code>"org.gradle"</code> namespace can be applied directly via name. That is, the following two lines are equivalent… </p>
+<pre><code> pluginManager.apply "org.gradle.java" pluginManager.apply "java" </code></pre></p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginManager$apply(java.lang.Class((kotlin.Any)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies the given plugin. Does nothing if the plugin has already been applied. 
+<p> The given class should implement the org.gradle.api.Plugin interface, and be parameterized for a compatible type of <code>this</code>. </p>
+<p> The following two lines are equivalent… </p>
+<pre><code> pluginManager.apply org.gradle.api.plugins.JavaPlugin pluginManager.apply "org.gradle.java" </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="find-plugin.html">findPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">findPlugin</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginManager$findPlugin(kotlin.String)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-applied-plugin/index.html"><span class="identifier">AppliedPlugin</span></a></code>
+<p>Returns the information about the plugin that has been applied with the given ID, or null if no plugin has been applied with the given ID. 
+<p> Plugins in the <code>"org.gradle"</code> namespace (that is, core Gradle plugins) can be specified by either name (e.g. <code>"java"</code>) or ID <code>"org.gradle.java"</code>. All other plugins must be queried for by their full ID (e.g. <code>"org.company.some-plugin"</code>). </p>
+<p> Some Gradle plugins have not yet migrated to fully qualified plugin IDs. Such plugins can be detected with this method by simply using the unqualified ID (e.g. <code>"some-third-party-plugin"</code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="has-plugin.html">hasPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">hasPlugin</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginManager$hasPlugin(kotlin.String)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns <code>true</code> if a plugin with the given ID has already been applied, otherwise <code>false</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="with-plugin.html">withPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withPlugin</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginManager$withPlugin(kotlin.String, org.gradle.api.Action((org.gradle.api.plugins.AppliedPlugin)))/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.plugins.PluginManager$withPlugin(kotlin.String, org.gradle.api.Action((org.gradle.api.plugins.AppliedPlugin)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-applied-plugin/index.html"><span class="identifier">AppliedPlugin</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Executes the given action when the specified plugin is applied. 
+<p> If a plugin with the specified ID has already been applied, the supplied action will be executed immediately. Otherwise, the action will executed immediately after a plugin with the specified ID is applied. </p>
+<p> The given action is always executed after the plugin has been applied.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

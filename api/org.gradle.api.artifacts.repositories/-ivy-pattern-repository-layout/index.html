@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>IvyPatternRepositoryLayout - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.repositories</a>&nbsp;/&nbsp;<a href=".">IvyPatternRepositoryLayout</a><br/>
+<br/>
+<h1>IvyPatternRepositoryLayout</h1>
+<code><span class="keyword">interface </span><span class="identifier">IvyPatternRepositoryLayout</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-repository-layout.html"><span class="identifier">RepositoryLayout</span></a></code>
+<p>A repository layout that uses user-supplied patterns. Each pattern will be appended to the base URI for the repository. At least one artifact pattern must be specified. If no Ivy patterns are specified, then the artifact patterns will be used. Optionally supports a Maven style layout for the 'organisation' part, replacing any dots with forward slashes. For examples see the reference for <code><a href="#">org.gradle.api.artifacts.repositories.IvyArtifactRepository#layout(String, org.gradle.api.Action)</a></code>.</p>
+<p><strong>Since</strong><br/>
+2.3 (feature was already present in Groovy DSL, this type introduced in 2.3)</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="artifact.html">artifact</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">artifact</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.IvyPatternRepositoryLayout$artifact(kotlin.String)/pattern">pattern</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an Ivy artifact pattern to define where artifacts are located in this repository.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-m2-compatible.html">getM2Compatible</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getM2Compatible</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Tells whether a Maven style layout is to be used for the 'organisation' part, replacing any dots with forward slashes. Defaults to <code>false</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="ivy.html">ivy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">ivy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.IvyPatternRepositoryLayout$ivy(kotlin.String)/pattern">pattern</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an Ivy pattern to define where ivy files are located in this repository.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-m2compatible.html">setM2compatible</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setM2compatible</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.IvyPatternRepositoryLayout$setM2compatible(kotlin.Boolean)/m2compatible">m2compatible</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets whether a Maven style layout is to be used for the 'organisation' part, replacing any dots with forward slashes. Defaults to <code>false</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

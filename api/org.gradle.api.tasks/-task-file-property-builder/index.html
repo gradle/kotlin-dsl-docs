@@ -1,0 +1,69 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TaskFilePropertyBuilder - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks</a>&nbsp;/&nbsp;<a href=".">TaskFilePropertyBuilder</a><br/>
+<br/>
+<h1>TaskFilePropertyBuilder</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">TaskFilePropertyBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-task-property-builder/index.html"><span class="identifier">TaskPropertyBuilder</span></a></code>
+<p>Describes a property of a task that contains zero or more files.</p>
+<p><strong>Since</strong><br/>
+3.1</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="with-path-sensitivity.html">withPathSensitivity</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withPathSensitivity</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.TaskFilePropertyBuilder$withPathSensitivity(org.gradle.api.tasks.PathSensitivity)/sensitivity">sensitivity</span><span class="symbol">:</span>&nbsp;<a href="../-path-sensitivity/index.html"><span class="identifier">PathSensitivity</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TaskFilePropertyBuilder</span></code>
+<p>Sets which part of the path of files should be considered during up-to-date checks.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-task-property-builder/with-property-name.html">withPropertyName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withPropertyName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.TaskPropertyBuilder$withPropertyName(kotlin.String)/propertyName">propertyName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-task-property-builder/index.html"><span class="identifier">TaskPropertyBuilder</span></a></code>
+<p>Sets the name for this property. The name must be a valid Java identifier, or a series of valid Java identifiers separated with dots ('.'). 
+<p>If the method is not called, or if it is called with <code>null</code>, a name will be assigned to the property automatically.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-task-input-file-property-builder/index.html">TaskInputFilePropertyBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskInputFilePropertyBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">TaskFilePropertyBuilder</span><span class="symbol">, </span><a href="../-task-inputs/index.html"><span class="identifier">TaskInputs</span></a></code>
+<p>Describes an input property of a task that contains zero or more files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-task-output-file-property-builder/index.html">TaskOutputFilePropertyBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskOutputFilePropertyBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">TaskFilePropertyBuilder</span><span class="symbol">, </span><a href="../-task-outputs/index.html"><span class="identifier">TaskOutputs</span></a></code>
+<p>Describes an output property of a task that contains zero or more files.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

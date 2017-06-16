@@ -1,0 +1,316 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>FindBugsExtension - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins.quality</a>&nbsp;/&nbsp;<a href=".">FindBugsExtension</a><br/>
+<br/>
+<h1>FindBugsExtension</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">FindBugsExtension</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-code-quality-extension/index.html"><span class="identifier">CodeQualityExtension</span></a></code>
+<p>Configuration options for the FindBugs plugin. All options have sensible defaults. See the <a href="#">FindBugs Manual</a> for additional information on these options. 
+<p>Below is a full configuration example. Since all properties have sensible defaults, typically only selected properties will be configured. </p>
+<pre><code> apply plugin: "java" apply plugin: "findbugs" findbugs { toolVersion = "2.0.1" sourceSets = [sourceSets.main] ignoreFailures = true reportsDir = file("$project.buildDir/findbugsReports") effort = "max" reportLevel = "high" visitors = ["FindSqlInjection", "SwitchFallthrough"] omitVisitors = ["FindNonShortCircuit"] includeFilter = file("$rootProject.projectDir/config/findbugs/includeFilter.xml") excludeFilter = file("$rootProject.projectDir/config/findbugs/excludeFilter.xml") excludeBugsFilter = file("$rootProject.projectDir/config/findbugs/excludeBugsFilter.xml") } </code></pre></p>
+<p><strong>See Also</strong><br/>
+FindBugsPlugin</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">FindBugsExtension</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.FindBugsExtension$<init>(org.gradle.api.Project)/project">project</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-effort.html">getEffort</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getEffort</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The analysis effort level. The value specified should be one of <code>min</code>, <code>default</code>, or <code>max</code>. Higher levels increase precision and find more bugs at the expense of running time and memory consumption.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-exclude-bugs-filter.html">getExcludeBugsFilter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getExcludeBugsFilter</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The filename of a filter specifying baseline bugs to exclude from being reported.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-exclude-bugs-filter-config.html">getExcludeBugsFilterConfig</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getExcludeBugsFilterConfig</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.resources/-text-resource/index.html"><span class="identifier">TextResource</span></a></code>
+<p>A filter specifying baseline bugs to exclude from being reported.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-exclude-filter.html">getExcludeFilter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getExcludeFilter</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The filename of a filter specifying bugs to exclude from being reported.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-exclude-filter-config.html">getExcludeFilterConfig</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getExcludeFilterConfig</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.resources/-text-resource/index.html"><span class="identifier">TextResource</span></a></code>
+<p>A filter specifying bugs to exclude from being reported. Replaces the <code>excludeFilter</code> property.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-extra-args.html">getExtraArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getExtraArgs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Any additional arguments (not covered here more explicitly like <code>effort</code>) to be passed along to FindBugs. 
+<p> Extra arguments are passed to FindBugs after the arguments Gradle understands (like <code>effort</code> but before the list of classes to analyze. This should only be used for arguments that cannot be provided by Gradle directly. Gradle does not try to interpret or validate the arguments before passing them to FindBugs. </p>
+<p> See the <a href="#">FindBugs TextUICommandLine source</a> for available options.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-include-filter.html">getIncludeFilter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getIncludeFilter</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The filename of a filter specifying which bugs are reported.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-include-filter-config.html">getIncludeFilterConfig</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getIncludeFilterConfig</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.resources/-text-resource/index.html"><span class="identifier">TextResource</span></a></code>
+<p>A filter specifying which bugs are reported. Replaces the <code>includeFilter</code> property.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-omit-visitors.html">getOmitVisitors</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOmitVisitors</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Similar to <code>visitors</code> except that it specifies bug detectors which should not be run. By default, no visitors are omitted.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-report-level.html">getReportLevel</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getReportLevel</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The priority threshold for reporting bugs. If set to <code>low</code>, all bugs are reported. If set to <code>medium</code> (the default), medium and high priority bugs are reported. If set to <code>high</code>, only high priority bugs are reported.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-visitors.html">getVisitors</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getVisitors</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The bug detectors which should be run. The bug detectors are specified by their class names, without any package qualification. By default, all detectors which are not disabled by default are run.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-effort.html">setEffort</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setEffort</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.FindBugsExtension$setEffort(kotlin.String)/effort">effort</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The analysis effort level. The value specified should be one of <code>min</code>, <code>default</code>, or <code>max</code>. Higher levels increase precision and find more bugs at the expense of running time and memory consumption.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-exclude-bugs-filter.html">setExcludeBugsFilter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExcludeBugsFilter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.FindBugsExtension$setExcludeBugsFilter(java.io.File)/filter">filter</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The filename of a filter specifying baseline bugs to exclude from being reported.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-exclude-bugs-filter-config.html">setExcludeBugsFilterConfig</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExcludeBugsFilterConfig</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.FindBugsExtension$setExcludeBugsFilterConfig(org.gradle.api.resources.TextResource)/excludeBugsFilterConfig">excludeBugsFilterConfig</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.resources/-text-resource/index.html"><span class="identifier">TextResource</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>A filter specifying baseline bugs to exclude from being reported.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-exclude-filter.html">setExcludeFilter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExcludeFilter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.FindBugsExtension$setExcludeFilter(java.io.File)/filter">filter</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The filename of a filter specifying bugs to exclude from being reported.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-exclude-filter-config.html">setExcludeFilterConfig</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExcludeFilterConfig</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.FindBugsExtension$setExcludeFilterConfig(org.gradle.api.resources.TextResource)/excludeFilterConfig">excludeFilterConfig</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.resources/-text-resource/index.html"><span class="identifier">TextResource</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>A filter specifying bugs to exclude from being reported. Replaces the <code>excludeFilter</code> property.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-extra-args.html">setExtraArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExtraArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.FindBugsExtension$setExtraArgs(kotlin.collections.MutableCollection((kotlin.String)))/extraArgs">extraArgs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Any additional arguments (not covered here more explicitly like <code>effort</code>) to be passed along to FindBugs. 
+<p> Extra arguments are passed to FindBugs after the arguments Gradle understands (like <code>effort</code> but before the list of classes to analyze. This should only be used for arguments that cannot be provided by Gradle directly. Gradle does not try to interpret or validate the arguments before passing them to FindBugs. </p>
+<p> See the <a href="#">FindBugs TextUICommandLine source</a> for available options.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-include-filter.html">setIncludeFilter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setIncludeFilter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.FindBugsExtension$setIncludeFilter(java.io.File)/filter">filter</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The filename of a filter specifying which bugs are reported.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-include-filter-config.html">setIncludeFilterConfig</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setIncludeFilterConfig</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.FindBugsExtension$setIncludeFilterConfig(org.gradle.api.resources.TextResource)/includeFilterConfig">includeFilterConfig</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.resources/-text-resource/index.html"><span class="identifier">TextResource</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>A filter specifying which bugs are reported. Replaces the <code>includeFilter</code> property.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-omit-visitors.html">setOmitVisitors</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOmitVisitors</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.FindBugsExtension$setOmitVisitors(kotlin.collections.MutableCollection((kotlin.String)))/omitVisitors">omitVisitors</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Similar to <code>visitors</code> except that it specifies bug detectors which should not be run. By default, no visitors are omitted.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-report-level.html">setReportLevel</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setReportLevel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.FindBugsExtension$setReportLevel(kotlin.String)/reportLevel">reportLevel</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The priority threshold for reporting bugs. If set to <code>low</code>, all bugs are reported. If set to <code>medium</code> (the default), medium and high priority bugs are reported. If set to <code>high</code>, only high priority bugs are reported.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-visitors.html">setVisitors</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setVisitors</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.FindBugsExtension$setVisitors(kotlin.collections.MutableCollection((kotlin.String)))/visitors">visitors</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The bug detectors which should be run. The bug detectors are specified by their class names, without any package qualification. By default, all detectors which are not disabled by default are run.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/get-reports-dir.html">getReportsDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getReportsDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The directory where reports will be generated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/get-source-sets.html">getSourceSets</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSourceSets</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.tasks/-source-set/index.html"><span class="identifier">SourceSet</span></a><span class="symbol">&gt;</span></code>
+<p>The source sets to be analyzed as part of the check and build tasks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/get-tool-version.html">getToolVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getToolVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The version of the code quality tool to be used.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/is-ignore-failures.html">isIgnoreFailures</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isIgnoreFailures</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether to allow the build to continue if there are warnings. Example: ignoreFailures = true</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/set-ignore-failures.html">setIgnoreFailures</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setIgnoreFailures</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeQualityExtension$setIgnoreFailures(kotlin.Boolean)/ignoreFailures">ignoreFailures</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Whether to allow the build to continue if there are warnings. Example: ignoreFailures = true</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/set-reports-dir.html">setReportsDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setReportsDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeQualityExtension$setReportsDir(java.io.File)/reportsDir">reportsDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The directory where reports will be generated.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/set-source-sets.html">setSourceSets</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSourceSets</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeQualityExtension$setSourceSets(kotlin.collections.MutableCollection((org.gradle.api.tasks.SourceSet)))/sourceSets">sourceSets</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.tasks/-source-set/index.html"><span class="identifier">SourceSet</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The source sets to be analyzed as part of the check and build tasks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-code-quality-extension/set-tool-version.html">setToolVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setToolVersion</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeQualityExtension$setToolVersion(kotlin.String)/toolVersion">toolVersion</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The version of the code quality tool to be used.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

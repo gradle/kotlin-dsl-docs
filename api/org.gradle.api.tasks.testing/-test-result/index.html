@@ -1,0 +1,114 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TestResult - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.testing</a>&nbsp;/&nbsp;<a href=".">TestResult</a><br/>
+<br/>
+<h1>TestResult</h1>
+<code><span class="keyword">interface </span><span class="identifier">TestResult</span></code>
+<p>Describes a test result.</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-result-type/index.html">ResultType</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">ResultType</span></code>
+<p>The final status of a test.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-end-time.html">getEndTime</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getEndTime</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code>
+<p>Returns the time when this test completed execution.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-exception.html">getException</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getException</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a></code>
+<p>If the test failed with an exception, this will be the exception. Some test frameworks do not fail without an exception (JUnit), so in those cases this method will never return null.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-exceptions.html">getExceptions</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExceptions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-throwable/index.html"><span class="identifier">Throwable</span></a><span class="symbol">&gt;</span></code>
+<p>If the test failed with any exceptions, this will contain the exceptions. Some test frameworks do not fail without an exception (JUnit), so in those cases this method will never return an empty list.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-failed-test-count.html">getFailedTestCount</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFailedTestCount</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code>
+<p>Returns the number of failed atomic tests executed for this test.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-result-type.html">getResultType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getResultType</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-result-type/index.html"><span class="identifier">ResultType</span></a></code>
+<p>Returns the type of result. Generally one wants it to be SUCCESS!</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-skipped-test-count.html">getSkippedTestCount</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSkippedTestCount</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code>
+<p>Returns the number of skipped atomic tests executed for this test.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-start-time.html">getStartTime</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getStartTime</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code>
+<p>Returns the time when this test started execution.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-successful-test-count.html">getSuccessfulTestCount</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSuccessfulTestCount</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code>
+<p>Returns the number of successful atomic tests executed for this test.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-test-count.html">getTestCount</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTestCount</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code>
+<p>Returns the total number of atomic tests executed for this test. This will return 1 if this test is itself an atomic test.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

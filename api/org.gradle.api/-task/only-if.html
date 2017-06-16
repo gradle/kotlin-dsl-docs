@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Task.onlyIf - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">Task</a>&nbsp;/&nbsp;<a href=".">onlyIf</a><br/>
+<br/>
+<h1>onlyIf</h1>
+<a name="org.gradle.api.Task$onlyIf(groovy.lang.Closure((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">onlyIf</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$onlyIf(groovy.lang.Closure((kotlin.Any)))/onlyIfClosure">onlyIfClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Execute the task only if the given closure returns true. The closure will be evaluated at task execution time, not during configuration. The closure will be passed a single parameter, this task. If the closure returns false, the task will be skipped.</p>
+ 
+<p>You may add multiple such predicates. The task is skipped if any of the predicates return false.</p>
+ 
+<p>Typical usage:<code>myTask.onlyIf{ dependsOnTaskDidWork() } </code></p>
+</p>
+<h3>Parameters</h3>
+<a name="onlyIfClosure"></a>
+<code>onlyIfClosure</code> - code to execute to determine if task should be run<a name="org.gradle.api.Task$onlyIf(org.gradle.api.specs.Spec((org.gradle.api.Task)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">onlyIf</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$onlyIf(org.gradle.api.specs.Spec((org.gradle.api.Task)))/onlyIfSpec">onlyIfSpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Execute the task only if the given spec is satisfied. The spec will be evaluated at task execution time, not during configuration. If the Spec is not satisfied, the task will be skipped.</p>
+ 
+<p>You may add multiple such predicates. The task is skipped if any of the predicates return false.</p>
+ 
+<p>Typical usage (from Java):</p>
+ <pre><code>myTask.onlyIf(new Spec&lt;Task&gt;() { boolean isSatisfiedBy(Task task) { return task.dependsOnTaskDidWork(); } }); </code></pre></p>
+<h3>Parameters</h3>
+<a name="onlyIfSpec"></a>
+<code>onlyIfSpec</code> - specifies if a task should be run
+</BODY>
+</HTML>

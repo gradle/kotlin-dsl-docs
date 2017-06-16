@@ -1,0 +1,19 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Gradle.getGradleHomeDir - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.invocation</a>&nbsp;/&nbsp;<a href="index.html">Gradle</a>&nbsp;/&nbsp;<a href=".">getGradleHomeDir</a><br/>
+<br/>
+<h1>getGradleHomeDir</h1>
+<a name="org.gradle.api.invocation.Gradle$getGradleHomeDir()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGradleHomeDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the Gradle home directory, if any. This directory is the directory containing the Gradle distribution executing this build. 
+<p> When using the “Gradle Daemon”, this may not be the same Gradle distribution that the build was started with. If an existing daemon process is running that is deemed compatible (e.g. has the desired JVM characteristics) then this daemon may be used instead of starting a new process and it may have been started from a different “gradle home”. However, it is guaranteed to be the same version of Gradle. For more information on the Gradle Daemon, please consult <a href="#">the user guide</a>.</p>
+</p>
+<p><strong>Return</strong><br/>
+The home directory. May return null.</p>
+</BODY>
+</HTML>

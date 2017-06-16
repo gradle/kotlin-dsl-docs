@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Manifest.attributes - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.java.archives</a>&nbsp;/&nbsp;<a href="index.html">Manifest</a>&nbsp;/&nbsp;<a href=".">attributes</a><br/>
+<br/>
+<h1>attributes</h1>
+<a name="org.gradle.api.java.archives.Manifest$attributes(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">attributes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.java.archives.Manifest$attributes(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/attributes">attributes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">Manifest</span></a></code>
+<p>Adds content to the main attributes of the manifest.</p>
+<h3>Parameters</h3>
+<a name="attributes"></a>
+<code>attributes</code> - The values to add to the main attributes. The values can be any object. For evaluating the value objects their <code><a href="#">Object#toString()</a></code> method is used. This is done lazily either before writing or when <code><a href="get-effective-manifest.html">#getEffectiveManifest()</a></code> is called.
+<h3>Exceptions</h3>
+<a name="ManifestException"></a>
+<code>ManifestException</code> - If a key is invalid according to the manifest spec or if a key or value is null.
+<p><strong>Return</strong><br/>
+this</p>
+<a name="org.gradle.api.java.archives.Manifest$attributes(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), kotlin.String)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">attributes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.java.archives.Manifest$attributes(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), kotlin.String)/attributes">attributes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.java.archives.Manifest$attributes(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), kotlin.String)/sectionName">sectionName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">Manifest</span></a></code>
+<p>Adds content to the given section of the manifest.</p>
+<h3>Parameters</h3>
+<a name="attributes"></a>
+<code>attributes</code> - The values to add to the section. The values can be any object. For evaluating the value objects their <code><a href="#">Object#toString()</a></code> method is used. This is done lazily either before writing or when <code><a href="get-effective-manifest.html">#getEffectiveManifest()</a></code> is called.<a name="sectionName"></a>
+<code>sectionName</code> - The name of the section
+<h3>Exceptions</h3>
+<a name="ManifestException"></a>
+<code>ManifestException</code> - If a key is invalid according to the manifest spec or if a key or value is null.
+<p><strong>Return</strong><br/>
+this</p>
+</BODY>
+</HTML>

@@ -1,0 +1,140 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>FileTreeElement - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href=".">FileTreeElement</a><br/>
+<br/>
+<h1>FileTreeElement</h1>
+<code><span class="keyword">interface </span><span class="identifier">FileTreeElement</span></code>
+<p>Information about a file in a FileTree.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="copy-to.html">copyTo</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copyTo</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTreeElement$copyTo(java.io.OutputStream)/output">output</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Copies the content of this file to an output stream. Generally, calling this method is more performant than calling <code>new FileInputStream(getFile())</code>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copyTo</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTreeElement$copyTo(java.io.File)/target">target</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Copies this file to the given target file. Does not copy the file if the target is already a copy of this file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-file.html">getFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the file being visited.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-last-modified.html">getLastModified</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLastModified</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code>
+<p>Returns the last modified time of this file at the time of file traversal.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-mode.html">getMode</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getMode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>Returns the Unix permissions of this file, e.g. <code>0644</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the base name of this file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-path.html">getPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the path of this file, relative to the root of the containing file tree. Always uses '/' as the hierarchy separator, regardless of platform file separator. Same as calling <code>getRelativePath().getPathString()</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-relative-path.html">getRelativePath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRelativePath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-relative-path/index.html"><span class="identifier">RelativePath</span></a></code>
+<p>Returns the path of this file, relative to the root of the containing file tree.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-size.html">getSize</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code>
+<p>Returns the size of this file at the time of file traversal.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-directory.html">isDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isDirectory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if this element is a directory, or false if this element is a regular file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="open.html">open</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">open</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a></code>
+<p>Opens this file as an input stream. Generally, calling this method is more performant than calling <code>new FileInputStream(getFile())</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-file-copy-details/index.html">FileCopyDetails</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">FileCopyDetails</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">FileTreeElement</span><span class="symbol">, </span><a href="../-content-filterable/index.html"><span class="identifier">ContentFilterable</span></a></code>
+<p>
+<p>Provides details about a file or directory about to be copied, and allows some aspects of the destination file to be modified.</p>
+ 
+<p>Using this interface, you can change the destination path of the file, filter the content of the file, or exclude the file from the result entirely.</p>
+ 
+<p>Access to the source file itself after any filters have been added is not a supported operation. </p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-file-visit-details/index.html">FileVisitDetails</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">FileVisitDetails</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">FileTreeElement</span></code>
+<p>Provides access to details about a file or directory being visited by a FileVisitor.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ModuleDependency.artifact - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="index.html">ModuleDependency</a>&nbsp;/&nbsp;<a href=".">artifact</a><br/>
+<br/>
+<h1>artifact</h1>
+<a name="org.gradle.api.artifacts.ModuleDependency$artifact(groovy.lang.Closure((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">artifact</span><span class="symbol">(</span><span class="identifier">@DelegatesTo</span><span class="symbol">(</span>DependencyArtifact<span class="symbol">, </span>1<span class="symbol">)</span> <span class="identifier" id="org.gradle.api.artifacts.ModuleDependency$artifact(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-dependency-artifact/index.html"><span class="identifier">DependencyArtifact</span></a></code>
+<p>
+<p>Adds an artifact to this dependency. The given closure is passed a instance, which it can configure.</p>
+ 
+<p>If no artifact is added to a dependency, an implicit default artifact is used. This default artifact has the same name as the module and its type and extension is <em>jar</em>. If at least one artifact is explicitly added, the implicit default artifact won't be used any longer.</p>
+</p>
+<p><strong>Return</strong><br/>
+this</p>
+<a name="org.gradle.api.artifacts.ModuleDependency$artifact(org.gradle.api.Action((org.gradle.api.artifacts.DependencyArtifact)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">artifact</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ModuleDependency$artifact(org.gradle.api.Action((org.gradle.api.artifacts.DependencyArtifact)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency-artifact/index.html"><span class="identifier">DependencyArtifact</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-dependency-artifact/index.html"><span class="identifier">DependencyArtifact</span></a></code>
+<p>
+<p>Adds an artifact to this dependency. The given action is passed a instance, which it can configure.</p>
+ 
+<p>If no artifact is added to a dependency, an implicit default artifact is used. This default artifact has the same name as the module and its type and extension is <em>jar</em>. If at least one artifact is explicitly added, the implicit default artifact won't be used any longer.</p>
+</p>
+<p><strong>Return</strong><br/>
+this</p>
+<p><strong>Since</strong><br/>
+3.1</p>
+</BODY>
+</HTML>

@@ -1,0 +1,74 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PlatformAwareComponentSpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.platform.base</a>&nbsp;/&nbsp;<a href=".">PlatformAwareComponentSpec</a><br/>
+<br/>
+<h1>PlatformAwareComponentSpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">PlatformAwareComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-variant-component-spec/index.html"><span class="identifier">VariantComponentSpec</span></a></code>
+<p>Defines Platform specific operations for ComponentSpecs</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="target-platform.html">targetPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">targetPlatform</span><span class="symbol">(</span><span class="identifier" id="org.gradle.platform.base.PlatformAwareComponentSpec$targetPlatform(kotlin.String)/targetPlatform">targetPlatform</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies a platform that this component should be built be for.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-variant-component-spec/get-binaries.html">getBinaries</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBinaries</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.model/-model-map/index.html"><span class="identifier">ModelMap</span></a><span class="symbol">&lt;</span><a href="../-binary-spec/index.html"><span class="identifier">BinarySpec</span></a><span class="symbol">&gt;</span></code>
+<p>The variants produced for this component spec.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm/-jvm-library-spec/index.html">JvmLibrarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">JvmLibrarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-library-spec.html"><span class="identifier">LibrarySpec</span></a><span class="symbol">, </span><a href="../../org.gradle.jvm/-jvm-component-spec.html"><span class="identifier">JvmComponentSpec</span></a><span class="symbol">, </span><span class="identifier">PlatformAwareComponentSpec</span></code>
+<p>Definition of a JVM library component that is to be built by Gradle.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.play/-play-platform-aware-component-spec/index.html">PlayPlatformAwareComponentSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PlayPlatformAwareComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">PlatformAwareComponentSpec</span></code>
+<p>Platform aware aspect of a Play Framework software component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform/-targeted-native-component/index.html">TargetedNativeComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TargetedNativeComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">PlatformAwareComponentSpec</span><span class="symbol">, </span><a href="../../org.gradle.nativeplatform/-native-component-spec/index.html"><span class="identifier">NativeComponentSpec</span></a></code>
+<p>A native component that can be configured to target certain variant dimensions. This functionality is a temporary workaround to eliminate configuration of unnecessary domain objects and tasks.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

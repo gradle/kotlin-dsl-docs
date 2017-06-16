@@ -1,0 +1,76 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TestProgressEvent - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.events.test</a>&nbsp;/&nbsp;<a href=".">TestProgressEvent</a><br/>
+<br/>
+<h1>TestProgressEvent</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">TestProgressEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.events/-progress-event/index.html"><span class="identifier">ProgressEvent</span></a></code>
+<p>Root interface for all events that signal progress while executing a test or test suite.</p>
+<p><strong>Since</strong><br/>
+2.4</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-descriptor.html">getDescriptor</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDescriptor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-test-operation-descriptor.html"><span class="identifier">TestOperationDescriptor</span></a></code>
+<p>Returns the description of the test for which progress is reported. For JVM-based tests, the descriptor is of sub-type <code>JvmTestOperationDescriptor</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.events/-progress-event/get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns a human consumable short description of the event.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.events/-progress-event/get-event-time.html">getEventTime</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getEventTime</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code>
+<p>Returns the time this event was triggered.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-test-finish-event/index.html">TestFinishEvent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TestFinishEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">TestProgressEvent</span><span class="symbol">, </span><a href="../../org.gradle.tooling.events/-finish-event/index.html"><span class="identifier">FinishEvent</span></a></code>
+<p>An event that informs about a test having finished its execution. You can query the result of the test using <code><a href="../-test-finish-event/get-result.html">#getResult()</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-test-start-event.html">TestStartEvent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TestStartEvent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">TestProgressEvent</span><span class="symbol">, </span><a href="../../org.gradle.tooling.events/-start-event.html"><span class="identifier">StartEvent</span></a></code>
+<p>An event that informs about a test having started its execution.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

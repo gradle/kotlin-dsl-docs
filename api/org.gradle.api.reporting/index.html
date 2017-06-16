@@ -1,0 +1,124 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api.reporting - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.reporting</a><br/>
+<br/>
+<h2>Package org.gradle.api.reporting</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-build-dashboard-reports/index.html">BuildDashboardReports</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BuildDashboardReports</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-report-container/index.html"><span class="identifier">ReportContainer</span></a><span class="symbol">&lt;</span><a href="-report/index.html"><span class="identifier">Report</span></a><span class="symbol">&gt;</span></code>
+<p>The reporting configuration for the GenerateBuildDashboard task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-configurable-report/index.html">ConfigurableReport</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ConfigurableReport</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-report/index.html"><span class="identifier">Report</span></a></code>
+<p>A file based report to be created with a configurable destination.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-customizable-html-report/index.html">CustomizableHtmlReport</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CustomizableHtmlReport</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-single-file-report/index.html"><span class="identifier">SingleFileReport</span></a></code>
+<p>A HTML Report whose generation can be customized with a XSLT stylesheet.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-directory-report/index.html">DirectoryReport</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DirectoryReport</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-configurable-report/index.html"><span class="identifier">ConfigurableReport</span></a></code>
+<p>A directory based report to be created.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-generate-build-dashboard/index.html">GenerateBuildDashboard</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GenerateBuildDashboard</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a><span class="symbol">, </span><a href="-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="-build-dashboard-reports/index.html"><span class="identifier">BuildDashboardReports</span></a><span class="symbol">&gt;</span></code>
+<p>Generates build dashboard report.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-report/index.html">Report</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Report</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a><span class="symbol">, </span><span class="identifier">Configurable</span></code>
+<p>A file based report to be created. 
+<p> Tasks that produce reports expose instances of this type for configuration via the Reporting interface.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-report-container/index.html">ReportContainer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ReportContainer</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-report/index.html"><span class="identifier">Report</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">Configurable</span></code>
+<p>A container of Report objects, that represent potential reports. 
+<p> Things that produce reports (typically tasks) expose a report container that contains Report objects for each possible report that they can produce. Each report object can be configured individually, including whether or not it should be produced by way of its <code><a href="-report/set-enabled.html">enabled</a></code> property. </p>
+<p> <code>ReportContainer</code> implementations are <strong>immutable</strong> in that standard collection methods such as <code>add()</code>, <code>remove()</code> and <code>clear()</code> will throw an ImmutableViolationException. However, implementations may provide new methods that allow the addition of new report object and/or the removal of existing report objects.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-reporting/index.html">Reporting</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Reporting</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-report-container/index.html"><span class="identifier">ReportContainer</span></a><span class="symbol">&lt;</span><a href="-report/index.html"><span class="identifier">Report</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>An object that provides reporting options. 
+<p> Tasks that produce reports as part of their execution expose configuration options of those reports via these methods. The <code>Reporting</code> interface is parameterized, where the parameter denotes the specific type of reporting container that is exposed. The specific type of the reporting container denotes the different types of reports available. </p>
+<p> For example, given a task such as: </p>
+ <pre><code> class MyTask implements Reporting&lt;MyReportContainer&gt; { // implementation } interface MyReportContainer extends ReportContainer&lt;Report&gt; { Report getHtml(); Report getCsv(); } </code></pre> 
+<p> The reporting aspects of such a task can be configured as such: </p>
+ <pre><code> task my(type: MyTask) { reports { html.enabled = true csv.enabled = false } } </code></pre> 
+<p> See the documentation for the specific <code>ReportContainer</code> type for the task for information on report types and options. </p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-reporting-extension/index.html">ReportingExtension</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ReportingExtension</span></code>
+<p>A project extension named "reporting" that provides basic reporting settings and utilities. 
+<p> Example usage: </p>
+<p> </p>
+<pre><code> reporting { baseDir "$buildDir/our-reports" } </code></pre> 
+<p> When implementing a task that produces reports, the location of where to generate reports should be obtained via the <code><a href="#">#file(String)</a></code> method of this extension.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-single-file-report/index.html">SingleFileReport</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SingleFileReport</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-configurable-report/index.html"><span class="identifier">ConfigurableReport</span></a></code>
+<p>A report that is a single file.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

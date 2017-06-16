@@ -1,0 +1,19 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResolutionStrategy.failOnVersionConflict - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="index.html">ResolutionStrategy</a>&nbsp;/&nbsp;<a href=".">failOnVersionConflict</a><br/>
+<br/>
+<h1>failOnVersionConflict</h1>
+<a name="org.gradle.api.artifacts.ResolutionStrategy$failOnVersionConflict()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">failOnVersionConflict</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">ResolutionStrategy</span></a></code>
+<p>In case of conflict, Gradle by default uses the newest of conflicting versions. However, you can change this behavior. Use this method to configure the resolution to fail eagerly on any version conflict, e.g. multiple different versions of the same dependency (group and name are equal) in the same Configuration. The check includes both first level and transitive dependencies. See example below: <pre><code> apply plugin: 'java' //so that there are some configurations configurations.all { resolutionStrategy.failOnVersionConflict() } </code></pre></p>
+<p><strong>Return</strong><br/>
+this resolution strategy instance</p>
+<p><strong>Since</strong><br/>
+1.0-milestone-6</p>
+</BODY>
+</HTML>

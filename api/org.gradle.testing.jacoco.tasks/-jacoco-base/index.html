@@ -1,0 +1,72 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>JacocoBase - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.testing.jacoco.tasks</a>&nbsp;/&nbsp;<a href=".">JacocoBase</a><br/>
+<br/>
+<h1>JacocoBase</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">JacocoBase</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a></code>
+<p>Base class for Jacoco tasks.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">JacocoBase</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Base class for Jacoco tasks.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-jacoco-classpath.html">getJacocoClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getJacocoClasspath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Classpath containing Jacoco classes for use by the task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-jacoco-classpath.html">setJacocoClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setJacocoClasspath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.tasks.JacocoBase$setJacocoClasspath(org.gradle.api.file.FileCollection)/jacocoClasspath">jacocoClasspath</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-jacoco-merge/index.html">JacocoMerge</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JacocoMerge</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JacocoBase</span></code>
+<p>Task to merge multiple execution data files into one.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-jacoco-report-base/index.html">JacocoReportBase</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">JacocoReportBase</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JacocoBase</span></code>
+<p>Base class for Jacoco report tasks.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

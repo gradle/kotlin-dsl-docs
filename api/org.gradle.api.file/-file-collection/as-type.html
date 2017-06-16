@@ -1,0 +1,27 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>FileCollection.asType - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href="index.html">FileCollection</a>&nbsp;/&nbsp;<a href=".">asType</a><br/>
+<br/>
+<h1>asType</h1>
+<a name="org.gradle.api.file.FileCollection$asType(java.lang.Class((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">asType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$asType(java.lang.Class((kotlin.Any)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>
+<p>Converts this collection into an object of the specified type. Supported types are: <code>Collection</code>, <code>List</code>, <code>Set</code>, <code>Object[]</code>, <code>File[]</code>, <code>File</code>, and FileTree.</p>
+ 
+<p>You can call this method in your build script using the <code>as</code> operator.</p>
+</p>
+<h3>Parameters</h3>
+<a name="type"></a>
+<code>type</code> - The type to convert to.
+<h3>Exceptions</h3>
+<a name="UnsupportedOperationException"></a>
+<code>UnsupportedOperationException</code> - When an unsupported type is specified.
+<p><strong>Return</strong><br/>
+The converted value.</p>
+</BODY>
+</HTML>

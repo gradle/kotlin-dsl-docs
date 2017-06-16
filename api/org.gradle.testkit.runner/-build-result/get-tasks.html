@@ -1,0 +1,20 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BuildResult.getTasks - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.testkit.runner</a>&nbsp;/&nbsp;<a href="index.html">BuildResult</a>&nbsp;/&nbsp;<a href=".">getTasks</a><br/>
+<br/>
+<h1>getTasks</h1>
+<a name="org.gradle.testkit.runner.BuildResult$getTasks()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTasks</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-build-task/index.html"><span class="identifier">BuildTask</span></a><span class="symbol">&gt;</span></code>
+<p>The tasks that were part of the build. 
+<p> The order of the tasks corresponds to the order in which the tasks were started. If executing a parallel enabled build, the order is not guaranteed to be deterministic. </p>
+<p> The returned list is an unmodifiable view of items. The returned list will be empty if no tasks were executed. This can occur if the build fails early, due to a build script failing to compile for example.</p>
+</p>
+<p><strong>Return</strong><br/>
+the build tasks</p>
+</BODY>
+</HTML>

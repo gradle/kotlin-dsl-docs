@@ -1,0 +1,97 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.caching - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.caching</a><br/>
+<br/>
+<h2>Package org.gradle.caching</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-build-cache-entry-reader/index.html">BuildCacheEntryReader</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BuildCacheEntryReader</span></code>
+<p>A reader for build cache entries.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-build-cache-entry-writer/index.html">BuildCacheEntryWriter</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BuildCacheEntryWriter</span></code>
+<p>Writer to serialize a build cache entry.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-build-cache-key/index.html">BuildCacheKey</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BuildCacheKey</span></code>
+<p>Cache key identifying an entry in the build cache.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-build-cache-service/index.html">BuildCacheService</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BuildCacheService</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html"><span class="identifier">Closeable</span></a></code>
+<p>Protocol interface to be implemented by a client to a build cache backend. 
+<p> Build cache implementations should report a non-fatal failure as a BuildCacheException. Non-fatal failures could include failing to retrieve a cache entry or unsuccessfully completing an upload a new cache entry. Gradle will not fail the build when catching a <code>BuildCacheException</code>, but it may disable caching for the build if too many failures occur. </p>
+ 
+<p> All other failures will be considered fatal and cause the Gradle build to fail. Fatal failures could include failing to read or write cache entries due to file permissions, authentication or corruption errors. </p>
+ 
+<p> Every build cache implementation should define a org.gradle.caching.configuration.BuildCache configuration and BuildCacheServiceFactory factory. </p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-build-cache-service-factory/index.html">BuildCacheServiceFactory</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BuildCacheServiceFactory</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.caching.configuration/-build-cache/index.html"><span class="identifier">BuildCache</span></a><span class="symbol">&gt;</span></code>
+<p>Factory interface to be provided by build cache service implementations. 
+<p> To be able to use a <code>BuildCacheService</code>, the factory that implements this interface and the configuration type (BuildCache) must be registered with the org.gradle.caching.configuration.BuildCacheConfiguration. </p>
+ 
+<p> In settings.gradle: </p>
+<pre><code> buildCache { // Register custom build cache implementation registerBuildCacheService(CustomBuildCache, CustomBuildCacheFactory) remote(CustomBuildCache) { // configure custom build cache. } } </code></pre> </p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-map-based-build-cache-service/index.html">MapBasedBuildCacheService</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">MapBasedBuildCacheService</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-build-cache-service/index.html"><span class="identifier">BuildCacheService</span></a></code>
+<p>Simple build cache implementation that delegates to a ConcurrentMap.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Exceptions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-build-cache-exception/index.html">BuildCacheException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BuildCacheException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>
+<p><code>BuildCacheException</code> is the base class of all exceptions thrown by a BuildCacheService.</p>
+ A <code>BuildCacheException</code> is considered a non-fatal failure. Gradle should still be able to complete a build even when a <code>BuildCacheException</code> is encountered.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

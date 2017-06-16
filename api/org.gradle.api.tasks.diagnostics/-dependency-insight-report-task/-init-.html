@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DependencyInsightReportTask.<init> - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.diagnostics</a>&nbsp;/&nbsp;<a href="index.html">DependencyInsightReportTask</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<br/>
+<h1>&lt;init&gt;</h1>
+<a name="org.gradle.api.tasks.diagnostics.DependencyInsightReportTask$&lt;init&gt;()"></a>
+<code><span class="identifier">DependencyInsightReportTask</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Generates a report that attempts to answer questions like: <ul> <li>Why is this dependency in the dependency graph?</li>
+ <li>Exactly which dependencies are pulling this dependency into the graph?</li>
+ <li>What is the actual version (i.e. *selected* version) of the dependency that will be used? Is it the same as what was *requested*?</li>
+ <li>Why is the *selected* version of a dependency different to the *requested*?</li>
+ </ul>
+ Use this task to get insight into a particular dependency (or dependencies) and find out what exactly happens during dependency resolution and conflict resolution. If the dependency version was forced or selected by the conflict resolution this information will be available in the report. 
+<p> While the regular dependencies report (DependencyReportTask) shows the path from the top level dependencies down through the transitive dependencies, the dependency insight report shows the path from a particular dependency to the dependencies that pulled it in. That is, it is an inverted view of the regular dependencies report. </p>
+<p> The task requires setting the dependency spec and the configuration. For more information on how to configure those please refer to docs for <code><a href="#">DependencyInsightReportTask#setDependencySpec(Object)</a></code> and <code><a href="#">DependencyInsightReportTask#setConfiguration(String)</a></code>. </p>
+<p> The task can also be configured from the command line. For more information please refer to <code><a href="#">DependencyInsightReportTask#setDependencySpec(Object)</a></code> and <code><a href="#">DependencyInsightReportTask#setConfiguration(String)</a></code></p>
+</p>
+</BODY>
+</HTML>

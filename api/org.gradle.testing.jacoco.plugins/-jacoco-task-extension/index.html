@@ -1,0 +1,284 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>JacocoTaskExtension - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.testing.jacoco.plugins</a>&nbsp;/&nbsp;<a href=".">JacocoTaskExtension</a><br/>
+<br/>
+<h1>JacocoTaskExtension</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JacocoTaskExtension</span></code>
+<p>Extension for tasks that should run with a Jacoco agent to generate coverage execution data.</p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-output/index.html">Output</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Output</span></code>
+<p>The types of output that the agent can use for execution data.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">JacocoTaskExtension</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.plugins.JacocoTaskExtension$<init>(org.gradle.api.Project, JacocoAgentJar, org.gradle.process.JavaForkOptions)/project">project</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.testing.jacoco.plugins.JacocoTaskExtension$<init>(org.gradle.api.Project, JacocoAgentJar, org.gradle.process.JavaForkOptions)/agent">agent</span><span class="symbol">:</span>&nbsp;<span class="identifier">JacocoAgentJar</span><span class="symbol">, </span><span class="identifier" id="org.gradle.testing.jacoco.plugins.JacocoTaskExtension$<init>(org.gradle.api.Project, JacocoAgentJar, org.gradle.process.JavaForkOptions)/task">task</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.process/-java-fork-options/index.html"><span class="identifier">JavaForkOptions</span></a><span class="symbol">)</span></code>
+<p>Creates a Jacoco task extension.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-address.html">getAddress</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAddress</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>IP address or hostname to use with <code><a href="#">Output#TCP_SERVER</a></code> or <code><a href="#">Output#TCP_CLIENT</a></code>. Defaults to localhost.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-as-jvm-arg.html">getAsJvmArg</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAsJvmArg</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Gets all properties in the format expected of the agent JVM argument.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-class-dump-dir.html">getClassDumpDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getClassDumpDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Path to dump all class files the agent sees are dumped to. Defaults to no dumps.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-destination-file.html">getDestinationFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDestinationFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The path for the execution data to be written to.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-exclude-class-loaders.html">getExcludeClassLoaders</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getExcludeClassLoaders</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>List of classloader names that should be excluded from analysis. Names can use wildcards (* and ?). Defaults to an empty list.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-excludes.html">getExcludes</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getExcludes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>List of class names that should be excluded from analysis. Names can use wildcard (* and ?). Defaults to an empty list.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-includes.html">getIncludes</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getIncludes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>List of class names that should be included in analysis. Names can use wildcards (* and ?). If left empty, all classes will be included. Defaults to an empty list.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-output.html">getOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOutput</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-output/index.html"><span class="identifier">Output</span></a></code>
+<p>The type of output to generate. Defaults to <code><a href="#">Output#FILE</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-port.html">getPort</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getPort</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>Port to bind to for <code><a href="#">Output#TCP_SERVER</a></code> or <code><a href="#">Output#TCP_CLIENT</a></code>. Defaults to 6300.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-session-id.html">getSessionId</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSessionId</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>An identifier for the session written to the execution data. Defaults to an auto-generated identifier.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-append.html">isAppend</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isAppend</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether or not data should be appended if the <code>destinationFile</code> already exists. Defaults to <code>true</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-dump-on-exit.html">isDumpOnExit</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isDumpOnExit</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether or not to dump the coverage data at VM shutdown. Defaults to <code>true</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-enabled.html">isEnabled</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isEnabled</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether or not the task should generate execution data. Defaults to <code>true</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-include-no-location-classes.html">isIncludeNoLocationClasses</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isIncludeNoLocationClasses</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether or not classes without source location should be instrumented. Defaults to <code>false</code>. This property is only taken into account if the used JaCoCo version supports this option (JaCoCo version &gt;= 0.7.6)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-jmx.html">isJmx</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isJmx</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Whether or not to expose functionality via JMX under <code>org.jacoco:type=Runtime</code>. Defaults to <code>false</code>. The configuration of the jmx property is only taken into account if the used JaCoCo version supports this option (JaCoCo version &gt;= 0.6.2)</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-address.html">setAddress</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setAddress</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.plugins.JacocoTaskExtension$setAddress(kotlin.String)/address">address</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-append.html">setAppend</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setAppend</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.plugins.JacocoTaskExtension$setAppend(kotlin.Boolean)/append">append</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-class-dump-dir.html">setClassDumpDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setClassDumpDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.plugins.JacocoTaskExtension$setClassDumpDir(java.io.File)/classDumpDir">classDumpDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets path to dump all class files the agent sees are dumped to. Defaults to no dumps.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-destination-file.html">setDestinationFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDestinationFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.plugins.JacocoTaskExtension$setDestinationFile(org.gradle.api.provider.Provider((java.io.File)))/destinationFile">destinationFile</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the provider for calculating the destination file.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDestinationFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.plugins.JacocoTaskExtension$setDestinationFile(java.io.File)/destinationFile">destinationFile</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-dump-on-exit.html">setDumpOnExit</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDumpOnExit</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.plugins.JacocoTaskExtension$setDumpOnExit(kotlin.Boolean)/dumpOnExit">dumpOnExit</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-enabled.html">setEnabled</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setEnabled</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.plugins.JacocoTaskExtension$setEnabled(kotlin.Boolean)/enabled">enabled</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-exclude-class-loaders.html">setExcludeClassLoaders</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExcludeClassLoaders</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.plugins.JacocoTaskExtension$setExcludeClassLoaders(kotlin.collections.MutableList((kotlin.String)))/excludeClassLoaders">excludeClassLoaders</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-excludes.html">setExcludes</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExcludes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.plugins.JacocoTaskExtension$setExcludes(kotlin.collections.MutableList((kotlin.String)))/excludes">excludes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-include-no-location-classes.html">setIncludeNoLocationClasses</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setIncludeNoLocationClasses</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.plugins.JacocoTaskExtension$setIncludeNoLocationClasses(kotlin.Boolean)/includeNoLocationClasses">includeNoLocationClasses</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-includes.html">setIncludes</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setIncludes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.plugins.JacocoTaskExtension$setIncludes(kotlin.collections.MutableList((kotlin.String)))/includes">includes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-jmx.html">setJmx</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setJmx</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.plugins.JacocoTaskExtension$setJmx(kotlin.Boolean)/jmx">jmx</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-output.html">setOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOutput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.plugins.JacocoTaskExtension$setOutput(org.gradle.testing.jacoco.plugins.JacocoTaskExtension.Output)/output">output</span><span class="symbol">:</span>&nbsp;<a href="-output/index.html"><span class="identifier">Output</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-port.html">setPort</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setPort</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.plugins.JacocoTaskExtension$setPort(kotlin.Int)/port">port</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-session-id.html">setSessionId</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSessionId</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testing.jacoco.plugins.JacocoTaskExtension$setSessionId(kotlin.String)/sessionId">sessionId</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

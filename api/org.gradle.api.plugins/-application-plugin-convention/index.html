@@ -1,0 +1,116 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ApplicationPluginConvention - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href=".">ApplicationPluginConvention</a><br/>
+<br/>
+<h1>ApplicationPluginConvention</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ApplicationPluginConvention</span></code>
+<p>
+<p>The Convention used for configuring the ApplicationPlugin.</p>
+</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ApplicationPluginConvention</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.ApplicationPluginConvention$<init>(org.gradle.api.Project)/project">project</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-application-default-jvm-args.html">getApplicationDefaultJvmArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getApplicationDefaultJvmArgs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Array of string arguments to pass to the JVM when running the application</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-application-distribution.html">getApplicationDistribution</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getApplicationDistribution</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a></code>
+<p>
+<p>The specification of the contents of the distribution.</p>
+ 
+<p> Use this org.gradle.api.file.CopySpec to include extra files/resource in the application distribution. </p>
+<pre><code> apply plugin: 'application' applicationDistribution.from("some/dir") { include "*.txt" } </code></pre> 
+<p> Note that the application plugin pre configures this spec to; include the contents of "<code>src/dist</code>", copy the application start scripts into the "<code>bin</code>" directory, and copy the built jar and its dependencies into the "<code>lib</code>" directory.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-application-name.html">getApplicationName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getApplicationName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name of the application.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-main-class-name.html">getMainClassName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMainClassName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The fully qualified name of the application's main class.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project.html">getProject</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">getProject</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-application-default-jvm-args.html">setApplicationDefaultJvmArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setApplicationDefaultJvmArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.ApplicationPluginConvention$setApplicationDefaultJvmArgs(kotlin.collections.MutableIterable((kotlin.String)))/applicationDefaultJvmArgs">applicationDefaultJvmArgs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Array of string arguments to pass to the JVM when running the application</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-application-distribution.html">setApplicationDistribution</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setApplicationDistribution</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.ApplicationPluginConvention$setApplicationDistribution(org.gradle.api.file.CopySpec)/applicationDistribution">applicationDistribution</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-application-name.html">setApplicationName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setApplicationName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.ApplicationPluginConvention$setApplicationName(kotlin.String)/applicationName">applicationName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The name of the application.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-main-class-name.html">setMainClassName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMainClassName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.ApplicationPluginConvention$setMainClassName(kotlin.String)/mainClassName">mainClassName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The fully qualified name of the application's main class.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

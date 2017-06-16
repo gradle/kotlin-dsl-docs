@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CopySourceSpec.from - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href="index.html">CopySourceSpec</a>&nbsp;/&nbsp;<a href=".">from</a><br/>
+<br/>
+<h1>from</h1>
+<a name="org.gradle.api.file.CopySourceSpec$from(kotlin.Array((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.file.CopySourceSpec$from(kotlin.Array((kotlin.Any)))/sourcePaths">sourcePaths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">CopySourceSpec</span></a></code>
+<p>Specifies source files or directories for a copy. The given paths are evaluated as per <code><a href="#"> </a></code>.</p>
+<h3>Parameters</h3>
+<a name="sourcePaths"></a>
+<code>sourcePaths</code> - Paths to source files for the copy<a name="org.gradle.api.file.CopySourceSpec$from(kotlin.Any, groovy.lang.Closure((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.CopySourceSpec$from(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/sourcePath">sourcePath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.file.CopySourceSpec$from(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">CopySourceSpec</span></a></code>
+<p>Specifies the source files or directories for a copy and creates a child <code>CopySourceSpec</code>. The given source path is evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code> .</p>
+<h3>Parameters</h3>
+<a name="sourcePath"></a>
+<code>sourcePath</code> - Path to source for the copy<a name="configureClosure"></a>
+<code>configureClosure</code> - closure for configuring the child CopySourceSpec<a name="org.gradle.api.file.CopySourceSpec$from(kotlin.Any, org.gradle.api.Action((org.gradle.api.file.CopySpec)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.CopySourceSpec$from(kotlin.Any, org.gradle.api.Action((org.gradle.api.file.CopySpec)))/sourcePath">sourcePath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.file.CopySourceSpec$from(kotlin.Any, org.gradle.api.Action((org.gradle.api.file.CopySpec)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-copy-spec/index.html"><span class="identifier">CopySpec</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">CopySourceSpec</span></a></code>
+<p>Specifies the source files or directories for a copy and creates a child <code>CopySpec</code>. The given source path is evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code> .</p>
+<h3>Parameters</h3>
+<a name="sourcePath"></a>
+<code>sourcePath</code> - Path to source for the copy<a name="configureAction"></a>
+<code>configureAction</code> - action for configuring the child CopySpec
+</BODY>
+</HTML>

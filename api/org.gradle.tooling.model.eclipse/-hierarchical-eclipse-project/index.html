@@ -1,0 +1,114 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>HierarchicalEclipseProject - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.model.eclipse</a>&nbsp;/&nbsp;<a href=".">HierarchicalEclipseProject</a><br/>
+<br/>
+<h1>HierarchicalEclipseProject</h1>
+<code><span class="keyword">interface </span><span class="identifier">HierarchicalEclipseProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.model/-hierarchical-element/index.html"><span class="identifier">HierarchicalElement</span></a><span class="symbol">, </span><a href="../../org.gradle.tooling.model/-has-gradle-project/index.html"><span class="identifier">HasGradleProject</span></a></code>
+<p>Represents the basic information about an Eclipse project.</p>
+<p><strong>Since</strong><br/>
+1.0-milestone-3</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-children.html">getChildren</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getChildren</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">HierarchicalEclipseProject</span><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-linked-resources.html">getLinkedResources</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLinkedResources</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-eclipse-linked-resource/index.html"><span class="identifier">EclipseLinkedResource</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the linked resources for this project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-parent.html">getParent</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getParent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">HierarchicalEclipseProject</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project-dependencies.html">getProjectDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-eclipse-project-dependency/index.html"><span class="identifier">EclipseProjectDependency</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the project dependencies for this project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project-directory.html">getProjectDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectDirectory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the project directory for this project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-source-directories.html">getSourceDirectories</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSourceDirectories</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-eclipse-source-directory/index.html"><span class="identifier">EclipseSourceDirectory</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the source directories for this project.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.model/-has-gradle-project/get-gradle-project.html">getGradleProject</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGradleProject</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-gradle-project/index.html"><span class="identifier">GradleProject</span></a></code>
+<p>The associated Gradle project. Via the gradle project you can access (list, run, etc.) Gradle tasks.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.model/-has-gradle-project/get-project-identifier.html">getProjectIdentifier</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectIdentifier</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-project-identifier/index.html"><span class="identifier">ProjectIdentifier</span></a></code>
+<p>Returns the identifier for the project that this model is associated with.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-eclipse-project/index.html">EclipseProject</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">EclipseProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HierarchicalEclipseProject</span></code>
+<p>The complete model of an Eclipse project. 
+<p>Note that the names of Eclipse projects are unique, and can be used as an identifier for the project.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

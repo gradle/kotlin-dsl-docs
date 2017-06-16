@@ -1,0 +1,142 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Reporting - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.reporting</a>&nbsp;/&nbsp;<a href=".">Reporting</a><br/>
+<br/>
+<h1>Reporting</h1>
+<code><span class="keyword">interface </span><span class="identifier">Reporting</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-report-container/index.html"><span class="identifier">ReportContainer</span></a><span class="symbol">&lt;</span><a href="../-report/index.html"><span class="identifier">Report</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>An object that provides reporting options. 
+<p> Tasks that produce reports as part of their execution expose configuration options of those reports via these methods. The <code>Reporting</code> interface is parameterized, where the parameter denotes the specific type of reporting container that is exposed. The specific type of the reporting container denotes the different types of reports available. </p>
+<p> For example, given a task such as: </p>
+ <pre><code> class MyTask implements Reporting&lt;MyReportContainer&gt; { // implementation } interface MyReportContainer extends ReportContainer&lt;Report&gt; { Report getHtml(); Report getCsv(); } </code></pre> 
+<p> The reporting aspects of such a task can be configured as such: </p>
+ <pre><code> task my(type: MyTask) { reports { html.enabled = true csv.enabled = false } } </code></pre> 
+<p> See the documentation for the specific <code>ReportContainer</code> type for the task for information on report types and options. </p>
+</p>
+<h3>Parameters</h3>
+<a name="&lt;T&gt;"></a>
+<code><T></code> - The base type of the report container
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-reports.html">getReports</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getReports</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>A ReportContainer instance. 
+<p> Implementors specify a specific implementation of ReportContainer that describes the types of reports that are available.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="reports.html">reports</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">reports</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.reporting.Reporting$reports(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">reports</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.reporting.Reporting$reports(org.gradle.api.Action((org.gradle.api.reporting.Reporting.T)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Allow configuration of the report container by closure. <pre><code> reports { html { enabled false } xml.destination "build/reports/myReport.xml" } </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.plugins.quality/-checkstyle/index.html">Checkstyle</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Checkstyle</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks/-verification-task/index.html"><span class="identifier">VerificationTask</span></a><span class="symbol">, </span><span class="identifier">Reporting</span><span class="symbol">&lt;</span><a href="../../org.gradle.api.plugins.quality/-checkstyle-reports/index.html"><span class="identifier">CheckstyleReports</span></a><span class="symbol">&gt;</span></code>
+<p>Runs Checkstyle against some source files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.plugins.quality/-code-narc/index.html">CodeNarc</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CodeNarc</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks/-verification-task/index.html"><span class="identifier">VerificationTask</span></a><span class="symbol">, </span><span class="identifier">Reporting</span><span class="symbol">&lt;</span><a href="../../org.gradle.api.plugins.quality/-code-narc-reports/index.html"><span class="identifier">CodeNarcReports</span></a><span class="symbol">&gt;</span></code>
+<p>Runs CodeNarc against some source files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.plugins.quality/-find-bugs/index.html">FindBugs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">FindBugs</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks/-verification-task/index.html"><span class="identifier">VerificationTask</span></a><span class="symbol">, </span><span class="identifier">Reporting</span><span class="symbol">&lt;</span><a href="../../org.gradle.api.plugins.quality/-find-bugs-reports/index.html"><span class="identifier">FindBugsReports</span></a><span class="symbol">&gt;</span></code>
+<p>Analyzes code with <a href="#">FindBugs</a>. See the <a href="#">FindBugs Manual</a> for additional information on configuration options.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-generate-build-dashboard/index.html">GenerateBuildDashboard</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GenerateBuildDashboard</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a><span class="symbol">, </span><span class="identifier">Reporting</span><span class="symbol">&lt;</span><a href="../-build-dashboard-reports/index.html"><span class="identifier">BuildDashboardReports</span></a><span class="symbol">&gt;</span></code>
+<p>Generates build dashboard report.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.reporting.dependencies/-html-dependency-report-task/index.html">HtmlDependencyReportTask</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">HtmlDependencyReportTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><span class="identifier">Reporting</span><span class="symbol">&lt;</span><a href="../../org.gradle.api.reporting.dependencies/-dependency-report-container/index.html"><span class="identifier">DependencyReportContainer</span></a><span class="symbol">&gt;</span></code>
+<p>Generates an HTML dependency report. This report combines the features of the ASCII dependency report and those of the ASCII dependency insight report. For a given project, it generates a tree of the dependencies of every configuration, and each dependency can be clicked to show the insight of this dependency. 
+<p> This task generates a report for the task's containing project by default. But it can also generate a report for multiple projects, by setting the value of the <code>projects</code> property. Here's how to generate an HTML dependency report for all the projects of a multi-project build, for example: </p>
+<pre><code> htmlDependencyReport { projects = project.allprojects } </code></pre> 
+<p> The report is generated in the <code>build/reports/project/dependencies</code> directory by default. This can also be changed by setting the <code>reports.html.destination</code> property: </p>
+<pre><code> htmlDependencyReport { reports.html.destination = file("build/reports/project/dependencies") } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.plugins.quality/-j-depend/index.html">JDepend</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JDepend</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a><span class="symbol">, </span><span class="identifier">Reporting</span><span class="symbol">&lt;</span><a href="../../org.gradle.api.plugins.quality/-j-depend-reports/index.html"><span class="identifier">JDependReports</span></a><span class="symbol">&gt;</span></code>
+<p>Analyzes code with <a href="#">JDepend</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.testing.jacoco.tasks/-jacoco-report/index.html">JacocoReport</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JacocoReport</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.testing.jacoco.tasks/-jacoco-report-base/index.html"><span class="identifier">JacocoReportBase</span></a><span class="symbol">, </span><span class="identifier">Reporting</span><span class="symbol">&lt;</span><a href="../../org.gradle.testing.jacoco.tasks/-jacoco-reports-container/index.html"><span class="identifier">JacocoReportsContainer</span></a><span class="symbol">&gt;</span></code>
+<p>Task to generate HTML, Xml and CSV reports of Jacoco coverage data.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.plugins.quality/-pmd/index.html">Pmd</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Pmd</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks/-verification-task/index.html"><span class="identifier">VerificationTask</span></a><span class="symbol">, </span><span class="identifier">Reporting</span><span class="symbol">&lt;</span><a href="../../org.gradle.api.plugins.quality/-pmd-reports/index.html"><span class="identifier">PmdReports</span></a><span class="symbol">&gt;</span></code>
+<p>Runs a set of static code analysis rules on Java source code files and generates a report of problems found.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.testing/-test/index.html">Test</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Test</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><a href="../../org.gradle.process/-java-fork-options/index.html"><span class="identifier">JavaForkOptions</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks/-verification-task/index.html"><span class="identifier">VerificationTask</span></a><span class="symbol">, </span><span class="identifier">Reporting</span><span class="symbol">&lt;</span><a href="../../org.gradle.api.tasks.testing/-test-task-reports/index.html"><span class="identifier">TestTaskReports</span></a><span class="symbol">&gt;</span></code>
+<p>Executes JUnit (3.8.x or 4.x) or TestNG tests. Test are always run in (one or more) separate JVMs. The sample below shows various configuration options. <pre><code> apply plugin: 'java' // adds 'test' task test { // enable TestNG support (default is JUnit) useTestNG() // set a system property for the test JVM(s) systemProperty 'some.prop', 'value' // explicitly include or exclude tests include 'org/foo/**' exclude 'org/boo/**' // show standard out and standard error of the test JVM(s) on the console testLogging.showStandardStreams = true // set heap size for the test JVM(s) minHeapSize = "128m" maxHeapSize = "512m" // set JVM arguments for the test JVM(s) jvmArgs '-XX:MaxPermSize=256m' // listen to events in the test execution lifecycle beforeTest { descriptor -&gt; logger.lifecycle("Running test: " + descriptor) } // listen to standard out and standard error of the test JVM(s) onOutput { descriptor, event -&gt; logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message ) } } </code></pre> 
+<p> The test process can be started in debug mode (see <code><a href="../../org.gradle.api.tasks.testing/-test/get-debug.html">#getDebug()</a></code>) in an ad-hoc manner by supplying the `--debug-jvm` switch when invoking the build. </p>
+<pre><code> gradle someTestTask --debug-jvm </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

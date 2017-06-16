@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ResolvedConfiguration.getFiles - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="index.html">ResolvedConfiguration</a>&nbsp;/&nbsp;<a href=".">getFiles</a><br/>
+<br/>
+<h1>getFiles</h1>
+<a name="org.gradle.api.artifacts.ResolvedConfiguration$getFiles()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the files for the configuration dependencies.</p>
+<h3>Exceptions</h3>
+<a name="ResolveException"></a>
+<code>ResolveException</code> - when the resolve was not successful.
+<p><strong>Return</strong><br/>
+The artifact files of the specified dependencies.</p>
+<p><strong>Since</strong><br/>
+3.3</p>
+<a name="org.gradle.api.artifacts.ResolvedConfiguration$getFiles(org.gradle.api.specs.Spec((org.gradle.api.artifacts.Dependency)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFiles</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolvedConfiguration$getFiles(org.gradle.api.specs.Spec((org.gradle.api.artifacts.Dependency)))/dependencySpec">dependencySpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the files for the specified subset of configuration dependencies.</p>
+<h3>Parameters</h3>
+<a name="dependencySpec"></a>
+<code>dependencySpec</code> - The filter for the configuration dependencies.
+<h3>Exceptions</h3>
+<a name="ResolveException"></a>
+<code>ResolveException</code> - when the resolve was not successful.
+<p><strong>Return</strong><br/>
+The artifact files of the specified dependencies.</p>
+</BODY>
+</HTML>

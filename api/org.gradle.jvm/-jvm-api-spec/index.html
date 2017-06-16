@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>JvmApiSpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.jvm</a>&nbsp;/&nbsp;<a href=".">JvmApiSpec</a><br/>
+<br/>
+<h1>JvmApiSpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">JvmApiSpec</span></code>
+<p>Specifies the packages that constitute the API of a library. Facilitates separation of API and implementation binaries for that library. Backing object for the <code>api {}</code> DSL.</p>
+<p><strong>Since</strong><br/>
+2.10</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="dependencies.html">dependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">dependencies</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.JvmApiSpec$dependencies(groovy.lang.Closure((kotlin.Any)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specify the dependencies of this API.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="exports.html">exports</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">exports</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.JvmApiSpec$exports(kotlin.String)/packageName">packageName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specify a package to be exported as part of the library API.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-dependencies.html">getDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.platform.base/-dependency-spec-container/index.html"><span class="identifier">DependencySpecContainer</span></a></code>
+<p>The dependencies of this API.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-exports.html">getExports</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExports</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The set of packages that comprise this library's public API.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

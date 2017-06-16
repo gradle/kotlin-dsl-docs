@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TaskOutputs.doNotCacheIf - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks</a>&nbsp;/&nbsp;<a href="index.html">TaskOutputs</a>&nbsp;/&nbsp;<a href=".">doNotCacheIf</a><br/>
+<br/>
+<h1>doNotCacheIf</h1>
+<a name="org.gradle.api.tasks.TaskOutputs$doNotCacheIf(kotlin.String, org.gradle.api.specs.Spec((org.gradle.api.Task)))"></a>
+<code><span class="identifier">@Incubating</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">doNotCacheIf</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.TaskOutputs$doNotCacheIf(kotlin.String, org.gradle.api.specs.Spec((org.gradle.api.Task)))/cachingDisabledReason">cachingDisabledReason</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.TaskOutputs$doNotCacheIf(kotlin.String, org.gradle.api.specs.Spec((org.gradle.api.Task)))/spec">spec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Disable caching the results of the task if the given spec is satisfied. The spec will be evaluated at task execution time, not during configuration. If the spec is not satisfied, the results of the task will be cached according to <code><a href="#">#cacheIf(Spec)</a></code>.</p>
+ 
+<p>You may add multiple such predicates. The results of the task are not cached if any of the predicates return <code>true</code>, or if any of the predicates passed to <code><a href="#">#cacheIf(String, Spec)</a></code> returns <code>false</code>.</p>
+</p>
+<h3>Parameters</h3>
+<a name="cachingDisabledReason"></a>
+<code>cachingDisabledReason</code> - the reason why caching would be disabled by the spec.<a name="spec"></a>
+<code>spec</code> - specifies if the results of the task should not be cached.
+<p><strong>Since</strong><br/>
+3.4</p>
+</BODY>
+</HTML>

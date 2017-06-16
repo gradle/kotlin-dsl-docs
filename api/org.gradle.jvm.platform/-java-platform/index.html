@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>JavaPlatform - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.jvm.platform</a>&nbsp;/&nbsp;<a href=".">JavaPlatform</a><br/>
+<br/>
+<h1>JavaPlatform</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">JavaPlatform</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.platform.base/-platform/index.html"><span class="identifier">Platform</span></a></code>
+<p>Defines and configures a Java SE runtime environment, consisting of a JVM runtime and a set of class libraries. <pre><code> plugins { id "jvm-component" id "java-lang" } model { components { myLib(JvmLibrarySpec) { targetPlatform "java6" } } } </code></pre></p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-target-compatibility.html">getTargetCompatibility</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTargetCompatibility</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-java-version/index.html"><span class="identifier">JavaVersion</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-target-compatibility.html">setTargetCompatibility</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setTargetCompatibility</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.platform.JavaPlatform$setTargetCompatibility(org.gradle.api.JavaVersion)/targetCompatibility">targetCompatibility</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-java-version/index.html"><span class="identifier">JavaVersion</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.platform.base/-platform/get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns a human consumable name for this platform.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.platform.base/-platform/get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

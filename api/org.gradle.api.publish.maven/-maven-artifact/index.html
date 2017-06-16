@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MavenArtifact - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.publish.maven</a>&nbsp;/&nbsp;<a href=".">MavenArtifact</a><br/>
+<br/>
+<h1>MavenArtifact</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">MavenArtifact</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<p>An artifact published as part of a MavenPublication.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="built-by.html">builtBy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">builtBy</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.publish.maven.MavenArtifact$builtBy(kotlin.Array((kotlin.Any)))/tasks">tasks</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Registers some tasks which build this artifact.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-classifier.html">getClassifier</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getClassifier</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The classifier used to publish the artifact file. A <code>null</code> value (the default) indicates that this artifact will be published without a classifier.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-extension.html">getExtension</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExtension</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The extension used to publish the artifact file, never <code>null</code>. For an artifact without an extension, this value will be an empty String.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-file.html">getFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The actual file contents to publish.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-classifier.html">setClassifier</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setClassifier</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.publish.maven.MavenArtifact$setClassifier(kotlin.String)/classifier">classifier</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the classifier used to publish the artifact file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-extension.html">setExtension</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setExtension</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.publish.maven.MavenArtifact$setExtension(kotlin.String)/extension">extension</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the extension used to publish the artifact file.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-buildable/get-build-dependencies.html">getBuildDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-task-dependency/index.html"><span class="identifier">TaskDependency</span></a></code>
+<p>Returns a dependency which contains the tasks which build this artifact. All <code>Buildable</code> implementations must ensure that the returned dependency object is live, so that it tracks changes to the dependencies of this buildable.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

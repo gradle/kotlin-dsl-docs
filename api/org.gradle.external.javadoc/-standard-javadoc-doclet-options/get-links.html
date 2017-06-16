@@ -1,0 +1,15 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>StandardJavadocDocletOptions.getLinks - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.external.javadoc</a>&nbsp;/&nbsp;<a href="index.html">StandardJavadocDocletOptions</a>&nbsp;/&nbsp;<a href=".">getLinks</a><br/>
+<br/>
+<h1>getLinks</h1>
+<a name="org.gradle.external.javadoc.StandardJavadocDocletOptions$getLinks()"></a>
+<code><span class="identifier">@Optional</span> <span class="identifier">@Input</span> <span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLinks</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>-link extdocURL Creates links to existing javadoc-generated documentation of external referenced classes. It takes one argument:  extdocURL is the absolute or relative URL of the directory containing the external javadoc-generated documentation you want to link to. Examples are shown below. The package-list file must be found in this directory (otherwise, use -linkoffline). The Javadoc tool reads the package names from the package-list file and then links to those packages at that URL. When the Javadoc tool is run, the extdocURL value is copied literally into the &lt;A HREF&gt; links that are created. Therefore, extdocURL must be the URL to the directory, not to a file. You can use an absolute link for extdocURL to enable your docs to link to a document on any website, or can use a relative link to link only to a relative location. If relative, the value you pass in should be the relative path from the destination directory (specified with -d) to the directory containing the packages being linked to.  When specifying an absolute link you normally use an http: link. However, if you want to link to a file system that has no web server, you can use a file: link -- however, do this only if everyone wanting to access the generated documentation shares the same file system.</p>
+</BODY>
+</HTML>

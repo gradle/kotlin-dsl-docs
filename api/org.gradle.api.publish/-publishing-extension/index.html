@@ -1,0 +1,92 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PublishingExtension - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.publish</a>&nbsp;/&nbsp;<a href=".">PublishingExtension</a><br/>
+<br/>
+<h1>PublishingExtension</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">PublishingExtension</span></code>
+<p>The configuration of how to “publish” the different components of a project. 
+<p> This new publishing mechanism will eventually replace the current mechanism of upload tasks and configurations. At this time, it is an incubating feature and under development. </p>
+<p> The PublishingExtension is a org.gradle.api.plugins.DeferredConfigurable model element, meaning that extension will be configured as late as possible in the build. So any 'publishing' configuration blocks are not evaluated until either: </p>
+<ol> <li>The project is about to execute, or</li>
+ <li>he publishing extension is referenced as an instance, as opposed to via a configuration closure.</li>
+ </ol>
+ 
+<p> A 'publishing' configuration block does not need to dereference the publishing extension, and so will be evaluated late. eg: </p>
+<pre><code> publishing { publications { ... } repositories.maven { ... } } </code></pre> 
+<p> Any use that accesses the publishing extension as an instance does require the publishing extension to be realised, forcing all configuration blocks to be evaluated. eg: </p>
+<pre><code> publishing.publications { ... } publishing.repositories.maven { ... } </code></pre></p>
+<p><strong>Since</strong><br/>
+1.3</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-n-a-m-e.html">NAME</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">NAME</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name of this extension when installed by the org.gradle.api.publish.plugins.PublishingPlugin ({@value}).</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-publications.html">getPublications</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPublications</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-publication-container.html"><span class="identifier">PublicationContainer</span></a></code>
+<p>The publications of the project. 
+<p> See <code><a href="#">#publications(org.gradle.api.Action)</a></code> for more information.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-repositories.html">getRepositories</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRepositories</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.dsl/-repository-handler/index.html"><span class="identifier">RepositoryHandler</span></a></code>
+<p>The container of possible repositories to publish to. 
+<p> See <code><a href="#">#repositories(org.gradle.api.Action)</a></code> for more information.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="publications.html">publications</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">publications</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.publish.PublishingExtension$publications(org.gradle.api.Action((org.gradle.api.publish.PublicationContainer)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-publication-container.html"><span class="identifier">PublicationContainer</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the publications of this project. 
+<p> The publications container defines the outgoing publications of the project. That is, the consumable representations of things produced by building the project. An example of a publication would be an Ivy Module (i.e. <code>ivy.xml</code> and artifacts), or Maven Project (i.e. <code>pom.xml</code> and artifacts). </p>
+<p> Actual publication implementations and the ability to create them are provided by different plugins. The “publishing” plugin itself does not provide any publication types. For example, given that the 'maven-publish' plugin provides a org.gradle.api.publish.maven.MavenPublication type, you can create a publication like: </p>
+<pre><code> apply plugin: 'maven-publish' publishing { publications { myPublicationName(MavenPublication) { // Configure the publication here } } } </code></pre> 
+<p> Please see org.gradle.api.publish.ivy.IvyPublication and org.gradle.api.publish.maven.MavenPublication for more information on publishing in these specific formats.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="repositories.html">repositories</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">repositories</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.publish.PublishingExtension$repositories(org.gradle.api.Action((org.gradle.api.artifacts.dsl.RepositoryHandler)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.artifacts.dsl/-repository-handler/index.html"><span class="identifier">RepositoryHandler</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the container of possible repositories to publish to. <pre><code> apply plugin: 'publishing' publishing { repositories { // Create an ivy publication destination named “releases” ivy { name "releases" url "http://my.org/ivy-repos/releases" } } } </code></pre> The <code>repositories</code> block is backed by a RepositoryHandler, which is the same DSL as that that is used for declaring repositories to consume dependencies from. However, certain types of repositories that can be created by the repository handler are not valid for publishing, such as <code><a href="../../org.gradle.api.artifacts.dsl/-repository-handler/maven-central.html">org.gradle.api.artifacts.dsl.RepositoryHandler#mavenCentral()</a></code>. 
+<p> At this time, only repositories created by the <code>ivy()</code> factory method have any effect. Please see org.gradle.api.publish.ivy.IvyPublication for information on how this can be used for publishing to Ivy repositories.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

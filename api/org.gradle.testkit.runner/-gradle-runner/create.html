@@ -1,0 +1,21 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GradleRunner.create - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.testkit.runner</a>&nbsp;/&nbsp;<a href="index.html">GradleRunner</a>&nbsp;/&nbsp;<a href=".">create</a><br/>
+<br/>
+<h1>create</h1>
+<a name="org.gradle.testkit.runner.GradleRunner$create()"></a>
+<code><span class="keyword">open</span> <span class="keyword">static</span> <span class="keyword">fun </span><span class="identifier">create</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">GradleRunner</span></a></code>
+<p>Creates a new Gradle runner. 
+<p> The runner requires a Gradle distribution (and therefore a specific version of Gradle) in order to execute builds. This method will find a Gradle distribution, based on the filesystem location of this class. That is, it is expected that this class is loaded from a Gradle distribution. </p>
+<p> When using the runner as part of tests <em>being executed by Gradle</em> (i.e. a build using the <code>gradleTestKit()</code> dependency), this means that the same distribution of Gradle that is executing the tests will be used by runner returned by this method. </p>
+<p> When using the runner as part of tests <em>being executed by an IDE</em>, this means that the same distribution of Gradle that was used when importing the project will be used.</p>
+</p>
+<p><strong>Return</strong><br/>
+a new Gradle runner</p>
+</BODY>
+</HTML>

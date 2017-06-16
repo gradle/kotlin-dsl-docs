@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NativeLibrarySpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform</a>&nbsp;/&nbsp;<a href=".">NativeLibrarySpec</a><br/>
+<br/>
+<h1>NativeLibrarySpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">NativeLibrarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.platform.base/-library-spec.html"><span class="identifier">LibrarySpec</span></a><span class="symbol">, </span><a href="../-native-component-spec/index.html"><span class="identifier">NativeComponentSpec</span></a><span class="symbol">, </span><a href="../-targeted-native-component/index.html"><span class="identifier">TargetedNativeComponent</span></a></code>
+<p>Definition of a native library component that is to be built by Gradle.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-api.html">getApi</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getApi</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-native-library-requirement/index.html"><span class="identifier">NativeLibraryRequirement</span></a></code>
+<p>Converts this library to a native library requirement that uses the api library linkage.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-shared.html">getShared</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getShared</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-native-library-requirement/index.html"><span class="identifier">NativeLibraryRequirement</span></a></code>
+<p>Converts this library to a native library requirement that uses the shared library variant. This is the default.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-static.html">getStatic</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getStatic</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-native-library-requirement/index.html"><span class="identifier">NativeLibraryRequirement</span></a></code>
+<p>Converts this library to a native library requirement that uses the static library variant.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-native-component-spec/get-base-name.html">getBaseName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBaseName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name that is used to construct the output file names when building this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-native-component-spec/set-base-name.html">setBaseName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setBaseName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.NativeComponentSpec$setBaseName(kotlin.String)/baseName">baseName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the name that is used to construct the output file names when building this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-targeted-native-component/target-build-types.html">targetBuildTypes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">targetBuildTypes</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.nativeplatform.TargetedNativeComponent$targetBuildTypes(kotlin.Array((kotlin.String)))/buildTypeSelectors">buildTypeSelectors</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies the names of one or more BuildTypes that this component should be built for.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-targeted-native-component/target-flavors.html">targetFlavors</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">targetFlavors</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.nativeplatform.TargetedNativeComponent$targetFlavors(kotlin.Array((kotlin.String)))/flavorSelectors">flavorSelectors</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies the names of one or more Flavors that this component should be built for.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

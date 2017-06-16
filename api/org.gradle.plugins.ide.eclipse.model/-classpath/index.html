@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Classpath - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.eclipse.model</a>&nbsp;/&nbsp;<a href=".">Classpath</a><br/>
+<br/>
+<h1>Classpath</h1>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Classpath</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">XmlPersistableConfigurationObject</span></code>
+<p>Represents the customizable elements of an eclipse classpath file. (via XML hooks everything is customizable).</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">Classpath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.Classpath$<init>(XmlTransformer, FileReferenceFactory)/xmlTransformer">xmlTransformer</span><span class="symbol">:</span>&nbsp;<span class="identifier">XmlTransformer</span><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.Classpath$<init>(XmlTransformer, FileReferenceFactory)/fileReferenceFactory">fileReferenceFactory</span><span class="symbol">:</span>&nbsp;<span class="identifier">FileReferenceFactory</span><span class="symbol">)</span></code><br/>
+<code><span class="identifier">Classpath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.Classpath$<init>(FileReferenceFactory)/fileReferenceFactory">fileReferenceFactory</span><span class="symbol">:</span>&nbsp;<span class="identifier">FileReferenceFactory</span><span class="symbol">)</span></code><br/>
+<code><span class="identifier">Classpath</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="configure.html">configure</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">configure</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.Classpath$configure(kotlin.collections.MutableList((kotlin.Any)))/newEntries">newEntries</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="equals.html">equals</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">equals</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.Classpath$equals(kotlin.Any)/o">o</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="file-reference.html">fileReference</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">fileReference</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.Classpath$fileReference(kotlin.Any)/reference">reference</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-reference/index.html"><span class="identifier">FileReference</span></a></code>
+<p>Creates a new FileReference instance. 
+<p> The created object can be used to configure custom source or javadoc location on Library and on Variable objects. </p>
+<p> This method can receive either String or File instances.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-entries.html">getEntries</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getEntries</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-classpath-entry/index.html"><span class="identifier">ClasspathEntry</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="hash-code.html">hashCode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">hashCode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-entries.html">setEntries</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setEntries</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.eclipse.model.Classpath$setEntries(kotlin.collections.MutableList((org.gradle.plugins.ide.eclipse.model.ClasspathEntry)))/entries">entries</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-classpath-entry/index.html"><span class="identifier">ClasspathEntry</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="to-string.html">toString</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">toString</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

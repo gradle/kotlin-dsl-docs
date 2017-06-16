@@ -1,0 +1,47 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PluginAware.apply - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href="index.html">PluginAware</a>&nbsp;/&nbsp;<a href=".">apply</a><br/>
+<br/>
+<h1>apply</h1>
+<a name="org.gradle.api.plugins.PluginAware$apply(groovy.lang.Closure((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginAware$apply(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies zero or more plugins or scripts. 
+<p> The given closure is used to configure an ObjectConfigurationAction, which “builds” the plugin application. </p>
+<p> This method differs from <code><a href="#">#apply(java.util.Map)</a></code> in that it allows methods of the configuration action to be invoked more than once.</p>
+</p>
+<h3>Parameters</h3>
+<a name="closure"></a>
+<code>closure</code> - the closure to configure an ObjectConfigurationAction with before “executing” it
+<p><strong>See Also</strong><br/>
+<a href="#">#apply(java.util.Map)</a></p>
+<a name="org.gradle.api.plugins.PluginAware$apply(org.gradle.api.Action((org.gradle.api.plugins.ObjectConfigurationAction)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginAware$apply(org.gradle.api.Action((org.gradle.api.plugins.ObjectConfigurationAction)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-object-configuration-action/index.html"><span class="identifier">ObjectConfigurationAction</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies zero or more plugins or scripts. 
+<p> The given closure is used to configure an ObjectConfigurationAction, which “builds” the plugin application. </p>
+<p> This method differs from <code><a href="#">#apply(java.util.Map)</a></code> in that it allows methods of the configuration action to be invoked more than once.</p>
+</p>
+<h3>Parameters</h3>
+<a name="action"></a>
+<code>action</code> - the action to configure an ObjectConfigurationAction with before “executing” it
+<p><strong>See Also</strong><br/>
+<a href="#">#apply(java.util.Map)</a></p>
+<a name="org.gradle.api.plugins.PluginAware$apply(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginAware$apply(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/options">options</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies a plugin or script, using the given options provided as a map. Does nothing if the plugin has already been applied. 
+<p> The given map is applied as a series of method calls to a newly created ObjectConfigurationAction. That is, each key in the map is expected to be the name of a method ObjectConfigurationAction and the value to be compatible arguments to that method. </p>
+<p>The following options are available:</p>
+ <ul><li><code>from</code>: A script to apply. Accepts any path supported by <code><a href="#">org.gradle.api.Project#uri(Object)</a></code>.</li>
+ <li><code>plugin</code>: The id or implementation class of the plugin to apply.</li>
+ <li><code>to</code>: The target delegate object or objects. The default is this plugin aware object. Use this to configure objects other than this object.</li>
+</ul>
+</p>
+<h3>Parameters</h3>
+<a name="options"></a>
+<code>options</code> - the options to use to configure and ObjectConfigurationAction before “executing” it
+</BODY>
+</HTML>

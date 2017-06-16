@@ -1,0 +1,51 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>SourceDirectory - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.model</a>&nbsp;/&nbsp;<a href=".">SourceDirectory</a><br/>
+<br/>
+<h1>SourceDirectory</h1>
+<code><span class="keyword">interface </span><span class="identifier">SourceDirectory</span></code>
+<p>Represents a source directory.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-directory.html">getDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDirectory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the source directory.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.model.eclipse/-eclipse-source-directory/index.html">EclipseSourceDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">EclipseSourceDirectory</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">SourceDirectory</span><span class="symbol">, </span><a href="../../org.gradle.tooling.model.eclipse/-eclipse-classpath-entry/index.html"><span class="identifier">EclipseClasspathEntry</span></a></code>
+<p>A source directory in an Eclipse project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.tooling.model.idea/-idea-source-directory/index.html">IdeaSourceDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">IdeaSourceDirectory</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">SourceDirectory</span></code>
+<p>IDEA source directory.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

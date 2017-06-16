@@ -1,0 +1,176 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ExternalDependency - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">ExternalDependency</a><br/>
+<br/>
+<h1>ExternalDependency</h1>
+<code><span class="keyword">interface </span><span class="identifier">ExternalDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-module-dependency/index.html"><span class="identifier">ModuleDependency</span></a><span class="symbol">, </span><a href="../-module-version-selector/index.html"><span class="identifier">ModuleVersionSelector</span></a></code>
+<p>
+<p>An <code>ExternalDependency</code> is a Dependency on a source outside the current project hierarchy.</p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="copy.html">copy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ExternalDependency</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-force.html">isForce</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isForce</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns whether or not the version of this dependency should be enforced in the case of version conflicts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-force.html">setForce</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setForce</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ExternalDependency$setForce(kotlin.Boolean)/force">force</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ExternalDependency</span></code>
+<p>Sets whether or not the version of this dependency should be enforced in the case of version conflicts.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-module-dependency/add-artifact.html">addArtifact</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addArtifact</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ModuleDependency$addArtifact(org.gradle.api.artifacts.DependencyArtifact)/artifact">artifact</span><span class="symbol">:</span>&nbsp;<a href="../-dependency-artifact/index.html"><span class="identifier">DependencyArtifact</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-module-dependency/index.html"><span class="identifier">ModuleDependency</span></a></code>
+<p>
+<p>Adds an artifact to this dependency.</p>
+ 
+<p>If no artifact is added to a dependency, an implicit default artifact is used. This default artifact has the same name as the module and its type and extension is <em>jar</em>. If at least one artifact is explicitly added, the implicit default artifact won't be used any longer.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-module-dependency/artifact.html">artifact</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">artifact</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ModuleDependency$artifact(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-dependency-artifact/index.html"><span class="identifier">DependencyArtifact</span></a></code>
+<p>
+<p>Adds an artifact to this dependency. The given closure is passed a instance, which it can configure.</p>
+ 
+<p>If no artifact is added to a dependency, an implicit default artifact is used. This default artifact has the same name as the module and its type and extension is <em>jar</em>. If at least one artifact is explicitly added, the implicit default artifact won't be used any longer.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">artifact</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ModuleDependency$artifact(org.gradle.api.Action((org.gradle.api.artifacts.DependencyArtifact)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency-artifact/index.html"><span class="identifier">DependencyArtifact</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-dependency-artifact/index.html"><span class="identifier">DependencyArtifact</span></a></code>
+<p>
+<p>Adds an artifact to this dependency. The given action is passed a instance, which it can configure.</p>
+ 
+<p>If no artifact is added to a dependency, an implicit default artifact is used. This default artifact has the same name as the module and its type and extension is <em>jar</em>. If at least one artifact is explicitly added, the implicit default artifact won't be used any longer.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-module-dependency/exclude.html">exclude</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ModuleDependency$exclude(kotlin.collections.MutableMap((kotlin.String, )))/excludeProperties">excludeProperties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-module-dependency/index.html"><span class="identifier">ModuleDependency</span></a></code>
+<p>Adds an exclude rule to exclude transitive dependencies of this dependency. 
+<p> Excluding a particular transitive dependency does not guarantee that it does not show up in the dependencies of a given configuration. For example, some other dependency, which does not have any exclude rules, might pull in exactly the same transitive dependency. To guarantee that the transitive dependency is excluded from the entire configuration please use per-configuration exclude rules: <code><a href="../-configuration/get-exclude-rules.html">Configuration#getExcludeRules()</a></code>. In fact, in majority of cases the actual intention of configuring per-dependency exclusions is really excluding a dependency from the entire configuration (or classpath). </p>
+<p> If your intention is to exclude a particular transitive dependency because you don't like the version it pulls in to the configuration then consider using forced versions' feature: <code><a href="#">ResolutionStrategy#force(Object...)</a></code>. </p>
+<pre><code> apply plugin: 'java' //so that I can declare 'compile' dependencies dependencies { compile('org.hibernate:hibernate:3.1') { //excluding a particular transitive dependency: exclude module: 'cglib' //by artifact name exclude group: 'org.jmock' //by group exclude group: 'org.unwanted', module: 'iAmBuggy' //by both name and group } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-module-dependency/get-artifacts.html">getArtifacts</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getArtifacts</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-dependency-artifact/index.html"><span class="identifier">DependencyArtifact</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the artifacts belonging to this dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-module-dependency/get-exclude-rules.html">getExcludeRules</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExcludeRules</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-exclude-rule/index.html"><span class="identifier">ExcludeRule</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the exclude rules for this dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-module-dependency/get-target-configuration.html">getTargetConfiguration</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTargetConfiguration</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the requested target configuration of this dependency. This is the name of the configuration in the target module that should be used when selecting the matching configuration. If <code>null</code>, a default configuration should be used.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-module-dependency/is-transitive.html">isTransitive</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isTransitive</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns whether this dependency should be resolved including or excluding its transitive dependencies.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-module-version-selector/matches-strictly.html">matchesStrictly</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matchesStrictly</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ModuleVersionSelector$matchesStrictly(org.gradle.api.artifacts.ModuleVersionIdentifier)/identifier">identifier</span><span class="symbol">:</span>&nbsp;<a href="../-module-version-identifier/index.html"><span class="identifier">ModuleVersionIdentifier</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>To match strictly means that the given identifier needs to have equal group, module name and version. It does not smartly match dynamic versions, e.g. '1.+' selector does not strictly match '1.2' identifier.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-module-dependency/set-target-configuration.html">setTargetConfiguration</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setTargetConfiguration</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ModuleDependency$setTargetConfiguration(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the requested target configuration of this dependency. This is the name of the configuration in the target module that should be used when selecting the matching configuration. If <code>null</code>, a default configuration will be used.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-module-dependency/set-transitive.html">setTransitive</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setTransitive</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ModuleDependency$setTransitive(kotlin.Boolean)/transitive">transitive</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-module-dependency/index.html"><span class="identifier">ModuleDependency</span></a></code>
+<p>Sets whether this dependency should be resolved including or excluding its transitive dependencies. The artifacts belonging to this dependency might themselves have dependencies on other artifacts. The latter are called transitive dependencies.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-external-module-dependency/index.html">ExternalModuleDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ExternalModuleDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ExternalDependency</span></code>
+<p>
+<p>A <code>ModuleDependency</code> is a Dependency on a module outside the current project hierarchy.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,95 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NativeLibraryBinary - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform</a>&nbsp;/&nbsp;<a href=".">NativeLibraryBinary</a><br/>
+<br/>
+<h1>NativeLibraryBinary</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">NativeLibraryBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-native-binary/index.html"><span class="identifier">NativeBinary</span></a></code>
+<p>A physical representation of a NativeLibrary component.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-header-dirs.html">getHeaderDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getHeaderDirs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-link-files.html">getLinkFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLinkFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-runtime-files.html">getRuntimeFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRuntimeFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-native-binary/get-build-type.html">getBuildType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildType</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-build-type/index.html"><span class="identifier">BuildType</span></a></code>
+<p>Returns the org.gradle.nativeplatform.BuildType used to construct this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-native-binary/get-flavor.html">getFlavor</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getFlavor</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-flavor/index.html"><span class="identifier">Flavor</span></a></code>
+<p>The org.gradle.nativeplatform.Flavor that this binary was built with.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-native-binary/get-target-platform.html">getTargetPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a></code>
+<p>Returns the org.gradle.nativeplatform.platform.NativePlatform that this binary is targeted to run on.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-shared-library-binary/index.html">SharedLibraryBinary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SharedLibraryBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NativeLibraryBinary</span></code>
+<p>A NativeLibrary that has been compiled and linked as a shared library.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-static-library-binary/index.html">StaticLibraryBinary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">StaticLibraryBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NativeLibraryBinary</span></code>
+<p>A NativeLibrary that has been compiled and archived into a static library.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

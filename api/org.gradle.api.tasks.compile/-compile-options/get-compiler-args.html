@@ -1,0 +1,15 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CompileOptions.getCompilerArgs - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.compile</a>&nbsp;/&nbsp;<a href="index.html">CompileOptions</a>&nbsp;/&nbsp;<a href=".">getCompilerArgs</a><br/>
+<br/>
+<h1>getCompilerArgs</h1>
+<a name="org.gradle.api.tasks.compile.CompileOptions$getCompilerArgs()"></a>
+<code><span class="identifier">@Input</span> <span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getCompilerArgs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns any additional arguments to be passed to the compiler. Defaults to the empty list. Compiler arguments not supported by the DSL can be added here. For example, it is possible to pass the <code>-release</code> option of JDK 9: <pre><code><code>compilerArgs.addAll(['-release', '7'])</code></code></pre> Note that if <code>-release</code> is added then <code>-target</code> and <code>-source</code> are ignored.</p>
+</BODY>
+</HTML>

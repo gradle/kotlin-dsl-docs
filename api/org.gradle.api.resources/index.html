@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.api.resources - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.resources</a><br/>
+<br/>
+<h2>Package org.gradle.api.resources</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-readable-resource/index.html">ReadableResource</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ReadableResource</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-resource/index.html"><span class="identifier">Resource</span></a></code>
+<p>A resource that can be read. The simplest example is a file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-resource/index.html">Resource</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Resource</span></code>
+<p>A generic resource of some kind. Only describes the resource. There are more specific interface that extend this one and specify ways of accessing the resource's content.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-resource-handler/index.html">ResourceHandler</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ResourceHandler</span></code>
+<p>Provides access to resource-specific utility methods, for example factory methods that create various resources.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-text-resource/index.html">TextResource</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TextResource</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<p>A read-only body of text backed by a string, file, archive entry, or other source. To create a text resource, use one of the factory methods in TextResourceFactory (e.g. <code>project.resources.text.fromFile(myFile)</code>).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-text-resource-factory/index.html">TextResourceFactory</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TextResourceFactory</span></code>
+<p>Creates <code>TextResource</code>s backed by sources such as strings, files, and archive entries. 
+<p>Example usages: </p>
+<pre><code> def sourcedFromString = resources.text.fromString("some text content") def sourcedFromFile = resources.text.fromFile("path/to/file.txt") task someTask {} // assumption: produces a text file and declares it as output def sourcedFromTask = resources.text.fromFile(someTask) def sourcedFromArchiveEntry = resources.text.fromArchiveEntry("path/to/archive.zip", "path/to/archive/entry.txt") configurations { someConfig } // assumption: contains a single archive def sourcedFromConfiguration = resources.text.fromArchiveEntry(configurations.someConfig, "path/to/archive/entry.txt") </code></pre> File based factory methods optionally accept a character encoding. If no encoding is specified, the platform's default encoding is used.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Exceptions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-missing-resource-exception/index.html">MissingResourceException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">MissingResourceException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-resource-exception/index.html"><span class="identifier">ResourceException</span></a></code>
+<p>Exception thrown when the resource does not exist</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-resource-exception/index.html">ResourceException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ResourceException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
+<p>Generic resource exception that all other resource-related exceptions inherit from.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

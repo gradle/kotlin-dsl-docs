@@ -1,0 +1,69 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PluginDependencySpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugin.use</a>&nbsp;/&nbsp;<a href=".">PluginDependencySpec</a><br/>
+<br/>
+<h1>PluginDependencySpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">PluginDependencySpec</span></code>
+<p>A mutable specification of a dependency on a plugin. 
+<p> Can be used to specify the version of the plugin to use. </p>
+ 
+<p> See PluginDependenciesSpec for more information about declaring plugin dependencies. </p>
+</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="apply.html">apply</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.use.PluginDependencySpec$apply(kotlin.Boolean)/apply">apply</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">PluginDependencySpec</span></code>
+<p>Specifies whether the plugin should be applied to the current project. Otherwise it is only put on the project's classpath.  This is useful when reusing classes from a plugin or to apply a plugin to sub-projects: 
+<p> </p>
+<pre><code> plugins { id "org.company.myplugin" version "1.0" apply false } subprojects { if (someCondition) { apply plugin: "org.company.myplugin" } } </code></pre> </p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="version.html">version</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">version</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.use.PluginDependencySpec$version(kotlin.String)/version">version</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">PluginDependencySpec</span></code>
+<p>Specify the version of the plugin to depend on.  <pre><code> plugins { id "org.company.myplugin" version "1.0" } </code></pre> 
+<p> By default, dependencies have no (i.e. <code>null</code>) version. </p>
+ Core plugins must not include a version number specification. Community plugins must include a version number specification.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.script.lang.kotlin/org.gradle.plugin.use.-plugin-dependency-spec/apply.html">apply</a></p>
+</td>
+<td>
+<code><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">PluginDependencySpec</span><span class="symbol">.</span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.script.lang.kotlin$apply(org.gradle.plugin.use.PluginDependencySpec, kotlin.Boolean)/apply">apply</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">PluginDependencySpec</span></code>
+<p>Specifies whether the plugin should be applied to the current project. Otherwise it is only put
+on the project's classpath.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.script.lang.kotlin/org.gradle.plugin.use.-plugin-dependency-spec/version.html">version</a></p>
+</td>
+<td>
+<code><span class="keyword">infix</span> <span class="keyword">fun </span><span class="identifier">PluginDependencySpec</span><span class="symbol">.</span><span class="identifier">version</span><span class="symbol">(</span><span class="identifier" id="org.gradle.script.lang.kotlin$version(org.gradle.plugin.use.PluginDependencySpec, kotlin.String)/version">version</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">PluginDependencySpec</span></code>
+<p>Specify the version of the plugin to depend on.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BuildCacheServiceFactory.Describer - api</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">api</a>&nbsp;/&nbsp;<a href="../../index.html">org.gradle.caching</a>&nbsp;/&nbsp;<a href="../index.html">BuildCacheServiceFactory</a>&nbsp;/&nbsp;<a href=".">Describer</a><br/>
+<br/>
+<h1>Describer</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">Describer</span></code>
+<p>Builder-style object that allows build cache service factories to describe the cache service. 
+<p> The description is for human consumption. It may be logged and displayed by tooling.</p>
+</p>
+<p><strong>Since</strong><br/>
+4.0</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="config.html">config</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">config</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.BuildCacheServiceFactory.Describer$config(kotlin.String, kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.caching.BuildCacheServiceFactory.Describer$config(kotlin.String, kotlin.String)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Describer</span></code>
+<p>Sets a configuration param of the cache being used. 
+<p> e.g. <code>config("location", "https://some/cache")</code>. </p>
+<p> Values may be logged. Secrets (e.g. passwords) should not be declared with this method. </p>
+<p> Implementations should describe their config where possible. </p>
+<p> Subsequent calls to this method with the same <code>name</code> argument will replace the previously supplied <code>value</code> argument. </p>
+<p> Subsequent calls to this method with different <code>name</code> arguments will append values.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="type.html">type</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">type</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.BuildCacheServiceFactory.Describer$type(kotlin.String)/type">type</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Describer</span></code>
+<p>Sets the description of the type of cache being used. 
+<p> The value should not include particulars about the cache; only a human friendly description of the kind of cache. For example, instead of <code>"HTTP @ https://some/cache"</code> it should be just <code>"HTTP"</code>. Particular configuration should be set via <code><a href="#">#config(String, String)</a></code>. </p>
+<p> BuildCacheServiceFactory implementations should always return the same value for the same cache “type”. All implementations should call this method. </p>
+<p> Values should be lowercase, except where using an acronym (e.g. HTTP). </p>
+<p> Subsequent calls to this method replace the previously set value.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

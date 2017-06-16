@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Conf2ScopeMappingContainer.addMapping - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.maven</a>&nbsp;/&nbsp;<a href="index.html">Conf2ScopeMappingContainer</a>&nbsp;/&nbsp;<a href=".">addMapping</a><br/>
+<br/>
+<h1>addMapping</h1>
+<a name="org.gradle.api.artifacts.maven.Conf2ScopeMappingContainer$addMapping(kotlin.Int, org.gradle.api.artifacts.Configuration, kotlin.String)"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addMapping</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.Conf2ScopeMappingContainer$addMapping(kotlin.Int, org.gradle.api.artifacts.Configuration, kotlin.String)/priority">priority</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.maven.Conf2ScopeMappingContainer$addMapping(kotlin.Int, org.gradle.api.artifacts.Configuration, kotlin.String)/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.maven.Conf2ScopeMappingContainer$addMapping(kotlin.Int, org.gradle.api.artifacts.Configuration, kotlin.String)/scope">scope</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">Conf2ScopeMappingContainer</span></a></code>
+<p>
+<p>Specifies that dependencies of a certain configuration should be mapped against a certain Maven scope. A configuration can be mapped to one and only one scope. If this method is called more than once for a particular configuration, the last call wins.</p>
+ See <code><a href="#">#getMapping(java.util.Collection)</a></code> for the rules how a scope is choosen from a set of mappings.</p>
+<h3>Parameters</h3>
+<a name="priority"></a>
+<code>priority</code> - a number that is used for comparison with the priority of other scopes.<a name="configuration"></a>
+<code>configuration</code> - a Gradle configuration name (must not be null).<a name="scope"></a>
+<code>scope</code> - A Maven scope name (must not be null)
+<p><strong>Return</strong><br/>
+this</p>
+<p><strong>See Also</strong><br/>
+<a href="#">#getMapping(java.util.Collection)</a></p>
+</BODY>
+</HTML>

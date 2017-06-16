@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>WindowsResourceSet - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.language.rc</a>&nbsp;/&nbsp;<a href=".">WindowsResourceSet</a><br/>
+<br/>
+<h1>WindowsResourceSet</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">WindowsResourceSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.language.base/-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-header-exporting-source-set/index.html"><span class="identifier">HeaderExportingSourceSet</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-native-resource-set.html"><span class="identifier">NativeResourceSet</span></a></code>
+<p>A set of Windows Resource definition files. 
+<p>A Windows Resource set contains a set of script files, together with an optional set of header files.</p>
+ <pre><code> apply plugin: "windows-resources" model { components { main(NativeLibrarySpec) { sources { rc { source { srcDirs "src/main/rc" include "**/*.rc" } exportedHeaders { srcDirs "src/main/include" } } } } } } </code></pre></p>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../org.gradle.language.base/-language-source-set/generated-by.html">generatedBy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">generatedBy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.base.LanguageSourceSet$generatedBy(org.gradle.api.Task)/generatorTask">generatorTask</span><span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.language.nativeplatform/-header-exporting-source-set/get-exported-headers.html">getExportedHeaders</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExportedHeaders</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.file/-source-directory-set/index.html"><span class="identifier">SourceDirectorySet</span></a></code>
+<p>The headers as a directory set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.language.nativeplatform/-header-exporting-source-set/get-implicit-headers.html">getImplicitHeaders</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getImplicitHeaders</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.file/-source-directory-set/index.html"><span class="identifier">SourceDirectorySet</span></a></code>
+<p>The headers that are private to this source set and implicitly available. These are not explicitly made available for compilation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.language.base/-language-source-set/get-parent-name.html">getParentName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getParentName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.language.base/-language-source-set/get-source.html">getSource</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.file/-source-directory-set/index.html"><span class="identifier">SourceDirectorySet</span></a></code>
+<p>The source files.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

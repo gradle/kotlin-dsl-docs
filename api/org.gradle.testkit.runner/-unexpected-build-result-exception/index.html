@@ -1,0 +1,55 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>UnexpectedBuildResultException - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.testkit.runner</a>&nbsp;/&nbsp;<a href=".">UnexpectedBuildResultException</a><br/>
+<br/>
+<h1>UnexpectedBuildResultException</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">UnexpectedBuildResultException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/RuntimeException.html"><span class="identifier">RuntimeException</span></a></code>
+<p>Base class for UnexpectedBuildFailure and UnexpectedBuildSuccess.</p>
+<p><strong>Since</strong><br/>
+2.9</p>
+<p><strong>See Also</strong><br/>
+BuildResult</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-build-result.html">getBuildResult</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getBuildResult</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-build-result/index.html"><span class="identifier">BuildResult</span></a></code>
+<p>The result of the build execution.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-unexpected-build-failure/index.html">UnexpectedBuildFailure</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">UnexpectedBuildFailure</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">UnexpectedBuildResultException</span></code>
+<p>Thrown when executing a build that was expected to succeed, but failed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-unexpected-build-success/index.html">UnexpectedBuildSuccess</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">UnexpectedBuildSuccess</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">UnexpectedBuildResultException</span></code>
+<p>Thrown when executing a build that was expected to fail, but succeeded.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GradleBuild - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.model.gradle</a>&nbsp;/&nbsp;<a href=".">GradleBuild</a><br/>
+<br/>
+<h1>GradleBuild</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">GradleBuild</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.model/-model.html"><span class="identifier">Model</span></a><span class="symbol">, </span><a href="../../org.gradle.tooling.model/-build-model/index.html"><span class="identifier">BuildModel</span></a></code>
+<p>Provides information about the structure of a Gradle build.</p>
+<p><strong>Since</strong><br/>
+1.8</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-build-identifier.html">getBuildIdentifier</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildIdentifier</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-build-identifier/index.html"><span class="identifier">BuildIdentifier</span></a></code>
+<p>Returns the identifier for this Gradle build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-included-builds.html">getIncludedBuilds</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getIncludedBuilds</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">GradleBuild</span><span class="symbol">&gt;</span></code>
+<p>Returns the builds that were included into this one.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-projects.html">getProjects</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjects</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.tooling.model/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-basic-gradle-project/index.html"><span class="identifier">BasicGradleProject</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the set of all projects for this build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-root-project.html">getRootProject</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRootProject</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-basic-gradle-project/index.html"><span class="identifier">BasicGradleProject</span></a></code>
+<p>Returns the root project for this build.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

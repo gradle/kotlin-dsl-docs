@@ -1,0 +1,107 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>PlatformJavaCompile - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.java.tasks</a>&nbsp;/&nbsp;<a href=".">PlatformJavaCompile</a><br/>
+<br/>
+<h1>PlatformJavaCompile</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PlatformJavaCompile</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks.compile/-java-compile/index.html"><span class="identifier">JavaCompile</span></a></code>
+<p>A platform-aware Java compile task.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">PlatformJavaCompile</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>A platform-aware Java compile task.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-platform.html">getPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.jvm.platform/-java-platform/index.html"><span class="identifier">JavaPlatform</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-platform.html">setPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setPlatform</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.java.tasks.PlatformJavaCompile$setPlatform(org.gradle.jvm.platform.JavaPlatform)/platform">platform</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.jvm.platform/-java-platform/index.html"><span class="identifier">JavaPlatform</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.compile/-java-compile/get-classpath.html">getClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getClasspath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.compile/-java-compile/get-effective-annotation-processor-path.html">getEffectiveAnnotationProcessorPath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getEffectiveAnnotationProcessorPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the path to use for annotation processor discovery. Returns an empty collection when no processing should be performed, for example when no annotation processors are present in the compile classpath or annotation processing has been disabled. 
+<p>You can specify this path using <code><a href="../../org.gradle.api.tasks.compile/-compile-options/set-annotation-processor-path.html">CompileOptions#setAnnotationProcessorPath(FileCollection)</a></code> or <code><a href="#">CompileOptions#setCompilerArgs(java.util.List)</a></code>. When not explicitly set using one of the methods on CompileOptions, the compile classpath will be used when there are annotation processors present in the compile classpath. Otherwise this path will be empty. </p>
+<p>This path is always empty when annotation processing is disabled.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.compile/-java-compile/get-options.html">getOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOptions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.compile/-compile-options/index.html"><span class="identifier">CompileOptions</span></a></code>
+<p>Returns the compilation options.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.compile/-java-compile/get-source.html">getSource</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.compile/-java-compile/get-tool-chain.html">getToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getToolChain</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.jvm.toolchain/-java-tool-chain/index.html"><span class="identifier">JavaToolChain</span></a></code>
+<p>Returns the tool chain that will be used to compile the Java source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.compile/-java-compile/set-tool-chain.html">setToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setToolChain</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.compile.JavaCompile$setToolChain(org.gradle.jvm.toolchain.JavaToolChain)/toolChain">toolChain</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.jvm.toolchain/-java-tool-chain/index.html"><span class="identifier">JavaToolChain</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the tool chain that should be used to compile the Java source.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

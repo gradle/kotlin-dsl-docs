@@ -1,0 +1,92 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NativeComponentSpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform</a>&nbsp;/&nbsp;<a href=".">NativeComponentSpec</a><br/>
+<br/>
+<h1>NativeComponentSpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">NativeComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.platform.base/-component-spec/index.html"><span class="identifier">ComponentSpec</span></a></code>
+<p>Definition of a software component that is to be built by Gradle to run a on JVM platform.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-base-name.html">getBaseName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBaseName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name that is used to construct the output file names when building this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-base-name.html">setBaseName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setBaseName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.NativeComponentSpec$setBaseName(kotlin.String)/baseName">baseName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the name that is used to construct the output file names when building this component.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.platform.base/-component-spec/get-project-path.html">getProjectPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The path to the project containing this component.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-native-executable-spec.html">NativeExecutableSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">NativeExecutableSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.platform.base/-application-spec.html"><span class="identifier">ApplicationSpec</span></a><span class="symbol">, </span><span class="identifier">NativeComponentSpec</span><span class="symbol">, </span><a href="../-targeted-native-component/index.html"><span class="identifier">TargetedNativeComponent</span></a></code>
+<p>Definition of a native executable component that is to be built by Gradle.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-native-library-spec/index.html">NativeLibrarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">NativeLibrarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.platform.base/-library-spec.html"><span class="identifier">LibrarySpec</span></a><span class="symbol">, </span><span class="identifier">NativeComponentSpec</span><span class="symbol">, </span><a href="../-targeted-native-component/index.html"><span class="identifier">TargetedNativeComponent</span></a></code>
+<p>Definition of a native library component that is to be built by Gradle.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.test/-native-test-suite-spec/index.html">NativeTestSuiteSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">NativeTestSuiteSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.testing.base/-test-suite-spec/index.html"><span class="identifier">TestSuiteSpec</span></a><span class="symbol">, </span><span class="identifier">NativeComponentSpec</span></code>
+<p>A component representing a suite of tests that will be executed together.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-targeted-native-component/index.html">TargetedNativeComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TargetedNativeComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.platform.base/-platform-aware-component-spec/index.html"><span class="identifier">PlatformAwareComponentSpec</span></a><span class="symbol">, </span><span class="identifier">NativeComponentSpec</span></code>
+<p>A native component that can be configured to target certain variant dimensions. This functionality is a temporary workaround to eliminate configuration of unnecessary domain objects and tasks.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ArtifactResolutionResult.getComponents - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.result</a>&nbsp;/&nbsp;<a href="index.html">ArtifactResolutionResult</a>&nbsp;/&nbsp;<a href=".">getComponents</a><br/>
+<br/>
+<h1>getComponents</h1>
+<a name="org.gradle.api.artifacts.result.ArtifactResolutionResult$getComponents()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getComponents</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-component-result/index.html"><span class="identifier">ComponentResult</span></a><span class="symbol">&gt;</span></code>
+<p>
+<p>Return a set of ComponentResult instances representing all requested components. </p>
+<p>Each element in the returned set is declared as an opaque ComponentResult. However each element in the result will also implement one of the following interfaces:</p>
+ <ul> <li>ComponentArtifactsResult for any component that could be resolved in the set of repositories.</li>
+ <li>UnresolvedComponentResult for any component that could not be resolved from the set of repositories.</li>
+ </ul>
+</p>
+<p><strong>Return</strong><br/>
+the set of results for all requested components</p>
+</BODY>
+</HTML>

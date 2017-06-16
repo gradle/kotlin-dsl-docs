@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GeneralComponentSpec - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.platform.base</a>&nbsp;/&nbsp;<a href=".">GeneralComponentSpec</a><br/>
+<br/>
+<h1>GeneralComponentSpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">GeneralComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-component-spec/index.html"><span class="identifier">ComponentSpec</span></a><span class="symbol">, </span><a href="-source-component-spec/index.html"><span class="identifier">SourceComponentSpec</span></a><span class="symbol">, </span><a href="-variant-component-spec/index.html"><span class="identifier">VariantComponentSpec</span></a></code>
+<p>A general purpose component specification, that can be used to represent some software component built from source and producing multiple output variants.</p>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-variant-component-spec/get-binaries.html">getBinaries</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBinaries</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.model/-model-map/index.html"><span class="identifier">ModelMap</span></a><span class="symbol">&lt;</span><a href="-binary-spec/index.html"><span class="identifier">BinarySpec</span></a><span class="symbol">&gt;</span></code>
+<p>The variants produced for this component spec.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-component-spec/get-project-path.html">getProjectPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The path to the project containing this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-source-component-spec/get-sources.html">getSources</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSources</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.model/-model-map/index.html"><span class="identifier">ModelMap</span></a><span class="symbol">&lt;</span><a href="../org.gradle.language.base/-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a><span class="symbol">&gt;</span></code>
+<p>The source sets for this component.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-application-spec.html">ApplicationSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ApplicationSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GeneralComponentSpec</span></code>
+<p>A specification of a org.gradle.platform.base.Application.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.platform.base.component/-base-component-spec/index.html">BaseComponentSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BaseComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultComponentSpec</span><span class="symbol">, </span><span class="identifier">GeneralComponentSpec</span></code>
+<p>Base class that may be used for custom GeneralComponentSpec implementations. However, it is generally better to use an interface annotated with org.gradle.model.Managed and not use an implementation class at all.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-library-spec.html">LibrarySpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">LibrarySpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GeneralComponentSpec</span></code>
+<p>A specification of a org.gradle.platform.base.Library.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.testing.base/-test-suite-spec/index.html">TestSuiteSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TestSuiteSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GeneralComponentSpec</span></code>
+<p>A component representing a suite of tests that will be built and executed together.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

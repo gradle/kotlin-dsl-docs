@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AttributeMatchingStrategy - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.attributes</a>&nbsp;/&nbsp;<a href=".">AttributeMatchingStrategy</a><br/>
+<br/>
+<h1>AttributeMatchingStrategy</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">AttributeMatchingStrategy</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>An attribute matching strategy is responsible for providing information about how an Attribute is matched during dependency resolution. In particular, it will tell if a value, provided by a consumer, is compatible with a value provided by a candidate.</p>
+<h3>Parameters</h3>
+<a name="&lt;T&gt;"></a>
+<code><T></code> - the type of the attribute
+<p><strong>Since</strong><br/>
+3.3</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-compatibility-rules.html">getCompatibilityRules</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCompatibilityRules</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-compatibility-rule-chain/index.html"><span class="identifier">CompatibilityRuleChain</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-disambiguation-rules.html">getDisambiguationRules</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisambiguationRules</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-disambiguation-rule-chain/index.html"><span class="identifier">DisambiguationRuleChain</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="ordered.html">ordered</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">ordered</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.attributes.AttributeMatchingStrategy$ordered(java.util.Comparator((org.gradle.api.attributes.AttributeMatchingStrategy.T)))/comparator">comparator</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html"><span class="identifier">Comparator</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>A short-hand way to define both a compatibility rule and a disambiguation rule based on an order defined by the provided Comparator.</p>
+ 
+<p>All provider values which are lower than or equal the consumer value are compatible. When disambiguating, it will pick the highest compatible value.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">ordered</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.attributes.AttributeMatchingStrategy$ordered(kotlin.Boolean, java.util.Comparator((org.gradle.api.attributes.AttributeMatchingStrategy.T)))/pickLast">pickLast</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.attributes.AttributeMatchingStrategy$ordered(kotlin.Boolean, java.util.Comparator((org.gradle.api.attributes.AttributeMatchingStrategy.T)))/comparator">comparator</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html"><span class="identifier">Comparator</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>A short-hand way to define both a compatibility rule and a disambiguation rule based on an order defined by the provided Comparator.</p>
+ 
+<p>All provider values which are lower than or equal the consumer value are compatible.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

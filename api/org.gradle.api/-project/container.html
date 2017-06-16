@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Project.container - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">Project</a>&nbsp;/&nbsp;<a href=".">container</a><br/>
+<br/>
+<h1>container</h1>
+<a name="org.gradle.api.Project$container(java.lang.Class((org.gradle.api.Project.container.T)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">container</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$container(java.lang.Class((org.gradle.api.Project.container.T)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-named-domain-object-container/index.html"><span class="identifier">NamedDomainObjectContainer</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>
+<p>Creates a container for managing named objects of the specified type. The specified type must have a public constructor which takes the name as a String parameter.</p>
+<p> </p>
+<p>All objects <strong>MUST</strong> expose their name as a bean property named "name". The name must be constant for the life of the object.</p>
+</p>
+<h3>Parameters</h3>
+<a name="type"></a>
+<code>type</code> - The type of objects for the container to contain.<a name="&lt;T&gt;"></a>
+<code><T></code> - The type of objects for the container to contain.
+<p><strong>Return</strong><br/>
+The container.</p>
+<a name="org.gradle.api.Project$container(java.lang.Class((org.gradle.api.Project.container.T)), org.gradle.api.NamedDomainObjectFactory((org.gradle.api.Project.container.T)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">container</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$container(java.lang.Class((org.gradle.api.Project.container.T)), org.gradle.api.NamedDomainObjectFactory((org.gradle.api.Project.container.T)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Project$container(java.lang.Class((org.gradle.api.Project.container.T)), org.gradle.api.NamedDomainObjectFactory((org.gradle.api.Project.container.T)))/factory">factory</span><span class="symbol">:</span>&nbsp;<a href="../-named-domain-object-factory/index.html"><span class="identifier">NamedDomainObjectFactory</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-named-domain-object-container/index.html"><span class="identifier">NamedDomainObjectContainer</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>
+<p>Creates a container for managing named objects of the specified type. The given factory is used to create object instances.</p>
+ 
+<p>All objects <strong>MUST</strong> expose their name as a bean property named "name". The name must be constant for the life of the object.</p>
+</p>
+<h3>Parameters</h3>
+<a name="type"></a>
+<code>type</code> - The type of objects for the container to contain.<a name="factory"></a>
+<code>factory</code> - The factory to use to create object instances.<a name="&lt;T&gt;"></a>
+<code><T></code> - The type of objects for the container to contain.
+<p><strong>Return</strong><br/>
+The container.</p>
+<a name="org.gradle.api.Project$container(java.lang.Class((org.gradle.api.Project.container.T)), groovy.lang.Closure((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">container</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$container(java.lang.Class((org.gradle.api.Project.container.T)), groovy.lang.Closure((kotlin.Any)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Project$container(java.lang.Class((org.gradle.api.Project.container.T)), groovy.lang.Closure((kotlin.Any)))/factoryClosure">factoryClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-named-domain-object-container/index.html"><span class="identifier">NamedDomainObjectContainer</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>
+<p>Creates a container for managing named objects of the specified type. The given closure is used to create object instances. The name of the instance to be created is passed as a parameter to the closure.</p>
+ 
+<p>All objects <strong>MUST</strong> expose their name as a bean property named "name". The name must be constant for the life of the object.</p>
+</p>
+<h3>Parameters</h3>
+<a name="type"></a>
+<code>type</code> - The type of objects for the container to contain.<a name="factoryClosure"></a>
+<code>factoryClosure</code> - The closure to use to create object instances.<a name="&lt;T&gt;"></a>
+<code><T></code> - The type of objects for the container to contain.
+<p><strong>Return</strong><br/>
+The container.</p>
+</BODY>
+</HTML>

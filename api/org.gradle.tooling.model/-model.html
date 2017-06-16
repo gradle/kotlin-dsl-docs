@@ -1,0 +1,101 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Model - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.tooling.model</a>&nbsp;/&nbsp;<a href=".">Model</a><br/>
+<br/>
+<h1>Model</h1>
+<code><span class="keyword">interface </span><span class="identifier">Model</span></code>
+<p>A model that is buildable by the Tooling API. Models contain various information regarding the build. Models are typically tailored to a specific domain, for example build environment or IDE.</p>
+<p><strong>Since</strong><br/>
+1.0-milestone-8</p>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../org.gradle.tooling.model.gradle/-basic-gradle-project/index.html">BasicGradleProject</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BasicGradleProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Model</span><span class="symbol">, </span><a href="-project-model/index.html"><span class="identifier">ProjectModel</span></a></code>
+<p>Provides some basic details about a Gradle project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.tooling.model.build/-build-environment/index.html">BuildEnvironment</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BuildEnvironment</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Model</span><span class="symbol">, </span><a href="-build-model/index.html"><span class="identifier">BuildModel</span></a></code>
+<p>Informs about the build environment, like Gradle version or the Java home in use. 
+<p> Example: </p>
+<pre><code> ProjectConnection connection = GradleConnector.newConnector() .forProjectDirectory(new File("someProjectFolder")) .connect(); try { BuildEnvironment env = connection.getModel(BuildEnvironment.class); System.out.println("Gradle version: " + env.getGradle().getGradleVersion()); System.out.println("Java home: " + env.getJava().getJavaHome()); } finally { connection.close(); } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-build-identifier/index.html">BuildIdentifier</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BuildIdentifier</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Model</span></code>
+<p>Identifies a Gradle build. 
+<p> A Gradle Build is a collection of one or more projects. </p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.tooling.model.gradle/-build-invocations/index.html">BuildInvocations</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BuildInvocations</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Model</span><span class="symbol">, </span><a href="-project-model/index.html"><span class="identifier">ProjectModel</span></a></code>
+<p>A model providing access to org.gradle.tooling.model.Launchable instances that can be used to initiate Gradle build. 
+<p>To launch a build, you pass one or more org.gradle.tooling.model.Launchable instances to either <code><a href="#">org.gradle.tooling.BuildLauncher#forTasks(Iterable)</a></code> or <code><a href="#">org.gradle.tooling.BuildLauncher#forLaunchables(Iterable)</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-element/index.html">Element</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Element</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Model</span></code>
+<p>Described model element.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.tooling.model.gradle/-gradle-build/index.html">GradleBuild</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">GradleBuild</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Model</span><span class="symbol">, </span><a href="-build-model/index.html"><span class="identifier">BuildModel</span></a></code>
+<p>Provides information about the structure of a Gradle build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-project-identifier/index.html">ProjectIdentifier</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ProjectIdentifier</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Model</span></code>
+<p>Identifies a Gradle project. 
+<p> A Gradle Project is a project in a multi-project Gradle build or a single "standalone" project. </p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.tooling.model.gradle/-project-publications/index.html">ProjectPublications</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ProjectPublications</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Model</span><span class="symbol">, </span><a href="-project-model/index.html"><span class="identifier">ProjectModel</span></a></code>
+<p>A model providing information about the publications of a Gradle project.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

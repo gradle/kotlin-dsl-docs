@@ -1,0 +1,169 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>JavaCompile - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.compile</a>&nbsp;/&nbsp;<a href=".">JavaCompile</a><br/>
+<br/>
+<h1>JavaCompile</h1>
+<code><span class="identifier">@CacheableTask</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JavaCompile</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-abstract-compile/index.html"><span class="identifier">AbstractCompile</span></a></code>
+<p>Compiles Java source files. <pre><code> apply plugin: 'java' tasks.withType(JavaCompile) { //enable compilation in a separate daemon process options.fork = true //enable incremental compilation options.incremental = true } </code></pre></p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">JavaCompile</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-classpath.html">getClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getClasspath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-effective-annotation-processor-path.html">getEffectiveAnnotationProcessorPath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getEffectiveAnnotationProcessorPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the path to use for annotation processor discovery. Returns an empty collection when no processing should be performed, for example when no annotation processors are present in the compile classpath or annotation processing has been disabled. 
+<p>You can specify this path using <code><a href="../-compile-options/set-annotation-processor-path.html">CompileOptions#setAnnotationProcessorPath(FileCollection)</a></code> or <code><a href="#">CompileOptions#setCompilerArgs(java.util.List)</a></code>. When not explicitly set using one of the methods on CompileOptions, the compile classpath will be used when there are annotation processors present in the compile classpath. Otherwise this path will be empty. </p>
+<p>This path is always empty when annotation processing is disabled.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-options.html">getOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOptions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-compile-options/index.html"><span class="identifier">CompileOptions</span></a></code>
+<p>Returns the compilation options.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-source.html">getSource</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-tool-chain.html">getToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getToolChain</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.jvm.toolchain/-java-tool-chain/index.html"><span class="identifier">JavaToolChain</span></a></code>
+<p>Returns the tool chain that will be used to compile the Java source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-tool-chain.html">setToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setToolChain</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.compile.JavaCompile$setToolChain(org.gradle.jvm.toolchain.JavaToolChain)/toolChain">toolChain</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.jvm.toolchain/-java-tool-chain/index.html"><span class="identifier">JavaToolChain</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the tool chain that should be used to compile the Java source.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-abstract-compile/get-destination-dir.html">getDestinationDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDestinationDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the directory to generate the <code>.class</code> files into.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-compile/get-source-compatibility.html">getSourceCompatibility</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSourceCompatibility</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the Java language level to use to compile the source files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-compile/get-target-compatibility.html">getTargetCompatibility</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTargetCompatibility</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the target JVM to generate the <code>.class</code> files for.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-compile/set-classpath.html">setClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setClasspath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.compile.AbstractCompile$setClasspath(org.gradle.api.file.FileCollection)/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the classpath to use to compile the source files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-compile/set-destination-dir.html">setDestinationDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDestinationDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.compile.AbstractCompile$setDestinationDir(java.io.File)/destinationDir">destinationDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDestinationDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.compile.AbstractCompile$setDestinationDir(org.gradle.api.provider.Provider((java.io.File)))/destinationDir">destinationDir</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the directory to generate the <code>.class</code> files into.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-compile/set-source-compatibility.html">setSourceCompatibility</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSourceCompatibility</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.compile.AbstractCompile$setSourceCompatibility(kotlin.String)/sourceCompatibility">sourceCompatibility</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the Java language level to use to compile the source files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-abstract-compile/set-target-compatibility.html">setTargetCompatibility</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTargetCompatibility</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.compile.AbstractCompile$setTargetCompatibility(kotlin.String)/targetCompatibility">targetCompatibility</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the target JVM to generate the <code>.class</code> files for.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.java.tasks/-platform-java-compile/index.html">PlatformJavaCompile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PlatformJavaCompile</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JavaCompile</span></code>
+<p>A platform-aware Java compile task.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

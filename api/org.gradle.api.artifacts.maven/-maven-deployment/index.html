@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MavenDeployment - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.maven</a>&nbsp;/&nbsp;<a href=".">MavenDeployment</a><br/>
+<br/>
+<h1>MavenDeployment</h1>
+<code><span class="keyword">interface </span><span class="identifier">MavenDeployment</span></code>
+<p>Represents the artifacts which will be deployed to a Maven repository. You can use this interface to modify the set of artifacts.</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-artifact.html">addArtifact</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addArtifact</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.MavenDeployment$addArtifact(org.gradle.api.artifacts.PublishArtifact)/artifact">artifact</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts/-publish-artifact/index.html"><span class="identifier">PublishArtifact</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an additional artifact to this deployment.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-artifacts.html">getArtifacts</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getArtifacts</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-publish-artifact/index.html"><span class="identifier">PublishArtifact</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the artifacts which will be deployed. Includes the POM artifact.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-attached-artifacts.html">getAttachedArtifacts</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAttachedArtifacts</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-publish-artifact/index.html"><span class="identifier">PublishArtifact</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the additional artifacts for this deployment.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-main-artifact.html">getMainArtifact</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getMainArtifact</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts/-publish-artifact/index.html"><span class="identifier">PublishArtifact</span></a></code>
+<p>Returns the main artifact for this deployment.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-pom-artifact.html">getPomArtifact</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPomArtifact</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts/-publish-artifact/index.html"><span class="identifier">PublishArtifact</span></a></code>
+<p>Returns the POM for this deployment.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

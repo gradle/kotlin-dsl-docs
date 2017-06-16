@@ -1,0 +1,21 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TypeOf.parameterizedTypeOf - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.reflect</a>&nbsp;/&nbsp;<a href="index.html">TypeOf</a>&nbsp;/&nbsp;<a href=".">parameterizedTypeOf</a><br/>
+<br/>
+<h1>parameterizedTypeOf</h1>
+<a name="org.gradle.api.reflect.TypeOf$parameterizedTypeOf(org.gradle.api.reflect.TypeOf((kotlin.Any)), kotlin.Array((org.gradle.api.reflect.TypeOf((kotlin.Any)))))"></a>
+<code><span class="keyword">open</span> <span class="keyword">static</span> <span class="keyword">fun </span><span class="identifier">parameterizedTypeOf</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.reflect.TypeOf$parameterizedTypeOf(org.gradle.api.reflect.TypeOf((kotlin.Any)), kotlin.Array((org.gradle.api.reflect.TypeOf((kotlin.Any)))))/parameterizedType">parameterizedType</span><span class="symbol">:</span>&nbsp;<a href="index.html"><span class="identifier">TypeOf</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.reflect.TypeOf$parameterizedTypeOf(org.gradle.api.reflect.TypeOf((kotlin.Any)), kotlin.Array((org.gradle.api.reflect.TypeOf((kotlin.Any)))))/typeArguments">typeArguments</span><span class="symbol">:</span>&nbsp;<a href="index.html"><span class="identifier">TypeOf</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">TypeOf</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span></code>
+<p>Constructs a new parameterized type from a given parameterized type definition and an array of type arguments. For example, <code>parameterizedTypeOf(new TypeOf&lt;List&lt;?&gt;&gt;() {}, new TypeOf&lt;String&gt;() {})</code> is equivalent to <code>new TypeOf&lt;List&lt;String&gt;&gt;() {}</code>, except both the parameterized type definition and type arguments can be dynamically computed.</p>
+<h3>Parameters</h3>
+<a name="parameterizedType"></a>
+<code>parameterizedType</code> - the parameterized type from which to construct the new parameterized type<a name="typeArguments"></a>
+<code>typeArguments</code> - the arguments with which to construct the new parameterized type
+<p><strong>See Also</strong><br/>
+<a href="is-parameterized.html">#isParameterized()</a></p>
+</BODY>
+</HTML>
