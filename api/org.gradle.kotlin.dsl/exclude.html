@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>exclude - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.kotlin.dsl</a>&nbsp;/&nbsp;<a href=".">exclude</a><br/>
+<br/>
+<h1>exclude</h1>
+<a name="org.gradle.kotlin.dsl$exclude(org.gradle.kotlin.dsl.exclude.T, kotlin.String, kotlin.String)"></a>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.artifacts/-module-dependency/index.html"><span class="identifier">ModuleDependency</span></a><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$exclude(org.gradle.kotlin.dsl.exclude.T, kotlin.String, kotlin.String)/group">group</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl$exclude(org.gradle.kotlin.dsl.exclude.T, kotlin.String, kotlin.String)/module">module</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Adds an exclude rule to exclude transitive dependencies of this dependency.</p>
+<p>Excluding a particular transitive dependency does not guarantee that it does not show up
+in the dependencies of a given configuration.
+For example, some other dependency, which does not have any exclude rules,
+might pull in exactly the same transitive dependency.
+To guarantee that the transitive dependency is excluded from the entire configuration
+please use per-configuration exclude rules: <a href="../org.gradle.api.artifacts/-configuration/get-exclude-rules.html">Configuration.getExcludeRules</a>.
+In fact, in majority of cases the actual intention of configuring per-dependency exclusions
+is really excluding a dependency from the entire configuration (or classpath).</p>
+<p>If your intention is to exclude a particular transitive dependency
+because you don't like the version it pulls in to the configuration
+then consider using the forced versions feature: <a href="../org.gradle.api.artifacts/-resolution-strategy/force.html">ResolutionStrategy.force</a>.</p>
+<h3>Parameters</h3>
+<a name="group"></a>
+<code>group</code> - the optional group identifying the dependencies to be excluded.<a name="module"></a>
+<code>module</code> - the optional module name identifying the dependencies to be excluded.
+<p><strong>Return</strong><br/>
+this</p>
+<p><strong>See Also</strong><br/>
+<p><a href="../org.gradle.api.artifacts/-module-dependency/exclude.html">ModuleDependency.exclude</a></p>
+</p>
+</BODY>
+</HTML>

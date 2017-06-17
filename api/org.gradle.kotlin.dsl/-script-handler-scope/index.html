@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ScriptHandlerScope - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.kotlin.dsl</a>&nbsp;/&nbsp;<a href=".">ScriptHandlerScope</a><br/>
+<br/>
+<h1>ScriptHandlerScope</h1>
+<code><span class="keyword">class </span><span class="identifier">ScriptHandlerScope</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.initialization.dsl/-script-handler/index.html"><span class="identifier">ScriptHandler</span></a></code>
+<p>Receiver for the <code>buildscript</code> block.</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">ScriptHandlerScope</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.ScriptHandlerScope$<init>(org.gradle.api.initialization.dsl.ScriptHandler)/scriptHandler">scriptHandler</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.initialization.dsl/-script-handler/index.html"><span class="identifier">ScriptHandler</span></a><span class="symbol">)</span></code>
+<p>Receiver for the <code>buildscript</code> block.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="dependencies.html">dependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">dependencies</span><span class="symbol">: </span><a href="../-dependency-handler-scope/index.html"><span class="identifier">DependencyHandlerScope</span></a></code>
+<p>The dependencies of the script.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="classpath.html">classpath</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="../../org.gradle.api.artifacts.dsl/-dependency-handler/index.html"><span class="identifier">DependencyHandler</span></a><span class="symbol">.</span><span class="identifier">classpath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.ScriptHandlerScope$classpath(org.gradle.api.artifacts.dsl.DependencyHandler, kotlin.Any)/dependencyNotation">dependencyNotation</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts/-dependency/index.html"><span class="identifier">Dependency</span></a></code>
+<p>Adds a dependency to the script classpath.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../kotlin.-any/closure-of.html">closureOf</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">.</span><span class="identifier">closureOf</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$closureOf(kotlin.Any, kotlin.Function1((org.gradle.kotlin.dsl.closureOf.T, kotlin.Unit)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">&gt;</span></code>
+<p>Adapts a Kotlin function to a single argument Groovy <a href="#">Closure</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../kotlin.-any/delegate-closure-of.html">delegateClosureOf</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">.</span><span class="identifier">delegateClosureOf</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$delegateClosureOf(kotlin.Any, kotlin.Function1((org.gradle.kotlin.dsl.delegateClosureOf.T, kotlin.Unit)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code>
+<p>Adapts a Kotlin function to a Groovy <a href="#">Closure</a> that operates on the
+configured Closure delegate.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.api.initialization.dsl.-script-handler/repositories.html">repositories</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="../../org.gradle.api.initialization.dsl/-script-handler/index.html"><span class="identifier">ScriptHandler</span></a><span class="symbol">.</span><span class="identifier">repositories</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$repositories(org.gradle.api.initialization.dsl.ScriptHandler, kotlin.Function1((org.gradle.api.artifacts.dsl.RepositoryHandler, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts.dsl/-repository-handler/index.html"><span class="identifier">RepositoryHandler</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

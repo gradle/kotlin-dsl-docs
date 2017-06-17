@@ -1,0 +1,24 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>getPluginByName - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.kotlin.dsl</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.api.plugins.Convention</a>&nbsp;/&nbsp;<a href=".">getPluginByName</a><br/>
+<br/>
+<h1>getPluginByName</h1>
+<a name="org.gradle.kotlin.dsl$getPluginByName(org.gradle.api.plugins.Convention, kotlin.String)"></a>
+<code><span class="keyword">inline</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="keyword">reified</span>&nbsp;<span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <a href="../../org.gradle.api.plugins/-convention/index.html"><span class="identifier">Convention</span></a><span class="symbol">.</span><span class="identifier">getPluginByName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$getPluginByName(org.gradle.api.plugins.Convention, kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Looks for the convention plugin of a given name and casts it to the expected type <a href="#">T</a>.</p>
+<p>If no convention is found or if the one found cannot be cast to the expected type it will throw an <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-illegal-state-exception/index.html">IllegalStateException</a>.</p>
+<h3>Parameters</h3>
+<a name="name"></a>
+<code>name</code> - convention plugin name
+<h3>Exceptions</h3>
+<a name="IllegalStateException"></a>
+<code>IllegalStateException</code> - When the convention cannot be found or cast to the expected type.
+<p><strong>Return</strong><br/>
+the convention plugin, never null</p>
+</BODY>
+</HTML>
