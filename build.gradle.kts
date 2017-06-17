@@ -43,7 +43,7 @@ tasks {
     }
 
     // Gradle Kotlin DSL API sources extraction and generation
-    val cloneGSK by tasks.creating(git.GitClone::class) {
+    val cloneKotlinDsl by tasks.creating(git.GitClone::class) {
         group = cloningGroup
         description = "Clones Gradle Kotlin DSL sources."
         uri = gskGitUri
@@ -51,14 +51,14 @@ tasks {
         cloneDir = file("$buildDir/clones/gradle-kotlin-dsl")
     }
     val generateGskExtensions by creating(GradleBuild::class) {
-        dir = cloneGSK.cloneDir
+        dir = cloneKotlinDsl.cloneDir
         tasks = listOf(":provider:generateExtensions")
-        dependsOn(cloneGSK)
+        dependsOn(cloneKotlinDsl)
     }
     val gradleKotlinDslApiSources by creating(api.GradleKotlinDslApiSources::class) {
         group = apiSourcesGroup
         description = "Generates Gradle Kotlin DSL API sources."
-        gskClone = cloneGSK.cloneDir
+        gskClone = cloneKotlinDsl.cloneDir
         sourceDir = file("$buildDir/api-sources/gradle-kotlin-dsl")
         dependsOn(generateGskExtensions)
     }
@@ -72,12 +72,12 @@ tasks {
 
     // API docs generation using dokka
     val declareDokkaDependencies by creating {
-        dependsOn(cloneGradle, cloneGSK)
+        dependsOn(cloneGradle, cloneKotlinDsl)
         doLast {
             val groovyVersion = File(cloneGradle.cloneDir, "gradle/dependencies.gradle")
                 .readLines().find { it.startsWith("versions.groovy =") }!!
                 .split("=").last().replace("\"", "").trim()
-            val kotlinVersion = File(cloneGSK.cloneDir, "kotlin-version.txt")
+            val kotlinVersion = File(cloneKotlinDsl.cloneDir, "kotlin-version.txt")
                 .readText().trim()
             val dokkaDependencies by configurations.creating
             dependencies {

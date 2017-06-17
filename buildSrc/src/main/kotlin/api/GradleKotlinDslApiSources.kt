@@ -20,10 +20,11 @@ open class GradleKotlinDslApiSources : DefaultTask() {
             from(File(gskClone!!, "provider/src/main/kotlin"))
             from(File(gskClone!!, "provider/src/generated/kotlin"))
             from(File(gskClone!!, "tooling-models/src/main/kotlin"))
-            exclude("org/gradle/script/lang/kotlin/accessors/**")
-            exclude("org/gradle/script/lang/kotlin/provider/**")
-            exclude("org/gradle/script/lang/kotlin/resolver/**")
-            exclude("org/gradle/script/lang/kotlin/support/**")
+            exclude("org/gradle/kotlin/dsl/accessors/**")
+            exclude("org/gradle/kotlin/dsl/provider/**")
+            exclude("org/gradle/kotlin/dsl/resolver/**")
+            exclude("org/gradle/kotlin/dsl/support/**")
+            exclude("org/gradle/script/lang/kotlin/**")
             into(sourceDir!!)
         }
     }

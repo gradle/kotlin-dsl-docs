@@ -35,13 +35,13 @@ task checkApiDocumentation {
             if(!gradleApiFound && text.contains("id=\"org.gradle.api.Project\$task")) {
                 gradleApiFound = true
             }
-            if(!gradleKotlinDslApiFound && text.contains("id=\"org.gradle.script.lang.kotlin.KotlinBuildScript")) {
+            if(!gradleKotlinDslApiFound && text.contains("id=\"org.gradle.kotlin.dsl.KotlinBuildScript")) {
                 gradleKotlinDslApiFound = true
             }
             if(!gradleKotlinDslGeneratedApiFound && text.contains("embeddedKotlinVersion")) {
                 gradleKotlinDslGeneratedApiFound = true
             }
-            if(!gradlePluginsAccessorsFound && text.contains("name=\"org.gradle.script.lang.kotlin\$checkstyle#org.gradle.api.Project")) {
+            if(!gradlePluginsAccessorsFound && text.contains("name=\"org.gradle.kotlin.dsl\$checkstyle#org.gradle.api.Project")) {
                 gradlePluginsAccessorsFound = true
             }
         }

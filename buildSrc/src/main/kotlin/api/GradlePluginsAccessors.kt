@@ -43,7 +43,7 @@ open class GradlePluginsAccessors : DefaultTask() {
             standardOutput = baos
         }
         var text = """
-        package org.gradle.script.lang.kotlin
+        package org.gradle.kotlin.dsl
 
         import org.gradle.api.*
 
