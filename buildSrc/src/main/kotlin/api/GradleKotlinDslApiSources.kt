@@ -19,6 +19,7 @@ open class GradleKotlinDslApiSources : DefaultTask() {
         project.sync {
             from(File(gskClone!!, "provider/src/main/kotlin"))
             from(File(gskClone!!, "provider/src/generated/kotlin"))
+            from(File(gskClone!!, "plugins/src/main/kotlin"))
             from(File(gskClone!!, "tooling-models/src/main/kotlin"))
             exclude("org/gradle/kotlin/dsl/accessors/**")
             exclude("org/gradle/kotlin/dsl/provider/**")
