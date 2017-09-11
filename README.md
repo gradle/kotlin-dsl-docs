@@ -6,6 +6,6 @@ Local preview
 
 Publishing
 - `./gradlew publishGhPages`
-- open https://gradle.github.io/gradle-kotlin-dsl-docs/
+- open https://gradle.github.io/kotlin-dsl-docs/
 
 Look at `./gradlew tasks` output for details on how to run intermediate steps only.
