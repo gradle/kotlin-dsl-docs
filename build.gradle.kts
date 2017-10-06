@@ -17,9 +17,9 @@ apply {
 // Sources sources
 // You can change this to local clones URIs and refs for faster turnaround
 val gradleGitUri = "https://github.com/gradle/gradle.git"
-val gradleGitRef = "kotlin-dsl"
-val gskGitUri = "https://github.com/gradle/gradle-script-kotlin.git"
-val gskGitRef = "master"
+val gradleGitRef = "release"
+val gskGitUri = "https://github.com/gradle/kotlin-dsl.git"
+val gskGitRef = "v0.12.0"
 
 
 tasks {
