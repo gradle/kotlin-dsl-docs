@@ -65,10 +65,17 @@ tasks {
     }
 
     // Gradle built-in plugins accessors API generation
+    val installGradle by creating(api.GradleInstall::class) {
+        gradleClone = cloneGradle.cloneDir
+        gradleInstall = file("$buildDir/install/gradle")
+        dependsOn(cloneGradle)
+    }
     val buildWithCorePluginsDir = file("build-with-core-plugins")
     val gradlePluginsAccessors by creating(api.GradlePluginsAccessors::class) {
+        gradleInstall = installGradle.gradleInstall
         buildDirectory = buildWithCorePluginsDir
         accessorsDir = file("$buildDir/generated/gradle-plugins-accessors")
+        dependsOn(installGradle)
     }
 
     // API docs generation using dokka

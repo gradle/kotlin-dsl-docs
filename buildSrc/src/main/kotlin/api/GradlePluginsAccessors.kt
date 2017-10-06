@@ -4,12 +4,13 @@ import java.io.ByteArrayOutputStream
 import java.io.File
 
 import org.gradle.api.*
-import org.gradle.api.file.*
 import org.gradle.api.provider.*
 import org.gradle.api.tasks.*
-import org.gradle.script.lang.kotlin.*
 
 open class GradlePluginsAccessors : DefaultTask() {
+
+    @get:InputDirectory
+    var gradleInstall: File? = null
 
     @get:Internal
     var buildDirectory: File? = null
@@ -31,18 +32,19 @@ open class GradlePluginsAccessors : DefaultTask() {
         get() = accessorsDirState
 
     @TaskAction
-    fun gradlePluginsAccessors(): Unit {
+    fun gradlePluginsAccessors() {
         accessorsDir.deleteRecursively()
         val baos = ByteArrayOutputStream()
+        val gradlew = File(gradleInstall!!, "bin/gradle")
         project.exec {
             commandLine = listOf(
-                "./gradlew", "-q",
-                "-c", File(buildDirectory!!, "settings.gradle").absolutePath,
-                "-p", buildDirectory!!.absolutePath,
-                "kotlinDslAccessorsReport")
+                    gradlew.absolutePath, "-q",
+                    "-c", File(buildDirectory!!, "settings.gradle").absolutePath,
+                    "-p", buildDirectory!!.absolutePath,
+                    "kotlinDslAccessorsReport")
             standardOutput = baos
         }
-        var text = """
+        val text = """
         package org.gradle.kotlin.dsl
 
         import org.gradle.api.*
