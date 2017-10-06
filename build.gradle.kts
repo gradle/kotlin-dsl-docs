@@ -53,6 +53,7 @@ tasks {
     val generateGskExtensions by creating(GradleBuild::class) {
         dir = cloneKotlinDsl.cloneDir
         tasks = listOf(":provider:generateExtensions")
+        startParameter.showStacktrace = ShowStacktrace.ALWAYS
         dependsOn(cloneKotlinDsl)
     }
     val gradleKotlinDslApiSources by creating(api.GradleKotlinDslApiSources::class) {
@@ -108,6 +109,7 @@ tasks {
     val gradleKtsUserGuideHtml by creating(GradleBuild::class) {
         dir = cloneGradle.cloneDir
         tasks = listOf(":docs:ktsUserGuideHtml")
+        startParameter.showStacktrace = ShowStacktrace.ALWAYS
         dependsOn(cloneGradle)
     }
 
@@ -122,6 +124,7 @@ tasks {
     val cleanBuildWithCorePlugins by creating(GradleBuild::class) {
         dir = buildWithCorePluginsDir
         tasks = listOf("clean")
+        startParameter.showStacktrace = ShowStacktrace.ALWAYS
     }
     "clean" {
         dependsOn(cleanBuildWithCorePlugins)
