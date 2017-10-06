@@ -39,13 +39,15 @@ open class GradlePluginsAccessors : DefaultTask() {
                 "./gradlew", "-q",
                 "-c", File(buildDirectory!!, "settings.gradle").absolutePath,
                 "-p", buildDirectory!!.absolutePath,
-                "gskProjectAccessors")
+                "kotlinDslAccessorsReport")
             standardOutput = baos
         }
         var text = """
         package org.gradle.kotlin.dsl
 
         import org.gradle.api.*
+        import org.gradle.api.artifacts.*
+        import org.gradle.api.artifacts.dsl.*
 
         ${String(baos.toByteArray())}
         """
