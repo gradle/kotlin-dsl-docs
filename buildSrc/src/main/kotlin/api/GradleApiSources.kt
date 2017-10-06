@@ -7,7 +7,7 @@ import org.gradle.api.tasks.*
 import org.gradle.script.lang.kotlin.*
 
 // TODO Gradle API definition extracted from gradle/gradle/build.gradle
-// and gradle/gradle/subprojects/docs/docs.gradle
+// and gradle/gradle/publicApi.gradle
 open class GradleApiSources : DefaultTask() {
 
     @get:InputDirectory
@@ -31,13 +31,17 @@ open class GradleApiSources : DefaultTask() {
                     "org/gradle/authentication/**",
                     "org/gradle/buildinit/**",
                     "org/gradle/caching/**",
+                    "org/gradle/concurrent/**",
+                    "org/gradle/deployment/**",
                     "org/gradle/external/javadoc/**",
                     "org/gradle/ide/**",
+                    "org/gradle/includedbuild/**",
                     "org/gradle/ivy/**",
                     "org/gradle/jvm/**",
                     "org/gradle/language/**",
                     "org/gradle/maven/**",
                     "org/gradle/nativeplatform/**",
+                    "org/gradle/normalization/**",
                     "org/gradle/platform/**",
                     "org/gradle/play/**",
                     "org/gradle/plugin/devel/**",
@@ -51,7 +55,9 @@ open class GradleApiSources : DefaultTask() {
                     "org/gradle/tooling/**",
                     "org/gradle/model/**",
                     "org/gradle/testkit/**",
-                    "org/gradle/testing/**")
+                    "org/gradle/testing/**",
+                    "org/gradle/vcs/**",
+                    "org/gradle/workers/**")
                 exclude("**/internal/**")
                 into(sourceDir!!)
             }
