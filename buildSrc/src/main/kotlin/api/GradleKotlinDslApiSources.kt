@@ -4,7 +4,6 @@ import java.io.File
 
 import org.gradle.api.*
 import org.gradle.api.tasks.*
-import org.gradle.script.lang.kotlin.*
 
 open class GradleKotlinDslApiSources : DefaultTask() {
 
@@ -15,7 +14,7 @@ open class GradleKotlinDslApiSources : DefaultTask() {
     var sourceDir: File? = null
 
     @TaskAction
-    fun copyGradleScriptKotlinApiSources(): Unit {
+    fun copyGradleScriptKotlinApiSources() {
         project.sync {
             from(File(gskClone!!, "provider/src/main/kotlin"))
             from(File(gskClone!!, "provider/src/generated/kotlin"))
