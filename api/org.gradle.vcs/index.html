@@ -1,0 +1,71 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.vcs - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.vcs</a><br/>
+<br/>
+<h2>Package org.gradle.vcs</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-source-control/index.html">SourceControl</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SourceControl</span></code>
+<p>Configuration related to source dependencies.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-vcs-mapping/index.html">VcsMapping</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VcsMapping</span></code>
+<p>A dependency mapping provided by a VCS repository.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-vcs-mappings/index.html">VcsMappings</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VcsMappings</span></code>
+<p>In settings.gradle: <pre><code> vcsMappings { withModule("group:name") { from vcs(GitVcs) { url = "..." } } addRule("rule for group") { details -&gt; if (details.requested.group == "group") { from vcs(GitVcs) { url = "..." } } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-version-control-spec/index.html">VersionControlSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VersionControlSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-describable/index.html"><span class="identifier">Describable</span></a></code>
+<p>Captures user-provided information about a version control system.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-version-control-system/index.html">VersionControlSystem</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VersionControlSystem</span></code>
+<p>Allows the user to perform generic version control operations in ways specified by the underlying implementations.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-version-ref/index.html">VersionRef</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VersionRef</span></code>
+<p>Represents how a version of a software component is referred to in a version control system.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

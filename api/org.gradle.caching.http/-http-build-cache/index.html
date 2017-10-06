@@ -58,13 +58,42 @@
 </tr>
 <tr>
 <td>
+<p><a href="is-allow-untrusted-server.html">isAllowUntrustedServer</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isAllowUntrustedServer</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Specifies whether it is acceptable to communicate with an HTTP build cache backend with an untrusted SSL certificate. 
+<p> The SSL certificate for the HTTP build cache backend may be untrusted since it is internally provisioned or a self-signed certificate. </p>
+<p> In such a scenario, you can either configure the build JVM environment to trust the certificate, or set this property to <code>true</code> to disable verification of the server's identity. </p>
+<p> Allowing communication with untrusted servers keeps data encrypted during transmission, but makes it easier for a man-in-the-middle to impersonate the intended server and capture data. </p>
+<p> This value has no effect if a server is specified using the HTTP protocol (i.e. has SSL disabled).</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-allow-untrusted-server.html">setAllowUntrustedServer</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setAllowUntrustedServer</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.http.HttpBuildCache$setAllowUntrustedServer(kotlin.Boolean)/allowUntrustedServer">allowUntrustedServer</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies whether it is acceptable to communicate with an HTTP build cache backend with an untrusted SSL certificate. 
+<p> The SSL certificate for the HTTP build cache backend may be untrusted since it is internally provisioned or a self-signed certificate. </p>
+<p> In such a scenario, you can either configure the build JVM environment to trust the certificate, or set this property to <code>true</code> to disable verification of the server's identity. </p>
+<p> Allowing communication with untrusted servers keeps data encrypted during transmission, but makes it easier for a man-in-the-middle to impersonate the intended server and capture data. </p>
+<p> This value has no effect if a server is specified using the HTTP protocol (i.e. has SSL disabled).</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="set-url.html">setUrl</a></p>
 </td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setUrl</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.http.HttpBuildCache$setUrl(kotlin.String)/url">url</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setUrl</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.http.HttpBuildCache$setUrl(java.net.URL)/url">url</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/net/URL.html"><span class="identifier">URL</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setUrl</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.http.HttpBuildCache$setUrl(java.net.URL)/url">url</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/net/URL.html"><span class="identifier">URL</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setUrl</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.http.HttpBuildCache$setUrl(java.net.URI)/url">url</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/net/URI.html"><span class="identifier">URI</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Sets the URL of the cache. The URL must end in a '/'.</p>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setUrl</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.http.HttpBuildCache$setUrl(java.net.URI)/url">url</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/net/URI.html"><span class="identifier">URI</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</td>
 </tr>
 </tbody>
 </table>

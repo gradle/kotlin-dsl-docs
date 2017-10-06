@@ -44,9 +44,7 @@
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">id</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.use.PluginDependenciesSpec$id(kotlin.String)/id">id</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-plugin-dependency-spec/index.html"><span class="identifier">PluginDependencySpec</span></a></code>
-<p>Add a dependency on the plugin with the given id. 
-<p> </p>
-<pre><code> plugins { id "org.company.myplugin" } </code></pre> Further constraints (e.g. version number) can be specified by the methods of the return value. <pre><code> plugins { id "org.company.myplugin" version "1.3" } </code></pre> Plugins are automatically applied to the current script by default. This can be disabled using the <code>apply false</code> option: <pre><code> plugins { id "org.company.myplugin" version "1.3" apply false } </code></pre> This is useful to reuse task classes from a plugin or to apply it to some other target than the current script.</p>
+<p>Add a dependency on the plugin with the given id. <pre><code> plugins { id "org.company.myplugin" } </code></pre> Further constraints (e.g. version number) can be specified by the methods of the return value. <pre><code> plugins { id "org.company.myplugin" version "1.3" } </code></pre> Plugins are automatically applied to the current script by default. This can be disabled using the <code>apply false</code> option: <pre><code> plugins { id "org.company.myplugin" version "1.3" apply false } </code></pre> This is useful to reuse task classes from a plugin or to apply it to some other target than the current script.</p>
 </td>
 </tr>
 </tbody>
@@ -54,6 +52,15 @@
 <h3>Extension Properties</h3>
 <table>
 <tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.kotlin.dsl/org.gradle.plugin.use.-plugin-dependencies-spec/build-scan.html">build-scan</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">PluginDependenciesSpec</span><span class="symbol">.</span><span class="identifier">build-scan</span><span class="symbol">: </span><a href="../-plugin-dependency-spec/index.html"><span class="identifier">PluginDependencySpec</span></a></code>
+<p>The <code>build-scan</code> plugin.</p>
+</td>
+</tr>
 <tr>
 <td>
 <p><a href="../../org.gradle.kotlin.dsl/org.gradle.plugin.use.-plugin-dependencies-spec/embedded-kotlin.html">embedded-kotlin</a></p>
@@ -82,8 +89,8 @@
 <p><a href="../../org.gradle.kotlin.dsl/org.gradle.plugin.use.-plugin-dependencies-spec/kotlin.html">kotlin</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">PluginDependenciesSpec</span><span class="symbol">.</span><span class="identifier">kotlin</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$kotlin(org.gradle.plugin.use.PluginDependenciesSpec, kotlin.String, kotlin.String)/module">module</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl$kotlin(org.gradle.plugin.use.PluginDependenciesSpec, kotlin.String, kotlin.String)/version">version</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><a href="../-plugin-dependency-spec/index.html"><span class="identifier">PluginDependencySpec</span></a></code>
-<p>Builds the plugin dependency specification for the named Kotlin Gradle plugin <a href="../../org.gradle.kotlin.dsl/org.gradle.plugin.use.-plugin-dependencies-spec/kotlin.html#org.gradle.kotlin.dsl$kotlin(org.gradle.plugin.use.PluginDependenciesSpec, kotlin.String, kotlin.String)/module">module</a> at the given <a href="../../org.gradle.kotlin.dsl/org.gradle.plugin.use.-plugin-dependencies-spec/kotlin.html#org.gradle.kotlin.dsl$kotlin(org.gradle.plugin.use.PluginDependenciesSpec, kotlin.String, kotlin.String)/version">version</a>.</p>
+<code><span class="keyword">fun </span><span class="identifier">PluginDependenciesSpec</span><span class="symbol">.</span><span class="identifier">kotlin</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$kotlin(org.gradle.plugin.use.PluginDependenciesSpec, kotlin.String)/module">module</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-plugin-dependency-spec/index.html"><span class="identifier">PluginDependencySpec</span></a></code>
+<p>Applies the given Kotlin plugin <a href="../../org.gradle.kotlin.dsl/org.gradle.plugin.use.-plugin-dependencies-spec/kotlin.html#org.gradle.kotlin.dsl$kotlin(org.gradle.plugin.use.PluginDependenciesSpec, kotlin.String)/module">module</a>.</p>
 </td>
 </tr>
 </tbody>

@@ -13,10 +13,10 @@
 <p> To be able to use a <code>BuildCacheService</code>, the factory that implements this interface and the configuration type (BuildCache) must be registered with the org.gradle.caching.configuration.BuildCacheConfiguration. </p>
  
 <p> In settings.gradle: </p>
-<pre><code> buildCache { // Register custom build cache implementation registerBuildCacheService(CustomBuildCache, CustomBuildCacheFactory) remote(CustomBuildCache) { // configure custom build cache. } } </code></pre> </p>
+ <pre><code> buildCache { // Register custom build cache implementation registerBuildCacheService(CustomBuildCache, CustomBuildCacheFactory) remote(CustomBuildCache) { // configure custom build cache. } } </code></pre></p>
 <h3>Parameters</h3>
-<a name="&lt;T&gt;"></a>
-<code><T></code> - the type of build cache configuration this factory can handle.
+<p><a name="&lt;T&gt;"></a>
+<code><T></code> - the type of build cache configuration this factory can handle.</p>
 <p><strong>Since</strong><br/>
 3.5</p>
 <h3>Types</h3>

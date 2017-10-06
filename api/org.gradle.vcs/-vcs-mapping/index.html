@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>VcsMapping - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.vcs</a>&nbsp;/&nbsp;<a href=".">VcsMapping</a><br/>
+<br/>
+<h1>VcsMapping</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">VcsMapping</span></code>
+<p>A dependency mapping provided by a VCS repository.</p>
+<p><strong>Since</strong><br/>
+4.3</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="from.html">from</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="identifier" id="org.gradle.vcs.VcsMapping$from(org.gradle.vcs.VersionControlSpec)/versionControlSpec">versionControlSpec</span><span class="symbol">:</span>&nbsp;<a href="../-version-control-spec/index.html"><span class="identifier">VersionControlSpec</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-requested.html">getRequested</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRequested</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts.component/-component-selector/index.html"><span class="identifier">ComponentSelector</span></a></code>
+<p>The requested dependency, before it is resolved. The requested dependency does not change even if there are multiple dependency substitution rules that manipulate the dependency metadata.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

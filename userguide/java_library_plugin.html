@@ -1,34 +1,7 @@
-<html><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>The Java Library Plugin - Gradle User Guide Version 4.1-20170617095021+0000</title><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="base.css"><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="docs.css"><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="userguide.css"><meta content="DocBook XSL Stylesheets V1.75.2" name="generator"><link rel="home" href="userguide.html" title="Gradle User Guide Version 4.1-20170617095021+0000"><link rel="up" href="pt05.html" title="Part&nbsp;V.&nbsp;Building JVM projects"><link rel="prev" href="java_plugin.html" title="The Java Plugin - Gradle User Guide Version 4.1-20170617095021+0000"><link rel="next" href="web_project_tutorial.html" title="Web Application Quickstart - Gradle User Guide Version 4.1-20170617095021+0000"></head><body><div class="navheader"><div><div class="navbar"><a xmlns:xslthl="http://xslthl.sf.net" href="java_plugin.html" title="The Java Plugin - Gradle User Guide Version 4.1-20170617095021+0000">Previous</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="Gradle User Guide Version 4.1-20170617095021+0000">Contents</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="web_project_tutorial.html" title="Web Application Quickstart - Gradle User Guide Version 4.1-20170617095021+0000">Next</a></div></div></div><div class="chapter"><div class="titlepage"><div><div><h1 xmlns:xslthl="http://xslthl.sf.net"><a name="java_library_plugin"></a>Chapter&nbsp;48.&nbsp;The Java Library Plugin</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="java_library_plugin.html#sec:java_library_usage">48.1. Usage</a></span></dt><dt><span class="section"><a href="java_library_plugin.html#sec:java_library_separation">48.2. API and implementation separation</a></span></dt><dt><span class="section"><a href="java_library_plugin.html#sec:java_library_recognizing_dependencies">48.3. Recognizing API and implementation dependencies</a></span></dt><dt><span class="section"><a href="java_library_plugin.html#sec:java_library_configurations_graph">48.4. The Java Library plugin configurations</a></span></dt><dt><span class="section"><a href="java_library_plugin.html#sec:java_library_known_issues">48.5. Known issues</a></span></dt></dl></div><p>The Java Library plugin expands the capabilities of the Java plugin by providing specific knowledge about Java libraries. In particular, a Java
-        library exposes an API to consumers (i.e., other projects using the Java or the Java Library plugin). All the source sets, tasks and configurations
-        exposed by the Java plugin are implicitly available when using this plugin.
-    </p><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:java_library_usage" class="section-anchor" href="#sec:java_library_usage"></a>48.1.&nbsp;Usage</h2></div></div></div><p>To use the Java Library plugin, include the following in your build script:</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="useJavaLibraryPlugin"></a><p class="title"><b>Example&nbsp;48.1.&nbsp;Using the Java Library plugin</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">apply(mapOf(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"plugin"</span> to <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"java-library"</span>))</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:java_library_separation" class="section-anchor" href="#sec:java_library_separation"></a>48.2.&nbsp;API and implementation separation</h2></div></div></div><p>The key difference between the standard Java plugin and the Java Library plugin is that the latter introduces the concept of
-            an <em class="firstterm">API</em> exposed to consumers. A library is a Java component meant to be consumed by other components.
-            It's a very common use case in multi-project builds, but also as soon as you have external dependencies.
-        </p><p>
-            The plugin exposes two <a class="link" href="artifact_dependencies_tutorial.html#configurations">configurations</a> that can be used to declare dependencies:
-            <code class="literal">api</code>
-            and <code class="literal">implementation</code>. The <code class="literal">api</code> configuration should be used to declare dependencies which
-            are exported by the library API, whereas the <code class="literal">implementation</code> configuration should be used to declare dependencies
-            which are internal to the component.
-        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="useJavaLibraryPlugin"></a><p class="title"><b>Example&nbsp;48.2.&nbsp;Declaring API and implementation dependencies</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">dependencies {
+<html><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>The Java Library Plugin - Gradle User Guide Version 4.3-20171005220000+0000</title><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="base.css"><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="docs.css"><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="userguide.css"><meta content="DocBook XSL Stylesheets V1.75.2" name="generator"><link rel="home" href="userguide.html" title="Gradle User Guide Version 4.3-20171005220000+0000"><link rel="up" href="pt05.html" title="Part&nbsp;V.&nbsp;Building JVM projects"><link rel="prev" href="java_plugin.html" title="The Java Plugin - Gradle User Guide Version 4.3-20171005220000+0000"><link rel="next" href="web_project_tutorial.html" title="Web Application Quickstart - Gradle User Guide Version 4.3-20171005220000+0000"></head><body><div class="navheader"><div><div class="navbar"><a xmlns:xslthl="http://xslthl.sf.net" href="java_plugin.html" title="The Java Plugin - Gradle User Guide Version 4.3-20171005220000+0000">Previous</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="Gradle User Guide Version 4.3-20171005220000+0000">Contents</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="web_project_tutorial.html" title="Web Application Quickstart - Gradle User Guide Version 4.3-20171005220000+0000">Next</a></div></div></div><div class="chapter"><div class="titlepage"><div><div><h1 xmlns:xslthl="http://xslthl.sf.net"><a name="java_library_plugin"></a>Chapter&nbsp;48.&nbsp;The Java Library Plugin</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="java_library_plugin.html#sec:java_library_usage">48.1. Usage</a></span></dt><dt><span class="section"><a href="java_library_plugin.html#sec:java_library_separation">48.2. API and implementation separation</a></span></dt><dt><span class="section"><a href="java_library_plugin.html#sec:java_library_recognizing_dependencies">48.3. Recognizing API and implementation dependencies</a></span></dt><dt><span class="section"><a href="java_library_plugin.html#sec:java_library_configurations_graph">48.4. The Java Library plugin configurations</a></span></dt><dt><span class="section"><a href="java_library_plugin.html#sec:java_library_known_issues">48.5. Known issues</a></span></dt></dl></div><p>The Java Library plugin expands the capabilities of the Java plugin by providing specific knowledge about Java libraries. In particular, a Java library exposes an API to consumers (i.e., other projects using the Java or the Java Library plugin). All the source sets, tasks and configurations exposed by the Java plugin are implicitly available when using this plugin.</p><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:java_library_usage" class="section-anchor" href="#sec:java_library_usage"></a>48.1.&nbsp;Usage</h2></div></div></div><p>To use the Java Library plugin, include the following in your build script:</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="useJavaLibraryPlugin"></a><p class="title"><b>Example&nbsp;48.1.&nbsp;Using the Java Library plugin</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">apply(mapOf(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"plugin"</span> to <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"java-library"</span>))</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:java_library_separation" class="section-anchor" href="#sec:java_library_separation"></a>48.2.&nbsp;API and implementation separation</h2></div></div></div><p>The key difference between the standard Java plugin and the Java Library plugin is that the latter introduces the concept of an <span class="emphasis"><em>API</em></span> exposed to consumers. A library is a Java component meant to be consumed by other components. It&rsquo;s a very common use case in multi-project builds, but also as soon as you have external dependencies.</p><p>The plugin exposes two <a class="link" href="artifact_dependencies_tutorial.html#configurations">configurations</a> that can be used to declare dependencies: <code class="literal">api</code> and <code class="literal">implementation</code>. The <code class="literal">api</code> configuration should be used to declare dependencies which are exported by the library API, whereas the <code class="literal">implementation</code> configuration should be used to declare dependencies which are internal to the component.</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="useJavaLibraryPlugin"></a><p class="title"><b>Example&nbsp;48.2.&nbsp;Declaring API and implementation dependencies</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">dependencies {
     api(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"commons-httpclient:commons-httpclient:3.1"</span>)
     implementation(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"org.apache.commons:commons-lang3:3.5"</span>)
-}</pre></div></div><br class="example-break"><p>Dependencies appearing in the <code class="literal">api</code> configurations will be transitively exposed to consumers of the library, and
-            as such will appear on the compile classpath of consumers. Dependencies found in the <code class="literal">implementation</code> configuration will,
-            on the other hand, not be exposed to consumers, and therefore not leak into the consumers' compile classpath. This comes with several benefits:
-        </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">dependencies do not leak into the compile classpath of consumers anymore, so you will never accidentally depend on a transitive dependency</li><li class="listitem">faster compilation thanks to reduced classpath size</li><li class="listitem">less recompilations when implementation dependencies change: consumers would not need to be recompiled</li><li class="listitem">cleaner publishing: when used in conjunction with the new <code class="literal">maven-publish</code> plugin, Java libraries produce POM files that distinguish exactly between what
-                is required to compile against the library and what is required to use the library at runtime (in other words, don't mix what is needed to compile
-                the library itself and what is needed to compile against the library).
-            </li></ul></div><div class="note">The <code class="literal">compile</code> configuration still exists but should not be used as it will not offer the guarantees that the
-            <code class="literal">api</code>
-            and <code class="literal">implementation</code> configurations provide.
-        </div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:java_library_recognizing_dependencies" class="section-anchor" href="#sec:java_library_recognizing_dependencies"></a>48.3.&nbsp;Recognizing API and implementation dependencies</h2></div></div></div><p>This section will help you spot API and Implementation dependencies in your code using simple rules of thumb.
-            Basically, an API dependency is a type that is exposed in the library binary interface, often referred to ABI (Application Binary Interface).
-            This includes, but is not limited to:
-        </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">types used in super classes or interfaces</li><li class="listitem">types used in public method parameters, including generic parameter types (where <em class="firstterm">public</em> is something that is visible to compilers.
-                I.e. , <em class="firstterm">public</em>, <em class="firstterm">protected</em> and <em class="firstterm">package private</em> members in the Java world)
-            </li><li class="listitem">types used in public fields</li><li class="listitem">public annotation types</li></ul></div><p>In opposition, any type that is used in the following list is irrelevant to the ABI, and therefore should be declared as <code class="literal">implementation</code> dependency:
-        </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">types exclusively used in method bodies</li><li class="listitem">types exclusively used in private members</li><li class="listitem">types exclusively found in internal classes (future versions of Gradle will let you declare which packages belong to the public API)</li></ul></div><p>In the following sample, we can make the difference between an API dependency and an implementation dependency:</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="useJavaLibraryPlugin"></a><p class="title"><b>Example&nbsp;48.3.&nbsp;Making the difference between API and implementation</b></p><div class="example-contents"><p><code class="filename">src/main/java/org/gradle/HttpClientWrapper.java</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// The following types can appear anywhere in the code</span>
+}</pre></div></div><br class="example-break"><p>Dependencies appearing in the <code class="literal">api</code> configurations will be transitively exposed to consumers of the library, and as such will appear on the compile classpath of consumers. Dependencies found in the <code class="literal">implementation</code> configuration will, on the other hand, not be exposed to consumers, and therefore not leak into the consumers' compile classpath. This comes with several benefits:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>dependencies do not leak into the compile classpath of consumers anymore, so you will never accidentally depend on a transitive dependency</p></li><li class="listitem"><p>faster compilation thanks to reduced classpath size</p></li><li class="listitem"><p>less recompilations when implementation dependencies change: consumers would not need to be recompiled</p></li><li class="listitem"><p>cleaner publishing: when used in conjunction with the new <code class="literal">maven-publish</code> plugin, Java libraries produce POM files that distinguish exactly between what is required to compile against the library and what is required to use the library at runtime (in other words, don&rsquo;t mix what is needed to compile the library itself and what is needed to compile against the library).</p></li></ul></div><div class="note"><p>The <code class="literal">compile</code> configuration still exists but should not be used as it will not offer the guarantees that the <code class="literal">api</code> and <code class="literal">implementation</code> configurations provide.</p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:java_library_recognizing_dependencies" class="section-anchor" href="#sec:java_library_recognizing_dependencies"></a>48.3.&nbsp;Recognizing API and implementation dependencies</h2></div></div></div><p>This section will help you spot API and Implementation dependencies in your code using simple rules of thumb. Basically, an API dependency is a type that is exposed in the library binary interface, often referred to ABI (Application Binary Interface). This includes, but is not limited to:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>types used in super classes or interfaces</p></li><li class="listitem"><p>types used in public method parameters, including generic parameter types (where <span class="emphasis"><em>public</em></span> is something that is visible to compilers. I.e. , <span class="emphasis"><em>public</em></span>, <span class="emphasis"><em>protected</em></span> and <span class="emphasis"><em>package private</em></span> members in the Java world)</p></li><li class="listitem"><p>types used in public fields</p></li><li class="listitem"><p>public annotation types</p></li></ul></div><p>In opposition, any type that is used in the following list is irrelevant to the ABI, and therefore should be declared as <code class="literal">implementation</code> dependency:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>types exclusively used in method bodies</p></li><li class="listitem"><p>types exclusively used in private members</p></li><li class="listitem"><p>types exclusively found in internal classes (future versions of Gradle will let you declare which packages belong to the public API)</p></li></ul></div><p>In the following sample, we can make the difference between an API dependency and an implementation dependency:</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="useJavaLibraryPlugin"></a><p class="title"><b>Example&nbsp;48.3.&nbsp;Making the difference between API and implementation</b></p><div class="example-contents"><p><code class="filename">src/main/java/org/gradle/HttpClientWrapper.java</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// The following types can appear anywhere in the code</span>
 <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// but say nothing about API or implementation usage</span>
 <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">import</span> org.apache.commons.httpclient.*;
 <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">import</span> org.apache.commons.httpclient.methods.*;
@@ -70,139 +43,107 @@
         <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">return</span> statusCode;
     }
 }
-</pre></div></div><br class="example-break"><p>We can see that our class imports third party classes, but imports alone won't tell us if a dependency is an API or implementation dependency.
-            For this, we need to look at the methods. The public constructor of <code class="literal">HttpClientWrapper</code> uses <code class="literal">HttpClient</code> as a parameter,
-            so it exposed to consumers and therefore belongs to the API.
-        </p><p>On the other hand, the <code class="literal">ExceptionUtils</code> type, coming from the <code class="literal">commons-lang</code> library, is only used in a method
-            body, so it's an implementation dependency.
-        </p><p>Therefore, we can deduce that <code class="literal">commons-httpclient</code> is an API dependency, whereas <code class="literal">commons-lang</code> is an implementation
-            dependency, which directly translates into the build file:
-        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="useJavaLibraryPlugin"></a><p class="title"><b>Example&nbsp;48.4.&nbsp;Declaring API and implementation dependencies</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">dependencies {
+</pre></div></div><br class="example-break"><p>We can see that our class imports third party classes, but imports alone won&rsquo;t tell us if a dependency is an API or implementation dependency. For this, we need to look at the methods. The public constructor of <code class="literal">HttpClientWrapper</code> uses <code class="literal">HttpClient</code> as a parameter, so it exposed to consumers and therefore belongs to the API.</p><p>On the other hand, the <code class="literal">ExceptionUtils</code> type, coming from the <code class="literal">commons-lang</code> library, is only used in a method body, so it&rsquo;s an implementation dependency.</p><p>Therefore, we can deduce that <code class="literal">commons-httpclient</code> is an API dependency, whereas <code class="literal">commons-lang</code> is an implementation dependency, which directly translates into the build file:</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="useJavaLibraryPlugin"></a><p class="title"><b>Example&nbsp;48.4.&nbsp;Declaring API and implementation dependencies</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">dependencies {
     api(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"commons-httpclient:commons-httpclient:3.1"</span>)
     implementation(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"org.apache.commons:commons-lang3:3.5"</span>)
-}</pre></div></div><br class="example-break"><p>As a guideline, you should prefer the <code class="literal">implementation</code> configuration first: leakage of implementation types to consumers would
-            then directly lead to a compile error of consumers, which would be solved either by removing the type from the public API, or promoting the dependency as an
-            API dependency instead.
-        </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:java_library_configurations_graph" class="section-anchor" href="#sec:java_library_configurations_graph"></a>48.4.&nbsp;The Java Library plugin configurations</h2></div></div></div><p>The following graph describes the main configurations setup when the Java Library plugin is in use.
-        </p><img src="img/java-library-ignore-deprecated-main.png"><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">The configurations in <em class="firstterm">green</em> are the ones a user should use to declare dependencies
-            </li><li class="listitem">The configurations in <em class="firstterm">pink</em> are the ones used when a component compiles, or runs against the library
-            </li><li class="listitem">The configurations in <em class="firstterm">blue</em> are internal to the component, for its own use
-            </li><li class="listitem">The configurations in <em class="firstterm">white</em> are configurations inherited from the Java plugin
-            </li></ul></div><p>And the next graph describes the test configurations setup:
-        </p><img src="img/java-library-ignore-deprecated-test.png"><div class="note">
-            The <em class="firstterm">compile</em>, <em class="firstterm">testCompile</em>, <em class="firstterm">runtime</em> and <em class="firstterm">testRuntime</em> configurations
-            inherited from the Java plugin are still available but are deprecated. You should avoid using them, as they are only kept for backwards compatibility.
-        </div><p>The role of each configuration is described in the following tables:</p><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;48.1.&nbsp;Java Library plugin - configurations used to declare dependencies</b></p><div class="table-contents"><table id="N16EAF"><thead><tr>
-                    <td>Configuration name</td>
-                    <td>Role</td>
-                    <td>Can be consumed</td>
-                    <td>Can be resolved</td>
-                    <td>Description</td>
-                </tr></thead><tr>
-                <td>api</td>
-                <td>Declaring API dependencies</td>
-                <td>no</td>
-                <td>no</td>
-                <td>This is where you should declare dependencies which are transitively exported to consumers, for compile.</td>
-            </tr><tr>
-                <td>implementation</td>
-                <td>Declaring implementation dependencies</td>
-                <td>no</td>
-                <td>no</td>
-                <td>This is where you should declare dependencies which are purely internal and not meant to be exposed to consumers.</td>
-            </tr><tr>
-                <td>compileOnly</td>
-                <td>Declaring compile only dependencies</td>
-                <td>yes</td>
-                <td>yes</td>
-                <td>This is where you should declare dependencies which are only required at compile time, but should not leak into the runtime. This typically includes
-                    dependencies which are shaded when found at runtime.
-                </td>
-            </tr><tr>
-                <td>runtimeOnly</td>
-                <td>Declaring runtime dependencies</td>
-                <td>no</td>
-                <td>no</td>
-                <td>This is where you should declare dependencies which are only required at runtime, and not at compile time.</td>
-            </tr><tr>
-                <td>testImplementation</td>
-                <td>Test dependencies</td>
-                <td>no</td>
-                <td>no</td>
-                <td>This is where you should declare dependencies which are used to compile tests.</td>
-            </tr><tr>
-                <td>testCompileOnly</td>
-                <td>Declaring test compile only dependencies</td>
-                <td>yes</td>
-                <td>yes</td>
-                <td>This is where you should declare dependencies which are only required at test compile time, but should not leak into the runtime. This typically includes
-                    dependencies which are shaded when found at runtime.
-                </td>
-            </tr><tr>
-                <td>testRuntimeOnly</td>
-                <td>Declaring test runtime dependencies</td>
-                <td>no</td>
-                <td>no</td>
-                <td>This is where you should declare dependencies which are only required at test runtime, and not at test compile time.</td>
-            </tr></table></div></div><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;48.2.&nbsp;Java Library plugin - configurations used by consumers</b></p><div class="table-contents"><table id="N16F3B"><thead><tr>
-                    <td>Configuration name</td>
-                    <td>Role</td>
-                    <td>Can be consumed</td>
-                    <td>Can be resolved</td>
-                    <td>Description</td>
-                </tr></thead><tr>
-                <td>apiElements</td>
-                <td>For compiling against this library</td>
-                <td>yes</td>
-                <td>no</td>
-                <td>This configuration is meant to be used by consumers, to retrieve all the elements necessary to compile against this library. Unlike
-                    the <code class="literal">default</code> configuration, this doesn't leak implementation or runtime dependencies.
-                </td>
-            </tr><tr>
-                <td>runtimeElements</td>
-                <td>For executing this library</td>
-                <td>yes</td>
-                <td>no</td>
-                <td>This configuration is meant to be used by consumers, to retrieve all the elements necessary to run against this library.</td>
-            </tr></table></div></div><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;48.3.&nbsp;Java Library plugin - configurations used by the library itself</b></p><div class="table-contents"><table id="N16F75"><thead><tr>
-                    <td>Configuration name</td>
-                    <td>Role</td>
-                    <td>Can be consumed</td>
-                    <td>Can be resolved</td>
-                    <td>Description</td>
-                </tr></thead><tr>
-                <td>compileClasspath</td>
-                <td>For compiling this library</td>
-                <td>no</td>
-                <td>yes</td>
-                <td>This configuration contains the compile classpath of this library, and is therefore used when invoking the java compiler to compile it.</td>
-            </tr><tr>
-                <td>runtimeClasspath</td>
-                <td>For executing this library</td>
-                <td>no</td>
-                <td>yes</td>
-                <td>This configuration contains the runtime classpath of this library</td>
-            </tr><tr>
-                <td>testCompileClasspath</td>
-                <td>For compiling the tests of this library</td>
-                <td>no</td>
-                <td>yes</td>
-                <td>This configuration contains the test compile classpath of this library.</td>
-            </tr><tr>
-                <td>testRuntimeClasspath</td>
-                <td>For executing tests of this library</td>
-                <td>no</td>
-                <td>yes</td>
-                <td>This configuration contains the test runtime classpath of this library</td>
-            </tr></table></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:java_library_known_issues" class="section-anchor" href="#sec:java_library_known_issues"></a>48.5.&nbsp;Known issues</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:java_library_known_issues_compat" class="section-anchor" href="#sec:java_library_known_issues_compat"></a>48.5.1.&nbsp;Compatibility with other plugins</h3></div></div></div><p>At the moment the Java Library plugin is only wired to behave correctly with the <code class="literal">java</code> plugin. Other plugins, such as
-            the Groovy plugin, may not behave correctly. In particular, if the Groovy plugin is used in addition to the <code class="literal">java-library</code> plugin,
-            then consumers may not get the Groovy classes when they consume the library. To workaround this, you need to explicitly wire the Groovy compile
-            dependency, like this:</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="useGroovyPlugin"></a><p class="title"><b>Example&nbsp;48.5.&nbsp;Configuring the Groovy plugin to work with Java Library</b></p><div class="example-contents"><p><code class="filename">a/build.gradle</code></p><pre class="programlisting">configurations {
+}</pre></div></div><br class="example-break"><p>As a guideline, you should prefer the <code class="literal">implementation</code> configuration first: leakage of implementation types to consumers would then directly lead to a compile error of consumers, which would be solved either by removing the type from the public API, or promoting the dependency as an API dependency instead.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:java_library_configurations_graph" class="section-anchor" href="#sec:java_library_configurations_graph"></a>48.4.&nbsp;The Java Library plugin configurations</h2></div></div></div><p>The following graph describes the main configurations setup when the Java Library plugin is in use.</p><div class="informalfigure"><div class="mediaobject"><img src="img/java-library-ignore-deprecated-main.png" alt="java library ignore deprecated main"></div></div><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>The configurations in <span class="emphasis"><em>green</em></span> are the ones a user should use to declare dependencies</p></li><li class="listitem"><p>The configurations in <span class="emphasis"><em>pink</em></span> are the ones used when a component compiles, or runs against the library</p></li><li class="listitem"><p>The configurations in <span class="emphasis"><em>blue</em></span> are internal to the component, for its own use</p></li><li class="listitem"><p>The configurations in <span class="emphasis"><em>white</em></span> are configurations inherited from the Java plugin</p></li></ul></div><p>And the next graph describes the test configurations setup:</p><div class="informalfigure"><div class="mediaobject"><img src="img/java-library-ignore-deprecated-test.png" alt="java library ignore deprecated test"></div></div><div class="note"><p>The <span class="emphasis"><em>compile</em></span>, <span class="emphasis"><em>testCompile</em></span>, <span class="emphasis"><em>runtime</em></span> and <span class="emphasis"><em>testRuntime</em></span> configurations inherited from the Java plugin are still available but are deprecated. You should avoid using them, as they are only kept for backwards compatibility.</p></div><p>The role of each configuration is described in the following tables:</p><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;48.1.&nbsp;Java Library plugin - configurations used to declare dependencies</b></p><div class="table-contents"><table colsep="1" frame="all" rowsep="1" id="N171A8"><thead><tr>
+<td>Configuration name</td>
+<td>Role</td>
+<td>Can be consumed</td>
+<td>Can be resolved</td>
+<td>Description</td>
+</tr></thead><tbody><tr>
+<td><p>api</p></td>
+<td><p>Declaring API dependencies</p></td>
+<td><p>no</p></td>
+<td><p>no</p></td>
+<td><p>This is where you should declare dependencies which are transitively exported to consumers, for compile.</p></td>
+</tr><tr>
+<td><p>implementation</p></td>
+<td><p>Declaring implementation dependencies</p></td>
+<td><p>no</p></td>
+<td><p>no</p></td>
+<td><p>This is where you should declare dependencies which are purely internal and not meant to be exposed to consumers.</p></td>
+</tr><tr>
+<td><p>compileOnly</p></td>
+<td><p>Declaring compile only dependencies</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>This is where you should declare dependencies which are only required at compile time, but should not leak into the runtime. This typically includes dependencies which are shaded when found at runtime.</p></td>
+</tr><tr>
+<td><p>runtimeOnly</p></td>
+<td><p>Declaring runtime dependencies</p></td>
+<td><p>no</p></td>
+<td><p>no</p></td>
+<td><p>This is where you should declare dependencies which are only required at runtime, and not at compile time.</p></td>
+</tr><tr>
+<td><p>testImplementation</p></td>
+<td><p>Test dependencies</p></td>
+<td><p>no</p></td>
+<td><p>no</p></td>
+<td><p>This is where you should declare dependencies which are used to compile tests.</p></td>
+</tr><tr>
+<td><p>testCompileOnly</p></td>
+<td><p>Declaring test compile only dependencies</p></td>
+<td><p>yes</p></td>
+<td><p>yes</p></td>
+<td><p>This is where you should declare dependencies which are only required at test compile time, but should not leak into the runtime. This typically includes dependencies which are shaded when found at runtime.</p></td>
+</tr><tr>
+<td><p>testRuntimeOnly</p></td>
+<td><p>Declaring test runtime dependencies</p></td>
+<td><p>no</p></td>
+<td><p>no</p></td>
+<td><p>This is where you should declare dependencies which are only required at test runtime, and not at test compile time.</p></td>
+</tr></tbody></table></div></div><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;48.2.&nbsp;Java Library plugin - configurations used by consumers</b></p><div class="table-contents"><table colsep="1" frame="all" rowsep="1" id="N1725B"><thead><tr>
+<td>Configuration name</td>
+<td>Role</td>
+<td>Can be consumed</td>
+<td>Can be resolved</td>
+<td>Description</td>
+</tr></thead><tbody><tr>
+<td><p>apiElements</p></td>
+<td><p>For compiling against this library</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+<td><p>This configuration is meant to be used by consumers, to retrieve all the elements necessary to compile against this library. Unlike the <code class="literal">default</code> configuration, this doesn&rsquo;t leak implementation or runtime dependencies.</p></td>
+</tr><tr>
+<td><p>runtimeElements</p></td>
+<td><p>For executing this library</p></td>
+<td><p>yes</p></td>
+<td><p>no</p></td>
+<td><p>This configuration is meant to be used by consumers, to retrieve all the elements necessary to run against this library.</p></td>
+</tr></tbody></table></div></div><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;48.3.&nbsp;Java Library plugin - configurations used by the library itself</b></p><div class="table-contents"><table colsep="1" frame="all" rowsep="1" id="N172A3"><thead><tr>
+<td>Configuration name</td>
+<td>Role</td>
+<td>Can be consumed</td>
+<td>Can be resolved</td>
+<td>Description</td>
+</tr></thead><tbody><tr>
+<td><p>compileClasspath</p></td>
+<td><p>For compiling this library</p></td>
+<td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>This configuration contains the compile classpath of this library, and is therefore used when invoking the java compiler to compile it.</p></td>
+</tr><tr>
+<td><p>runtimeClasspath</p></td>
+<td><p>For executing this library</p></td>
+<td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>This configuration contains the runtime classpath of this library</p></td>
+</tr><tr>
+<td><p>testCompileClasspath</p></td>
+<td><p>For compiling the tests of this library</p></td>
+<td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>This configuration contains the test compile classpath of this library.</p></td>
+</tr><tr>
+<td><p>testRuntimeClasspath</p></td>
+<td><p>For executing tests of this library</p></td>
+<td><p>no</p></td>
+<td><p>yes</p></td>
+<td><p>This configuration contains the test runtime classpath of this library</p></td>
+</tr></tbody></table></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:java_library_known_issues" class="section-anchor" href="#sec:java_library_known_issues"></a>48.5.&nbsp;Known issues</h2></div></div></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:java_library_known_issues_compat" class="section-anchor" href="#sec:java_library_known_issues_compat"></a>48.5.1.&nbsp;Compatibility with other plugins</h3></div></div></div><p>At the moment the Java Library plugin is only wired to behave correctly with the <code class="literal">java</code> plugin. Other plugins, such as the Groovy plugin, may not behave correctly. In particular, if the Groovy plugin is used in addition to the <code class="literal">java-library</code> plugin, then consumers may not get the Groovy classes when they consume the library. To workaround this, you need to explicitly wire the Groovy compile dependency, like this:</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="useGroovyPlugin"></a><p class="title"><b>Example&nbsp;48.5.&nbsp;Configuring the Groovy plugin to work with Java Library</b></p><div class="example-contents"><p><code class="filename">a/build.gradle</code></p><pre class="programlisting">configurations {
     apiElements {
         artifact(mapOf(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"file"</span> to compileGroovy.destinationDir, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"type"</span> to ArtifactTypeDefinition.JVM_CLASS_DIRECTORY, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"builtBy"</span> to compileGroovy))
     }
-}</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:java_library_known_issues_memory" class="section-anchor" href="#sec:java_library_known_issues_memory"></a>48.5.2.&nbsp;Increased memory usage for consumers</h3></div></div></div><p>When a project uses the Java Library plugin, consumers will use the output classes directory of this project directly on their compile
-            classpath, instead of the jar file if the project uses the Java plugin. An indirect consequence is that up-to-date checking will require more
-            memory, because Gradle will snapshot individual class files instead of a single jar. This may lead to increased memory consumption for large
-            projects.
-            </p></div></div></div><div class="navfooter"><div><div class="navbar"><a xmlns:xslthl="http://xslthl.sf.net" href="java_plugin.html" title="The Java Plugin - Gradle User Guide Version 4.1-20170617095021+0000">Previous</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="Gradle User Guide Version 4.1-20170617095021+0000">Contents</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="web_project_tutorial.html" title="Web Application Quickstart - Gradle User Guide Version 4.1-20170617095021+0000">Next</a></div></div></div></body></html>
+}</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:java_library_known_issues_memory" class="section-anchor" href="#sec:java_library_known_issues_memory"></a>48.5.2.&nbsp;Increased memory usage for consumers</h3></div></div></div><p>When a project uses the Java Library plugin, consumers will use the output classes directory of this project directly on their compile classpath, instead of the jar file if the project uses the Java plugin. An indirect consequence is that up-to-date checking will require more memory, because Gradle will snapshot individual class files instead of a single jar. This may lead to increased memory consumption for large projects.</p></div></div></div><div class="navfooter"><div><div class="navbar"><a xmlns:xslthl="http://xslthl.sf.net" href="java_plugin.html" title="The Java Plugin - Gradle User Guide Version 4.3-20171005220000+0000">Previous</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="Gradle User Guide Version 4.3-20171005220000+0000">Contents</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="web_project_tutorial.html" title="Web Application Quickstart - Gradle User Guide Version 4.3-20171005220000+0000">Next</a></div></div></div></body></html>

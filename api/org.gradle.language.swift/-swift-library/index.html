@@ -1,0 +1,111 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>SwiftLibrary - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.swift</a>&nbsp;/&nbsp;<a href=".">SwiftLibrary</a><br/>
+<br/>
+<h1>SwiftLibrary</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">SwiftLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-swift-component/index.html"><span class="identifier">SwiftComponent</span></a></code>
+<p>Configuration for a Swift library, defining the source files that make up the library plus other settings. 
+<p>An instance of this type is added as a project extension by the Swift library plugin.</p>
+</p>
+<p><strong>Since</strong><br/>
+4.2</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-api-dependencies.html">getApiDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getApiDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a></code>
+<p>Returns the API dependencies of this library.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-debug-shared-library.html">getDebugSharedLibrary</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDebugSharedLibrary</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-swift-shared-library.html"><span class="identifier">SwiftSharedLibrary</span></a></code>
+<p>Returns the debug shared library for this library.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-development-binary.html">getDevelopmentBinary</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDevelopmentBinary</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-swift-shared-library.html"><span class="identifier">SwiftSharedLibrary</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-release-shared-library.html">getReleaseSharedLibrary</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getReleaseSharedLibrary</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-swift-shared-library.html"><span class="identifier">SwiftSharedLibrary</span></a></code>
+<p>Returns the release shared library for this library.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-swift-component/get-implementation-dependencies.html">getImplementationDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getImplementationDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a></code>
+<p>Returns the implementation dependencies of this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-swift-component/get-module.html">getModule</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getModule</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-property-state/index.html"><span class="identifier">PropertyState</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Defines the Swift module for this component. The default value is calculated from the project name.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-swift-component/get-source.html">getSource</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code>
+<p>Defines the source files or directories of this component. You can add files or directories to this collection. When a directory is added, all source files are included for compilation. 
+<p>When this collection is empty, the directory <code>src/main/swift</code> is used by default.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-swift-component/get-swift-source.html">getSwiftSource</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSwiftSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the Swift source files of this component, as defined in <code><a href="../-swift-component/get-source.html">#getSource()</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-swift-component/source.html">source</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">source</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.swift.SwiftComponent$source(org.gradle.api.Action((org.gradle.api.file.ConfigurableFileCollection)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the source files or directories for this component.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

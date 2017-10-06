@@ -140,6 +140,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-source-control.html">getSourceControl</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSourceControl</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.vcs/-source-control/index.html"><span class="identifier">SourceControl</span></a></code>
+<p>Returns the source control configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-start-parameter.html">getStartParameter</a></p>
 </td>
 <td>
@@ -156,12 +165,14 @@
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">include</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.initialization.Settings$include(kotlin.Array((kotlin.String)))/projectPaths">projectPaths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>
-<p>Adds the given projects to the build. Each path in the supplied list is treated as the path of a project to add to the build. Note that these path are not file paths, but instead specify the location of the new project in the project hierarchy. As such, the supplied paths must use the ':' character as separator.</p>
+<p>Adds the given projects to the build. Each path in the supplied list is treated as the path of a project to add to the build. Note that these path are not file paths, but instead specify the location of the new project in the project hierarchy. As such, the supplied paths must use the ':' character as separator (and NOT '/').</p>
  
-<p>The last element of the supplied path is used as the project name. The supplied path is converted to a project directory relative to the root project directory.</p>
+<p>The last element of the supplied path is used as the project name. The supplied path is converted to a project directory relative to the root project directory. The project directory can be altered by changing the 'projectDir' property after the project has been included (see <code><a href="../-project-descriptor/set-project-dir.html">ProjectDescriptor#setProjectDir(File)</a></code>)</p>
  
-<p>As an example, the path <code>a:b</code> adds a project with path <code>:a:b</code>, name <code>b</code> and project directory <code>$rootDir/a/b</code>.</p>
-</p>
+<p>As an example, the path <code>a:b</code> adds a project with path <code>:a:b</code>, name <code>b</code> and project directory <code>$rootDir/a/b</code>. It also adds the a project with path <code>:a</code>, name <code>a</code> and project directory <code>$rootDir/a</code>, if it does not exist already.</p>
+ 
+<p>Some common examples of using the project path are:</p>
+ <pre><code> // include two projects, 'foo' and 'foo:bar' // directories are inferred by replacing ':' with '/' include 'foo:bar' // include one project whose project dir does not match the logical project path include 'baz' project(':baz').projectDir = file('foo/baz') // include many projects whose project dirs do not match the logical project paths file('subprojects').eachDir { dir -&gt; include dir.name project(":${dir.name}").projectDir = dir } </code></pre></p>
 </td>
 </tr>
 <tr>
@@ -171,7 +182,7 @@
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">includeBuild</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.initialization.Settings$includeBuild(kotlin.Any)/rootProject">rootProject</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Includes a build at the specified path to the composite build.</p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">includeBuild</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.initialization.Settings$includeBuild(kotlin.Any, org.gradle.api.Action((ConfigurableIncludedBuild)))/rootProject">rootProject</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.initialization.Settings$includeBuild(kotlin.Any, org.gradle.api.Action((ConfigurableIncludedBuild)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="identifier">ConfigurableIncludedBuild</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">includeBuild</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.initialization.Settings$includeBuild(kotlin.Any, org.gradle.api.Action((org.gradle.api.initialization.ConfigurableIncludedBuild)))/rootProject">rootProject</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.initialization.Settings$includeBuild(kotlin.Any, org.gradle.api.Action((org.gradle.api.initialization.ConfigurableIncludedBuild)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><a href="../-configurable-included-build/index.html"><span class="identifier">ConfigurableIncludedBuild</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Includes a build at the specified path to the composite build, with the supplied configuration.</p>
 </td>
 </tr>
@@ -212,6 +223,15 @@
 <p>
 <p>Returns the project with the given project directory.</p>
 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="source-control.html">sourceControl</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">sourceControl</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.initialization.Settings$sourceControl(org.gradle.api.Action((org.gradle.vcs.SourceControl)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.vcs/-source-control/index.html"><span class="identifier">SourceControl</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures source control.</p>
 </td>
 </tr>
 </tbody>

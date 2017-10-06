@@ -1,0 +1,22 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>HttpBuildCache.setAllowUntrustedServer - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.caching.http</a>&nbsp;/&nbsp;<a href="index.html">HttpBuildCache</a>&nbsp;/&nbsp;<a href=".">setAllowUntrustedServer</a><br/>
+<br/>
+<h1>setAllowUntrustedServer</h1>
+<a name="org.gradle.caching.http.HttpBuildCache$setAllowUntrustedServer(kotlin.Boolean)"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setAllowUntrustedServer</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.http.HttpBuildCache$setAllowUntrustedServer(kotlin.Boolean)/allowUntrustedServer">allowUntrustedServer</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies whether it is acceptable to communicate with an HTTP build cache backend with an untrusted SSL certificate. 
+<p> The SSL certificate for the HTTP build cache backend may be untrusted since it is internally provisioned or a self-signed certificate. </p>
+<p> In such a scenario, you can either configure the build JVM environment to trust the certificate, or set this property to <code>true</code> to disable verification of the server's identity. </p>
+<p> Allowing communication with untrusted servers keeps data encrypted during transmission, but makes it easier for a man-in-the-middle to impersonate the intended server and capture data. </p>
+<p> This value has no effect if a server is specified using the HTTP protocol (i.e. has SSL disabled).</p>
+</p>
+<p><strong>Since</strong><br/>
+4.2</p>
+</BODY>
+</HTML>

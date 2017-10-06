@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>RegularFile - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href=".">RegularFile</a><br/>
+<br/>
+<h1>RegularFile</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">RegularFile</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-file-system-location/index.html"><span class="identifier">FileSystemLocation</span></a></code>
+<p>Represents a regular file at a fixed location on the file system. A regular file is a file that is not a directory and is not some special kind of file such as a device. 
+<p> <strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created from a Directory instance using the <code><a href="#">Directory#file(String)</a></code> method or via various methods on ProjectLayout such as <code><a href="../-project-layout/get-project-directory.html">ProjectLayout#getProjectDirectory()</a></code>.</p>
+</p>
+<p><strong>Since</strong><br/>
+4.1</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-as-file.html">getAsFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAsFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the location of this file, as an absolute File.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

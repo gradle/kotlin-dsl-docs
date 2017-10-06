@@ -10,6 +10,8 @@
 <h1>substitute</h1>
 <a name="org.gradle.api.artifacts.DependencySubstitutions$substitute(org.gradle.api.artifacts.component.ComponentSelector)"></a>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">substitute</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.DependencySubstitutions$substitute(org.gradle.api.artifacts.component.ComponentSelector)/substitutedDependency">substitutedDependency</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts.component/-component-selector/index.html"><span class="identifier">ComponentSelector</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-substitution/index.html"><span class="identifier">Substitution</span></a></code>
-<p>DSL-friendly mechanism to construct a dependency substitution for dependencies matching the provided selector.  Examples: <pre><code> configurations { main } configurations.main.resolutionStrategy.dependencySubstitution { // Substitute project and module dependencies substitute module('org.gradle:api') with project(':api') substitute project(':util') with module('org.gradle:util:3.0') // Substitute one module dependency for another substitute module('org.gradle:api:2.0') with module('org.gradle:api:2.1') } </code></pre></p>
+<p>DSL-friendly mechanism to construct a dependency substitution for dependencies matching the provided selector. 
+<p> Examples: </p>
+<pre><code> configurations { main } configurations.main.resolutionStrategy.dependencySubstitution { // Substitute project and module dependencies substitute module('org.gradle:api') with project(':api') substitute project(':util') with module('org.gradle:util:3.0') // Substitute one module dependency for another substitute module('org.gradle:api:2.0') with module('org.gradle:api:2.1') } </code></pre></p>
 </BODY>
 </HTML>

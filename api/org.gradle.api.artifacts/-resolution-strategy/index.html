@@ -80,7 +80,9 @@
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">dependencySubstitution</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$dependencySubstitution(org.gradle.api.Action((org.gradle.api.artifacts.DependencySubstitutions)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency-substitutions/index.html"><span class="identifier">DependencySubstitutions</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ResolutionStrategy</span></code>
-<p>Configures the set of dependency substitution rules for this configuration. The action receives an instance of DependencySubstitutions which can then be configured with substitution rules.  Examples: <pre><code> // add dependency substitution rules configurations.all { resolutionStrategy.dependencySubstitution { // Substitute project and module dependencies substitute module('org.gradle:api') with project(':api') substitute project(':util') with module('org.gradle:util:3.0') // Substitute one module dependency for another substitute module('org.gradle:api:2.0') with module('org.gradle:api:2.1') } } </code></pre></p>
+<p>Configures the set of dependency substitution rules for this configuration. The action receives an instance of DependencySubstitutions which can then be configured with substitution rules. 
+<p>Examples:</p>
+ <pre><code> // add dependency substitution rules configurations.all { resolutionStrategy.dependencySubstitution { // Substitute project and module dependencies substitute module('org.gradle:api') with project(':api') substitute project(':util') with module('org.gradle:util:3.0') // Substitute one module dependency for another substitute module('org.gradle:api:2.0') with module('org.gradle:api:2.1') } } </code></pre></p>
 </td>
 </tr>
 <tr>

@@ -9,10 +9,28 @@
 <br/>
 <h1>TwirlSourceSet</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">TwirlSourceSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.base/-language-source-set/index.html"><span class="identifier">LanguageSourceSet</span></a></code>
-<p>Represents a source set containing twirl templates</p>
+<p>Represents a source set containing twirl templates <pre><code> apply plugin: 'play' model { components { play { sources { withType(TwirlSourceSet) { // Use template format views.formats.csv.CsvFormat for all files named *.scala.csv // Additionally, include views.formats.csv._ package imports in generated sources. addUserTemplateFormat("csv", "views.formats.csv.CsvFormat", "views.formats.csv._") // Add these additional imports to all generated Scala code from Twirl templates additionalImports = [ 'my.pkg._', 'my.pkg.MyClass' ] } } } } } </code></pre></p>
 <h3>Functions</h3>
 <table>
 <tbody>
+<tr>
+<td>
+<p><a href="add-user-template-format.html">addUserTemplateFormat</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addUserTemplateFormat</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.twirl.TwirlSourceSet$addUserTemplateFormat(kotlin.String, kotlin.String, kotlin.Array((kotlin.String)))/extension">extension</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.language.twirl.TwirlSourceSet$addUserTemplateFormat(kotlin.String, kotlin.String, kotlin.Array((kotlin.String)))/templateType">templateType</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.language.twirl.TwirlSourceSet$addUserTemplateFormat(kotlin.String, kotlin.String, kotlin.Array((kotlin.String)))/imports">imports</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a custom template format.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-additional-imports.html">getAdditionalImports</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAdditionalImports</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the list of additional imports to add to the generated Scala code.</p>
+</td>
+</tr>
 <tr>
 <td>
 <p><a href="get-default-imports.html">getDefaultImports</a></p>
@@ -24,11 +42,38 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-user-template-formats.html">getUserTemplateFormats</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getUserTemplateFormats</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-twirl-template-format/index.html"><span class="identifier">TwirlTemplateFormat</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the custom template formats configured for this source set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-additional-imports.html">setAdditionalImports</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setAdditionalImports</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.twirl.TwirlSourceSet$setAdditionalImports(kotlin.collections.MutableList((kotlin.String)))/additionalImports">additionalImports</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the additional imports to add to all generated Scala code.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="set-default-imports.html">setDefaultImports</a></p>
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setDefaultImports</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.twirl.TwirlSourceSet$setDefaultImports(org.gradle.language.twirl.TwirlImports)/defaultImports">defaultImports</span><span class="symbol">:</span>&nbsp;<a href="../-twirl-imports/index.html"><span class="identifier">TwirlImports</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Sets the default imports that should be added to generated source files to the given language</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-user-template-formats.html">setUserTemplateFormats</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setUserTemplateFormats</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.twirl.TwirlSourceSet$setUserTemplateFormats(kotlin.collections.MutableList((org.gradle.language.twirl.TwirlTemplateFormat)))/userTemplateFormats">userTemplateFormats</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-twirl-template-format/index.html"><span class="identifier">TwirlTemplateFormat</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the custom template formats for this source set.</p>
 </td>
 </tr>
 </tbody>

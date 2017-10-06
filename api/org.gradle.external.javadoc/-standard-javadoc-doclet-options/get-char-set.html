@@ -10,6 +10,12 @@
 <h1>getCharSet</h1>
 <a name="org.gradle.external.javadoc.StandardJavadocDocletOptions$getCharSet()"></a>
 <code><span class="identifier">@Optional</span> <span class="identifier">@Input</span> <span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getCharSet</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
-<p>-charset name Specifies the HTML character set for this document. The name should be a preferred MIME name as given in the IANA Registry. For example:  C:&gt; javadoc -charset "iso-8859-1" mypackage  would insert the following line in the head of every generated page:    This META tag is described in the HTML standard. (4197265 and 4137321)  Also see -encoding and -docencoding.</p>
+<p>-charset name Specifies the HTML character set for this document. The name should be a preferred MIME name as given in the IANA Registry. For example: 
+<p> javadoc -charset "iso-8859-1" mypackage </p>
+<p> would insert the following line in the head of every generated page: </p>
+<p> &lt;META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"&gt; </p>
+<p> This META tag is described in the HTML standard. (4197265 and 4137321) </p>
+<p> Also see -encoding and -docencoding.</p>
+</p>
 </BODY>
 </HTML>

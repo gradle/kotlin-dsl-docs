@@ -1,86 +1,42 @@
-<html><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Writing Custom Plugins - Gradle User Guide Version 4.1-20170617095021+0000</title><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="base.css"><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="docs.css"><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="userguide.css"><meta content="DocBook XSL Stylesheets V1.75.2" name="generator"><link rel="home" href="userguide.html" title="Gradle User Guide Version 4.1-20170617095021+0000"><link rel="up" href="pt04.html" title="Part&nbsp;IV.&nbsp;Extending the build"><link rel="prev" href="custom_tasks.html" title="Writing Custom Task Classes - Gradle User Guide Version 4.1-20170617095021+0000"><link rel="next" href="javaGradle_plugin.html" title="The Java Gradle Plugin Development Plugin - Gradle User Guide Version 4.1-20170617095021+0000"></head><body><div class="navheader"><div><div class="navbar"><a xmlns:xslthl="http://xslthl.sf.net" href="custom_tasks.html" title="Writing Custom Task Classes - Gradle User Guide Version 4.1-20170617095021+0000">Previous</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="Gradle User Guide Version 4.1-20170617095021+0000">Contents</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="javaGradle_plugin.html" title="The Java Gradle Plugin Development Plugin - Gradle User Guide Version 4.1-20170617095021+0000">Next</a></div></div></div><div class="chapter"><div class="titlepage"><div><div><h1 xmlns:xslthl="http://xslthl.sf.net"><a name="custom_plugins"></a>Chapter&nbsp;41.&nbsp;Writing Custom Plugins</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="custom_plugins.html#sec:packaging_a_plugin">41.1. Packaging a plugin</a></span></dt><dt><span class="section"><a href="custom_plugins.html#sec:writing_a_simple_plugin">41.2. Writing a simple plugin</a></span></dt><dt><span class="section"><a href="custom_plugins.html#sec:getting_input_from_the_build">41.3. Getting input from the build</a></span></dt><dt><span class="section"><a href="custom_plugins.html#sec:working_with_files_in_custom_tasks_and_plugins">41.4. Working with files in custom tasks and plugins</a></span></dt><dt><span class="section"><a href="custom_plugins.html#sec:mapping_extension_properties_to_task_properties">41.5. Mapping extension properties to task properties</a></span></dt><dt><span class="section"><a href="custom_plugins.html#sec:custom_plugins_standalone_project">41.6. A standalone project</a></span></dt><dt><span class="section"><a href="custom_plugins.html#sec:maintaining_multiple_domain_objects">41.7. Maintaining multiple domain objects</a></span></dt></dl></div><p>A Gradle plugin packages up reusable pieces of build logic, which can be used across many different
-        projects and builds. Gradle allows you to implement your own custom plugins, so you can reuse your
-        build logic, and share it with others.
-    </p><p>
-        You can implement a custom plugin in any language you like, provided the implementation ends up compiled as
-        bytecode. For the examples here, we are going to use Groovy as the implementation language. You could use
-        Java or Scala instead, if you want.
-    </p><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:packaging_a_plugin" class="section-anchor" href="#sec:packaging_a_plugin"></a>41.1.&nbsp;Packaging a plugin</h2></div></div></div><p>There are several places where you can put the source for the plugin.
-        </p><div class="variablelist"><dl><dt><span class="term">Build script</span></dt><dd><p>You can include the source for the plugin directly in the build script. This has the benefit that the plugin is
-                        automatically compiled and included in the classpath of the build script without you having to do anything.
-                        However, the plugin is not visible outside the build script, and so you cannot reuse the plugin
-                        outside the build script it is defined in.
-                    </p></dd><dt><span class="term"><code class="filename">buildSrc</code> project</span></dt><dd><p>You can put the source for the plugin in the
-                        <code class="filename"><em class="replaceable"><code>rootProjectDir</code></em>/buildSrc/src/main/groovy</code> directory.
-                        Gradle will take care of compiling and testing the plugin and making it available on the
-                        classpath of the build script. The plugin is visible to every build script used by the build.
-                        However, it is not visible outside the build, and so you cannot reuse the plugin outside the
-                        build it is defined in.
-                    </p><p>
-                        See <a class="xref" href="organizing_build_logic.html">Chapter&nbsp;43, <i>Organizing Build Logic</i></a> for more details about the <code class="filename">buildSrc</code>
-                        project.</p></dd><dt><span class="term">Standalone project</span></dt><dd><p>You can create a separate project for your plugin. This project produces and
-                        publishes a JAR which you can then use in multiple builds and share with others. Generally, this JAR
-                        might include some custom plugins, or bundle several related task classes into a single library. Or
-                        some combination of the two.
-                    </p></dd></dl></div><p> In our examples, we will start with the plugin in the build script, to keep things simple.
-            Then we will look at creating a standalone project.
-        </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:writing_a_simple_plugin" class="section-anchor" href="#sec:writing_a_simple_plugin"></a>41.2.&nbsp;Writing a simple plugin</h2></div></div></div><p>To create a custom plugin, you need to write an implementation of <a class="ulink" href="../javadoc/org/gradle/api/Plugin.html" target="_top"><code class="classname">Plugin</code></a>.
-            Gradle instantiates the plugin and calls the plugin instance's <a class="ulink" href="../javadoc/org/gradle/api/Plugin.html#apply(T)" target="_top"><code class="classname">Plugin.apply(T)</code></a> method when the
-            plugin is used with a project. The project
-            object is passed as a parameter, which the plugin can use to configure the project however it needs to.
-            The following sample contains a greeting plugin, which adds a <code class="literal">hello</code> task to the project.
-        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="customPlugin"></a><p class="title"><b>Example&nbsp;41.1.&nbsp;A custom plugin</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// ERROR: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:</span>
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">3</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">3</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">40.</span>
+<html><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Writing Custom Plugins - Gradle User Guide Version 4.3-20171005220000+0000</title><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="base.css"><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="docs.css"><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="userguide.css"><meta content="DocBook XSL Stylesheets V1.75.2" name="generator"><link rel="home" href="userguide.html" title="Gradle User Guide Version 4.3-20171005220000+0000"><link rel="up" href="pt04.html" title="Part&nbsp;IV.&nbsp;Extending the build"><link rel="prev" href="custom_tasks.html" title="Writing Custom Task Classes - Gradle User Guide Version 4.3-20171005220000+0000"><link rel="next" href="javaGradle_plugin.html" title="The Java Gradle Plugin Development Plugin - Gradle User Guide Version 4.3-20171005220000+0000"></head><body><div class="navheader"><div><div class="navbar"><a xmlns:xslthl="http://xslthl.sf.net" href="custom_tasks.html" title="Writing Custom Task Classes - Gradle User Guide Version 4.3-20171005220000+0000">Previous</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="Gradle User Guide Version 4.3-20171005220000+0000">Contents</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="javaGradle_plugin.html" title="The Java Gradle Plugin Development Plugin - Gradle User Guide Version 4.3-20171005220000+0000">Next</a></div></div></div><div class="chapter"><div class="titlepage"><div><div><h1 xmlns:xslthl="http://xslthl.sf.net"><a name="custom_plugins"></a>Chapter&nbsp;41.&nbsp;Writing Custom Plugins</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="custom_plugins.html#sec:packaging_a_plugin">41.1. Packaging a plugin</a></span></dt><dt><span class="section"><a href="custom_plugins.html#sec:writing_a_simple_plugin">41.2. Writing a simple plugin</a></span></dt><dt><span class="section"><a href="custom_plugins.html#sec:getting_input_from_the_build">41.3. Making the plugin configurable</a></span></dt><dt><span class="section"><a href="custom_plugins.html#sec:working_with_files_in_custom_tasks_and_plugins">41.4. Working with files in custom tasks and plugins</a></span></dt><dt><span class="section"><a href="custom_plugins.html#sec:mapping_extension_properties_to_task_properties">41.5. Mapping extension properties to task properties</a></span></dt><dt><span class="section"><a href="custom_plugins.html#sec:custom_plugins_standalone_project">41.6. A standalone project</a></span></dt><dt><span class="section"><a href="custom_plugins.html#sec:implementing_a_dsl">41.7. Providing a configuration DSL for the plugin</a></span></dt></dl></div><p>A Gradle plugin packages up reusable pieces of build logic, which can be used across many different projects and builds. Gradle allows you to implement your own plugins, so you can reuse your build logic, and share it with others.</p><p>You can implement a Gradle plugin in any language you like, provided the implementation ends up compiled as bytecode. In our examples, we are going to use Groovy as the implementation language. Groovy, Java or Kotlin are all good choices as the language to use to implement a plugin, as the Gradle API has been designed to work well with these languages. In general, a plugin implemented using Java or Kotlin, which are statically typed, will perform better than the same plugin implemented using Groovy.</p><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:packaging_a_plugin" class="section-anchor" href="#sec:packaging_a_plugin"></a>41.1.&nbsp;Packaging a plugin</h2></div></div></div><p>There are several places where you can put the source for the plugin.</p><div class="variablelist"><dl><dt><span class="term">Build script</span></dt><dd><p>You can include the source for the plugin directly in the build script. This has the benefit that the plugin is automatically compiled and included in the classpath of the build script without you having to do anything. However, the plugin is not visible outside the build script, and so you cannot reuse the plugin outside the build script it is defined in.</p></dd><dt><span class="term"><code class="literal">buildSrc</code> project</span></dt><dd><p>You can put the source for the plugin in the <code class="literal"><span class="emphasis"><em>rootProjectDir</em></span>/buildSrc/src/main/groovy</code> directory. Gradle will take care of compiling and testing the plugin and making it available on the classpath of the build script. The plugin is visible to every build script used by the build. However, it is not visible outside the build, and so you cannot reuse the plugin outside the build it is defined in.</p><p>See <a class="xref" href="organizing_build_logic.html">Chapter&nbsp;43, <i>Organizing Build Logic</i></a> for more details about the <code class="literal">buildSrc</code> project.</p></dd><dt><span class="term">Standalone project</span></dt><dd><p>You can create a separate project for your plugin. This project produces and publishes a JAR which you can then use in multiple builds and share with others. Generally, this JAR might include some plugins, or bundle several related task classes into a single library. Or some combination of the two.</p></dd></dl></div><p>In our examples, we will start with the plugin in the build script, to keep things simple. Then we will look at creating a standalone project.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:writing_a_simple_plugin" class="section-anchor" href="#sec:writing_a_simple_plugin"></a>41.2.&nbsp;Writing a simple plugin</h2></div></div></div><p>To create a Gradle plugin, you need to write a class that implements the <a class="ulink" href="../javadoc/org/gradle/api/Plugin.html" target="_top"><code class="classname">Plugin</code></a> interface. When the plugin is applied to a project, Gradle creates an instance of the plugin class and calls the instance&rsquo;s <a class="ulink" href="../javadoc/org/gradle/api/Plugin.html#apply(T)" target="_top"><code class="classname">Plugin.apply(T)</code></a> method. The project object is passed as a parameter, which the plugin can use to configure the project however it needs to. The following sample contains a greeting plugin, which adds a <code class="literal">hello</code> task to the project.</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="customPlugin"></a><p class="title"><b>Example&nbsp;41.1.&nbsp;A custom plugin</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// ERROR: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">40.</span>
    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
                                           ^
 
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">3</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">3</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">40.</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">40.</span>
    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
                                           ^
 
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">3</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Plugin 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">3</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1.</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Plugin 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1.</span>
    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
    ^
 
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">4</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">4</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">16.</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">2</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">2</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">16.</span>
        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> apply(Project project) {
                   ^
 
 <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">4</span> errors
 
 
-apply plugin: GreetingPlugin
-
 <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
     <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> apply(Project project) {
         project.task(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'hello'</span>) {
             doLast {
-                println <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"Hello from the GreetingPlugin"</span>
+                println <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'Hello from the GreetingPlugin'</span>
             }
         }
     }
 }
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Apply the plugin</span>
+apply plugin: GreetingPlugin
 </pre><p>Output of <strong class="userinput"><code>gradle -q hello</code></strong></p><pre class="screen">&gt; gradle -q hello
 Hello from the GreetingPlugin
-</pre></div></div><br class="example-break"><p>
-            One thing to note is that a new instance of a given plugin is created for each project it is applied to. Also
-            note that the <a class="ulink" href="../javadoc/org/gradle/api/Plugin.html" target="_top"><code class="classname">Plugin</code></a> class is a generic type. This example has it receiving the
-            <a class="ulink" href="../dsl/org.gradle.api.Project.html" target="_top"><code class="classname">Project</code></a> type as a type parameter. It's possible to write unusual custom
-            plugins that take different type parameters, but this will be unlikely (until someone figures out more
-            creative things to do here).
-        </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:getting_input_from_the_build" class="section-anchor" href="#sec:getting_input_from_the_build"></a>41.3.&nbsp;Getting input from the build</h2></div></div></div><p>Most plugins need to obtain some configuration from the build script. One method for doing this is to use <em class="firstterm">extension objects</em>.
-             The Gradle <a class="ulink" href="../dsl/org.gradle.api.Project.html" target="_top"><code class="classname">Project</code></a> has an associated <a class="ulink" href="../javadoc/org/gradle/api/plugins/ExtensionContainer.html" target="_top"><code class="classname">ExtensionContainer</code></a> object
-             that helps keep track of all the settings and properties being passed to plugins. You can capture user input by telling
-             the extension container about your plugin. To capture input, simply add a Java Bean compliant class into the extension container's list of
-             extensions. Groovy is a good language choice for a plugin because plain old Groovy objects contain all the getter and setter methods
-             that a Java Bean requires.
-        </p><p>Let's add a simple extension object to the project. Here we add a <code class="literal">greeting</code> extension object to the
-            project, which allows you to configure the greeting.
-        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="customPluginWithConvention"></a><p class="title"><b>Example&nbsp;41.2.&nbsp;A custom plugin extension</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// ERROR: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:</span>
+</pre></div></div><br class="example-break"><p>One thing to note is that a new instance of a plugin is created for each project it is applied to. Also note that the <a class="ulink" href="../javadoc/org/gradle/api/Plugin.html" target="_top"><code class="classname">Plugin</code></a> class is a generic type. This example has it receiving the <a class="ulink" href="../dsl/org.gradle.api.Project.html" target="_top"><code class="classname">Project</code></a> type as a type parameter. A plugin can instead receive a parameter of type <a class="ulink" href="../dsl/org.gradle.api.initialization.Settings.html" target="_top"><code class="classname">Settings</code></a>, in which case the plugin can be applied in a settings script, or a parameter of type <a class="ulink" href="../dsl/org.gradle.api.invocation.Gradle.html" target="_top"><code class="classname">Gradle</code></a>, in which case the plugin can be applied in an initialization script.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:getting_input_from_the_build" class="section-anchor" href="#sec:getting_input_from_the_build"></a>41.3.&nbsp;Making the plugin configurable</h2></div></div></div><p>Most plugins need to obtain some configuration from the build script. One method for doing this is to use <span class="emphasis"><em>extension objects</em></span>. The Gradle <a class="ulink" href="../dsl/org.gradle.api.Project.html" target="_top"><code class="classname">Project</code></a> has an associated <a class="ulink" href="../javadoc/org/gradle/api/plugins/ExtensionContainer.html" target="_top"><code class="classname">ExtensionContainer</code></a> object that contains all the settings and properties for the plugins that have been applied to the project. You can provide configuration for your plugin by adding an extension object to this container. An extension object is simply a Java Bean compliant class. Groovy is a good language choice to implement an extension object because plain old Groovy objects contain all the getter and setter methods that a Java Bean requires. Java and Kotlin are other good choices.</p><p>Let&rsquo;s add a simple extension object to the project. Here we add a <code class="literal">greeting</code> extension object to the project, which allows you to configure the greeting.</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="customPluginWithConvention"></a><p class="title"><b>Example&nbsp;41.2.&nbsp;A custom plugin extension</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// ERROR: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:</span>
 build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">5</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
  @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">5</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">40.</span>
    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
@@ -104,89 +60,79 @@ build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">6</spa
 <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">4</span> errors
 
 
-apply plugin: GreetingPlugin
-
-greeting.message = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'Hi from Gradle'</span>
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPluginExtension {
+    String message = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'Hello from GreetingPlugin'</span>
+}
 
 <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
     <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> apply(Project project) {
         <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Add the 'greeting' extension object</span>
-        project.extensions.create(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"greeting"</span>, GreetingPluginExtension)
-        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Add a task that uses the configuration</span>
+        def extension = project.extensions.create(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'greeting'</span>, GreetingPluginExtension)
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Add a task that uses configuration from the extension object</span>
         project.task(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'hello'</span>) {
             doLast {
-                println project.greeting.message
+                println extension.message
             }
         }
     }
 }
 
-<span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPluginExtension {
-    def String message = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'Hello from GreetingPlugin'</span>
-}
+apply plugin: GreetingPlugin
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Configure the extension</span>
+greeting.message = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'Hi from Gradle'</span>
 </pre><p>Output of <strong class="userinput"><code>gradle -q hello</code></strong></p><pre class="screen">&gt; gradle -q hello
 Hi from Gradle
-</pre></div></div><br class="example-break"><p>In this example, <code class="classname">GreetingPluginExtension</code> is a plain old Groovy object with a field called <code class="literal">message</code>.
-            The extension object is added to the plugin list with the name <code class="literal">greeting</code>. This object then becomes available as a project property
-            with the same name as the extension object.
-        </p><p>Oftentimes, you have several related properties you need to specify on a single plugin. Gradle adds a configuration closure block for each extension object, so you
-            can group settings together. The following example shows you how this works.
-        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="customPluginWithAdvancedConvention"></a><p class="title"><b>Example&nbsp;41.3.&nbsp;A custom plugin with configuration closure</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// ERROR: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:</span>
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">8</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">8</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">40.</span>
+</pre></div></div><br class="example-break"><p>In this example, <code class="literal">GreetingPluginExtension</code> is a plain old Groovy object with a property called <code class="literal">message</code>. The extension object is added to the plugin list with the name <code class="literal">greeting</code>. This object then becomes available as a project property with the same name as the extension object.</p><p>Oftentimes, you have several related properties you need to specify on a single plugin. Gradle adds a configuration closure block for each extension object, so you can group settings together. The following example shows you how this works.</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="customPluginWithAdvancedConvention"></a><p class="title"><b>Example&nbsp;41.3.&nbsp;A custom plugin with configuration closure</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// ERROR: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">6</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">6</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">40.</span>
    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
                                           ^
 
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">8</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">8</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">40.</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">6</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">6</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">40.</span>
    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
                                           ^
 
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">8</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Plugin 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">8</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1.</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">6</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Plugin 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">6</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1.</span>
    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
    ^
 
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">9</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">9</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">16.</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">7</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">7</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">16.</span>
        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> apply(Project project) {
                   ^
 
 <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">4</span> errors
 
 
-apply plugin: GreetingPlugin
-
-greeting {
-    message = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'Hi'</span>
-    greeter = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'Gradle'</span>
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPluginExtension {
+    String message
+    String greeter
 }
 
 <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
     <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> apply(Project project) {
-        project.extensions.create(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"greeting"</span>, GreetingPluginExtension)
+        def extension = project.extensions.create(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'greeting'</span>, GreetingPluginExtension)
         project.task(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'hello'</span>) {
             doLast {
-                println <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"${project.greeting.message} from ${project.greeting.greeter}"</span>
+                println <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"${extension.message} from ${extension.greeter}"</span>
             }
         }
     }
 }
 
-<span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPluginExtension {
-    String message
-    String greeter
+apply plugin: GreetingPlugin
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Configure the extension using a DSL block</span>
+greeting {
+    message = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'Hi'</span>
+    greeter = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'Gradle'</span>
 }
 </pre><p>Output of <strong class="userinput"><code>gradle -q hello</code></strong></p><pre class="screen">&gt; gradle -q hello
 Hi from Gradle
-</pre></div></div><br class="example-break"><p>In this example, several settings can be grouped together within the <code class="literal">greeting</code> closure.
-            The name of the closure block in the build script (<code class="literal">greeting</code>) needs to match the extension object name.
-            Then, when the closure is executed, the fields on the extension object will be mapped to the variables within the closure
-            based on the standard Groovy closure delegate feature.
-        </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:working_with_files_in_custom_tasks_and_plugins" class="section-anchor" href="#sec:working_with_files_in_custom_tasks_and_plugins"></a>41.4.&nbsp;Working with files in custom tasks and plugins</h2></div></div></div><p>
-            When developing custom tasks and plugins, it's a good idea to be very flexible when accepting input configuration for file locations.
-            To do this, you can leverage the <a class="ulink" href="../dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.lang.Object)" target="_top"><code class="classname">Project.file(java.lang.Object)</code></a> method to resolve values to files as late as possible.
-        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="lazyFileProperties"></a><p class="title"><b>Example&nbsp;41.4.&nbsp;Evaluating file properties lazily</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// ERROR: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:</span>
+</pre></div></div><br class="example-break"><p>In this example, several settings can be grouped together within the <code class="literal">greeting</code> closure. The name of the closure block in the build script (<code class="literal">greeting</code>) needs to match the extension object name. Then, when the closure is executed, the fields on the extension object will be mapped to the variables within the closure based on the standard Groovy closure delegate feature.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:working_with_files_in_custom_tasks_and_plugins" class="section-anchor" href="#sec:working_with_files_in_custom_tasks_and_plugins"></a>41.4.&nbsp;Working with files in custom tasks and plugins</h2></div></div></div><p>When developing custom tasks and plugins, it&rsquo;s a good idea to be very flexible when accepting input configuration for file locations. To do this, you can leverage the <a class="ulink" href="../dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.lang.Object)" target="_top"><code class="classname">Project.file(java.lang.Object)</code></a> method to resolve values to files as late as possible.</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="lazyFileProperties"></a><p class="title"><b>Example&nbsp;41.4.&nbsp;Evaluating file properties lazily</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// ERROR: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:</span>
 build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> DefaultTask 
  @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1.</span>
    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingToFileTask <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">extends</span> DefaultTask {
@@ -212,7 +158,7 @@ build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">9</spa
     def greet() {
         def file = getDestination()
         file.parentFile.mkdirs()
-        file.write <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"Hello!"</span>
+        file.write <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'Hello!'</span>
     }
 }
 
@@ -229,131 +175,80 @@ task sayGreeting(dependsOn: greet) {
 ext.greetingFile = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"$buildDir/hello.txt"</span>
 </pre><p>Output of <strong class="userinput"><code>gradle -q sayGreeting</code></strong></p><pre class="screen">&gt; gradle -q sayGreeting
 Hello!
-</pre></div></div><br class="example-break"><p>
-            In this example, we configure the <code class="literal">greet</code> task <code class="literal">destination</code> property as a closure, which is evaluated with
-            the <a class="ulink" href="../dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.lang.Object)" target="_top"><code class="classname">Project.file(java.lang.Object)</code></a> method to turn the return value of the closure into a file object
-            at the last minute. You will notice that in the example above we specify the <code class="literal">greetingFile</code> property value after we have
-            configured to use it for the task. This kind of lazy evaluation is a key benefit of accepting any value when setting a file property, then
-            resolving that value when reading the property.
-        </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:mapping_extension_properties_to_task_properties" class="section-anchor" href="#sec:mapping_extension_properties_to_task_properties"></a>41.5.&nbsp;Mapping extension properties to task properties</h2></div></div></div><p>
-            Capturing user input from the build script through an extension and mapping it to input/output properties of a custom task is considered a best practice.
-            The end user only interacts with the exposed DSL defined by the extension. The imperative logic is hidden in the plugin implementation.
-        </p><p>
-            The extension declaration in the build script as well as the mapping between extension properties and custom task properties occurs during Gradle's
-            configuration phase of the build lifecycle. To avoid evaluation order issues, the actual value of a mapped property has to be resolved during the execution phase.
-            For more information please see <a class="xref" href="build_lifecycle.html#sec:build_phases">Section&nbsp;22.1, &ldquo;Build phases&rdquo;</a>. Gradle's API offers the mutable type <a class="ulink" href="../javadoc/org/gradle/api/provider/PropertyState.html" target="_top"><code class="classname">PropertyState</code></a> for representing
-            a property that should be lazily evaluated e.g. during execution time. The method <a class="ulink" href="../javadoc/org/gradle/api/provider/PropertyState.html#set(T)" target="_top"><code class="classname">PropertyState.set(T)</code></a> provides the value,
-            <a class="ulink" href="../javadoc/org/gradle/api/provider/Provider.html#get()" target="_top"><code class="classname">Provider.get()</code></a> returns the value upon request.
-        </p><p>
-            The following demonstrates the usage of the type for mapping an extension property to a task property:
-        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="mapExtensionPropertiesToTaskProperties"></a><p class="title"><b>Example&nbsp;41.5.&nbsp;Mapping extension properties to task properties</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// ERROR: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:</span>
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">8</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">8</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">40.</span>
+</pre></div></div><br class="example-break"><p>In this example, we configure the <code class="literal">greet</code> task <code class="literal">destination</code> property as a closure, which is evaluated with the <a class="ulink" href="../dsl/org.gradle.api.Project.html#org.gradle.api.Project:file(java.lang.Object)" target="_top"><code class="classname">Project.file(java.lang.Object)</code></a> method to turn the return value of the closure into a <code class="literal">File</code> object at the last minute. You will notice that in the example above we specify the <code class="literal">greetingFile</code> property value after we have configured to use it for the task. This kind of lazy evaluation is a key benefit of accepting any value when setting a file property, then resolving that value when reading the property.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:mapping_extension_properties_to_task_properties" class="section-anchor" href="#sec:mapping_extension_properties_to_task_properties"></a>41.5.&nbsp;Mapping extension properties to task properties</h2></div></div></div><p>Capturing user input from the build script through an extension and mapping it to input/output properties of a custom task is considered a best practice. The end user only interacts with the exposed DSL defined by the extension. The imperative logic is hidden in the plugin implementation.</p><p>The extension declaration in the build script as well as the mapping between extension properties and custom task properties occurs during Gradle&rsquo;s configuration phase of the build lifecycle. To avoid evaluation order issues, the actual value of a mapped property has to be resolved during the execution phase. For more information please see <a class="xref" href="build_lifecycle.html#sec:build_phases">Section&nbsp;22.1, &ldquo;Build phases&rdquo;</a>. Gradle&rsquo;s API offers the mutable type <a class="ulink" href="../javadoc/org/gradle/api/provider/PropertyState.html" target="_top"><code class="classname">PropertyState</code></a> for representing a property that should be lazily evaluated e.g. during execution time. The method <a class="ulink" href="../javadoc/org/gradle/api/provider/PropertyState.html#set(T)" target="_top"><code class="classname">PropertyState.set(T)</code></a> provides the value, <a class="ulink" href="../javadoc/org/gradle/api/provider/Provider.html#get()" target="_top"><code class="classname">Provider.get()</code></a> returns the value upon request.</p><p>The following demonstrates the usage of the type for mapping an extension property to a task property:</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="mapExtensionPropertiesToTaskProperties"></a><p class="title"><b>Example&nbsp;41.5.&nbsp;Mapping extension properties to task properties</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// ERROR: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">40.</span>
    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
                                           ^
 
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">8</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">8</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">40.</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">40.</span>
    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
                                           ^
 
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">8</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Plugin 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">8</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1.</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Plugin 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1.</span>
    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
    ^
 
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">9</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">9</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">16.</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">2</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">2</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">16.</span>
        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> apply(Project project) {
                   ^
 
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">21</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> PropertyState 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">21</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">5.</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">12</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> PropertyState 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">12</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">5.</span>
        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">final</span> PropertyState&lt;String&gt; message
        ^
 
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">22</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> ConfigurableFileCollection 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">22</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">5.</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">13</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> ConfigurableFileCollection 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">13</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">5.</span>
        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">final</span> ConfigurableFileCollection outputFiles
        ^
 
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">24</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">24</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">29.</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">15</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">15</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">29.</span>
        GreetingPluginExtension(Project project) {
                                ^
 
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">34</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Provider 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">34</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">5.</span>
-       Provider&lt;String&gt; getMessageProvider() {
-       ^
-
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">42</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> FileCollection 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">42</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">5.</span>
-       FileCollection getOutputFiles() {
-       ^
-
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">46</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> FileCollection 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">46</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">25.</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">21</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> FileCollection 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">21</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">25.</span>
        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> setOutputFiles(FileCollection outputFiles) {
                            ^
 
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">51</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> DefaultTask 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">51</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1.</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">26</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> DefaultTask 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">26</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1.</span>
    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Greeting <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">extends</span> DefaultTask {
    ^
 
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">52</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> PropertyState 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">52</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">5.</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">27</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> PropertyState 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">27</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">5.</span>
        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">final</span> PropertyState&lt;String&gt; message = project.property(String)
        ^
 
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">53</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> ConfigurableFileCollection 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">53</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">5.</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">28</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> ConfigurableFileCollection 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">28</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">5.</span>
        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">final</span> ConfigurableFileCollection outputFiles = project.files()
        ^
 
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">55</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Input ,  unable to find <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">for</span> annotation
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">55</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">5.</span>
-       <span xmlns:xslthl="http://xslthl.sf.net" class="hl-annotation">@Input</span>
-       ^
-
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">64</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Provider 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">64</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">21.</span>
-       <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> setMessage(Provider&lt;String&gt; message) {
-                       ^
-
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">68</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> FileCollection 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">68</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">5.</span>
-       FileCollection getOutputFiles() {
-       ^
-
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">72</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> FileCollection 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">72</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">25.</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">30</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> FileCollection 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">30</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">25.</span>
        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> setOutputFiles(FileCollection outputFiles) {
                            ^
 
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">76</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> TaskAction ,  unable to find <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">for</span> annotation
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">76</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">5.</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">34</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> TaskAction ,  unable to find <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">for</span> annotation
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">34</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">5.</span>
        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-annotation">@TaskAction</span>
        ^
 
-<span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">18</span> errors
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">13</span> errors
 
-
-apply plugin: GreetingPlugin
-
-greeting {
-    message = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'Hi from Gradle'</span>
-    outputFiles = files(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'a.txt'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'b.txt'</span>)
-}
 
 <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
     <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> apply(Project project) {
-        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Add the 'greeting' extension object</span>
         def extension = project.extensions.create(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'greeting'</span>, GreetingPluginExtension, project)
-        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Add a task that uses the configuration</span>
         project.tasks.create(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'hello'</span>, Greeting) {
-            message = extension.messageProvider
+            message = extension.message
             outputFiles = extension.outputFiles
         }
     }
@@ -365,24 +260,8 @@ greeting {
 
     GreetingPluginExtension(Project project) {
         message = project.property(String)
-        setMessage(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'Hello from GreetingPlugin'</span>)
+        message.set(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'Hello from GreetingPlugin'</span>)
         outputFiles = project.files()
-    }
-
-    String getMessage() {
-        message.get()
-    }
-
-    Provider&lt;String&gt; getMessageProvider() {
-        message
-    }
-
-    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> setMessage(String message) {
-        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">this</span>.message.set(message)
-    }
-
-    FileCollection getOutputFiles() {
-        outputFiles
     }
 
     <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> setOutputFiles(FileCollection outputFiles) {
@@ -394,92 +273,34 @@ greeting {
     <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">final</span> PropertyState&lt;String&gt; message = project.property(String)
     <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">final</span> ConfigurableFileCollection outputFiles = project.files()
 
-    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-annotation">@Input</span>
-    String getMessage() {
-        message.get()
-    }
-
-    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> setMessage(String message) {
-        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">this</span>.message.set(message)
-    }
-
-    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> setMessage(Provider&lt;String&gt; message) {
-        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">this</span>.message.set(message)
-    }
-
-    FileCollection getOutputFiles() {
-        outputFiles
-    }
-
     <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> setOutputFiles(FileCollection outputFiles) {
         <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">this</span>.outputFiles.setFrom(outputFiles)
     }
 
     <span xmlns:xslthl="http://xslthl.sf.net" class="hl-annotation">@TaskAction</span>
     <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> printMessage() {
-        getOutputFiles().each {
+        outputFiles.each {
             logger.quiet <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"Writing message 'Hi from Gradle' to file"</span>
-            it.text = getMessage()
+            it.text = message.get()
         }
     }
+}
+
+apply plugin: GreetingPlugin
+
+greeting {
+    message = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'Hi from Gradle'</span>
+    outputFiles = files(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'a.txt'</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'b.txt'</span>)
 }
 </pre><div class="exampleLocation"><p><span class="emphasis"><em>Note:</em></span> The code for this example can be found at <code class="filename">samples/userguide/tasks/mapExtensionPropertiesToTaskProperties</code> in the &lsquo;-all&rsquo; distribution of Gradle.</p></div><p>Output of <strong class="userinput"><code>gradle -q hello</code></strong></p><pre class="screen">&gt; gradle -q hello
 Writing message 'Hi from Gradle' to file
 Writing message 'Hi from Gradle' to file
-</pre></div></div><br class="example-break"><p>
-            The example above uses instances of <a class="ulink" href="../javadoc/org/gradle/api/provider/Provider.html" target="_top"><code class="classname">Provider</code></a> and <a class="ulink" href="../javadoc/org/gradle/api/provider/PropertyState.html" target="_top"><code class="classname">PropertyState</code></a>. The main difference between these two
-            interfaces is attributed to mutability. A <a class="ulink" href="../javadoc/org/gradle/api/provider/Provider.html" target="_top"><code class="classname">Provider</code></a> is immutable and can be created with the method
-            <a class="ulink" href="../javadoc/org/gradle/api/Project.html#provider(java.util.concurrent.Callable)" target="_top"><code class="classname">Project.provider(java.util.concurrent.Callable)</code></a>. <a class="ulink" href="../javadoc/org/gradle/api/provider/PropertyState.html" target="_top"><code class="classname">PropertyState</code></a> extends the interface
-            <a class="ulink" href="../javadoc/org/gradle/api/provider/Provider.html" target="_top"><code class="classname">Provider</code></a>, represents a mutable value and can be created with the method <a class="ulink" href="../dsl/org.gradle.api.Project.html#org.gradle.api.Project:property(java.lang.Class)" target="_top"><code class="classname">Project.property(java.lang.Class)</code></a>.
-            Please note that the provider types are not intended for for implementation by build script or plugin authors.
-        </p><div class="note"><p>
-                The <a class="ulink" href="../dsl/org.gradle.api.Project.html" target="_top"><code class="classname">Project</code></a> does not provide a specific method signature for creating a provider by passing in a <code class="literal">groovy.lang.Closure</code> as parameter.
-                When writing a plugin implementation with Groovy, you can use the method signature accepting a <code class="literal">java.util.concurrent.Callable</code> parameter.
-                Groovy's <a class="ulink" href="http://docs.groovy-lang.org/next/html/documentation/core-semantics.html#_assigning_a_closure_to_a_sam_type" target="_top">Closure to type coercion</a> will take of the rest.
-            </p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:custom_plugins_standalone_project" class="section-anchor" href="#sec:custom_plugins_standalone_project"></a>41.6.&nbsp;A standalone project</h2></div></div></div><p>Now we will move our plugin to a standalone project, so we can publish it and share it with others.
-            This project is simply a Groovy project that produces a JAR containing the plugin classes.
-            Here is a simple build script for the project. It applies the Groovy plugin, and adds the Gradle API
-            as a compile-time dependency.
-        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="customPluginStandalone"></a><p class="title"><b>Example&nbsp;41.6.&nbsp;A build for a custom plugin</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">apply(mapOf(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"plugin"</span> to <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"groovy"</span>))
+</pre></div></div><br class="example-break"><p>The example above uses instances of <a class="ulink" href="../javadoc/org/gradle/api/provider/Provider.html" target="_top"><code class="classname">Provider</code></a> and <a class="ulink" href="../javadoc/org/gradle/api/provider/PropertyState.html" target="_top"><code class="classname">PropertyState</code></a>. The main difference between these two interfaces is attributed to mutability. A <a class="ulink" href="../javadoc/org/gradle/api/provider/Provider.html" target="_top"><code class="classname">Provider</code></a> is immutable and can be created with the method <a class="ulink" href="../javadoc/org/gradle/api/Project.html#provider(java.util.concurrent.Callable)" target="_top"><code class="classname">Project.provider(java.util.concurrent.Callable)</code></a>. <a class="ulink" href="../javadoc/org/gradle/api/provider/PropertyState.html" target="_top"><code class="classname">PropertyState</code></a> extends the interface <a class="ulink" href="../javadoc/org/gradle/api/provider/Provider.html" target="_top"><code class="classname">Provider</code></a>, represents a mutable value and can be created with the method <a class="ulink" href="../dsl/org.gradle.api.Project.html#org.gradle.api.Project:property(java.lang.Class)" target="_top"><code class="classname">Project.property(java.lang.Class)</code></a>. Please note that the provider types are not intended for implementation by build script or plugin authors.</p><div class="note"><p>The <a class="ulink" href="../dsl/org.gradle.api.Project.html" target="_top"><code class="classname">Project</code></a> does not provide a specific method signature for creating a provider by passing in a <code class="literal">groovy.lang.Closure</code> as parameter. When writing a plugin implementation with Groovy, you can use the method signature accepting a <code class="literal">java.util.concurrent.Callable</code> parameter. Groovy&rsquo;s <a class="ulink" href="http://docs.groovy-lang.org/next/html/documentation/core-semantics.html#_assigning_a_closure_to_a_sam_type" target="_top">Closure to type coercion</a> will take of the rest.</p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:custom_plugins_standalone_project" class="section-anchor" href="#sec:custom_plugins_standalone_project"></a>41.6.&nbsp;A standalone project</h2></div></div></div><p>Now we will move our plugin to a standalone project, so we can publish it and share it with others. This project is simply a Groovy project that produces a JAR containing the plugin classes. Here is a simple build script for the project. It applies the Groovy plugin, and adds the Gradle API as a compile-time dependency.</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="customPluginStandalone"></a><p class="title"><b>Example&nbsp;41.6.&nbsp;A build for a custom plugin</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">apply(mapOf(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"plugin"</span> to <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"groovy"</span>))
 dependencies {
     compile(gradleApi())
     compile(localGroovy())
-}</pre><div class="exampleLocation"><p><span class="emphasis"><em>Note:</em></span> The code for this example can be found at <code class="filename">samples/customPlugin/plugin</code> in the &lsquo;-all&rsquo; distribution of Gradle.</p></div></div></div><br class="example-break"><p>
-                So how does Gradle find the <a class="ulink" href="../javadoc/org/gradle/api/Plugin.html" target="_top"><code class="classname">Plugin</code></a> implementation? The answer is you need to provide a properties file in the jar's
-            <code class="filename">META-INF/gradle-plugins</code> directory that matches the id of your plugin.
-        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="customPluginStandalone"></a><p class="title"><b>Example&nbsp;41.7.&nbsp;Wiring for a custom plugin</b></p><div class="example-contents"><p><code class="filename">src/main/resources/META-INF/gradle-plugins/org.samples.greeting.properties</code></p><pre class="programlisting">implementation-class=org.gradle.GreetingPlugin
-</pre></div></div><br class="example-break"><p>
-            Notice that the properties filename matches the plugin id and is placed in the resources folder, and
-            that the <code class="literal">implementation-class</code> property identifies the <a class="ulink" href="../javadoc/org/gradle/api/Plugin.html" target="_top"><code class="classname">Plugin</code></a> implementation class.
-        </p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:creating_a_plugin_id" class="section-anchor" href="#sec:creating_a_plugin_id"></a>41.6.1.&nbsp;Creating a plugin id</h3></div></div></div><p>
-                Plugin ids are fully qualified in a manner similar to Java packages (i.e. a reverse domain name).  This helps to avoid
-                collisions and provides a way to group plugins with similar ownership.
-            </p><p>
-                Your plugin id should be a combination of components that reflect namespace (a reasonable pointer to you or your organization)
-                and the name of the plugin it provides.  For example if you had a Github account named &ldquo;foo&rdquo; and your plugin was named &ldquo;bar&rdquo;,
-                a suitable plugin id might be <code class="literal">com.github.foo.bar</code>.  Similarly, if the plugin was developed at the baz organization,
-                the plugin id might be <code class="literal">org.baz.bar</code>.
-            </p><p>
-                Plugin ids should conform to the following:
-            </p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem">May contain any alphanumeric character, '.', and '-'.</li><li class="listitem">Must contain at least one '.' character separating the namespace from the name of the plugin.</li><li class="listitem">Conventionally use a lowercase reverse domain name convention for the namespace.</li><li class="listitem">Conventionally use only lowercase characters in the name.</li><li class="listitem"><code class="literal">org.gradle</code> and <code class="literal">com.gradleware</code> namespaces may not be used.</li><li class="listitem">Cannot start or end with a '.' character.</li><li class="listitem">Cannot contain consecutive '.' characters (i.e. '..').</li></ul></div><p>
-                Although there are conventional similarities between plugin ids and package names, package names are generally more detailed than is
-                necessary for a plugin id.  For instance, it might seem reasonable to add &ldquo;gradle&rdquo; as a component of your plugin id, but since plugin
-                ids are only used for Gradle plugins, this would be superfluous.  Generally, a namespace that identifies ownership and a name are all
-                that are needed for a good plugin id.
-            </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:publishing_your_plugin" class="section-anchor" href="#sec:publishing_your_plugin"></a>41.6.2.&nbsp;Publishing your plugin</h3></div></div></div><p>
-                If you are publishing your plugin internally for use within your organization, you can publish it like
-                any other code artifact.  See the <a class="link" href="publishing_ivy.html">ivy</a> and <a class="link" href="publishing_maven.html">maven</a>
-                chapters on publishing artifacts.
-            </p><p>
-                If you are interested in publishing your plugin to be used by the wider Gradle community, you can publish it to the
-                <a class="ulink" href="http://plugins.gradle.org" target="_top">Gradle plugin portal</a>.  This site provides the ability to search for and
-                gather information about plugins contributed by the Gradle community.  See the instructions
-                <a class="ulink" href="http://plugins.gradle.org/docs/submit" target="_top">here</a> on how to make your plugin available on this site.
-            </p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:using_your_plugin_in_another_project" class="section-anchor" href="#sec:using_your_plugin_in_another_project"></a>41.6.3.&nbsp;Using your plugin in another project</h3></div></div></div><p>To use a plugin in a build script, you need to add the plugin classes to the build script's classpath. To
-                do this, you use a &ldquo;<code class="literal">buildscript { }</code>&rdquo; block, as described in <a class="xref" href="plugins.html#sec:applying_plugins_buildscript">the section called &ldquo;Applying plugins with the buildscript block&rdquo;</a>.
-                The following example shows how you might do this when the JAR containing the plugin has been published
-                to a local repository:
-            </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="customPluginStandalone"></a><p class="title"><b>Example&nbsp;41.8.&nbsp;Using a custom plugin in another project</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">buildscript {
+}</pre><div class="exampleLocation"><p><span class="emphasis"><em>Note:</em></span> The code for this example can be found at <code class="filename">samples/customPlugin/plugin</code> in the &lsquo;-all&rsquo; distribution of Gradle.</p></div></div></div><br class="example-break"><p>So how does Gradle find the <a class="ulink" href="../javadoc/org/gradle/api/Plugin.html" target="_top"><code class="classname">Plugin</code></a> implementation? The answer is you need to provide a properties file in the jar&rsquo;s <code class="literal">META-INF/gradle-plugins</code> directory that matches the id of your plugin.</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="customPluginStandalone"></a><p class="title"><b>Example&nbsp;41.7.&nbsp;Wiring for a custom plugin</b></p><div class="example-contents"><p><code class="filename">src/main/resources/META-INF/gradle-plugins/org.samples.greeting.properties</code></p><pre class="programlisting">implementation-class=org.gradle.GreetingPlugin
+</pre></div></div><br class="example-break"><p>Notice that the properties filename matches the plugin id and is placed in the resources folder, and that the <code class="literal">implementation-class</code> property identifies the <a class="ulink" href="../javadoc/org/gradle/api/Plugin.html" target="_top"><code class="classname">Plugin</code></a> implementation class.</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:creating_a_plugin_id" class="section-anchor" href="#sec:creating_a_plugin_id"></a>41.6.1.&nbsp;Creating a plugin id</h3></div></div></div><p>Plugin ids are fully qualified in a manner similar to Java packages (i.e. a reverse domain name). This helps to avoid collisions and provides a way to group plugins with similar ownership.</p><p>Your plugin id should be a combination of components that reflect namespace (a reasonable pointer to you or your organization) and the name of the plugin it provides. For example if you had a Github account named &ldquo;foo&rdquo; and your plugin was named &ldquo;bar&rdquo;, a suitable plugin id might be <code class="literal">com.github.foo.bar</code>. Similarly, if the plugin was developed at the baz organization, the plugin id might be <code class="literal">org.baz.bar</code>.</p><p>Plugin ids should conform to the following:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>May contain any alphanumeric character, '.', and '-'.</p></li><li class="listitem"><p>Must contain at least one '.' character separating the namespace from the name of the plugin.</p></li><li class="listitem"><p>Conventionally use a lowercase reverse domain name convention for the namespace.</p></li><li class="listitem"><p>Conventionally use only lowercase characters in the name.</p></li><li class="listitem"><p><code class="literal">org.gradle</code> and <code class="literal">com.gradleware</code> namespaces may not be used.</p></li><li class="listitem"><p>Cannot start or end with a '.' character.</p></li><li class="listitem"><p>Cannot contain consecutive '.' characters (i.e. '..').</p></li></ul></div><p>Although there are conventional similarities between plugin ids and package names, package names are generally more detailed than is necessary for a plugin id. For instance, it might seem reasonable to add &ldquo;gradle&rdquo; as a component of your plugin id, but since plugin ids are only used for Gradle plugins, this would be superfluous. Generally, a namespace that identifies ownership and a name are all that are needed for a good plugin id.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:publishing_your_plugin" class="section-anchor" href="#sec:publishing_your_plugin"></a>41.6.2.&nbsp;Publishing your plugin</h3></div></div></div><p>If you are publishing your plugin internally for use within your organization, you can publish it like any other code artifact. See the <a class="link" href="publishing_ivy.html">ivy</a> and <a class="link" href="publishing_maven.html">maven</a> chapters on publishing artifacts.</p><p>If you are interested in publishing your plugin to be used by the wider Gradle community, you can publish it to the <a class="ulink" href="http://plugins.gradle.org" target="_top">Gradle plugin portal</a>. This site provides the ability to search for and gather information about plugins contributed by the Gradle community. See the instructions <a class="ulink" href="http://plugins.gradle.org/docs/submit" target="_top">here</a> on how to make your plugin available on this site.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:using_your_plugin_in_another_project" class="section-anchor" href="#sec:using_your_plugin_in_another_project"></a>41.6.3.&nbsp;Using your plugin in another project</h3></div></div></div><p>To use a plugin in a build script, you need to add the plugin classes to the build script&rsquo;s classpath. To do this, you use a &ldquo;<code class="literal">buildscript { }</code>&rdquo; block, as described in <a class="xref" href="plugins.html#sec:applying_plugins_buildscript">the section called &ldquo;Applying plugins with the buildscript block&rdquo;</a>. The following example shows how you might do this when the JAR containing the plugin has been published to a local repository:</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="customPluginStandalone"></a><p class="title"><b>Example&nbsp;41.8.&nbsp;Using a custom plugin in another project</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">buildscript {
     repositories {
         maven {
             url(uri(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"../repo"</span>))
@@ -489,14 +310,9 @@ dependencies {
         classpath(mapOf(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"group"</span> to <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"org.gradle"</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"name"</span> to <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"customPlugin"</span>, <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"version"</span> to <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"1.0-SNAPSHOT"</span>))
     }
 }
-apply(mapOf(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"plugin"</span> to <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"org.samples.greeting"</span>))</pre></div></div><br class="example-break"><p>
-                Alternatively, if your plugin is published to the plugin portal, you can use the incubating plugins DSL (see <a class="xref" href="plugins.html#sec:plugins_block">Section&nbsp;27.5.2, &ldquo;Applying plugins with the plugins DSL&rdquo;</a>)
-                to apply the plugin:
-            </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="useCommunityPluginDSL"></a><p class="title"><b>Example&nbsp;41.9.&nbsp;Applying a community plugin with the plugins DSL</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">plugins {
+apply(mapOf(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"plugin"</span> to <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"org.samples.greeting"</span>))</pre></div></div><br class="example-break"><p>Alternatively, if your plugin is published to the plugin portal, you can use the incubating plugins DSL (see <a class="xref" href="plugins.html#sec:plugins_block">Section&nbsp;27.5.2, &ldquo;Applying plugins with the plugins DSL&rdquo;</a>) to apply the plugin:</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="useCommunityPluginDSL"></a><p class="title"><b>Example&nbsp;41.9.&nbsp;Applying a community plugin with the plugins DSL</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">plugins {
     version(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"0.4.1"</span>)
-}</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:writing_tests_for_your_plugin" class="section-anchor" href="#sec:writing_tests_for_your_plugin"></a>41.6.4.&nbsp;Writing tests for your plugin</h3></div></div></div><p>You can use the <a class="ulink" href="../javadoc/org/gradle/testfixtures/ProjectBuilder.html" target="_top"><code class="classname">ProjectBuilder</code></a> class to create
-                <a class="ulink" href="../dsl/org.gradle.api.Project.html" target="_top"><code class="classname">Project</code></a> instances to use when you test your plugin implementation.
-            </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="customPluginStandalone"></a><p class="title"><b>Example&nbsp;41.10.&nbsp;Testing a custom plugin</b></p><div class="example-contents"><p><code class="filename">src/test/groovy/org/gradle/GreetingPluginTest.groovy</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPluginTest {
+}</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:writing_tests_for_your_plugin" class="section-anchor" href="#sec:writing_tests_for_your_plugin"></a>41.6.4.&nbsp;Writing tests for your plugin</h3></div></div></div><p>You can use the <a class="ulink" href="../javadoc/org/gradle/testfixtures/ProjectBuilder.html" target="_top"><code class="classname">ProjectBuilder</code></a> class to create <a class="ulink" href="../dsl/org.gradle.api.Project.html" target="_top"><code class="classname">Project</code></a> instances to use when you test your plugin implementation.</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="customPluginStandalone"></a><p class="title"><b>Example&nbsp;41.10.&nbsp;Testing a custom plugin</b></p><div class="example-contents"><p><code class="filename">src/test/groovy/org/gradle/GreetingPluginTest.groovy</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPluginTest {
     <span xmlns:xslthl="http://xslthl.sf.net" class="hl-annotation">@Test</span>
     <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">public</span> <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> greeterPluginAddsGreetingTaskToProject() {
         Project project = ProjectBuilder.builder().build()
@@ -505,44 +321,131 @@ apply(mapOf(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"plugin"
         assertTrue(project.tasks.hello <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">instanceof</span> GreetingTask)
     }
 }
-</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:using_the_java_gradle_plugin_development_plugin" class="section-anchor" href="#sec:using_the_java_gradle_plugin_development_plugin"></a>41.6.5.&nbsp;Using the Java Gradle Plugin development plugin</h3></div></div></div><p>You can use the incubating <a class="link" href="javaGradle_plugin.html">Java Gradle Plugin development plugin</a>
-                to eliminate some of the boilerplate declarations in your build script and provide some basic validations
-                of plugin metadata.  This plugin will automatically apply the <a class="link" href="java_plugin.html">Java plugin</a>,
-                add the <code class="literal">gradleApi()</code> dependency to the compile configuration, and perform plugin metadata
-                validations as part of the <code class="literal">jar</code> task execution.
-            </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="useJavaGradlePluginPlugin"></a><p class="title"><b>Example&nbsp;41.11.&nbsp;Using the Java Gradle Plugin Development plugin</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">plugins {
+</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:using_the_java_gradle_plugin_development_plugin" class="section-anchor" href="#sec:using_the_java_gradle_plugin_development_plugin"></a>41.6.5.&nbsp;Using the Java Gradle Plugin development plugin</h3></div></div></div><p>You can use the incubating <a class="link" href="javaGradle_plugin.html">Java Gradle Plugin development plugin</a> to eliminate some of the boilerplate declarations in your build script and provide some basic validations of plugin metadata. This plugin will automatically apply the <a class="link" href="java_plugin.html">Java plugin</a>, add the <code class="literal">gradleApi()</code> dependency to the compile configuration, and perform plugin metadata validations as part of the <code class="literal">jar</code> task execution.</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="useJavaGradlePluginPlugin"></a><p class="title"><b>Example&nbsp;41.11.&nbsp;Using the Java Gradle Plugin Development plugin</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">plugins {
     id(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"java-gradle-plugin"</span>)
-}</pre></div></div><br class="example-break"><p>
-                When publishing plugins to custom plugin repositories using the <a class="link" href="publishing_ivy.html">ivy</a> or
-                <a class="link" href="publishing_maven.html">maven</a> publish plugins, the <a class="link" href="javaGradle_plugin.html">Java Gradle
-                Plugin development plugin</a> will also generate plugin marker artifacts named based on the plugin id which
-                depend on the plugin's implementation artifact.
-            </p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:maintaining_multiple_domain_objects" class="section-anchor" href="#sec:maintaining_multiple_domain_objects"></a>41.7.&nbsp;Maintaining multiple domain objects</h2></div></div></div><p>Gradle provides some utility classes for maintaining collections of objects, which work well with the Gradle build language.</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="domainObjectContainer"></a><p class="title"><b>Example&nbsp;41.12.&nbsp;Managing domain objects</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// ERROR: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:</span>
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">23</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">23</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">45.</span>
+}</pre></div></div><br class="example-break"><p>When publishing plugins to custom plugin repositories using the <a class="link" href="publishing_ivy.html">ivy</a> or <a class="link" href="publishing_maven.html">maven</a> publish plugins, the <a class="link" href="javaGradle_plugin.html">Java Gradle Plugin development plugin</a> will also generate plugin marker artifacts named based on the plugin id which depend on the plugin&rsquo;s implementation artifact.</p></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:implementing_a_dsl" class="section-anchor" href="#sec:implementing_a_dsl"></a>41.7.&nbsp;Providing a configuration DSL for the plugin</h2></div></div></div><p>As we saw above, you can use an extension object to provide configuration for your plugin. Using an extension object also extends the Gradle DSL to add a project property and DSL block for the plugin. An extension object is simply a regular object, and so you can provide DSL elements nested inside this block by adding properties and methods to the extension object.</p><p>Gradle provides several conveniences to help create a well-behaved DSL for your plugin.</p><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:nested_dsl_elements" class="section-anchor" href="#sec:nested_dsl_elements"></a>41.7.1.&nbsp;Nested DSL elements</h3></div></div></div><p>When Gradle creates a task or extension object, Gradle <span class="emphasis"><em>decorates</em></span> the implementation class to mix in DSL support. To create a nested DSL element you can use the <a class="ulink" href="../javadoc/org/gradle/api/model/ObjectFactory.html" target="_top"><code class="classname">ObjectFactory</code></a> type to create objects that are similarly decorated. These decorated objects can then be made visible to the DSL through properties and methods of the plugin&rsquo;s extension:</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="nestedDslElement"></a><p class="title"><b>Example&nbsp;41.12.&nbsp;Nested DSL elements</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// ERROR: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">10</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> ObjectFactory 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">10</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">29.</span>
+       GreetingPluginExtension(ObjectFactory objectFactory) {
+                               ^
+
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">15</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Action 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">15</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">18.</span>
+       <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> greeter(Action&lt;? <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">super</span> Person&gt; action) {
+                    ^
+
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">20</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">20</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">40.</span>
+   <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
+                                          ^
+
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">20</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">20</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">40.</span>
+   <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
+                                          ^
+
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">20</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Plugin 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">20</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1.</span>
+   <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
+   ^
+
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">21</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">21</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">16.</span>
+       <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> apply(Project project) {
+                  ^
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">6</span> errors
+
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Person {
+    String name
+}
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPluginExtension {
+    String message
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">final</span> Person greeter
+
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-annotation">@javax.inject.Inject</span>
+    GreetingPluginExtension(ObjectFactory objectFactory) {
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Create a Person instance</span>
+        greeter = objectFactory.newInstance(Person)
+    }
+
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> greeter(Action&lt;? <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">super</span> Person&gt; action) {
+        action.execute(greeter)
+    }
+}
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> GreetingPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> apply(Project project) {
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Create the extension, passing in an ObjectFactory for it to use</span>
+        def extension = project.extensions.create(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'greeting'</span>, GreetingPluginExtension, project.objects)
+        project.task(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'hello'</span>) {
+            doLast {
+                println <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"${extension.message} from ${extension.greeter.name}"</span>
+            }
+        }
+    }
+}
+
+apply plugin: GreetingPlugin
+
+greeting {
+    message = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'Hi'</span>
+    greeter {
+        name = <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'Gradle'</span>
+    }
+}
+</pre><p>Output of <strong class="userinput"><code>gradle -q hello</code></strong></p><pre class="screen">&gt; gradle -q hello
+Hi from Gradle
+</pre></div></div><br class="example-break"><p>In this example, the plugin passes the project&rsquo;s <code class="literal">ObjectFactory</code> to the extension object through its constructor. The constructor uses this to create a nested object and makes this object available to the DSL through the <code class="literal">greeter</code> property.</p></div><div class="section"><div class="titlepage"><div><div><h3 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:maintaining_multiple_domain_objects" class="section-anchor" href="#sec:maintaining_multiple_domain_objects"></a>41.7.2.&nbsp;Configuring a collection of objects</h3></div></div></div><p>Gradle provides some utility classes for maintaining collections of objects, intended to work well with the Gradle DSL.</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="domainObjectContainer"></a><p class="title"><b>Example&nbsp;41.13.&nbsp;Managing a collection of objects</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting"><span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// ERROR: org.codehaus.groovy.control.MultipleCompilationErrorsException: startup failed:</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">10</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">10</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">45.</span>
    ationPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
                                  ^
 
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">23</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">23</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">45.</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">10</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">10</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">45.</span>
    ationPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
                                  ^
 
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">23</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Plugin 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">23</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1.</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">10</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Plugin 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">10</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">1.</span>
    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> DocumentationPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
    ^
 
-build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">24</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
- @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">24</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">16.</span>
+build.gradle: <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">11</span>: unable to resolve <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Project 
+ @ line <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">11</span>, column <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">16.</span>
        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> apply(Project project) {
                   ^
 
 <span xmlns:xslthl="http://xslthl.sf.net" class="hl-number">4</span> errors
 
 
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Book {
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">final</span> String name
+    File sourceFile
+
+    Book(String name) {
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">this</span>.name = name
+    }
+}
+
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> DocumentationPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
+    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> apply(Project project) {
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Create a container of Book instances</span>
+        def books = project.container(Book)
+        books.all {
+            sourceFile = project.file(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"src/docs/$name"</span>)
+        }
+        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Add the container as an extension object</span>
+        project.extensions.books = books
+    }
+}
+
 apply plugin: DocumentationPlugin
 
+<span xmlns:xslthl="http://xslthl.sf.net" class="hl-comment">// Configure the container</span>
 books {
     quickStart {
         sourceFile = file(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">'src/docs/quick-start'</span>)
@@ -562,33 +465,8 @@ task books {
         }
     }
 }
-
-<span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> DocumentationPlugin <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">implements</span> Plugin&lt;Project&gt; {
-    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">void</span> apply(Project project) {
-        def books = project.container(Book)
-        books.all {
-            sourceFile = project.file(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"src/docs/$name"</span>)
-        }
-        project.extensions.books = books
-    }
-}
-
-<span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">class</span> Book {
-    <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">final</span> String name
-    File sourceFile
-
-    Book(String name) {
-        <span xmlns:xslthl="http://xslthl.sf.net" class="hl-keyword">this</span>.name = name
-    }
-}
 </pre><p>Output of <strong class="userinput"><code>gradle -q books</code></strong></p><pre class="screen">&gt; gradle -q books
 developerGuide -&gt; /home/user/gradle/samples/userguide/organizeBuildLogic/customPluginWithDomainObjectContainer/src/docs/developerGuide
 quickStart -&gt; /home/user/gradle/samples/userguide/organizeBuildLogic/customPluginWithDomainObjectContainer/src/docs/quick-start
 userGuide -&gt; /home/user/gradle/samples/userguide/organizeBuildLogic/customPluginWithDomainObjectContainer/src/docs/userGuide
-</pre></div></div><br class="example-break"><p>
-            The <a class="ulink" href="../dsl/org.gradle.api.Project.html#org.gradle.api.Project:container(java.lang.Class)" target="_top"><code class="classname">Project.container(java.lang.Class)</code></a> methods create instances of <a class="ulink" href="../dsl/org.gradle.api.NamedDomainObjectContainer.html" target="_top"><code class="classname">NamedDomainObjectContainer</code></a>, that have many useful methods for managing and configuring the objects. In order
-            to use a type with any of the <code class="literal">project.container</code> methods, it MUST expose a property named &ldquo;<code class="literal">name</code>&rdquo;
-            as the unique, and constant, name for the object. The <code class="literal">project.container(Class)</code> variant of the container method creates
-            new instances by attempting to invoke the constructor of the class that takes a single string argument, which is the desired name of the object.
-            See the above link for <code class="literal">project.container</code> method variants that allow custom instantiation strategies.
-        </p></div></div><div class="navfooter"><div><div class="navbar"><a xmlns:xslthl="http://xslthl.sf.net" href="custom_tasks.html" title="Writing Custom Task Classes - Gradle User Guide Version 4.1-20170617095021+0000">Previous</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="Gradle User Guide Version 4.1-20170617095021+0000">Contents</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="javaGradle_plugin.html" title="The Java Gradle Plugin Development Plugin - Gradle User Guide Version 4.1-20170617095021+0000">Next</a></div></div></div></body></html>
+</pre></div></div><br class="example-break"><p>The <a class="ulink" href="../dsl/org.gradle.api.Project.html#org.gradle.api.Project:container(java.lang.Class)" target="_top"><code class="classname">Project.container(java.lang.Class)</code></a> methods create instances of <a class="ulink" href="../dsl/org.gradle.api.NamedDomainObjectContainer.html" target="_top"><code class="classname">NamedDomainObjectContainer</code></a>, that have many useful methods for managing and configuring the objects. In order to use a type with any of the <code class="literal">project.container</code> methods, it MUST expose a property named &ldquo;<code class="literal">name</code>&rdquo; as the unique, and constant, name for the object. The <code class="literal">project.container(Class)</code> variant of the container method creates new instances by attempting to invoke the constructor of the class that takes a single string argument, which is the desired name of the object. See the above link for <code class="literal">project.container</code> method variants that allow custom instantiation strategies.</p></div></div></div><div class="navfooter"><div><div class="navbar"><a xmlns:xslthl="http://xslthl.sf.net" href="custom_tasks.html" title="Writing Custom Task Classes - Gradle User Guide Version 4.3-20171005220000+0000">Previous</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="Gradle User Guide Version 4.3-20171005220000+0000">Contents</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="javaGradle_plugin.html" title="The Java Gradle Plugin Development Plugin - Gradle User Guide Version 4.3-20171005220000+0000">Next</a></div></div></div></body></html>

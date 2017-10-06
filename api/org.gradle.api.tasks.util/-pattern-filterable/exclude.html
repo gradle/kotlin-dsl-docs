@@ -12,8 +12,8 @@
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.tasks.util.PatternFilterable$exclude(kotlin.Array((kotlin.String)))/excludes">excludes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">PatternFilterable</span></a></code>
 <p>Adds an ANT style exclude pattern. This method may be called multiple times to append new patterns and multiple patterns may be specified in a single call. If excludes are not provided, then no files will be excluded. If excludes are provided, then files must not match any exclude pattern to be processed.</p>
 <h3>Parameters</h3>
-<a name="excludes"></a>
-<code>excludes</code> - a vararg list of exclude patterns
+<p><a name="excludes"></a>
+<code>excludes</code> - a vararg list of exclude patterns</p>
 <p><strong>Return</strong><br/>
 this</p>
 <p><strong>See Also</strong><br/>
@@ -22,8 +22,8 @@ PatternFilterable</p>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.util.PatternFilterable$exclude(kotlin.collections.MutableIterable((kotlin.String)))/excludes">excludes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">PatternFilterable</span></a></code>
 <p>Adds an ANT style exclude pattern. This method may be called multiple times to append new patterns and multiple patterns may be specified in a single call. If excludes are not provided, then no files will be excluded. If excludes are provided, then files must not match any exclude pattern to be processed.</p>
 <h3>Parameters</h3>
-<a name="excludes"></a>
-<code>excludes</code> - a Iterable providing new exclude patterns
+<p><a name="excludes"></a>
+<code>excludes</code> - a Iterable providing new exclude patterns</p>
 <p><strong>Return</strong><br/>
 this</p>
 <p><strong>See Also</strong><br/>
@@ -32,8 +32,8 @@ PatternFilterable</p>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.util.PatternFilterable$exclude(org.gradle.api.specs.Spec((org.gradle.api.file.FileTreeElement)))/excludeSpec">excludeSpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.file/-file-tree-element/index.html"><span class="identifier">FileTreeElement</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">PatternFilterable</span></a></code>
 <p>Adds an exclude spec. This method may be called multiple times to append new specs. If excludes are not provided, then no files will be excluded. If excludes are provided, then files must not match any exclude pattern to be processed.</p>
 <h3>Parameters</h3>
-<a name="excludeSpec"></a>
-<code>excludeSpec</code> - the spec to add
+<p><a name="excludeSpec"></a>
+<code>excludeSpec</code> - the spec to add</p>
 <p><strong>Return</strong><br/>
 this</p>
 <p><strong>See Also</strong><br/>
@@ -42,8 +42,8 @@ PatternFilterable</p>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.util.PatternFilterable$exclude(groovy.lang.Closure((kotlin.Any)))/excludeSpec">excludeSpec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">PatternFilterable</span></a></code>
 <p>Adds an exclude spec. This method may be called multiple times to append new specs.The given closure is passed a org.gradle.api.file.FileTreeElement as its parameter. The closure should return true or false. Example: <pre><code> copySpec { from 'source' into 'destination' //an example of excluding files from certain configuration: exclude { it.file in configurations.someConf.files } } </code></pre> If excludes are not provided, then no files will be excluded. If excludes are provided, then files must not match any exclude pattern to be processed.</p>
 <h3>Parameters</h3>
-<a name="excludeSpec"></a>
-<code>excludeSpec</code> - the spec to add
+<p><a name="excludeSpec"></a>
+<code>excludeSpec</code> - the spec to add</p>
 <p><strong>Return</strong><br/>
 this</p>
 <p><strong>See Also</strong><br/>

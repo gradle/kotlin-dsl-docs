@@ -39,12 +39,12 @@
 <code><span class="keyword">interface </span><span class="identifier">IvyPublication</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Publication</span></code>
 <p>A <code>IvyPublication</code> is the representation/configuration of how Gradle should publish something in Ivy format, to an Ivy repository. You directly add a named Ivy Publication the project's <code>publishing.publications</code> container by providing IvyPublication as the type. <pre><code> publishing { publications { myPublicationName(IvyPublication) { // Configure the publication here } } } </code></pre> 
 <p> The Ivy module identifying attributes of the publication are mapped as follows: </p>
-<ul> <li><code>module</code> - <code>project.name</code></li>
+ <ul> <li><code>module</code> - <code>project.name</code></li>
  <li><code>organisation</code> - <code>project.group</code></li>
  <li><code>revision</code> - <code>project.version</code></li>
  <li><code>status</code> - <code>project.status</code></li>
  </ul>
-  
+ 
 <p> For certain common use cases, it's often sufficient to specify the component to publish, using (<code><a href="../org.gradle.api.publish.ivy/-ivy-publication/from.html">#from(org.gradle.api.component.SoftwareComponent)</a></code>. The published component is used to determine which artifacts to publish, and which configurations and dependencies should be listed in the generated ivy descriptor file. </p>
 <p> You can add configurations to the generated ivy descriptor file, by supplying a Closure to the <code><a href="#">#configurations(org.gradle.api.Action)</a></code> method. </p>
 <p> To add additional artifacts to the set published, use the <code><a href="#">#artifact(Object)</a></code> and <code><a href="#">#artifact(Object, org.gradle.api.Action)</a></code> methods. You can also completely replace the set of published artifacts using <code><a href="#">#setArtifacts(Iterable)</a></code>. Together, these methods give you full control over the artifacts to be published. </p>

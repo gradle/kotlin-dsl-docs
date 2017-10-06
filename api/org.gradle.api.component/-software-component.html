@@ -9,7 +9,12 @@
 <br/>
 <h1>SoftwareComponent</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">SoftwareComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
-<p>A software component produced by a Gradle software project.</p>
+<p>A software component produced by a Gradle software project. 
+<p>An implementation of this interface may also implement:</p>
+ <ul> <li>ChildComponent to provide information about the hierarchy of components it belongs to.</li>
+ <li>ComponentWithVariants to provide information about the variants that the component provides.</li>
+ </ul>
+</p>
 <h3>Inherited Functions</h3>
 <table>
 <tbody>
@@ -21,6 +26,55 @@
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
 <p>The object's name. 
 <p> Must be constant for the life of the object.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../org.gradle.language.cpp/-cpp-binary/index.html">CppBinary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CppBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">SoftwareComponent</span></code>
+<p>A binary built from C++ source and linked from the resulting object files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.language.cpp/-cpp-component/index.html">CppComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CppComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">SoftwareComponent</span></code>
+<p>Configuration for a C++ component, such as a library or executable, defining the source files and private header directories that make up the component. Private headers are those that are visible only to the source files of the component. 
+<p>A C++ component is composed of some C++ source files that are compiled and then linked into some binary.</p>
+ 
+<p>An instance of this type is added as a project extension by the C++ plugins.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.language.swift/-swift-binary/index.html">SwiftBinary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SwiftBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">SoftwareComponent</span></code>
+<p>A binary built from Swift source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.language.swift/-swift-component/index.html">SwiftComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SwiftComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">SoftwareComponent</span></code>
+<p>Configuration for a Swift component, such as a library or executable, defining the source files that make up the component plus other settings. 
+<p>Swift component is composed of some Swift source files that are compiled and then linked into some binary.</p>
+ 
+<p>An instance of this type is added as a project extension by the Swift plugins.</p>
 </p>
 </td>
 </tr>

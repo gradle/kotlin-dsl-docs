@@ -37,8 +37,8 @@
 <p><a href="get-compiler-args.html">getCompilerArgs</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getCompilerArgs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
-<p>Additional arguments to provide to the compiler.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getCompilerArgs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-list-property.html"><span class="identifier">ListProperty</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p><em>Additional</em> arguments to provide to the compiler.</p>
 </td>
 </tr>
 <tr>
@@ -46,16 +46,9 @@
 <p><a href="get-includes.html">getIncludes</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getIncludes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getIncludes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code>
 <p>Returns the header directories to be used for compilation.</p>
 </td>
-</tr>
-<tr>
-<td>
-<p><a href="get-incremental-compiler-builder.html">getIncrementalCompilerBuilder</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getIncrementalCompilerBuilder</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">IncrementalCompilerBuilder</span></code></td>
 </tr>
 <tr>
 <td>
@@ -71,23 +64,16 @@
 <p><a href="get-object-file-dir.html">getObjectFileDir</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getObjectFileDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getObjectFileDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-directory-var/index.html"><span class="identifier">DirectoryVar</span></a></code>
 <p>The directory where object files will be generated.</p>
 </td>
-</tr>
-<tr>
-<td>
-<p><a href="get-operation-logger-factory.html">getOperationLoggerFactory</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOperationLoggerFactory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">BuildOperationLoggerFactory</span></code></td>
 </tr>
 <tr>
 <td>
 <p><a href="get-source.html">getSource</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code>
 <p>Returns the source files to be compiled.</p>
 </td>
 </tr>
@@ -120,6 +106,24 @@
 </tr>
 <tr>
 <td>
+<p><a href="is-debuggable.html">isDebuggable</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isDebuggable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Should the compiler generate debuggable code?</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-optimized.html">isOptimized</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isOptimized</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Should the compiler generate optimized code?</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="is-position-independent-code.html">isPositionIndependentCode</a></p>
 </td>
 <td>
@@ -129,10 +133,12 @@
 </tr>
 <tr>
 <td>
-<p><a href="set-compiler-args.html">setCompilerArgs</a></p>
+<p><a href="set-debuggable.html">setDebuggable</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setCompilerArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.nativeplatform.tasks.AbstractNativeCompileTask$setCompilerArgs(kotlin.collections.MutableList((kotlin.String)))/compilerArgs">compilerArgs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDebuggable</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.nativeplatform.tasks.AbstractNativeCompileTask$setDebuggable(kotlin.Boolean)/debug">debug</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Should the compiler generate debuggable code?</p>
+</td>
 </tr>
 <tr>
 <td>
@@ -143,10 +149,12 @@
 </tr>
 <tr>
 <td>
-<p><a href="set-object-file-dir.html">setObjectFileDir</a></p>
+<p><a href="set-optimized.html">setOptimized</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setObjectFileDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.nativeplatform.tasks.AbstractNativeCompileTask$setObjectFileDir(java.io.File)/objectFileDir">objectFileDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOptimized</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.nativeplatform.tasks.AbstractNativeCompileTask$setOptimized(kotlin.Boolean)/optimize">optimize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Should the compiler generate optimized code?</p>
+</td>
 </tr>
 <tr>
 <td>
@@ -199,6 +207,15 @@
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractNativeSourceCompileTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractNativeCompileTask</span></code>
 <p>Compiles native source files into object files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.swift.tasks/-swift-compile/index.html">SwiftCompile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SwiftCompile</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractNativeCompileTask</span></code>
+<p>Compiles Swift source files into object files, executables and libraries.</p>
 </td>
 </tr>
 </tbody>

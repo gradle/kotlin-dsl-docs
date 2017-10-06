@@ -18,8 +18,8 @@
 <p> You can combine this method with the <code><a href="#">#copy(groovy.lang.Closure)</a></code> method to untar a TAR file: </p>
 <pre><code> task untar(type: Copy) { from tarTree('someCompressedTar.gzip') //tar tree attempts to guess the compression based on the file extension //however if you must specify the compression explicitly you can: from tarTree(resources.gzip('someTar.ext')) //in case you work with unconventionally compressed tars //you can provide your own implementation of a ReadableResource: //from tarTree(yourOwnResource as ReadableResource) into 'dest' } </code></pre></p>
 <h3>Parameters</h3>
-<a name="tarPath"></a>
-<code>tarPath</code> - The TAR file or an instance of org.gradle.api.resources.Resource.
+<p><a name="tarPath"></a>
+<code>tarPath</code> - The TAR file or an instance of org.gradle.api.resources.Resource.</p>
 <p><strong>Return</strong><br/>
 the file tree. Never returns null.</p>
 </BODY>

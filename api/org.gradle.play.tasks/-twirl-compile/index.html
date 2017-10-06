@@ -29,6 +29,24 @@
 <tbody>
 <tr>
 <td>
+<p><a href="add-user-template-format.html">addUserTemplateFormat</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addUserTemplateFormat</span><span class="symbol">(</span><span class="identifier" id="org.gradle.play.tasks.TwirlCompile$addUserTemplateFormat(kotlin.String, kotlin.String, kotlin.Array((kotlin.String)))/extension">extension</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.play.tasks.TwirlCompile$addUserTemplateFormat(kotlin.String, kotlin.String, kotlin.Array((kotlin.String)))/templateType">templateType</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.play.tasks.TwirlCompile$addUserTemplateFormat(kotlin.String, kotlin.String, kotlin.Array((kotlin.String)))/imports">imports</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a custom template format.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-additional-imports.html">getAdditionalImports</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAdditionalImports</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the list of additional imports to add to the generated Scala code.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-default-imports.html">getDefaultImports</a></p>
 </td>
 <td>
@@ -72,6 +90,24 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-user-template-formats.html">getUserTemplateFormats</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getUserTemplateFormats</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.language.twirl/-twirl-template-format/index.html"><span class="identifier">TwirlTemplateFormat</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the custom template formats configured for this task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-additional-imports.html">setAdditionalImports</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setAdditionalImports</span><span class="symbol">(</span><span class="identifier" id="org.gradle.play.tasks.TwirlCompile$setAdditionalImports(kotlin.collections.MutableList((kotlin.String)))/additionalImports">additionalImports</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the additional imports to add to all generated Scala code.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="set-default-imports.html">setDefaultImports</a></p>
 </td>
 <td>
@@ -102,6 +138,15 @@
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setToolChain</span><span class="symbol">(</span><span class="identifier" id="org.gradle.play.tasks.TwirlCompile$setToolChain(org.gradle.play.toolchain.PlayToolChain)/toolChain">toolChain</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.play.toolchain/-play-tool-chain.html"><span class="identifier">PlayToolChain</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Sets the tool chain that will be used to compile the twirl source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-user-template-formats.html">setUserTemplateFormats</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setUserTemplateFormats</span><span class="symbol">(</span><span class="identifier" id="org.gradle.play.tasks.TwirlCompile$setUserTemplateFormats(kotlin.collections.MutableList((org.gradle.language.twirl.TwirlTemplateFormat)))/userTemplateFormats">userTemplateFormats</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.language.twirl/-twirl-template-format/index.html"><span class="identifier">TwirlTemplateFormat</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the custom template formats for this task.</p>
 </td>
 </tr>
 </tbody>

@@ -18,7 +18,9 @@
 <p><a href="-init-.html">&lt;init&gt;</a></p>
 </td>
 <td>
-<code><span class="identifier">InstallExecutable</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+<code><span class="identifier">InstallExecutable</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.InstallExecutable$<init>(WorkerLeaseService)/workerLeaseService">workerLeaseService</span><span class="symbol">:</span>&nbsp;<span class="identifier">WorkerLeaseService</span><span class="symbol">)</span></code>
+<p>Injects a WorkerLeaseService instance.</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -30,17 +32,22 @@
 <p><a href="get-destination-dir.html">getDestinationDir</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDestinationDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
-<p>The directory to install files into.</p>
-</td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDestinationDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code></td>
 </tr>
 <tr>
 <td>
 <p><a href="get-executable.html">getExecutable</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getExecutable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
-<p>The executable file to install.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getExecutable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-install-directory.html">getInstallDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getInstallDirectory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-directory-var/index.html"><span class="identifier">DirectoryVar</span></a></code>
+<p>The directory to install files into.</p>
 </td>
 </tr>
 <tr>
@@ -68,6 +75,15 @@
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getRunScript</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
 <p>Returns the script file that can be used to run the install image.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-source-file.html">getSourceFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSourceFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-regular-file-var/index.html"><span class="identifier">RegularFileVar</span></a></code>
+<p>The executable file to install.</p>
 </td>
 </tr>
 <tr>
@@ -100,14 +116,18 @@
 <p><a href="set-destination-dir.html">setDestinationDir</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDestinationDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.InstallExecutable$setDestinationDir(java.io.File)/destinationDir">destinationDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDestinationDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.InstallExecutable$setDestinationDir(java.io.File)/destinationDir">destinationDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDestinationDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.InstallExecutable$setDestinationDir(org.gradle.api.provider.Provider((org.gradle.api.file.Directory)))/destinationDir">destinationDir</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.api.file/-directory/index.html"><span class="identifier">Directory</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the destination directory to install the executable via a Provider</p>
+</td>
 </tr>
 <tr>
 <td>
 <p><a href="set-executable.html">setExecutable</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExecutable</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.InstallExecutable$setExecutable(java.io.File)/executable">executable</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExecutable</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.InstallExecutable$setExecutable(java.io.File)/executable">executable</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExecutable</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.InstallExecutable$setExecutable(org.gradle.api.provider.Provider((org.gradle.api.file.RegularFile)))/executable">executable</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.api.file/-regular-file/index.html"><span class="identifier">RegularFile</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the executable to install via a Provider</p>
+</td>
 </tr>
 <tr>
 <td>

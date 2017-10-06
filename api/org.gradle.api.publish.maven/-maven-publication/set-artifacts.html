@@ -12,7 +12,7 @@
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setArtifacts</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.publish.maven.MavenPublication$setArtifacts(kotlin.collections.MutableIterable((kotlin.Any)))/sources">sources</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Clears any previously added artifacts from <code><a href="get-artifacts.html">#getArtifacts</a></code> and creates artifacts from the specified sources. Each supplied source is interpreted as per <code><a href="#">#artifact(Object)</a></code>. For example, to exclude the dependencies declared by a component and instead use a custom set of artifacts: <pre><code> apply plugin: "java" apply plugin: "maven-publish" task sourceJar(type: Jar) { classifier "sources" } publishing { publications { maven(MavenPublication) { from components.java artifacts = ["my-custom-jar.jar", sourceJar] } } } </code></pre></p>
 <h3>Parameters</h3>
-<a name="sources"></a>
-<code>sources</code> - The set of artifacts for this publication.
+<p><a name="sources"></a>
+<code>sources</code> - The set of artifacts for this publication.</p>
 </BODY>
 </HTML>

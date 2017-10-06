@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>VersionControlSpec - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.vcs</a>&nbsp;/&nbsp;<a href=".">VersionControlSpec</a><br/>
+<br/>
+<h1>VersionControlSpec</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">VersionControlSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-describable/index.html"><span class="identifier">Describable</span></a></code>
+<p>Captures user-provided information about a version control system.</p>
+<p><strong>Since</strong><br/>
+4.3</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-repo-name.html">getRepoName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRepoName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the repository.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-unique-id.html">getUniqueId</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getUniqueId</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns a String identifier which will be unique to this version control specification among other version control specifications.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-describable/get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the display name of this object. It is strongly encouraged to compute it lazily, and cache the value if it is expensive.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.vcs.git/-git-version-control-spec/index.html">GitVersionControlSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">GitVersionControlSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">VersionControlSpec</span></code>
+<p>A specification of a Git repository.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

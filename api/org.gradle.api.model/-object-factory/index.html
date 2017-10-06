@@ -37,6 +37,25 @@
 </p>
 </td>
 </tr>
+<tr>
+<td>
+<p><a href="new-instance.html">newInstance</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">newInstance</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.model.ObjectFactory$newInstance(java.lang.Class((org.gradle.api.model.ObjectFactory.newInstance.T)), kotlin.Array((kotlin.Any)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.model.ObjectFactory$newInstance(java.lang.Class((org.gradle.api.model.ObjectFactory.newInstance.T)), kotlin.Array((kotlin.Any)))/parameters">parameters</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Create a new instance of T, using <code>parameters</code> as the construction parameters. 
+<p>The type must be a non-abstract class.</p>
+ 
+<p>Objects created using this method are decorated and extensible, meaning that they have DSL support mixed in and can be extended using the `extensions` property, similar to the org.gradle.api.Project object.</p>
+ 
+<p>An @Inject annotation is required on any constructor that accepts parameters because JSR-330 semantics for dependency injection are used. In addition to those parameters provided as an argument to this method, the following services are also available for injection:</p>
+ <ul> <li>ObjectFactory.</li>
+ <li>org.gradle.api.file.ProjectLayout.</li>
+ <li>org.gradle.api.provider.ProviderFactory.</li>
+ </ul>
+</p>
+</td>
+</tr>
 </tbody>
 </table>
 </BODY>

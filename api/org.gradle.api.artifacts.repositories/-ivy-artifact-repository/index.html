@@ -110,26 +110,26 @@
 <p> Recognised values are as follows: </p>
  'gradle' 
 <p> A Repository Layout that applies the following patterns: </p>
-<ul> <li>Artifacts: <code>$baseUri/{@value #GRADLE_ARTIFACT_PATTERN}</code></li>
+ <ul> <li>Artifacts: <code>$baseUri/{@value #GRADLE_ARTIFACT_PATTERN}</code></li>
  <li>Ivy: <code>$baseUri/{@value #GRADLE_IVY_PATTERN}</code></li>
  </ul>
-  'maven' 
+ 'maven' 
 <p> A Repository Layout that applies the following patterns: </p>
-<ul> <li>Artifacts: <code>$baseUri/{@value #MAVEN_ARTIFACT_PATTERN}</code></li>
+ <ul> <li>Artifacts: <code>$baseUri/{@value #MAVEN_ARTIFACT_PATTERN}</code></li>
  <li>Ivy: <code>$baseUri/{@value #MAVEN_IVY_PATTERN}</code></li>
  </ul>
-  
+ 
 <p> Following the Maven convention, the 'organisation' value is further processed by replacing '.' with '/'. </p>
  'ivy' 
 <p> A Repository Layout that applies the following patterns: </p>
-<ul> <li>Artifacts: <code>$baseUri/{@value #IVY_ARTIFACT_PATTERN}</code></li>
+ <ul> <li>Artifacts: <code>$baseUri/{@value #IVY_ARTIFACT_PATTERN}</code></li>
  <li>Ivy: <code>$baseUri/{@value #IVY_ARTIFACT_PATTERN}</code></li>
  </ul>
-  
+ 
 <p><strong>Note:</strong> this pattern is currently org.gradle.api.Incubating.</p>
  'pattern' 
 <p> A repository layout that allows custom patterns to be defined. eg: </p>
-<pre><code> repositories { ivy { layout 'pattern' , { artifact '[module]/[revision]/[artifact](.[ext])' ivy '[module]/[revision]/ivy.xml' } } } </code></pre>  
+ <pre><code> repositories { ivy { layout 'pattern' , { artifact '[module]/[revision]/[artifact](.[ext])' ivy '[module]/[revision]/ivy.xml' } } } </code></pre> 
 <p>The available pattern tokens are listed as part of <a href="#">Ivy's Main Concepts documentation</a>.</p>
 </p>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">layout</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.IvyArtifactRepository$layout(kotlin.String, groovy.lang.Closure((kotlin.Any)))/layoutName">layoutName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.repositories.IvyArtifactRepository$layout(kotlin.String, groovy.lang.Closure((kotlin.Any)))/config">config</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>

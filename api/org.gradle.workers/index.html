@@ -1,0 +1,66 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.workers - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.workers</a><br/>
+<br/>
+<h2>Package org.gradle.workers</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-fork-mode/index.html">ForkMode</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">ForkMode</span></code>
+<p>Forking mode for workers.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-isolation-mode/index.html">IsolationMode</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">IsolationMode</span></code>
+<p>Isolation mode for workers.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-worker-configuration/index.html">WorkerConfiguration</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">WorkerConfiguration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-describable/index.html"><span class="identifier">Describable</span></a><span class="symbol">, </span><a href="../org.gradle.api/-action-configuration/index.html"><span class="identifier">ActionConfiguration</span></a></code>
+<p>Represents the configuration of a worker. Used when submitting an item of work to the WorkerExecutor. <pre><code> workerExecutor.submit(RunnableWorkImpl.class) { WorkerConfiguration conf -&gt; conf.isolationMode = IsolationMode.PROCESS forkOptions { JavaForkOptions options -&gt; options.maxHeapSize = "512m" options.systemProperty 'some.prop', 'value' options.jvmArgs "-server" } classpath configurations.fooLibrary conf.params = [ "foo", file('bar') ] } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-worker-execution-exception/index.html">WorkerExecutionException</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WorkerExecutionException</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultMultiCauseException</span></code>
+<p>Indicates that a failure occurred during execution of work in a worker.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-worker-executor/index.html">WorkerExecutor</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">WorkerExecutor</span></code>
+<p>Allows work to be submitted for asynchronous execution. This api allows for safe, concurrent execution of work items and enables: <ul> <li>Parallel execution of work items within a single task</li>
+ <li>Execution in isolated contexts such as an isolated classloader or even a separate process</li>
+ <li>Safe execution of multiple tasks in parallel</li>
+ </ul>
+ Work should be submitted with a Runnable class representing the implementation of the unit of work and an action to configure the unit of work (via WorkerConfiguration). <pre><code> workerExecutor.submit(RunnableWorkImpl.class) { WorkerConfiguration conf -&gt; // Set the isolation mode for the worker conf.isolationMode = IsolationMode.NONE // Set up the constructor parameters for the unit of work conf.params = [ "foo", file('bar') ] } </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

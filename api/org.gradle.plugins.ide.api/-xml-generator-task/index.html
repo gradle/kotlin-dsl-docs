@@ -11,8 +11,8 @@
 <code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">XmlGeneratorTask</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">PersistableConfigurationObject</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-generator-task/index.html"><span class="identifier">GeneratorTask</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
 <p>A convenience superclass for those tasks which generate XML configuration files from a domain object of type T.</p>
 <h3>Parameters</h3>
-<a name="&lt;T&gt;"></a>
-<code><T></code> - The domain object type.
+<p><a name="&lt;T&gt;"></a>
+<code><T></code> - The domain object type.</p>
 <h3>Constructors</h3>
 <table>
 <tbody>
@@ -173,6 +173,24 @@
 <td>
 <code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GenerateProjectFileTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">XmlGeneratorTask</span><span class="symbol">&lt;</span><span class="identifier">VisualStudioProjectFile</span><span class="symbol">&gt;</span></code>
 <p>Task for generating a project file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.ide.xcode.tasks/-generate-scheme-file-task/index.html">GenerateSchemeFileTask</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GenerateSchemeFileTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">XmlGeneratorTask</span><span class="symbol">&lt;</span><span class="identifier">XcodeSchemeFile</span><span class="symbol">&gt;</span></code>
+<p>Task for generating a scheme file.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.ide.xcode.tasks/-generate-xcode-workspace-file-task/index.html">GenerateXcodeWorkspaceFileTask</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GenerateXcodeWorkspaceFileTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">XmlGeneratorTask</span><span class="symbol">&lt;</span><span class="identifier">XcodeWorkspaceFile</span><span class="symbol">&gt;</span></code>
+<p>Task for generating a workspace file.</p>
 </td>
 </tr>
 </tbody>

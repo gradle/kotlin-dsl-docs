@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ParallelismConfiguration.getMaxWorkerCount - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.concurrent</a>&nbsp;/&nbsp;<a href="index.html">ParallelismConfiguration</a>&nbsp;/&nbsp;<a href=".">getMaxWorkerCount</a><br/>
+<br/>
+<h1>getMaxWorkerCount</h1>
+<a name="org.gradle.concurrent.ParallelismConfiguration$getMaxWorkerCount()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getMaxWorkerCount</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>Returns the maximum number of concurrent workers used for underlying build operations. Workers can be threads, processes or whatever Gradle considers a "worker". Some examples: <ul> <li>A thread running a task</li>
+ <li>A test process</li>
+ <li>A language compiler in a forked process</li>
+ </ul>
+ Defaults to the number of processors available to the Java virtual machine.</p>
+<p><strong>Return</strong><br/>
+maximum number of concurrent workers, always &gt;= 1.</p>
+<p><strong>See Also</strong><br/>
+<a href="#">java.lang.Runtime#availableProcessors()</a></p>
+</BODY>
+</HTML>

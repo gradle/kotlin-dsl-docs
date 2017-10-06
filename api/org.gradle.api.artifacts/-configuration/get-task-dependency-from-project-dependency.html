@@ -12,9 +12,10 @@
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTaskDependencyFromProjectDependency</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$getTaskDependencyFromProjectDependency(kotlin.Boolean, kotlin.String)/useDependedOn">useDependedOn</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.Configuration$getTaskDependencyFromProjectDependency(kotlin.Boolean, kotlin.String)/taskName">taskName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-task-dependency/index.html"><span class="identifier">TaskDependency</span></a></code>
 <p>Returns a TaskDependency object containing dependencies on all tasks with the specified name from project dependencies related to this configuration or one of its super configurations. These other projects may be projects this configuration depends on or projects with a similarly named configuration that depend on this one based on the useDependOn argument.</p>
 <h3>Parameters</h3>
-<a name="useDependedOn"></a>
-<code>useDependedOn</code> - if true, add tasks from project dependencies in this configuration, otherwise use projects from configurations with the same name that depend on this one.<a name="taskName"></a>
-<code>taskName</code> - name of task to depend on
+<p><a name="useDependedOn"></a>
+<code>useDependedOn</code> - if true, add tasks from project dependencies in this configuration, otherwise use projects from configurations with the same name that depend on this one.</p>
+<p><a name="taskName"></a>
+<code>taskName</code> - name of task to depend on</p>
 <p><strong>Return</strong><br/>
 the populated TaskDependency object</p>
 </BODY>

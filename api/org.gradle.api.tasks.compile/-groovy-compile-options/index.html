@@ -44,14 +44,14 @@
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getConfigurationScript</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
 <p>A Groovy script file that configures the compiler, allowing extensive control over how the code is compiled. 
 <p> The script is executed as Groovy code, with the following context: </p>
-<ul> <li>The instance of <a href="#">CompilerConfiguration</a> available as the <code>configuration</code> variable.</li>
+ <ul> <li>The instance of <a href="#">CompilerConfiguration</a> available as the <code>configuration</code> variable.</li>
  <li>All static members of <a href="#">CompilerCustomizationBuilder</a> pre imported.</li>
  </ul>
-  
+ 
 <p> This facilitates the following pattern: </p>
-<pre><code> withConfig(configuration) { // use compiler configuration DSL here } </code></pre>  
+ <pre><code> withConfig(configuration) { // use compiler configuration DSL here } </code></pre> 
 <p> For example, to activate type checking for all Groovy classes… </p>
-<pre><code> import groovy.transform.TypeChecked withConfig(configuration) { ast(TypeChecked) } </code></pre>  
+ <pre><code> import groovy.transform.TypeChecked withConfig(configuration) { ast(TypeChecked) } </code></pre> 
 <p> Please see <a href="#">the Groovy compiler customization builder documentation</a> for more information about the compiler configuration DSL. </p>
  
 <p> <strong>This feature is only available if compiling with Groovy 2.1 or later.</strong> </p>

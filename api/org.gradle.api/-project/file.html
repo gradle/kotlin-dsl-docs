@@ -15,14 +15,16 @@
  <ul> <li>A CharSequence, including String or groovy.lang.GString. Interpreted relative to the project directory. A string that starts with <code>file:</code> is treated as a file URL.</li>
  <li>A File. If the file is an absolute file, it is returned as is. Otherwise, the file's path is interpreted relative to the project directory.</li>
  <li>A java.nio.file.Path. The path must be associated with the default provider and is treated the same way as an instance of <code>File</code>.</li>
- <li>A java.net.URI or java.net.URL. The URL's path is interpreted as the file path. Currently, only <code>file:</code> URLs are supported.</li>
- <li>A Closure. The closure's return value is resolved recursively.</li>
- <li>A java.util.concurrent.Callable. The callable's return value is resolved recursively.</li>
+ <li>A java.net.URI or java.net.URL. The URL's path is interpreted as the file path. Only <code>file:</code> URLs are supported.</li>
+ <li>A org.gradle.api.file.Directory or org.gradle.api.file.RegularFile.</li>
+ <li>A Provider of any supported type. The provider's value is resolved recursively.</li>
+ <li>A Closure that returns any supported type. The closure's return value is resolved recursively.</li>
+ <li>A java.util.concurrent.Callable that returns any supported type. The callable's return value is resolved recursively.</li>
  </ul>
 </p>
 <h3>Parameters</h3>
-<a name="path"></a>
-<code>path</code> - The object to resolve as a File.
+<p><a name="path"></a>
+<code>path</code> - The object to resolve as a File.</p>
 <p><strong>Return</strong><br/>
 The resolved file. Never returns null.</p>
 <a name="org.gradle.api.Project$file(kotlin.Any, org.gradle.api.PathValidation)"></a>
@@ -31,12 +33,13 @@ The resolved file. Never returns null.</p>
 <p>Resolves a file path relative to the project directory of this project and validates it using the given scheme. See PathValidation for the list of possible validations.</p>
 </p>
 <h3>Parameters</h3>
-<a name="path"></a>
-<code>path</code> - An object which toString method value is interpreted as a relative path to the project directory.<a name="validation"></a>
-<code>validation</code> - The validation to perform on the file.
+<p><a name="path"></a>
+<code>path</code> - An object which toString method value is interpreted as a relative path to the project directory.</p>
+<p><a name="validation"></a>
+<code>validation</code> - The validation to perform on the file.</p>
 <h3>Exceptions</h3>
-<a name="InvalidUserDataException"></a>
-<code>InvalidUserDataException</code> - When the file does not meet the given validation constraint.
+<p><a name="InvalidUserDataException"></a>
+<code>InvalidUserDataException</code> - When the file does not meet the given validation constraint.</p>
 <p><strong>Return</strong><br/>
 The resolved file. Never returns null.</p>
 </BODY>

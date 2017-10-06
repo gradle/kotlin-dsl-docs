@@ -16,8 +16,8 @@
  </ul>
  This method is useful for specifying default dependencies for a configuration: <pre><code> configurations { conf } configurations['conf'].defaultDependencies { dependencies -&gt; dependencies.add(owner.project.dependencies.create("org.gradle:my-util:1.0")) } </code></pre> A <code>Configuration</code> is considered empty even if it extends another, non-empty <code>Configuration</code>. If multiple actions are supplied, each action will be executed until the set of dependencies is no longer empty. Remaining actions will be ignored.</p>
 <h3>Parameters</h3>
-<a name="action"></a>
-<code>action</code> - the action to execute when the configuration has no defined dependencies.
+<p><a name="action"></a>
+<code>action</code> - the action to execute when the configuration has no defined dependencies.</p>
 <p><strong>Return</strong><br/>
 this</p>
 </BODY>

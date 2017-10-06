@@ -1,0 +1,152 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>WorkerConfiguration - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.workers</a>&nbsp;/&nbsp;<a href=".">WorkerConfiguration</a><br/>
+<br/>
+<h1>WorkerConfiguration</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">WorkerConfiguration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-describable/index.html"><span class="identifier">Describable</span></a><span class="symbol">, </span><a href="../../org.gradle.api/-action-configuration/index.html"><span class="identifier">ActionConfiguration</span></a></code>
+<p>Represents the configuration of a worker. Used when submitting an item of work to the WorkerExecutor. <pre><code> workerExecutor.submit(RunnableWorkImpl.class) { WorkerConfiguration conf -&gt; conf.isolationMode = IsolationMode.PROCESS forkOptions { JavaForkOptions options -&gt; options.maxHeapSize = "512m" options.systemProperty 'some.prop', 'value' options.jvmArgs "-server" } classpath configurations.fooLibrary conf.params = [ "foo", file('bar') ] } </code></pre></p>
+<p><strong>Since</strong><br/>
+3.5</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="classpath.html">classpath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">classpath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.workers.WorkerConfiguration$classpath(kotlin.collections.MutableIterable((java.io.File)))/files">files</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a set of files to the classpath associated with the worker.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="fork-options.html">forkOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">forkOptions</span><span class="symbol">(</span><span class="identifier" id="org.gradle.workers.WorkerConfiguration$forkOptions(org.gradle.api.Action((org.gradle.process.JavaForkOptions)))/forkOptionsAction">forkOptionsAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.process/-java-fork-options/index.html"><span class="identifier">JavaForkOptions</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Executes the provided action against the JavaForkOptions object associated with this builder.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-classpath.html">getClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getClasspath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>Gets the classpath associated with the worker.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-fork-mode.html">getForkMode</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getForkMode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-fork-mode/index.html"><span class="identifier">ForkMode</span></a></code>
+<p>Gets the forking mode for this worker, see ForkMode.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-fork-options.html">getForkOptions</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getForkOptions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.process/-java-fork-options/index.html"><span class="identifier">JavaForkOptions</span></a></code>
+<p>Returns the JavaForkOptions object associated with this builder.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-isolation-mode.html">getIsolationMode</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getIsolationMode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-isolation-mode/index.html"><span class="identifier">IsolationMode</span></a></code>
+<p>Gets the isolation mode for this worker, see IsolationMode.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-classpath.html">setClasspath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setClasspath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.workers.WorkerConfiguration$setClasspath(kotlin.collections.MutableIterable((java.io.File)))/files">files</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the classpath associated with the worker.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-display-name.html">setDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setDisplayName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.workers.WorkerConfiguration$setDisplayName(kotlin.String)/displayName">displayName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the name to use when displaying this item of work.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-fork-mode.html">setForkMode</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setForkMode</span><span class="symbol">(</span><span class="identifier" id="org.gradle.workers.WorkerConfiguration$setForkMode(org.gradle.workers.ForkMode)/forkMode">forkMode</span><span class="symbol">:</span>&nbsp;<a href="../-fork-mode/index.html"><span class="identifier">ForkMode</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the forking mode for this worker, see ForkMode.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-isolation-mode.html">setIsolationMode</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setIsolationMode</span><span class="symbol">(</span><span class="identifier" id="org.gradle.workers.WorkerConfiguration$setIsolationMode(org.gradle.workers.IsolationMode)/isolationMode">isolationMode</span><span class="symbol">:</span>&nbsp;<a href="../-isolation-mode/index.html"><span class="identifier">IsolationMode</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the isolation mode for this worker, see IsolationMode.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-describable/get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the display name of this object. It is strongly encouraged to compute it lazily, and cache the value if it is expensive.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-action-configuration/get-params.html">getParams</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getParams</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html"><span class="identifier">Array</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Gets the initialization parameters that will be used when constructing an instance of the implementation class.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-action-configuration/params.html">params</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">params</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.ActionConfiguration$params(kotlin.Array((kotlin.Any)))/params">params</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds initialization parameters to use when constructing an instance of the implementation class.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-action-configuration/set-params.html">setParams</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setParams</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.ActionConfiguration$setParams(kotlin.Array((kotlin.Any)))/params">params</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets any initialization parameters to use when constructing an instance of the implementation class.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

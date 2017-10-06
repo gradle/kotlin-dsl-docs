@@ -92,6 +92,17 @@
 </tr>
 <tr>
 <td>
+<p><a href="-directory/index.html">Directory</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Directory</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-file-system-location/index.html"><span class="identifier">FileSystemLocation</span></a></code>
+<p>Represents a directory at some fixed location on the file system. 
+<p> <strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created using the <code><a href="#">#dir(String)</a></code> method or using various methods on ProjectLayout such as <code><a href="-project-layout/get-project-directory.html">ProjectLayout#getProjectDirectory()</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="-directory-tree/index.html">DirectoryTree</a></p>
 </td>
 <td>
@@ -100,6 +111,17 @@
 <p>A directory with some associated include and exclude patterns.</p>
  
 <p>This interface does not allow mutation. However, the actual implementation may not be immutable.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-directory-var/index.html">DirectoryVar</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DirectoryVar</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="-directory/index.html"><span class="identifier">Directory</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../org.gradle.api.provider/-property-state/index.html"><span class="identifier">PropertyState</span></a><span class="symbol">&lt;</span><a href="-directory/index.html"><span class="identifier">Directory</span></a><span class="symbol">&gt;</span></code>
+<p>Represents some configurable directory location, whose value is mutable and is not necessarily currently known until later. 
+<p> <strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created using the <code><a href="-project-layout/new-directory-var.html">ProjectLayout#newDirectoryVar()</a></code> method.</p>
 </p>
 </td>
 </tr>
@@ -151,6 +173,17 @@
 </tr>
 <tr>
 <td>
+<p><a href="-file-system-location/index.html">FileSystemLocation</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">FileSystemLocation</span></code>
+<p>Represents some immutable location on the file system. 
+<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="-file-tree/index.html">FileTree</a></p>
 </td>
 <td>
@@ -188,6 +221,37 @@
 <code><span class="keyword">interface </span><span class="identifier">FileVisitor</span></code>
 <p>
 <p>A <code>FileVisitor</code> is used to visit each of the files in a FileTree.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-project-layout/index.html">ProjectLayout</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ProjectLayout</span></code>
+<p>Provides access to several important locations for a project. An instance of the factory can be injected into a task or plugin by annotating a public constructor or method with <code>javax.inject.Inject</code>. It is also available via <code><a href="../org.gradle.api/-project/get-layout.html">org.gradle.api.Project#getLayout()</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-regular-file/index.html">RegularFile</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">RegularFile</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-file-system-location/index.html"><span class="identifier">FileSystemLocation</span></a></code>
+<p>Represents a regular file at a fixed location on the file system. A regular file is a file that is not a directory and is not some special kind of file such as a device. 
+<p> <strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created from a Directory instance using the <code><a href="#">Directory#file(String)</a></code> method or via various methods on ProjectLayout such as <code><a href="-project-layout/get-project-directory.html">ProjectLayout#getProjectDirectory()</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-regular-file-var/index.html">RegularFileVar</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">RegularFileVar</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="-regular-file/index.html"><span class="identifier">RegularFile</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../org.gradle.api.provider/-property-state/index.html"><span class="identifier">PropertyState</span></a><span class="symbol">&lt;</span><a href="-regular-file/index.html"><span class="identifier">RegularFile</span></a><span class="symbol">&gt;</span></code>
+<p>Represents some configurable regular file location, whose value is mutable and not necessarily currently known until later. 
+<p> <strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created using the <code><a href="-project-layout/new-file-var.html">ProjectLayout#newFileVar()</a></code> method.</p>
 </p>
 </td>
 </tr>

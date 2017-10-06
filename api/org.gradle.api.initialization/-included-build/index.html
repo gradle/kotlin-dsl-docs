@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>IncludedBuild - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.initialization</a>&nbsp;/&nbsp;<a href=".">IncludedBuild</a><br/>
+<br/>
+<h1>IncludedBuild</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">IncludedBuild</span></code>
+<p>A build that is included in the composite.</p>
+<p><strong>Since</strong><br/>
+3.1</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The name of the included build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-project-dir.html">getProjectDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>The root directory of the included build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="task.html">task</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">task</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.initialization.IncludedBuild$task(kotlin.String)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-task-reference.html"><span class="identifier">TaskReference</span></a></code>
+<p>Produces a reference to a task in the included build.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-configurable-included-build/index.html">ConfigurableIncludedBuild</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ConfigurableIncludedBuild</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">IncludedBuild</span></code>
+<p>A build that is to be included in the composite.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

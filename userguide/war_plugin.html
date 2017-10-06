@@ -1,81 +1,41 @@
-<html><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>The War Plugin - Gradle User Guide Version 4.1-20170617095021+0000</title><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="base.css"><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="docs.css"><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="userguide.css"><meta content="DocBook XSL Stylesheets V1.75.2" name="generator"><link rel="home" href="userguide.html" title="Gradle User Guide Version 4.1-20170617095021+0000"><link rel="up" href="pt05.html" title="Part&nbsp;V.&nbsp;Building JVM projects"><link rel="prev" href="web_project_tutorial.html" title="Web Application Quickstart - Gradle User Guide Version 4.1-20170617095021+0000"><link rel="next" href="ear_plugin.html" title="The Ear Plugin - Gradle User Guide Version 4.1-20170617095021+0000"></head><body><div class="navheader"><div><div class="navbar"><a xmlns:xslthl="http://xslthl.sf.net" href="web_project_tutorial.html" title="Web Application Quickstart - Gradle User Guide Version 4.1-20170617095021+0000">Previous</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="Gradle User Guide Version 4.1-20170617095021+0000">Contents</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="ear_plugin.html" title="The Ear Plugin - Gradle User Guide Version 4.1-20170617095021+0000">Next</a></div></div></div><div class="chapter"><div class="titlepage"><div><div><h1 xmlns:xslthl="http://xslthl.sf.net"><a name="war_plugin"></a>Chapter&nbsp;50.&nbsp;The War Plugin</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="war_plugin.html#sec:war_usage">50.1. Usage</a></span></dt><dt><span class="section"><a href="war_plugin.html#sec:war_tasks">50.2. Tasks</a></span></dt><dt><span class="section"><a href="war_plugin.html#sec:war_project_layout">50.3. Project layout</a></span></dt><dt><span class="section"><a href="war_plugin.html#sec:war_dependency_management">50.4. Dependency management</a></span></dt><dt><span class="section"><a href="war_plugin.html#sec:war_convention_properties">50.5. Convention properties</a></span></dt><dt><span class="section"><a href="war_plugin.html#sec:war_default_settings">50.6. War</a></span></dt><dt><span class="section"><a href="war_plugin.html#sec:war_customizing">50.7. Customizing</a></span></dt></dl></div><p>The War plugin extends the Java plugin to add support for assembling web application WAR files.
-        It disables the default JAR archive generation of the Java plugin and adds a default WAR archive task.
-    </p><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:war_usage" class="section-anchor" href="#sec:war_usage"></a>50.1.&nbsp;Usage</h2></div></div></div><p>To use the War plugin, include the following in your build script:</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="useWarPlugin"></a><p class="title"><b>Example&nbsp;50.1.&nbsp;Using the War plugin</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">apply(mapOf(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"plugin"</span> to <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"war"</span>))</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:war_tasks" class="section-anchor" href="#sec:war_tasks"></a>50.2.&nbsp;Tasks</h2></div></div></div><p>The War plugin adds the following tasks to the project.</p><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;50.1.&nbsp;War plugin - tasks</b></p><div class="table-contents"><table id="N17067"><thead><tr>
-                    <td>Task name</td>
-                    <td>Depends on</td>
-                    <td>Type</td>
-                    <td>Description</td>
-                </tr></thead><tr>
-                <td>
-                    <code class="literal">war</code>
-                </td>
-                <td>
-                    <code class="literal">compile</code>
-                </td>
-                <td><a class="ulink" href="../dsl/org.gradle.api.tasks.bundling.War.html" target="_top"><code class="classname">War</code></a></td>
-                <td>Assembles the application WAR file.</td>
-            </tr></table></div></div><p>The War plugin adds the following dependencies to tasks added by the Java plugin.</p><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;50.2.&nbsp;War plugin - additional task dependencies</b></p><div class="table-contents"><table id="N17092"><thead><td>Task name</td><td>Depends on</td></thead><tr>
-                <td>assemble</td>
-                <td>war</td>
-            </tr></table></div></div><div class="figure"><a xmlns:xslthl="http://xslthl.sf.net" name="N170A2"></a><p class="title"><b>Figure&nbsp;50.1.&nbsp;War plugin - tasks</b></p><div class="figure-contents"><img src="img/warPluginTasks.png" alt="War plugin - tasks"></div></div><br class="figure-break"></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:war_project_layout" class="section-anchor" href="#sec:war_project_layout"></a>50.3.&nbsp;Project layout</h2></div></div></div><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;50.3.&nbsp;War plugin - project layout</b></p><div class="table-contents"><table id="N170AC"><thead><tr>
-                    <td>Directory</td>
-                    <td>Meaning</td>
-                </tr></thead><tr>
-                <td>
-                    <code class="filename">src/main/webapp</code>
-                </td>
-                <td>Web application sources</td>
-            </tr></table></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:war_dependency_management" class="section-anchor" href="#sec:war_dependency_management"></a>50.4.&nbsp;Dependency management</h2></div></div></div><p>The War plugin adds two dependency configurations named <code class="literal">providedCompile</code> and
-            <code class="literal">providedRuntime</code>. Those two configurations have the same scope as the respective
-            <code class="literal">compile</code> and <code class="literal">runtime</code> configurations, except that they are not added to
-            the WAR archive. It is important to note that those <code class="literal">provided</code> configurations work
-            transitively. Let's say you add <code class="literal">commons-httpclient:commons-httpclient:3.0</code> to any of the
-            provided configurations. This dependency has a dependency on <code class="literal">commons-codec</code>.
-            Because this is a &ldquo;provided&rdquo; configuration, this means that neither of these dependencies will be added to your
-            WAR, even if the <code class="literal">commons-codec</code> library is an explicit dependency of your <code class="literal">compile</code>
-            configuration. If you don't want this transitive behavior, simply declare your <code class="literal">provided</code>
-            dependencies like <code class="literal">commons-httpclient:commons-httpclient:3.0@jar</code>.
-        </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:war_convention_properties" class="section-anchor" href="#sec:war_convention_properties"></a>50.5.&nbsp;Convention properties</h2></div></div></div><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;50.4.&nbsp;War plugin - directory properties</b></p><div class="table-contents"><table id="N170EE"><thead><tr>
-                    <td>Property name</td>
-                    <td>Type</td>
-                    <td>Default value</td>
-                    <td>Description</td>
-                </tr></thead><tr>
-                <td>
-                    <code class="literal">webAppDirName</code>
-                </td>
-                <td>
-                    <code class="classname">String</code>
-                </td>
-                <td>
-                    <code class="filename">src/main/webapp</code>
-                </td>
-                <td>
-                    The name of the web application source directory, relative to the project directory.
-                </td>
-            </tr><tr>
-                <td>
-                    <code class="literal">webAppDir</code>
-                </td>
-                <td>
-                    <code class="classname">File</code> (read-only)
-                </td>
-                <td>
-                    <code class="filename"><em class="replaceable"><code>projectDir</code></em>/<em class="replaceable"><code>webAppDirName</code></em></code>
-                </td>
-                <td>
-                    The web application source directory.
-                </td>
-            </tr></table></div></div><p>These properties are provided by a <a class="ulink" href="../dsl/org.gradle.api.plugins.WarPluginConvention.html" target="_top"><code class="classname">WarPluginConvention</code></a>
-            convention object.
-        </p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:war_default_settings" class="section-anchor" href="#sec:war_default_settings"></a>50.6.&nbsp;War</h2></div></div></div><p>The default behavior of the War task is to copy the content of <code class="literal">src/main/webapp</code>
-            to the root of the archive. Your <code class="literal">webapp</code> directory may of course contain a
-            <code class="literal">WEB-INF</code> sub-directory, which may contain a <code class="literal">web.xml</code> file.
-            Your compiled classes are compiled to <code class="literal">WEB-INF/classes</code>. All the dependencies of the
-            <code class="literal">runtime</code>
-            <sup>[<a href="#ftn.N17151" name="N17151" class="footnote">27</a>]</sup>
-            configuration are copied to <code class="literal">WEB-INF/lib</code>.</p><p>The <a class="ulink" href="../dsl/org.gradle.api.tasks.bundling.War.html" target="_top"><code class="classname">War</code></a> class in the API documentation has additional useful information.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:war_customizing" class="section-anchor" href="#sec:war_customizing"></a>50.7.&nbsp;Customizing</h2></div></div></div><p>Here is an example with the most important customization options:
-        </p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="webproject"></a><p class="title"><b>Example&nbsp;50.2.&nbsp;Customization of war plugin</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">configurations {
+<html><head><META http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>The War Plugin - Gradle User Guide Version 4.3-20171005220000+0000</title><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="base.css"><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="docs.css"><link xmlns:xslthl="http://xslthl.sf.net" type="text/css" rel="stylesheet" href="userguide.css"><meta content="DocBook XSL Stylesheets V1.75.2" name="generator"><link rel="home" href="userguide.html" title="Gradle User Guide Version 4.3-20171005220000+0000"><link rel="up" href="pt05.html" title="Part&nbsp;V.&nbsp;Building JVM projects"><link rel="prev" href="web_project_tutorial.html" title="Web Application Quickstart - Gradle User Guide Version 4.3-20171005220000+0000"><link rel="next" href="ear_plugin.html" title="The Ear Plugin - Gradle User Guide Version 4.3-20171005220000+0000"></head><body><div class="navheader"><div><div class="navbar"><a xmlns:xslthl="http://xslthl.sf.net" href="web_project_tutorial.html" title="Web Application Quickstart - Gradle User Guide Version 4.3-20171005220000+0000">Previous</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="Gradle User Guide Version 4.3-20171005220000+0000">Contents</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="ear_plugin.html" title="The Ear Plugin - Gradle User Guide Version 4.3-20171005220000+0000">Next</a></div></div></div><div class="chapter"><div class="titlepage"><div><div><h1 xmlns:xslthl="http://xslthl.sf.net"><a name="war_plugin"></a>Chapter&nbsp;50.&nbsp;The War Plugin</h1></div></div></div><div class="toc"><p><b>Table of Contents</b></p><dl><dt><span class="section"><a href="war_plugin.html#sec:war_usage">50.1. Usage</a></span></dt><dt><span class="section"><a href="war_plugin.html#sec:war_tasks">50.2. Tasks</a></span></dt><dt><span class="section"><a href="war_plugin.html#sec:war_project_layout">50.3. Project layout</a></span></dt><dt><span class="section"><a href="war_plugin.html#sec:war_dependency_management">50.4. Dependency management</a></span></dt><dt><span class="section"><a href="war_plugin.html#sec:war_convention_properties">50.5. Convention properties</a></span></dt><dt><span class="section"><a href="war_plugin.html#sec:war_default_settings">50.6. War</a></span></dt><dt><span class="section"><a href="war_plugin.html#sec:war_customizing">50.7. Customizing</a></span></dt></dl></div><p>The War plugin extends the Java plugin to add support for assembling web application WAR files. It disables the default JAR archive generation of the Java plugin and adds a default WAR archive task.</p><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:war_usage" class="section-anchor" href="#sec:war_usage"></a>50.1.&nbsp;Usage</h2></div></div></div><p>To use the War plugin, include the following in your build script:</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="useWarPlugin"></a><p class="title"><b>Example&nbsp;50.1.&nbsp;Using the War plugin</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">apply(mapOf(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"plugin"</span> to <span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"war"</span>))</pre></div></div><br class="example-break"></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:war_tasks" class="section-anchor" href="#sec:war_tasks"></a>50.2.&nbsp;Tasks</h2></div></div></div><p>The War plugin adds the following tasks to the project.</p><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;50.1.&nbsp;War plugin - tasks</b></p><div class="table-contents"><table colsep="1" frame="all" rowsep="1" id="N173B3"><thead><tr>
+<td>Task name</td>
+<td>Depends on</td>
+<td>Type</td>
+<td>Description</td>
+</tr></thead><tbody><tr>
+<td><p><code class="literal">war</code></p></td>
+<td><p><code class="literal">compile</code></p></td>
+<td><p><a class="ulink" href="../dsl/org.gradle.api.tasks.bundling.War.html" target="_top"><code class="classname">War</code></a></p></td>
+<td><p>Assembles the application WAR file.</p></td>
+</tr></tbody></table></div></div><p>The War plugin adds the following dependencies to tasks added by the Java plugin.</p><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;50.2.&nbsp;War plugin - additional task dependencies</b></p><div class="table-contents"><table colsep="1" frame="all" rowsep="1" id="N173E2"><thead><tr>
+<td>Task name</td>
+<td>Depends on</td>
+</tr></thead><tbody><tr>
+<td><p>assemble</p></td>
+<td><p>war</p></td>
+</tr></tbody></table></div></div><div class="figure"><a xmlns:xslthl="http://xslthl.sf.net" name="N173FC"></a><p class="title"><b>Figure&nbsp;50.1.&nbsp;War plugin - tasks</b></p><div class="figure-contents"><img src="img/warPluginTasks.png" alt="War plugin - tasks"></div></div><br class="figure-break"></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:war_project_layout" class="section-anchor" href="#sec:war_project_layout"></a>50.3.&nbsp;Project layout</h2></div></div></div><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;50.3.&nbsp;War plugin - project layout</b></p><div class="table-contents"><table colsep="1" frame="all" rowsep="1" id="N17406"><thead><tr>
+<td>Directory</td>
+<td>Meaning</td>
+</tr></thead><tbody><tr>
+<td><p><code class="literal">src/main/webapp</code></p></td>
+<td><p>Web application sources</p></td>
+</tr></tbody></table></div></div></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:war_dependency_management" class="section-anchor" href="#sec:war_dependency_management"></a>50.4.&nbsp;Dependency management</h2></div></div></div><p>The War plugin adds two dependency configurations named <code class="literal">providedCompile</code> and <code class="literal">providedRuntime</code>. Those two configurations have the same scope as the respective <code class="literal">compile</code> and <code class="literal">runtime</code> configurations, except that they are not added to the WAR archive. It is important to note that those <code class="literal">provided</code> configurations work transitively. Let&rsquo;s say you add <code class="literal">commons-httpclient:commons-httpclient:3.0</code> to any of the provided configurations. This dependency has a dependency on <code class="literal">commons-codec</code>. Because this is a &ldquo;provided&rdquo; configuration, this means that neither of these dependencies will be added to your WAR, even if the <code class="literal">commons-codec</code> library is an explicit dependency of your <code class="literal">compile</code> configuration. If you don&rsquo;t want this transitive behavior, simply declare your <code class="literal">provided</code> dependencies like <code class="literal">commons-httpclient:commons-httpclient:3.0@jar</code>.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:war_convention_properties" class="section-anchor" href="#sec:war_convention_properties"></a>50.5.&nbsp;Convention properties</h2></div></div></div><div xmlns:xslthl="http://xslthl.sf.net" class="table"><p class="title"><b>Table&nbsp;50.4.&nbsp;War plugin - directory properties</b></p><div class="table-contents"><table colsep="1" frame="all" rowsep="1" id="N1744C"><thead><tr>
+<td>Property name</td>
+<td>Type</td>
+<td>Default value</td>
+<td>Description</td>
+</tr></thead><tbody><tr>
+<td><p><code class="literal">webAppDirName</code></p></td>
+<td><p><code class="literal">String</code></p></td>
+<td><p><code class="literal">src/main/webapp</code></p></td>
+<td><p>The name of the web application source directory, relative to the project directory.</p></td>
+</tr><tr>
+<td><p><code class="literal">webAppDir</code></p></td>
+<td><p><code class="literal">File</code> (read-only)</p></td>
+<td><p><code class="literal"><span class="emphasis"><em>projectDir</em></span>/<span class="emphasis"><em>webAppDirName</em></span></code></p></td>
+<td><p>The web application source directory.</p></td>
+</tr></tbody></table></div></div><p>These properties are provided by a <a class="ulink" href="../dsl/org.gradle.api.plugins.WarPluginConvention.html" target="_top"><code class="classname">WarPluginConvention</code></a> convention object.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:war_default_settings" class="section-anchor" href="#sec:war_default_settings"></a>50.6.&nbsp;War</h2></div></div></div><p>The default behavior of the War task is to copy the content of <code class="literal">src/main/webapp</code> to the root of the archive. Your <code class="literal">webapp</code> directory may of course contain a <code class="literal">WEB-INF</code> sub-directory, which may contain a <code class="literal">web.xml</code> file. Your compiled classes are compiled to <code class="literal">WEB-INF/classes</code>. All the dependencies of the <code class="literal">runtime</code> <sup>[<a href="#ftn.N174B0" name="N174B0" class="footnote">26</a>]</sup> configuration are copied to <code class="literal">WEB-INF/lib</code>.</p><p>The <a class="ulink" href="../dsl/org.gradle.api.tasks.bundling.War.html" target="_top"><code class="classname">War</code></a> class in the API documentation has additional useful information.</p></div><div class="section"><div class="titlepage"><div><div><h2 class="title"><a xmlns:xslthl="http://xslthl.sf.net" name="sec:war_customizing" class="section-anchor" href="#sec:war_customizing"></a>50.7.&nbsp;Customizing</h2></div></div></div><p>Here is an example with the most important customization options:</p><div class="example"><a xmlns:xslthl="http://xslthl.sf.net" name="webproject"></a><p class="title"><b>Example&nbsp;50.2.&nbsp;Customization of war plugin</b></p><div class="example-contents"><p><code class="filename">build.gradle</code></p><pre class="programlisting">configurations {
     moreLibs
 }
 repositories {
@@ -106,10 +66,4 @@ war {
     classpath(fileTree(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"additionalLibs"</span>))
     classpath(configurations.moreLibs)
     webXml = file(<span xmlns:xslthl="http://xslthl.sf.net" class="hl-string">"src/someWeb.xml"</span>)
-}</pre></div></div><br class="example-break"><p>Of course one can configure the different file-sets with a closure to define excludes and includes.
-        </p></div><div class="footnotes"><br><hr align="left" width="100"><div class="footnote"><p><sup>[<a href="#N17151" name="ftn.N17151" class="para">27</a>] </sup>The
-                    <code class="literal">runtime</code>
-                    configuration extends the
-                    <code class="literal">compile</code>
-                    configuration.
-                </p></div></div></div><div class="navfooter"><div><div class="navbar"><a xmlns:xslthl="http://xslthl.sf.net" href="web_project_tutorial.html" title="Web Application Quickstart - Gradle User Guide Version 4.1-20170617095021+0000">Previous</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="Gradle User Guide Version 4.1-20170617095021+0000">Contents</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="ear_plugin.html" title="The Ear Plugin - Gradle User Guide Version 4.1-20170617095021+0000">Next</a></div></div></div></body></html>
+}</pre></div></div><br class="example-break"><p>Of course one can configure the different file-sets with a closure to define excludes and includes.</p></div><div class="footnotes"><br><hr align="left" width="100"><div class="footnote"><p><sup>[<a href="#N174B0" name="ftn.N174B0" class="para">26</a>] </sup>The <code class="literal">runtime</code> configuration extends the <code class="literal">compile</code> configuration.</p></div></div></div><div class="navfooter"><div><div class="navbar"><a xmlns:xslthl="http://xslthl.sf.net" href="web_project_tutorial.html" title="Web Application Quickstart - Gradle User Guide Version 4.3-20171005220000+0000">Previous</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="userguide.html" title="Gradle User Guide Version 4.3-20171005220000+0000">Contents</a><span>|</span><a xmlns:xslthl="http://xslthl.sf.net" href="ear_plugin.html" title="The Ear Plugin - Gradle User Guide Version 4.3-20171005220000+0000">Next</a></div></div></div></body></html>

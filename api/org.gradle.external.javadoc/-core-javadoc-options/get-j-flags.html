@@ -11,6 +11,12 @@
 <a name="org.gradle.external.javadoc.CoreJavadocOptions$getJFlags()"></a>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getJFlags</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
 <p>Overrides <a href="../-minimal-javadoc-options/get-j-flags.html">MinimalJavadocOptions.getJFlags</a></p>
-<p>-Jflag Passes flag directly to the runtime system java that runs javadoc. Notice there must be no space between the J and the flag. For example, if you need to ensure that the system sets aside 32 megabytes of memory in which to process the generated documentation, then you would call the -Xmx option of java as follows (-Xms is optional, as it only sets the size of initial memory, which is useful if you know the minimum amount of memory required): C:&gt; javadoc -J-Xmx32m -J-Xms32m com.mypackage To tell what version of javadoc you are using, call the "-version" option of java: C:&gt; javadoc -J-version java version "1.2" Classic VM (build JDK-1.2-V, green threads, sunwjit) (The version number of the standard doclet appears in its output stream.)</p>
+<p>-Jflag 
+<p> Passes flag directly to the runtime system java that runs javadoc. Notice there must be no space between the J and the flag. For example, if you need to ensure that the system sets aside 32 megabytes of memory in which to process the generated documentation, then you would call the -Xmx option of java as follows (-Xms is optional, as it only sets the size of initial memory, which is useful if you know the minimum amount of memory required): </p>
+<p> javadoc -J-Xmx32m -J-Xms32m com.mypackage </p>
+<p> To tell what version of javadoc you are using, call the "-version" option of java: </p>
+<p> javadoc -J-version java version "1.2" Classic VM (build JDK-1.2-V, green threads, sunwjit) </p>
+<p> (The version number of the standard doclet appears in its output stream.)</p>
+</p>
 </BODY>
 </HTML>

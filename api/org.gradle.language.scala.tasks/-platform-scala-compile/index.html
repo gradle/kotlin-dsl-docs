@@ -46,6 +46,18 @@
 <tbody>
 <tr>
 <td>
+<p><a href="../-abstract-scala-compile/get-effective-annotation-processor-path.html">getEffectiveAnnotationProcessorPath</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getEffectiveAnnotationProcessorPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the path to use for annotation processor discovery. Returns an empty collection when no processing should be performed, for example when no annotation processors are present in the compile classpath or annotation processing has been disabled. 
+<p>You can specify this path using <code><a href="../../org.gradle.api.tasks.compile/-compile-options/set-annotation-processor-path.html">CompileOptions#setAnnotationProcessorPath(FileCollection)</a></code> or <code><a href="#">CompileOptions#setCompilerArgs(java.util.List)</a></code>. When not explicitly set using one of the methods on CompileOptions, the compile classpath will be used when there are annotation processors present in the compile classpath. Otherwise this path will be empty. </p>
+<p>This path is always empty when annotation processing is disabled.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="../-abstract-scala-compile/get-options.html">getOptions</a></p>
 </td>
 <td>

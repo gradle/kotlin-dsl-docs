@@ -9,17 +9,18 @@
 <br/>
 <h1>property</h1>
 <a name="org.gradle.api.provider.ProviderFactory$property(java.lang.Class((org.gradle.api.provider.ProviderFactory.property.T)))"></a>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">property</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.ProviderFactory$property(java.lang.Class((org.gradle.api.provider.ProviderFactory.property.T)))/clazz">clazz</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-property-state/index.html"><span class="identifier">PropertyState</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
-<p>Creates a <code>PropertyState</code> implementation based on the provided class. The value returned by the property state is the default value of the standard Java data type. Please see <a href="#">Oracle's Java manual</a> for more information. 
-<p> Any other data type than the standard Java data types returns null as default value.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">property</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.ProviderFactory$property(java.lang.Class((org.gradle.api.provider.ProviderFactory.property.T)))/valueType">valueType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-property-state/index.html"><span class="identifier">PropertyState</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Creates a PropertyState implementation to hold values of the given type. 
+<p>The property will have a value equal to the default value of that type as defined by the Java language specification. Please see <a href="#">Oracle's Java manual</a> for more information. </p>
+<p> Any other data type than the standard Java data types returns a property with no value defined.</p>
 </p>
 <h3>Parameters</h3>
-<a name="clazz"></a>
-<code>clazz</code> - The class to be used for property state.
+<p><a name="valueType"></a>
+<code>valueType</code> - The type of the property.</p>
 <h3>Exceptions</h3>
-<a name="org.gradle.api.InvalidUserDataException"></a>
-<code>org.gradle.api.InvalidUserDataException</code> - If the provided class is null.
+<p><a name="IllegalArgumentException"></a>
+<code>IllegalArgumentException</code> - If the value type is a parameterized type.</p>
 <p><strong>Return</strong><br/>
-The property state. Never returns null.</p>
+The property. Never returns null.</p>
 </BODY>
 </HTML>

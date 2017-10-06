@@ -17,13 +17,15 @@
  </ul>
  The following example demonstrates the addition of various custom artifacts. <pre><code> apply plugin: "maven-publish" task sourceJar(type: Jar) { classifier "sources" } publishing { publications { maven(MavenPublication) { artifact sourceJar // Publish the output of the sourceJar task artifact 'my-file-name.jar' // Publish a file created outside of the build artifact source: sourceJar, classifier: 'src', extension: 'zip' } } } </code></pre></p>
 <h3>Parameters</h3>
-<a name="source"></a>
-<code>source</code> - The source of the artifact content.<a name="org.gradle.api.publish.maven.MavenPublication$artifact(kotlin.Any, org.gradle.api.Action((org.gradle.api.publish.maven.MavenArtifact)))"></a>
+<p><a name="source"></a>
+<code>source</code> - The source of the artifact content.</p>
+<a name="org.gradle.api.publish.maven.MavenPublication$artifact(kotlin.Any, org.gradle.api.Action((org.gradle.api.publish.maven.MavenArtifact)))"></a>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">artifact</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.publish.maven.MavenPublication$artifact(kotlin.Any, org.gradle.api.Action((org.gradle.api.publish.maven.MavenArtifact)))/source">source</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.publish.maven.MavenPublication$artifact(kotlin.Any, org.gradle.api.Action((org.gradle.api.publish.maven.MavenArtifact)))/config">config</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-maven-artifact/index.html"><span class="identifier">MavenArtifact</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-maven-artifact/index.html"><span class="identifier">MavenArtifact</span></a></code>
 <p>Creates an MavenArtifact to be included in the publication, which is configured by the associated action. The first parameter is used to create a custom artifact and add it to the publication, as per <code><a href="#">#artifact(Object)</a></code>. The created MavenArtifact is then configured using the supplied action, which can override the extension or classifier of the artifact. This method also accepts the configure action as a closure argument, by type coercion. <pre><code> apply plugin: "maven-publish" task sourceJar(type: Jar) { classifier "sources" } publishing { publications { maven(MavenPublication) { artifact(sourceJar) { // These values will be used instead of the values from the task. The task values will not be updated. classifier "src" extension "zip" } artifact("my-docs-file.htm") { classifier "documentation" extension "html" } } } } </code></pre></p>
 <h3>Parameters</h3>
-<a name="source"></a>
-<code>source</code> - The source of the artifact.<a name="config"></a>
-<code>config</code> - An action to configure the values of the constructed MavenArtifact.
+<p><a name="source"></a>
+<code>source</code> - The source of the artifact.</p>
+<p><a name="config"></a>
+<code>config</code> - An action to configure the values of the constructed MavenArtifact.</p>
 </BODY>
 </HTML>

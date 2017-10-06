@@ -48,6 +48,15 @@
 <tbody>
 <tr>
 <td>
+<p><a href="../-abstract-link-task/get-binary-file.html">getBinaryFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getBinaryFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-regular-file-var/index.html"><span class="identifier">RegularFileVar</span></a></code>
+<p>The file where the linked binary will be located.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="../-abstract-link-task/get-destination-dir.html">getDestinationDir</a></p>
 </td>
 <td>
@@ -60,7 +69,7 @@
 <p><a href="../-abstract-link-task/get-libs.html">getLibs</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLibs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLibs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code>
 <p>The library files to be passed to the linker.</p>
 </td>
 </tr>
@@ -69,8 +78,8 @@
 <p><a href="../-abstract-link-task/get-linker-args.html">getLinkerArgs</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLinkerArgs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
-<p>Additional arguments passed to the linker.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLinkerArgs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-list-property.html"><span class="identifier">ListProperty</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p><em>Additional</em> arguments passed to the linker.</p>
 </td>
 </tr>
 <tr>
@@ -85,16 +94,14 @@
 <p><a href="../-abstract-link-task/get-output-file.html">getOutputFile</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOutputFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
-<p>The file where the linked binary will be located.</p>
-</td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOutputFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code></td>
 </tr>
 <tr>
 <td>
 <p><a href="../-abstract-link-task/get-source.html">getSource</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code>
 <p>The source object files to be passed to the linker.</p>
 </td>
 </tr>
@@ -118,6 +125,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="../-abstract-link-task/is-debuggable.html">isDebuggable</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isDebuggable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Create a debuggable binary?</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="../-abstract-link-task/lib.html">lib</a></p>
 </td>
 <td>
@@ -134,6 +150,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="../-abstract-link-task/set-debuggable.html">setDebuggable</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDebuggable</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.AbstractLinkTask$setDebuggable(kotlin.Boolean)/debuggable">debuggable</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Create a debuggable binary?</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="../-abstract-link-task/set-libs.html">setLibs</a></p>
 </td>
 <td>
@@ -141,17 +166,12 @@
 </tr>
 <tr>
 <td>
-<p><a href="../-abstract-link-task/set-linker-args.html">setLinkerArgs</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setLinkerArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.AbstractLinkTask$setLinkerArgs(kotlin.collections.MutableList((kotlin.String)))/linkerArgs">linkerArgs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
-</tr>
-<tr>
-<td>
 <p><a href="../-abstract-link-task/set-output-file.html">setOutputFile</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOutputFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.AbstractLinkTask$setOutputFile(java.io.File)/outputFile">outputFile</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOutputFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.AbstractLinkTask$setOutputFile(java.io.File)/outputFile">outputFile</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOutputFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.AbstractLinkTask$setOutputFile(org.gradle.api.provider.Provider((org.gradle.api.file.RegularFile)))/outputFile">outputFile</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.api.file/-regular-file/index.html"><span class="identifier">RegularFile</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the output file generated by the linking process via a Provider.</p>
+</td>
 </tr>
 <tr>
 <td>

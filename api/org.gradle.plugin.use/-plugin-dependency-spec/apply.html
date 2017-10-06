@@ -10,12 +10,12 @@
 <h1>apply</h1>
 <a name="org.gradle.plugin.use.PluginDependencySpec$apply(kotlin.Boolean)"></a>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.use.PluginDependencySpec$apply(kotlin.Boolean)/apply">apply</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">PluginDependencySpec</span></a></code>
-<p>Specifies whether the plugin should be applied to the current project. Otherwise it is only put on the project's classpath.  This is useful when reusing classes from a plugin or to apply a plugin to sub-projects: 
-<p> </p>
-<pre><code> plugins { id "org.company.myplugin" version "1.0" apply false } subprojects { if (someCondition) { apply plugin: "org.company.myplugin" } } </code></pre> </p>
+<p>Specifies whether the plugin should be applied to the current project. Otherwise it is only put on the project's classpath. 
+<p> This is useful when reusing classes from a plugin or to apply a plugin to sub-projects: </p>
+<pre><code> plugins { id "org.company.myplugin" version "1.0" apply false } subprojects { if (someCondition) { apply plugin: "org.company.myplugin" } } </code></pre></p>
 <h3>Parameters</h3>
-<a name="apply"></a>
-<code>apply</code> - whether to apply the plugin to the current project or not. Defaults to true
+<p><a name="apply"></a>
+<code>apply</code> - whether to apply the plugin to the current project or not. Defaults to true</p>
 <p><strong>Return</strong><br/>
 this</p>
 </BODY>

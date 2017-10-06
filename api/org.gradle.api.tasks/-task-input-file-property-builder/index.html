@@ -112,7 +112,7 @@
 <p><a href="property.html">property</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">property</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.TaskInputFilePropertyBuilder$property(kotlin.String, kotlin.Any)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.TaskInputFilePropertyBuilder$property(kotlin.String, kotlin.Any)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-task-inputs/index.html"><span class="identifier">TaskInputs</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">property</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.TaskInputFilePropertyBuilder$property(kotlin.String, kotlin.Any)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.TaskInputFilePropertyBuilder$property(kotlin.String, kotlin.Any)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-task-input-property-builder/index.html"><span class="identifier">TaskInputPropertyBuilder</span></a></code>
 <p>Throws UnsupportedOperationException.</p>
 </td>
 </tr>
@@ -129,11 +129,20 @@
 </tr>
 <tr>
 <td>
+<p><a href="with-normalizer.html">withNormalizer</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withNormalizer</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.TaskInputFilePropertyBuilder$withNormalizer(java.lang.Class((org.gradle.api.tasks.FileNormalizer)))/normalizer">normalizer</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-file-normalizer.html"><span class="identifier">FileNormalizer</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TaskInputFilePropertyBuilder</span></code>
+<p>Sets the normalizer to use for this property.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="with-path-sensitivity.html">withPathSensitivity</a></p>
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withPathSensitivity</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.TaskInputFilePropertyBuilder$withPathSensitivity(org.gradle.api.tasks.PathSensitivity)/sensitivity">sensitivity</span><span class="symbol">:</span>&nbsp;<a href="../-path-sensitivity/index.html"><span class="identifier">PathSensitivity</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TaskInputFilePropertyBuilder</span></code>
-<p>{@inheritDoc}</p>
+<p>Sets which part of the path of files should be considered during up-to-date checks.</p>
 </td>
 </tr>
 <tr>

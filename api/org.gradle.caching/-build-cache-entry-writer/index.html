@@ -17,11 +17,22 @@
 <tbody>
 <tr>
 <td>
+<p><a href="get-size.html">getSize</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code>
+<p>Returns the size of the build cache entry to be written.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="write-to.html">writeTo</a></p>
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">writeTo</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.BuildCacheEntryWriter$writeTo(java.io.OutputStream)/output">output</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Writes a build cache entry to the given stream.</p>
+<p>Writes a build cache entry to the given stream. 
+<p> The given output stream will be closed by this method.</p>
+</p>
 </td>
 </tr>
 </tbody>

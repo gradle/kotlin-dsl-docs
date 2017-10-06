@@ -25,8 +25,8 @@
 <p>Rule objects can be attached to the collection in order to respond to requests for objects by name where no object with name exists in the collection. This mechanism can be used to create objects on demand. For example: </p>
  <pre><code> books.addRule('create any') { books.add(new Book(name: "gradle", title: null)) } books.gradle.name == "gradle" </code></pre></p>
 <h3>Parameters</h3>
-<a name="&lt;T&gt;"></a>
-<code><T></code> - The type of domain objects in this collection.
+<p><a name="&lt;T&gt;"></a>
+<code><T></code> - The type of domain objects in this collection.</p>
 <h3>Functions</h3>
 <table>
 <tbody>
@@ -201,10 +201,25 @@
 <p><a href="../-domain-object-collection/with-type.html">withType</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">withType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.DomainObjectCollection$withType(java.lang.Class((org.gradle.api.DomainObjectCollection.withType.S)), org.gradle.api.Action((org.gradle.api.DomainObjectCollection.withType.S)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.DomainObjectCollection$withType(java.lang.Class((org.gradle.api.DomainObjectCollection.withType.S)), org.gradle.api.Action((org.gradle.api.DomainObjectCollection.withType.S)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-domain-object-collection/index.html"><span class="identifier">DomainObjectCollection</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span></code>
-<p>Returns a collection containing the objects in this collection of the given type. Equivalent to calling <code>withType(type).all(configureAction)</code></p>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">withType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.DomainObjectCollection$withType(java.lang.Class((org.gradle.api.DomainObjectCollection.withType.S)), groovy.lang.Closure((kotlin.Any)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.DomainObjectCollection$withType(java.lang.Class((org.gradle.api.DomainObjectCollection.withType.S)), groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-domain-object-collection/index.html"><span class="identifier">DomainObjectCollection</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span></code>
 <p>Returns a collection containing the objects in this collection of the given type. Equivalent to calling <code>withType(type).all(configureClosure)</code>.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">withType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.DomainObjectCollection$withType(java.lang.Class((org.gradle.api.DomainObjectCollection.withType.S)), org.gradle.api.Action((org.gradle.api.DomainObjectCollection.withType.S)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.DomainObjectCollection$withType(java.lang.Class((org.gradle.api.DomainObjectCollection.withType.S)), org.gradle.api.Action((org.gradle.api.DomainObjectCollection.withType.S)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-domain-object-collection/index.html"><span class="identifier">DomainObjectCollection</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span></code>
+<p>Returns a collection containing the objects in this collection of the given type. Equivalent to calling <code>withType(type).all(configureAction)</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.kotlin.dsl/getting.html">getting</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">U</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NamedDomainObjectCollection</span><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">U</span><span class="symbol">.</span><span class="identifier">getting</span><span class="symbol">: </span><span class="identifier">U</span></code>
+<p>Idiomatic way of referring to an existing element in a collection
+via a delegate property.</p>
 </td>
 </tr>
 </tbody>
@@ -228,6 +243,16 @@
 <td>
 <code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">U</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">NamedDomainObjectCollection</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">getValue</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$getValue(org.gradle.api.NamedDomainObjectCollection((org.gradle.kotlin.dsl.getValue.T)), kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)))/thisRef">thisRef</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl$getValue(org.gradle.api.NamedDomainObjectCollection((org.gradle.kotlin.dsl.getValue.T)), kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)))/property">property</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-property/index.html"><span class="identifier">KProperty</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">U</span></code>
 <p>Allows a NamedDomainObjectCollection to be used as a property delegate.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.kotlin.dsl/getting.html">getting</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">U</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">NamedDomainObjectCollection</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">U</span><span class="symbol">.</span><span class="identifier">getting</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$getting(org.gradle.kotlin.dsl.getting.U, kotlin.Function1((org.gradle.kotlin.dsl.getting.T, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.kotlin.dsl/-named-domain-object-collection-delegate-provider/index.html"><span class="identifier">NamedDomainObjectCollectionDelegateProvider</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Idiomatic way of referring and configuring an existing element in a collection
+via a delegate property.</p>
 </td>
 </tr>
 </tbody>

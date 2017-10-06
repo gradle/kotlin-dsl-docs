@@ -1,0 +1,113 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>GroovyBuilderScope - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.kotlin.dsl</a>&nbsp;/&nbsp;<a href=".">GroovyBuilderScope</a><br/>
+<br/>
+<h1>GroovyBuilderScope</h1>
+<code><span class="keyword">interface </span><span class="identifier">GroovyBuilderScope</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GroovyObject</span></code>
+<p>Provides a dynamic dispatching DSL with Groovy semantics for better integration with
+plugins that rely on Groovy builders such as the core <code>maven</code> plugin.</p>
+<p>It supports Groovy keyword arguments and arbitrary nesting, for instance, the following Groovy code:</p>
+<pre><code class="lang-Groovy">repository(url: "scp://repos.mycompany.com/releases") {
+  authentication(userName: "me", password: "myPassword")
+}
+</code></pre>
+<p>Can be mechanically translated to the following Kotlin with the aid of <code>withGroovyBuilder</code>:</p>
+<pre><code class="lang-Kotlin">withGroovyBuilder {
+  "repository"("url" to "scp://repos.mycompany.com/releases") {
+    "authentication"("userName" to "me", "password" to "myPassword")
+  }
+}
+</code></pre>
+<p><strong>See Also</strong><br/>
+<p><a href="../kotlin.-any/with-groovy-builder.html">withGroovyBuilder</a></p>
+</p>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="delegate.html">delegate</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">val </span><span class="identifier">delegate</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="invoke.html">invoke</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">operator</span> <span class="keyword">fun </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">.</span><span class="identifier">invoke</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.kotlin.dsl.GroovyBuilderScope$invoke(kotlin.String, kotlin.Array((kotlin.Any)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">operator</span> <span class="keyword">fun </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">.</span><span class="identifier">invoke</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">.</span><span class="identifier">invoke</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.kotlin.dsl.GroovyBuilderScope$invoke(kotlin.String, kotlin.Array((kotlin.Any)), kotlin.Function1((org.gradle.kotlin.dsl.GroovyBuilderScope, org.gradle.kotlin.dsl.GroovyBuilderScope.invoke.T)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl.GroovyBuilderScope$invoke(kotlin.String, kotlin.Array((kotlin.Any)), kotlin.Function1((org.gradle.kotlin.dsl.GroovyBuilderScope, org.gradle.kotlin.dsl.GroovyBuilderScope.invoke.T)))/builder">builder</span><span class="symbol">:</span>&nbsp;<span class="identifier">GroovyBuilderScope</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">.</span><span class="identifier">invoke</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.GroovyBuilderScope$invoke(kotlin.String, kotlin.Function1((org.gradle.kotlin.dsl.GroovyBuilderScope, org.gradle.kotlin.dsl.GroovyBuilderScope.invoke.T)))/builder">builder</span><span class="symbol">:</span>&nbsp;<span class="identifier">GroovyBuilderScope</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">.</span><span class="identifier">invoke</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.kotlin.dsl.GroovyBuilderScope$invoke(kotlin.String, kotlin.Array((kotlin.Pair((kotlin.String, kotlin.Any)))), kotlin.Function1((org.gradle.kotlin.dsl.GroovyBuilderScope, org.gradle.kotlin.dsl.GroovyBuilderScope.invoke.T)))/keywordArguments">keywordArguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><span class="identifier">Pair</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl.GroovyBuilderScope$invoke(kotlin.String, kotlin.Array((kotlin.Pair((kotlin.String, kotlin.Any)))), kotlin.Function1((org.gradle.kotlin.dsl.GroovyBuilderScope, org.gradle.kotlin.dsl.GroovyBuilderScope.invoke.T)))/builder">builder</span><span class="symbol">:</span>&nbsp;<span class="identifier">GroovyBuilderScope</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">operator</span> <span class="keyword">fun </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">.</span><span class="identifier">invoke</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.kotlin.dsl.GroovyBuilderScope$invoke(kotlin.String, kotlin.Array((kotlin.Pair((kotlin.String, kotlin.Any)))))/keywordArguments">keywordArguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><span class="identifier">Pair</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Companion Object Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="of.html">of</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">of</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.GroovyBuilderScope.Companion$of(kotlin.Any)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GroovyBuilderScope</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../kotlin.-any/closure-of.html">closureOf</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">.</span><span class="identifier">closureOf</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$closureOf(kotlin.Any, kotlin.Function1((org.gradle.kotlin.dsl.closureOf.T, kotlin.Unit)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">&gt;</span></code>
+<p>Adapts a Kotlin function to a single argument Groovy <a href="#">Closure</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../kotlin.-any/delegate-closure-of.html">delegateClosureOf</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">.</span><span class="identifier">delegateClosureOf</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$delegateClosureOf(kotlin.Any, kotlin.Function1((org.gradle.kotlin.dsl.delegateClosureOf.T, kotlin.Unit)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code>
+<p>Adapts a Kotlin function to a Groovy <a href="#">Closure</a> that operates on the
+configured Closure delegate.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../kotlin.-any/with-convention.html">withConvention</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">ConventionType</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">ReturnType</span><span class="symbol">&gt;</span> <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">.</span><span class="identifier">withConvention</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$withConvention(kotlin.Any, kotlin.reflect.KClass((org.gradle.kotlin.dsl.withConvention.ConventionType)), kotlin.Function1((org.gradle.kotlin.dsl.withConvention.ConventionType, org.gradle.kotlin.dsl.withConvention.ReturnType)))/conventionType">conventionType</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><span class="identifier">KClass</span></a><span class="symbol">&lt;</span><span class="identifier">ConventionType</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl$withConvention(kotlin.Any, kotlin.reflect.KClass((org.gradle.kotlin.dsl.withConvention.ConventionType)), kotlin.Function1((org.gradle.kotlin.dsl.withConvention.ConventionType, org.gradle.kotlin.dsl.withConvention.ReturnType)))/function">function</span><span class="symbol">:</span>&nbsp;<span class="identifier">ConventionType</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">ReturnType</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ReturnType</span></code>
+<p>Evaluates the given <a href="../kotlin.-any/with-convention.html#org.gradle.kotlin.dsl$withConvention(kotlin.Any, kotlin.reflect.KClass((org.gradle.kotlin.dsl.withConvention.ConventionType)), kotlin.Function1((org.gradle.kotlin.dsl.withConvention.ConventionType, org.gradle.kotlin.dsl.withConvention.ReturnType)))/function">function</a> against the convention plugin of the given <a href="../kotlin.-any/with-convention.html#org.gradle.kotlin.dsl$withConvention(kotlin.Any, kotlin.reflect.KClass((org.gradle.kotlin.dsl.withConvention.ConventionType)), kotlin.Function1((org.gradle.kotlin.dsl.withConvention.ConventionType, org.gradle.kotlin.dsl.withConvention.ReturnType)))/conventionType">conventionType</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../kotlin.-any/with-groovy-builder.html">withGroovyBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">.</span><span class="identifier">withGroovyBuilder</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$withGroovyBuilder(kotlin.Any, kotlin.Function1((org.gradle.kotlin.dsl.GroovyBuilderScope, org.gradle.kotlin.dsl.withGroovyBuilder.T)))/builder">builder</span><span class="symbol">:</span>&nbsp;<span class="identifier">GroovyBuilderScope</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Executes the given <a href="../kotlin.-any/with-groovy-builder.html#org.gradle.kotlin.dsl$withGroovyBuilder(kotlin.Any, kotlin.Function1((org.gradle.kotlin.dsl.GroovyBuilderScope, org.gradle.kotlin.dsl.withGroovyBuilder.T)))/builder">builder</a> against this object's GroovyBuilderScope.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -1,0 +1,67 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Directory - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href=".">Directory</a><br/>
+<br/>
+<h1>Directory</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">Directory</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-file-system-location/index.html"><span class="identifier">FileSystemLocation</span></a></code>
+<p>Represents a directory at some fixed location on the file system. 
+<p> <strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created using the <code><a href="#">#dir(String)</a></code> method or using various methods on ProjectLayout such as <code><a href="../-project-layout/get-project-directory.html">ProjectLayout#getProjectDirectory()</a></code>.</p>
+</p>
+<p><strong>Since</strong><br/>
+4.1</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="dir.html">dir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">dir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.Directory$dir(kotlin.String)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Directory</span></code>
+<p>Returns a Directory whose location is the given path, resolved relative to this directory.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">dir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.Directory$dir(org.gradle.api.provider.Provider((kotlin.CharSequence)))/path">path</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="identifier">Directory</span><span class="symbol">&gt;</span></code>
+<p>Returns a Provider whose value is a Directory whose location is the given path resolved relative to this directory. 
+<p>The return value is live and the provided <code>path</code> is queried each time the return value is queried.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="file.html">file</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.Directory$file(kotlin.String)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-regular-file/index.html"><span class="identifier">RegularFile</span></a></code>
+<p>Returns a RegularFile whose location is the given path, resolved relative to this directory.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.Directory$file(org.gradle.api.provider.Provider((kotlin.CharSequence)))/path">path</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../-regular-file/index.html"><span class="identifier">RegularFile</span></a><span class="symbol">&gt;</span></code>
+<p>Returns a Provider whose value is a RegularFile whose location is the given path resolved relative to this directory. 
+<p>The return value is live and the provided <code>path</code> is queried each time the return value is queried.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-as-file.html">getAsFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAsFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the location of this directory, as an absolute File.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-as-file-tree.html">getAsFileTree</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAsFileTree</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<p>Returns a FileTree that allows the files and directories contained in this directory to be queried.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

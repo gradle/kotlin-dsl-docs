@@ -25,7 +25,7 @@
  Multi-project Builds 
 <p>Projects are arranged into a hierarchy of projects. A project has a name, and a fully qualified path which uniquely identifies it in the hierarchy.</p>
  Plugins 
-<p> Plugins can be used to modularise and reuse project configuration. Plugins can be applied using the <code><a href="#">PluginAware#apply(java.util.Map)</a></code> method, or by using the org.gradle.plugin.use.PluginDependenciesSpec. </p>
+<p> Plugins can be used to modularise and reuse project configuration. Plugins can be applied using the <code><a href="#">PluginAware#apply(java.util.Map)</a></code> method, or by using the org.gradle.plugin.use.PluginDependenciesSpec plugins script block. </p>
  <a href="#"></a> Properties 
 <p>Gradle executes the project's build file against the <code>Project</code> instance to configure the project. Any property or method which your script uses is delegated through to the associated <code>Project</code> object. This means, that you can use any of the methods and properties on the <code>Project</code> interface directly in your script. </p>
 <p>For example: </p>
@@ -38,7 +38,7 @@
  <li>The <em>extensions</em> added to the project by the plugins. Each extension is available as a read-only property with the same name as the extension.</li>
  <li>The <em>convention</em> properties added to the project by the plugins. A plugin can add properties and methods to a project through the project's Convention object. The properties of this scope may be readable or writable, depending on the convention objects.</li>
  <li>The tasks of the project. A task is accessible by using its name as a property name. The properties of this scope are read-only. For example, a task called <code>compile</code> is accessible as the <code>compile</code> property.</li>
- <li>The extra properties and convention properties inherited from the project's parent, recursively up to the root project. The properties of this scope are read-only.</li>
+ <li>The extra properties and convention properties are inherited from the project's parent, recursively up to the root project. The properties of this scope are read-only.</li>
  </ul>
  
 <p>When reading a property, the project searches the above scopes in order, and returns the value from the first scope it finds the property in. If not found, an exception is thrown. See <code><a href="#">#property(String)</a></code> for more details.</p>
@@ -168,7 +168,7 @@
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">ant</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$ant(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-ant-builder/index.html"><span class="identifier">AntBuilder</span></a></code>
 <p>
-<p>Executes the given closure against the <code>AntBuilder</code> for this project. You can use this in your build file to execute ant tasks. The <code>AntBuilder</code> is passed to the closure as the closure's delegate. See example in javadoc for <code><a href="get-ant.html">#getAnt()</a></code></p>
+<p>Executes the given closure against the <code>AntBuilder</code> for this project. You can use this in your build file to execute ant tasks. The <code>AntBuild</code> is passed to the closure as the closure's delegate. See example in javadoc for <code><a href="get-ant.html">#getAnt()</a></code></p>
 </p>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">ant</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$ant(org.gradle.api.Action((org.gradle.api.AntBuilder)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-ant-builder/index.html"><span class="identifier">AntBuilder</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-ant-builder/index.html"><span class="identifier">AntBuilder</span></a></code>
 <p>
@@ -240,7 +240,10 @@ Examples: See docs for ConfigurationContainer</p>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">configure</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$configure(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/object">object</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Project$configure(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
 <p>
 <p>Configures an object via a closure, with the closure's delegate set to the supplied object. This way you don't have to specify the context of a configuration statement multiple times. </p>
- Instead of: <pre><code> MyType myType = new MyType() myType.doThis() myType.doThat() </code></pre>  you can do: <pre><code> MyType myType = configure(new MyType()) { doThis() doThat() } </code></pre> 
+<p> Instead of:</p>
+ <pre><code> MyType myType = new MyType() myType.doThis() myType.doThat() </code></pre> 
+<p> you can do: </p>
+<pre><code> MyType myType = configure(new MyType()) { doThis() doThat() } </code></pre> 
 <p>The object being configured is also passed to the closure as a parameter, so you can access it explicitly if required:</p>
  <pre><code> configure(someObj) { obj -&gt; obj.doThis() } </code></pre></p>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">configure</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$configure(kotlin.collections.MutableIterable((kotlin.Any)), groovy.lang.Closure((kotlin.Any)))/objects">objects</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Project$configure(kotlin.collections.MutableIterable((kotlin.Any)), groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span></code>
@@ -257,7 +260,7 @@ Examples: See docs for ConfigurationContainer</p>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">container</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$container(java.lang.Class((org.gradle.api.Project.container.T)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-named-domain-object-container/index.html"><span class="identifier">NamedDomainObjectContainer</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
 <p>
 <p>Creates a container for managing named objects of the specified type. The specified type must have a public constructor which takes the name as a String parameter.</p>
-<p> </p>
+ 
 <p>All objects <strong>MUST</strong> expose their name as a bean property named "name". The name must be constant for the life of the object.</p>
 </p>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">container</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$container(java.lang.Class((org.gradle.api.Project.container.T)), org.gradle.api.NamedDomainObjectFactory((org.gradle.api.Project.container.T)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Project$container(java.lang.Class((org.gradle.api.Project.container.T)), org.gradle.api.NamedDomainObjectFactory((org.gradle.api.Project.container.T)))/factory">factory</span><span class="symbol">:</span>&nbsp;<a href="../-named-domain-object-factory/index.html"><span class="identifier">NamedDomainObjectFactory</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-named-domain-object-container/index.html"><span class="identifier">NamedDomainObjectContainer</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
@@ -404,9 +407,11 @@ Examples: See docs for DependencyHandler</p>
  <ul> <li>A CharSequence, including String or groovy.lang.GString. Interpreted relative to the project directory. A string that starts with <code>file:</code> is treated as a file URL.</li>
  <li>A File. If the file is an absolute file, it is returned as is. Otherwise, the file's path is interpreted relative to the project directory.</li>
  <li>A java.nio.file.Path. The path must be associated with the default provider and is treated the same way as an instance of <code>File</code>.</li>
- <li>A java.net.URI or java.net.URL. The URL's path is interpreted as the file path. Currently, only <code>file:</code> URLs are supported.</li>
- <li>A Closure. The closure's return value is resolved recursively.</li>
- <li>A java.util.concurrent.Callable. The callable's return value is resolved recursively.</li>
+ <li>A java.net.URI or java.net.URL. The URL's path is interpreted as the file path. Only <code>file:</code> URLs are supported.</li>
+ <li>A org.gradle.api.file.Directory or org.gradle.api.file.RegularFile.</li>
+ <li>A Provider of any supported type. The provider's value is resolved recursively.</li>
+ <li>A Closure that returns any supported type. The closure's return value is resolved recursively.</li>
+ <li>A java.util.concurrent.Callable that returns any supported type. The callable's return value is resolved recursively.</li>
  </ul>
 </p>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$file(kotlin.Any, org.gradle.api.PathValidation)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Project$file(kotlin.Any, org.gradle.api.PathValidation)/validation">validation</span><span class="symbol">:</span>&nbsp;<a href="../-path-validation/index.html"><span class="identifier">PathValidation</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
@@ -457,19 +462,25 @@ Examples: See docs for DependencyHandler</p>
  <ul> <li>A CharSequence, including String or groovy.lang.GString. Interpreted relative to the project directory, as per <code><a href="#">#file(Object)</a></code>. A string that starts with <code>file:</code> is treated as a file URL.</li>
  <li>A File. Interpreted relative to the project directory, as per <code><a href="#">#file(Object)</a></code>.</li>
  <li>A java.nio.file.Path as defined by <code><a href="#">#file(Object)</a></code>.</li>
- <li>A java.net.URI or java.net.URL. The URL's path is interpreted as a file path. Currently, only <code>file:</code> URLs are supported.</li>
- <li>A java.util.Collection, Iterable, or an array. May contain any of the types listed here. The elements of the collection are recursively converted to files.</li>
+ <li>A java.net.URI or java.net.URL. The URL's path is interpreted as a file path. Only <code>file:</code> URLs are supported.</li>
+ <li>A org.gradle.api.file.Directory or org.gradle.api.file.RegularFile.</li>
+ <li>A java.util.Collection, Iterable, or an array that contains objects of any supported type. The elements of the collection are recursively converted to files.</li>
  <li>A org.gradle.api.file.FileCollection. The contents of the collection are included in the returned collection.</li>
- <li>A java.util.concurrent.Callable. The <code>call()</code> method may return any of the types listed here. The return value of the <code>call()</code> method is recursively converted to files. A <code>null</code> return value is treated as an empty collection.</li>
- <li>A Closure. May return any of the types listed here. The return value of the closure is recursively converted to files. A <code>null</code> return value is treated as an empty collection.</li>
- <li>A Task. Converted to the task's output files.</li>
- <li>A org.gradle.api.tasks.TaskOutputs. Converted to the output files the related task.</li>
+ <li>A Provider of any supported type. The provider's value is recursively converted to files. If the provider represents an output of a task, that task is executed if the file collection is used as an input to another task. </li>
+<li>A java.util.concurrent.Callable that returns any supported type. The return value of the <code>call()</code> method is recursively converted to files. A <code>null</code> return value is treated as an empty collection.</li>
+ <li>A Closure that returns any of the types listed here. The return value of the closure is recursively converted to files. A <code>null</code> return value is treated as an empty collection.</li>
+ <li>A Task. Converted to the task's output files. The task is executed if the file collection is used as an input to another task.</li>
+ <li>A org.gradle.api.tasks.TaskOutputs. Converted to the output files the related task. The task is executed if the file collection is used as an input to another task.</li>
  <li>Anything else is treated as a failure.</li>
  </ul>
  
 <p>The returned file collection is lazy, so that the paths are evaluated only when the contents of the file collection are queried. The file collection is also live, so that it evaluates the above each time the contents of the collection is queried.</p>
  
 <p>The returned file collection maintains the iteration order of the supplied paths.</p>
+ 
+<p>The returned file collection maintains the details of the tasks that produce the files, so that these tasks are executed if this file collection is used as an input to some task.</p>
+ 
+<p>This method can also be used to create an empty collection, which can later be mutated to add elements.</p>
 </p>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">files</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$files(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Project$files(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code>
 <p>
@@ -574,8 +585,8 @@ Examples: See docs for DependencyHandler</p>
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
-<p>
-<p>Returns the build file Gradle will evaluate against this project object. The default is <code> {@value * #DEFAULT_BUILD_FILE}</code>. If an embedded script is provided the build file will be null. </p>
+<p>The build script for this project. 
+<p> If the file exists, it will be evaluated against this project when this project is configured.</p>
 </p>
 </td>
 </tr>
@@ -625,7 +636,7 @@ Examples: See docs for DependencyHandler</p>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getConvention</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins/-convention/index.html"><span class="identifier">Convention</span></a></code>
 <p>
 <p>Returns the Convention for this project.</p>
-  
+ 
 <p>You can access this property in your build file using <code>convention</code>. You can also can also access the properties and methods of the convention object as if they were properties and methods of this project. See <a href="#">here</a> for more details</p>
 </p>
 </td>
@@ -712,6 +723,15 @@ Examples: See docs for DependencyHandler</p>
 </tr>
 <tr>
 <td>
+<p><a href="get-layout.html">getLayout</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLayout</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-project-layout/index.html"><span class="identifier">ProjectLayout</span></a></code>
+<p>Provides access to various important directories for this project.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-logger.html">getLogger</a></p>
 </td>
 <td>
@@ -746,7 +766,7 @@ Examples: See docs for DependencyHandler</p>
 <p><a href="get-normalization.html">getNormalization</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getNormalization</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">InputNormalizationHandler</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getNormalization</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.normalization/-input-normalization-handler/index.html"><span class="identifier">InputNormalizationHandler</span></a></code>
 <p>Provides access to configuring input normalization.</p>
 </td>
 </tr>
@@ -967,7 +987,7 @@ Examples: See docs for DependencyHandler</p>
 <p><a href="normalization.html">normalization</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">normalization</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$normalization(org.gradle.api.Action((InputNormalizationHandler)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">InputNormalizationHandler</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">normalization</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$normalization(org.gradle.api.Action((org.gradle.normalization.InputNormalizationHandler)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.normalization/-input-normalization-handler/index.html"><span class="identifier">InputNormalizationHandler</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Configures input normalization.</p>
 </td>
 </tr>
@@ -1213,7 +1233,7 @@ Examples: See docs for DependencyHandler</p>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">task</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$task(kotlin.String, groovy.lang.Closure((kotlin.Any)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Project$task(kotlin.String, groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-task/index.html"><span class="identifier">Task</span></a></code>
 <p>
 <p>Creates a Task with the given name and adds it to this project. Before the task is returned, the given closure is executed to configure the task.</p>
-  
+ 
 <p>After the task is added to the project, it is made available as a property of the project, so that you can reference the task by name in your build file. See <a href="#">here</a> for more details</p>
 </p>
 </td>
@@ -1325,6 +1345,15 @@ Examples: See docs for DependencyHandler</p>
 </tr>
 <tr>
 <td>
+<p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.-project/build-scan.html">buildScan</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">Project</span><span class="symbol">.</span><span class="identifier">buildScan</span><span class="symbol">: </span><span class="identifier">&lt;ERROR CLASS&gt;</span></code>
+<p>Retrieves the <a href="#">buildScan</a> project extension.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.-project/build-types.html">buildTypes</a></p>
 </td>
 <td>
@@ -1366,6 +1395,15 @@ Examples: See docs for DependencyHandler</p>
 <td>
 <code><span class="keyword">val </span><span class="identifier">Project</span><span class="symbol">.</span><span class="identifier">distributions</span><span class="symbol">: </span><a href="../../org.gradle.api.distribution/-distribution-container.html"><span class="identifier">DistributionContainer</span></a></code>
 <p>Retrieves the <a href="../../org.gradle.api.distribution/-distribution-container.html">distributions</a> project extension.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.-project/ear.html">ear</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">Project</span><span class="symbol">.</span><span class="identifier">ear</span><span class="symbol">: </span><span class="identifier">&lt;ERROR CLASS&gt;</span></code>
+<p>Retrieves the <a href="#">ear</a> project convention.</p>
 </td>
 </tr>
 <tr>
@@ -1575,6 +1613,15 @@ Examples: See docs for DependencyHandler</p>
 <p>Retrieves the <a href="../../org.gradle.api.plugins/-war-plugin-convention/index.html">war</a> project convention.</p>
 </td>
 </tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.-project/xcode.html">xcode</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">Project</span><span class="symbol">.</span><span class="identifier">xcode</span><span class="symbol">: </span><a href="../../org.gradle.ide.xcode/-xcode-extension/index.html"><span class="identifier">XcodeExtension</span></a></code>
+<p>Retrieves the <a href="../../org.gradle.ide.xcode/-xcode-extension/index.html">xcode</a> project extension.</p>
+</td>
+</tr>
 </tbody>
 </table>
 <h3>Extension Functions</h3>
@@ -1611,20 +1658,20 @@ Examples: See docs for DependencyHandler</p>
 </tr>
 <tr>
 <td>
-<p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.-project/apply-from.html">applyFrom</a></p>
-</td>
-<td>
-<code><span class="keyword">fun </span><span class="identifier">Project</span><span class="symbol">.</span><span class="identifier">applyFrom</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$applyFrom(org.gradle.api.Project, kotlin.Any)/script">script</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Applies a script to the project.</p>
-</td>
-</tr>
-<tr>
-<td>
 <p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.-project/base.html">base</a></p>
 </td>
 <td>
 <code><span class="keyword">fun </span><span class="identifier">Project</span><span class="symbol">.</span><span class="identifier">base</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$base(org.gradle.api.Project, kotlin.Function1((org.gradle.api.plugins.BasePluginConvention, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins/-base-plugin-convention/index.html"><span class="identifier">BasePluginConvention</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Configures the <a href="../../org.gradle.api.plugins/-base-plugin-convention/index.html">base</a> project convention.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.-project/build-scan.html">buildScan</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">Project</span><span class="symbol">.</span><span class="identifier">buildScan</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$buildScan(org.gradle.api.Project, kotlin.Function1((, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<span class="identifier">&lt;ERROR CLASS&gt;</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the <a href="#">buildScan</a> project extension.</p>
 </td>
 </tr>
 <tr>
@@ -1681,6 +1728,16 @@ Examples: See docs for DependencyHandler</p>
 </tr>
 <tr>
 <td>
+<p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.-project/default-tasks.html">defaultTasks</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">Project</span><span class="symbol">.</span><span class="identifier">defaultTasks</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.kotlin.dsl$defaultTasks(org.gradle.api.Project, kotlin.Array((org.gradle.api.Task)))/tasks">tasks</span><span class="symbol">:</span>&nbsp;<a href="../-task/index.html"><span class="identifier">Task</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the the default tasks of this project. These are used when no tasks names are provided when
+starting the build.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.-project/dependencies.html">dependencies</a></p>
 </td>
 <td>
@@ -1695,6 +1752,15 @@ Examples: See docs for DependencyHandler</p>
 <td>
 <code><span class="keyword">fun </span><span class="identifier">Project</span><span class="symbol">.</span><span class="identifier">distributions</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$distributions(org.gradle.api.Project, kotlin.Function1((org.gradle.api.distribution.DistributionContainer, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.distribution/-distribution-container.html"><span class="identifier">DistributionContainer</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Configures the <a href="../../org.gradle.api.distribution/-distribution-container.html">distributions</a> project extension.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.-project/ear.html">ear</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">Project</span><span class="symbol">.</span><span class="identifier">ear</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$ear(org.gradle.api.Project, kotlin.Function1((, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<span class="identifier">&lt;ERROR CLASS&gt;</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the <a href="#">ear</a> project convention.</p>
 </td>
 </tr>
 <tr>
@@ -1969,6 +2035,15 @@ and adds it to this project tasks container.</p>
 <td>
 <code><span class="keyword">fun </span><span class="identifier">Project</span><span class="symbol">.</span><span class="identifier">war</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$war(org.gradle.api.Project, kotlin.Function1((org.gradle.api.plugins.WarPluginConvention, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins/-war-plugin-convention/index.html"><span class="identifier">WarPluginConvention</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Configures the <a href="../../org.gradle.api.plugins/-war-plugin-convention/index.html">war</a> project convention.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.-project/xcode.html">xcode</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">Project</span><span class="symbol">.</span><span class="identifier">xcode</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$xcode(org.gradle.api.Project, kotlin.Function1((org.gradle.ide.xcode.XcodeExtension, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.ide.xcode/-xcode-extension/index.html"><span class="identifier">XcodeExtension</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the <a href="../../org.gradle.ide.xcode/-xcode-extension/index.html">xcode</a> project extension.</p>
 </td>
 </tr>
 </tbody>

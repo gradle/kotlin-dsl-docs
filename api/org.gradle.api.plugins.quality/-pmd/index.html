@@ -54,10 +54,12 @@ PmdPluginPmdExtension</p>
 </tr>
 <tr>
 <td>
-<p><a href="get-instantiator.html">getInstantiator</a></p>
+<p><a href="get-object-factory.html">getObjectFactory</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getInstantiator</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Instantiator</span></code></td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getObjectFactory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.model/-object-factory/index.html"><span class="identifier">ObjectFactory</span></a></code>
+<p>Injects and returns an instance of org.gradle.api.model.ObjectFactory.</p>
+</td>
 </tr>
 <tr>
 <td>
@@ -142,6 +144,15 @@ PmdPluginPmdExtension</p>
 </tr>
 <tr>
 <td>
+<p><a href="is-incremental-analysis.html">isIncrementalAnalysis</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isIncrementalAnalysis</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Retrieves wether to use incremental analysis or not. This is only supported for PMD 5.6.0 or better.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="reports.html">reports</a></p>
 </td>
 <td>
@@ -182,6 +193,15 @@ PmdPluginPmdExtension</p>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setIgnoreFailures</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.Pmd$setIgnoreFailures(kotlin.Boolean)/ignoreFailures">ignoreFailures</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Whether or not to allow the build to continue if there are warnings. Example: ignoreFailures = true</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-incremental-analysis.html">setIncrementalAnalysis</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setIncrementalAnalysis</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.Pmd$setIncrementalAnalysis(kotlin.Boolean)/incrementalAnalysis">incrementalAnalysis</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures wether to use incremental analysis or not. This is only supported for PMD 5.6.0 or better.</p>
 </td>
 </tr>
 <tr>

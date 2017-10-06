@@ -12,15 +12,22 @@
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
 <p>Fetch the model, blocking until it is available.</p>
 <h3>Exceptions</h3>
-<a name="UnsupportedVersionException"></a>
-<code>UnsupportedVersionException</code> - When the target Gradle version does not support building models.<a name="UnknownModelException"></a>
-<code>UnknownModelException</code> - When the target Gradle version or build does not support the requested model.<a name="org.gradle.tooling.exceptions.UnsupportedOperationConfigurationException"></a>
-<code>org.gradle.tooling.exceptions.UnsupportedOperationConfigurationException</code> - When the target Gradle version does not support some requested configuration option such as <code><a href="#">#withArguments(String...)</a></code>.<a name="org.gradle.tooling.exceptions.UnsupportedBuildArgumentException"></a>
-<code>org.gradle.tooling.exceptions.UnsupportedBuildArgumentException</code> - When there is a problem with build arguments provided by <code><a href="#">#withArguments(String...)</a></code>.<a name="BuildException"></a>
-<code>BuildException</code> - On some failure executing the Gradle build.<a name="BuildCancelledException"></a>
-<code>BuildCancelledException</code> - When the operation was cancelled before it completed successfully.<a name="GradleConnectionException"></a>
-<code>GradleConnectionException</code> - On some other failure using the connection.<a name="IllegalStateException"></a>
-<code>IllegalStateException</code> - When the connection has been closed or is closing.
+<p><a name="UnsupportedVersionException"></a>
+<code>UnsupportedVersionException</code> - When the target Gradle version does not support building models.</p>
+<p><a name="UnknownModelException"></a>
+<code>UnknownModelException</code> - When the target Gradle version or build does not support the requested model.</p>
+<p><a name="org.gradle.tooling.exceptions.UnsupportedOperationConfigurationException"></a>
+<code>org.gradle.tooling.exceptions.UnsupportedOperationConfigurationException</code> - When the target Gradle version does not support some requested configuration option such as <code><a href="#">#withArguments(String...)</a></code>.</p>
+<p><a name="org.gradle.tooling.exceptions.UnsupportedBuildArgumentException"></a>
+<code>org.gradle.tooling.exceptions.UnsupportedBuildArgumentException</code> - When there is a problem with build arguments provided by <code><a href="#">#withArguments(String...)</a></code>.</p>
+<p><a name="BuildException"></a>
+<code>BuildException</code> - On some failure executing the Gradle build.</p>
+<p><a name="BuildCancelledException"></a>
+<code>BuildCancelledException</code> - When the operation was cancelled before it completed successfully.</p>
+<p><a name="GradleConnectionException"></a>
+<code>GradleConnectionException</code> - On some other failure using the connection.</p>
+<p><a name="IllegalStateException"></a>
+<code>IllegalStateException</code> - When the connection has been closed or is closing.</p>
 <p><strong>Return</strong><br/>
 The model.</p>
 <p><strong>Since</strong><br/>
@@ -31,11 +38,11 @@ The model.</p>
 <p>If the operation fails, the handler's <code><a href="../-result-handler/on-failure.html">ResultHandler#onFailure(GradleConnectionException)</a></code> method is called with the appropriate exception. See <code>#get()</code> for a description of the various exceptions that the operation may fail with.</p>
 </p>
 <h3>Parameters</h3>
-<a name="handler"></a>
-<code>handler</code> - The handler to supply the result to.
+<p><a name="handler"></a>
+<code>handler</code> - The handler to supply the result to.</p>
 <h3>Exceptions</h3>
-<a name="IllegalStateException"></a>
-<code>IllegalStateException</code> - When the connection has been closed or is closing.
+<p><a name="IllegalStateException"></a>
+<code>IllegalStateException</code> - When the connection has been closed or is closing.</p>
 <p><strong>Since</strong><br/>
 1.0-milestone-3</p>
 </BODY>

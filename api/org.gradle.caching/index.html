@@ -34,7 +34,7 @@
 <p><a href="-build-cache-key/index.html">BuildCacheKey</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">BuildCacheKey</span></code>
+<code><span class="keyword">interface </span><span class="identifier">BuildCacheKey</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-describable/index.html"><span class="identifier">Describable</span></a></code>
 <p>Cache key identifying an entry in the build cache.</p>
 </td>
 </tr>
@@ -63,7 +63,7 @@
 <p> To be able to use a <code>BuildCacheService</code>, the factory that implements this interface and the configuration type (BuildCache) must be registered with the org.gradle.caching.configuration.BuildCacheConfiguration. </p>
  
 <p> In settings.gradle: </p>
-<pre><code> buildCache { // Register custom build cache implementation registerBuildCacheService(CustomBuildCache, CustomBuildCacheFactory) remote(CustomBuildCache) { // configure custom build cache. } } </code></pre> </p>
+ <pre><code> buildCache { // Register custom build cache implementation registerBuildCacheService(CustomBuildCache, CustomBuildCacheFactory) remote(CustomBuildCache) { // configure custom build cache. } } </code></pre></p>
 </td>
 </tr>
 <tr>
@@ -88,7 +88,7 @@
 <code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BuildCacheException</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-gradle-exception/index.html"><span class="identifier">GradleException</span></a></code>
 <p>
 <p><code>BuildCacheException</code> is the base class of all exceptions thrown by a BuildCacheService.</p>
- A <code>BuildCacheException</code> is considered a non-fatal failure. Gradle should still be able to complete a build even when a <code>BuildCacheException</code> is encountered.</p>
+</p>
 </td>
 </tr>
 </tbody>

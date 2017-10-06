@@ -8,7 +8,7 @@
 <a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.caching</a>&nbsp;/&nbsp;<a href=".">BuildCacheKey</a><br/>
 <br/>
 <h1>BuildCacheKey</h1>
-<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">BuildCacheKey</span></code>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">BuildCacheKey</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-describable/index.html"><span class="identifier">Describable</span></a></code>
 <p>Cache key identifying an entry in the build cache.</p>
 <p><strong>Since</strong><br/>
 3.3</p>
@@ -22,6 +22,20 @@
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getHashCode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
 <p>Returns the string representation of the cache key.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-describable/get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the display name of this object. It is strongly encouraged to compute it lazily, and cache the value if it is expensive.</p>
 </td>
 </tr>
 </tbody>

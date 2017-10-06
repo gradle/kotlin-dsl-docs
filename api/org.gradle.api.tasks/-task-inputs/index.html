@@ -95,7 +95,9 @@
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">properties</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.TaskInputs$properties(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/properties">properties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TaskInputs</span></code>
-<p>Registers a set of input properties for this task. See <code><a href="#">#property(String, Object)</a></code> for details.</p>
+<p>Registers a set of input properties for this task. See <code><a href="#">#property(String, Object)</a></code> for details. 
+<p><strong>Note:</strong> do not use the return value to chain calls. Instead always use call via <code><a href="../../org.gradle.api/-task/get-inputs.html">org.gradle.api.Task#getInputs()</a></code>.</p>
+</p>
 </td>
 </tr>
 <tr>
@@ -103,7 +105,7 @@
 <p><a href="property.html">property</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">property</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.TaskInputs$property(kotlin.String, kotlin.Any)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.TaskInputs$property(kotlin.String, kotlin.Any)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TaskInputs</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">property</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.TaskInputs$property(kotlin.String, kotlin.Any)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.TaskInputs$property(kotlin.String, kotlin.Any)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-task-input-property-builder/index.html"><span class="identifier">TaskInputPropertyBuilder</span></a></code>
 <p>
 <p>Registers an input property for this task. This value is persisted when the task executes, and is compared against the property value for later invocations of the task, to determine if the task is up-to-date.</p>
  
@@ -125,6 +127,15 @@
 <td>
 <code><span class="keyword">interface </span><span class="identifier">TaskInputFilePropertyBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-task-file-property-builder/index.html"><span class="identifier">TaskFilePropertyBuilder</span></a><span class="symbol">, </span><span class="identifier">TaskInputs</span></code>
 <p>Describes an input property of a task that contains zero or more files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-task-input-property-builder/index.html">TaskInputPropertyBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskInputPropertyBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-task-property-builder.html"><span class="identifier">TaskPropertyBuilder</span></a><span class="symbol">, </span><span class="identifier">TaskInputs</span></code>
+<p>Describes an input property of a task.</p>
 </td>
 </tr>
 </tbody>

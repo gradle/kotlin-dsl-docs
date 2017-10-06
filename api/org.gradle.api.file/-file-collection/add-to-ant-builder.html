@@ -16,10 +16,13 @@
  </ul>
  You should prefer using <code><a href="#">AntType#ResourceCollection</a></code>, if the target Ant task supports it, as this is generally the most efficient. Using the other types may involve copying the contents of this collection to a temporary directory.</p>
 <h3>Parameters</h3>
-<a name="builder"></a>
-<code>builder</code> - The builder to add this collection to.<a name="nodeName"></a>
-<code>nodeName</code> - The target node name.<a name="type"></a>
-<code>type</code> - The target Ant type<a name="org.gradle.api.file.FileCollection$addToAntBuilder(kotlin.Any, kotlin.String)"></a>
+<p><a name="builder"></a>
+<code>builder</code> - The builder to add this collection to.</p>
+<p><a name="nodeName"></a>
+<code>nodeName</code> - The target node name.</p>
+<p><a name="type"></a>
+<code>type</code> - The target Ant type</p>
+<a name="org.gradle.api.file.FileCollection$addToAntBuilder(kotlin.Any, kotlin.String)"></a>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addToAntBuilder</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$addToAntBuilder(kotlin.Any, kotlin.String)/builder">builder</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.file.FileCollection$addToAntBuilder(kotlin.Any, kotlin.String)/nodeName">nodeName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
 <p>Overrides <a href="../../org.gradle.api.tasks/-ant-builder-aware/add-to-ant-builder.html">AntBuilderAware.addToAntBuilder</a></p>
 <p>Adds this collection to an Ant task as a nested node. Equivalent to calling <code>addToAntBuilder(builder, nodeName,AntType.ResourceCollection)</code>.</p>

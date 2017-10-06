@@ -31,6 +31,15 @@
 <tbody>
 <tr>
 <td>
+<p><a href="../../org.gradle.caching/-build-cache-key/index.html">BuildCacheKey</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BuildCacheKey</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Describable</span></code>
+<p>Cache key identifying an entry in the build cache.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="../../org.gradle.api.file/-source-directory-set/index.html">SourceDirectorySet</a></p>
 </td>
 <td>
@@ -40,6 +49,24 @@
  
 <p><code>SourceDirectorySet</code> extends FileTree. The contents of the file tree represent the source files of this set, arranged in a hierarchy. The file tree is live and reflects changes to the source directories and their contents.</p>
 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.vcs/-version-control-spec/index.html">VersionControlSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VersionControlSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Describable</span></code>
+<p>Captures user-provided information about a version control system.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.workers/-worker-configuration/index.html">WorkerConfiguration</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">WorkerConfiguration</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Describable</span><span class="symbol">, </span><a href="../-action-configuration/index.html"><span class="identifier">ActionConfiguration</span></a></code>
+<p>Represents the configuration of a worker. Used when submitting an item of work to the WorkerExecutor. <pre><code> workerExecutor.submit(RunnableWorkImpl.class) { WorkerConfiguration conf -&gt; conf.isolationMode = IsolationMode.PROCESS forkOptions { JavaForkOptions options -&gt; options.maxHeapSize = "512m" options.systemProperty 'some.prop', 'value' options.jvmArgs "-server" } classpath configurations.fooLibrary conf.params = [ "foo", file('bar') ] } </code></pre></p>
 </td>
 </tr>
 </tbody>

@@ -9,19 +9,19 @@
 <br/>
 <h1>copy</h1>
 <a name="org.gradle.api.Project$copy(groovy.lang.Closure((kotlin.Any)))"></a>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="identifier">@DelegatesTo</span><span class="symbol">(</span>CopySpec<span class="symbol">, </span>1<span class="symbol">)</span> <span class="identifier" id="org.gradle.api.Project$copy(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-work-result/index.html"><span class="identifier">WorkResult</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$copy(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-work-result/index.html"><span class="identifier">WorkResult</span></a></code>
 <p>Copies the specified files. The given closure is used to configure a CopySpec, which is then used to copy the files. Example: <pre><code> copy { from configurations.runtime into 'build/deploy/lib' } </code></pre> Note that CopySpecs can be nested: <pre><code> copy { into 'build/webroot' exclude '**/.svn/**' from('src/main/webapp') { include '**/*.jsp' filter(ReplaceTokens, tokens:[copyright:'2009', version:'2.3.1']) } from('src/main/js') { include '**/*.js' } } </code></pre></p>
 <h3>Parameters</h3>
-<a name="closure"></a>
-<code>closure</code> - Closure to configure the CopySpec
+<p><a name="closure"></a>
+<code>closure</code> - Closure to configure the CopySpec</p>
 <p><strong>Return</strong><br/>
 WorkResult that can be used to check if the copy did any work.</p>
 <a name="org.gradle.api.Project$copy(org.gradle.api.Action((org.gradle.api.file.CopySpec)))"></a>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Project$copy(org.gradle.api.Action((org.gradle.api.file.CopySpec)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-work-result/index.html"><span class="identifier">WorkResult</span></a></code>
 <p>Copies the specified files. The given action is used to configure a CopySpec, which is then used to copy the files.</p>
 <h3>Parameters</h3>
-<a name="action"></a>
-<code>action</code> - Action to configure the CopySpec
+<p><a name="action"></a>
+<code>action</code> - Action to configure the CopySpec</p>
 <p><strong>See Also</strong><br/>
 <a href="#">#copy(Closure)</a></p>
 <p><strong>Return</strong><br/>

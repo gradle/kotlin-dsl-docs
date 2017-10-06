@@ -1,0 +1,15 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>WorkerExecutor.submit - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.workers</a>&nbsp;/&nbsp;<a href="index.html">WorkerExecutor</a>&nbsp;/&nbsp;<a href=".">submit</a><br/>
+<br/>
+<h1>submit</h1>
+<a name="org.gradle.workers.WorkerExecutor$submit(java.lang.Class((java.lang.Runnable)), org.gradle.api.Action((org.gradle.workers.WorkerConfiguration)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">submit</span><span class="symbol">(</span><span class="identifier" id="org.gradle.workers.WorkerExecutor$submit(java.lang.Class((java.lang.Runnable)), org.gradle.api.Action((org.gradle.workers.WorkerConfiguration)))/actionClass">actionClass</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html"><span class="identifier">Runnable</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.workers.WorkerExecutor$submit(java.lang.Class((java.lang.Runnable)), org.gradle.api.Action((org.gradle.workers.WorkerConfiguration)))/configAction">configAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-worker-configuration/index.html"><span class="identifier">WorkerConfiguration</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Submits a piece of work to be executed asynchronously. Execution of the work may begin immediately. Work configured with <code><a href="#">IsolationMode#PROCESS</a></code> will execute in an idle daemon that meets the requirements set in the WorkerConfiguration. If no idle daemons are available, a new daemon will be started. Any errors will be thrown from <code><a href="await.html">#await()</a></code> or from the surrounding task action if <code><a href="await.html">#await()</a></code> is not used.</p>
+</BODY>
+</HTML>

@@ -9,7 +9,7 @@
 <br/>
 <h1>withArguments</h1>
 <a name="org.gradle.tooling.LongRunningOperation$withArguments(kotlin.Array((kotlin.String)))"></a>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withArguments</span><span class="symbol">(</span><span class="identifier">@Nullable</span> <span class="keyword">vararg</span> <span class="identifier" id="org.gradle.tooling.LongRunningOperation$withArguments(kotlin.Array((kotlin.String)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">LongRunningOperation</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withArguments</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.tooling.LongRunningOperation$withArguments(kotlin.Array((kotlin.String)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">LongRunningOperation</span></a></code>
 <p>Specify the command line build arguments. Useful mostly for running tasks via BuildLauncher. 
 <p> Be aware that not all of the Gradle command line options are supported! Only the build arguments that configure the build execution are supported. They are modelled in the Gradle API via org.gradle.StartParameter. Examples of supported build arguments: '--info', '-u', '-p'. The command line instructions that are actually separate commands (like '-?' and '-v') are not supported. Some other instructions like '--daemon' are also not supported - the tooling API always runs with the daemon. </p>
 <p> If an unknown or unsupported command line option is specified, org.gradle.tooling.exceptions.UnsupportedBuildArgumentException will be thrown at the time the operation is executed via <code><a href="../-build-launcher/run.html">BuildLauncher#run()</a></code> or <code><a href="../-model-builder/get.html">ModelBuilder#get()</a></code>. </p>
@@ -19,21 +19,21 @@
 <p>Requires Gradle 1.0 or later.</p>
 </p>
 <h3>Parameters</h3>
-<a name="arguments"></a>
-<code>arguments</code> - Gradle command line arguments
+<p><a name="arguments"></a>
+<code>arguments</code> - Gradle command line arguments</p>
 <p><strong>Return</strong><br/>
 this</p>
 <p><strong>Since</strong><br/>
 1.0</p>
 <a name="org.gradle.tooling.LongRunningOperation$withArguments(kotlin.collections.MutableIterable((kotlin.String)))"></a>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withArguments</span><span class="symbol">(</span><span class="identifier">@Nullable</span> <span class="identifier" id="org.gradle.tooling.LongRunningOperation$withArguments(kotlin.collections.MutableIterable((kotlin.String)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">LongRunningOperation</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withArguments</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.LongRunningOperation$withArguments(kotlin.collections.MutableIterable((kotlin.String)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">LongRunningOperation</span></a></code>
 <p>Specify the command line build arguments. Useful mostly for running tasks via BuildLauncher. 
 <p> If not configured, null, or an empty list is passed, then the reasonable default will be used. </p>
 <p>Requires Gradle 1.0 or later.</p>
 </p>
 <h3>Parameters</h3>
-<a name="arguments"></a>
-<code>arguments</code> - Gradle command line arguments
+<p><a name="arguments"></a>
+<code>arguments</code> - Gradle command line arguments</p>
 <p><strong>Return</strong><br/>
 this</p>
 <p><strong>Since</strong><br/>

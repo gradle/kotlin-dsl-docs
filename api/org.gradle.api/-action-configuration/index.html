@@ -9,7 +9,20 @@
 <br/>
 <h1>ActionConfiguration</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ActionConfiguration</span></code>
-<p>Allows specification of configuration for some action.</p>
+<p>Allows specification of configuration for some action. 
+<p>The configuration is represented using zero or more initialization parameters to use when constructing an instance of the implementation class. The following types are supported:</p>
+ <ul> <li>String</li>
+ <li>Boolean</li>
+ <li>Integer, Long, Short and other Number subtypes.</li>
+ <li>java.io.File</li>
+ <li>A java.util.List or java.util.Set of any supported type.</li>
+ <li>An array of any supported type.</li>
+ <li>A java.util.Map with keys and values of any supported type.</li>
+ <li>An Enum type.</li>
+ <li>A Named type created using <code><a href="#">org.gradle.api.model.ObjectFactory#named(Class, String)</a></code>.</li>
+ <li>Any serializable type.</li>
+ </ul>
+</p>
 <p><strong>Since</strong><br/>
 4.0</p>
 <h3>Functions</h3>
@@ -40,6 +53,20 @@
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setParams</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.ActionConfiguration$setParams(kotlin.Array((kotlin.Any)))/params">params</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Sets any initialization parameters to use when constructing an instance of the implementation class.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.workers/-worker-configuration/index.html">WorkerConfiguration</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">WorkerConfiguration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-describable/index.html"><span class="identifier">Describable</span></a><span class="symbol">, </span><span class="identifier">ActionConfiguration</span></code>
+<p>Represents the configuration of a worker. Used when submitting an item of work to the WorkerExecutor. <pre><code> workerExecutor.submit(RunnableWorkImpl.class) { WorkerConfiguration conf -&gt; conf.isolationMode = IsolationMode.PROCESS forkOptions { JavaForkOptions options -&gt; options.maxHeapSize = "512m" options.systemProperty 'some.prop', 'value' options.jvmArgs "-server" } classpath configurations.fooLibrary conf.params = [ "foo", file('bar') ] } </code></pre></p>
 </td>
 </tr>
 </tbody>

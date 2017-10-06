@@ -1,0 +1,43 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>WorkerExecutor - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.workers</a>&nbsp;/&nbsp;<a href=".">WorkerExecutor</a><br/>
+<br/>
+<h1>WorkerExecutor</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">WorkerExecutor</span></code>
+<p>Allows work to be submitted for asynchronous execution. This api allows for safe, concurrent execution of work items and enables: <ul> <li>Parallel execution of work items within a single task</li>
+ <li>Execution in isolated contexts such as an isolated classloader or even a separate process</li>
+ <li>Safe execution of multiple tasks in parallel</li>
+ </ul>
+ Work should be submitted with a Runnable class representing the implementation of the unit of work and an action to configure the unit of work (via WorkerConfiguration). <pre><code> workerExecutor.submit(RunnableWorkImpl.class) { WorkerConfiguration conf -&gt; // Set the isolation mode for the worker conf.isolationMode = IsolationMode.NONE // Set up the constructor parameters for the unit of work conf.params = [ "foo", file('bar') ] } </code></pre></p>
+<p><strong>Since</strong><br/>
+3.5</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="await.html">await</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">await</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Blocks until all work associated with the current build operation is complete. Note that when using this method inside a task action, it will block completion of the task action until all submitted work is complete. This means that other tasks from the same project cannot be run in parallel while the task action is still executing.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="submit.html">submit</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">submit</span><span class="symbol">(</span><span class="identifier" id="org.gradle.workers.WorkerExecutor$submit(java.lang.Class((java.lang.Runnable)), org.gradle.api.Action((org.gradle.workers.WorkerConfiguration)))/actionClass">actionClass</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html"><span class="identifier">Runnable</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.workers.WorkerExecutor$submit(java.lang.Class((java.lang.Runnable)), org.gradle.api.Action((org.gradle.workers.WorkerConfiguration)))/configAction">configAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-worker-configuration/index.html"><span class="identifier">WorkerConfiguration</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Submits a piece of work to be executed asynchronously. Execution of the work may begin immediately. Work configured with <code><a href="#">IsolationMode#PROCESS</a></code> will execute in an idle daemon that meets the requirements set in the WorkerConfiguration. If no idle daemons are available, a new daemon will be started. Any errors will be thrown from <code><a href="await.html">#await()</a></code> or from the surrounding task action if <code><a href="await.html">#await()</a></code> is not used.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

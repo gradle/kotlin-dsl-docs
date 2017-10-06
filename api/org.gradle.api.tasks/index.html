@@ -40,6 +40,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="-classpath-normalizer.html">ClasspathNormalizer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ClasspathNormalizer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-file-normalizer.html"><span class="identifier">FileNormalizer</span></a></code>
+<p>Normalizes file input that represents a Java runtime classpath. Compared to the default behavior this normalizer keeps the order of any root files, but ignores the order and timestamps of files in directories and ZIP/JAR files.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="-compatibility-adapter-for-task-inputs/index.html">CompatibilityAdapterForTaskInputs</a></p>
 </td>
 <td>
@@ -54,6 +63,15 @@
 <td>
 <code><span class="keyword">interface </span><span class="identifier">CompatibilityAdapterForTaskOutputs</span></code>
 <p>Helper interface for binary compatibility with Gradle 2.x version of the TaskOutputs interface.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-compile-classpath-normalizer.html">CompileClasspathNormalizer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CompileClasspathNormalizer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-file-normalizer.html"><span class="identifier">FileNormalizer</span></a></code>
+<p>Normalizes file input that represents a Java compile classpath. Compared to the default behavior this normalizer keeps the order of any root files, but ignores the order and timestamps of files in directories and ZIP/JAR files. Compared to ClasspathNormalizer this normalizer only snapshots the ABIs of class files, and ignores any non-class resource.</p>
 </td>
 </tr>
 <tr>
@@ -85,6 +103,15 @@
 <td>
 <code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Exec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-exec-task/index.html"><span class="identifier">AbstractExecTask</span></a><span class="symbol">&lt;</span><a href="-abstract-exec-task/index.html"><span class="identifier">AbstractExecTask</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
 <p>Executes a command line process. Example: <pre><code> task stopTomcat(type:Exec) { workingDir '../tomcat/bin' //on windows: commandLine 'cmd', '/c', 'stop.bat' //on linux commandLine './stop.sh' //store the output instead of printing to the console: standardOutput = new ByteArrayOutputStream() //extension method stopTomcat.output() can be used to obtain the output: ext.output = { return standardOutput.toString() } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-file-normalizer.html">FileNormalizer</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">FileNormalizer</span></code>
+<p>A normalizer used to remove unwanted noise when considering file inputs. The default behavior without specifying a normalizer is to ignore the order of the files.</p>
 </td>
 </tr>
 <tr>
@@ -262,7 +289,7 @@
 <p><a href="-task-file-property-builder/index.html">TaskFilePropertyBuilder</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">TaskFilePropertyBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-task-property-builder/index.html"><span class="identifier">TaskPropertyBuilder</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">TaskFilePropertyBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-task-property-builder.html"><span class="identifier">TaskPropertyBuilder</span></a></code>
 <p>Describes a property of a task that contains zero or more files.</p>
 </td>
 </tr>
@@ -273,6 +300,15 @@
 <td>
 <code><span class="keyword">interface </span><span class="identifier">TaskInputFilePropertyBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-task-file-property-builder/index.html"><span class="identifier">TaskFilePropertyBuilder</span></a><span class="symbol">, </span><a href="-task-inputs/index.html"><span class="identifier">TaskInputs</span></a></code>
 <p>Describes an input property of a task that contains zero or more files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-input-property-builder/index.html">TaskInputPropertyBuilder</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskInputPropertyBuilder</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-task-property-builder.html"><span class="identifier">TaskPropertyBuilder</span></a><span class="symbol">, </span><a href="-task-inputs/index.html"><span class="identifier">TaskInputs</span></a></code>
+<p>Describes an input property of a task.</p>
 </td>
 </tr>
 <tr>
@@ -312,7 +348,7 @@
 </tr>
 <tr>
 <td>
-<p><a href="-task-property-builder/index.html">TaskPropertyBuilder</a></p>
+<p><a href="-task-property-builder.html">TaskPropertyBuilder</a></p>
 </td>
 <td>
 <code><span class="keyword">interface </span><span class="identifier">TaskPropertyBuilder</span></code>
@@ -371,6 +407,15 @@
 <td>
 <code><span class="keyword">interface </span><span class="identifier">WorkResult</span></code>
 <p>Provides information about some work which was performed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-work-results/index.html">WorkResults</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WorkResults</span></code>
+<p>Helps access trivial WorkResult objects.</p>
 </td>
 </tr>
 <tr>

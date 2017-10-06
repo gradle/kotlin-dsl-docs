@@ -1,0 +1,18 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>WorkerExecutor.await - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.workers</a>&nbsp;/&nbsp;<a href="index.html">WorkerExecutor</a>&nbsp;/&nbsp;<a href=".">await</a><br/>
+<br/>
+<h1>await</h1>
+<a name="org.gradle.workers.WorkerExecutor$await()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">await</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Blocks until all work associated with the current build operation is complete. Note that when using this method inside a task action, it will block completion of the task action until all submitted work is complete. This means that other tasks from the same project cannot be run in parallel while the task action is still executing.</p>
+<h3>Exceptions</h3>
+<p><a name="WorkerExecutionException"></a>
+<code>WorkerExecutionException</code> - when a failure occurs while executing the work.</p>
+</BODY>
+</HTML>

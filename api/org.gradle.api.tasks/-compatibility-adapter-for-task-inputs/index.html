@@ -40,6 +40,21 @@
 <p>Registers some input files for this task.</p>
 </td>
 </tr>
+<tr>
+<td>
+<p><a href="property.html">property</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">property</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.CompatibilityAdapterForTaskInputs$property(kotlin.String, kotlin.Any)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.CompatibilityAdapterForTaskInputs$property(kotlin.String, kotlin.Any)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-task-inputs/index.html"><span class="identifier">TaskInputs</span></a></code>
+<p>
+<p>Registers an input property for this task. This value is persisted when the task executes, and is compared against the property value for later invocations of the task, to determine if the task is up-to-date.</p>
+ 
+<p>The given value for the property must be Serializable, so that it can be persisted. It should also provide a useful <code>equals()</code> method.</p>
+ 
+<p>You can specify a closure or <code>Callable</code> as the value of the property. In which case, the closure or <code>Callable</code> is executed to determine the actual property value.</p>
+</p>
+</td>
+</tr>
 </tbody>
 </table>
 <h3>Inheritors</h3>

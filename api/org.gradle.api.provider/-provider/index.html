@@ -9,12 +9,15 @@
 <br/>
 <h1>Provider</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">Provider</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
-<p>A container object which provides a value of a specific type. The value can be retrieved by the method <code>get()</code> or <code>getOrNull()</code>. 
-<p> <strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory methods <code><a href="#">org.gradle.api.Project#provider(java.util.concurrent.Callable)</a></code> or <code><a href="#">org.gradle.api.provider.ProviderFactory#provider(java.util.concurrent.Callable)</a></code>.</p>
+<p>A container object that provides a value of a specific type. The value can be retrieved by the method <code><a href="get.html">#get()</a></code> or <code><a href="get-or-null.html">#getOrNull()</a></code>. 
+<p>A provider may not always have a value available, for example when the value may not yet be known but will be known at some point in the future. When a value is not available, <code><a href="is-present.html">#isPresent()</a></code> returns <code>false</code> and retrieving the value will fail with an exception. </p>
+<p>A provider may not always provide the same value. Although there are no methods on this interface to change the value, the provider implementation may be mutable or use values from some changing source. </p>
+<p>A provider may provide a value that is mutable and that changes over time. </p>
+<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory methods <code><a href="#">org.gradle.api.Project#provider(java.util.concurrent.Callable)</a></code> or <code><a href="#">org.gradle.api.provider.ProviderFactory#provider(java.util.concurrent.Callable)</a></code>.</p>
 </p>
 <h3>Parameters</h3>
-<a name="&lt;T&gt;"></a>
-<code><T></code> - Type of value represented by provider
+<p><a name="&lt;T&gt;"></a>
+<code><T></code> - Type of value represented by provider</p>
 <p><strong>Since</strong><br/>
 4.0</p>
 <h3>Functions</h3>
@@ -26,7 +29,16 @@
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
-<p>If a value is present in this provider, returns the value, otherwise throws <code>java.lang.IllegalStateException</code>.</p>
+<p>Returns the value of this provider if it has a value present, otherwise throws <code>java.lang.IllegalStateException</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-or-else.html">getOrElse</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOrElse</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.Provider$getOrElse(org.gradle.api.provider.Provider.T)/defaultValue">defaultValue</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<p>Returns the value of this provider if it has a value present. Returns the given default value if a value is not available.</p>
 </td>
 </tr>
 <tr>
@@ -35,7 +47,7 @@
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOrNull</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
-<p>Returns the value if present in this provider. Returns null if value is not available.</p>
+<p>Returns the value of this provider if it has a value present. Returns <code>null</code> a value is not available.</p>
 </td>
 </tr>
 <tr>
@@ -47,6 +59,18 @@
 <p>Returns <code>true</code> if there is a value present, otherwise <code>false</code>.</p>
 </td>
 </tr>
+<tr>
+<td>
+<p><a href="map.html">map</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">map</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.Provider$map(org.gradle.api.Transformer((org.gradle.api.provider.Provider.map.S, org.gradle.api.provider.Provider.T)))/transformer">transformer</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-transformer/index.html"><span class="identifier">Transformer</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">S</span><span class="symbol">,</span>&nbsp;<span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Provider</span><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span></code>
+<p>Returns a new Provider whose value is the value of this provider transformed using the given function. 
+<p>The new provider will be live, so that each time it is queried, it queries this provider and applies the transformation to the result. Whenever this provider has no value, the new provider will also have no value. </p>
+<p>Note that the new provider may cache the result of the transformations and so there is no guarantee that the transformer is called on every query of the new provider. The new provider will apply the transformation lazily, and calculate the value for the new provider when queried.</p>
+</p>
+</td>
+</tr>
 </tbody>
 </table>
 <h3>Inheritors</h3>
@@ -54,12 +78,34 @@
 <tbody>
 <tr>
 <td>
+<p><a href="../../org.gradle.api.file/-directory-var/index.html">DirectoryVar</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DirectoryVar</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Provider</span><span class="symbol">&lt;</span><a href="../../org.gradle.api.file/-directory/index.html"><span class="identifier">Directory</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../-property-state/index.html"><span class="identifier">PropertyState</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.file/-directory/index.html"><span class="identifier">Directory</span></a><span class="symbol">&gt;</span></code>
+<p>Represents some configurable directory location, whose value is mutable and is not necessarily currently known until later. 
+<p> <strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created using the <code><a href="../../org.gradle.api.file/-project-layout/new-directory-var.html">ProjectLayout#newDirectoryVar()</a></code> method.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="../-property-state/index.html">PropertyState</a></p>
 </td>
 <td>
 <code><span class="keyword">interface </span><span class="identifier">PropertyState</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Provider</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
-<p>A <code>Provider</code> representation for capturing property state. The value can be provided by using the method <code>set()</code>. 
-<p> <strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory methods <code><a href="#">org.gradle.api.Project#property(java.lang.Class)</a></code> or <code><a href="#">org.gradle.api.provider.ProviderFactory#property(java.lang.Class)</a></code>.</p>
+<p>A <code>Provider</code> representation for capturing the state of a property. The value can be provided by using the method <code><a href="#">#set(Object)</a></code> or <code><a href="#">#set(Provider)</a></code>. 
+<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory methods <code><a href="#">org.gradle.api.Project#property(java.lang.Class)</a></code> or <code><a href="#">org.gradle.api.provider.ProviderFactory#property(java.lang.Class)</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.file/-regular-file-var/index.html">RegularFileVar</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">RegularFileVar</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Provider</span><span class="symbol">&lt;</span><a href="../../org.gradle.api.file/-regular-file/index.html"><span class="identifier">RegularFile</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../-property-state/index.html"><span class="identifier">PropertyState</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.file/-regular-file/index.html"><span class="identifier">RegularFile</span></a><span class="symbol">&gt;</span></code>
+<p>Represents some configurable regular file location, whose value is mutable and not necessarily currently known until later. 
+<p> <strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created using the <code><a href="../../org.gradle.api.file/-project-layout/new-file-var.html">ProjectLayout#newFileVar()</a></code> method.</p>
 </p>
 </td>
 </tr>

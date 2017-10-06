@@ -12,8 +12,8 @@
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTestClassesDirs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.Test$setTestClassesDirs(org.gradle.api.file.FileCollection)/testClassesDirs">testClassesDirs</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Sets the directories to scan for compiled test sources. Typically, this would be configured to use the output of a source set: <pre><code> apply plugin: 'java' sourceSets { integrationTest { compileClasspath += main.output runtimeClasspath += main.output } } task integrationTest(type: Test) { // Runs tests from src/integrationTest testClassesDirs = sourceSets.integrationTest.output.classesDirs classpath = sourceSets.integrationTest.runtimeClasspath } </code></pre></p>
 <h3>Parameters</h3>
-<a name="testClassesDirs"></a>
-<code>testClassesDirs</code> - All test class directories to be used.
+<p><a name="testClassesDirs"></a>
+<code>testClassesDirs</code> - All test class directories to be used.</p>
 <p><strong>Since</strong><br/>
 4.0</p>
 </BODY>

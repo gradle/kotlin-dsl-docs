@@ -22,6 +22,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="-child-component/index.html">ChildComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ChildComponent</span></code>
+<p>Represents a SoftwareComponent that is part of some larger component.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="-component.html">Component</a></p>
 </td>
 <td>
@@ -31,11 +40,25 @@
 </tr>
 <tr>
 <td>
+<p><a href="-component-with-variants/index.html">ComponentWithVariants</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentWithVariants</span></code>
+<p>Represents a SoftwareComponent that provides one or more mutually exclusive children, or variants.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="-software-component.html">SoftwareComponent</a></p>
 </td>
 <td>
 <code><span class="keyword">interface </span><span class="identifier">SoftwareComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
-<p>A software component produced by a Gradle software project.</p>
+<p>A software component produced by a Gradle software project. 
+<p>An implementation of this interface may also implement:</p>
+ <ul> <li>ChildComponent to provide information about the hierarchy of components it belongs to.</li>
+ <li>ComponentWithVariants to provide information about the variants that the component provides.</li>
+ </ul>
+</p>
 </td>
 </tr>
 <tr>

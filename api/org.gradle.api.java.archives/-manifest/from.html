@@ -11,18 +11,11 @@
 <a name="org.gradle.api.java.archives.Manifest$from(kotlin.Array((kotlin.Any)))"></a>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.java.archives.Manifest$from(kotlin.Array((kotlin.Any)))/mergePath">mergePath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">Manifest</span></a></code>
 <p>Specifies other manifests to be merged into this manifest. A merge path can either be another instance of org.gradle.api.java.archives.Manifest or a file path as interpreted by <code><a href="#">org.gradle.api.Project#files(Object...)</a></code>. The merge is not happening instantaneously. It happens either before writing or when <code><a href="get-effective-manifest.html">#getEffectiveManifest()</a></code> is called.</p>
-<h3>Parameters</h3>
-<a name="mergePath"></a>
-<code>mergePath</code> - 
 <p><strong>Return</strong><br/>
 this</p>
 <a name="org.gradle.api.java.archives.Manifest$from(kotlin.Any, groovy.lang.Closure((kotlin.Any)))"></a>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.java.archives.Manifest$from(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/mergePath">mergePath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.java.archives.Manifest$from(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">Manifest</span></a></code>
 <p>Specifies other manifests to be merged into this manifest. A merge path is interpreted as described in <code><a href="#">#from(Object...)</a></code>. The merge is not happening instantaneously. It happens either before writing or when <code><a href="get-effective-manifest.html">#getEffectiveManifest()</a></code> is called. The closure configures the underlying org.gradle.api.java.archives.ManifestMergeSpec.</p>
-<h3>Parameters</h3>
-<a name="mergePath"></a>
-<code>mergePath</code> - <a name="closure"></a>
-<code>closure</code> - 
 <p><strong>Return</strong><br/>
 this</p>
 </BODY>

@@ -13,6 +13,68 @@
 <tbody>
 <tr>
 <td>
+<p><a href="-cpp-application/index.html">CppApplication</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CppApplication</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-cpp-component/index.html"><span class="identifier">CppComponent</span></a></code>
+<p>Configuration for a C++ application, defining the source files that make up the application plus other settings. 
+<p>An instance of this type is added as a project extension by the C++ executable plugin.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-cpp-binary/index.html">CppBinary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CppBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.component/-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
+<p>A binary built from C++ source and linked from the resulting object files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-cpp-component/index.html">CppComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CppComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.component/-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
+<p>Configuration for a C++ component, such as a library or executable, defining the source files and private header directories that make up the component. Private headers are those that are visible only to the source files of the component. 
+<p>A C++ component is composed of some C++ source files that are compiled and then linked into some binary.</p>
+ 
+<p>An instance of this type is added as a project extension by the C++ plugins.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-cpp-executable.html">CppExecutable</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CppExecutable</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-cpp-binary/index.html"><span class="identifier">CppBinary</span></a></code>
+<p>An executable built from C++ source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-cpp-library/index.html">CppLibrary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CppLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-cpp-component/index.html"><span class="identifier">CppComponent</span></a></code>
+<p>Configuration for a C++ library, defining the source files and header directories that make up the library plus other settings. 
+<p>An instance of this type is added as a project extension by the C++ library plugin.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-cpp-shared-library.html">CppSharedLibrary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CppSharedLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-cpp-binary/index.html"><span class="identifier">CppBinary</span></a></code>
+<p>A shared library built from C++ source.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="-cpp-source-set.html">CppSourceSet</a></p>
 </td>
 <td>

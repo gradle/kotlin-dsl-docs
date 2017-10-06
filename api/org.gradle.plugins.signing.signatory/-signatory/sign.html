@@ -12,14 +12,16 @@
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.signatory.Signatory$sign(java.io.InputStream, java.io.OutputStream)/toSign">toSign</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.plugins.signing.signatory.Signatory$sign(java.io.InputStream, java.io.OutputStream)/destination">destination</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/OutputStream.html"><span class="identifier">OutputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Exhausts <code>toSign</code>, and writes the signature to <code>signatureDestination</code>. The caller is responsible for closing the streams, though the output WILL be flushed.</p>
 <h3>Parameters</h3>
-<a name="toSign"></a>
-<code>toSign</code> - The source of the data to be signed<a name="destination"></a>
-<code>destination</code> - Where the signature will be written to<a name="org.gradle.plugins.signing.signatory.Signatory$sign(java.io.InputStream)"></a>
+<p><a name="toSign"></a>
+<code>toSign</code> - The source of the data to be signed</p>
+<p><a name="destination"></a>
+<code>destination</code> - Where the signature will be written to</p>
+<a name="org.gradle.plugins.signing.signatory.Signatory$sign(java.io.InputStream)"></a>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.signatory.Signatory$sign(java.io.InputStream)/toSign">toSign</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html"><span class="identifier">InputStream</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-byte-array/index.html"><span class="identifier">ByteArray</span></a></code>
 <p>Exhausts <code>toSign</code>, and returns the raw signature bytes.</p>
 <h3>Parameters</h3>
-<a name="toSign"></a>
-<code>toSign</code> - The source of the data to be signed
+<p><a name="toSign"></a>
+<code>toSign</code> - The source of the data to be signed</p>
 <p><strong>Return</strong><br/>
 The raw bytes of the signature</p>
 </BODY>

@@ -11,7 +11,7 @@
 <code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">FindBugsExtension</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-code-quality-extension/index.html"><span class="identifier">CodeQualityExtension</span></a></code>
 <p>Configuration options for the FindBugs plugin. All options have sensible defaults. See the <a href="#">FindBugs Manual</a> for additional information on these options. 
 <p>Below is a full configuration example. Since all properties have sensible defaults, typically only selected properties will be configured. </p>
-<pre><code> apply plugin: "java" apply plugin: "findbugs" findbugs { toolVersion = "2.0.1" sourceSets = [sourceSets.main] ignoreFailures = true reportsDir = file("$project.buildDir/findbugsReports") effort = "max" reportLevel = "high" visitors = ["FindSqlInjection", "SwitchFallthrough"] omitVisitors = ["FindNonShortCircuit"] includeFilter = file("$rootProject.projectDir/config/findbugs/includeFilter.xml") excludeFilter = file("$rootProject.projectDir/config/findbugs/excludeFilter.xml") excludeBugsFilter = file("$rootProject.projectDir/config/findbugs/excludeBugsFilter.xml") } </code></pre></p>
+<pre><code> apply plugin: "java" apply plugin: "findbugs" findbugs { toolVersion = "2.0.1" sourceSets = [sourceSets.main] ignoreFailures = true reportsDir = file("$project.buildDir/findbugsReports") effort = "max" showProgress = true reportLevel = "high" visitors = ["FindSqlInjection", "SwitchFallthrough"] omitVisitors = ["FindNonShortCircuit"] includeFilter = file("$rootProject.projectDir/config/findbugs/includeFilter.xml") excludeFilter = file("$rootProject.projectDir/config/findbugs/excludeFilter.xml") excludeBugsFilter = file("$rootProject.projectDir/config/findbugs/excludeBugsFilter.xml") } </code></pre></p>
 <p><strong>See Also</strong><br/>
 FindBugsPlugin</p>
 <h3>Constructors</h3>
@@ -106,6 +106,17 @@ FindBugsPlugin</p>
 </tr>
 <tr>
 <td>
+<p><a href="get-jvm-args.html">getJvmArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getJvmArgs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Any additional arguments to be passed along to FindBugs JVM process. 
+<p> Arguments can contain general JVM flags like <code>-Xdebug</code> and also FindBugs system properties like <code>-Dfindbugs.loadPropertiesFrom=...</code></p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-omit-visitors.html">getOmitVisitors</a></p>
 </td>
 <td>
@@ -129,6 +140,15 @@ FindBugsPlugin</p>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getVisitors</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
 <p>The bug detectors which should be run. The bug detectors are specified by their class names, without any package qualification. By default, all detectors which are not disabled by default are run.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-show-progress.html">isShowProgress</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isShowProgress</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Indicates whether analysis progress should be rendered on standard output. Defaults to false.</p>
 </td>
 </tr>
 <tr>
@@ -208,6 +228,17 @@ FindBugsPlugin</p>
 </tr>
 <tr>
 <td>
+<p><a href="set-jvm-args.html">setJvmArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setJvmArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.FindBugsExtension$setJvmArgs(kotlin.collections.MutableCollection((kotlin.String)))/jvmArgs">jvmArgs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Any additional arguments to be passed along to FindBugs JVM process. 
+<p> Arguments can contain general JVM flags like <code>-Xdebug</code> and also FindBugs system properties like <code>-Dfindbugs.loadPropertiesFrom=...</code></p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="set-omit-visitors.html">setOmitVisitors</a></p>
 </td>
 <td>
@@ -222,6 +253,15 @@ FindBugsPlugin</p>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setReportLevel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.FindBugsExtension$setReportLevel(kotlin.String)/reportLevel">reportLevel</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>The priority threshold for reporting bugs. If set to <code>low</code>, all bugs are reported. If set to <code>medium</code> (the default), medium and high priority bugs are reported. If set to <code>high</code>, only high priority bugs are reported.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-show-progress.html">setShowProgress</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setShowProgress</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.FindBugsExtension$setShowProgress(kotlin.Boolean)/showProgress">showProgress</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Indicates whether analysis progress should be rendered on standard output.</p>
 </td>
 </tr>
 <tr>

@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Provider.map - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.provider</a>&nbsp;/&nbsp;<a href="index.html">Provider</a>&nbsp;/&nbsp;<a href=".">map</a><br/>
+<br/>
+<h1>map</h1>
+<a name="org.gradle.api.provider.Provider$map(org.gradle.api.Transformer((org.gradle.api.provider.Provider.map.S, org.gradle.api.provider.Provider.T)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">map</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.Provider$map(org.gradle.api.Transformer((org.gradle.api.provider.Provider.map.S, org.gradle.api.provider.Provider.T)))/transformer">transformer</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-transformer/index.html"><span class="identifier">Transformer</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">S</span><span class="symbol">,</span>&nbsp;<span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span></code>
+<p>Returns a new Provider whose value is the value of this provider transformed using the given function. 
+<p>The new provider will be live, so that each time it is queried, it queries this provider and applies the transformation to the result. Whenever this provider has no value, the new provider will also have no value. </p>
+<p>Note that the new provider may cache the result of the transformations and so there is no guarantee that the transformer is called on every query of the new provider. The new provider will apply the transformation lazily, and calculate the value for the new provider when queried.</p>
+</p>
+<h3>Parameters</h3>
+<p><a name="transformer"></a>
+<code>transformer</code> - The transformer to apply to values. Should not return <code>null</code>.</p>
+<p><strong>Since</strong><br/>
+4.3</p>
+</BODY>
+</HTML>

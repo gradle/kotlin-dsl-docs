@@ -12,18 +12,20 @@
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addFilter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$addFilter(kotlin.String, org.gradle.api.artifacts.maven.PublishFilter)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$addFilter(kotlin.String, org.gradle.api.artifacts.maven.PublishFilter)/publishFilter">publishFilter</span><span class="symbol">:</span>&nbsp;<a href="../-publish-filter/index.html"><span class="identifier">PublishFilter</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-maven-pom/index.html"><span class="identifier">MavenPom</span></a></code>
 <p>If you want to deploy more than one artifact you need to define filters to select each of those artifacts. The method returns a POM object associated with this filter, that allows you to customize the POM generation for the artifact selected by the filter.</p>
 <h3>Parameters</h3>
-<a name="name"></a>
-<code>name</code> - The name of the filter<a name="publishFilter"></a>
-<code>publishFilter</code> - The filter to use
+<p><a name="name"></a>
+<code>name</code> - The name of the filter</p>
+<p><a name="publishFilter"></a>
+<code>publishFilter</code> - The filter to use</p>
 <p><strong>Return</strong><br/>
 The POM associated with the filter</p>
 <a name="org.gradle.api.artifacts.maven.PomFilterContainer$addFilter(kotlin.String, groovy.lang.Closure((kotlin.Any)))"></a>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addFilter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$addFilter(kotlin.String, groovy.lang.Closure((kotlin.Any)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$addFilter(kotlin.String, groovy.lang.Closure((kotlin.Any)))/filter">filter</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-maven-pom/index.html"><span class="identifier">MavenPom</span></a></code>
 <p>Adds a publish filter.</p>
 <h3>Parameters</h3>
-<a name="name"></a>
-<code>name</code> - The name of the filter<a name="filter"></a>
-<code>filter</code> - The filter
+<p><a name="name"></a>
+<code>name</code> - The name of the filter</p>
+<p><a name="filter"></a>
+<code>filter</code> - The filter</p>
 <p><strong>Return</strong><br/>
 The Maven POM associated with the closure</p>
 <p><strong>See Also</strong><br/>

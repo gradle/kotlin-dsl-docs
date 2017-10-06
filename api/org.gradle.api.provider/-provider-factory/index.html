@@ -21,12 +21,24 @@
 <tbody>
 <tr>
 <td>
+<p><a href="list-property.html">listProperty</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">listProperty</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.ProviderFactory$listProperty(java.lang.Class((org.gradle.api.provider.ProviderFactory.listProperty.T)))/elementType">elementType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-list-property.html"><span class="identifier">ListProperty</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Creates a PropertyState implementation to hold a List of the given element type. The property with have an empty list as its initial value. 
+<p>The implementation will return immutable List values from its query methods.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="property.html">property</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">property</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.ProviderFactory$property(java.lang.Class((org.gradle.api.provider.ProviderFactory.property.T)))/clazz">clazz</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-property-state/index.html"><span class="identifier">PropertyState</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
-<p>Creates a <code>PropertyState</code> implementation based on the provided class. The value returned by the property state is the default value of the standard Java data type. Please see <a href="#">Oracle's Java manual</a> for more information. 
-<p> Any other data type than the standard Java data types returns null as default value.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">property</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.ProviderFactory$property(java.lang.Class((org.gradle.api.provider.ProviderFactory.property.T)))/valueType">valueType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-property-state/index.html"><span class="identifier">PropertyState</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Creates a PropertyState implementation to hold values of the given type. 
+<p>The property will have a value equal to the default value of that type as defined by the Java language specification. Please see <a href="#">Oracle's Java manual</a> for more information. </p>
+<p> Any other data type than the standard Java data types returns a property with no value defined.</p>
 </p>
 </td>
 </tr>
@@ -35,8 +47,10 @@
 <p><a href="provider.html">provider</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">provider</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.ProviderFactory$provider(java.util.concurrent.Callable((org.gradle.api.provider.ProviderFactory.provider.T)))/value">value</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Callable.html"><span class="identifier">Callable</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
-<p>Creates a <code>Provider</code> implementation based on the provided value.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">provider</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.ProviderFactory$provider(java.util.concurrent.Callable((org.gradle.api.provider.ProviderFactory.provider.T)))/value">value</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Callable.html"><span class="identifier">Callable</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Creates a Provider whose value is calculated using the given Callable. 
+<p>The provider is live and will call the Callable each time its value is queried. The Callable may return <code>null</code>, in which case the provider is considered to have no value.</p>
+</p>
 </td>
 </tr>
 </tbody>

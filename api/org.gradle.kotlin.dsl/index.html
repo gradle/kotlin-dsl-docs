@@ -48,6 +48,16 @@
 </tr>
 <tr>
 <td>
+<p><a href="-groovy-builder-scope/index.html">GroovyBuilderScope</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">GroovyBuilderScope</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GroovyObject</span></code>
+<p>Provides a dynamic dispatching DSL with Groovy semantics for better integration with
+plugins that rely on Groovy builders such as the core <code>maven</code> plugin.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="-kotlin-build-script/index.html">KotlinBuildScript</a></p>
 </td>
 <td>
@@ -57,12 +67,37 @@
 </tr>
 <tr>
 <td>
-<p><a href="-kotlin-closure/index.html">KotlinClosure</a></p>
+<p><a href="-kotlin-closure0/index.html">KotlinClosure0</a></p>
 </td>
 <td>
-<code><span class="keyword">class </span><span class="identifier">KotlinClosure</span><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">?</span><span class="symbol">&gt;</span></code>
-<p>Adapts a Kotlin function to a single argument Groovy <a href="#">Closure</a>.</p>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">KotlinClosure0</span><span class="symbol">&lt;</span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">?</span><span class="symbol">&gt;</span></code>
+<p>Adapts a parameterless Kotlin function to a parameterless Groovy <a href="#">Closure</a>.</p>
 </td>
+</tr>
+<tr>
+<td>
+<p><a href="-kotlin-closure1/index.html">KotlinClosure1</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">KotlinClosure1</span><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">?</span><span class="symbol">&gt;</span></code>
+<p>Adapts an unary Kotlin function to an unary Groovy <a href="#">Closure</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-kotlin-closure2/index.html">KotlinClosure2</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">KotlinClosure2</span><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="keyword">in</span>&nbsp;<span class="identifier">U</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">V</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><span class="identifier">V</span><span class="symbol">?</span><span class="symbol">&gt;</span></code>
+<p>Adapts a binary Kotlin function to a binary Groovy <a href="#">Closure</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-named-domain-object-collection-delegate-provider/index.html">NamedDomainObjectCollectionDelegateProvider</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">NamedDomainObjectCollectionDelegateProvider</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
 </tr>
 <tr>
 <td>
@@ -98,6 +133,25 @@
 <td>
 <code><span class="keyword">class </span><span class="identifier">PolymorphicDomainObjectContainerDelegateProvider</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">U</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span></code>
 <p>A property delegate that creates elements of the given <a href="-polymorphic-domain-object-container-delegate-provider/type.html">type</a> with the given <a href="-polymorphic-domain-object-container-delegate-provider/configuration.html">configuration</a> in the given <a href="-polymorphic-domain-object-container-delegate-provider/container.html">container</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-polymorphic-domain-object-container-getting-delegate/index.html">PolymorphicDomainObjectContainerGettingDelegate</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">PolymorphicDomainObjectContainerGettingDelegate</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">U</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>A property delegate that gets elements of the given <a href="-polymorphic-domain-object-container-getting-delegate/type.html">type</a> in the given <a href="-polymorphic-domain-object-container-getting-delegate/container.html">container</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-polymorphic-domain-object-container-getting-delegate-provider/index.html">PolymorphicDomainObjectContainerGettingDelegateProvider</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">PolymorphicDomainObjectContainerGettingDelegateProvider</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">U</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>A property delegate that gets elements of the given <a href="-polymorphic-domain-object-container-getting-delegate-provider/type.html">type</a> from the given <a href="-polymorphic-domain-object-container-getting-delegate-provider/container.html">container</a>
+and applies the given <a href="-polymorphic-domain-object-container-getting-delegate-provider/configuration.html">configuration</a>.</p>
 </td>
 </tr>
 <tr>
@@ -293,7 +347,17 @@
 </td>
 <td>
 <code><span class="keyword">val </span><span class="identifier">embeddedKotlinVersion</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
-<p>The version of the Kotlin compiler embedded in gradle-kotlin-dsl (currently <em>1.1.2-5</em>).</p>
+<p>The version of the Kotlin compiler embedded in gradle-kotlin-dsl (currently <em>1.1.51</em>).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="getting.html">getting</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">U</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named-domain-object-collection/index.html"><span class="identifier">NamedDomainObjectCollection</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">U</span><span class="symbol">.</span><span class="identifier">getting</span><span class="symbol">: </span><span class="identifier">U</span></code>
+<p>Idiomatic way of referring to an existing element in a collection
+via a delegate property.</p>
 </td>
 </tr>
 </tbody>
@@ -308,6 +372,16 @@
 <td>
 <code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.artifacts/-module-dependency/index.html"><span class="identifier">ModuleDependency</span></a><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$exclude(org.gradle.kotlin.dsl.exclude.T, kotlin.String, kotlin.String)/group">group</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl$exclude(org.gradle.kotlin.dsl.exclude.T, kotlin.String, kotlin.String)/module">module</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
 <p>Adds an exclude rule to exclude transitive dependencies of this dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="getting.html">getting</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">U</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named-domain-object-collection/index.html"><span class="identifier">NamedDomainObjectCollection</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <span class="identifier">U</span><span class="symbol">.</span><span class="identifier">getting</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$getting(org.gradle.kotlin.dsl.getting.U, kotlin.Function1((org.gradle.kotlin.dsl.getting.T, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-named-domain-object-collection-delegate-provider/index.html"><span class="identifier">NamedDomainObjectCollectionDelegateProvider</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Idiomatic way of referring and configuring an existing element in a collection
+via a delegate property.</p>
 </td>
 </tr>
 <tr>

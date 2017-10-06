@@ -13,8 +13,8 @@
 <p>A <code>Plugin</code> represents an extension to Gradle. A plugin applies some configuration to a target object. Usually, this target object is a org.gradle.api.Project, but plugins can be applied to any type of objects.</p>
 </p>
 <h3>Parameters</h3>
-<a name="&lt;T&gt;"></a>
-<code><T></code> - The type of object which this plugin can configure.
+<p><a name="&lt;T&gt;"></a>
+<code><T></code> - The type of object which this plugin can configure.</p>
 <h3>Functions</h3>
 <table>
 <tbody>
@@ -80,7 +80,8 @@
 <code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">AssemblerPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Plugin</span><span class="symbol">&lt;</span><a href="../-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span></code>
 <p>A plugin for projects wishing to build native binary components from Assembly language sources. 
 <p>Automatically includes the AssemblerLangPlugin for core Assembler support and the NativeComponentPlugin for native component support.</p>
- <li>Creates a org.gradle.language.assembler.tasks.Assemble task for each org.gradle.language.assembler.AssemblerSourceSet to assemble the sources.</li>
+ <ul> <li>Creates a org.gradle.language.assembler.tasks.Assemble task for each org.gradle.language.assembler.AssemblerSourceSet to assemble the sources.</li>
+ </ul>
 </p>
 </td>
 </tr>
@@ -148,7 +149,8 @@
 <code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Plugin</span><span class="symbol">&lt;</span><a href="../-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span></code>
 <p>A plugin for projects wishing to build native binary components from C sources. 
 <p>Automatically includes the CLangPlugin for core C++ support and the org.gradle.nativeplatform.plugins.NativeComponentPlugin for native component support.</p>
- <li>Creates a org.gradle.language.c.tasks.CCompile task for each org.gradle.language.c.CSourceSet to compile the C sources.</li>
+ <ul> <li>Creates a org.gradle.language.c.tasks.CCompile task for each org.gradle.language.c.CSourceSet to compile the C sources.</li>
+ </ul>
 </p>
 </td>
 </tr>
@@ -232,6 +234,8 @@
 <p>A plugin that produces a native executable from C++ source.</p>
  
 <p>Assumes the source files are located in `src/main/cpp` and header files are located in `src/main/headers`.</p>
+ 
+<p>Adds a CppComponent extension to the project to allow configuration of the executable.</p>
 </p>
 </td>
 </tr>
@@ -254,6 +258,8 @@
 <p>A plugin that produces a native library from C++ source.</p>
  
 <p>Assumes the source files are located in `src/main/cpp`, public headers are located in `src/main/public` and implementation header files are located in `src/main/headers`.</p>
+ 
+<p>Adds a CppLibrary extension to the project to allow configuration of the library.</p>
 </p>
 </td>
 </tr>
@@ -265,7 +271,8 @@
 <code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CppPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Plugin</span><span class="symbol">&lt;</span><a href="../-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span></code>
 <p>A plugin for projects wishing to build native binary components from C++ sources. 
 <p>Automatically includes the CppLangPlugin for core C++ support and the NativeComponentPlugin for native component support.</p>
- <li>Creates a org.gradle.language.cpp.tasks.CppCompile task for each org.gradle.language.cpp.CppSourceSet to compile the C++ sources.</li>
+ <ul> <li>Creates a org.gradle.language.cpp.tasks.CppCompile task for each org.gradle.language.cpp.CppSourceSet to compile the C++ sources.</li>
+ </ul>
 </p>
 </td>
 </tr>
@@ -586,7 +593,8 @@
 <code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ObjectiveCPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Plugin</span><span class="symbol">&lt;</span><a href="../-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span></code>
 <p>A plugin for projects wishing to build native binary components from Objective-C sources. 
 <p>Automatically includes the ObjectiveCLangPlugin for core Objective-C support and the org.gradle.nativeplatform.plugins.NativeComponentPlugin for native component support.</p>
- <li>Creates a org.gradle.language.objectivec.tasks.ObjectiveCCompile task for each org.gradle.language.objectivec.ObjectiveCSourceSet to compile the Objective-C sources.</li>
+ <ul> <li>Creates a org.gradle.language.objectivec.tasks.ObjectiveCCompile task for each org.gradle.language.objectivec.ObjectiveCSourceSet to compile the Objective-C sources.</li>
+ </ul>
 </p>
 </td>
 </tr>
@@ -607,7 +615,8 @@
 <code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ObjectiveCppPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Plugin</span><span class="symbol">&lt;</span><a href="../-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span></code>
 <p>A plugin for projects wishing to build native binary components from Objective-C++ sources. 
 <p>Automatically includes the ObjectiveCppLangPlugin for core Objective-C++ support and the NativeComponentPlugin for native component support.</p>
- <li>Creates a org.gradle.language.objectivecpp.tasks.ObjectiveCppCompile task for each org.gradle.language.objectivecpp.ObjectiveCppSourceSet to compile the Objective-C++ sources.</li>
+ <ul> <li>Creates a org.gradle.language.objectivecpp.tasks.ObjectiveCppCompile task for each org.gradle.language.objectivecpp.ObjectiveCppSourceSet to compile the Objective-C++ sources.</li>
+ </ul>
 </p>
 </td>
 </tr>
@@ -751,6 +760,54 @@
 </tr>
 <tr>
 <td>
+<p><a href="../../org.gradle.language.swift.plugins/-swift-base-plugin/index.html">SwiftBasePlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SwiftBasePlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Plugin</span><span class="symbol">&lt;</span><span class="identifier">ProjectInternal</span><span class="symbol">&gt;</span></code>
+<p>A common base plugin for the Swift executable and library plugins</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.toolchain.plugins/-swift-compiler-plugin/index.html">SwiftCompilerPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SwiftCompilerPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Plugin</span><span class="symbol">&lt;</span><a href="../-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span></code>
+<p>A Plugin which makes the <a href="#">Swiftc</a> compiler available for compiling Swift code.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.swift.plugins/-swift-executable-plugin/index.html">SwiftExecutablePlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SwiftExecutablePlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Plugin</span><span class="symbol">&lt;</span><span class="identifier">ProjectInternal</span><span class="symbol">&gt;</span></code>
+<p>
+<p>A plugin that produces an executable from Swift source.</p>
+ 
+<p>Adds compile, link and install tasks to build the executable. Defaults to looking for source files in `src/main/swift`.</p>
+ 
+<p>Adds a SwiftComponent extension to the project to allow configuration of the executable.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.swift.plugins/-swift-library-plugin/index.html">SwiftLibraryPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SwiftLibraryPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Plugin</span><span class="symbol">&lt;</span><a href="../-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span></code>
+<p>
+<p>A plugin that produces a shared library from Swift source.</p>
+ 
+<p>Adds compile, link and install tasks to build the shared library. Defaults to looking for source files in `src/main/swift`.</p>
+ 
+<p>Adds a SwiftComponent extension to the project to allow configuration of the library.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="../../org.gradle.testing.base.plugins/-testing-model-base-plugin/index.html">TestingModelBasePlugin</a></p>
 </td>
 <td>
@@ -795,7 +852,8 @@
 <code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WindowsResourcesPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Plugin</span><span class="symbol">&lt;</span><a href="../-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span></code>
 <p>A plugin for projects wishing to build native binary components from Windows Resource sources. 
 <p>Automatically includes the WindowsResourceScriptPlugin for core Windows Resource source support and the NativeComponentPlugin for native component support.</p>
- <li>Creates a org.gradle.language.rc.tasks.WindowsResourceCompile task for each org.gradle.language.rc.WindowsResourceSet to compile the sources.</li>
+ <ul> <li>Creates a org.gradle.language.rc.tasks.WindowsResourceCompile task for each org.gradle.language.rc.WindowsResourceSet to compile the sources.</li>
+ </ul>
 </p>
 </td>
 </tr>
@@ -806,6 +864,15 @@
 <td>
 <code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WrapperPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Plugin</span><span class="symbol">&lt;</span><a href="../-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span></code>
 <p>The wrapper plugin.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.test.xctest.plugins/-x-c-test-convention-plugin/index.html">XCTestConventionPlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">XCTestConventionPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Plugin</span><span class="symbol">&lt;</span><span class="identifier">ProjectInternal</span><span class="symbol">&gt;</span></code>
+<p>A plugin that sets up the infrastructure for testing native binaries with XCTest test framework. It also adds conventions on top of it.</p>
 </td>
 </tr>
 </tbody>

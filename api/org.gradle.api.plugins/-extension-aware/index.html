@@ -72,7 +72,7 @@
  Multi-project Builds 
 <p>Projects are arranged into a hierarchy of projects. A project has a name, and a fully qualified path which uniquely identifies it in the hierarchy.</p>
  Plugins 
-<p> Plugins can be used to modularise and reuse project configuration. Plugins can be applied using the <code><a href="#">PluginAware#apply(java.util.Map)</a></code> method, or by using the org.gradle.plugin.use.PluginDependenciesSpec. </p>
+<p> Plugins can be used to modularise and reuse project configuration. Plugins can be applied using the <code><a href="#">PluginAware#apply(java.util.Map)</a></code> method, or by using the org.gradle.plugin.use.PluginDependenciesSpec plugins script block. </p>
  <a href="#"></a> Properties 
 <p>Gradle executes the project's build file against the <code>Project</code> instance to configure the project. Any property or method which your script uses is delegated through to the associated <code>Project</code> object. This means, that you can use any of the methods and properties on the <code>Project</code> interface directly in your script. </p>
 <p>For example: </p>
@@ -85,7 +85,7 @@
  <li>The <em>extensions</em> added to the project by the plugins. Each extension is available as a read-only property with the same name as the extension.</li>
  <li>The <em>convention</em> properties added to the project by the plugins. A plugin can add properties and methods to a project through the project's Convention object. The properties of this scope may be readable or writable, depending on the convention objects.</li>
  <li>The tasks of the project. A task is accessible by using its name as a property name. The properties of this scope are read-only. For example, a task called <code>compile</code> is accessible as the <code>compile</code> property.</li>
- <li>The extra properties and convention properties inherited from the project's parent, recursively up to the root project. The properties of this scope are read-only.</li>
+ <li>The extra properties and convention properties are inherited from the project's parent, recursively up to the root project. The properties of this scope are read-only.</li>
  </ul>
  
 <p>When reading a property, the project searches the above scopes in order, and returns the value from the first scope it finds the property in. If not found, an exception is thrown. See <code><a href="#">#property(String)</a></code> for more details.</p>

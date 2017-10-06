@@ -151,10 +151,14 @@
 </tr>
 <tr>
 <td>
-<p><a href="get-instantiator.html">getInstantiator</a></p>
+<p><a href="get-jvm-args.html">getJvmArgs</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getInstantiator</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Instantiator</span></code></td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getJvmArgs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Any additional arguments to be passed along to FindBugs JVM process. 
+<p> Arguments can contain general JVM flags like <code>-Xdebug</code> and also FindBugs system properties like <code>-Dfindbugs.loadPropertiesFrom=...</code></p>
+</p>
+</td>
 </tr>
 <tr>
 <td>
@@ -163,6 +167,15 @@
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMaxHeapSize</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
 <p>The maximum heap size for the forked findbugs process (ex: '1g').</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-object-factory.html">getObjectFactory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getObjectFactory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.model/-object-factory/index.html"><span class="identifier">ObjectFactory</span></a></code>
+<p>Injects and returns an instance of org.gradle.api.model.ObjectFactory.</p>
 </td>
 </tr>
 <tr>
@@ -203,6 +216,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-show-progress.html">getShowProgress</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getShowProgress</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Indicates whether analysis progress should be rendered on standard output. Defaults to false.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-source.html">getSource</a></p>
 </td>
 <td>
@@ -225,6 +247,18 @@
 </td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getWorkerProcessBuilderFactory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">WorkerProcessFactory</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="jvm-args.html">jvmArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">jvmArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.FindBugs$jvmArgs(kotlin.collections.MutableIterable((kotlin.String)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FindBugs</span></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">jvmArgs</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.plugins.quality.FindBugs$jvmArgs(kotlin.Array((kotlin.String)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FindBugs</span></code>
+<p>Any additional arguments to be passed along to FindBugs JVM process. 
+<p> Arguments can contain general JVM flags like <code>-Xdebug</code> and also FindBugs system properties like <code>-Dfindbugs.loadPropertiesFrom=...</code></p>
+</p>
+</td>
 </tr>
 <tr>
 <td>
@@ -356,6 +390,17 @@
 </tr>
 <tr>
 <td>
+<p><a href="set-jvm-args.html">setJvmArgs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setJvmArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.FindBugs$setJvmArgs(kotlin.collections.MutableCollection((kotlin.String)))/jvmArgs">jvmArgs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Any additional arguments to be passed along to FindBugs JVM process. 
+<p> Arguments can contain general JVM flags like <code>-Xdebug</code> and also FindBugs system properties like <code>-Dfindbugs.loadPropertiesFrom=...</code></p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="set-max-heap-size.html">setMaxHeapSize</a></p>
 </td>
 <td>
@@ -388,6 +433,15 @@
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setReportLevel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.FindBugs$setReportLevel(kotlin.String)/reportLevel">reportLevel</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>The priority threshold for reporting bugs. If set to <code>low</code>, all bugs are reported. If set to <code>medium</code> (the default), medium and high priority bugs are reported. If set to <code>high</code>, only high priority bugs are reported.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-show-progress.html">setShowProgress</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setShowProgress</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.FindBugs$setShowProgress(kotlin.Boolean)/showProgress">showProgress</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Indicates whether analysis progress should be rendered on standard output.</p>
 </td>
 </tr>
 <tr>

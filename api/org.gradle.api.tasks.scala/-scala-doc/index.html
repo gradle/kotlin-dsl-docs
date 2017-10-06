@@ -8,7 +8,7 @@
 <a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.scala</a>&nbsp;/&nbsp;<a href=".">ScalaDoc</a><br/>
 <br/>
 <h1>ScalaDoc</h1>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ScalaDoc</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a></code>
+<code><span class="identifier">@CacheableTask</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ScalaDoc</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks/-source-task/index.html"><span class="identifier">SourceTask</span></a></code>
 <p>Generates HTML API documentation for Scala source files.</p>
 <h3>Constructors</h3>
 <table>
@@ -63,6 +63,15 @@
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getScalaDocOptions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-scala-doc-options/index.html"><span class="identifier">ScalaDocOptions</span></a></code>
 <p>Returns the ScalaDoc generation options.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-source.html">getSource</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<p>{@inheritDoc}</p>
 </td>
 </tr>
 <tr>
@@ -142,15 +151,6 @@
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getIncludes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
 <p>{@inheritDoc}</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../../org.gradle.api.tasks/-source-task/get-source.html">getSource</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
-<p>Returns the source for this task, after the include and exclude patterns have been applied. Ignores source files which do not exist.</p>
 </td>
 </tr>
 <tr>
