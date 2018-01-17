@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../style.css">
 </HEAD>
 <BODY>
-<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.reporting</a><br/>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="./index.html">org.gradle.api.reporting</a><br/>
 <br/>
 <h2>Package org.gradle.api.reporting</h2>
 <h3>Types</h3>
@@ -72,7 +72,7 @@
 <p><a href="-report-container/index.html">ReportContainer</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ReportContainer</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-report/index.html"><span class="identifier">Report</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">Configurable</span></code>
+<code><span class="keyword">interface </span><span class="identifier">ReportContainer</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-report/index.html"><span class="identifier">Report</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><a href="-report-container/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">Configurable</span></code>
 <p>A container of Report objects, that represent potential reports. 
 <p> Things that produce reports (typically tasks) expose a report container that contains Report objects for each possible report that they can produce. Each report object can be configured individually, including whether or not it should be produced by way of its <code><a href="-report/set-enabled.html">enabled</a></code> property. </p>
 <p> <code>ReportContainer</code> implementations are <strong>immutable</strong> in that standard collection methods such as <code>add()</code>, <code>remove()</code> and <code>clear()</code> will throw an ImmutableViolationException. However, implementations may provide new methods that allow the addition of new report object and/or the removal of existing report objects.</p>

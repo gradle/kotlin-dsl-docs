@@ -1,0 +1,45 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DependencyConstraintHandler - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.dsl</a>&nbsp;/&nbsp;<a href="./index.html">DependencyConstraintHandler</a><br/>
+<br/>
+<h1>DependencyConstraintHandler</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">DependencyConstraintHandler</span></code>
+<p>
+<p>A <code>DependencyConstraintHandler</code> is used to declare dependency constraints.</p>
+</p>
+<p><strong>Since</strong><br/>
+4.5</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add.html">add</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.dsl.DependencyConstraintHandler$add(kotlin.String, kotlin.Any)/configurationName">configurationName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.dsl.DependencyConstraintHandler$add(kotlin.String, kotlin.Any)/dependencyConstraintNotation">dependencyConstraintNotation</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts/-dependency-constraint/index.html"><span class="identifier">DependencyConstraint</span></a></code>
+<p>Adds a dependency constraint to the given configuration.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.dsl.DependencyConstraintHandler$add(kotlin.String, kotlin.Any, org.gradle.api.Action((org.gradle.api.artifacts.DependencyConstraint)))/configurationName">configurationName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.dsl.DependencyConstraintHandler$add(kotlin.String, kotlin.Any, org.gradle.api.Action((org.gradle.api.artifacts.DependencyConstraint)))/dependencyNotation">dependencyNotation</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.dsl.DependencyConstraintHandler$add(kotlin.String, kotlin.Any, org.gradle.api.Action((org.gradle.api.artifacts.DependencyConstraint)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.artifacts/-dependency-constraint/index.html"><span class="identifier">DependencyConstraint</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts/-dependency-constraint/index.html"><span class="identifier">DependencyConstraint</span></a></code>
+<p>Adds a dependency constraint to the given configuration, and configures the dependency constraint using the given closure.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="create.html">create</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">create</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.dsl.DependencyConstraintHandler$create(kotlin.Any)/dependencyConstraintNotation">dependencyConstraintNotation</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts/-dependency-constraint/index.html"><span class="identifier">DependencyConstraint</span></a></code>
+<p>Creates a dependency constraint without adding it to a configuration.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">create</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.dsl.DependencyConstraintHandler$create(kotlin.Any, org.gradle.api.Action((org.gradle.api.artifacts.DependencyConstraint)))/dependencyConstraintNotation">dependencyConstraintNotation</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.dsl.DependencyConstraintHandler$create(kotlin.Any, org.gradle.api.Action((org.gradle.api.artifacts.DependencyConstraint)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.artifacts/-dependency-constraint/index.html"><span class="identifier">DependencyConstraint</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts/-dependency-constraint/index.html"><span class="identifier">DependencyConstraint</span></a></code>
+<p>Creates a dependency constraint without adding it to a configuration, and configures the dependency constraint using the given closure.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

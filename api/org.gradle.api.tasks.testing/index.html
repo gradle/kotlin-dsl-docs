@@ -5,12 +5,27 @@
 <link rel="stylesheet" href="../../style.css">
 </HEAD>
 <BODY>
-<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.tasks.testing</a><br/>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="./index.html">org.gradle.api.tasks.testing</a><br/>
 <br/>
 <h2>Package org.gradle.api.tasks.testing</h2>
 <h3>Types</h3>
 <table>
 <tbody>
+<tr>
+<td>
+<p><a href="-abstract-test-task/index.html">AbstractTestTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractTestTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><a href="../org.gradle.api.tasks/-verification-task/index.html"><span class="identifier">VerificationTask</span></a><span class="symbol">, </span><a href="../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="-test-task-reports/index.html"><span class="identifier">TestTaskReports</span></a><span class="symbol">&gt;</span></code>
+<p>Abstract class for all test task. <ul> <li>Support for test listeners</li>
+ <li>Support for reporting</li>
+ <li>Support for report linking in the console output</li>
+ </ul>
+ 
+<p><strong>Note:</strong> This abstract class is not intended for implementation by build script or plugin authors.</p>
+</p>
+</td>
+</tr>
 <tr>
 <td>
 <p><a href="-j-unit-xml-report/index.html">JUnitXmlReport</a></p>
@@ -25,7 +40,7 @@
 <p><a href="-test/index.html">Test</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Test</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><a href="../org.gradle.process/-java-fork-options/index.html"><span class="identifier">JavaForkOptions</span></a><span class="symbol">, </span><a href="../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">, </span><a href="../org.gradle.api.tasks/-verification-task/index.html"><span class="identifier">VerificationTask</span></a><span class="symbol">, </span><a href="../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="-test-task-reports/index.html"><span class="identifier">TestTaskReports</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Test</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-abstract-test-task/index.html"><span class="identifier">AbstractTestTask</span></a><span class="symbol">, </span><a href="../org.gradle.process/-java-fork-options/index.html"><span class="identifier">JavaForkOptions</span></a><span class="symbol">, </span><a href="../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a></code>
 <p>Executes JUnit (3.8.x or 4.x) or TestNG tests. Test are always run in (one or more) separate JVMs. The sample below shows various configuration options. <pre><code> apply plugin: 'java' // adds 'test' task test { // enable TestNG support (default is JUnit) useTestNG() // set a system property for the test JVM(s) systemProperty 'some.prop', 'value' // explicitly include or exclude tests include 'org/foo/**' exclude 'org/boo/**' // show standard out and standard error of the test JVM(s) on the console testLogging.showStandardStreams = true // set heap size for the test JVM(s) minHeapSize = "128m" maxHeapSize = "512m" // set JVM arguments for the test JVM(s) jvmArgs '-XX:MaxPermSize=256m' // listen to events in the test execution lifecycle beforeTest { descriptor -&gt; logger.lifecycle("Running test: " + descriptor) } // listen to standard out and standard error of the test JVM(s) onOutput { descriptor, event -&gt; logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message ) } } </code></pre> 
 <p> The test process can be started in debug mode (see <code><a href="-test/get-debug.html">#getDebug()</a></code>) in an ad-hoc manner by supplying the `--debug-jvm` switch when invoking the build. </p>
 <pre><code> gradle someTestTask --debug-jvm </code></pre></p>

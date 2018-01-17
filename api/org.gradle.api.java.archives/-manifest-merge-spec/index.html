@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.java.archives</a>&nbsp;/&nbsp;<a href=".">ManifestMergeSpec</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.java.archives</a>&nbsp;/&nbsp;<a href="./index.html">ManifestMergeSpec</a><br/>
 <br/>
 <h1>ManifestMergeSpec</h1>
 <code><span class="keyword">interface </span><span class="identifier">ManifestMergeSpec</span></code>
@@ -18,9 +18,9 @@
 <p><a href="each-entry.html">eachEntry</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">eachEntry</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.java.archives.ManifestMergeSpec$eachEntry(org.gradle.api.Action((org.gradle.api.java.archives.ManifestMergeDetails)))/mergeAction">mergeAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-manifest-merge-details/index.html"><span class="identifier">ManifestMergeDetails</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ManifestMergeSpec</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">eachEntry</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.java.archives.ManifestMergeSpec$eachEntry(org.gradle.api.Action((org.gradle.api.java.archives.ManifestMergeDetails)))/mergeAction">mergeAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-manifest-merge-details/index.html"><span class="identifier">ManifestMergeDetails</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">ManifestMergeSpec</span></a></code>
 <p>Adds an action to be applied to each key-value tuple in a merge operation. If multiple merge paths are specified, the action is called for each key-value tuple of each merge operation. The given action is called with a org.gradle.api.java.archives.ManifestMergeDetails as its parameter. Actions are executed in the order added.</p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">eachEntry</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.java.archives.ManifestMergeSpec$eachEntry(groovy.lang.Closure((kotlin.Any)))/mergeAction">mergeAction</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ManifestMergeSpec</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">eachEntry</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.java.archives.ManifestMergeSpec$eachEntry(groovy.lang.Closure((kotlin.Any)))/mergeAction">mergeAction</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">ManifestMergeSpec</span></a></code>
 <p>Adds an action to be applied to each key-value tuple in a merge operation. If multiple merge paths are specified, the action is called for each key-value tuple of each merge operation. The given closure is called with a org.gradle.api.java.archives.ManifestMergeDetails as its parameter. Actions are executed in the order added.</p>
 </td>
 </tr>
@@ -29,7 +29,7 @@
 <p><a href="from.html">from</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.java.archives.ManifestMergeSpec$from(kotlin.Array((kotlin.Any)))/mergePaths">mergePaths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ManifestMergeSpec</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.java.archives.ManifestMergeSpec$from(kotlin.Array((kotlin.Any)))/mergePaths">mergePaths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">ManifestMergeSpec</span></a></code>
 <p>Adds a merge path to a manifest that should be merged into the base manifest. A merge path can be either another org.gradle.api.java.archives.Manifest or a path that is evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code> . If multiple merge paths are specified, the manifest are merged in the order in which they are added.</p>
 </td>
 </tr>

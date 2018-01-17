@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.repositories</a>&nbsp;/&nbsp;<a href=".">ArtifactRepository</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.repositories</a>&nbsp;/&nbsp;<a href="./index.html">ArtifactRepository</a><br/>
 <br/>
 <h1>ArtifactRepository</h1>
 <code><span class="keyword">interface </span><span class="identifier">ArtifactRepository</span></code>
@@ -43,7 +43,7 @@
 <p><a href="../-flat-directory-artifact-repository/index.html">FlatDirectoryArtifactRepository</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">FlatDirectoryArtifactRepository</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ArtifactRepository</span></code>
+<code><span class="keyword">interface </span><span class="identifier">FlatDirectoryArtifactRepository</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ArtifactRepository</span></a></code>
 <p>A repository that looks into a number of directories for artifacts. The artifacts are expected to be located in the root of the specified directories. The repository ignores any group/organization information specified in the dependency section of your build script. If you only use this kind of resolver you can specify your dependencies like <code>:junit:4.8.1</code> instead of <code>junit:junit:4.8.1</code>. 
 <p>To resolve a dependency, this resolver looks for one of the following files. It will return the first match it finds: </p>
 <ul> <li>[artifact]-[version].[ext] </li>
@@ -59,7 +59,7 @@
 <p><a href="../-ivy-artifact-repository/index.html">IvyArtifactRepository</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">IvyArtifactRepository</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ArtifactRepository</span><span class="symbol">, </span><a href="../-authentication-supported/index.html"><span class="identifier">AuthenticationSupported</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">IvyArtifactRepository</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ArtifactRepository</span></a><span class="symbol">, </span><a href="../-authentication-supported/index.html"><span class="identifier">AuthenticationSupported</span></a></code>
 <p>An artifact repository which uses an Ivy format to store artifacts and meta-data. 
 <p> When used to resolve metadata and artifact files, all available patterns will be searched. </p>
 <p> When used to upload metadata and artifact files, only a single, primary pattern will be used: </p>
@@ -76,7 +76,7 @@
 <p><a href="../-maven-artifact-repository/index.html">MavenArtifactRepository</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">MavenArtifactRepository</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ArtifactRepository</span><span class="symbol">, </span><a href="../-authentication-supported/index.html"><span class="identifier">AuthenticationSupported</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">MavenArtifactRepository</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ArtifactRepository</span></a><span class="symbol">, </span><a href="../-authentication-supported/index.html"><span class="identifier">AuthenticationSupported</span></a></code>
 <p>An artifact repository which uses a Maven format to store artifacts and meta-data. 
 <p> Repositories of this type are created by the <code><a href="#">org.gradle.api.artifacts.dsl.RepositoryHandler#maven(org.gradle.api.Action)</a></code> group of methods.</p>
 </p>
@@ -87,7 +87,7 @@
 <p><a href="../../org.gradle.api.artifacts.maven/-maven-resolver/index.html">MavenResolver</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">MavenResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ArtifactRepository</span><span class="symbol">, </span><a href="../../org.gradle.api.artifacts.maven/-pom-filter-container/index.html"><span class="identifier">PomFilterContainer</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">MavenResolver</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ArtifactRepository</span></a><span class="symbol">, </span><a href="../../org.gradle.api.artifacts.maven/-pom-filter-container/index.html"><span class="identifier">PomFilterContainer</span></a></code>
 <p>An ArtifactRepository which can be used to publish artifacts to Maven repositories.</p>
 </td>
 </tr>
@@ -96,7 +96,7 @@
 <p><a href="../../org.gradle.nativeplatform/-prebuilt-libraries/index.html">PrebuiltLibraries</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">PrebuiltLibraries</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ArtifactRepository</span><span class="symbol">, </span><a href="../../org.gradle.api/-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.nativeplatform/-prebuilt-library/index.html"><span class="identifier">PrebuiltLibrary</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">PrebuiltLibraries</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ArtifactRepository</span></a><span class="symbol">, </span><a href="../../org.gradle.api/-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.nativeplatform/-prebuilt-library/index.html"><span class="identifier">PrebuiltLibrary</span></a><span class="symbol">&gt;</span></code>
 <p>A container of PrebuiltLibrary instances.</p>
 </td>
 </tr>

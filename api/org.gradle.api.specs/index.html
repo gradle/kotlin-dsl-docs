@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../style.css">
 </HEAD>
 <BODY>
-<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.specs</a><br/>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="./index.html">org.gradle.api.specs</a><br/>
 <br/>
 <h2>Package org.gradle.api.specs</h2>
 <h3>Types</h3>
@@ -16,7 +16,7 @@
 <p><a href="-and-spec/index.html">AndSpec</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">AndSpec</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-composite-spec/index.html"><span class="identifier">CompositeSpec</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">AndSpec</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-composite-spec/index.html"><span class="identifier">CompositeSpec</span></a><span class="symbol">&lt;</span><a href="-and-spec/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
 <p>A org.gradle.api.specs.CompositeSpec which requires all its specs to be true in order to evaluate to true. Uses lazy evaluation.</p>
 </td>
 </tr>
@@ -25,7 +25,7 @@
 <p><a href="-composite-spec/index.html">CompositeSpec</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">CompositeSpec</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">CompositeSpec</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><a href="-composite-spec/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
 <p>A org.gradle.api.specs.Spec which aggregates a sequence of other <code>Spec</code> instances.</p>
 </td>
 </tr>
@@ -34,7 +34,7 @@
 <p><a href="-not-spec/index.html">NotSpec</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">NotSpec</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">NotSpec</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><a href="-not-spec/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
 <p>A org.gradle.api.specs.Spec implementation which negates another <code>Spec</code>.</p>
 </td>
 </tr>
@@ -43,7 +43,7 @@
 <p><a href="-or-spec/index.html">OrSpec</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">OrSpec</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-composite-spec/index.html"><span class="identifier">CompositeSpec</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">OrSpec</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-composite-spec/index.html"><span class="identifier">CompositeSpec</span></a><span class="symbol">&lt;</span><a href="-or-spec/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
 <p>A CompositeSpec which requires any one of its specs to be true in order to evaluate to true. Uses lazy evaluation.</p>
 </td>
 </tr>

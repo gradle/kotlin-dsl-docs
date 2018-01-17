@@ -5,11 +5,11 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">ModuleVersionSelector</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="./index.html">ModuleVersionSelector</a><br/>
 <br/>
 <h1>ModuleVersionSelector</h1>
 <code><span class="keyword">interface </span><span class="identifier">ModuleVersionSelector</span></code>
-<p>Selects a module version</p>
+<p>Selects a module version. If you need to change this interface, you're probably doing it wrong: it is superceded by org.gradle.api.artifacts.component.ModuleComponentSelector, so check this first, and only add methods here if it's for bridging.</p>
 <h3>Functions</h3>
 <table>
 <tbody>
@@ -42,6 +42,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-version-constraint.html">getVersionConstraint</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getVersionConstraint</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-version-constraint/index.html"><span class="identifier">VersionConstraint</span></a></code>
+<p>Returns the version constraint to be used during selection.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="matches-strictly.html">matchesStrictly</a></p>
 </td>
 <td>
@@ -59,7 +68,7 @@
 <p><a href="../-external-dependency/index.html">ExternalDependency</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ExternalDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-module-dependency/index.html"><span class="identifier">ModuleDependency</span></a><span class="symbol">, </span><span class="identifier">ModuleVersionSelector</span></code>
+<code><span class="keyword">interface </span><span class="identifier">ExternalDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-module-dependency/index.html"><span class="identifier">ModuleDependency</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">ModuleVersionSelector</span></a></code>
 <p>
 <p>An <code>ExternalDependency</code> is a Dependency on a source outside the current project hierarchy.</p>
 </p>

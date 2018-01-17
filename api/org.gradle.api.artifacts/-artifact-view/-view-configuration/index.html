@@ -5,10 +5,10 @@
 <link rel="stylesheet" href="../../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../../index.html">api</a>&nbsp;/&nbsp;<a href="../../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="../index.html">ArtifactView</a>&nbsp;/&nbsp;<a href=".">ViewConfiguration</a><br/>
+<a href="../../../index.html">api</a>&nbsp;/&nbsp;<a href="../../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="../index.html">ArtifactView</a>&nbsp;/&nbsp;<a href="./index.html">ViewConfiguration</a><br/>
 <br/>
 <h1>ViewConfiguration</h1>
-<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ViewConfiguration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../../org.gradle.api.attributes/-has-configurable-attributes/index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><span class="identifier">ViewConfiguration</span><span class="symbol">&gt;</span></code>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ViewConfiguration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../../org.gradle.api.attributes/-has-configurable-attributes/index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">ViewConfiguration</span></a><span class="symbol">&gt;</span></code>
 <p>Configuration for a defined artifact view.</p>
 <p><strong>Since</strong><br/>
 4.0</p>
@@ -20,7 +20,7 @@
 <p><a href="component-filter.html">componentFilter</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">componentFilter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ArtifactView.ViewConfiguration$componentFilter(org.gradle.api.specs.Spec((org.gradle.api.artifacts.component.ComponentIdentifier)))/componentFilter">componentFilter</span><span class="symbol">:</span>&nbsp;<a href="../../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../../org.gradle.api.artifacts.component/-component-identifier/index.html"><span class="identifier">ComponentIdentifier</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ViewConfiguration</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">componentFilter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ArtifactView.ViewConfiguration$componentFilter(org.gradle.api.specs.Spec((org.gradle.api.artifacts.component.ComponentIdentifier)))/componentFilter">componentFilter</span><span class="symbol">:</span>&nbsp;<a href="../../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../../org.gradle.api.artifacts.component/-component-identifier/index.html"><span class="identifier">ComponentIdentifier</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">ViewConfiguration</span></a></code>
 <p>Specify a filter for the components that should be included in this view. Only artifacts from components matching the supplied filter will be returned by <code><a href="../get-files.html">#getFiles()</a></code> or <code><a href="../get-artifacts.html">#getArtifacts()</a></code>. This method cannot be called a multiple times for a view.</p>
 </td>
 </tr>
@@ -38,7 +38,7 @@
 <p><a href="lenient.html">lenient</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">lenient</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ArtifactView.ViewConfiguration$lenient(kotlin.Boolean)/lenient">lenient</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ViewConfiguration</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">lenient</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ArtifactView.ViewConfiguration$lenient(kotlin.Boolean)/lenient">lenient</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">ViewConfiguration</span></a></code>
 <p>Specify if the view should be resolved in a 'lenient' fashion. When set to <code>true</code>, this view will resolve as many artifacts and/or files as possible collecting any failures. When set to <code>false</code>, any failures will be propagated as exceptions when the view is resolved.</p>
 </td>
 </tr>
@@ -61,7 +61,7 @@
 <p><a href="../../../org.gradle.api.attributes/-has-configurable-attributes/attributes.html">attributes</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">attributes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.attributes.HasConfigurableAttributes$attributes(org.gradle.api.Action((org.gradle.api.attributes.AttributeContainer)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../../org.gradle.api.attributes/-attribute-container/index.html"><span class="identifier">AttributeContainer</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SELF</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">attributes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.attributes.HasConfigurableAttributes$attributes(org.gradle.api.Action((org.gradle.api.attributes.AttributeContainer)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../../org.gradle.api.attributes/-attribute-container/index.html"><span class="identifier">AttributeContainer</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../../org.gradle.api.attributes/-has-configurable-attributes/index.html#SELF"><span class="identifier">SELF</span></a></code>
 <p>Configure the attribute container that provides the attributes associated with this domain object.</p>
 </td>
 </tr>

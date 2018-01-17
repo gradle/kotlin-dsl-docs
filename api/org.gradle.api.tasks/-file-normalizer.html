@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../style.css">
 </HEAD>
 <BODY>
-<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.api.tasks</a>&nbsp;/&nbsp;<a href=".">FileNormalizer</a><br/>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.api.tasks</a>&nbsp;/&nbsp;<a href="./-file-normalizer.html">FileNormalizer</a><br/>
 <br/>
 <h1>FileNormalizer</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">FileNormalizer</span></code>
@@ -22,7 +22,7 @@
 <p><a href="-classpath-normalizer.html">ClasspathNormalizer</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ClasspathNormalizer</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">FileNormalizer</span></code>
+<code><span class="keyword">interface </span><span class="identifier">ClasspathNormalizer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-file-normalizer.html"><span class="identifier">FileNormalizer</span></a></code>
 <p>Normalizes file input that represents a Java runtime classpath. Compared to the default behavior this normalizer keeps the order of any root files, but ignores the order and timestamps of files in directories and ZIP/JAR files.</p>
 </td>
 </tr>
@@ -31,7 +31,7 @@
 <p><a href="-compile-classpath-normalizer.html">CompileClasspathNormalizer</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">CompileClasspathNormalizer</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">FileNormalizer</span></code>
+<code><span class="keyword">interface </span><span class="identifier">CompileClasspathNormalizer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-file-normalizer.html"><span class="identifier">FileNormalizer</span></a></code>
 <p>Normalizes file input that represents a Java compile classpath. Compared to the default behavior this normalizer keeps the order of any root files, but ignores the order and timestamps of files in directories and ZIP/JAR files. Compared to ClasspathNormalizer this normalizer only snapshots the ABIs of class files, and ignores any non-class resource.</p>
 </td>
 </tr>

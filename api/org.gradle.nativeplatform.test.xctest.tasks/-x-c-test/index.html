@@ -1,0 +1,266 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>XCTest - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform.test.xctest.tasks</a>&nbsp;/&nbsp;<a href="./index.html">XCTest</a><br/>
+<br/>
+<h1>XCTest</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">XCTest</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks.testing/-abstract-test-task/index.html"><span class="identifier">AbstractTestTask</span></a></code>
+<p>Executes XCTest tests. Test are always run in a single execution.</p>
+<p><strong>Since</strong><br/>
+4.5</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">XCTest</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Executes XCTest tests. Test are always run in a single execution.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-run-script-file.html">getRunScriptFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getRunScriptFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-regular-file-property/index.html"><span class="identifier">RegularFileProperty</span></a></code>
+<p>Returns test suite bundle or executable location</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-test-install-directory.html">getTestInstallDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTestInstallDirectory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-directory-property/index.html"><span class="identifier">DirectoryProperty</span></a></code>
+<p>Sets the test suite bundle or executable location</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-working-directory.html">getWorkingDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getWorkingDirectory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-directory-property/index.html"><span class="identifier">DirectoryProperty</span></a></code>
+<p>Returns the working directory property for this test.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-test-name-include-patterns.html">setTestNameIncludePatterns</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTestNameIncludePatterns</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.test.xctest.tasks.XCTest$setTestNameIncludePatterns(kotlin.collections.MutableList((kotlin.String)))/testNamePattern">testNamePattern</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">XCTest</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/add-test-listener.html">addTestListener</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addTestListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.AbstractTestTask$addTestListener(org.gradle.api.tasks.testing.TestListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks.testing/-test-listener/index.html"><span class="identifier">TestListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Registers a test listener with this task. Consider also the following handy methods for quicker hooking into test execution: <code><a href="#">#beforeTest(groovy.lang.Closure)</a></code>, <code><a href="#"> </a></code>, <code><a href="#">#beforeSuite(groovy.lang.Closure)</a></code>, <code><a href="#">#afterSuite(groovy.lang.Closure)</a></code> 
+<p> This listener will NOT be notified of tests executed by other tasks. To get that behavior, use <code><a href="#">org.gradle.api.invocation.Gradle#addListener(Object)</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/add-test-output-listener.html">addTestOutputListener</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">addTestOutputListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.AbstractTestTask$addTestOutputListener(org.gradle.api.tasks.testing.TestOutputListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks.testing/-test-output-listener/index.html"><span class="identifier">TestOutputListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Registers a output listener with this task. Quicker way of hooking into output events is using the <code><a href="#">#onOutput(groovy.lang.Closure)</a></code> method.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/after-suite.html">afterSuite</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">afterSuite</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.AbstractTestTask$afterSuite(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Adds a closure to be notified after a test suite has executed. A TestDescriptor and TestResult instance are passed to the closure as a parameter.</p>
+ 
+<p>This method is also called after all test suites are executed. The provided descriptor will have a null parent suite.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/after-test.html">afterTest</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">afterTest</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.AbstractTestTask$afterTest(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a closure to be notified after a test has executed. A TestDescriptor and TestResult instance are passed to the closure as a parameter.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/before-suite.html">beforeSuite</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">beforeSuite</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.AbstractTestTask$beforeSuite(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>
+<p>Adds a closure to be notified before a test suite is executed. A TestDescriptor instance is passed to the closure as a parameter.</p>
+ 
+<p>This method is also called before any test suites are executed. The provided descriptor will have a null parent suite.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/before-test.html">beforeTest</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">beforeTest</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.AbstractTestTask$beforeTest(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a closure to be notified before a test is executed. A TestDescriptor instance is passed to the closure as a parameter.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/execute-tests.html">executeTests</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">executeTests</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/get-bin-results-dir.html">getBinResultsDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getBinResultsDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<p>Returns the root folder for the test results in internal binary format.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/get-binary-results-directory.html">getBinaryResultsDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getBinaryResultsDirectory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-directory-property/index.html"><span class="identifier">DirectoryProperty</span></a></code>
+<p>Returns the root directory property for the test results in internal binary format.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/get-filter.html">getFilter</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getFilter</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.testing/-test-filter/index.html"><span class="identifier">TestFilter</span></a></code>
+<p>Allows filtering tests for execution.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/get-ignore-failures.html">getIgnoreFailures</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getIgnoreFailures</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/get-reports.html">getReports</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getReports</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.testing/-test-task-reports/index.html"><span class="identifier">TestTaskReports</span></a></code>
+<p>The reports that this task potentially produces.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/get-test-logging.html">getTestLogging</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTestLogging</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.testing.logging/-test-logging-container/index.html"><span class="identifier">TestLoggingContainer</span></a></code>
+<p>Allows to set options related to which test events are logged to the console, and on which detail level. For example, to show more information about exceptions use: <pre><code> apply plugin: 'java' test.testLogging { exceptionFormat "full" } </code></pre> For further information see TestLoggingContainer.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/on-output.html">onOutput</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onOutput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.AbstractTestTask$onOutput(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a closure to be notified when output from the test received. A TestDescriptor and TestOutputEvent instance are passed to the closure as a parameter. <pre><code> apply plugin: 'java' test { onOutput { descriptor, event -&gt; if (event.destination == TestOutputEvent.Destination.StdErr) { logger.error("Test: " + descriptor + ", error: " + event.message) } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/remove-test-listener.html">removeTestListener</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">removeTestListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.AbstractTestTask$removeTestListener(org.gradle.api.tasks.testing.TestListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks.testing/-test-listener/index.html"><span class="identifier">TestListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Unregisters a test listener with this task. This method will only remove listeners that were added by calling <code><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/add-test-listener.html">#addTestListener(TestListener)</a></code> on this task. If the listener was registered with Gradle using <code><a href="#">org.gradle.api.invocation.Gradle#addListener(Object)</a></code> this method will not do anything. Instead, use <code><a href="#"> </a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/remove-test-output-listener.html">removeTestOutputListener</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">removeTestOutputListener</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.AbstractTestTask$removeTestOutputListener(org.gradle.api.tasks.testing.TestOutputListener)/listener">listener</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks.testing/-test-output-listener/index.html"><span class="identifier">TestOutputListener</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Unregisters a test output listener with this task. This method will only remove listeners that were added by calling <code><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/add-test-output-listener.html">#addTestOutputListener(TestOutputListener)</a></code> on this task. If the listener was registered with Gradle using <code><a href="#">org.gradle.api.invocation.Gradle#addListener(Object)</a></code> this method will not do anything. Instead, use <code><a href="#"> </a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/reports.html">reports</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">reports</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.AbstractTestTask$reports(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.testing/-test-task-reports/index.html"><span class="identifier">TestTaskReports</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">reports</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.AbstractTestTask$reports(org.gradle.api.Action((org.gradle.api.tasks.testing.TestTaskReports)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.tasks.testing/-test-task-reports/index.html"><span class="identifier">TestTaskReports</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks.testing/-test-task-reports/index.html"><span class="identifier">TestTaskReports</span></a></code>
+<p>Configures the reports that this task potentially produces.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/set-bin-results-dir.html">setBinResultsDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setBinResultsDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.AbstractTestTask$setBinResultsDir(java.io.File)/binResultsDir">binResultsDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the root folder for the test results in internal binary format.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/set-ignore-failures.html">setIgnoreFailures</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setIgnoreFailures</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.AbstractTestTask$setIgnoreFailures(kotlin.Boolean)/ignoreFailures">ignoreFailures</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/test-logging.html">testLogging</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">testLogging</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.AbstractTestTask$testLogging(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">testLogging</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.AbstractTestTask$testLogging(org.gradle.api.Action((org.gradle.api.tasks.testing.logging.TestLoggingContainer)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.tasks.testing.logging/-test-logging-container/index.html"><span class="identifier">TestLoggingContainer</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Allows configuring the logging of the test execution, for example log eagerly the standard output, etc. <pre><code> apply plugin: 'java' // makes the standard streams (err and out) visible at console when running tests test.testLogging { showStandardStreams = true } </code></pre></p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -5,10 +5,10 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href=".">Task</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="./index.html">Task</a><br/>
 <br/>
 <h1>Task</h1>
-<code><span class="keyword">interface </span><span class="identifier">Task</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><span class="identifier">Task</span><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../../org.gradle.api.plugins/-extension-aware/index.html"><span class="identifier">ExtensionAware</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">Task</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../../org.gradle.api.plugins/-extension-aware/index.html"><span class="identifier">ExtensionAware</span></a></code>
 <p>
 <p>A <code>Task</code> represents a single atomic piece of work for a build, such as compiling classes or generating javadoc.</p>
  
@@ -30,6 +30,7 @@
  <li>A closure. The closure may take a <code>Task</code> as parameter. It may return any of the types listed here. Its return value is recursively converted to tasks. A <code>null</code> return value is treated as an empty collection.</li>
  <li>A TaskDependency object.</li>
  <li>A Buildable object.</li>
+ <li>A org.gradle.api.file.RegularFileProperty or org.gradle.api.file.DirectoryProperty.</li>
  <li>A <code>Iterable</code>, <code>Collection</code>, <code>Map</code> or array. May contain any of the types listed here. The elements of the iterable/collection/map/array are recursively converted to tasks.</li>
  <li>A <code>Callable</code>. The <code>call()</code> method may return any of the types listed here. Its return value is recursively converted to tasks. A <code>null</code> return value is treated as an empty collection.</li>
  </ul>
@@ -53,7 +54,7 @@
 <p><a href="-namer/index.html">Namer</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Namer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-namer/index.html"><span class="identifier">Namer</span></a><span class="symbol">&lt;</span><span class="identifier">Task</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Namer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-namer/index.html"><span class="identifier">Namer</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span></code>
 <p>A org.gradle.api.Namer namer for tasks that returns <code><a href="get-name.html">#getName()</a></code>.</p>
 </td>
 </tr>
@@ -121,7 +122,7 @@
 <p><a href="configure.html">configure</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">configure</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$configure(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Task</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">configure</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$configure(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Task</span></a></code>
 <p>
 <p>Applies the statements of the closure against this task object. The delegate object for the closure is set to this task.</p>
 </p>
@@ -132,7 +133,7 @@
 <p><a href="delete-all-actions.html">deleteAllActions</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">deleteAllActions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Task</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">deleteAllActions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Task</span></a></code>
 <p>
 <p>Removes all the actions of this task.</p>
 </p>
@@ -143,7 +144,7 @@
 <p><a href="depends-on.html">dependsOn</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">dependsOn</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.Task$dependsOn(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Task</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">dependsOn</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.Task$dependsOn(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Task</span></a></code>
 <p>
 <p>Adds the given dependencies to this task. See <a href="#">here</a> for a description of the types of objects which can be used as task dependencies.</p>
 </p>
@@ -165,12 +166,12 @@
 <p><a href="do-first.html">doFirst</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">doFirst</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$doFirst(org.gradle.api.Action((org.gradle.api.Task)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">Task</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Task</span></code><br/>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">doFirst</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$doFirst(kotlin.String, org.gradle.api.Action((org.gradle.api.Task)))/actionName">actionName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Task$doFirst(kotlin.String, org.gradle.api.Action((org.gradle.api.Task)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">Task</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Task</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">doFirst</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$doFirst(org.gradle.api.Action((org.gradle.api.Task)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="./index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Task</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">doFirst</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$doFirst(kotlin.String, org.gradle.api.Action((org.gradle.api.Task)))/actionName">actionName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Task$doFirst(kotlin.String, org.gradle.api.Action((org.gradle.api.Task)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="./index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Task</span></a></code>
 <p>
 <p>Adds the given Action to the beginning of this task's action list.</p>
 </p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">doFirst</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$doFirst(groovy.lang.Closure((kotlin.Any)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Task</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">doFirst</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$doFirst(groovy.lang.Closure((kotlin.Any)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Task</span></a></code>
 <p>
 <p>Adds the given closure to the beginning of this task's action list. The closure is passed this task as a parameter when executed.</p>
 </p>
@@ -181,12 +182,12 @@
 <p><a href="do-last.html">doLast</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">doLast</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$doLast(org.gradle.api.Action((org.gradle.api.Task)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">Task</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Task</span></code><br/>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">doLast</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$doLast(kotlin.String, org.gradle.api.Action((org.gradle.api.Task)))/actionName">actionName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Task$doLast(kotlin.String, org.gradle.api.Action((org.gradle.api.Task)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">Task</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Task</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">doLast</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$doLast(org.gradle.api.Action((org.gradle.api.Task)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="./index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Task</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">doLast</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$doLast(kotlin.String, org.gradle.api.Action((org.gradle.api.Task)))/actionName">actionName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.Task$doLast(kotlin.String, org.gradle.api.Action((org.gradle.api.Task)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="./index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Task</span></a></code>
 <p>
 <p>Adds the given Action to the end of this task's action list.</p>
 </p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">doLast</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$doLast(groovy.lang.Closure((kotlin.Any)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Task</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">doLast</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$doLast(groovy.lang.Closure((kotlin.Any)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Task</span></a></code>
 <p>
 <p>Adds the given closure to the end of this task's action list. The closure is passed this task as a parameter when executed.</p>
 </p>
@@ -197,7 +198,7 @@
 <p><a href="finalized-by.html">finalizedBy</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">finalizedBy</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.Task$finalizedBy(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Task</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">finalizedBy</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.Task$finalizedBy(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Task</span></a></code>
 <p>
 <p>Adds the given finalizer tasks for this task.</p>
  <pre><code> task taskY { finalizedBy "taskX" } </code></pre> 
@@ -210,7 +211,7 @@
 <p><a href="get-actions.html">getActions</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getActions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">Task</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getActions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="./index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
 <p>
 <p>Returns the sequence of Action objects which will be executed by this task, in the order of execution.</p>
 </p>
@@ -320,6 +321,15 @@
 <p>
 <p>Returns the inputs of this task.</p>
 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-local-state.html">getLocalState</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLocalState</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-task-local-state/index.html"><span class="identifier">TaskLocalState</span></a></code>
+<p>Returns the local state of this task.</p>
 </td>
 </tr>
 <tr>
@@ -455,7 +465,7 @@
 <p><a href="left-shift.html">leftShift</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">leftShift</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$leftShift(groovy.lang.Closure((kotlin.Any)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Task</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">leftShift</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$leftShift(groovy.lang.Closure((kotlin.Any)))/action">action</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Task</span></a></code>
 <p>
 <p>Adds the given closure to the end of this task's action list. The closure is passed this task as a parameter when executed. You can call this method from your build script using the &lt;&lt; left shift operator.</p>
 </p>
@@ -466,7 +476,7 @@
 <p><a href="must-run-after.html">mustRunAfter</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">mustRunAfter</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.Task$mustRunAfter(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Task</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">mustRunAfter</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.Task$mustRunAfter(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Task</span></a></code>
 <p>
 <p>Specifies that this task must run after all of the supplied tasks.</p>
  <pre><code> task taskY { mustRunAfter "taskX" } </code></pre> 
@@ -489,7 +499,7 @@
  
 <p>Typical usage:<code>myTask.onlyIf{ dependsOnTaskDidWork() } </code></p>
 </p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">onlyIf</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$onlyIf(org.gradle.api.specs.Spec((org.gradle.api.Task)))/onlyIfSpec">onlyIfSpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">Task</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">onlyIf</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$onlyIf(org.gradle.api.specs.Spec((org.gradle.api.Task)))/onlyIfSpec">onlyIfSpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="./index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>
 <p>Execute the task only if the given spec is satisfied. The spec will be evaluated at task execution time, not during configuration. If the Spec is not satisfied, the task will be skipped.</p>
  
@@ -521,7 +531,7 @@
 <p><a href="set-actions.html">setActions</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setActions</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$setActions(kotlin.collections.MutableList((org.gradle.api.Action((org.gradle.api.Task)))))/actions">actions</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">Task</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setActions</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$setActions(kotlin.collections.MutableList((org.gradle.api.Action((org.gradle.api.Task)))))/actions">actions</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="./index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>
 <p>Sets the sequence of Action objects which will be executed by this task.</p>
 </p>
@@ -617,7 +627,7 @@
  
 <p>The given predicate replaces all such predicates for this task.</p>
 </p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setOnlyIf</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$setOnlyIf(org.gradle.api.specs.Spec((org.gradle.api.Task)))/onlyIfSpec">onlyIfSpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">Task</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setOnlyIf</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.Task$setOnlyIf(org.gradle.api.specs.Spec((org.gradle.api.Task)))/onlyIfSpec">onlyIfSpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="./index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>
 <p>Execute the task only if the given spec is satisfied. The spec will be evaluated at task execution time, not during configuration. If the Spec is not satisfied, the task will be skipped.</p>
  
@@ -694,7 +704,7 @@
 <p><a href="../../org.gradle.nativeplatform.tasks/-object-files-to-binary/index.html">ObjectFilesToBinary</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ObjectFilesToBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Task</span></code>
+<code><span class="keyword">interface </span><span class="identifier">ObjectFilesToBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Task</span></a></code>
 <p>A task that combines a set of object files into a single binary.</p>
 </td>
 </tr>

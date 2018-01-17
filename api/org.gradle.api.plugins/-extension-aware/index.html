@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href=".">ExtensionAware</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href="./index.html">ExtensionAware</a><br/>
 <br/>
 <h1>ExtensionAware</h1>
 <code><span class="keyword">interface </span><span class="identifier">ExtensionAware</span></code>
@@ -41,7 +41,7 @@
 <p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.plugins.-extension-aware/extra.html">extra</a></p>
 </td>
 <td>
-<code><span class="keyword">val </span><span class="identifier">ExtensionAware</span><span class="symbol">.</span><span class="identifier">extra</span><span class="symbol">: </span><a href="../-extra-properties-extension/index.html"><span class="identifier">ExtraPropertiesExtension</span></a></code>
+<code><span class="keyword">val </span><a href="./index.html"><span class="identifier">ExtensionAware</span></a><span class="symbol">.</span><span class="identifier">extra</span><span class="symbol">: </span><a href="../-extra-properties-extension/index.html"><span class="identifier">ExtraPropertiesExtension</span></a></code>
 <p>The extra properties extension in this object's extension container.</p>
 </td>
 </tr>
@@ -55,7 +55,7 @@
 <p><a href="../../org.gradle.api/-project/index.html">Project</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">Project</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">ExtensionAware</span><span class="symbol">, </span><a href="../-plugin-aware/index.html"><span class="identifier">PluginAware</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">Project</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">ExtensionAware</span></a><span class="symbol">, </span><a href="../-plugin-aware/index.html"><span class="identifier">PluginAware</span></a></code>
 <p>
 <p>This interface is the main API you use to interact with Gradle from your build file. From a <code>Project</code>, you have programmatic access to all of Gradle's features.</p>
  Lifecycle 
@@ -109,7 +109,7 @@
 <p><a href="../../org.gradle.api/-task/index.html">Task</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">Task</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">ExtensionAware</span></code>
+<code><span class="keyword">interface </span><span class="identifier">Task</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">ExtensionAware</span></a></code>
 <p>
 <p>A <code>Task</code> represents a single atomic piece of work for a build, such as compiling classes or generating javadoc.</p>
  
@@ -131,6 +131,7 @@
  <li>A closure. The closure may take a <code>Task</code> as parameter. It may return any of the types listed here. Its return value is recursively converted to tasks. A <code>null</code> return value is treated as an empty collection.</li>
  <li>A TaskDependency object.</li>
  <li>A Buildable object.</li>
+ <li>A org.gradle.api.file.RegularFileProperty or org.gradle.api.file.DirectoryProperty.</li>
  <li>A <code>Iterable</code>, <code>Collection</code>, <code>Map</code> or array. May contain any of the types listed here. The elements of the iterable/collection/map/array are recursively converted to tasks.</li>
  <li>A <code>Callable</code>. The <code>call()</code> method may return any of the types listed here. Its return value is recursively converted to tasks. A <code>null</code> return value is treated as an empty collection.</li>
  </ul>

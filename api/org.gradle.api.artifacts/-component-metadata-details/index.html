@@ -5,16 +5,25 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">ComponentMetadataDetails</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="./index.html">ComponentMetadataDetails</a><br/>
 <br/>
 <h1>ComponentMetadataDetails</h1>
-<code><span class="identifier">@Incubating</span> <span class="identifier">@NonExtensible</span> <span class="keyword">interface </span><span class="identifier">ComponentMetadataDetails</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-component-metadata/index.html"><span class="identifier">ComponentMetadata</span></a></code>
+<code><span class="identifier">@Incubating</span> <span class="identifier">@NonExtensible</span> <span class="keyword">interface </span><span class="identifier">ComponentMetadataDetails</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-component-metadata/index.html"><span class="identifier">ComponentMetadata</span></a><span class="symbol">, </span><a href="../../org.gradle.api.attributes/-has-configurable-attributes/index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">ComponentMetadataDetails</span></a><span class="symbol">&gt;</span></code>
 <p>Describes a resolved component's metadata, which typically originates from a component descriptor (Ivy file, Maven POM). Some parts of the metadata can be changed via metadata rules (see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
 <p><strong>Since</strong><br/>
 1.8</p>
 <h3>Functions</h3>
 <table>
 <tbody>
+<tr>
+<td>
+<p><a href="all-variants.html">allVariants</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">allVariants</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ComponentMetadataDetails$allVariants(org.gradle.api.Action((org.gradle.api.artifacts.VariantMetadata)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-variant-metadata/index.html"><span class="identifier">VariantMetadata</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Add a rule for adjusting all variants of a component.</p>
+</td>
+</tr>
 <tr>
 <td>
 <p><a href="set-changing.html">setChanging</a></p>
@@ -42,11 +51,29 @@
 <p>Sets the status scheme of the component. Values are ordered from least to most mature status.</p>
 </td>
 </tr>
+<tr>
+<td>
+<p><a href="with-variant.html">withVariant</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withVariant</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ComponentMetadataDetails$withVariant(kotlin.String, org.gradle.api.Action((org.gradle.api.artifacts.VariantMetadata)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.ComponentMetadataDetails$withVariant(kotlin.String, org.gradle.api.Action((org.gradle.api.artifacts.VariantMetadata)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-variant-metadata/index.html"><span class="identifier">VariantMetadata</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Add a rule for adjusting an existing variant of the component.</p>
+</td>
+</tr>
 </tbody>
 </table>
 <h3>Inherited Functions</h3>
 <table>
 <tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.attributes/-has-configurable-attributes/attributes.html">attributes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">attributes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.attributes.HasConfigurableAttributes$attributes(org.gradle.api.Action((org.gradle.api.attributes.AttributeContainer)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.attributes/-attribute-container/index.html"><span class="identifier">AttributeContainer</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.attributes/-has-configurable-attributes/index.html#SELF"><span class="identifier">SELF</span></a></code>
+<p>Configure the attribute container that provides the attributes associated with this domain object.</p>
+</td>
+</tr>
 <tr>
 <td>
 <p><a href="../-component-metadata/get-id.html">getId</a></p>

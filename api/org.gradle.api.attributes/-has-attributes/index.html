@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.attributes</a>&nbsp;/&nbsp;<a href=".">HasAttributes</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.attributes</a>&nbsp;/&nbsp;<a href="./index.html">HasAttributes</a><br/>
 <br/>
 <h1>HasAttributes</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">HasAttributes</span></code>
@@ -34,7 +34,7 @@
 <p><a href="../../org.gradle.api.artifacts.type/-artifact-type-definition/index.html">ArtifactTypeDefinition</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ArtifactTypeDefinition</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HasAttributes</span><span class="symbol">, </span><a href="../../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">ArtifactTypeDefinition</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">HasAttributes</span></a><span class="symbol">, </span><a href="../../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
 <p>Meta-data about a particular type of artifacts.</p>
 </td>
 </tr>
@@ -43,7 +43,7 @@
 <p><a href="../../org.gradle.api.artifacts/-artifact-view/index.html">ArtifactView</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ArtifactView</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HasAttributes</span></code>
+<code><span class="keyword">interface </span><span class="identifier">ArtifactView</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">HasAttributes</span></a></code>
 <p>A view over the artifacts resolved for this set of dependencies. By default, the view returns all files and artifacts, but this can be restricted by component identifier or by attributes.</p>
 </td>
 </tr>
@@ -52,8 +52,17 @@
 <p><a href="../-attribute-container/index.html">AttributeContainer</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">AttributeContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HasAttributes</span></code>
+<code><span class="keyword">interface </span><span class="identifier">AttributeContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">HasAttributes</span></a></code>
 <p>An attribute container is a container of Attribute, which are strongly typed named entities. Such a container is responsible for storing and getting attributes in a type safe way. In particular, attributes are strongly typed, meaning that when we get a value from the container, the returned value type is inferred from the type of the attribute. In a way, an attribute container is similar to a java.util.Map where the entry is a "typed String" and the value is of the string type. However the set of methods available to the container is much more limited. It is not allowed to have two attributes with the same name but different types in the container.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.artifacts/-component-metadata/index.html">ComponentMetadata</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentMetadata</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">HasAttributes</span></a></code>
+<p>Provides a read-only view of a resolved component's metadata, which typically originates from a component descriptor (Ivy file, Maven POM).</p>
 </td>
 </tr>
 <tr>
@@ -61,7 +70,7 @@
 <p><a href="../-has-configurable-attributes/index.html">HasConfigurableAttributes</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">HasConfigurableAttributes</span><span class="symbol">&lt;</span><span class="identifier">SELF</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HasAttributes</span></code>
+<code><span class="keyword">interface </span><span class="identifier">HasConfigurableAttributes</span><span class="symbol">&lt;</span><span class="identifier">SELF</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">HasAttributes</span></a></code>
 <p>Represents something that carries attributes by utilizing an AttributeContainer that is configurable.</p>
 </td>
 </tr>

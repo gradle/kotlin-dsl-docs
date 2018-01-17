@@ -1,0 +1,90 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>HasMultipleValues - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.provider</a>&nbsp;/&nbsp;<a href="./index.html">HasMultipleValues</a><br/>
+<br/>
+<h1>HasMultipleValues</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">HasMultipleValues</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Represents a property whose value can be set using multiple elements of type T, such as a collection property. 
+<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. You can use the factory methods on org.gradle.api.model.ObjectFactory to create instances of this interface.</p>
+</p>
+<h3>Parameters</h3>
+<p><a name="&lt;T&gt;"></a>
+<code><T></code> - the type of elements.</p>
+<p><strong>Since</strong><br/>
+4.5</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add.html">add</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.HasMultipleValues$add(org.gradle.api.provider.HasMultipleValues.T)/element">element</span><span class="symbol">:</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an element to the property value.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.HasMultipleValues$add(org.gradle.api.provider.Provider((org.gradle.api.provider.HasMultipleValues.T)))/provider">provider</span><span class="symbol">:</span>&nbsp;<a href="../-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an element to the property value. 
+<p>The given provider will be queried when the value of the property is queried. The property will have no value when the given provider has no value.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="add-all.html">addAll</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addAll</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.HasMultipleValues$addAll(org.gradle.api.provider.Provider((kotlin.collections.MutableIterable((org.gradle.api.provider.HasMultipleValues.T)))))/provider">provider</span><span class="symbol">:</span>&nbsp;<a href="../-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds zero or more elements to the property value. 
+<p>The given provider will be queried when the value of the property is queried. The property will have no value when the given provider has no value.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set.html">set</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">set</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.HasMultipleValues$set(kotlin.collections.MutableIterable((org.gradle.api.provider.HasMultipleValues.T)))/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the value of the property the given value. 
+<p>This method can also be used to clear the value of the property, by passing <code>null</code> as the value.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">set</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.HasMultipleValues$set(org.gradle.api.provider.Provider((kotlin.collections.MutableIterable((org.gradle.api.provider.HasMultipleValues.T)))))/provider">provider</span><span class="symbol">:</span>&nbsp;<a href="../-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the property to have the same value of the given provider. This property will track the value of the provider and query its value each time the value of the property is queried. When the provider has no value, this property will also have no value.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-list-property.html">ListProperty</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ListProperty</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-list-property.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">HasMultipleValues</span></a><span class="symbol">&lt;</span><a href="../-list-property.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Represents a property whose type is a List of elements of type T. 
+<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory method <code><a href="#">org.gradle.api.model.ObjectFactory#listProperty(Class)</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-set-property.html">SetProperty</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SetProperty</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-set-property.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">HasMultipleValues</span></a><span class="symbol">&lt;</span><a href="../-set-property.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Represents a property whose type is a Set of elements of type T. Retains iteration order. 
+<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory method <code><a href="#">org.gradle.api.model.ObjectFactory#listProperty(Class)</a></code>.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

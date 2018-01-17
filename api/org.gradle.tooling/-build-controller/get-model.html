@@ -5,11 +5,11 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling</a>&nbsp;/&nbsp;<a href="index.html">BuildController</a>&nbsp;/&nbsp;<a href=".">getModel</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling</a>&nbsp;/&nbsp;<a href="index.html">BuildController</a>&nbsp;/&nbsp;<a href="./get-model.html">getModel</a><br/>
 <br/>
 <h1>getModel</h1>
 <a name="org.gradle.tooling.BuildController$getModel(java.lang.Class((org.gradle.tooling.BuildController.getModel.T)))"></a>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">getModel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.BuildController$getModel(java.lang.Class((org.gradle.tooling.BuildController.getModel.T)))/modelType">modelType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">getModel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.BuildController$getModel(java.lang.Class((org.gradle.tooling.BuildController.getModel.T)))/modelType">modelType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="get-model.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="get-model.html#T"><span class="identifier">T</span></a></code>
 <p>Fetches a snapshot of the model of the given type for the default project. The default project is generally the project referenced when a ProjectConnection is created. 
 <p>Any of following models types may be available, depending on the version of Gradle being used by the target build: </p>
 <ul> <li>GradleBuild</li>
@@ -38,7 +38,7 @@ The model.</p>
 <p><strong>Since</strong><br/>
 1.8</p>
 <a name="org.gradle.tooling.BuildController$getModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.getModel.T)))"></a>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">getModel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.BuildController$getModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.getModel.T)))/target">target</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.model/-model.html"><span class="identifier">Model</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.BuildController$getModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.getModel.T)))/modelType">modelType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">getModel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.BuildController$getModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.getModel.T)))/target">target</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.model/-model.html"><span class="identifier">Model</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.BuildController$getModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.getModel.T)))/modelType">modelType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="get-model.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="get-model.html#T"><span class="identifier">T</span></a></code>
 <p>Fetches a snapshot of the model of the given type for the given element, usually a Gradle project. 
 <p>The following elements are supported: </p>
 <ul> <li>Any org.gradle.tooling.model.gradle.BasicGradleProject</li>
@@ -61,5 +61,59 @@ The model.</p>
 <code>UnknownModelException</code> - When the target project does not support the requested model.</p>
 <p><strong>Return</strong><br/>
 The model.</p>
+<a name="org.gradle.tooling.BuildController$getModel(java.lang.Class((org.gradle.tooling.BuildController.getModel.T)), java.lang.Class((org.gradle.tooling.BuildController.getModel.P)), org.gradle.api.Action((org.gradle.tooling.BuildController.getModel.P)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">P</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">getModel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.BuildController$getModel(java.lang.Class((org.gradle.tooling.BuildController.getModel.T)), java.lang.Class((org.gradle.tooling.BuildController.getModel.P)), org.gradle.api.Action((org.gradle.tooling.BuildController.getModel.P)))/modelType">modelType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="get-model.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.BuildController$getModel(java.lang.Class((org.gradle.tooling.BuildController.getModel.T)), java.lang.Class((org.gradle.tooling.BuildController.getModel.P)), org.gradle.api.Action((org.gradle.tooling.BuildController.getModel.P)))/parameterType">parameterType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="get-model.html#P"><span class="identifier">P</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.BuildController$getModel(java.lang.Class((org.gradle.tooling.BuildController.getModel.T)), java.lang.Class((org.gradle.tooling.BuildController.getModel.P)), org.gradle.api.Action((org.gradle.tooling.BuildController.getModel.P)))/parameterInitializer">parameterInitializer</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="get-model.html#P"><span class="identifier">P</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="get-model.html#T"><span class="identifier">T</span></a></code>
+<p>Fetches a snapshot of the model of the given type using the given parameter. 
+<p>See <code><a href="#">#getModel(Model, Class, Class, Action)</a></code> for more details.</p>
+</p>
+<h3>Parameters</h3>
+<p><a name="modelType"></a>
+<code>modelType</code> - The model type.</p>
+<p><a name="&lt;T&gt;"></a>
+<code><T></code> - The model type.</p>
+<p><a name="parameterType"></a>
+<code>parameterType</code> - The parameter type.</p>
+<p><a name="&lt;P&gt;"></a>
+<code><P></code> - The parameter type.</p>
+<p><a name="parameterInitializer"></a>
+<code>parameterInitializer</code> - Action to configure the parameter</p>
+<h3>Exceptions</h3>
+<p><a name="UnknownModelException"></a>
+<code>UnknownModelException</code> - When the target project does not support the requested model.</p>
+<p><a name="UnsupportedVersionException"></a>
+<code>UnsupportedVersionException</code> - When the target project does not support the requested model or Gradle version does not support parametrized models.</p>
+<p><strong>Return</strong><br/>
+The model.</p>
+<p><strong>Since</strong><br/>
+4.4</p>
+<a name="org.gradle.tooling.BuildController$getModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.getModel.T)), java.lang.Class((org.gradle.tooling.BuildController.getModel.P)), org.gradle.api.Action((org.gradle.tooling.BuildController.getModel.P)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">P</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">getModel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.BuildController$getModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.getModel.T)), java.lang.Class((org.gradle.tooling.BuildController.getModel.P)), org.gradle.api.Action((org.gradle.tooling.BuildController.getModel.P)))/target">target</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.model/-model.html"><span class="identifier">Model</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.BuildController$getModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.getModel.T)), java.lang.Class((org.gradle.tooling.BuildController.getModel.P)), org.gradle.api.Action((org.gradle.tooling.BuildController.getModel.P)))/modelType">modelType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="get-model.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.BuildController$getModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.getModel.T)), java.lang.Class((org.gradle.tooling.BuildController.getModel.P)), org.gradle.api.Action((org.gradle.tooling.BuildController.getModel.P)))/parameterType">parameterType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="get-model.html#P"><span class="identifier">P</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.BuildController$getModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.getModel.T)), java.lang.Class((org.gradle.tooling.BuildController.getModel.P)), org.gradle.api.Action((org.gradle.tooling.BuildController.getModel.P)))/parameterInitializer">parameterInitializer</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="get-model.html#P"><span class="identifier">P</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="get-model.html#T"><span class="identifier">T</span></a></code>
+<p>Fetches a snapshot of the model of the given type for the given element using the given parameter. 
+<p>The parameter type must be an interface only with getters and setters and no nesting is supported. The Tooling API will create a proxy instance of this interface and use the initializer to run against that instance to configure it and then pass to the model builder. </p>
+ 
+<p>See <code><a href="#">#getModel(Class)</a></code> for more details.</p>
+</p>
+<h3>Parameters</h3>
+<p><a name="target"></a>
+<code>target</code> - The target element, usually a project.</p>
+<p><a name="modelType"></a>
+<code>modelType</code> - The model type.</p>
+<p><a name="&lt;T&gt;"></a>
+<code><T></code> - The model type.</p>
+<p><a name="parameterType"></a>
+<code>parameterType</code> - The parameter type.</p>
+<p><a name="&lt;P&gt;"></a>
+<code><P></code> - The parameter type.</p>
+<p><a name="parameterInitializer"></a>
+<code>parameterInitializer</code> - Action to configure the parameter</p>
+<h3>Exceptions</h3>
+<p><a name="UnknownModelException"></a>
+<code>UnknownModelException</code> - When the target project does not support the requested model.</p>
+<p><a name="UnsupportedVersionException"></a>
+<code>UnsupportedVersionException</code> - When the target project does not support the requested model or Gradle version does not support parametrized models.</p>
+<p><strong>Return</strong><br/>
+The model.</p>
+<p><strong>Since</strong><br/>
+4.4</p>
 </BODY>
 </HTML>

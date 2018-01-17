@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.jvm.application.tasks</a>&nbsp;/&nbsp;<a href="index.html">CreateStartScripts</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.jvm.application.tasks</a>&nbsp;/&nbsp;<a href="index.html">CreateStartScripts</a>&nbsp;/&nbsp;<a href="./-init-.html">&lt;init&gt;</a><br/>
 <br/>
 <h1>&lt;init&gt;</h1>
 <a name="org.gradle.jvm.application.tasks.CreateStartScripts$&lt;init&gt;()"></a>
@@ -14,7 +14,7 @@
 <p> Example: </p>
 <pre><code> task createStartScripts(type: CreateStartScripts) { outputDir = file('build/sample') mainClassName = 'org.gradle.test.Main' applicationName = 'myApp' classpath = files('path/to/some.jar') } </code></pre> 
 <p> Note: the Gradle <code>"application"</code> plugin adds a pre-configured task of this type named <code>"startScripts"</code>. </p>
-<p> The task generates separate scripts targeted at Microsoft Windows environments and UNIX-like environments (e.g. Linux, Mac OS X). The actual generation is implemented by the <code><a href="get-windows-start-script-generator.html">#getWindowsStartScriptGenerator()</a></code> and <code><a href="get-unix-start-script-generator.html">#getUnixStartScriptGenerator()</a></code> properties, of type ScriptGenerator. </p>
+<p> The task generates separate scripts targeted at Microsoft Windows environments and UNIX-like environments (e.g. Linux, macOS). The actual generation is implemented by the <code><a href="get-windows-start-script-generator.html">#getWindowsStartScriptGenerator()</a></code> and <code><a href="get-unix-start-script-generator.html">#getUnixStartScriptGenerator()</a></code> properties, of type ScriptGenerator. </p>
 <p> Example: </p>
 <pre><code> task createStartScripts(type: CreateStartScripts) { unixStartScriptGenerator = new CustomUnixStartScriptGenerator() windowsStartScriptGenerator = new CustomWindowsStartScriptGenerator() } class CustomUnixStartScriptGenerator implements ScriptGenerator { void generateScript(JavaAppStartScriptGenerationDetails details, Writer destination) { // implementation } } class CustomWindowsStartScriptGenerator implements ScriptGenerator { void generateScript(JavaAppStartScriptGenerationDetails details, Writer destination) { // implementation } } </code></pre> 
 <p> The default generators are of the type org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator, with default templates. This templates can be changed via the <code><a href="../../org.gradle.jvm.application.scripts/-template-based-script-generator/set-template.html">org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator#setTemplate(org.gradle.api.resources.TextResource)</a></code> method. </p>
@@ -23,6 +23,7 @@
  <li><code>optsEnvironmentVar</code></li>
  <li><code>exitEnvironmentVar</code></li>
  <li><code>mainClassName</code></li>
+ <li><code>executableDir</code></li>
  <li><code>defaultJvmOpts</code></li>
  <li><code>appNameSystemProperty</code></li>
  <li><code>appHomeRelativePath</code></li>

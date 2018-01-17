@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.cache</a>&nbsp;/&nbsp;<a href=".">ResolutionControl</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.cache</a>&nbsp;/&nbsp;<a href="./index.html">ResolutionControl</a><br/>
 <br/>
 <h1>ResolutionControl</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ResolutionControl</span><span class="symbol">&lt;</span><span class="identifier">A</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">B</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
@@ -32,7 +32,7 @@
 <p><a href="get-cached-result.html">getCachedResult</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCachedResult</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">B</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCachedResult</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html#B"><span class="identifier">B</span></a></code>
 <p>Returns the cached result file or null if the result has not been cached.</p>
 </td>
 </tr>
@@ -41,7 +41,7 @@
 <p><a href="get-request.html">getRequest</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRequest</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">A</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRequest</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html#A"><span class="identifier">A</span></a></code>
 <p>Returns the query object that was requested in this resolution.</p>
 </td>
 </tr>
@@ -73,7 +73,7 @@
 <p><a href="../-artifact-resolution-control/index.html">ArtifactResolutionControl</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ArtifactResolutionControl</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ResolutionControl</span><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-artifact-identifier/index.html"><span class="identifier">ArtifactIdentifier</span></a><span class="symbol">,</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">ArtifactResolutionControl</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ResolutionControl</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-artifact-identifier/index.html"><span class="identifier">ArtifactIdentifier</span></a><span class="symbol">,</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
 <p>Command methods for controlling artifact resolution via the DSL.</p>
 </td>
 </tr>
@@ -82,7 +82,7 @@
 <p><a href="../-dependency-resolution-control.html">DependencyResolutionControl</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">DependencyResolutionControl</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ResolutionControl</span><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-module-identifier/index.html"><span class="identifier">ModuleIdentifier</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-module-version-identifier/index.html"><span class="identifier">ModuleVersionIdentifier</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">DependencyResolutionControl</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ResolutionControl</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-module-identifier/index.html"><span class="identifier">ModuleIdentifier</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-module-version-identifier/index.html"><span class="identifier">ModuleVersionIdentifier</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
 <p>Command methods for controlling dependency resolution via the DSL.</p>
 </td>
 </tr>
@@ -91,7 +91,7 @@
 <p><a href="../-module-resolution-control/index.html">ModuleResolutionControl</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ModuleResolutionControl</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ResolutionControl</span><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-module-version-identifier/index.html"><span class="identifier">ModuleVersionIdentifier</span></a><span class="symbol">,</span>&nbsp;<a href="../../org.gradle.api.artifacts/-resolved-module-version/index.html"><span class="identifier">ResolvedModuleVersion</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">ModuleResolutionControl</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ResolutionControl</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-module-version-identifier/index.html"><span class="identifier">ModuleVersionIdentifier</span></a><span class="symbol">,</span>&nbsp;<a href="../../org.gradle.api.artifacts/-resolved-module-version/index.html"><span class="identifier">ResolvedModuleVersion</span></a><span class="symbol">&gt;</span></code>
 <p>Command methods for controlling module resolution via the DSL.</p>
 </td>
 </tr>

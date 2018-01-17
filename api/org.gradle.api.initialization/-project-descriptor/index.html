@@ -5,14 +5,14 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.initialization</a>&nbsp;/&nbsp;<a href=".">ProjectDescriptor</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.initialization</a>&nbsp;/&nbsp;<a href="./index.html">ProjectDescriptor</a><br/>
 <br/>
 <h1>ProjectDescriptor</h1>
 <code><span class="keyword">interface </span><span class="identifier">ProjectDescriptor</span></code>
 <p>
 <p>A <code>ProjectDescriptor</code> declares the configuration required to create and evaluate a .</p>
  
-<p> A <code>ProjectDescriptor</code> is created when you add a project to the build from the settings script, using <code><a href="#"> </a></code> or <code><a href="#">Settings#includeFlat(String[])</a></code>. You can access the descriptors using one of the lookup methods on the Settings object.</p>
+<p> A <code>ProjectDescriptor</code> is created when you add a project to the build from the settings script, using <code><a href="#"> </a></code> or <code><a href="#">Settings#includeFlat(String...)</a></code>. You can access the descriptors using one of the lookup methods on the Settings object.</p>
 </p>
 <h3>Functions</h3>
 <table>
@@ -40,7 +40,7 @@
 <p><a href="get-children.html">getChildren</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getChildren</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">ProjectDescriptor</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getChildren</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">ProjectDescriptor</span></a><span class="symbol">&gt;</span></code>
 <p>Returns the children of this project, if any.</p>
 </td>
 </tr>
@@ -58,7 +58,7 @@
 <p><a href="get-parent.html">getParent</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getParent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ProjectDescriptor</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getParent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">ProjectDescriptor</span></a></code>
 <p>Returns the parent of this project, if any. Returns null if this project is the root project.</p>
 </td>
 </tr>

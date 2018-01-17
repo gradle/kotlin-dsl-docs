@@ -5,14 +5,13 @@
 <link rel="stylesheet" href="../../style.css">
 </HEAD>
 <BODY>
-<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.api.component</a>&nbsp;/&nbsp;<a href=".">SoftwareComponent</a><br/>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.api.component</a>&nbsp;/&nbsp;<a href="./-software-component.html">SoftwareComponent</a><br/>
 <br/>
 <h1>SoftwareComponent</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">SoftwareComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
 <p>A software component produced by a Gradle software project. 
 <p>An implementation of this interface may also implement:</p>
- <ul> <li>ChildComponent to provide information about the hierarchy of components it belongs to.</li>
- <li>ComponentWithVariants to provide information about the variants that the component provides.</li>
+ <ul> <li>ComponentWithVariants to provide information about the variants that the component provides.</li>
  </ul>
 </p>
 <h3>Inherited Functions</h3>
@@ -36,46 +35,65 @@
 <tbody>
 <tr>
 <td>
-<p><a href="../org.gradle.language.cpp/-cpp-binary/index.html">CppBinary</a></p>
+<p><a href="../org.gradle.language/-component-with-binaries/index.html">ComponentWithBinaries</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">CppBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">SoftwareComponent</span></code>
-<p>A binary built from C++ source and linked from the resulting object files.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../org.gradle.language.cpp/-cpp-component/index.html">CppComponent</a></p>
-</td>
-<td>
-<code><span class="keyword">interface </span><span class="identifier">CppComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">SoftwareComponent</span></code>
-<p>Configuration for a C++ component, such as a library or executable, defining the source files and private header directories that make up the component. Private headers are those that are visible only to the source files of the component. 
-<p>A C++ component is composed of some C++ source files that are compiled and then linked into some binary.</p>
- 
-<p>An instance of this type is added as a project extension by the C++ plugins.</p>
-</p>
+<code><span class="keyword">interface </span><span class="identifier">ComponentWithBinaries</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
+<p>Represents a component that is composed of one or more binaries.</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="../org.gradle.language.swift/-swift-binary/index.html">SwiftBinary</a></p>
+<p><a href="../org.gradle.language.nativeplatform/-component-with-native-runtime/index.html">ComponentWithNativeRuntime</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">SwiftBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">SoftwareComponent</span></code>
-<p>A binary built from Swift source.</p>
+<code><span class="keyword">interface </span><span class="identifier">ComponentWithNativeRuntime</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
+<p>Represents a component that produces outputs that run on a native platform.</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="../org.gradle.language.swift/-swift-component/index.html">SwiftComponent</a></p>
+<p><a href="../org.gradle.language/-component-with-outputs/index.html">ComponentWithOutputs</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">SwiftComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">SoftwareComponent</span></code>
-<p>Configuration for a Swift component, such as a library or executable, defining the source files that make up the component plus other settings. 
-<p>Swift component is composed of some Swift source files that are compiled and then linked into some binary.</p>
- 
-<p>An instance of this type is added as a project extension by the Swift plugins.</p>
-</p>
+<code><span class="keyword">interface </span><span class="identifier">ComponentWithOutputs</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
+<p>Represents a component with output files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-component-with-variants/index.html">ComponentWithVariants</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentWithVariants</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
+<p>Represents a SoftwareComponent that provides one or more mutually exclusive children, or variants.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.language/-production-component/index.html">ProductionComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ProductionComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
+<p>Represents a component that is the main product of a project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.nativeplatform.test/-test-component/index.html">TestComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TestComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
+<p>Represents a component that can run tests.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.nativeplatform.test/-test-suite-component/index.html">TestSuiteComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TestSuiteComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
+<p>Represents a component that defines a test suite.</p>
 </td>
 </tr>
 </tbody>

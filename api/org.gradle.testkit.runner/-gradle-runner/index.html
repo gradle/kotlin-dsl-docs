@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.testkit.runner</a>&nbsp;/&nbsp;<a href=".">GradleRunner</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.testkit.runner</a>&nbsp;/&nbsp;<a href="./index.html">GradleRunner</a><br/>
 <br/>
 <h1>GradleRunner</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">GradleRunner</span></code>
@@ -68,7 +68,7 @@
 <p><a href="create.html">create</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">static</span> <span class="keyword">fun </span><span class="identifier">create</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleRunner</span></code>
+<code><span class="keyword">open</span> <span class="keyword">static</span> <span class="keyword">fun </span><span class="identifier">create</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">GradleRunner</span></a></code>
 <p>Creates a new Gradle runner. 
 <p> The runner requires a Gradle distribution (and therefore a specific version of Gradle) in order to execute builds. This method will find a Gradle distribution, based on the filesystem location of this class. That is, it is expected that this class is loaded from a Gradle distribution. </p>
 <p> When using the runner as part of tests <em>being executed by Gradle</em> (i.e. a build using the <code>gradleTestKit()</code> dependency), this means that the same distribution of Gradle that is executing the tests will be used by runner returned by this method. </p>
@@ -81,7 +81,7 @@
 <p><a href="forward-output.html">forwardOutput</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">forwardOutput</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleRunner</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">forwardOutput</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">GradleRunner</span></a></code>
 <p>Forwards the output of executed builds to the <code><a href="#">System.out</a></code> stream. 
 <p> The output of the build is always available via <code><a href="../-build-result/get-output.html">BuildResult#getOutput()</a></code>. This method can be used to additionally forward the output to <code>System.out</code> of the process using the runner. </p>
 <p> This method does not separate the standard output and error output. The two streams will be merged as they typically are when using Gradle from a command line interface. If you require separation of the streams, you can use <code><a href="forward-std-output.html">#forwardStdOutput(Writer)</a></code> and <code><a href="forward-std-error.html">#forwardStdError(Writer)</a></code> directly. </p>
@@ -94,7 +94,7 @@
 <p><a href="forward-std-error.html">forwardStdError</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">forwardStdError</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$forwardStdError(java.io.Writer)/writer">writer</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/Writer.html"><span class="identifier">Writer</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleRunner</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">forwardStdError</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$forwardStdError(java.io.Writer)/writer">writer</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/Writer.html"><span class="identifier">Writer</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">GradleRunner</span></a></code>
 <p>Configures the runner to forward standard error output from builds to the given writer. 
 <p> The output of the build is always available via <code><a href="../-build-result/get-output.html">BuildResult#getOutput()</a></code>. This method can be used to additionally capture the error output. </p>
 <p> Calling this method will negate the effect of previously calling <code><a href="forward-output.html">#forwardOutput()</a></code>. </p>
@@ -107,7 +107,7 @@
 <p><a href="forward-std-output.html">forwardStdOutput</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">forwardStdOutput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$forwardStdOutput(java.io.Writer)/writer">writer</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/Writer.html"><span class="identifier">Writer</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleRunner</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">forwardStdOutput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$forwardStdOutput(java.io.Writer)/writer">writer</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/Writer.html"><span class="identifier">Writer</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">GradleRunner</span></a></code>
 <p>Configures the runner to forward standard output from builds to the given writer. 
 <p> The output of the build is always available via <code><a href="../-build-result/get-output.html">BuildResult#getOutput()</a></code>. This method can be used to additionally capture the output. </p>
 <p> Calling this method will negate the effect of previously calling <code><a href="forward-output.html">#forwardOutput()</a></code>. </p>
@@ -167,8 +167,8 @@
 <p><a href="with-arguments.html">withArguments</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withArguments</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$withArguments(kotlin.collections.MutableList((kotlin.String)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleRunner</span></code><br/>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withArguments</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.testkit.runner.GradleRunner$withArguments(kotlin.Array((kotlin.String)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleRunner</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withArguments</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$withArguments(kotlin.collections.MutableList((kotlin.String)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">GradleRunner</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withArguments</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.testkit.runner.GradleRunner$withArguments(kotlin.Array((kotlin.String)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">GradleRunner</span></a></code>
 <p>Sets the build arguments.</p>
 </td>
 </tr>
@@ -177,7 +177,7 @@
 <p><a href="with-debug.html">withDebug</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withDebug</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$withDebug(kotlin.Boolean)/flag">flag</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleRunner</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withDebug</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$withDebug(kotlin.Boolean)/flag">flag</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">GradleRunner</span></a></code>
 <p>Sets whether debugging support is enabled.</p>
 </td>
 </tr>
@@ -186,7 +186,7 @@
 <p><a href="with-gradle-distribution.html">withGradleDistribution</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withGradleDistribution</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$withGradleDistribution(java.net.URI)/distribution">distribution</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/net/URI.html"><span class="identifier">URI</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleRunner</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withGradleDistribution</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$withGradleDistribution(java.net.URI)/distribution">distribution</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/net/URI.html"><span class="identifier">URI</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">GradleRunner</span></a></code>
 <p>Configures the runner to execute the build using the distribution of Gradle specified. 
 <p> The given URI must point to a valid Gradle distribution ZIP file. This method is typically used as an alternative to <code><a href="#">#withGradleVersion(String)</a></code>, where it is preferable to obtain the Gradle runtime from “local” servers. </p>
 <p> Unless previously downloaded, this method will cause the Gradle runtime at the given URI to be downloaded. The download will be cached beneath the Gradle User Home directory, the location of which is determined by the following in order of precedence: </p>
@@ -203,7 +203,7 @@
 <p><a href="with-gradle-installation.html">withGradleInstallation</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withGradleInstallation</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$withGradleInstallation(java.io.File)/installation">installation</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleRunner</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withGradleInstallation</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$withGradleInstallation(java.io.File)/installation">installation</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">GradleRunner</span></a></code>
 <p>Configures the runner to execute the build using the installation of Gradle specified. 
 <p> The given file must be a directory containing a valid Gradle installation. </p>
 <p> Alternatively, you may use <code><a href="#">#withGradleVersion(String)</a></code> to use an automatically installed Gradle version.</p>
@@ -215,7 +215,7 @@
 <p><a href="with-gradle-version.html">withGradleVersion</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withGradleVersion</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$withGradleVersion(kotlin.String)/versionNumber">versionNumber</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleRunner</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withGradleVersion</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$withGradleVersion(kotlin.String)/versionNumber">versionNumber</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">GradleRunner</span></a></code>
 <p>Configures the runner to execute the build with the version of Gradle specified. 
 <p> Unless previously downloaded, this method will cause the Gradle runtime for the version specified to be downloaded over the Internet from Gradle's distribution servers. The download will be cached beneath the Gradle User Home directory, the location of which is determined by the following in order of precedence: </p>
 <ol> <li>The system property <code>"gradle.user.home"</code></li>
@@ -233,7 +233,7 @@
 <p><a href="with-plugin-classpath.html">withPluginClasspath</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withPluginClasspath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleRunner</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withPluginClasspath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">GradleRunner</span></a></code>
 <p>Sets the plugin classpath based on the Gradle plugin development plugin conventions. 
 <p> The 'java-gradle-plugin' generates a file describing the plugin under test and makes it available to the test runtime. This method configures the runner to use this file. Please consult the Gradle documentation of this plugin for more information. </p>
 <p> This method looks for a file named <code>plugin-under-test-metadata.properties</code> on the runtime classpath, and uses the <code>implementation-classpath</code> as the classpath, which is expected to a <code><a href="#">File#pathSeparatorChar</a></code> joined string. If the plugin metadata file cannot be resolved an InvalidPluginMetadataException is thrown. </p>
@@ -241,7 +241,7 @@
 <p> Calling this method will replace any previous classpath specified via <code><a href="#">#withPluginClasspath(Iterable)</a></code> and vice versa. </p>
 <p> <strong>Note:</strong> this method will cause an InvalidRunnerConfigurationException to be emitted when the build is executed, if the version of Gradle executing the build (i.e. not the version of the runner) is earlier than Gradle 2.8 as those versions do not support this feature. Please consult the TestKit Gradle User Guide chapter alternative strategies that can be used for older Gradle versions.</p>
 </p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withPluginClasspath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$withPluginClasspath(kotlin.collections.MutableIterable((java.io.File)))/classpath">classpath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleRunner</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withPluginClasspath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$withPluginClasspath(kotlin.collections.MutableIterable((java.io.File)))/classpath">classpath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">GradleRunner</span></a></code>
 <p>Sets the injected plugin classpath for the build. 
 <p> Plugins from the given classpath are able to be resolved using the <code>plugins { }</code> syntax in the build under test. Please consult the TestKit Gradle User Guide chapter for more information and usage examples. </p>
 <p> <strong>Note:</strong> this method will cause an InvalidRunnerConfigurationException to be emitted when the build is executed, if the version of Gradle executing the build (i.e. not the version of the runner) is earlier than Gradle 2.8 as those versions do not support this feature. Please consult the TestKit Gradle User Guide chapter alternative strategies that can be used for older Gradle versions.</p>
@@ -253,11 +253,11 @@
 <p><a href="with-project-dir.html">withProjectDir</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withProjectDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$withProjectDir(java.io.File)/projectDir">projectDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleRunner</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withProjectDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$withProjectDir(java.io.File)/projectDir">projectDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">GradleRunner</span></a></code>
 <p>Sets the directory that the Gradle will be executed in. 
 <p> This is typically set to the root project of the build under test. </p>
 <p> A project directory must be set. This method must be called before <code><a href="build.html">#build()</a></code> or <code><a href="build-and-fail.html">#buildAndFail()</a></code>. </p>
-<p> All builds executed with the runner effectively implicitly add the <code>--no-search-upward</code> argument. This suppresses Gradle's default behaviour of searching upwards through the file system in order to find the root of the current project tree. This default behaviour is often utilised when focusing on a particular build within a multi-project build. This behaviour is suppressed due to test builds being executed potentially being created within a “real build” (e.g. under the <code>/build</code> directory of the plugin's project directory).</p>
+<p> All builds executed with the runner effectively do not search parent directories for a <code>settings.gradle</code> file. This suppresses Gradle's default behaviour of searching upwards through the file system in order to find the root of the current project tree. This default behaviour is often utilised when focusing on a particular build within a multi-project build. This behaviour is suppressed due to test builds being executed potentially being created within a “real build” (e.g. under the <code>/build</code> directory of the plugin's project directory).</p>
 </p>
 </td>
 </tr>
@@ -266,7 +266,7 @@
 <p><a href="with-test-kit-dir.html">withTestKitDir</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withTestKitDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$withTestKitDir(java.io.File)/testKitDir">testKitDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleRunner</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withTestKitDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.testkit.runner.GradleRunner$withTestKitDir(java.io.File)/testKitDir">testKitDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">GradleRunner</span></a></code>
 <p>Sets the directory to use for TestKit's working storage needs. 
 <p> This directory is used internally to store various files required by the runner. If no explicit Gradle user home is specified via the build arguments (i.e. the <code>-g «dir»</code> option}), this directory will also be used for the Gradle user home for the test build. </p>
 <p> If no value has been specified when the build is initiated, a directory unique to the current operating system user will be created and used within the JVM's temporary directory as advertised by the <code>java.io.tmpdir</code> system property. This directory is not deleted by the runner after the test build. </p>

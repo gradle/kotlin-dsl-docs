@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.application</a>&nbsp;/&nbsp;<a href=".">CreateStartScripts</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.application</a>&nbsp;/&nbsp;<a href="./index.html">CreateStartScripts</a><br/>
 <br/>
 <h1>CreateStartScripts</h1>
 <code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CreateStartScripts</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.jvm.application.tasks/-create-start-scripts/index.html"><span class="identifier">CreateStartScripts</span></a></code>
@@ -13,7 +13,7 @@
 <p> Example: </p>
 <pre><code> task createStartScripts(type: CreateStartScripts) { outputDir = file('build/sample') mainClassName = 'org.gradle.test.Main' applicationName = 'myApp' classpath = files('path/to/some.jar') } </code></pre> 
 <p> Note: the Gradle <code>"application"</code> plugin adds a pre-configured task of this type named <code>"startScripts"</code>. </p>
-<p> The task generates separate scripts targeted at Microsoft Windows environments and UNIX-like environments (e.g. Linux, Mac OS X). The actual generation is implemented by the <code><a href="../../org.gradle.jvm.application.tasks/-create-start-scripts/get-windows-start-script-generator.html">#getWindowsStartScriptGenerator()</a></code> and <code><a href="../../org.gradle.jvm.application.tasks/-create-start-scripts/get-unix-start-script-generator.html">#getUnixStartScriptGenerator()</a></code> properties, of type org.gradle.jvm.application.scripts.ScriptGenerator. </p>
+<p> The task generates separate scripts targeted at Microsoft Windows environments and UNIX-like environments (e.g. Linux, macOS). The actual generation is implemented by the <code><a href="../../org.gradle.jvm.application.tasks/-create-start-scripts/get-windows-start-script-generator.html">#getWindowsStartScriptGenerator()</a></code> and <code><a href="../../org.gradle.jvm.application.tasks/-create-start-scripts/get-unix-start-script-generator.html">#getUnixStartScriptGenerator()</a></code> properties, of type org.gradle.jvm.application.scripts.ScriptGenerator. </p>
 <p> Example: </p>
 <pre><code> task createStartScripts(type: CreateStartScripts) { unixStartScriptGenerator = new CustomUnixStartScriptGenerator() windowsStartScriptGenerator = new CustomWindowsStartScriptGenerator() } class CustomUnixStartScriptGenerator implements ScriptGenerator { void generateScript(JavaAppStartScriptGenerationDetails details, Writer destination) { // implementation } } class CustomWindowsStartScriptGenerator implements ScriptGenerator { void generateScript(JavaAppStartScriptGenerationDetails details, Writer destination) { // implementation } } </code></pre> 
 <p> The default generators are of the type org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator, with default templates. This templates can be changed via the <code><a href="../../org.gradle.jvm.application.scripts/-template-based-script-generator/set-template.html">org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator#setTemplate(org.gradle.api.resources.TextResource)</a></code> method. </p>
@@ -43,7 +43,7 @@
 <p> Example: </p>
 <pre><code> task createStartScripts(type: CreateStartScripts) { outputDir = file('build/sample') mainClassName = 'org.gradle.test.Main' applicationName = 'myApp' classpath = files('path/to/some.jar') } </code></pre> 
 <p> Note: the Gradle <code>"application"</code> plugin adds a pre-configured task of this type named <code>"startScripts"</code>. </p>
-<p> The task generates separate scripts targeted at Microsoft Windows environments and UNIX-like environments (e.g. Linux, Mac OS X). The actual generation is implemented by the <code><a href="../../org.gradle.jvm.application.tasks/-create-start-scripts/get-windows-start-script-generator.html">#getWindowsStartScriptGenerator()</a></code> and <code><a href="../../org.gradle.jvm.application.tasks/-create-start-scripts/get-unix-start-script-generator.html">#getUnixStartScriptGenerator()</a></code> properties, of type org.gradle.jvm.application.scripts.ScriptGenerator. </p>
+<p> The task generates separate scripts targeted at Microsoft Windows environments and UNIX-like environments (e.g. Linux, macOS). The actual generation is implemented by the <code><a href="../../org.gradle.jvm.application.tasks/-create-start-scripts/get-windows-start-script-generator.html">#getWindowsStartScriptGenerator()</a></code> and <code><a href="../../org.gradle.jvm.application.tasks/-create-start-scripts/get-unix-start-script-generator.html">#getUnixStartScriptGenerator()</a></code> properties, of type org.gradle.jvm.application.scripts.ScriptGenerator. </p>
 <p> Example: </p>
 <pre><code> task createStartScripts(type: CreateStartScripts) { unixStartScriptGenerator = new CustomUnixStartScriptGenerator() windowsStartScriptGenerator = new CustomWindowsStartScriptGenerator() } class CustomUnixStartScriptGenerator implements ScriptGenerator { void generateScript(JavaAppStartScriptGenerationDetails details, Writer destination) { // implementation } } class CustomWindowsStartScriptGenerator implements ScriptGenerator { void generateScript(JavaAppStartScriptGenerationDetails details, Writer destination) { // implementation } } </code></pre> 
 <p> The default generators are of the type org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator, with default templates. This templates can be changed via the <code><a href="../../org.gradle.jvm.application.scripts/-template-based-script-generator/set-template.html">org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator#setTemplate(org.gradle.api.resources.TextResource)</a></code> method. </p>
@@ -99,6 +99,15 @@
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDefaultJvmOpts</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
 <p>The application's default JVM options. Defaults to an empty list.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm.application.tasks/-create-start-scripts/get-executable-dir.html">getExecutableDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getExecutableDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The directory to write the scripts into in the distribution.</p>
 </td>
 </tr>
 <tr>
@@ -197,6 +206,15 @@
 </td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDefaultJvmOpts</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.application.tasks.CreateStartScripts$setDefaultJvmOpts(kotlin.collections.MutableIterable((kotlin.String)))/defaultJvmOpts">defaultJvmOpts</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.jvm.application.tasks/-create-start-scripts/set-executable-dir.html">setExecutableDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExecutableDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.jvm.application.tasks.CreateStartScripts$setExecutableDir(kotlin.String)/executableDir">executableDir</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The directory to write the scripts into in the distribution.</p>
+</td>
 </tr>
 <tr>
 <td>

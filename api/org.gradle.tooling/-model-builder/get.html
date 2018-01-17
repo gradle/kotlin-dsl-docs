@@ -5,11 +5,11 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling</a>&nbsp;/&nbsp;<a href="index.html">ModelBuilder</a>&nbsp;/&nbsp;<a href=".">get</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling</a>&nbsp;/&nbsp;<a href="index.html">ModelBuilder</a>&nbsp;/&nbsp;<a href="./get.html">get</a><br/>
 <br/>
 <h1>get</h1>
 <a name="org.gradle.tooling.ModelBuilder$get()"></a>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html#T"><span class="identifier">T</span></a></code>
 <p>Fetch the model, blocking until it is available.</p>
 <h3>Exceptions</h3>
 <p><a name="UnsupportedVersionException"></a>
@@ -33,9 +33,9 @@ The model.</p>
 <p><strong>Since</strong><br/>
 1.0-milestone-3</p>
 <a name="org.gradle.tooling.ModelBuilder$get(org.gradle.tooling.ResultHandler((org.gradle.tooling.ModelBuilder.T)))"></a>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.ModelBuilder$get(org.gradle.tooling.ResultHandler((org.gradle.tooling.ModelBuilder.T)))/handler">handler</span><span class="symbol">:</span>&nbsp;<a href="../-result-handler/index.html"><span class="identifier">ResultHandler</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.ModelBuilder$get(org.gradle.tooling.ResultHandler((org.gradle.tooling.ModelBuilder.T)))/handler">handler</span><span class="symbol">:</span>&nbsp;<a href="../-result-handler/index.html"><span class="identifier">ResultHandler</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Starts fetching the model, passing the result to the given handler when complete. This method returns immediately, and the result is later passed to the given handler's <code><a href="#">ResultHandler#onComplete(Object)</a></code> method. 
-<p>If the operation fails, the handler's <code><a href="../-result-handler/on-failure.html">ResultHandler#onFailure(GradleConnectionException)</a></code> method is called with the appropriate exception. See <code>#get()</code> for a description of the various exceptions that the operation may fail with.</p>
+<p>If the operation fails, the handler's <code><a href="../-result-handler/on-failure.html">ResultHandler#onFailure(GradleConnectionException)</a></code> method is called with the appropriate exception. See <code><a href="./get.html">#get()</a></code> for a description of the various exceptions that the operation may fail with.</p>
 </p>
 <h3>Parameters</h3>
 <p><a name="handler"></a>

@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">ComponentModuleMetadataDetails</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="./index.html">ComponentModuleMetadataDetails</a><br/>
 <br/>
 <h1>ComponentModuleMetadataDetails</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ComponentModuleMetadataDetails</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-component-module-metadata/index.html"><span class="identifier">ComponentModuleMetadata</span></a></code>
@@ -22,6 +22,8 @@
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">replacedBy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ComponentModuleMetadataDetails$replacedBy(kotlin.Any)/moduleNotation">moduleNotation</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Configures a replacement module for this module. A real world example: 'com.google.collections:google-collections' is replaced by 'com.google.guava:guava'. Subsequent invocations of this method replace the previous 'replacedBy' value. For information and examples please see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">replacedBy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ComponentModuleMetadataDetails$replacedBy(kotlin.Any, kotlin.String)/moduleNotation">moduleNotation</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.ComponentModuleMetadataDetails$replacedBy(kotlin.Any, kotlin.String)/reason">reason</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures a replacement module for this module and provides an explanation for the replacement. A real world example: 'com.google.collections:google-collections' is replaced by 'com.google.guava:guava'. Subsequent invocations of this method replace the previous 'replacedBy' value. For information and examples please see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
 </td>
 </tr>
 </tbody>

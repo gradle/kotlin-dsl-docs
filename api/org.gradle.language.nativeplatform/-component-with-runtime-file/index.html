@@ -1,0 +1,94 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ComponentWithRuntimeFile - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.nativeplatform</a>&nbsp;/&nbsp;<a href="./index.html">ComponentWithRuntimeFile</a><br/>
+<br/>
+<h1>ComponentWithRuntimeFile</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ComponentWithRuntimeFile</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-component-with-native-runtime/index.html"><span class="identifier">ComponentWithNativeRuntime</span></a></code>
+<p>Represents a native component that produces a file to be used at runtime.</p>
+<p><strong>Since</strong><br/>
+4.5</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-runtime-file.html">getRuntimeFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRuntimeFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.file/-regular-file/index.html"><span class="identifier">RegularFile</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the runtime file of this component.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-component-with-native-runtime/get-base-name.html">getBaseName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBaseName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the base name of this component. This is used to calculate output file names.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-component-with-native-runtime/get-target-platform.html">getTargetPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a></code>
+<p>Returns the target platform for this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-component-with-native-runtime/get-tool-chain.html">getToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getToolChain</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a></code>
+<p>Returns the tool chain for this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-component-with-native-runtime/is-debuggable.html">isDebuggable</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isDebuggable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if this component has debugging enabled.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-component-with-native-runtime/is-optimized.html">isOptimized</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isOptimized</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if this component is optimized.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-component-with-shared-library/index.html">ComponentWithSharedLibrary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentWithSharedLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-component-with-link-file/index.html"><span class="identifier">ComponentWithLinkFile</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">ComponentWithRuntimeFile</span></a></code>
+<p>Represents a native component that produces a shared library.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

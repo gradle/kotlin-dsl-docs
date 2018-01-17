@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../style.css">
 </HEAD>
 <BODY>
-<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.provider</a><br/>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="./index.html">org.gradle.api.provider</a><br/>
 <br/>
 <h2>Package org.gradle.api.provider</h2>
 <h3>Types</h3>
@@ -13,21 +13,43 @@
 <tbody>
 <tr>
 <td>
-<p><a href="-list-property.html">ListProperty</a></p>
+<p><a href="-has-multiple-values/index.html">HasMultipleValues</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ListProperty</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-property-state/index.html"><span class="identifier">PropertyState</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
-<p>Represents a property whose type is a List of elements of type T. 
-<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory method <code><a href="#">org.gradle.api.provider.ProviderFactory#listProperty(Class)</a></code>.</p>
+<code><span class="keyword">interface </span><span class="identifier">HasMultipleValues</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<p>Represents a property whose value can be set using multiple elements of type T, such as a collection property. 
+<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. You can use the factory methods on org.gradle.api.model.ObjectFactory to create instances of this interface.</p>
 </p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="-property-state/index.html">PropertyState</a></p>
+<p><a href="-list-property.html">ListProperty</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">PropertyState</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">ListProperty</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="-list-property.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><a href="-has-multiple-values/index.html"><span class="identifier">HasMultipleValues</span></a><span class="symbol">&lt;</span><a href="-list-property.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Represents a property whose type is a List of elements of type T. 
+<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory method <code><a href="#">org.gradle.api.model.ObjectFactory#listProperty(Class)</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-property/index.html">Property</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Property</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="-property/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>A <code>Provider</code> representation for capturing the state of a property. The value can be provided by using the method <code><a href="#">#set(Object)</a></code> or <code><a href="#">#set(Provider)</a></code>. 
+<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory method <code><a href="#">org.gradle.api.model.ObjectFactory#property(Class)</a></code>. There are also several specialized subtypes of this interface that can be created using various other factory methods.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-property-state.html">PropertyState</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PropertyState</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-property/index.html"><span class="identifier">Property</span></a><span class="symbol">&lt;</span><a href="-property-state.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
 <p>A <code>Provider</code> representation for capturing the state of a property. The value can be provided by using the method <code><a href="#">#set(Object)</a></code> or <code><a href="#">#set(Provider)</a></code>. 
 <p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory methods <code><a href="#">org.gradle.api.Project#property(java.lang.Class)</a></code> or <code><a href="#">org.gradle.api.provider.ProviderFactory#property(java.lang.Class)</a></code>.</p>
 </p>
@@ -40,9 +62,18 @@
 <td>
 <code><span class="keyword">interface </span><span class="identifier">Provider</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
 <p>A container object that provides a value of a specific type. The value can be retrieved by the method <code><a href="-provider/get.html">#get()</a></code> or <code><a href="-provider/get-or-null.html">#getOrNull()</a></code>. 
-<p>A provider may not always have a value available, for example when the value may not yet be known but will be known at some point in the future. When a value is not available, <code><a href="-provider/is-present.html">#isPresent()</a></code> returns <code>false</code> and retrieving the value will fail with an exception. </p>
-<p>A provider may not always provide the same value. Although there are no methods on this interface to change the value, the provider implementation may be mutable or use values from some changing source. </p>
-<p>A provider may provide a value that is mutable and that changes over time. </p>
+<p> A provider may not always have a value available, for example when the value may not yet be known but will be known at some point in the future. When a value is not available, <code><a href="-provider/is-present.html">#isPresent()</a></code> returns <code>false</code> and retrieving the value will fail with an exception. </p>
+ 
+<p> A provider may not always provide the same value. Although there are no methods on this interface to change the value, the provider implementation may be mutable or use values from some changing source. </p>
+ 
+<p> A provider may provide a value that is mutable and that changes over time. </p>
+ 
+<p> A typical use of a provider is to pass values from one DSL element to another, e.g. from an extension to a task. Providers also allow expensive computations to be deferred until their value is actually needed, usually at task execution time. </p>
+ 
+<p> For a provider whose value can be mutated, see PropertyState. </p>
+ 
+<p> Do not use <code>Provider&lt;File&gt;</code>. Use org.gradle.api.file.Directory or org.gradle.api.file.RegularFile instead. </p>
+ 
 <p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory methods <code><a href="#">org.gradle.api.Project#provider(java.util.concurrent.Callable)</a></code> or <code><a href="#">org.gradle.api.provider.ProviderFactory#provider(java.util.concurrent.Callable)</a></code>.</p>
 </p>
 </td>
@@ -57,6 +88,17 @@
 <p> An instance of the factory can be injected into a task or plugin by annotating a public constructor or method with <code>javax.inject.Inject</code>. </p>
 <pre><code> public class MyTask extends DefaultTask { // injection into a constructor @javax.inject.Inject public MyTask(ProviderFactory providerFactory) { } // injection into a method @javax.inject.Inject public ProviderFactory getProviderFactory() { throw new UnsupportedOperationException(); } } </code></pre> 
 <p>An instance of the factory is also available using <code><a href="../org.gradle.api/-project/get-providers.html">Project#getProviders()</a></code></p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-set-property.html">SetProperty</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SetProperty</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="-set-property.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><a href="-has-multiple-values/index.html"><span class="identifier">HasMultipleValues</span></a><span class="symbol">&lt;</span><a href="-set-property.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Represents a property whose type is a Set of elements of type T. Retains iteration order. 
+<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory method <code><a href="#">org.gradle.api.model.ObjectFactory#listProperty(Class)</a></code>.</p>
 </p>
 </td>
 </tr>

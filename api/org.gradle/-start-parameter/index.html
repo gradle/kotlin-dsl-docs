@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle</a>&nbsp;/&nbsp;<a href=".">StartParameter</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle</a>&nbsp;/&nbsp;<a href="./index.html">StartParameter</a><br/>
 <br/>
 <h1>StartParameter</h1>
 <code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">StartParameter</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.logging.configuration/-logging-configuration/index.html"><span class="identifier">LoggingConfiguration</span></a><span class="symbol">, </span><a href="../../org.gradle.concurrent/-parallelism-configuration/index.html"><span class="identifier">ParallelismConfiguration</span></a><span class="symbol">, </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code>
@@ -225,6 +225,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-warning-mode.html">getWarningMode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getWarningMode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.logging.configuration/-warning-mode/index.html"><span class="identifier">WarningMode</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="hash-code.html">hashCode</a></p>
 </td>
 <td>
@@ -295,6 +304,15 @@
 </td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isDryRun</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="is-interactive.html">isInteractive</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isInteractive</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true when console is interactive.</p>
+</td>
 </tr>
 <tr>
 <td>
@@ -389,7 +407,7 @@
 <p><a href="new-build.html">newBuild</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">newBuild</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">StartParameter</span></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">newBuild</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">StartParameter</span></a></code>
 <p>
 <p>Creates the parameters for a new build, using these parameters as a template. Copies the environmental properties from this parameter (eg Gradle user home dir, etc), but does not copy the build specific properties (eg task names).</p>
 </p>
@@ -400,7 +418,7 @@
 <p><a href="new-instance.html">newInstance</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">newInstance</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">StartParameter</span></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">newInstance</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">StartParameter</span></a></code>
 <p>Duplicates this <code>StartParameter</code> instance.</p>
 </td>
 </tr>
@@ -427,7 +445,7 @@
 <p><a href="set-build-project-dependencies.html">setBuildProjectDependencies</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setBuildProjectDependencies</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setBuildProjectDependencies(kotlin.Boolean)/build">build</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">StartParameter</span></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setBuildProjectDependencies</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setBuildProjectDependencies(kotlin.Boolean)/build">build</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">StartParameter</span></a></code>
 <p>Specifies whether project dependencies should be built. Defaults to true.</p>
 </td>
 </tr>
@@ -520,6 +538,15 @@
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setInitScripts</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setInitScripts(kotlin.collections.MutableList((java.io.File)))/initScripts">initScripts</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Sets the list of init scripts to be run before the build starts. This list is in addition to the default init scripts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-interactive.html">setInteractive</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setInteractive</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setInteractive(kotlin.Boolean)/interactive">interactive</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies whether console is interactive.</p>
 </td>
 </tr>
 <tr>
@@ -693,6 +720,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="set-warning-mode.html">setWarningMode</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setWarningMode</span><span class="symbol">(</span><span class="identifier" id="org.gradle.StartParameter$setWarningMode(org.gradle.api.logging.configuration.WarningMode)/warningMode">warningMode</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.logging.configuration/-warning-mode/index.html"><span class="identifier">WarningMode</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="to-string.html">toString</a></p>
 </td>
 <td>
@@ -703,7 +739,7 @@
 <p><a href="use-empty-settings.html">useEmptySettings</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">useEmptySettings</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">StartParameter</span></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">useEmptySettings</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">StartParameter</span></a></code>
 <p>Specifies that an empty settings script should be used. This means that even if a settings file exists in the conventional location, or has been previously specified by <code><a href="set-settings-file.html">#setSettingsFile(java.io.File)</a></code>, it will not be used. If <code><a href="set-settings-file.html">#setSettingsFile(java.io.File)</a></code> is called after this, it will supersede calling this method.</p>
 </td>
 </tr>

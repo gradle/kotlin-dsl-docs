@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../style.css">
 </HEAD>
 <BODY>
-<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.nativeplatform.test.plugins</a><br/>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="./index.html">org.gradle.nativeplatform.test.plugins</a><br/>
 <br/>
 <h2>Package org.gradle.nativeplatform.test.plugins</h2>
 <h3>Types</h3>
@@ -18,6 +18,20 @@
 <td>
 <code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">NativeBinariesTestPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span></code>
 <p>A plugin that sets up the infrastructure for testing native binaries.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-native-testing-base-plugin/index.html">NativeTestingBasePlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">NativeTestingBasePlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><span class="identifier">ProjectInternal</span><span class="symbol">&gt;</span></code>
+<p>Common base plugin for all native testing plugins. 
+<p>Expects plugins to register the native test suites in the <code><a href="../org.gradle.api/-project/get-components.html">Project#getComponents()</a></code> container, and defines a number of rules that act on these components to configure them.</p>
+ <ul> <li>Adds a <code>"test"</code> task.</li>
+ <li>Configures the <code>"test"</code> task to run the tests of the <code>test</code> component, if present. Expects the test component to be of type TestSuiteComponent.</li>
+ </ul>
+</p>
 </td>
 </tr>
 </tbody>

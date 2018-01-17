@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../style.css">
 </HEAD>
 <BODY>
-<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.artifacts.dsl</a><br/>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="./index.html">org.gradle.api.artifacts.dsl</a><br/>
 <br/>
 <h2>Package org.gradle.api.artifacts.dsl</h2>
 <h3>Types</h3>
@@ -59,6 +59,17 @@
 <p>Allows to modify the metadata of depended-on software components. 
 <p> Example: </p>
 <pre><code> dependencies { modules { //Configuring component module metadata for the entire "google-collections" module, // declaring that legacy library was replaced with "guava". //This way, Gradle's conflict resolution can use this information and use "guava" // in case both libraries appear in the same dependency tree. module("com.google.collections:google-collections") { replacedBy("com.google.guava:guava") } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency-constraint-handler/index.html">DependencyConstraintHandler</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DependencyConstraintHandler</span></code>
+<p>
+<p>A <code>DependencyConstraintHandler</code> is used to declare dependency constraints.</p>
+</p>
 </td>
 </tr>
 <tr>

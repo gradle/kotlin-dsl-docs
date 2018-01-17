@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href=".">ProjectLayout</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href="./index.html">ProjectLayout</a><br/>
 <br/>
 <h1>ProjectLayout</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ProjectLayout</span></code>
@@ -17,11 +17,33 @@
 <tbody>
 <tr>
 <td>
+<p><a href="directory-property.html">directoryProperty</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">directoryProperty</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-directory-property/index.html"><span class="identifier">DirectoryProperty</span></a></code>
+<p>Creates a new DirectoryProperty that uses the project directory to resolve paths, if required. The property has no initial value.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">directoryProperty</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.ProjectLayout$directoryProperty(org.gradle.api.provider.Provider((org.gradle.api.file.Directory)))/initialProvider">initialProvider</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-directory/index.html"><span class="identifier">Directory</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-directory-property/index.html"><span class="identifier">DirectoryProperty</span></a></code>
+<p>Creates a new DirectoryProperty that uses the project directory to resolve paths, if required. The property has the initial provider specified.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="file.html">file</a></p>
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.ProjectLayout$file(org.gradle.api.provider.Provider((java.io.File)))/file">file</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../-regular-file/index.html"><span class="identifier">RegularFile</span></a><span class="symbol">&gt;</span></code>
-<p>Creates a RegularFile implementation whose location is calculated from the given Provider.</p>
+<p>Creates a RegularFile provider whose location is calculated from the given Provider.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="file-property.html">fileProperty</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">fileProperty</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-regular-file-property/index.html"><span class="identifier">RegularFileProperty</span></a></code>
+<p>Creates a new RegularFileProperty that uses the project directory to resolve paths, if required. The property has no initial value.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">fileProperty</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.ProjectLayout$fileProperty(org.gradle.api.provider.Provider((org.gradle.api.file.RegularFile)))/initialProvider">initialProvider</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-regular-file/index.html"><span class="identifier">RegularFile</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-regular-file-property/index.html"><span class="identifier">RegularFileProperty</span></a></code>
+<p>Creates a new RegularFileProperty that uses the project directory to resolve paths, if required. The property has the initial provider specified.</p>
 </td>
 </tr>
 <tr>
@@ -29,7 +51,7 @@
 <p><a href="get-build-directory.html">getBuildDirectory</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildDirectory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-directory-var/index.html"><span class="identifier">DirectoryVar</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildDirectory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-directory-property/index.html"><span class="identifier">DirectoryProperty</span></a></code>
 <p>Returns the build directory for the project.</p>
 </td>
 </tr>
@@ -47,7 +69,7 @@
 <p><a href="new-directory-var.html">newDirectoryVar</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">newDirectoryVar</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-directory-var/index.html"><span class="identifier">DirectoryVar</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">newDirectoryVar</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-directory-var.html"><span class="identifier">DirectoryVar</span></a></code>
 <p>Creates a new DirectoryVar that uses the project directory to resolve paths, if required. The var has no initial value.</p>
 </td>
 </tr>
@@ -56,7 +78,7 @@
 <p><a href="new-file-var.html">newFileVar</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">newFileVar</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-regular-file-var/index.html"><span class="identifier">RegularFileVar</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">newFileVar</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-regular-file-var.html"><span class="identifier">RegularFileVar</span></a></code>
 <p>Creates a new RegularFileVar that uses the project directory to resolve paths, if required. The var has no initial value.</p>
 </td>
 </tr>

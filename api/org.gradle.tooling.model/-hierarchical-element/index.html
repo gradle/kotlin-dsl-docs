@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.model</a>&nbsp;/&nbsp;<a href=".">HierarchicalElement</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.model</a>&nbsp;/&nbsp;<a href="./index.html">HierarchicalElement</a><br/>
 <br/>
 <h1>HierarchicalElement</h1>
 <code><span class="keyword">interface </span><span class="identifier">HierarchicalElement</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-element/index.html"><span class="identifier">Element</span></a></code>
@@ -20,7 +20,7 @@
 <p><a href="get-children.html">getChildren</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getChildren</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">HierarchicalElement</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getChildren</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="./index.html"><span class="identifier">HierarchicalElement</span></a><span class="symbol">&gt;</span></code>
 <p>Returns the child elements, or the empty set if there are no child elements.</p>
 </td>
 </tr>
@@ -29,7 +29,7 @@
 <p><a href="get-parent.html">getParent</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getParent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">HierarchicalElement</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getParent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">HierarchicalElement</span></a></code>
 <p>Returns the parent of this element, or <code>null</code> if there is no parent.</p>
 </td>
 </tr>
@@ -66,7 +66,7 @@
 <p><a href="../-gradle-project/index.html">GradleProject</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">GradleProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HierarchicalElement</span><span class="symbol">, </span><a href="../-buildable-element/index.html"><span class="identifier">BuildableElement</span></a><span class="symbol">, </span><a href="../-project-model/index.html"><span class="identifier">ProjectModel</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">GradleProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">HierarchicalElement</span></a><span class="symbol">, </span><a href="../-buildable-element/index.html"><span class="identifier">BuildableElement</span></a><span class="symbol">, </span><a href="../-project-model/index.html"><span class="identifier">ProjectModel</span></a></code>
 <p>Represents a Gradle project.</p>
 </td>
 </tr>
@@ -75,7 +75,7 @@
 <p><a href="../../org.gradle.tooling.model.eclipse/-hierarchical-eclipse-project/index.html">HierarchicalEclipseProject</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">HierarchicalEclipseProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HierarchicalElement</span><span class="symbol">, </span><a href="../-has-gradle-project/index.html"><span class="identifier">HasGradleProject</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">HierarchicalEclipseProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">HierarchicalElement</span></a><span class="symbol">, </span><a href="../-has-gradle-project/index.html"><span class="identifier">HasGradleProject</span></a></code>
 <p>Represents the basic information about an Eclipse project.</p>
 </td>
 </tr>
@@ -84,7 +84,7 @@
 <p><a href="../../org.gradle.tooling.model.idea/-idea-module/index.html">IdeaModule</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">IdeaModule</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HierarchicalElement</span><span class="symbol">, </span><a href="../-has-gradle-project/index.html"><span class="identifier">HasGradleProject</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">IdeaModule</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">HierarchicalElement</span></a><span class="symbol">, </span><a href="../-has-gradle-project/index.html"><span class="identifier">HasGradleProject</span></a></code>
 <p>Represents information about the IDEA module.</p>
 </td>
 </tr>
@@ -93,7 +93,7 @@
 <p><a href="../../org.gradle.tooling.model.idea/-idea-project/index.html">IdeaProject</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">IdeaProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">HierarchicalElement</span></code>
+<code><span class="keyword">interface </span><span class="identifier">IdeaProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">HierarchicalElement</span></a></code>
 <p>Represents the information about the IDEA project.</p>
 </td>
 </tr>

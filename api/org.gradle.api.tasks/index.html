@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../style.css">
 </HEAD>
 <BODY>
-<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.tasks</a><br/>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="./index.html">org.gradle.api.tasks</a><br/>
 <br/>
 <h2>Package org.gradle.api.tasks</h2>
 <h3>Types</h3>
@@ -245,7 +245,7 @@
 <p><a href="-task-collection/index.html">TaskCollection</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">TaskCollection</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">TaskCollection</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><a href="-task-collection/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
 <p>A <code>TaskCollection</code> contains a set of Task instances, and provides a number of query methods.</p>
 </td>
 </tr>
@@ -322,6 +322,15 @@
  
 <p>You can obtain a <code>TaskInputs</code> instance using <code><a href="../org.gradle.api/-task/get-inputs.html">org.gradle.api.Task#getInputs()</a></code>.</p>
 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-task-local-state/index.html">TaskLocalState</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskLocalState</span></code>
+<p>Represents the files or directories that represent the local state of a org.gradle.api.Task. The typical usage for local state is to store non-relocatable incremental analysis between builds. Local state is removed whenever the task is loaded from cache.</p>
 </td>
 </tr>
 <tr>
@@ -600,6 +609,21 @@
 </tr>
 <tr>
 <td>
+<p><a href="-local-state/index.html">LocalState</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">LocalState</span></code>
+<p>
+<p>Marks a property as specifying local state for a task.</p>
+ 
+<p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
+ 
+<p>Local state is removed when the task is loaded from cache.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="-nested/index.html">Nested</a></p>
 </td>
 <td>
@@ -608,6 +632,8 @@
 <p>Marks a property as specifying a nested bean, whose properties should be checked for annotations.</p>
  
 <p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
+ 
+<p>This annotation supports iterable values by treating each element as a separate nested input.</p>
 </p>
 </td>
 </tr>
@@ -644,7 +670,7 @@
  
 <p>This will cause the task to be considered out-of-date when the directory paths or task output to those directories have been modified since the task was last run.</p>
  
-<p>When the annotated property is a java.util.Map, then each output directory will be associated with an identity. For cacheable tasks this is a requirement. The keys of the map must be <a href="#">valid Java identifiers</a>. The values of the map will be evaluated to individual directories as per <code><a href="#">org.gradle.api.Project#file(Object)</a></code>.</p>
+<p>When the annotated property is a java.util.Map, then each output directory will be associated with an identity. For cacheable tasks this is a requirement. The keys of the map must be non-empty strings. The values of the map will be evaluated to individual directories as per <code><a href="#">org.gradle.api.Project#file(Object)</a></code>.</p>
  
 <p>Otherwise the given directories will be evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code>, and task output caching will be disabled for the task.</p>
 </p>
@@ -693,7 +719,7 @@
  
 <p>This will cause the task to be considered out-of-date when the file paths or contents are different to when the task was last run.</p>
  
-<p>When the annotated property is a java.util.Map, then each output file will be associated with an identity. For cacheable tasks this is a requirement. The keys of the map must be <a href="#">valid Java identifiers</a>. The values of the map will be evaluated to individual files as per <code><a href="#">org.gradle.api.Project#file(Object)</a></code>.</p>
+<p>When the annotated property is a java.util.Map, then each output file will be associated with an identity. For cacheable tasks this is a requirement. The keys of the map must be non-empty strings. The values of the map will be evaluated to individual files as per <code><a href="#">org.gradle.api.Project#file(Object)</a></code>.</p>
  
 <p>Otherwise the given files will be evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code>, and task output caching will be disabled for the task.</p>
 </p>

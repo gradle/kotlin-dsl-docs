@@ -1,0 +1,117 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DirectDependency - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="./-direct-dependency.html">DirectDependency</a><br/>
+<br/>
+<h1>DirectDependency</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">DirectDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependency/index.html"><span class="identifier">Dependency</span></a></code>
+<p>Implementations of this interface always describe direct dependencies and not constraints may optionally considered as dependency.</p>
+<p><strong>Since</strong><br/>
+4.5</p>
+<h3>Inherited Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-dependency/-a-r-c-h-i-v-e-s_-c-o-n-f-i-g-u-r-a-t-i-o-n.html">ARCHIVES_CONFIGURATION</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">ARCHIVES_CONFIGURATION</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency/-c-l-a-s-s-i-f-i-e-r.html">CLASSIFIER</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">CLASSIFIER</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency/-d-e-f-a-u-l-t_-c-o-n-f-i-g-u-r-a-t-i-o-n.html">DEFAULT_CONFIGURATION</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">DEFAULT_CONFIGURATION</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-dependency/content-equals.html">contentEquals</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">contentEquals</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Dependency$contentEquals(org.gradle.api.artifacts.Dependency)/dependency">dependency</span><span class="symbol">:</span>&nbsp;<a href="-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns whether two dependencies have identical values for their properties. A dependency is an entity with a key. Therefore dependencies might be equal and yet have different properties.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency/copy.html">copy</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-dependency/index.html"><span class="identifier">Dependency</span></a></code>
+<p>Creates and returns a new dependency with the property values of this one.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency/get-group.html">getGroup</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGroup</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the group of this dependency. The group is often required to find the artifacts of a dependency in a repository. For example, the group name corresponds to a directory name in a Maven like repository. Might return null.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency/get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of this dependency. The name is almost always required to find the artifacts of a dependency in a repository. Never returns null.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency/get-version.html">getVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the version of this dependency. The version is often required to find the artifacts of a dependency in a repository. For example the version name corresponds to a directory name in a Maven like repository. Might return null.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-module-dependency/index.html">ModuleDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ModuleDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-direct-dependency.html"><span class="identifier">DirectDependency</span></a></code>
+<p>A <code>ModuleDependency</code> is a org.gradle.api.artifacts.Dependency on a module outside the current project. 
+<p> For examples on configuring the exclude rules please refer to <code><a href="#">#exclude(java.util.Map)</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-self-resolving-dependency/index.html">SelfResolvingDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SelfResolvingDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-direct-dependency.html"><span class="identifier">DirectDependency</span></a><span class="symbol">, </span><a href="../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<p>A <code>SelfResolvingDependency</code> is a Dependency which is able to resolve itself, independent of a repository.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

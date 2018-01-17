@@ -5,11 +5,11 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.swift</a>&nbsp;/&nbsp;<a href=".">SwiftBinary</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.swift</a>&nbsp;/&nbsp;<a href="./index.html">SwiftBinary</a><br/>
 <br/>
 <h1>SwiftBinary</h1>
-<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">SwiftBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.component/-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
-<p>A binary built from Swift source.</p>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">SwiftBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.nativeplatform/-component-with-object-files/index.html"><span class="identifier">ComponentWithObjectFiles</span></a></code>
+<p>A binary built from Swift source and linked from the resulting object files.</p>
 <p><strong>Since</strong><br/>
 4.2</p>
 <h3>Functions</h3>
@@ -17,11 +17,20 @@
 <tbody>
 <tr>
 <td>
-<p><a href="get-compile-import-path.html">getCompileImportPath</a></p>
+<p><a href="get-compile-modules.html">getCompileModules</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCompileImportPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
-<p>Returns the import path to use to compile this binary. Includes the import path this binary's dependencies.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCompileModules</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the modules to use to compile this binary. Includes the module file of this binary's dependencies.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-compile-task.html">getCompileTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCompileTask</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.language.swift.tasks/-swift-compile/index.html"><span class="identifier">SwiftCompile</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the compile task for this binary.</p>
 </td>
 </tr>
 <tr>
@@ -39,7 +48,7 @@
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getModule</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
-<p>Returns the Swift module that this binary defines.</p>
+<p>Returns the name of the Swift module that this binary defines.</p>
 </td>
 </tr>
 <tr>
@@ -53,6 +62,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-swift-language-version.html">getSwiftLanguageVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSwiftLanguageVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-swift-language-version/index.html"><span class="identifier">SwiftLanguageVersion</span></a></code>
+<p>Returns the Swift language version of this component.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-swift-source.html">getSwiftSource</a></p>
 </td>
 <td>
@@ -62,11 +80,34 @@
 </tr>
 <tr>
 <td>
-<p><a href="is-debuggable.html">isDebuggable</a></p>
+<p><a href="get-target-platform.html">getTargetPlatform</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isDebuggable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
-<p>Returns true if this binary has debugging enabled.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-swift-platform.html"><span class="identifier">SwiftPlatform</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-testable.html">isTestable</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isTestable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if this binary has testing enabled.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.nativeplatform/-component-with-object-files/get-objects.html">getObjects</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getObjects</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the object files created for this component.</p>
 </td>
 </tr>
 </tbody>
@@ -76,19 +117,10 @@
 <tbody>
 <tr>
 <td>
-<p><a href="../-swift-bundle/index.html">SwiftBundle</a></p>
+<p><a href="../-swift-executable/index.html">SwiftExecutable</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">SwiftBundle</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">SwiftBinary</span></code>
-<p>An bundle built from Swift source.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../-swift-executable.html">SwiftExecutable</a></p>
-</td>
-<td>
-<code><span class="keyword">interface </span><span class="identifier">SwiftExecutable</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">SwiftBinary</span></code>
+<code><span class="keyword">interface </span><span class="identifier">SwiftExecutable</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">SwiftBinary</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-executable/index.html"><span class="identifier">ComponentWithExecutable</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-installation/index.html"><span class="identifier">ComponentWithInstallation</span></a><span class="symbol">, </span><a href="../../org.gradle.language/-component-with-outputs/index.html"><span class="identifier">ComponentWithOutputs</span></a></code>
 <p>An executable built from Swift source.</p>
 </td>
 </tr>
@@ -97,8 +129,26 @@
 <p><a href="../-swift-shared-library.html">SwiftSharedLibrary</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">SwiftSharedLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">SwiftBinary</span></code>
+<code><span class="keyword">interface </span><span class="identifier">SwiftSharedLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">SwiftBinary</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-shared-library/index.html"><span class="identifier">ComponentWithSharedLibrary</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-runtime-usage/index.html"><span class="identifier">ComponentWithRuntimeUsage</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-link-usage/index.html"><span class="identifier">ComponentWithLinkUsage</span></a><span class="symbol">, </span><a href="../../org.gradle.language/-component-with-outputs/index.html"><span class="identifier">ComponentWithOutputs</span></a></code>
 <p>A shared library built from Swift source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-swift-static-library.html">SwiftStaticLibrary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SwiftStaticLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">SwiftBinary</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-static-library/index.html"><span class="identifier">ComponentWithStaticLibrary</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-runtime-usage/index.html"><span class="identifier">ComponentWithRuntimeUsage</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-link-usage/index.html"><span class="identifier">ComponentWithLinkUsage</span></a><span class="symbol">, </span><a href="../../org.gradle.language/-component-with-outputs/index.html"><span class="identifier">ComponentWithOutputs</span></a></code>
+<p>A static library built from Swift source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.test.xctest/-swift-x-c-test-binary/index.html">SwiftXCTestBinary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SwiftXCTestBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">SwiftBinary</span></a><span class="symbol">, </span><a href="../../org.gradle.nativeplatform.test/-test-component/index.html"><span class="identifier">TestComponent</span></a></code>
+<p>An test binary built from Swift source.</p>
 </td>
 </tr>
 </tbody>

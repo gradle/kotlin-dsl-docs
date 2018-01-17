@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../style.css">
 </HEAD>
 <BODY>
-<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.language.cpp</a><br/>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="./index.html">org.gradle.language.cpp</a><br/>
 <br/>
 <h2>Package org.gradle.language.cpp</h2>
 <h3>Types</h3>
@@ -16,7 +16,7 @@
 <p><a href="-cpp-application/index.html">CppApplication</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">CppApplication</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-cpp-component/index.html"><span class="identifier">CppComponent</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">CppApplication</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-production-cpp-component/index.html"><span class="identifier">ProductionCppComponent</span></a></code>
 <p>Configuration for a C++ application, defining the source files that make up the application plus other settings. 
 <p>An instance of this type is added as a project extension by the C++ executable plugin.</p>
 </p>
@@ -27,7 +27,7 @@
 <p><a href="-cpp-binary/index.html">CppBinary</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">CppBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.component/-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">CppBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.language.nativeplatform/-component-with-object-files/index.html"><span class="identifier">ComponentWithObjectFiles</span></a></code>
 <p>A binary built from C++ source and linked from the resulting object files.</p>
 </td>
 </tr>
@@ -36,7 +36,7 @@
 <p><a href="-cpp-component/index.html">CppComponent</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">CppComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.component/-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">CppComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.language/-component-with-binaries/index.html"><span class="identifier">ComponentWithBinaries</span></a></code>
 <p>Configuration for a C++ component, such as a library or executable, defining the source files and private header directories that make up the component. Private headers are those that are visible only to the source files of the component. 
 <p>A C++ component is composed of some C++ source files that are compiled and then linked into some binary.</p>
  
@@ -46,10 +46,10 @@
 </tr>
 <tr>
 <td>
-<p><a href="-cpp-executable.html">CppExecutable</a></p>
+<p><a href="-cpp-executable/index.html">CppExecutable</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">CppExecutable</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-cpp-binary/index.html"><span class="identifier">CppBinary</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">CppExecutable</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-cpp-binary/index.html"><span class="identifier">CppBinary</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-component-with-executable/index.html"><span class="identifier">ComponentWithExecutable</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-component-with-installation/index.html"><span class="identifier">ComponentWithInstallation</span></a><span class="symbol">, </span><a href="../org.gradle.language/-component-with-outputs/index.html"><span class="identifier">ComponentWithOutputs</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-component-with-runtime-usage/index.html"><span class="identifier">ComponentWithRuntimeUsage</span></a></code>
 <p>An executable built from C++ source.</p>
 </td>
 </tr>
@@ -58,7 +58,7 @@
 <p><a href="-cpp-library/index.html">CppLibrary</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">CppLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-cpp-component/index.html"><span class="identifier">CppComponent</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">CppLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-production-cpp-component/index.html"><span class="identifier">ProductionCppComponent</span></a></code>
 <p>Configuration for a C++ library, defining the source files and header directories that make up the library plus other settings. 
 <p>An instance of this type is added as a project extension by the C++ library plugin.</p>
 </p>
@@ -66,10 +66,19 @@
 </tr>
 <tr>
 <td>
+<p><a href="-cpp-platform.html">CppPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CppPlatform</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a></code>
+<p>A target platform for building C++ binaries.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="-cpp-shared-library.html">CppSharedLibrary</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">CppSharedLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-cpp-binary/index.html"><span class="identifier">CppBinary</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">CppSharedLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-cpp-binary/index.html"><span class="identifier">CppBinary</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-component-with-shared-library/index.html"><span class="identifier">ComponentWithSharedLibrary</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-component-with-link-usage/index.html"><span class="identifier">ComponentWithLinkUsage</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-component-with-runtime-usage/index.html"><span class="identifier">ComponentWithRuntimeUsage</span></a><span class="symbol">, </span><a href="../org.gradle.language/-component-with-outputs/index.html"><span class="identifier">ComponentWithOutputs</span></a></code>
 <p>A shared library built from C++ source.</p>
 </td>
 </tr>
@@ -82,6 +91,24 @@
 <p>A set of C++ source files. 
 <p>A C++ source set contains a set of source files, together with an optional set of exported header files.</p>
  <pre><code> apply plugin: "cpp" model { components { main(NativeLibrarySpec) { sources { cpp { source { srcDirs "src/main/cpp", "src/shared/c++" include "**/*.cpp" } exportedHeaders { srcDirs "src/main/include", "src/shared/include" } } } } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-cpp-static-library.html">CppStaticLibrary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CppStaticLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-cpp-binary/index.html"><span class="identifier">CppBinary</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-component-with-static-library/index.html"><span class="identifier">ComponentWithStaticLibrary</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-component-with-link-usage/index.html"><span class="identifier">ComponentWithLinkUsage</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-component-with-runtime-usage/index.html"><span class="identifier">ComponentWithRuntimeUsage</span></a><span class="symbol">, </span><a href="../org.gradle.language/-component-with-outputs/index.html"><span class="identifier">ComponentWithOutputs</span></a></code>
+<p>A static library built from C++ source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-production-cpp-component/index.html">ProductionCppComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ProductionCppComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-cpp-component/index.html"><span class="identifier">CppComponent</span></a><span class="symbol">, </span><a href="../org.gradle.language/-production-component/index.html"><span class="identifier">ProductionComponent</span></a></code>
+<p>Represents a C++ component that is the main product of a project.</p>
 </td>
 </tr>
 </tbody>

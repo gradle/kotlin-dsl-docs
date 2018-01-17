@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../style.css">
 </HEAD>
 <BODY>
-<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.model</a><br/>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="./index.html">org.gradle.model</a><br/>
 <br/>
 <h2>Package org.gradle.model</h2>
 <h3>Types</h3>
@@ -25,7 +25,7 @@
 <p><a href="-model-map/index.html">ModelMap</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ModelMap</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><a href="-model-element/index.html"><span class="identifier">ModelElement</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">ModelMap</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="-model-map/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="-model-element/index.html"><span class="identifier">ModelElement</span></a></code>
 <p>Model backed map like structure allowing adding of items where instantiation is managed. 
 <p> org.gradle.model.Managed types may declare model map properties. Model maps can only contain managed types.</p>
 </p>
@@ -36,7 +36,7 @@
 <p><a href="-model-set/index.html">ModelSet</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ModelSet</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><a href="-model-element/index.html"><span class="identifier">ModelElement</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">ModelSet</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="-model-set/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="-model-element/index.html"><span class="identifier">ModelElement</span></a></code>
 <p>A set of managed model objects. 
 <p> org.gradle.model.Managed types may declare managed set properties. Managed sets can only contain managed types. </p>
 <p> Managed set objects cannot be mutated via the mutative methods of the java.util.Set interface (e.g. <code><a href="#">java.util.Set#add(Object)</a></code>, <code><a href="#">java.util.Set#clear()</a></code>). To add elements to the set, the <code><a href="#">#create(Action)</a></code> method can be used.</p>

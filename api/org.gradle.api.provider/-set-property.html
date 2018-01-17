@@ -1,0 +1,111 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>SetProperty - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.api.provider</a>&nbsp;/&nbsp;<a href="./-set-property.html">SetProperty</a><br/>
+<br/>
+<h1>SetProperty</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">SetProperty</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="-set-property.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><a href="-has-multiple-values/index.html"><span class="identifier">HasMultipleValues</span></a><span class="symbol">&lt;</span><a href="-set-property.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Represents a property whose type is a Set of elements of type T. Retains iteration order. 
+<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory method <code><a href="#">org.gradle.api.model.ObjectFactory#listProperty(Class)</a></code>.</p>
+</p>
+<h3>Parameters</h3>
+<p><a name="&lt;T&gt;"></a>
+<code><T></code> - the type of elements.</p>
+<p><strong>Since</strong><br/>
+4.5</p>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-has-multiple-values/add.html">add</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.HasMultipleValues$add(org.gradle.api.provider.Provider((org.gradle.api.provider.HasMultipleValues.T)))/provider">provider</span><span class="symbol">:</span>&nbsp;<a href="-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="-has-multiple-values/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an element to the property value. 
+<p>The given provider will be queried when the value of the property is queried. The property will have no value when the given provider has no value.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.HasMultipleValues$add(org.gradle.api.provider.HasMultipleValues.T)/element">element</span><span class="symbol">:</span>&nbsp;<a href="-has-multiple-values/index.html#T"><span class="identifier">T</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds an element to the property value.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-has-multiple-values/add-all.html">addAll</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addAll</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.HasMultipleValues$addAll(org.gradle.api.provider.Provider((kotlin.collections.MutableIterable((org.gradle.api.provider.HasMultipleValues.T)))))/provider">provider</span><span class="symbol">:</span>&nbsp;<a href="-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="-has-multiple-values/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds zero or more elements to the property value. 
+<p>The given provider will be queried when the value of the property is queried. The property will have no value when the given provider has no value.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-provider/get.html">get</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-provider/index.html#T"><span class="identifier">T</span></a></code>
+<p>Returns the value of this provider if it has a value present, otherwise throws <code>java.lang.IllegalStateException</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-provider/get-or-else.html">getOrElse</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOrElse</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.Provider$getOrElse(org.gradle.api.provider.Provider.T)/defaultValue">defaultValue</span><span class="symbol">:</span>&nbsp;<a href="-provider/index.html#T"><span class="identifier">T</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="-provider/index.html#T"><span class="identifier">T</span></a></code>
+<p>Returns the value of this provider if it has a value present. Returns the given default value if a value is not available.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-provider/get-or-null.html">getOrNull</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOrNull</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-provider/index.html#T"><span class="identifier">T</span></a></code>
+<p>Returns the value of this provider if it has a value present. Returns <code>null</code> a value is not available.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-provider/is-present.html">isPresent</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isPresent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns <code>true</code> if there is a value present, otherwise <code>false</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-provider/map.html">map</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">map</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.Provider$map(org.gradle.api.Transformer((org.gradle.api.provider.Provider.map.S, org.gradle.api.provider.Provider.T)))/transformer">transformer</span><span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-transformer/index.html"><span class="identifier">Transformer</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="-provider/map.html#S"><span class="identifier">S</span></a><span class="symbol">,</span>&nbsp;<span class="keyword">in</span>&nbsp;<a href="-provider/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="-provider/map.html#S"><span class="identifier">S</span></a><span class="symbol">&gt;</span></code>
+<p>Returns a new Provider whose value is the value of this provider transformed using the given function. 
+<p>The new provider will be live, so that each time it is queried, it queries this provider and applies the transformation to the result. Whenever this provider has no value, the new provider will also have no value. </p>
+<p>Note that the new provider may cache the result of the transformations and so there is no guarantee that the transformer is called on every query of the new provider. The new provider will apply the transformation lazily, and calculate the value for the new provider when queried.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-has-multiple-values/set.html">set</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">set</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.HasMultipleValues$set(kotlin.collections.MutableIterable((org.gradle.api.provider.HasMultipleValues.T)))/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="-has-multiple-values/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the value of the property the given value. 
+<p>This method can also be used to clear the value of the property, by passing <code>null</code> as the value.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">set</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.HasMultipleValues$set(org.gradle.api.provider.Provider((kotlin.collections.MutableIterable((org.gradle.api.provider.HasMultipleValues.T)))))/provider">provider</span><span class="symbol">:</span>&nbsp;<a href="-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="-has-multiple-values/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the property to have the same value of the given provider. This property will track the value of the provider and query its value each time the value of the property is queried. When the provider has no value, this property will also have no value.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

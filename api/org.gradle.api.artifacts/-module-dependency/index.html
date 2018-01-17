@@ -5,39 +5,13 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">ModuleDependency</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="./index.html">ModuleDependency</a><br/>
 <br/>
 <h1>ModuleDependency</h1>
-<code><span class="keyword">interface </span><span class="identifier">ModuleDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-dependency/index.html"><span class="identifier">Dependency</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">ModuleDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-direct-dependency.html"><span class="identifier">DirectDependency</span></a></code>
 <p>A <code>ModuleDependency</code> is a org.gradle.api.artifacts.Dependency on a module outside the current project. 
 <p> For examples on configuring the exclude rules please refer to <code><a href="#">#exclude(java.util.Map)</a></code>.</p>
 </p>
-<h3>Inherited Properties</h3>
-<table>
-<tbody>
-<tr>
-<td>
-<p><a href="../-dependency/-a-r-c-h-i-v-e-s_-c-o-n-f-i-g-u-r-a-t-i-o-n.html">ARCHIVES_CONFIGURATION</a></p>
-</td>
-<td>
-<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">ARCHIVES_CONFIGURATION</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
-</tr>
-<tr>
-<td>
-<p><a href="../-dependency/-c-l-a-s-s-i-f-i-e-r.html">CLASSIFIER</a></p>
-</td>
-<td>
-<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">CLASSIFIER</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
-</tr>
-<tr>
-<td>
-<p><a href="../-dependency/-d-e-f-a-u-l-t_-c-o-n-f-i-g-u-r-a-t-i-o-n.html">DEFAULT_CONFIGURATION</a></p>
-</td>
-<td>
-<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">DEFAULT_CONFIGURATION</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
-</tr>
-</tbody>
-</table>
 <h3>Functions</h3>
 <table>
 <tbody>
@@ -46,7 +20,7 @@
 <p><a href="add-artifact.html">addArtifact</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addArtifact</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ModuleDependency$addArtifact(org.gradle.api.artifacts.DependencyArtifact)/artifact">artifact</span><span class="symbol">:</span>&nbsp;<a href="../-dependency-artifact/index.html"><span class="identifier">DependencyArtifact</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ModuleDependency</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addArtifact</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ModuleDependency$addArtifact(org.gradle.api.artifacts.DependencyArtifact)/artifact">artifact</span><span class="symbol">:</span>&nbsp;<a href="../-dependency-artifact/index.html"><span class="identifier">DependencyArtifact</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">ModuleDependency</span></a></code>
 <p>
 <p>Adds an artifact to this dependency.</p>
  
@@ -78,7 +52,7 @@
 <p><a href="copy.html">copy</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ModuleDependency</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">ModuleDependency</span></a></code>
 <p>{@inheritDoc}</p>
 </td>
 </tr>
@@ -87,7 +61,7 @@
 <p><a href="exclude.html">exclude</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ModuleDependency$exclude(kotlin.collections.MutableMap((kotlin.String, )))/excludeProperties">excludeProperties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ModuleDependency</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ModuleDependency$exclude(kotlin.collections.MutableMap((kotlin.String, )))/excludeProperties">excludeProperties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">ModuleDependency</span></a></code>
 <p>Adds an exclude rule to exclude transitive dependencies of this dependency. 
 <p> Excluding a particular transitive dependency does not guarantee that it does not show up in the dependencies of a given configuration. For example, some other dependency, which does not have any exclude rules, might pull in exactly the same transitive dependency. To guarantee that the transitive dependency is excluded from the entire configuration please use per-configuration exclude rules: <code><a href="../-configuration/get-exclude-rules.html">Configuration#getExcludeRules()</a></code>. In fact, in majority of cases the actual intention of configuring per-dependency exclusions is really excluding a dependency from the entire configuration (or classpath). </p>
 <p> If your intention is to exclude a particular transitive dependency because you don't like the version it pulls in to the configuration then consider using forced versions' feature: <code><a href="#">ResolutionStrategy#force(Object...)</a></code>. </p>
@@ -144,49 +118,8 @@
 <p><a href="set-transitive.html">setTransitive</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setTransitive</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ModuleDependency$setTransitive(kotlin.Boolean)/transitive">transitive</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ModuleDependency</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setTransitive</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ModuleDependency$setTransitive(kotlin.Boolean)/transitive">transitive</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">ModuleDependency</span></a></code>
 <p>Sets whether this dependency should be resolved including or excluding its transitive dependencies. The artifacts belonging to this dependency might themselves have dependencies on other artifacts. The latter are called transitive dependencies.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<h3>Inherited Functions</h3>
-<table>
-<tbody>
-<tr>
-<td>
-<p><a href="../-dependency/content-equals.html">contentEquals</a></p>
-</td>
-<td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">contentEquals</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Dependency$contentEquals(org.gradle.api.artifacts.Dependency)/dependency">dependency</span><span class="symbol">:</span>&nbsp;<a href="../-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
-<p>Returns whether two dependencies have identical values for their properties. A dependency is an entity with a key. Therefore dependencies might be equal and yet have different properties.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../-dependency/get-group.html">getGroup</a></p>
-</td>
-<td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGroup</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
-<p>Returns the group of this dependency. The group is often required to find the artifacts of a dependency in a repository. For example, the group name corresponds to a directory name in a Maven like repository. Might return null.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../-dependency/get-name.html">getName</a></p>
-</td>
-<td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
-<p>Returns the name of this dependency. The name is almost always required to find the artifacts of a dependency in a repository. Never returns null.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../-dependency/get-version.html">getVersion</a></p>
-</td>
-<td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
-<p>Returns the version of this dependency. The version is often required to find the artifacts of a dependency in a repository. For example the version name corresponds to a directory name in a Maven like repository. Might return null.</p>
 </td>
 </tr>
 </tbody>
@@ -199,7 +132,7 @@
 <p><a href="../../org.gradle.kotlin.dsl/exclude.html">exclude</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ModuleDependency</span><span class="symbol">&gt;</span> <span class="identifier">T</span><span class="symbol">.</span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$exclude(org.gradle.kotlin.dsl.exclude.T, kotlin.String, kotlin.String)/group">group</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl$exclude(org.gradle.kotlin.dsl.exclude.T, kotlin.String, kotlin.String)/module">module</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ModuleDependency</span></a><span class="symbol">&gt;</span> <a href="../../org.gradle.kotlin.dsl/exclude.html#T"><span class="identifier">T</span></a><span class="symbol">.</span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$exclude(org.gradle.kotlin.dsl.exclude.T, kotlin.String, kotlin.String)/group">group</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl$exclude(org.gradle.kotlin.dsl.exclude.T, kotlin.String, kotlin.String)/module">module</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.kotlin.dsl/exclude.html#T"><span class="identifier">T</span></a></code>
 <p>Adds an exclude rule to exclude transitive dependencies of this dependency.</p>
 </td>
 </tr>
@@ -213,7 +146,7 @@
 <p><a href="../-external-dependency/index.html">ExternalDependency</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ExternalDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ModuleDependency</span><span class="symbol">, </span><a href="../-module-version-selector/index.html"><span class="identifier">ModuleVersionSelector</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">ExternalDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ModuleDependency</span></a><span class="symbol">, </span><a href="../-module-version-selector/index.html"><span class="identifier">ModuleVersionSelector</span></a></code>
 <p>
 <p>An <code>ExternalDependency</code> is a Dependency on a source outside the current project hierarchy.</p>
 </p>
@@ -224,7 +157,7 @@
 <p><a href="../-project-dependency/index.html">ProjectDependency</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ProjectDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ModuleDependency</span><span class="symbol">, </span><a href="../-self-resolving-dependency/index.html"><span class="identifier">SelfResolvingDependency</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">ProjectDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ModuleDependency</span></a><span class="symbol">, </span><a href="../-self-resolving-dependency/index.html"><span class="identifier">SelfResolvingDependency</span></a></code>
 <p>
 <p>A <code>ProjectDependency</code> is a Dependency on another project in the current project hierarchy.</p>
 </p>

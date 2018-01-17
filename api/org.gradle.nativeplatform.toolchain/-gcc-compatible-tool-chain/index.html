@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform.toolchain</a>&nbsp;/&nbsp;<a href=".">GccCompatibleToolChain</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform.toolchain</a>&nbsp;/&nbsp;<a href="./index.html">GccCompatibleToolChain</a><br/>
 <br/>
 <h1>GccCompatibleToolChain</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">GccCompatibleToolChain</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a></code>
@@ -42,6 +42,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="set-targets.html">setTargets</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setTargets</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.nativeplatform.toolchain.GccCompatibleToolChain$setTargets(kotlin.Array((kotlin.String)))/platformNames">platformNames</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Override the current platform configuration with target platforms specified by name</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="target.html">target</a></p>
 </td>
 <td>
@@ -61,7 +70,7 @@
 <p><a href="../-clang.html">Clang</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">Clang</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GccCompatibleToolChain</span></code>
+<code><span class="keyword">interface </span><span class="identifier">Clang</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">GccCompatibleToolChain</span></a></code>
 <p>The <a href="#">Clang</a> tool chain.</p>
 </td>
 </tr>
@@ -70,7 +79,7 @@
 <p><a href="../-gcc.html">Gcc</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">Gcc</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">GccCompatibleToolChain</span></code>
+<code><span class="keyword">interface </span><span class="identifier">Gcc</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">GccCompatibleToolChain</span></a></code>
 <p>The <a href="#">GNU GCC</a> tool chain.</p>
 </td>
 </tr>

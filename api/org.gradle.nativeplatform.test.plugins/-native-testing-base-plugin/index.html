@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NativeTestingBasePlugin - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform.test.plugins</a>&nbsp;/&nbsp;<a href="./index.html">NativeTestingBasePlugin</a><br/>
+<br/>
+<h1>NativeTestingBasePlugin</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">NativeTestingBasePlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><span class="identifier">ProjectInternal</span><span class="symbol">&gt;</span></code>
+<p>Common base plugin for all native testing plugins. 
+<p>Expects plugins to register the native test suites in the <code><a href="../../org.gradle.api/-project/get-components.html">Project#getComponents()</a></code> container, and defines a number of rules that act on these components to configure them.</p>
+ <ul> <li>Adds a <code>"test"</code> task.</li>
+ <li>Configures the <code>"test"</code> task to run the tests of the <code>test</code> component, if present. Expects the test component to be of type TestSuiteComponent.</li>
+ </ul>
+</p>
+<p><strong>Since</strong><br/>
+4.5</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">NativeTestingBasePlugin</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Common base plugin for all native testing plugins. 
+<p>Expects plugins to register the native test suites in the <code><a href="../../org.gradle.api/-project/get-components.html">Project#getComponents()</a></code> container, and defines a number of rules that act on these components to configure them.</p>
+ <ul> <li>Adds a <code>"test"</code> task.</li>
+ <li>Configures the <code>"test"</code> task to run the tests of the <code>test</code> component, if present. Expects the test component to be of type TestSuiteComponent.</li>
+ </ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="apply.html">apply</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.test.plugins.NativeTestingBasePlugin$apply(ProjectInternal)/project">project</span><span class="symbol">:</span>&nbsp;<span class="identifier">ProjectInternal</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

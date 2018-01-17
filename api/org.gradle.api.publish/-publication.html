@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../style.css">
 </HEAD>
 <BODY>
-<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.api.publish</a>&nbsp;/&nbsp;<a href=".">Publication</a><br/>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.api.publish</a>&nbsp;/&nbsp;<a href="./-publication.html">Publication</a><br/>
 <br/>
 <h1>Publication</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">Publication</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
@@ -36,7 +36,7 @@
 <p><a href="../org.gradle.api.publish.ivy/-ivy-publication/index.html">IvyPublication</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">IvyPublication</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Publication</span></code>
+<code><span class="keyword">interface </span><span class="identifier">IvyPublication</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-publication.html"><span class="identifier">Publication</span></a></code>
 <p>A <code>IvyPublication</code> is the representation/configuration of how Gradle should publish something in Ivy format, to an Ivy repository. You directly add a named Ivy Publication the project's <code>publishing.publications</code> container by providing IvyPublication as the type. <pre><code> publishing { publications { myPublicationName(IvyPublication) { // Configure the publication here } } } </code></pre> 
 <p> The Ivy module identifying attributes of the publication are mapped as follows: </p>
  <ul> <li><code>module</code> - <code>project.name</code></li>
@@ -57,7 +57,7 @@
 <p><a href="../org.gradle.api.publish.maven/-maven-publication/index.html">MavenPublication</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">MavenPublication</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Publication</span></code>
+<code><span class="keyword">interface </span><span class="identifier">MavenPublication</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-publication.html"><span class="identifier">Publication</span></a></code>
 <p>A <code>MavenPublication</code> is the representation/configuration of how Gradle should publish something in Maven format. You directly add a named Maven Publication the project's <code>publishing.publications</code> container by providing MavenPublication as the type. <pre><code> publishing { publications { myPublicationName(MavenPublication) { // Configure the publication here } } } </code></pre> The default Maven POM identifying attributes are mapped as follows: <ul> <li><code>groupId</code> - <code>project.group</code></li>
  <li><code>artifactId</code> - <code>project.name</code></li>
  <li><code>version</code> - <code>project.version</code></li>

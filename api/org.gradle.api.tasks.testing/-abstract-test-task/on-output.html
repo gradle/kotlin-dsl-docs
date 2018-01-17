@@ -1,0 +1,18 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>AbstractTestTask.onOutput - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.testing</a>&nbsp;/&nbsp;<a href="index.html">AbstractTestTask</a>&nbsp;/&nbsp;<a href="./on-output.html">onOutput</a><br/>
+<br/>
+<h1>onOutput</h1>
+<a name="org.gradle.api.tasks.testing.AbstractTestTask$onOutput(groovy.lang.Closure((kotlin.Any)))"></a>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">onOutput</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.AbstractTestTask$onOutput(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a closure to be notified when output from the test received. A TestDescriptor and TestOutputEvent instance are passed to the closure as a parameter. <pre><code> apply plugin: 'java' test { onOutput { descriptor, event -&gt; if (event.destination == TestOutputEvent.Destination.StdErr) { logger.error("Test: " + descriptor + ", error: " + event.message) } } } </code></pre></p>
+<h3>Parameters</h3>
+<p><a name="closure"></a>
+<code>closure</code> - The closure to call.</p>
+</BODY>
+</HTML>

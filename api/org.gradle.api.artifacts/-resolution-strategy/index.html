@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">ResolutionStrategy</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="./index.html">ResolutionStrategy</a><br/>
 <br/>
 <h1>ResolutionStrategy</h1>
 <code><span class="keyword">interface </span><span class="identifier">ResolutionStrategy</span></code>
@@ -70,7 +70,7 @@
 <p><a href="component-selection.html">componentSelection</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">componentSelection</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$componentSelection(org.gradle.api.Action((org.gradle.api.artifacts.ComponentSelectionRules)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-component-selection-rules/index.html"><span class="identifier">ComponentSelectionRules</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ResolutionStrategy</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">componentSelection</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$componentSelection(org.gradle.api.Action((org.gradle.api.artifacts.ComponentSelectionRules)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-component-selection-rules/index.html"><span class="identifier">ComponentSelectionRules</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">ResolutionStrategy</span></a></code>
 <p>The componentSelection block provides rules to filter or blacklist certain components from appearing in the resolution result.</p>
 </td>
 </tr>
@@ -79,7 +79,7 @@
 <p><a href="dependency-substitution.html">dependencySubstitution</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">dependencySubstitution</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$dependencySubstitution(org.gradle.api.Action((org.gradle.api.artifacts.DependencySubstitutions)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency-substitutions/index.html"><span class="identifier">DependencySubstitutions</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ResolutionStrategy</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">dependencySubstitution</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$dependencySubstitution(org.gradle.api.Action((org.gradle.api.artifacts.DependencySubstitutions)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency-substitutions/index.html"><span class="identifier">DependencySubstitutions</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">ResolutionStrategy</span></a></code>
 <p>Configures the set of dependency substitution rules for this configuration. The action receives an instance of DependencySubstitutions which can then be configured with substitution rules. 
 <p>Examples:</p>
  <pre><code> // add dependency substitution rules configurations.all { resolutionStrategy.dependencySubstitution { // Substitute project and module dependencies substitute module('org.gradle:api') with project(':api') substitute project(':util') with module('org.gradle:util:3.0') // Substitute one module dependency for another substitute module('org.gradle:api:2.0') with module('org.gradle:api:2.1') } } </code></pre></p>
@@ -90,7 +90,7 @@
 <p><a href="each-dependency.html">eachDependency</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">eachDependency</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$eachDependency(org.gradle.api.Action((org.gradle.api.artifacts.DependencyResolveDetails)))/rule">rule</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency-resolve-details/index.html"><span class="identifier">DependencyResolveDetails</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ResolutionStrategy</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">eachDependency</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$eachDependency(org.gradle.api.Action((org.gradle.api.artifacts.DependencyResolveDetails)))/rule">rule</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency-resolve-details/index.html"><span class="identifier">DependencyResolveDetails</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">ResolutionStrategy</span></a></code>
 <p>Adds a dependency substitution rule that is triggered for every dependency (including transitive) when the configuration is being resolved. The action receives an instance of DependencyResolveDetails that can be used to find out what dependency is being resolved and to influence the resolution process. Example: <pre><code> configurations { compile.resolutionStrategy { eachDependency { DependencyResolveDetails details -&gt; //specifying a fixed version for all libraries with 'org.gradle' group if (details.requested.group == 'org.gradle') { details.useVersion '1.4' } } eachDependency { details -&gt; //multiple actions can be specified if (details.requested.name == 'groovy-all') { //changing the name: details.useTarget group: details.requested.group, name: 'groovy', version: details.requested.version } } } } </code></pre> The rules are evaluated in order they are declared. Rules are evaluated after forced modules are applied (see <code><a href="#">#force(Object...)</a></code></p>
 </td>
 </tr>
@@ -99,7 +99,7 @@
 <p><a href="fail-on-version-conflict.html">failOnVersionConflict</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">failOnVersionConflict</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ResolutionStrategy</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">failOnVersionConflict</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">ResolutionStrategy</span></a></code>
 <p>In case of conflict, Gradle by default uses the newest of conflicting versions. However, you can change this behavior. Use this method to configure the resolution to fail eagerly on any version conflict, e.g. multiple different versions of the same dependency (group and name are equal) in the same Configuration. The check includes both first level and transitive dependencies. See example below: <pre><code> apply plugin: 'java' //so that there are some configurations configurations.all { resolutionStrategy.failOnVersionConflict() } </code></pre></p>
 </td>
 </tr>
@@ -108,7 +108,7 @@
 <p><a href="force.html">force</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">force</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$force(kotlin.Array((kotlin.Any)))/moduleVersionSelectorNotations">moduleVersionSelectorNotations</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ResolutionStrategy</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">force</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$force(kotlin.Array((kotlin.Any)))/moduleVersionSelectorNotations">moduleVersionSelectorNotations</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">ResolutionStrategy</span></a></code>
 <p>Allows forcing certain versions of dependencies, including transitive dependencies. <strong>Appends</strong> new forced modules to be considered when resolving dependencies. 
 <p> It accepts following notations: </p>
 <ul> <li>String in a format of: 'group:name:version', for example: 'org.gradle:gradle-core:1.0'</li>
@@ -161,7 +161,7 @@
 <p><a href="set-forced-modules.html">setForcedModules</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setForcedModules</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$setForcedModules(kotlin.Array((kotlin.Any)))/moduleVersionSelectorNotations">moduleVersionSelectorNotations</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ResolutionStrategy</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setForcedModules</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.artifacts.ResolutionStrategy$setForcedModules(kotlin.Array((kotlin.Any)))/moduleVersionSelectorNotations">moduleVersionSelectorNotations</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">ResolutionStrategy</span></a></code>
 <p>Allows forcing certain versions of dependencies, including transitive dependencies. <strong>Replaces</strong> existing forced modules with the input. 
 <p> For information on notations see <code><a href="#">#force(Object...)</a></code> </p>
 <p> Example: </p>

@@ -5,10 +5,10 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.cpp</a>&nbsp;/&nbsp;<a href=".">CppLibrary</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.cpp</a>&nbsp;/&nbsp;<a href="./index.html">CppLibrary</a><br/>
 <br/>
 <h1>CppLibrary</h1>
-<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">CppLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-cpp-component/index.html"><span class="identifier">CppComponent</span></a></code>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">CppLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-production-cpp-component/index.html"><span class="identifier">ProductionCppComponent</span></a></code>
 <p>Configuration for a C++ library, defining the source files and header directories that make up the library plus other settings. 
 <p>An instance of this type is added as a project extension by the C++ library plugin.</p>
 </p>
@@ -28,20 +28,11 @@
 </tr>
 <tr>
 <td>
-<p><a href="get-debug-shared-library.html">getDebugSharedLibrary</a></p>
+<p><a href="get-linkage.html">getLinkage</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDebugSharedLibrary</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-cpp-shared-library.html"><span class="identifier">CppSharedLibrary</span></a></code>
-<p>Returns the debug shared library for this library.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="get-development-binary.html">getDevelopmentBinary</a></p>
-</td>
-<td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDevelopmentBinary</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-cpp-shared-library.html"><span class="identifier">CppSharedLibrary</span></a></code>
-<p>{@inheritDoc}</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLinkage</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-set-property.html"><span class="identifier">SetProperty</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.nativeplatform/-linkage/index.html"><span class="identifier">Linkage</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the list of linkage of this library.</p>
 </td>
 </tr>
 <tr>
@@ -75,15 +66,6 @@
 </tr>
 <tr>
 <td>
-<p><a href="get-release-shared-library.html">getReleaseSharedLibrary</a></p>
-</td>
-<td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getReleaseSharedLibrary</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-cpp-shared-library.html"><span class="identifier">CppSharedLibrary</span></a></code>
-<p>Returns the release shared library for this library.</p>
-</td>
-</tr>
-<tr>
-<td>
 <p><a href="public-headers.html">publicHeaders</a></p>
 </td>
 <td>
@@ -98,87 +80,11 @@
 <tbody>
 <tr>
 <td>
-<p><a href="../-cpp-component/get-base-name.html">getBaseName</a></p>
+<p><a href="../-production-cpp-component/get-development-binary.html">getDevelopmentBinary</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBaseName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-property-state/index.html"><span class="identifier">PropertyState</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
-<p>Specifies the base name for this component. This name is used to calculate various output file names. The default value is calculated from the project name.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../-cpp-component/get-cpp-source.html">getCppSource</a></p>
-</td>
-<td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCppSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
-<p>Returns the C++ source files of this component, as defined in <code><a href="../-cpp-component/get-source.html">#getSource()</a></code>.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../-cpp-component/get-header-files.html">getHeaderFiles</a></p>
-</td>
-<td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getHeaderFiles</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
-<p>Returns all header files of this component. Includes public and private header files.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../-cpp-component/get-implementation-dependencies.html">getImplementationDependencies</a></p>
-</td>
-<td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getImplementationDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a></code>
-<p>Returns the implementation dependencies of this component.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../-cpp-component/get-private-header-dirs.html">getPrivateHeaderDirs</a></p>
-</td>
-<td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPrivateHeaderDirs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
-<p>Returns the private header include directories of this component, as defined in <code><a href="../-cpp-component/get-private-headers.html">#getPrivateHeaders()</a></code>.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../-cpp-component/get-private-headers.html">getPrivateHeaders</a></p>
-</td>
-<td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPrivateHeaders</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code>
-<p>Defines the private header file directories of this library. 
-<p>When this collection is empty, the directory <code>src/main/headers</code> is used by default.</p>
-</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../-cpp-component/get-source.html">getSource</a></p>
-</td>
-<td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code>
-<p>Defines the source files or directories of this component. You can add files or directories to this collection. When a directory is added, all source files are included for compilation. 
-<p>When this collection is empty, the directory <code>src/main/cpp</code> is used by default.</p>
-</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../-cpp-component/private-headers.html">privateHeaders</a></p>
-</td>
-<td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">privateHeaders</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.cpp.CppComponent$privateHeaders(org.gradle.api.Action((org.gradle.api.file.ConfigurableFileCollection)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the private header directories for this component.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../-cpp-component/source.html">source</a></p>
-</td>
-<td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">source</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.cpp.CppComponent$source(org.gradle.api.Action((org.gradle.api.file.ConfigurableFileCollection)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the source files or directories for this component.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDevelopmentBinary</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-cpp-binary/index.html"><span class="identifier">CppBinary</span></a><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
 </td>
 </tr>
 </tbody>

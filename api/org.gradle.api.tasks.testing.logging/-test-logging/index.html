@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.testing.logging</a>&nbsp;/&nbsp;<a href=".">TestLogging</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.testing.logging</a>&nbsp;/&nbsp;<a href="./index.html">TestLogging</a><br/>
 <br/>
 <h1>TestLogging</h1>
 <code><span class="keyword">interface </span><span class="identifier">TestLogging</span></code>
@@ -203,7 +203,7 @@
 <p><a href="set-show-standard-streams.html">setShowStandardStreams</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setShowStandardStreams</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLogging$setShowStandardStreams(kotlin.Boolean)/flag">flag</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">TestLogging</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setShowStandardStreams</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.logging.TestLogging$setShowStandardStreams(kotlin.Boolean)/flag">flag</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">TestLogging</span></a></code>
 <p>Sets whether output on standard out and standard error will be logged. Equivalent to setting log events <code>TestLogEvent.STANDARD_OUT</code> and <code>TestLogEvent.STANDARD_ERROR</code>.</p>
 </td>
 </tr>
@@ -236,7 +236,7 @@
 <p><a href="../-test-logging-container/index.html">TestLoggingContainer</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">TestLoggingContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">TestLogging</span></code>
+<code><span class="keyword">interface </span><span class="identifier">TestLoggingContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">TestLogging</span></a></code>
 <p>Container for all test logging related options. Different options can be set for each log level. Options that are set directly (without specifying a log level) apply to log level LIFECYCLE. Example: <pre><code> apply plugin: 'java' test { testLogging { // set options for log level LIFECYCLE events "failed" exceptionFormat "short" // set options for log level DEBUG debug { events "started", "skipped", "failed" exceptionFormat "full" } // remove standard output/error logging from --info builds // by assigning only 'failed' and 'skipped' events info.events = ["failed", "skipped"] } } </code></pre> The defaults that are in place show progressively more information on log levels WARN, LIFECYCLE, INFO, and DEBUG, respectively.</p>
 </td>
 </tr>

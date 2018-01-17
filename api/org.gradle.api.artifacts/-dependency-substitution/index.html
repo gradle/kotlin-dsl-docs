@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">DependencySubstitution</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="./index.html">DependencySubstitution</a><br/>
 <br/>
 <h1>DependencySubstitution</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">DependencySubstitution</span></code>
@@ -31,6 +31,13 @@
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">useTarget</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.DependencySubstitution$useTarget(kotlin.Any)/notation">notation</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>This method can be used to replace a dependency before it is resolved, e.g. change group, name or version (or all three of them), or replace it with a project dependency. Accepted notations are: <ul> <li>Strings encoding group:module:version, like 'org.gradle:gradle-core:2.4'</li>
+ <li>Maps like [group: 'org.gradle', name: 'gradle-core', version: '2.4']</li>
+ <li>Project instances like <code>project(":api")</code></li>
+ <li>Any instance of <code>ModuleComponentSelector</code> or <code>ProjectComponentSelector</code></li>
+ </ul>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">useTarget</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.DependencySubstitution$useTarget(kotlin.Any, kotlin.String)/notation">notation</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.DependencySubstitution$useTarget(kotlin.Any, kotlin.String)/reason">reason</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>This method can be used to replace a dependency before it is resolved, e.g. change group, name or version (or all three of them), or replace it with a project dependency and provides a human readable reason for diagnostics. Accepted notations are: <ul> <li>Strings encoding group:module:version, like 'org.gradle:gradle-core:2.4'</li>
  <li>Maps like [group: 'org.gradle', name: 'gradle-core', version: '2.4']</li>
  <li>Project instances like <code>project(":api")</code></li>
  <li>Any instance of <code>ModuleComponentSelector</code> or <code>ProjectComponentSelector</code></li>

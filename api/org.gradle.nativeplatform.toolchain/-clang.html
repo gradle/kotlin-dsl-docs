@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../style.css">
 </HEAD>
 <BODY>
-<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.nativeplatform.toolchain</a>&nbsp;/&nbsp;<a href=".">Clang</a><br/>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.nativeplatform.toolchain</a>&nbsp;/&nbsp;<a href="./-clang.html">Clang</a><br/>
 <br/>
 <h1>Clang</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">Clang</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-gcc-compatible-tool-chain/index.html"><span class="identifier">GccCompatibleToolChain</span></a></code>
@@ -38,6 +38,15 @@
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">path</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.nativeplatform.toolchain.GccCompatibleToolChain$path(kotlin.Array((kotlin.Any)))/pathEntries">pathEntries</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Append an entry or entries to the tool chain path.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-gcc-compatible-tool-chain/set-targets.html">setTargets</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setTargets</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.nativeplatform.toolchain.GccCompatibleToolChain$setTargets(kotlin.Array((kotlin.String)))/platformNames">platformNames</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Override the current platform configuration with target platforms specified by name</p>
 </td>
 </tr>
 <tr>

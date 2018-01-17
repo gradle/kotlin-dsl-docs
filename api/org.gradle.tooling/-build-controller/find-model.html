@@ -5,11 +5,11 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling</a>&nbsp;/&nbsp;<a href="index.html">BuildController</a>&nbsp;/&nbsp;<a href=".">findModel</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling</a>&nbsp;/&nbsp;<a href="index.html">BuildController</a>&nbsp;/&nbsp;<a href="./find-model.html">findModel</a><br/>
 <br/>
 <h1>findModel</h1>
 <a name="org.gradle.tooling.BuildController$findModel(java.lang.Class((org.gradle.tooling.BuildController.findModel.T)))"></a>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">findModel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.BuildController$findModel(java.lang.Class((org.gradle.tooling.BuildController.findModel.T)))/modelType">modelType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">findModel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.BuildController$findModel(java.lang.Class((org.gradle.tooling.BuildController.findModel.T)))/modelType">modelType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="find-model.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="find-model.html#T"><span class="identifier">T</span></a></code>
 <p>Fetches a snapshot of the model of the given type, if available. 
 <p>See <code><a href="#">#getModel(Class)</a></code> for more details.</p>
 </p>
@@ -21,7 +21,7 @@
 <p><strong>Return</strong><br/>
 The model, or null if not present.</p>
 <a name="org.gradle.tooling.BuildController$findModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.findModel.T)))"></a>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">findModel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.BuildController$findModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.findModel.T)))/target">target</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.model/-model.html"><span class="identifier">Model</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.BuildController$findModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.findModel.T)))/modelType">modelType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">findModel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.BuildController$findModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.findModel.T)))/target">target</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.model/-model.html"><span class="identifier">Model</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.BuildController$findModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.findModel.T)))/modelType">modelType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="find-model.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="find-model.html#T"><span class="identifier">T</span></a></code>
 <p>Fetches a snapshot of the model of the given type, if available. 
 <p>See <code><a href="#">#getModel(Model, Class)</a></code> for more details.</p>
 </p>
@@ -32,5 +32,47 @@ The model, or null if not present.</p>
 <code><T></code> - The model type.</p>
 <p><strong>Return</strong><br/>
 The model, or null if not present.</p>
+<a name="org.gradle.tooling.BuildController$findModel(java.lang.Class((org.gradle.tooling.BuildController.findModel.T)), java.lang.Class((org.gradle.tooling.BuildController.findModel.P)), org.gradle.api.Action((org.gradle.tooling.BuildController.findModel.P)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">P</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">findModel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.BuildController$findModel(java.lang.Class((org.gradle.tooling.BuildController.findModel.T)), java.lang.Class((org.gradle.tooling.BuildController.findModel.P)), org.gradle.api.Action((org.gradle.tooling.BuildController.findModel.P)))/modelType">modelType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="find-model.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.BuildController$findModel(java.lang.Class((org.gradle.tooling.BuildController.findModel.T)), java.lang.Class((org.gradle.tooling.BuildController.findModel.P)), org.gradle.api.Action((org.gradle.tooling.BuildController.findModel.P)))/parameterType">parameterType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="find-model.html#P"><span class="identifier">P</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.BuildController$findModel(java.lang.Class((org.gradle.tooling.BuildController.findModel.T)), java.lang.Class((org.gradle.tooling.BuildController.findModel.P)), org.gradle.api.Action((org.gradle.tooling.BuildController.findModel.P)))/parameterInitializer">parameterInitializer</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="find-model.html#P"><span class="identifier">P</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="find-model.html#T"><span class="identifier">T</span></a></code>
+<p>Fetches a snapshot of the model of the given type using the given parameter, if available. 
+<p>See <code><a href="#">#getModel(Model, Class, Class, Action)</a></code> for more details.</p>
+</p>
+<h3>Parameters</h3>
+<p><a name="modelType"></a>
+<code>modelType</code> - The model type.</p>
+<p><a name="&lt;T&gt;"></a>
+<code><T></code> - The model type.</p>
+<p><a name="parameterType"></a>
+<code>parameterType</code> - The parameter type.</p>
+<p><a name="&lt;P&gt;"></a>
+<code><P></code> - The parameter type.</p>
+<p><a name="parameterInitializer"></a>
+<code>parameterInitializer</code> - Action to configure the parameter</p>
+<p><strong>Return</strong><br/>
+The model.</p>
+<p><strong>Since</strong><br/>
+4.4</p>
+<a name="org.gradle.tooling.BuildController$findModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.findModel.T)), java.lang.Class((org.gradle.tooling.BuildController.findModel.P)), org.gradle.api.Action((org.gradle.tooling.BuildController.findModel.P)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">P</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">findModel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.BuildController$findModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.findModel.T)), java.lang.Class((org.gradle.tooling.BuildController.findModel.P)), org.gradle.api.Action((org.gradle.tooling.BuildController.findModel.P)))/target">target</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.tooling.model/-model.html"><span class="identifier">Model</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.BuildController$findModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.findModel.T)), java.lang.Class((org.gradle.tooling.BuildController.findModel.P)), org.gradle.api.Action((org.gradle.tooling.BuildController.findModel.P)))/modelType">modelType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="find-model.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.BuildController$findModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.findModel.T)), java.lang.Class((org.gradle.tooling.BuildController.findModel.P)), org.gradle.api.Action((org.gradle.tooling.BuildController.findModel.P)))/parameterType">parameterType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="find-model.html#P"><span class="identifier">P</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.BuildController$findModel(org.gradle.tooling.model.Model, java.lang.Class((org.gradle.tooling.BuildController.findModel.T)), java.lang.Class((org.gradle.tooling.BuildController.findModel.P)), org.gradle.api.Action((org.gradle.tooling.BuildController.findModel.P)))/parameterInitializer">parameterInitializer</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="find-model.html#P"><span class="identifier">P</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="find-model.html#T"><span class="identifier">T</span></a></code>
+<p>Fetches a snapshot of the model of the given type for the given element using the given parameter, if available. 
+<p>See <code><a href="#">#getModel(Model, Class, Class, Action)</a></code> for more details.</p>
+</p>
+<h3>Parameters</h3>
+<p><a name="target"></a>
+<code>target</code> - The target element, usually a project.</p>
+<p><a name="modelType"></a>
+<code>modelType</code> - The model type.</p>
+<p><a name="&lt;T&gt;"></a>
+<code><T></code> - The model type.</p>
+<p><a name="parameterType"></a>
+<code>parameterType</code> - The parameter type.</p>
+<p><a name="&lt;P&gt;"></a>
+<code><P></code> - The parameter type.</p>
+<p><a name="parameterInitializer"></a>
+<code>parameterInitializer</code> - Action to configure the parameter</p>
+<p><strong>Return</strong><br/>
+The model.</p>
+<p><strong>Since</strong><br/>
+4.4</p>
 </BODY>
 </HTML>

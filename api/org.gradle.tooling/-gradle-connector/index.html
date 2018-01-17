@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling</a>&nbsp;/&nbsp;<a href=".">GradleConnector</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling</a>&nbsp;/&nbsp;<a href="./index.html">GradleConnector</a><br/>
 <br/>
 <h1>GradleConnector</h1>
 <code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">GradleConnector</span></code>
@@ -93,7 +93,7 @@ Java version compatibility
 <p><a href="for-project-directory.html">forProjectDirectory</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">forProjectDirectory</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.GradleConnector$forProjectDirectory(java.io.File)/projectDir">projectDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleConnector</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">forProjectDirectory</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.GradleConnector$forProjectDirectory(java.io.File)/projectDir">projectDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">GradleConnector</span></a></code>
 <p>Specifies the working directory to use.</p>
 </td>
 </tr>
@@ -111,7 +111,7 @@ Java version compatibility
 <p><a href="new-connector.html">newConnector</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">static</span> <span class="keyword">fun </span><span class="identifier">newConnector</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleConnector</span></code>
+<code><span class="keyword">open</span> <span class="keyword">static</span> <span class="keyword">fun </span><span class="identifier">newConnector</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">GradleConnector</span></a></code>
 <p>Creates a new connector instance.</p>
 </td>
 </tr>
@@ -120,7 +120,7 @@ Java version compatibility
 <p><a href="use-build-distribution.html">useBuildDistribution</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">useBuildDistribution</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleConnector</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">useBuildDistribution</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">GradleConnector</span></a></code>
 <p>Specifies to use the Gradle distribution defined by the target Gradle build. The appropriate distribution defined by the target Gradle build is downloaded and installed into the user's Gradle home directory. If the target Gradle build does not define the distribution that it should be built with, the Gradle version of this connector is used. This replaces any value specified using <code><a href="use-installation.html">#useInstallation(File)</a></code>, <code><a href="use-distribution.html">#useDistribution(URI)</a></code>, or <code><a href="#">#useGradleVersion(String)</a></code>. Acts as the default behavior.</p>
 </td>
 </tr>
@@ -129,7 +129,7 @@ Java version compatibility
 <p><a href="use-distribution.html">useDistribution</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">useDistribution</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.GradleConnector$useDistribution(java.net.URI)/gradleDistribution">gradleDistribution</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/net/URI.html"><span class="identifier">URI</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleConnector</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">useDistribution</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.GradleConnector$useDistribution(java.net.URI)/gradleDistribution">gradleDistribution</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/net/URI.html"><span class="identifier">URI</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">GradleConnector</span></a></code>
 <p>Specifies which Gradle distribution to use. The appropriate distribution is downloaded and installed into the user's Gradle home directory. This replaces any value specified using <code><a href="use-installation.html"> </a></code>, <code><a href="#">#useGradleVersion(String)</a></code>, or <code><a href="use-build-distribution.html">#useBuildDistribution()</a></code>. Defaults to a project-specific Gradle version.</p>
 </td>
 </tr>
@@ -138,7 +138,7 @@ Java version compatibility
 <p><a href="use-gradle-user-home-dir.html">useGradleUserHomeDir</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">useGradleUserHomeDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.GradleConnector$useGradleUserHomeDir(java.io.File)/gradleUserHomeDir">gradleUserHomeDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleConnector</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">useGradleUserHomeDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.GradleConnector$useGradleUserHomeDir(java.io.File)/gradleUserHomeDir">gradleUserHomeDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">GradleConnector</span></a></code>
 <p>Specifies the user's Gradle home directory to use. Defaults to <code>~/.gradle</code>.</p>
 </td>
 </tr>
@@ -147,7 +147,7 @@ Java version compatibility
 <p><a href="use-gradle-version.html">useGradleVersion</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">useGradleVersion</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.GradleConnector$useGradleVersion(kotlin.String)/gradleVersion">gradleVersion</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleConnector</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">useGradleVersion</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.GradleConnector$useGradleVersion(kotlin.String)/gradleVersion">gradleVersion</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">GradleConnector</span></a></code>
 <p>Specifies which Gradle version to use. The appropriate distribution is downloaded and installed into the user's Gradle home directory. This replaces any value specified using <code><a href="use-installation.html"> </a></code>, <code><a href="use-distribution.html">#useDistribution(URI)</a></code>, or <code><a href="use-build-distribution.html">#useBuildDistribution()</a></code>. Defaults to a project-specific Gradle version.</p>
 </td>
 </tr>
@@ -156,7 +156,7 @@ Java version compatibility
 <p><a href="use-installation.html">useInstallation</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">useInstallation</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.GradleConnector$useInstallation(java.io.File)/gradleHome">gradleHome</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">GradleConnector</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">useInstallation</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.GradleConnector$useInstallation(java.io.File)/gradleHome">gradleHome</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">GradleConnector</span></a></code>
 <p>Specifies which Gradle installation to use. This replaces any value specified using <code><a href="use-distribution.html">#useDistribution(URI)</a></code>, <code><a href="#">#useGradleVersion(String)</a></code>, or <code><a href="use-build-distribution.html">#useBuildDistribution()</a></code>. Defaults to a project-specific Gradle version.</p>
 </td>
 </tr>

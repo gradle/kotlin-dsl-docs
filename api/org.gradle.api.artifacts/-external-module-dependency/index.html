@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">ExternalModuleDependency</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="./index.html">ExternalModuleDependency</a><br/>
 <br/>
 <h1>ExternalModuleDependency</h1>
 <code><span class="keyword">interface </span><span class="identifier">ExternalModuleDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-external-dependency/index.html"><span class="identifier">ExternalDependency</span></a></code>
@@ -20,7 +20,7 @@
 <p><a href="copy.html">copy</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ExternalModuleDependency</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">ExternalModuleDependency</span></a></code>
 <p>{@inheritDoc}</p>
 </td>
 </tr>
@@ -38,7 +38,7 @@
 <p><a href="set-changing.html">setChanging</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setChanging</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ExternalModuleDependency$setChanging(kotlin.Boolean)/changing">changing</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ExternalModuleDependency</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setChanging</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ExternalModuleDependency$setChanging(kotlin.Boolean)/changing">changing</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">ExternalModuleDependency</span></a></code>
 <p>Sets whether or not Gradle should always check for a change in the remote repository. If set to true, Gradle will check the remote repository even if a dependency with the same version is already in the local cache. Defaults to false.</p>
 </td>
 </tr>
@@ -65,6 +65,15 @@
 <p>Sets whether or not the version of this dependency should be enforced in the case of version conflicts.</p>
 </td>
 </tr>
+<tr>
+<td>
+<p><a href="../-external-dependency/version.html">version</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">version</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ExternalDependency$version(org.gradle.api.Action((org.gradle.api.artifacts.MutableVersionConstraint)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-mutable-version-constraint/index.html"><span class="identifier">MutableVersionConstraint</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the version constraint for this dependency.</p>
+</td>
+</tr>
 </tbody>
 </table>
 <h3>Inheritors</h3>
@@ -75,7 +84,7 @@
 <p><a href="../-client-module/index.html">ClientModule</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ClientModule</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ExternalModuleDependency</span></code>
+<code><span class="keyword">interface </span><span class="identifier">ClientModule</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ExternalModuleDependency</span></a></code>
 <p>To model a module in your dependency declarations. Usually you can either declare a single dependency artifact or you declare a module dependency that depends on a module descriptor in a repository. With a client module you can declare a module dependency without the need of a module descriptor in a remote repository.</p>
 </td>
 </tr>

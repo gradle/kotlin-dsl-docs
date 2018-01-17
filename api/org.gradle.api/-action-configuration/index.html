@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href=".">ActionConfiguration</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="./index.html">ActionConfiguration</a><br/>
 <br/>
 <h1>ActionConfiguration</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ActionConfiguration</span></code>
@@ -65,7 +65,7 @@
 <p><a href="../../org.gradle.workers/-worker-configuration/index.html">WorkerConfiguration</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">WorkerConfiguration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-describable/index.html"><span class="identifier">Describable</span></a><span class="symbol">, </span><span class="identifier">ActionConfiguration</span></code>
+<code><span class="keyword">interface </span><span class="identifier">WorkerConfiguration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-describable/index.html"><span class="identifier">Describable</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">ActionConfiguration</span></a></code>
 <p>Represents the configuration of a worker. Used when submitting an item of work to the WorkerExecutor. <pre><code> workerExecutor.submit(RunnableWorkImpl.class) { WorkerConfiguration conf -&gt; conf.isolationMode = IsolationMode.PROCESS forkOptions { JavaForkOptions options -&gt; options.maxHeapSize = "512m" options.systemProperty 'some.prop', 'value' options.jvmArgs "-server" } classpath configurations.fooLibrary conf.params = [ "foo", file('bar') ] } </code></pre></p>
 </td>
 </tr>

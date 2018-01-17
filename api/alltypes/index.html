@@ -137,6 +137,19 @@
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.api.tasks.testing/-abstract-test-task/index.html">org.gradle.api.tasks.testing.AbstractTestTask</a></td>
+<td>
+<p>Abstract class for all test task. <ul> <li>Support for test listeners</li>
+ <li>Support for reporting</li>
+ <li>Support for report linking in the console output</li>
+ </ul>
+ 
+<p><strong>Note:</strong> This abstract class is not intended for implementation by build script or plugin authors.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.plugins.ide.eclipse.model/-access-rule/index.html">org.gradle.plugins.ide.eclipse.model.AccessRule</a></td>
 <td>
 <p>Access rule associated to a classpath entry.</p>
@@ -677,9 +690,25 @@
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.language/-binary-collection/index.html">org.gradle.language.BinaryCollection</a></td>
+<td>
+<p>A collection of binaries that are created and configured as they are required. 
+<p>Each element in this collection passes through several states. The element is created and becomes 'known'. The element is passed to any actions registered using <code><a href="#">#whenElementKnown(Action)</a></code>. The element is then configured using any actions registered using <code><a href="#">#configureEach(Action)</a></code> and becomes 'finalized'. The element is passed to any actions registered using <code><a href="#">#whenElementFinalized(Action)</a></code>. Elements are created and configured only when required.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.platform.base/-binary-container.html">org.gradle.platform.base.BinaryContainer</a></td>
 <td>
 <p>A container for project binaries, which represent physical artifacts that can run on a particular platform or runtime.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language/-binary-provider/index.html">org.gradle.language.BinaryProvider</a></td>
+<td>
+<p>Represents a binary that is created and configured as required.</p>
 </td>
 </tr>
 <tr>
@@ -940,7 +969,7 @@
 <li>Call either <code><a href="../org.gradle.tooling/-build-launcher/run.html">#run()</a></code> or <code><a href="#">#run(ResultHandler)</a></code> to execute the build. </li>
 <li>Optionally, you can reuse the launcher to launch additional builds. </li>
 </ul>
- Example: <pre><code> ProjectConnection connection = GradleConnector.newConnector() .forProjectDirectory(new File("someFolder")) .connect(); try { BuildLauncher build = connection.newBuild(); //select tasks to run: build.forTasks("clean", "test"); //include some build arguments: build.withArguments("--no-search-upward", "-i", "--project-dir", "someProjectDir"); //configure the standard input: build.setStandardInput(new ByteArrayInputStream("consume this!".getBytes())); //in case you want the build to use java different than default: build.setJavaHome(new File("/path/to/java")); //if your build needs crazy amounts of memory: build.setJvmArguments("-Xmx2048m", "-XX:MaxPermSize=512m"); //if you want to listen to the progress events: ProgressListener listener = null; // use your implementation build.addProgressListener(listener); //kick the build off: build.run(); } finally { connection.close(); } </code></pre></p>
+ Example: <pre><code> ProjectConnection connection = GradleConnector.newConnector() .forProjectDirectory(new File("someFolder")) .connect(); try { BuildLauncher build = connection.newBuild(); //select tasks to run: build.forTasks("clean", "test"); //include some build arguments: build.withArguments("-i", "--project-dir", "someProjectDir"); //configure the standard input: build.setStandardInput(new ByteArrayInputStream("consume this!".getBytes())); //in case you want the build to use java different than default: build.setJavaHome(new File("/path/to/java")); //if your build needs crazy amounts of memory: build.setJvmArguments("-Xmx2048m", "-XX:MaxPermSize=512m"); //if you want to listen to the progress events: ProgressListener listener = null; // use your implementation build.addProgressListener(listener); //kick the build off: build.run(); } finally { connection.close(); } </code></pre></p>
 </td>
 </tr>
 <tr>
@@ -1154,13 +1183,6 @@
 <a href="../org.gradle.api.plugins.quality/-checkstyle-reports/index.html">org.gradle.api.plugins.quality.CheckstyleReports</a></td>
 <td>
 <p>The reporting configuration for the Checkstyle task.</p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.api.component/-child-component/index.html">org.gradle.api.component.ChildComponent</a></td>
-<td>
-<p>Represents a SoftwareComponent that is part of some larger component.</p>
 </td>
 </tr>
 <tr>
@@ -1431,6 +1453,20 @@
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.api.tasks.compile/-compiler-argument-provider/index.html">org.gradle.api.tasks.compile.CompilerArgumentProvider</a></td>
+<td>
+<p>Provides command-line arguments to the compiler.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language.base.compile/-compiler-version/index.html">org.gradle.language.base.compile.CompilerVersion</a></td>
+<td>
+<p>Version of a compiler.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.component/-component.html">org.gradle.api.component.Component</a></td>
 <td>
 <p>A software component that can be queried via the Artifact Query API.</p>
@@ -1611,6 +1647,90 @@
 <a href="../org.gradle.platform.base/-component-type/index.html">org.gradle.platform.base.ComponentType</a></td>
 <td>
 <p>Declares a custom org.gradle.platform.base.ComponentSpec type. The following example demonstrates how to register a custom component type using a plugin with a ComponentType annotation. Furthermore the plugin creates an instance of SampleComponent named 'sampleComponent'. <pre><code> interface SampleComponent extends ComponentSpec {} class DefaultSampleComponent extends BaseComponentSpec implements SampleComponent {} apply plugin: MySamplePlugin class MySamplePlugin extends RuleSource { @ComponentType void register(TypeBuilder&lt;SampleComponent&gt; builder) { builder.defaultImplementation(DefaultSampleComponent) } @Mutate void createSampleLibraryComponents(ModelMap&lt;SampleComponent&gt; componentSpecs) { componentSpecs.create("sampleComponent") } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language/-component-with-binaries/index.html">org.gradle.language.ComponentWithBinaries</a></td>
+<td>
+<p>Represents a component that is composed of one or more binaries.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language.nativeplatform/-component-with-executable/index.html">org.gradle.language.nativeplatform.ComponentWithExecutable</a></td>
+<td>
+<p>Represents a native component that produces an executable.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language.nativeplatform/-component-with-installation/index.html">org.gradle.language.nativeplatform.ComponentWithInstallation</a></td>
+<td>
+<p>Represents a native component that produces an application installation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language.nativeplatform/-component-with-link-file/index.html">org.gradle.language.nativeplatform.ComponentWithLinkFile</a></td>
+<td>
+<p>Represents a native component that produces a file to be used at link time.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language.nativeplatform/-component-with-link-usage/index.html">org.gradle.language.nativeplatform.ComponentWithLinkUsage</a></td>
+<td>
+<p>Represents a native component whose link time file and dependencies are published for consumption by some other project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language.nativeplatform/-component-with-native-runtime/index.html">org.gradle.language.nativeplatform.ComponentWithNativeRuntime</a></td>
+<td>
+<p>Represents a component that produces outputs that run on a native platform.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language.nativeplatform/-component-with-object-files/index.html">org.gradle.language.nativeplatform.ComponentWithObjectFiles</a></td>
+<td>
+<p>Represents a component that produces object files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language/-component-with-outputs/index.html">org.gradle.language.ComponentWithOutputs</a></td>
+<td>
+<p>Represents a component with output files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language.nativeplatform/-component-with-runtime-file/index.html">org.gradle.language.nativeplatform.ComponentWithRuntimeFile</a></td>
+<td>
+<p>Represents a native component that produces a file to be used at runtime.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language.nativeplatform/-component-with-runtime-usage/index.html">org.gradle.language.nativeplatform.ComponentWithRuntimeUsage</a></td>
+<td>
+<p>Represents a native component whose runtime file and dependencies are published for consumption by some other project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language.nativeplatform/-component-with-shared-library/index.html">org.gradle.language.nativeplatform.ComponentWithSharedLibrary</a></td>
+<td>
+<p>Represents a native component that produces a shared library.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language.nativeplatform/-component-with-static-library/index.html">org.gradle.language.nativeplatform.ComponentWithStaticLibrary</a></td>
+<td>
+<p>Represents a component that produces a static library.</p>
 </td>
 </tr>
 <tr>
@@ -1890,6 +2010,19 @@
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.language.cpp.plugins/-cpp-application-plugin/index.html">org.gradle.language.cpp.plugins.CppApplicationPlugin</a></td>
+<td>
+<p>
+<p>A plugin that produces a native application from C++ source.</p>
+ 
+<p>Assumes the source files are located in `src/main/cpp` and header files are located in `src/main/headers`.</p>
+ 
+<p>Adds a CppApplication extension to the project to allow configuration of the application.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.language.cpp.plugins/-cpp-base-plugin/index.html">org.gradle.language.cpp.plugins.CppBasePlugin</a></td>
 <td>
 <p>A common base plugin for the C++ executable and library plugins</p>
@@ -1922,22 +2055,9 @@
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.language.cpp/-cpp-executable.html">org.gradle.language.cpp.CppExecutable</a></td>
+<a href="../org.gradle.language.cpp/-cpp-executable/index.html">org.gradle.language.cpp.CppExecutable</a></td>
 <td>
 <p>An executable built from C++ source.</p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.language.cpp.plugins/-cpp-executable-plugin/index.html">org.gradle.language.cpp.plugins.CppExecutablePlugin</a></td>
-<td>
-<p>
-<p>A plugin that produces a native executable from C++ source.</p>
- 
-<p>Assumes the source files are located in `src/main/cpp` and header files are located in `src/main/headers`.</p>
- 
-<p>Adds a CppComponent extension to the project to allow configuration of the executable.</p>
-</p>
 </td>
 </tr>
 <tr>
@@ -1967,6 +2087,13 @@
  
 <p>Adds a CppLibrary extension to the project to allow configuration of the library.</p>
 </p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language.cpp/-cpp-platform.html">org.gradle.language.cpp.CppPlatform</a></td>
+<td>
+<p>A target platform for building C++ binaries.</p>
 </td>
 </tr>
 <tr>
@@ -2005,13 +2132,41 @@
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.language.cpp/-cpp-static-library.html">org.gradle.language.cpp.CppStaticLibrary</a></td>
+<td>
+<p>A static library built from C++ source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.nativeplatform.test.cpp/-cpp-test-executable/index.html">org.gradle.nativeplatform.test.cpp.CppTestExecutable</a></td>
+<td>
+<p>A test executable with tests implemented in C++.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.nativeplatform.test.cpp/-cpp-test-suite/index.html">org.gradle.nativeplatform.test.cpp.CppTestSuite</a></td>
+<td>
+<p>A C++ test suite.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.nativeplatform.test.cpp.plugins/-cpp-unit-test-plugin/index.html">org.gradle.nativeplatform.test.cpp.plugins.CppUnitTestPlugin</a></td>
+<td>
+<p>A plugin that sets up the infrastructure for testing C++ binaries using a simple test executable. Gradle will create a RunTestExecutable task that relies on the exit code of the binary.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.tasks.application/-create-start-scripts/index.html">org.gradle.api.tasks.application.CreateStartScripts</a></td>
 <td>
 <p>Creates start scripts for launching JVM applications. 
 <p> Example: </p>
 <pre><code> task createStartScripts(type: CreateStartScripts) { outputDir = file('build/sample') mainClassName = 'org.gradle.test.Main' applicationName = 'myApp' classpath = files('path/to/some.jar') } </code></pre> 
 <p> Note: the Gradle <code>"application"</code> plugin adds a pre-configured task of this type named <code>"startScripts"</code>. </p>
-<p> The task generates separate scripts targeted at Microsoft Windows environments and UNIX-like environments (e.g. Linux, Mac OS X). The actual generation is implemented by the <code><a href="../org.gradle.jvm.application.tasks/-create-start-scripts/get-windows-start-script-generator.html">#getWindowsStartScriptGenerator()</a></code> and <code><a href="../org.gradle.jvm.application.tasks/-create-start-scripts/get-unix-start-script-generator.html">#getUnixStartScriptGenerator()</a></code> properties, of type org.gradle.jvm.application.scripts.ScriptGenerator. </p>
+<p> The task generates separate scripts targeted at Microsoft Windows environments and UNIX-like environments (e.g. Linux, macOS). The actual generation is implemented by the <code><a href="../org.gradle.jvm.application.tasks/-create-start-scripts/get-windows-start-script-generator.html">#getWindowsStartScriptGenerator()</a></code> and <code><a href="../org.gradle.jvm.application.tasks/-create-start-scripts/get-unix-start-script-generator.html">#getUnixStartScriptGenerator()</a></code> properties, of type org.gradle.jvm.application.scripts.ScriptGenerator. </p>
 <p> Example: </p>
 <pre><code> task createStartScripts(type: CreateStartScripts) { unixStartScriptGenerator = new CustomUnixStartScriptGenerator() windowsStartScriptGenerator = new CustomWindowsStartScriptGenerator() } class CustomUnixStartScriptGenerator implements ScriptGenerator { void generateScript(JavaAppStartScriptGenerationDetails details, Writer destination) { // implementation } } class CustomWindowsStartScriptGenerator implements ScriptGenerator { void generateScript(JavaAppStartScriptGenerationDetails details, Writer destination) { // implementation } } </code></pre> 
 <p> The default generators are of the type org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator, with default templates. This templates can be changed via the <code><a href="../org.gradle.jvm.application.scripts/-template-based-script-generator/set-template.html">org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator#setTemplate(org.gradle.api.resources.TextResource)</a></code> method. </p>
@@ -2038,7 +2193,7 @@
 <p> Example: </p>
 <pre><code> task createStartScripts(type: CreateStartScripts) { outputDir = file('build/sample') mainClassName = 'org.gradle.test.Main' applicationName = 'myApp' classpath = files('path/to/some.jar') } </code></pre> 
 <p> Note: the Gradle <code>"application"</code> plugin adds a pre-configured task of this type named <code>"startScripts"</code>. </p>
-<p> The task generates separate scripts targeted at Microsoft Windows environments and UNIX-like environments (e.g. Linux, Mac OS X). The actual generation is implemented by the <code><a href="../org.gradle.jvm.application.tasks/-create-start-scripts/get-windows-start-script-generator.html">#getWindowsStartScriptGenerator()</a></code> and <code><a href="../org.gradle.jvm.application.tasks/-create-start-scripts/get-unix-start-script-generator.html">#getUnixStartScriptGenerator()</a></code> properties, of type ScriptGenerator. </p>
+<p> The task generates separate scripts targeted at Microsoft Windows environments and UNIX-like environments (e.g. Linux, macOS). The actual generation is implemented by the <code><a href="../org.gradle.jvm.application.tasks/-create-start-scripts/get-windows-start-script-generator.html">#getWindowsStartScriptGenerator()</a></code> and <code><a href="../org.gradle.jvm.application.tasks/-create-start-scripts/get-unix-start-script-generator.html">#getUnixStartScriptGenerator()</a></code> properties, of type ScriptGenerator. </p>
 <p> Example: </p>
 <pre><code> task createStartScripts(type: CreateStartScripts) { unixStartScriptGenerator = new CustomUnixStartScriptGenerator() windowsStartScriptGenerator = new CustomWindowsStartScriptGenerator() } class CustomUnixStartScriptGenerator implements ScriptGenerator { void generateScript(JavaAppStartScriptGenerationDetails details, Writer destination) { // implementation } } class CustomWindowsStartScriptGenerator implements ScriptGenerator { void generateScript(JavaAppStartScriptGenerationDetails details, Writer destination) { // implementation } } </code></pre> 
 <p> The default generators are of the type org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator, with default templates. This templates can be changed via the <code><a href="../org.gradle.jvm.application.scripts/-template-based-script-generator/set-template.html">org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator#setTemplate(org.gradle.api.resources.TextResource)</a></code> method. </p>
@@ -2047,6 +2202,7 @@
  <li><code>optsEnvironmentVar</code></li>
  <li><code>exitEnvironmentVar</code></li>
  <li><code>mainClassName</code></li>
+ <li><code>executableDir</code></li>
  <li><code>defaultJvmOpts</code></li>
  <li><code>appNameSystemProperty</code></li>
  <li><code>appHomeRelativePath</code></li>
@@ -2062,13 +2218,6 @@
 <a href="../org.gradle.nativeplatform.tasks/-create-static-library/index.html">org.gradle.nativeplatform.tasks.CreateStaticLibrary</a></td>
 <td>
 <p>Assembles a static library from object files.</p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.language.swift.tasks/-create-swift-bundle/index.html">org.gradle.language.swift.tasks.CreateSwiftBundle</a></td>
-<td>
-<p>Creates Apple bundle from compiled Swift code.</p>
 </td>
 </tr>
 <tr>
@@ -2141,6 +2290,13 @@
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.api.artifacts/-dependencies-metadata/index.html">org.gradle.api.artifacts.DependenciesMetadata</a></td>
+<td>
+<p>Describes metadata about a dependency - direct dependencies or dependency constraints - declared in a resolved component's metadata.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.artifacts/-dependency/index.html">org.gradle.api.artifacts.Dependency</a></td>
 <td>
 <p>A <code>Dependency</code> represents a dependency on the artifacts from a particular source. A source can be an Ivy module, a Maven POM, another Gradle project, a collection of Files, etc... A source can have zero or more artifacts.</p>
@@ -2167,6 +2323,36 @@
 <p>
 <p>An <code>Artifact</code> represents an artifact included in a org.gradle.api.artifacts.Dependency.</p>
  An artifact is an (immutable) value object.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.artifacts/-dependency-constraint/index.html">org.gradle.api.artifacts.DependencyConstraint</a></td>
+<td>
+<p>Represents a constraints over all, including transitive, dependencies.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.artifacts.dsl/-dependency-constraint-handler/index.html">org.gradle.api.artifacts.dsl.DependencyConstraintHandler</a></td>
+<td>
+<p>
+<p>A <code>DependencyConstraintHandler</code> is used to declare dependency constraints.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.artifacts/-dependency-constraint-metadata.html">org.gradle.api.artifacts.DependencyConstraintMetadata</a></td>
+<td>
+<p>Describes a dependency constraint declared in a resolved component's metadata, which typically originates from a component descriptor (Gradle metadata file). This interface can be used to adjust a dependency constraint's properties via metadata rules (see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.artifacts/-dependency-constraints-metadata.html">org.gradle.api.artifacts.DependencyConstraintsMetadata</a></td>
+<td>
+<p>Describes the dependency constraints of a variant declared in a resolved component's metadata, which typically originate from a component descriptor (Gradle metadata file). This interface can be used to adjust the dependencies of a published component via metadata rules (see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
 </td>
 </tr>
 <tr>
@@ -2251,6 +2437,13 @@ File dependencies
 <p> The task requires setting the dependency spec and the configuration. For more information on how to configure those please refer to docs for <code><a href="#">DependencyInsightReportTask#setDependencySpec(Object)</a></code> and <code><a href="#">DependencyInsightReportTask#setConfiguration(String)</a></code>. </p>
 <p> The task can also be configured from the command line. For more information please refer to <code><a href="#">DependencyInsightReportTask#setDependencySpec(Object)</a></code> and <code><a href="#">DependencyInsightReportTask#setConfiguration(String)</a></code></p>
 </p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.artifacts/-dependency-metadata/index.html">org.gradle.api.artifacts.DependencyMetadata</a></td>
+<td>
+<p>Describes a metadata about a dependency - direct dependency or dependency constraint - declared in a resolved component's metadata.</p>
 </td>
 </tr>
 <tr>
@@ -2394,6 +2587,27 @@ File dependencies
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.api.artifacts/-direct-dependencies-metadata.html">org.gradle.api.artifacts.DirectDependenciesMetadata</a></td>
+<td>
+<p>Describes the dependencies of a variant declared in a resolved component's metadata, which typically originate from a component descriptor (Gradle metadata file, Ivy file, Maven POM). This interface can be used to adjust the dependencies of a published component via metadata rules (see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.artifacts/-direct-dependency.html">org.gradle.api.artifacts.DirectDependency</a></td>
+<td>
+<p>Implementations of this interface always describe direct dependencies and not constraints may optionally considered as dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.artifacts/-direct-dependency-metadata.html">org.gradle.api.artifacts.DirectDependencyMetadata</a></td>
+<td>
+<p>Describes a dependency declared in a resolved component's metadata, which typically originates from a component descriptor (Gradle metadata file, Ivy file, Maven POM). This interface can be used to adjust a dependency's properties via metadata rules (see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.file/-directory/index.html">org.gradle.api.file.Directory</a></td>
 <td>
 <p>Represents a directory at some fixed location on the file system. 
@@ -2406,6 +2620,15 @@ File dependencies
 <a href="../org.gradle.caching.local/-directory-build-cache/index.html">org.gradle.caching.local.DirectoryBuildCache</a></td>
 <td>
 <p>Configuration object for the local directory build cache.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.file/-directory-property/index.html">org.gradle.api.file.DirectoryProperty</a></td>
+<td>
+<p>Represents some configurable directory location, whose value is mutable and is not necessarily currently known until later. 
+<p> <strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created using the <code><a href="../org.gradle.api.file/-project-layout/directory-property.html">ProjectLayout#directoryProperty()</a></code> method.</p>
+</p>
 </td>
 </tr>
 <tr>
@@ -2428,7 +2651,7 @@ File dependencies
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.api.file/-directory-var/index.html">org.gradle.api.file.DirectoryVar</a></td>
+<a href="../org.gradle.api.file/-directory-var.html">org.gradle.api.file.DirectoryVar</a></td>
 <td>
 <p>Represents some configurable directory location, whose value is mutable and is not necessarily currently known until later. 
 <p> <strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created using the <code><a href="../org.gradle.api.file/-project-layout/new-directory-var.html">ProjectLayout#newDirectoryVar()</a></code> method.</p>
@@ -2849,6 +3072,13 @@ File dependencies
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.api.plugins/-extensions-schema/index.html">org.gradle.api.plugins.ExtensionsSchema</a></td>
+<td>
+<p>Schema of extensions.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.artifacts/-external-dependency/index.html">org.gradle.api.artifacts.ExternalDependency</a></td>
 <td>
 <p>
@@ -2899,6 +3129,13 @@ File dependencies
 <td>
 <a href="../org.gradle.kotlin.dsl/-extra-property-delegate-provider/index.html">org.gradle.kotlin.dsl.ExtraPropertyDelegateProvider</a></td>
 <td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.nativeplatform.tasks/-extract-symbols/index.html">org.gradle.nativeplatform.tasks.ExtractSymbols</a></td>
+<td>
+<p>Extracts the debug symbols from a binary and stores them in a separate file.</p>
 </td>
 </tr>
 <tr>
@@ -3500,13 +3737,6 @@ Java version compatibility
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.plugin.repository/-gradle-plugin-portal.html">org.gradle.plugin.repository.GradlePluginPortal</a></td>
-<td>
-<p>The Gradle Plugin Portal which can be used to resolve plugins.</p>
-</td>
-</tr>
-<tr>
-<td>
 <a href="../org.gradle.tooling.model/-gradle-project/index.html">org.gradle.tooling.model.GradleProject</a></td>
 <td>
 <p>Represents a Gradle project.</p>
@@ -3661,6 +3891,15 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 <a href="../org.gradle.api/-has-implicit-receiver/index.html">org.gradle.api.HasImplicitReceiver</a></td>
 <td>
 <p>Marks a SAM interface as a target for lambda expressions / closures where the single parameter is passed as the implicit receiver of the invocation (<code>this</code> in Kotlin, <code>delegate</code> in Groovy) as if the lambda expression was an extension method of the parameter type. <pre><code> // copySpec(Action&lt;CopySpec&gt;) copySpec { from("./sources") // the given CopySpec is the implicit receiver } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.provider/-has-multiple-values/index.html">org.gradle.api.provider.HasMultipleValues</a></td>
+<td>
+<p>Represents a property whose value can be set using multiple elements of type T, such as a collection property. 
+<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. You can use the factory methods on org.gradle.api.model.ObjectFactory to create instances of this interface.</p>
+</p>
 </td>
 </tr>
 <tr>
@@ -4022,6 +4261,13 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.nativeplatform.test.xctest.tasks/-install-x-c-test-bundle/index.html">org.gradle.nativeplatform.test.xctest.tasks.InstallXCTestBundle</a></td>
+<td>
+<p>Creates a XCTest bundle with a run script so it can be easily executed.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.tooling.model.java/-installed-jdk/index.html">org.gradle.tooling.model.java.InstalledJdk</a></td>
 <td>
 <p>Represents a Java Development Kit machine installation.</p>
@@ -4234,13 +4480,6 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 <a href="../org.gradle.api.artifacts.repositories/-ivy-pattern-repository-layout/index.html">org.gradle.api.artifacts.repositories.IvyPatternRepositoryLayout</a></td>
 <td>
 <p>A repository layout that uses user-supplied patterns. Each pattern will be appended to the base URI for the repository. At least one artifact pattern must be specified. If no Ivy patterns are specified, then the artifact patterns will be used. Optionally supports a Maven style layout for the 'organisation' part, replacing any dots with forward slashes. For examples see the reference for <code><a href="#">org.gradle.api.artifacts.repositories.IvyArtifactRepository#layout(String, org.gradle.api.Action)</a></code>.</p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.plugin.repository/-ivy-plugin-repository/index.html">org.gradle.plugin.repository.IvyPluginRepository</a></td>
-<td>
-<p>Represents an Ivy repository which contains Gradle plugins.</p>
 </td>
 </tr>
 <tr>
@@ -4872,6 +5111,13 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.kotlin.dsl/-kotlin-settings-script/index.html">org.gradle.kotlin.dsl.KotlinSettingsScript</a></td>
+<td>
+<p>Base class for Kotlin settings scripts.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.language.base.plugins/-language-base-plugin/index.html">org.gradle.language.base.plugins.LanguageBasePlugin</a></td>
 <td>
 <p>Base plugin for language support. - Adds a ProjectSourceSet named <code>sources</code> to the project. - Registers the base LanguageSourceSet type.</p>
@@ -4988,10 +5234,17 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.nativeplatform/-linkage/index.html">org.gradle.nativeplatform.Linkage</a></td>
+<td>
+<p>Specify how a native library should be linked into another binary.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.provider/-list-property.html">org.gradle.api.provider.ListProperty</a></td>
 <td>
 <p>Represents a property whose type is a List of elements of type T. 
-<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory method <code><a href="#">org.gradle.api.provider.ProviderFactory#listProperty(Class)</a></code>.</p>
+<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory method <code><a href="#">org.gradle.api.model.ObjectFactory#listProperty(Class)</a></code>.</p>
 </p>
 </td>
 </tr>
@@ -5007,6 +5260,19 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 <a href="../org.gradle.jvm.toolchain/-local-java/index.html">org.gradle.jvm.toolchain.LocalJava</a></td>
 <td>
 <p>A local JDK, JRE or Java 9+ installation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.tasks/-local-state/index.html">org.gradle.api.tasks.LocalState</a></td>
+<td>
+<p>
+<p>Marks a property as specifying local state for a task.</p>
+ 
+<p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
+ 
+<p>Local state is removed when the task is loaded from cache.</p>
+</p>
 </td>
 </tr>
 <tr>
@@ -5222,13 +5488,6 @@ Creating managed model elements
 <a href="../org.gradle.api.plugins/-maven-plugin-convention/index.html">org.gradle.api.plugins.MavenPluginConvention</a></td>
 <td>
 <p>Properties and methods added by the org.gradle.api.plugins.MavenPlugin.</p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.plugin.repository/-maven-plugin-repository/index.html">org.gradle.plugin.repository.MavenPluginRepository</a></td>
-<td>
-<p>Represents a Maven repository which contains Gradle plugins.</p>
 </td>
 </tr>
 <tr>
@@ -5485,7 +5744,7 @@ Creating non-managed model elements
 <td>
 <a href="../org.gradle.api.artifacts/-module-version-selector/index.html">org.gradle.api.artifacts.ModuleVersionSelector</a></td>
 <td>
-<p>Selects a module version</p>
+<p>Selects a module version. If you need to change this interface, you're probably doing it wrong: it is superceded by org.gradle.api.artifacts.component.ModuleComponentSelector, so check this first, and only add methods here if it's for bridging.</p>
 </td>
 </tr>
 <tr>
@@ -5493,6 +5752,13 @@ Creating non-managed model elements
 <a href="../org.gradle.api.attributes/-multiple-candidates-details/index.html">org.gradle.api.attributes.MultipleCandidatesDetails</a></td>
 <td>
 <p>Provides context about candidates for an attribute. In particular, this class gives access to the list of candidates on the producer side.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.artifacts/-mutable-version-constraint/index.html">org.gradle.api.artifacts.MutableVersionConstraint</a></td>
+<td>
+<p>A configurable version constraint. This is exposed to the build author, so that one can express more constraints on a version,</p>
 </td>
 </tr>
 <tr>
@@ -5612,6 +5878,24 @@ Creating non-managed model elements
 <a href="../org.gradle.api/-namer/index.html">org.gradle.api.Namer</a></td>
 <td>
 <p>A namer is capable of providing a name based on some inherent characteristic of an object.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language.plugins/-native-base-plugin/index.html">org.gradle.language.plugins.NativeBasePlugin</a></td>
+<td>
+<p>A common base plugin for the native plugins. 
+<p>Expects plugins to register the native components in the <code><a href="../org.gradle.api/-project/get-components.html">Project#getComponents()</a></code> container, and defines a number of rules that act on these components to configure them.</p>
+ <ul> <li>Configures the {@value LifecycleBasePlugin#ASSEMBLE_TASK_NAME} task to build the development binary of the main component, if present. Expects the main component to be of type ProductionComponent and ComponentWithBinaries.</li>
+ <li>Adds an <code>"assemble"</code> task for each binary of the main component.</li>
+ <li>Adds tasks to compile and link an executable. Currently requires component implements internal API ConfigurableComponentWithExecutable.</li>
+ <li>Adds tasks to compile and link a shared library. Currently requires component implements internal API ConfigurableComponentWithSharedLibrary.</li>
+ <li>Adds tasks to compile and create a static library. Currently requires component implements internal API ConfigurableComponentWithStaticLibrary.</li>
+ <li>Adds outgoing configuration and artifacts for link file. Currently requires component implements internal API ConfigurableComponentWithLinkUsage.</li>
+ <li>Adds outgoing configuration and artifacts for runtime file. Currently requires component implements internal API ConfigurableComponentWithRuntimeUsage.</li>
+ <li>Maven publications. Currently requires component implements internal API PublicationAwareComponent.</li>
+ </ul>
+</p>
 </td>
 </tr>
 <tr>
@@ -5786,6 +6070,18 @@ Creating non-managed model elements
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.nativeplatform.test.plugins/-native-testing-base-plugin/index.html">org.gradle.nativeplatform.test.plugins.NativeTestingBasePlugin</a></td>
+<td>
+<p>Common base plugin for all native testing plugins. 
+<p>Expects plugins to register the native test suites in the <code><a href="../org.gradle.api/-project/get-components.html">Project#getComponents()</a></code> container, and defines a number of rules that act on these components to configure them.</p>
+ <ul> <li>Adds a <code>"test"</code> task.</li>
+ <li>Configures the <code>"test"</code> task to run the tests of the <code>test</code> component, if present. Expects the test component to be of type TestSuiteComponent.</li>
+ </ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.nativeplatform.toolchain/-native-tool-chain.html">org.gradle.nativeplatform.toolchain.NativeToolChain</a></td>
 <td>
 <p>A set of compilers and linkers that are used together to construct a native binary.</p>
@@ -5806,6 +6102,8 @@ Creating non-managed model elements
 <p>Marks a property as specifying a nested bean, whose properties should be checked for annotations.</p>
  
 <p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
+ 
+<p>This annotation supports iterable values by treating each element as a separate nested input.</p>
 </p>
 </td>
 </tr>
@@ -5852,6 +6150,12 @@ Creating non-managed model elements
 <p>
 <p>An <code>ObjectConfigurationAction</code> allows you to apply org.gradle.api.Plugins and scripts to an object or objects.</p>
 </p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.api.model.-object-factory/index.html">org.gradle.api.model.ObjectFactory</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
 </td>
 </tr>
 <tr>
@@ -5970,7 +6274,7 @@ Creating non-managed model elements
 <td>
 <a href="../org.gradle.nativeplatform.platform/-operating-system/index.html">org.gradle.nativeplatform.platform.OperatingSystem</a></td>
 <td>
-<p>A machine operating system.   Operating System Aliases   Windows "windows"   GNU/Linux "linux"   Mac OS X "osx", "mac os x", "darwin"   Solaris "solaris", "sunos"  </p>
+<p>A machine operating system.   Operating System Aliases   Windows "windows"   GNU/Linux "linux"   MacOS "osx", "mac os x", "darwin"   Solaris "solaris", "sunos"  </p>
 </td>
 </tr>
 <tr>
@@ -6069,7 +6373,7 @@ Creating non-managed model elements
  
 <p>This will cause the task to be considered out-of-date when the directory paths or task output to those directories have been modified since the task was last run.</p>
  
-<p>When the annotated property is a java.util.Map, then each output directory will be associated with an identity. For cacheable tasks this is a requirement. The keys of the map must be <a href="#">valid Java identifiers</a>. The values of the map will be evaluated to individual directories as per <code><a href="#">org.gradle.api.Project#file(Object)</a></code>.</p>
+<p>When the annotated property is a java.util.Map, then each output directory will be associated with an identity. For cacheable tasks this is a requirement. The keys of the map must be non-empty strings. The values of the map will be evaluated to individual directories as per <code><a href="#">org.gradle.api.Project#file(Object)</a></code>.</p>
  
 <p>Otherwise the given directories will be evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code>, and task output caching will be disabled for the task.</p>
 </p>
@@ -6112,7 +6416,7 @@ Creating non-managed model elements
  
 <p>This will cause the task to be considered out-of-date when the file paths or contents are different to when the task was last run.</p>
  
-<p>When the annotated property is a java.util.Map, then each output file will be associated with an identity. For cacheable tasks this is a requirement. The keys of the map must be <a href="#">valid Java identifiers</a>. The values of the map will be evaluated to individual files as per <code><a href="#">org.gradle.api.Project#file(Object)</a></code>.</p>
+<p>When the annotated property is a java.util.Map, then each output file will be associated with an identity. For cacheable tasks this is a requirement. The keys of the map must be non-empty strings. The values of the map will be evaluated to individual files as per <code><a href="#">org.gradle.api.Project#file(Object)</a></code>.</p>
  
 <p>Otherwise the given files will be evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code>, and task output caching will be disabled for the task.</p>
 </p>
@@ -6123,6 +6427,17 @@ Creating non-managed model elements
 <a href="../org.gradle.concurrent/-parallelism-configuration/index.html">org.gradle.concurrent.ParallelismConfiguration</a></td>
 <td>
 <p>A <code>ParallelismConfiguration</code> defines the parallel settings for a Gradle build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.tooling.provider.model/-parameterized-tooling-model-builder/index.html">org.gradle.tooling.provider.model.ParameterizedToolingModelBuilder</a></td>
+<td>
+<p>A ToolingModelBuilder which can be parametrized by the client. 
+<p>The parameter type <code>T</code> does not need to implement the interface defined in the client side, but it does need to have the same structure. The Tooling API will create a view from the client side parameter type to the one defined in this model builder, and deal automatically with missing methods in order to allow evolution of the models. </p>
+ 
+<p>All classes implementing this interface should also implement methods from ToolingModelBuilder, which will be used to determine if a model can be built by the current builder and to generate the model in case no parameter is passed from the client. The parameter type should be bound to the model type. </p>
+</p>
 </td>
 </tr>
 <tr>
@@ -6551,24 +6866,6 @@ Creating non-managed model elements
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.plugin.repository/-plugin-repositories-spec/index.html">org.gradle.plugin.repository.PluginRepositoriesSpec</a></td>
-<td>
-<p>Used to declare org.gradle.plugin.repository.PluginRepository instances. 
-<p> Plugin repositories added via this interface will used to resolve plugins specified in the <code>plugins {}</code> block.</p>
-</p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.plugin.repository/-plugin-repository.html">org.gradle.plugin.repository.PluginRepository</a></td>
-<td>
-<p>Represents a repository from which Gradle plugins can be resolved. 
-<p> This type of repository will only be consulted when resolving plugins applied using the <code>plugins {}</code> syntax.</p>
-</p>
-</td>
-</tr>
-<tr>
-<td>
 <a href="../org.gradle.plugin.management/-plugin-request/index.html">org.gradle.plugin.management.PluginRequest</a></td>
 <td>
 <p>Contains information about a plugin that has been requested for resolution.</p>
@@ -6578,7 +6875,7 @@ Creating non-managed model elements
 <td>
 <a href="../org.gradle.plugin.management/-plugin-resolution-strategy/index.html">org.gradle.plugin.management.PluginResolutionStrategy</a></td>
 <td>
-<p>Allows modification of PluginRequests before they are resolved by a org.gradle.plugin.repository.PluginRepository.</p>
+<p>Allows modification of PluginRequests before they are resolved.</p>
 </td>
 </tr>
 <tr>
@@ -6725,6 +7022,27 @@ and applies the given <a href="../org.gradle.kotlin.dsl/-polymorphic-domain-obje
 <a href="../org.gradle.language.jvm.tasks/-process-resources/index.html">org.gradle.language.jvm.tasks.ProcessResources</a></td>
 <td>
 <p>Copies resources from their source to their target directory, potentially processing them. Makes sure no stale resources remain in the target directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language/-production-component/index.html">org.gradle.language.ProductionComponent</a></td>
+<td>
+<p>Represents a component that is the main product of a project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language.cpp/-production-cpp-component/index.html">org.gradle.language.cpp.ProductionCppComponent</a></td>
+<td>
+<p>Represents a C++ component that is the main product of a project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language.swift/-production-swift-component/index.html">org.gradle.language.swift.ProductionSwiftComponent</a></td>
+<td>
+<p>Represents a Swift component that is the main product of a project.</p>
 </td>
 </tr>
 <tr>
@@ -6924,7 +7242,7 @@ and applies the given <a href="../org.gradle.kotlin.dsl/-polymorphic-domain-obje
 <p>
 <p>A <code>ProjectDescriptor</code> declares the configuration required to create and evaluate a .</p>
  
-<p> A <code>ProjectDescriptor</code> is created when you add a project to the build from the settings script, using <code><a href="#"> </a></code> or <code><a href="#">Settings#includeFlat(String[])</a></code>. You can access the descriptors using one of the lookup methods on the Settings object.</p>
+<p> A <code>ProjectDescriptor</code> is created when you add a project to the build from the settings script, using <code><a href="#"> </a></code> or <code><a href="#">Settings#includeFlat(String...)</a></code>. You can access the descriptors using one of the lookup methods on the Settings object.</p>
 </p>
 </td>
 </tr>
@@ -7031,6 +7349,21 @@ and applies the given <a href="../org.gradle.kotlin.dsl/-polymorphic-domain-obje
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.api.provider.-property/index.html">org.gradle.api.provider.Property</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.provider/-property/index.html">org.gradle.api.provider.Property</a></td>
+<td>
+<p>A <code>Provider</code> representation for capturing the state of a property. The value can be provided by using the method <code><a href="#">#set(Object)</a></code> or <code><a href="#">#set(Provider)</a></code>. 
+<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory method <code><a href="#">org.gradle.api.model.ObjectFactory#property(Class)</a></code>. There are also several specialized subtypes of this interface that can be created using various other factory methods.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.plugins.ide.api/-property-list-generator-task/index.html">org.gradle.plugins.ide.api.PropertyListGeneratorTask</a></td>
 <td>
 <p>A convenience superclass for those tasks which generate Property List configuration files from a domain object of type T.</p>
@@ -7051,7 +7384,7 @@ and applies the given <a href="../org.gradle.kotlin.dsl/-polymorphic-domain-obje
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.api.provider/-property-state/index.html">org.gradle.api.provider.PropertyState</a></td>
+<a href="../org.gradle.api.provider/-property-state.html">org.gradle.api.provider.PropertyState</a></td>
 <td>
 <p>A <code>Provider</code> representation for capturing the state of a property. The value can be provided by using the method <code><a href="#">#set(Object)</a></code> or <code><a href="#">#set(Provider)</a></code>. 
 <p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory methods <code><a href="#">org.gradle.api.Project#property(java.lang.Class)</a></code> or <code><a href="#">org.gradle.api.provider.ProviderFactory#property(java.lang.Class)</a></code>.</p>
@@ -7063,9 +7396,18 @@ and applies the given <a href="../org.gradle.kotlin.dsl/-polymorphic-domain-obje
 <a href="../org.gradle.api.provider/-provider/index.html">org.gradle.api.provider.Provider</a></td>
 <td>
 <p>A container object that provides a value of a specific type. The value can be retrieved by the method <code><a href="../org.gradle.api.provider/-provider/get.html">#get()</a></code> or <code><a href="../org.gradle.api.provider/-provider/get-or-null.html">#getOrNull()</a></code>. 
-<p>A provider may not always have a value available, for example when the value may not yet be known but will be known at some point in the future. When a value is not available, <code><a href="../org.gradle.api.provider/-provider/is-present.html">#isPresent()</a></code> returns <code>false</code> and retrieving the value will fail with an exception. </p>
-<p>A provider may not always provide the same value. Although there are no methods on this interface to change the value, the provider implementation may be mutable or use values from some changing source. </p>
-<p>A provider may provide a value that is mutable and that changes over time. </p>
+<p> A provider may not always have a value available, for example when the value may not yet be known but will be known at some point in the future. When a value is not available, <code><a href="../org.gradle.api.provider/-provider/is-present.html">#isPresent()</a></code> returns <code>false</code> and retrieving the value will fail with an exception. </p>
+ 
+<p> A provider may not always provide the same value. Although there are no methods on this interface to change the value, the provider implementation may be mutable or use values from some changing source. </p>
+ 
+<p> A provider may provide a value that is mutable and that changes over time. </p>
+ 
+<p> A typical use of a provider is to pass values from one DSL element to another, e.g. from an extension to a task. Providers also allow expensive computations to be deferred until their value is actually needed, usually at task execution time. </p>
+ 
+<p> For a provider whose value can be mutated, see PropertyState. </p>
+ 
+<p> Do not use <code>Provider&lt;File&gt;</code>. Use org.gradle.api.file.Directory or org.gradle.api.file.RegularFile instead. </p>
+ 
 <p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory methods <code><a href="#">org.gradle.api.Project#provider(java.util.concurrent.Callable)</a></code> or <code><a href="#">org.gradle.api.provider.ProviderFactory#provider(java.util.concurrent.Callable)</a></code>.</p>
 </p>
 </td>
@@ -7207,7 +7549,16 @@ and applies the given <a href="../org.gradle.kotlin.dsl/-polymorphic-domain-obje
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.api.file/-regular-file-var/index.html">org.gradle.api.file.RegularFileVar</a></td>
+<a href="../org.gradle.api.file/-regular-file-property/index.html">org.gradle.api.file.RegularFileProperty</a></td>
+<td>
+<p>Represents some configurable regular file location, whose value is mutable and not necessarily currently known until later. 
+<p> <strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created using the <code><a href="../org.gradle.api.file/-project-layout/file-property.html">ProjectLayout#fileProperty()</a></code> method.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.file/-regular-file-var.html">org.gradle.api.file.RegularFileVar</a></td>
 <td>
 <p>Represents some configurable regular file location, whose value is mutable and not necessarily currently known until later. 
 <p> <strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created using the <code><a href="../org.gradle.api.file/-project-layout/new-file-var.html">ProjectLayout#newFileVar()</a></code> method.</p>
@@ -7766,6 +8117,15 @@ General class constraints
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.api.provider/-set-property.html">org.gradle.api.provider.SetProperty</a></td>
+<td>
+<p>Represents a property whose type is a Set of elements of type T. Retains iteration order. 
+<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory method <code><a href="#">org.gradle.api.model.ObjectFactory#listProperty(Class)</a></code>.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.initialization/-settings/index.html">org.gradle.api.initialization.Settings</a></td>
 <td>
 <p>
@@ -7773,7 +8133,7 @@ General class constraints
  
 <p>There is a one-to-one correspondence between a <code>Settings</code> instance and a <code>{@value * #DEFAULT_SETTINGS_FILE}</code> settings file. Before Gradle assembles the projects for a build, it creates a <code>Settings</code> instance and executes the settings file against it.</p>
  Assembling a Multi-Project Build 
-<p>One of the purposes of the <code>Settings</code> object is to allow you to declare the projects which are to be included in the build. You add projects to the build using the <code><a href="#">#include(String[])</a></code> method. There is always a root project included in a build. It is added automatically when the <code>Settings</code> object is created. The root project's name defaults to the name of the directory containing the settings file. The root project's project directory defaults to the directory containing the settings file.</p>
+<p>One of the purposes of the <code>Settings</code> object is to allow you to declare the projects which are to be included in the build. You add projects to the build using the <code><a href="#">#include(String...)</a></code> method. There is always a root project included in a build. It is added automatically when the <code>Settings</code> object is created. The root project's name defaults to the name of the directory containing the settings file. The root project's project directory defaults to the directory containing the settings file.</p>
  
 <p>When a project is included in the build, a ProjectDescriptor is created. You can use this descriptor to change the default values for several properties of the project.</p>
  Using Settings in a Settings File Dynamic Properties 
@@ -7949,8 +8309,7 @@ General class constraints
 <td>
 <p>A software component produced by a Gradle software project. 
 <p>An implementation of this interface may also implement:</p>
- <ul> <li>ChildComponent to provide information about the hierarchy of components it belongs to.</li>
- <li>ComponentWithVariants to provide information about the variants that the component provides.</li>
+ <ul> <li>ComponentWithVariants to provide information about the variants that the component provides.</li>
  </ul>
 </p>
 </td>
@@ -8144,6 +8503,13 @@ General class constraints
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.nativeplatform.tasks/-strip-symbols/index.html">org.gradle.nativeplatform.tasks.StripSymbols</a></td>
+<td>
+<p>Strips the debug symbols from a binary</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.tooling.events/-success-result.html">org.gradle.tooling.events.SuccessResult</a></td>
 <td>
 <p>Describes how an operation finished successfully.</p>
@@ -8154,7 +8520,20 @@ General class constraints
 <a href="../org.gradle.language.swift/-swift-application/index.html">org.gradle.language.swift.SwiftApplication</a></td>
 <td>
 <p>Configuration for a Swift application, defining the source files that make up the application plus other settings. 
-<p>An instance of this type is added as a project extension by the Swift executable plugin.</p>
+<p>An instance of this type is added as a project extension by the Swift application plugin.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language.swift.plugins/-swift-application-plugin/index.html">org.gradle.language.swift.plugins.SwiftApplicationPlugin</a></td>
+<td>
+<p>
+<p>A plugin that produces an executable from Swift source.</p>
+ 
+<p>Adds compile, link and install tasks to build the executable. Defaults to looking for source files in `src/main/swift`.</p>
+ 
+<p>Adds a SwiftApplication extension to the project to allow configuration of the executable.</p>
 </p>
 </td>
 </tr>
@@ -8162,28 +8541,21 @@ General class constraints
 <td>
 <a href="../org.gradle.language.swift.plugins/-swift-base-plugin/index.html">org.gradle.language.swift.plugins.SwiftBasePlugin</a></td>
 <td>
-<p>A common base plugin for the Swift executable and library plugins</p>
+<p>A common base plugin for the Swift application and library plugins</p>
 </td>
 </tr>
 <tr>
 <td>
 <a href="../org.gradle.language.swift/-swift-binary/index.html">org.gradle.language.swift.SwiftBinary</a></td>
 <td>
-<p>A binary built from Swift source.</p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.language.swift/-swift-bundle/index.html">org.gradle.language.swift.SwiftBundle</a></td>
-<td>
-<p>An bundle built from Swift source.</p>
+<p>A binary built from Swift source and linked from the resulting object files.</p>
 </td>
 </tr>
 <tr>
 <td>
 <a href="../org.gradle.language.swift.tasks/-swift-compile/index.html">org.gradle.language.swift.tasks.SwiftCompile</a></td>
 <td>
-<p>Compiles Swift source files into object files, executables and libraries.</p>
+<p>Compiles Swift source files into object files.</p>
 </td>
 </tr>
 <tr>
@@ -8206,22 +8578,16 @@ General class constraints
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.language.swift/-swift-executable.html">org.gradle.language.swift.SwiftExecutable</a></td>
+<a href="../org.gradle.language.swift/-swift-executable/index.html">org.gradle.language.swift.SwiftExecutable</a></td>
 <td>
 <p>An executable built from Swift source.</p>
 </td>
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.language.swift.plugins/-swift-executable-plugin/index.html">org.gradle.language.swift.plugins.SwiftExecutablePlugin</a></td>
+<a href="../org.gradle.language.swift/-swift-language-version/index.html">org.gradle.language.swift.SwiftLanguageVersion</a></td>
 <td>
-<p>
-<p>A plugin that produces an executable from Swift source.</p>
- 
-<p>Adds compile, link and install tasks to build the executable. Defaults to looking for source files in `src/main/swift`.</p>
- 
-<p>Adds a SwiftComponent extension to the project to allow configuration of the executable.</p>
-</p>
+<p>Swift language version.</p>
 </td>
 </tr>
 <tr>
@@ -8248,6 +8614,13 @@ General class constraints
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.language.swift/-swift-platform.html">org.gradle.language.swift.SwiftPlatform</a></td>
+<td>
+<p>A target platform for building Swift binaries.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.language.swift/-swift-shared-library.html">org.gradle.language.swift.SwiftSharedLibrary</a></td>
 <td>
 <p>A shared library built from Swift source.</p>
@@ -8255,9 +8628,37 @@ General class constraints
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.language.swift/-swift-static-library.html">org.gradle.language.swift.SwiftStaticLibrary</a></td>
+<td>
+<p>A static library built from Swift source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.nativeplatform.test.xctest/-swift-x-c-test-binary/index.html">org.gradle.nativeplatform.test.xctest.SwiftXCTestBinary</a></td>
+<td>
+<p>An test binary built from Swift source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.nativeplatform.test.xctest/-swift-x-c-test-bundle/index.html">org.gradle.nativeplatform.test.xctest.SwiftXCTestBundle</a></td>
+<td>
+<p>An XCTest executable for tests implemented in Swift.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.nativeplatform.test.xctest/-swift-x-c-test-executable.html">org.gradle.nativeplatform.test.xctest.SwiftXCTestExecutable</a></td>
+<td>
+<p>An XCTest executable for tests implemented in Swift.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.nativeplatform.test.xctest/-swift-x-c-test-suite/index.html">org.gradle.nativeplatform.test.xctest.SwiftXCTestSuite</a></td>
 <td>
-<p>An XCTest suite, implemented in Swift.</p>
+<p>A XCTest suite, implemented in Swift.</p>
 </td>
 </tr>
 <tr>
@@ -8330,6 +8731,7 @@ General class constraints
  <li>A closure. The closure may take a <code>Task</code> as parameter. It may return any of the types listed here. Its return value is recursively converted to tasks. A <code>null</code> return value is treated as an empty collection.</li>
  <li>A TaskDependency object.</li>
  <li>A Buildable object.</li>
+ <li>A org.gradle.api.file.RegularFileProperty or org.gradle.api.file.DirectoryProperty.</li>
  <li>A <code>Iterable</code>, <code>Collection</code>, <code>Map</code> or array. May contain any of the types listed here. The elements of the iterable/collection/map/array are recursively converted to tasks.</li>
  <li>A <code>Callable</code>. The <code>call()</code> method may return any of the types listed here. Its return value is recursively converted to tasks. A <code>null</code> return value is treated as an empty collection.</li>
  </ul>
@@ -8519,6 +8921,13 @@ General class constraints
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.api.tasks/-task-local-state/index.html">org.gradle.api.tasks.TaskLocalState</a></td>
+<td>
+<p>Represents the files or directories that represent the local state of a org.gradle.api.Task. The typical usage for local state is to store non-relocatable incremental analysis between builds. Local state is removed whenever the task is loaded from cache.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.tooling.events.task/-task-operation-descriptor/index.html">org.gradle.tooling.events.task.TaskOperationDescriptor</a></td>
 <td>
 <p>Describes a task operation for which an event has occurred.</p>
@@ -8642,6 +9051,13 @@ General class constraints
 <p>Executes JUnit (3.8.x or 4.x) or TestNG tests. Test are always run in (one or more) separate JVMs. The sample below shows various configuration options. <pre><code> apply plugin: 'java' // adds 'test' task test { // enable TestNG support (default is JUnit) useTestNG() // set a system property for the test JVM(s) systemProperty 'some.prop', 'value' // explicitly include or exclude tests include 'org/foo/**' exclude 'org/boo/**' // show standard out and standard error of the test JVM(s) on the console testLogging.showStandardStreams = true // set heap size for the test JVM(s) minHeapSize = "128m" maxHeapSize = "512m" // set JVM arguments for the test JVM(s) jvmArgs '-XX:MaxPermSize=256m' // listen to events in the test execution lifecycle beforeTest { descriptor -&gt; logger.lifecycle("Running test: " + descriptor) } // listen to standard out and standard error of the test JVM(s) onOutput { descriptor, event -&gt; logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message ) } } </code></pre> 
 <p> The test process can be started in debug mode (see <code><a href="../org.gradle.api.tasks.testing/-test/get-debug.html">#getDebug()</a></code>) in an ad-hoc manner by supplying the `--debug-jvm` switch when invoking the build. </p>
 <pre><code> gradle someTestTask --debug-jvm </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.nativeplatform.test/-test-component/index.html">org.gradle.nativeplatform.test.TestComponent</a></td>
+<td>
+<p>Represents a component that can run tests.</p>
 </td>
 </tr>
 <tr>
@@ -8830,6 +9246,13 @@ General class constraints
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.nativeplatform.test/-test-suite-component/index.html">org.gradle.nativeplatform.test.TestSuiteComponent</a></td>
+<td>
+<p>Represents a component that defines a test suite.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.testing.base/-test-suite-container.html">org.gradle.testing.base.TestSuiteContainer</a></td>
 <td>
 <p>A container of TestSuiteSpec instances.</p>
@@ -8854,6 +9277,13 @@ General class constraints
 <a href="../org.gradle.api.tasks.testing/-test-task-reports/index.html">org.gradle.api.tasks.testing.TestTaskReports</a></td>
 <td>
 <p>The reports produced by the Test task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.testing.base.plugins/-testing-base-plugin/index.html">org.gradle.testing.base.plugins.TestingBasePlugin</a></td>
+<td>
+<p>Base plugin for testing. - Adds default locations for test reporting</p>
 </td>
 </tr>
 <tr>
@@ -9027,6 +9457,13 @@ General class constraints
 <a href="../org.gradle.testkit.runner/-unexpected-build-success/index.html">org.gradle.testkit.runner.UnexpectedBuildSuccess</a></td>
 <td>
 <p>Thrown when executing a build that was expected to fail, but succeeded.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language.swift.tasks/-unexport-main-symbol/index.html">org.gradle.language.swift.tasks.UnexportMainSymbol</a></td>
+<td>
+<p>Unexports the <code>main</code> entry point symbol in an object file, so the object file can be linked with an executable.</p>
 </td>
 </tr>
 <tr>
@@ -9242,6 +9679,13 @@ General class constraints
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.api.artifacts/-variant-metadata/index.html">org.gradle.api.artifacts.VariantMetadata</a></td>
+<td>
+<p>Represents the metadata of one variant of a component, see <code><a href="#">ComponentMetadataDetails#withVariant(String, Action)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.artifacts.transform/-variant-transform/index.html">org.gradle.api.artifacts.transform.VariantTransform</a></td>
 <td>
 <p>Registration of an variant transform.</p>
@@ -9273,6 +9717,13 @@ General class constraints
 <a href="../org.gradle.api.tasks/-verification-task/index.html">org.gradle.api.tasks.VerificationTask</a></td>
 <td>
 <p>A <code>VerificationTask</code> is a task which performs some verification of the artifacts produced by a build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.artifacts/-version-constraint/index.html">org.gradle.api.artifacts.VersionConstraint</a></td>
+<td>
+<p>Represents a constrained version. By default, when a dependency has a version number, it is assumed that the version can be upgraded during conflict resolution (typically, version 1.15 can be upgraded to 1.16). However in some cases we don't want this behavior. This class represents the base spec of module constraints.</p>
 </td>
 </tr>
 <tr>
@@ -9365,6 +9816,13 @@ General class constraints
 <p>
 <p>A Convention used for the WarPlugin.</p>
 </p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.logging.configuration/-warning-mode/index.html">org.gradle.api.logging.configuration.WarningMode</a></td>
+<td>
+<p>Specifies the warning mode a user wants to see.</p>
 </td>
 </tr>
 <tr>
@@ -9531,16 +9989,16 @@ General class constraints
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.nativeplatform.test.xctest.plugins/-x-c-test-convention-plugin/index.html">org.gradle.nativeplatform.test.xctest.plugins.XCTestConventionPlugin</a></td>
+<a href="../org.gradle.nativeplatform.test.xctest.tasks/-x-c-test/index.html">org.gradle.nativeplatform.test.xctest.tasks.XCTest</a></td>
 <td>
-<p>A plugin that sets up the infrastructure for testing native binaries with XCTest test framework. It also adds conventions on top of it.</p>
+<p>Executes XCTest tests. Test are always run in a single execution.</p>
 </td>
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.nativeplatform.test.xctest.tasks/-xc-test/index.html">org.gradle.nativeplatform.test.xctest.tasks.XcTest</a></td>
+<a href="../org.gradle.nativeplatform.test.xctest.plugins/-x-c-test-convention-plugin/index.html">org.gradle.nativeplatform.test.xctest.plugins.XCTestConventionPlugin</a></td>
 <td>
-<p>Executes XCTest tests. Test are always run in a single execution.</p>
+<p>A plugin that sets up the infrastructure for testing native binaries with XCTest test framework. It also adds conventions on top of it.</p>
 </td>
 </tr>
 <tr>

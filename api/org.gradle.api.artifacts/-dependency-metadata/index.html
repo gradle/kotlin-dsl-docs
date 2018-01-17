@@ -1,0 +1,83 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DependencyMetadata - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="./index.html">DependencyMetadata</a><br/>
+<br/>
+<h1>DependencyMetadata</h1>
+<code><span class="keyword">interface </span><span class="identifier">DependencyMetadata</span><span class="symbol">&lt;</span><span class="identifier">SELF</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DependencyMetadata</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">DependencyMetadata</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>Describes a metadata about a dependency - direct dependency or dependency constraint - declared in a resolved component's metadata.</p>
+<h3>Parameters</h3>
+<p><a name="&lt;SELF&gt;"></a>
+<code><SELF></code> - type extending this interface</p>
+<p><strong>Since</strong><br/>
+4.4</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-group.html">getGroup</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGroup</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the group of the module that is targeted by this dependency or dependency constraint. The group allows the definition of modules of the same name in different organizations or contexts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the module that is targeted by this dependency or dependency constraint.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-version-constraint.html">getVersionConstraint</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getVersionConstraint</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-version-constraint/index.html"><span class="identifier">VersionConstraint</span></a></code>
+<p>Returns the version of the module that is targeted by this dependency or dependency constraint. which usually expresses what API level of the module you are compatible with.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="version.html">version</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">version</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.DependencyMetadata$version(org.gradle.api.Action((org.gradle.api.artifacts.MutableVersionConstraint)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-mutable-version-constraint/index.html"><span class="identifier">MutableVersionConstraint</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html#SELF"><span class="identifier">SELF</span></a></code>
+<p>Adjust the version constraints of the dependency or dependency constraint.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-dependency-constraint-metadata.html">DependencyConstraintMetadata</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DependencyConstraintMetadata</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DependencyMetadata</span></a><span class="symbol">&lt;</span><a href="../-dependency-constraint-metadata.html"><span class="identifier">DependencyConstraintMetadata</span></a><span class="symbol">&gt;</span></code>
+<p>Describes a dependency constraint declared in a resolved component's metadata, which typically originates from a component descriptor (Gradle metadata file). This interface can be used to adjust a dependency constraint's properties via metadata rules (see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-direct-dependency-metadata.html">DirectDependencyMetadata</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DirectDependencyMetadata</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DependencyMetadata</span></a><span class="symbol">&lt;</span><a href="../-direct-dependency-metadata.html"><span class="identifier">DirectDependencyMetadata</span></a><span class="symbol">&gt;</span></code>
+<p>Describes a dependency declared in a resolved component's metadata, which typically originates from a component descriptor (Gradle metadata file, Ivy file, Maven POM). This interface can be used to adjust a dependency's properties via metadata rules (see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

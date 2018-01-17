@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">Task</a>&nbsp;/&nbsp;<a href=".">dependsOn</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="index.html">Task</a>&nbsp;/&nbsp;<a href="./depends-on.html">dependsOn</a><br/>
 <br/>
 <h1>dependsOn</h1>
 <a name="org.gradle.api.Task$dependsOn(kotlin.Array((kotlin.Any)))"></a>
@@ -21,6 +21,7 @@
  <li>A TaskDependency object.</li>
  <li>A org.gradle.api.tasks.TaskReference object.</li>
  <li>A Buildable object.</li>
+ <li>A org.gradle.api.file.RegularFileProperty or org.gradle.api.file.DirectoryProperty.</li>
  <li>A <code>Iterable</code>, <code>Collection</code>, <code>Map</code> or array. May contain any of the types listed here. The elements of the iterable/collection/map/array are recursively converted to tasks.</li>
  <li>A <code>Callable</code>. The <code>call()</code> method may return any of the types listed here. Its return value is recursively converted to tasks. A <code>null</code> return value is treated as an empty collection.</li>
  <li>Anything else is treated as a failure.</li>

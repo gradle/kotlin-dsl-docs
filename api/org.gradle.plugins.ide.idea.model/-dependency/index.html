@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.idea.model</a>&nbsp;/&nbsp;<a href=".">Dependency</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.idea.model</a>&nbsp;/&nbsp;<a href="./index.html">Dependency</a><br/>
 <br/>
 <h1>Dependency</h1>
 <code><span class="keyword">interface </span><span class="identifier">Dependency</span></code>
@@ -20,6 +20,24 @@
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addToNode</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Dependency$addToNode(groovy.util.Node)/parentNode">parentNode</span><span class="symbol">:</span>&nbsp;<span class="identifier">Node</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
 </tr>
+<tr>
+<td>
+<p><a href="get-scope.html">getScope</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getScope</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The scope of this library. If null, the scope attribute is not added.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-scope.html">setScope</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setScope</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.Dependency$setScope(kotlin.String)/scope">scope</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>The scope of this library. If null, the scope attribute is not added.</p>
+</td>
+</tr>
 </tbody>
 </table>
 <h3>Inheritors</h3>
@@ -30,7 +48,7 @@
 <p><a href="../-module-dependency/index.html">ModuleDependency</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ModuleDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Dependency</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ModuleDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Dependency</span></a></code>
 <p>Represents an orderEntry of type module in the iml XML.</p>
 </td>
 </tr>
@@ -39,7 +57,7 @@
 <p><a href="../-module-library/index.html">ModuleLibrary</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ModuleLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Dependency</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ModuleLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Dependency</span></a></code>
 <p>Represents an orderEntry of type module-library in the iml XML.</p>
 </td>
 </tr>

@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.buildinit.tasks</a>&nbsp;/&nbsp;<a href=".">InitBuild</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.buildinit.tasks</a>&nbsp;/&nbsp;<a href="./index.html">InitBuild</a><br/>
 <br/>
 <h1>InitBuild</h1>
 <code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InitBuild</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a></code>
@@ -36,10 +36,28 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-available-d-s-ls.html">getAvailableDSLs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAvailableDSLs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Available build script DSLs to be used.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-available-test-frameworks.html">getAvailableTestFrameworks</a></p>
 </td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAvailableTestFrameworks</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="get-dsl.html">getDsl</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDsl</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The desired DSL of build scripts to create, defaults to 'groovy'. This property can be set via command-line option '--dsl'.</p>
+</td>
 </tr>
 <tr>
 <td>
@@ -64,6 +82,15 @@
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getType</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
 <p>The desired type of build to create, defaults to 'pom' if 'pom.xml' is found in project root if no pom.xml is found, it defaults to 'basic'. This property can be set via command-line option '--type'.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-dsl.html">setDsl</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDsl</span><span class="symbol">(</span><span class="identifier" id="org.gradle.buildinit.tasks.InitBuild$setDsl(kotlin.String)/dsl">dsl</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set alternative build script DSL to be used.</p>
 </td>
 </tr>
 <tr>

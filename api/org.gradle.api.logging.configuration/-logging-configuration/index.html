@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.logging.configuration</a>&nbsp;/&nbsp;<a href=".">LoggingConfiguration</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.logging.configuration</a>&nbsp;/&nbsp;<a href="./index.html">LoggingConfiguration</a><br/>
 <br/>
 <h1>LoggingConfiguration</h1>
 <code><span class="keyword">interface </span><span class="identifier">LoggingConfiguration</span></code>
@@ -42,6 +42,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-warning-mode.html">getWarningMode</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getWarningMode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-warning-mode/index.html"><span class="identifier">WarningMode</span></a></code>
+<p>Specifies which type of warnings should be written to the console.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="set-console-output.html">setConsoleOutput</a></p>
 </td>
 <td>
@@ -67,6 +76,15 @@
 <p>Sets the detail that should be included in stacktraces.</p>
 </td>
 </tr>
+<tr>
+<td>
+<p><a href="set-warning-mode.html">setWarningMode</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setWarningMode</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.logging.configuration.LoggingConfiguration$setWarningMode(org.gradle.api.logging.configuration.WarningMode)/warningMode">warningMode</span><span class="symbol">:</span>&nbsp;<a href="../-warning-mode/index.html"><span class="identifier">WarningMode</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies which type of warnings should be written to the console.</p>
+</td>
+</tr>
 </tbody>
 </table>
 <h3>Inheritors</h3>
@@ -77,7 +95,7 @@
 <p><a href="../../org.gradle/-start-parameter/index.html">StartParameter</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">StartParameter</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">LoggingConfiguration</span><span class="symbol">, </span><a href="../../org.gradle.concurrent/-parallelism-configuration/index.html"><span class="identifier">ParallelismConfiguration</span></a><span class="symbol">, </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">StartParameter</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">LoggingConfiguration</span></a><span class="symbol">, </span><a href="../../org.gradle.concurrent/-parallelism-configuration/index.html"><span class="identifier">ParallelismConfiguration</span></a><span class="symbol">, </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/Serializable.html"><span class="identifier">Serializable</span></a></code>
 <p>
 <p><code>StartParameter</code> defines the configuration used by a Gradle instance to execute a build. The properties of <code>StartParameter</code> generally correspond to the command-line options of Gradle. </p>
 <p>You can obtain an instance of a <code>StartParameter</code> by either creating a new one, or duplicating an existing one using <code><a href="../../org.gradle/-start-parameter/new-instance.html">#newInstance</a></code> or <code><a href="../../org.gradle/-start-parameter/new-build.html">#newBuild</a></code>.</p>

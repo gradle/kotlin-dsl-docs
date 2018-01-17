@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../style.css">
 </HEAD>
 <BODY>
-<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.initialization</a><br/>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="./index.html">org.gradle.api.initialization</a><br/>
 <br/>
 <h2>Package org.gradle.api.initialization</h2>
 <h3>Types</h3>
@@ -38,7 +38,7 @@
 <p>
 <p>A <code>ProjectDescriptor</code> declares the configuration required to create and evaluate a .</p>
  
-<p> A <code>ProjectDescriptor</code> is created when you add a project to the build from the settings script, using <code><a href="#"> </a></code> or <code><a href="#">Settings#includeFlat(String[])</a></code>. You can access the descriptors using one of the lookup methods on the Settings object.</p>
+<p> A <code>ProjectDescriptor</code> is created when you add a project to the build from the settings script, using <code><a href="#"> </a></code> or <code><a href="#">Settings#includeFlat(String...)</a></code>. You can access the descriptors using one of the lookup methods on the Settings object.</p>
 </p>
 </td>
 </tr>
@@ -53,7 +53,7 @@
  
 <p>There is a one-to-one correspondence between a <code>Settings</code> instance and a <code>{@value * #DEFAULT_SETTINGS_FILE}</code> settings file. Before Gradle assembles the projects for a build, it creates a <code>Settings</code> instance and executes the settings file against it.</p>
  Assembling a Multi-Project Build 
-<p>One of the purposes of the <code>Settings</code> object is to allow you to declare the projects which are to be included in the build. You add projects to the build using the <code><a href="#">#include(String[])</a></code> method. There is always a root project included in a build. It is added automatically when the <code>Settings</code> object is created. The root project's name defaults to the name of the directory containing the settings file. The root project's project directory defaults to the directory containing the settings file.</p>
+<p>One of the purposes of the <code>Settings</code> object is to allow you to declare the projects which are to be included in the build. You add projects to the build using the <code><a href="#">#include(String...)</a></code> method. There is always a root project included in a build. It is added automatically when the <code>Settings</code> object is created. The root project's name defaults to the name of the directory containing the settings file. The root project's project directory defaults to the directory containing the settings file.</p>
  
 <p>When a project is included in the build, a ProjectDescriptor is created. You can use this descriptor to change the default values for several properties of the project.</p>
  Using Settings in a Settings File Dynamic Properties 

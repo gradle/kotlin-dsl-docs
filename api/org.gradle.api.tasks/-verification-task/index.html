@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks</a>&nbsp;/&nbsp;<a href=".">VerificationTask</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks</a>&nbsp;/&nbsp;<a href="./index.html">VerificationTask</a><br/>
 <br/>
 <h1>VerificationTask</h1>
 <code><span class="keyword">interface </span><span class="identifier">VerificationTask</span></code>
@@ -38,10 +38,25 @@
 <tbody>
 <tr>
 <td>
+<p><a href="../../org.gradle.api.tasks.testing/-abstract-test-task/index.html">AbstractTestTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractTestTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">VerificationTask</span></a><span class="symbol">, </span><a href="../../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.tasks.testing/-test-task-reports/index.html"><span class="identifier">TestTaskReports</span></a><span class="symbol">&gt;</span></code>
+<p>Abstract class for all test task. <ul> <li>Support for test listeners</li>
+ <li>Support for reporting</li>
+ <li>Support for report linking in the console output</li>
+ </ul>
+ 
+<p><strong>Note:</strong> This abstract class is not intended for implementation by build script or plugin authors.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="../../org.gradle.api.plugins.quality/-checkstyle/index.html">Checkstyle</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Checkstyle</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-source-task/index.html"><span class="identifier">SourceTask</span></a><span class="symbol">, </span><span class="identifier">VerificationTask</span><span class="symbol">, </span><a href="../../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.plugins.quality/-checkstyle-reports/index.html"><span class="identifier">CheckstyleReports</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Checkstyle</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-source-task/index.html"><span class="identifier">SourceTask</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">VerificationTask</span></a><span class="symbol">, </span><a href="../../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.plugins.quality/-checkstyle-reports/index.html"><span class="identifier">CheckstyleReports</span></a><span class="symbol">&gt;</span></code>
 <p>Runs Checkstyle against some source files.</p>
 </td>
 </tr>
@@ -50,7 +65,7 @@
 <p><a href="../../org.gradle.api.plugins.quality/-code-narc/index.html">CodeNarc</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CodeNarc</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-source-task/index.html"><span class="identifier">SourceTask</span></a><span class="symbol">, </span><span class="identifier">VerificationTask</span><span class="symbol">, </span><a href="../../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.plugins.quality/-code-narc-reports/index.html"><span class="identifier">CodeNarcReports</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CodeNarc</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-source-task/index.html"><span class="identifier">SourceTask</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">VerificationTask</span></a><span class="symbol">, </span><a href="../../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.plugins.quality/-code-narc-reports/index.html"><span class="identifier">CodeNarcReports</span></a><span class="symbol">&gt;</span></code>
 <p>Runs CodeNarc against some source files.</p>
 </td>
 </tr>
@@ -59,7 +74,7 @@
 <p><a href="../../org.gradle.api.plugins.buildcomparison.gradle/-compare-gradle-builds/index.html">CompareGradleBuilds</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CompareGradleBuilds</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a><span class="symbol">, </span><span class="identifier">VerificationTask</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CompareGradleBuilds</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">VerificationTask</span></a></code>
 <p>Executes two Gradle builds (that can be the same build) with specified versions and compares the outcomes. Please see the “Comparing Builds” chapter of the Gradle User Guide for more information.</p>
 </td>
 </tr>
@@ -68,7 +83,7 @@
 <p><a href="../../org.gradle.api.plugins.quality/-find-bugs/index.html">FindBugs</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">FindBugs</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-source-task/index.html"><span class="identifier">SourceTask</span></a><span class="symbol">, </span><span class="identifier">VerificationTask</span><span class="symbol">, </span><a href="../../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.plugins.quality/-find-bugs-reports/index.html"><span class="identifier">FindBugsReports</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">FindBugs</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-source-task/index.html"><span class="identifier">SourceTask</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">VerificationTask</span></a><span class="symbol">, </span><a href="../../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.plugins.quality/-find-bugs-reports/index.html"><span class="identifier">FindBugsReports</span></a><span class="symbol">&gt;</span></code>
 <p>Analyzes code with <a href="#">FindBugs</a>. See the <a href="#">FindBugs Manual</a> for additional information on configuration options.</p>
 </td>
 </tr>
@@ -77,19 +92,8 @@
 <p><a href="../../org.gradle.api.plugins.quality/-pmd/index.html">Pmd</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Pmd</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-source-task/index.html"><span class="identifier">SourceTask</span></a><span class="symbol">, </span><span class="identifier">VerificationTask</span><span class="symbol">, </span><a href="../../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.plugins.quality/-pmd-reports/index.html"><span class="identifier">PmdReports</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Pmd</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-source-task/index.html"><span class="identifier">SourceTask</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">VerificationTask</span></a><span class="symbol">, </span><a href="../../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.plugins.quality/-pmd-reports/index.html"><span class="identifier">PmdReports</span></a><span class="symbol">&gt;</span></code>
 <p>Runs a set of static code analysis rules on Java source code files and generates a report of problems found.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../../org.gradle.api.tasks.testing/-test/index.html">Test</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Test</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><a href="../../org.gradle.process/-java-fork-options/index.html"><span class="identifier">JavaForkOptions</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">, </span><span class="identifier">VerificationTask</span><span class="symbol">, </span><a href="../../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.tasks.testing/-test-task-reports/index.html"><span class="identifier">TestTaskReports</span></a><span class="symbol">&gt;</span></code>
-<p>Executes JUnit (3.8.x or 4.x) or TestNG tests. Test are always run in (one or more) separate JVMs. The sample below shows various configuration options. <pre><code> apply plugin: 'java' // adds 'test' task test { // enable TestNG support (default is JUnit) useTestNG() // set a system property for the test JVM(s) systemProperty 'some.prop', 'value' // explicitly include or exclude tests include 'org/foo/**' exclude 'org/boo/**' // show standard out and standard error of the test JVM(s) on the console testLogging.showStandardStreams = true // set heap size for the test JVM(s) minHeapSize = "128m" maxHeapSize = "512m" // set JVM arguments for the test JVM(s) jvmArgs '-XX:MaxPermSize=256m' // listen to events in the test execution lifecycle beforeTest { descriptor -&gt; logger.lifecycle("Running test: " + descriptor) } // listen to standard out and standard error of the test JVM(s) onOutput { descriptor, event -&gt; logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message ) } } </code></pre> 
-<p> The test process can be started in debug mode (see <code><a href="../../org.gradle.api.tasks.testing/-test/get-debug.html">#getDebug()</a></code>) in an ad-hoc manner by supplying the `--debug-jvm` switch when invoking the build. </p>
-<pre><code> gradle someTestTask --debug-jvm </code></pre></p>
 </td>
 </tr>
 <tr>
@@ -97,7 +101,7 @@
 <p><a href="../../org.gradle.plugin.devel.tasks/-validate-task-properties/index.html">ValidateTaskProperties</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ValidateTaskProperties</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><span class="identifier">VerificationTask</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ValidateTaskProperties</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">VerificationTask</span></a></code>
 <p>Validates task property annotations. 
 <p> Task properties must be annotated with one of: </p>
  <ul> <li> <strong>Properties taken into account during up-to-date checks:</strong> <ul> <li> @org.gradle.api.tasks.Input, @org.gradle.api.tasks.Nested, @org.gradle.api.tasks.InputFile, @org.gradle.api.tasks.InputDirectory, @org.gradle.api.tasks.InputFiles to mark it as an input to the task. </li>

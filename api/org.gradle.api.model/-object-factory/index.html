@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.model</a>&nbsp;/&nbsp;<a href=".">ObjectFactory</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.model</a>&nbsp;/&nbsp;<a href="./index.html">ObjectFactory</a><br/>
 <br/>
 <h1>ObjectFactory</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ObjectFactory</span></code>
@@ -19,10 +19,21 @@
 <tbody>
 <tr>
 <td>
+<p><a href="list-property.html">listProperty</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">listProperty</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.model.ObjectFactory$listProperty(java.lang.Class((org.gradle.api.model.ObjectFactory.listProperty.T)))/elementType">elementType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="list-property.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-list-property.html"><span class="identifier">ListProperty</span></a><span class="symbol">&lt;</span><a href="list-property.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Creates a ListProperty implementation to hold a List of the given element type. The property with have an empty list as its initial value. 
+<p>The implementation will return immutable List values from its query methods.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="named.html">named</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a><span class="symbol">&gt;</span> <span class="identifier">named</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.model.ObjectFactory$named(java.lang.Class((org.gradle.api.model.ObjectFactory.named.T)), kotlin.String)/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.model.ObjectFactory$named(java.lang.Class((org.gradle.api.model.ObjectFactory.named.T)), kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a><span class="symbol">&gt;</span> <span class="identifier">named</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.model.ObjectFactory$named(java.lang.Class((org.gradle.api.model.ObjectFactory.named.T)), kotlin.String)/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="named.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.model.ObjectFactory$named(java.lang.Class((org.gradle.api.model.ObjectFactory.named.T)), kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="named.html#T"><span class="identifier">T</span></a></code>
 <p>Creates a simple immutable Named object of the given type and name. 
 <p>The given type can be an interface that extends Named or an abstract class that 'implements' Named. An abstract class, if provided:</p>
  <ul> <li>Must provide a zero-args constructor that is not private.</li>
@@ -42,7 +53,7 @@
 <p><a href="new-instance.html">newInstance</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">newInstance</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.model.ObjectFactory$newInstance(java.lang.Class((org.gradle.api.model.ObjectFactory.newInstance.T)), kotlin.Array((kotlin.Any)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.model.ObjectFactory$newInstance(java.lang.Class((org.gradle.api.model.ObjectFactory.newInstance.T)), kotlin.Array((kotlin.Any)))/parameters">parameters</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">newInstance</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.model.ObjectFactory$newInstance(java.lang.Class((org.gradle.api.model.ObjectFactory.newInstance.T)), kotlin.Array((kotlin.Any)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="new-instance.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.model.ObjectFactory$newInstance(java.lang.Class((org.gradle.api.model.ObjectFactory.newInstance.T)), kotlin.Array((kotlin.Any)))/parameters">parameters</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="new-instance.html#T"><span class="identifier">T</span></a></code>
 <p>Create a new instance of T, using <code>parameters</code> as the construction parameters. 
 <p>The type must be a non-abstract class.</p>
  
@@ -54,6 +65,43 @@
  <li>org.gradle.api.provider.ProviderFactory.</li>
  </ul>
 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="property.html">property</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">property</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.model.ObjectFactory$property(java.lang.Class((org.gradle.api.model.ObjectFactory.property.T)))/valueType">valueType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="property.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-property/index.html"><span class="identifier">Property</span></a><span class="symbol">&lt;</span><a href="property.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Creates a Property implementation to hold values of the given type. 
+<p>The property will have a value equal to the default value of that type as defined by the Java language specification. Please see <a href="#">Oracle's Java manual</a> for more information. </p>
+<p> Any other data type than the standard Java data types returns a property with no value defined.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-property.html">setProperty</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">setProperty</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.model.ObjectFactory$setProperty(java.lang.Class((org.gradle.api.model.ObjectFactory.setProperty.T)))/elementType">elementType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="set-property.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-set-property.html"><span class="identifier">SetProperty</span></a><span class="symbol">&lt;</span><a href="set-property.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Creates a SetProperty implementation to hold a Set of the given element type. The property with have an empty set as its initial value. 
+<p>The implementation will return immutable Set values from its query methods.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.model.-object-factory/property.html">property</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <a href="./index.html"><span class="identifier">ObjectFactory</span></a><span class="symbol">.</span><span class="identifier">property</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-property/index.html"><span class="identifier">Property</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.kotlin.dsl/org.gradle.api.model.-object-factory/property.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Creates a <a href="../../org.gradle.api.provider/-property/index.html">Property</a> that holds values of the given type <a href="../../org.gradle.kotlin.dsl/org.gradle.api.model.-object-factory/property.html#T">T</a>.</p>
 </td>
 </tr>
 </tbody>

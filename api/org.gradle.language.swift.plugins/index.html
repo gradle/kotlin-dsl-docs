@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../style.css">
 </HEAD>
 <BODY>
-<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.language.swift.plugins</a><br/>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="./index.html">org.gradle.language.swift.plugins</a><br/>
 <br/>
 <h2>Package org.gradle.language.swift.plugins</h2>
 <h3>Types</h3>
@@ -13,26 +13,26 @@
 <tbody>
 <tr>
 <td>
-<p><a href="-swift-base-plugin/index.html">SwiftBasePlugin</a></p>
+<p><a href="-swift-application-plugin/index.html">SwiftApplicationPlugin</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SwiftBasePlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><span class="identifier">ProjectInternal</span><span class="symbol">&gt;</span></code>
-<p>A common base plugin for the Swift executable and library plugins</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="-swift-executable-plugin/index.html">SwiftExecutablePlugin</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SwiftExecutablePlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><span class="identifier">ProjectInternal</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SwiftApplicationPlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><span class="identifier">ProjectInternal</span><span class="symbol">&gt;</span></code>
 <p>
 <p>A plugin that produces an executable from Swift source.</p>
  
 <p>Adds compile, link and install tasks to build the executable. Defaults to looking for source files in `src/main/swift`.</p>
  
-<p>Adds a SwiftComponent extension to the project to allow configuration of the executable.</p>
+<p>Adds a SwiftApplication extension to the project to allow configuration of the executable.</p>
 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-swift-base-plugin/index.html">SwiftBasePlugin</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SwiftBasePlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><span class="identifier">ProjectInternal</span><span class="symbol">&gt;</span></code>
+<p>A common base plugin for the Swift application and library plugins</p>
 </td>
 </tr>
 <tr>

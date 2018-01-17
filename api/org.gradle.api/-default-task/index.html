@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href=".">DefaultTask</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="./index.html">DefaultTask</a><br/>
 <br/>
 <h1>DefaultTask</h1>
 <code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">DefaultTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractTask</span></code>
@@ -32,7 +32,7 @@
 <p><a href="../../org.gradle.nativeplatform.tasks/-abstract-link-task/index.html">AbstractLinkTask</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractLinkTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span><span class="symbol">, </span><a href="../../org.gradle.nativeplatform.tasks/-object-files-to-binary/index.html"><span class="identifier">ObjectFilesToBinary</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractLinkTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a><span class="symbol">, </span><a href="../../org.gradle.nativeplatform.tasks/-object-files-to-binary/index.html"><span class="identifier">ObjectFilesToBinary</span></a></code>
 <p>Base task for linking a native binary from object files and libraries.</p>
 </td>
 </tr>
@@ -41,7 +41,7 @@
 <p><a href="../../org.gradle.language.nativeplatform.tasks/-abstract-native-compile-task/index.html">AbstractNativeCompileTask</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractNativeCompileTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractNativeCompileTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>Compiles native source files into object files.</p>
 </td>
 </tr>
@@ -50,25 +50,8 @@
 <p><a href="../../org.gradle.api.publish.maven.tasks/-abstract-publish-to-maven/index.html">AbstractPublishToMaven</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractPublishToMaven</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractPublishToMaven</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>Base class for tasks that publish a org.gradle.api.publish.maven.MavenPublication.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../../org.gradle.jvm.tasks.api/-api-jar/index.html">ApiJar</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ApiJar</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
-<p>Assembles an "API Jar" containing only the members of a library's public API. 
-<p>This task and the Jar it produces are designed primarily for internal use in support of Gradle's "compile avoidance" performance feature. The task is automatically included in the task graph for any JVM library that declares an <code>api { ... }</code> specification, and the resulting Jar will automatically be placed on the compile time classpath of projects that depend on the library in lieu of the library's complete so-called "Runtime Jar".</p>
- 
-<p>Swapping the API Jar in for the Runtime Jar at compile time is what makes "compile avoidance" possible: because the contents of the API Jar change only when actual API changes are made, the API Jar passes Gradle's up-to-date checks, even if the implementation in the Runtime Jar has changed. Ultimately, this means that projects depending on the library in question will need to recompile potentially far less often. </p>
- 
-<p>In order to ensure that API Jars change as infrequently as possible, this task and its supporting classes ensure that only actual public API members are included in the API Jar, and that the methods among those members are stripped of their implementation. Because the members included in API Jars exist only for compilation purposes, they need no actual implementation, and for this reason, all such methods throw UnsupportedOperationException in the unlikely event that they are present on the classpath and invoked at runtime.</p>
- 
-<p>The inputs to this task are Java class files which must be provided via org.gradle.api.tasks.TaskInputs.</p>
-</p>
 </td>
 </tr>
 <tr>
@@ -76,7 +59,7 @@
 <p><a href="../../org.gradle.language.assembler.tasks/-assemble/index.html">Assemble</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Assemble</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Assemble</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>Translates Assembly language source files into object files.</p>
 </td>
 </tr>
@@ -85,14 +68,14 @@
 <p><a href="../../org.gradle.plugins.javascript.envjs.browser/-browser-evaluate/index.html">BrowserEvaluate</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BrowserEvaluate</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code></td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BrowserEvaluate</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code></td>
 </tr>
 <tr>
 <td>
 <p><a href="../../org.gradle.api.tasks.diagnostics/-build-environment-report-task/index.html">BuildEnvironmentReportTask</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BuildEnvironmentReportTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">BuildEnvironmentReportTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>Provides information about the build environment for the project that the task is associated with. 
 <p> Currently, this information is limited to the project's declared build script dependencies visualised in a similar manner as provided by DependencyReportTask. </p>
 <p> It is not necessary to manually add a task of this type to your project, as every project automatically has a task of this type by the name <code>"buildEnvironment"</code>.</p>
@@ -104,7 +87,7 @@
 <p><a href="../../org.gradle.api.plugins.buildcomparison.gradle/-compare-gradle-builds/index.html">CompareGradleBuilds</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CompareGradleBuilds</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span><span class="symbol">, </span><a href="../../org.gradle.api.tasks/-verification-task/index.html"><span class="identifier">VerificationTask</span></a></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CompareGradleBuilds</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks/-verification-task/index.html"><span class="identifier">VerificationTask</span></a></code>
 <p>Executes two Gradle builds (that can be the same build) with specified versions and compares the outcomes. Please see the “Comparing Builds” chapter of the Gradle User Guide for more information.</p>
 </td>
 </tr>
@@ -113,7 +96,7 @@
 <p><a href="../../org.gradle.api.reporting.components/-component-report/index.html">ComponentReport</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ComponentReport</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ComponentReport</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>Displays some details about the software components produced by the project.</p>
 </td>
 </tr>
@@ -122,17 +105,8 @@
 <p><a href="../../org.gradle.nativeplatform.tasks/-create-static-library/index.html">CreateStaticLibrary</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CreateStaticLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span><span class="symbol">, </span><a href="../../org.gradle.nativeplatform.tasks/-object-files-to-binary/index.html"><span class="identifier">ObjectFilesToBinary</span></a></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CreateStaticLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a><span class="symbol">, </span><a href="../../org.gradle.nativeplatform.tasks/-object-files-to-binary/index.html"><span class="identifier">ObjectFilesToBinary</span></a></code>
 <p>Assembles a static library from object files.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../../org.gradle.language.swift.tasks/-create-swift-bundle/index.html">CreateSwiftBundle</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CreateSwiftBundle</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
-<p>Creates Apple bundle from compiled Swift code.</p>
 </td>
 </tr>
 <tr>
@@ -140,7 +114,7 @@
 <p><a href="../../org.gradle.api.tasks.diagnostics/-dependency-insight-report-task/index.html">DependencyInsightReportTask</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">DependencyInsightReportTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">DependencyInsightReportTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>Generates a report that attempts to answer questions like: <ul> <li>Why is this dependency in the dependency graph?</li>
  <li>Exactly which dependencies are pulling this dependency into the graph?</li>
  <li>What is the actual version (i.e. *selected* version) of the dependency that will be used? Is it the same as what was *requested*?</li>
@@ -158,8 +132,17 @@
 <p><a href="../../org.gradle.api.reporting.dependents/-dependent-components-report/index.html">DependentComponentsReport</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">DependentComponentsReport</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">DependentComponentsReport</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>Displays dependent components.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.tasks/-extract-symbols/index.html">ExtractSymbols</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ExtractSymbols</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
+<p>Extracts the debug symbols from a binary and stores them in a separate file.</p>
 </td>
 </tr>
 <tr>
@@ -167,7 +150,7 @@
 <p><a href="../../org.gradle.api.reporting/-generate-build-dashboard/index.html">GenerateBuildDashboard</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GenerateBuildDashboard</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span><span class="symbol">, </span><a href="../../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.reporting/-build-dashboard-reports/index.html"><span class="identifier">BuildDashboardReports</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GenerateBuildDashboard</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a><span class="symbol">, </span><a href="../../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.reporting/-build-dashboard-reports/index.html"><span class="identifier">BuildDashboardReports</span></a><span class="symbol">&gt;</span></code>
 <p>Generates build dashboard report.</p>
 </td>
 </tr>
@@ -176,7 +159,7 @@
 <p><a href="../../org.gradle.nativeplatform.test.cunit.tasks/-generate-c-unit-launcher/index.html">GenerateCUnitLauncher</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GenerateCUnitLauncher</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GenerateCUnitLauncher</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>Generated the Gradle CUnit launcher: main method and header.</p>
 </td>
 </tr>
@@ -185,7 +168,7 @@
 <p><a href="../../org.gradle.api.publish.ivy.tasks/-generate-ivy-descriptor/index.html">GenerateIvyDescriptor</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GenerateIvyDescriptor</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GenerateIvyDescriptor</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>Generates an Ivy XML Module Descriptor file.</p>
 </td>
 </tr>
@@ -194,7 +177,7 @@
 <p><a href="../../org.gradle.api.publish.maven.tasks/-generate-maven-pom/index.html">GenerateMavenPom</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GenerateMavenPom</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GenerateMavenPom</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>Generates a Maven module descriptor (POM) file.</p>
 </td>
 </tr>
@@ -203,7 +186,7 @@
 <p><a href="../../org.gradle.api.publish.tasks/-generate-module-metadata/index.html">GenerateModuleMetadata</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GenerateModuleMetadata</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">GenerateModuleMetadata</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>Generates a Gradle metadata file to represent a published org.gradle.api.component.SoftwareComponent instance.</p>
 </td>
 </tr>
@@ -212,7 +195,7 @@
 <p><a href="../../org.gradle.buildinit.tasks/-init-build/index.html">InitBuild</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InitBuild</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InitBuild</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>Generates a Gradle project structure.</p>
 </td>
 </tr>
@@ -221,8 +204,17 @@
 <p><a href="../../org.gradle.nativeplatform.tasks/-install-executable/index.html">InstallExecutable</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InstallExecutable</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InstallExecutable</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>Installs an executable with it's dependent libraries so it can be easily executed.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.test.xctest.tasks/-install-x-c-test-bundle/index.html">InstallXCTestBundle</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">InstallXCTestBundle</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
+<p>Creates a XCTest bundle with a run script so it can be easily executed.</p>
 </td>
 </tr>
 <tr>
@@ -230,7 +222,7 @@
 <p><a href="../../org.gradle.api.plugins.quality/-j-depend/index.html">JDepend</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JDepend</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span><span class="symbol">, </span><a href="../../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.plugins.quality/-j-depend-reports/index.html"><span class="identifier">JDependReports</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">JDepend</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a><span class="symbol">, </span><a href="../../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.plugins.quality/-j-depend-reports/index.html"><span class="identifier">JDependReports</span></a><span class="symbol">&gt;</span></code>
 <p>Analyzes code with <a href="#">JDepend</a>.</p>
 </td>
 </tr>
@@ -239,7 +231,7 @@
 <p><a href="../../org.gradle.testing.jacoco.tasks/-jacoco-base/index.html">JacocoBase</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">JacocoBase</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">JacocoBase</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>Base class for Jacoco tasks.</p>
 </td>
 </tr>
@@ -248,7 +240,7 @@
 <p><a href="../../org.gradle.api.reporting.model/-model-report/index.html">ModelReport</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ModelReport</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ModelReport</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>Displays some details about the configuration model of the project. An instance of this type is used when you execute the <code>model</code> task from the command-line.</p>
 </td>
 </tr>
@@ -257,7 +249,7 @@
 <p><a href="../../org.gradle.plugin.devel.tasks/-plugin-under-test-metadata/index.html">PluginUnderTestMetadata</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PluginUnderTestMetadata</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PluginUnderTestMetadata</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>Custom task for generating the metadata for a plugin user test.</p>
 </td>
 </tr>
@@ -266,7 +258,7 @@
 <p><a href="../../org.gradle.nativeplatform.tasks/-prefix-header-file-generate-task/index.html">PrefixHeaderFileGenerateTask</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PrefixHeaderFileGenerateTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PrefixHeaderFileGenerateTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>Generates a prefix header file from a list of headers to be precompiled.</p>
 </td>
 </tr>
@@ -275,7 +267,7 @@
 <p><a href="../../org.gradle.api.publish.ivy.tasks/-publish-to-ivy-repository/index.html">PublishToIvyRepository</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PublishToIvyRepository</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">PublishToIvyRepository</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>Publishes an IvyPublication to an IvyArtifactRepository.</p>
 </td>
 </tr>
@@ -284,7 +276,7 @@
 <p><a href="../../org.gradle.plugins.signing/-sign/index.html">Sign</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Sign</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span><span class="symbol">, </span><a href="../../org.gradle.plugins.signing/-signature-spec/index.html"><span class="identifier">SignatureSpec</span></a></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Sign</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a><span class="symbol">, </span><a href="../../org.gradle.plugins.signing/-signature-spec/index.html"><span class="identifier">SignatureSpec</span></a></code>
 <p>A task for creating digital signature files for one or more; tasks, files, publishable artifacts or configurations. 
 <p>The task produces Signature</p>
  objects that are publishable artifacts and can be assigned to another configuration. 
@@ -294,10 +286,28 @@
 </tr>
 <tr>
 <td>
+<p><a href="../../org.gradle.nativeplatform.tasks/-strip-symbols/index.html">StripSymbols</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">StripSymbols</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
+<p>Strips the debug symbols from a binary</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.swift.tasks/-swift-compile/index.html">SwiftCompile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SwiftCompile</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
+<p>Compiles Swift source files into object files.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="../../org.gradle.api.tasks.testing/-test-report/index.html">TestReport</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">TestReport</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">TestReport</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>Generates an HTML test report from the results of one or more Test tasks.</p>
 </td>
 </tr>
@@ -306,7 +316,7 @@
 <p><a href="../../org.gradle.language.rc.tasks/-windows-resource-compile/index.html">WindowsResourceCompile</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WindowsResourceCompile</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WindowsResourceCompile</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>Compiles Windows Resource scripts into .res files.</p>
 </td>
 </tr>
@@ -315,7 +325,7 @@
 <p><a href="../../org.gradle.api.tasks.wrapper/-wrapper/index.html">Wrapper</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Wrapper</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Wrapper</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>
 <p>Generates scripts (for *nix and windows) which allow you to build your project with Gradle, without having to install Gradle. </p>
 <p>When a user executes a wrapper script the first time, the script downloads and installs the appropriate Gradle distribution and runs the build against this downloaded distribution. Any installed Gradle distribution is ignored when using the wrapper scripts. </p>
@@ -328,7 +338,7 @@
 <p><a href="../../org.gradle.api.tasks/-write-properties/index.html">WriteProperties</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WriteProperties</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">DefaultTask</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">WriteProperties</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>Writes a java.util.Properties in a way that the results can be expected to be reproducible. 
 <p>There are a number of differences compared to how properties are stored:</p>
  <ul> <li>no timestamp comment is generated at the beginning of the file</li>

@@ -5,10 +5,10 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">ComponentMetadata</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="./index.html">ComponentMetadata</a><br/>
 <br/>
 <h1>ComponentMetadata</h1>
-<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ComponentMetadata</span></code>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ComponentMetadata</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.attributes/-has-attributes/index.html"><span class="identifier">HasAttributes</span></a></code>
 <p>Provides a read-only view of a resolved component's metadata, which typically originates from a component descriptor (Ivy file, Maven POM).</p>
 <h3>Functions</h3>
 <table>
@@ -51,6 +51,20 @@
 </tr>
 </tbody>
 </table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.attributes/-has-attributes/get-attributes.html">getAttributes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAttributes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.attributes/-attribute-container/index.html"><span class="identifier">AttributeContainer</span></a></code>
+<p>Returns the attributes</p>
+</td>
+</tr>
+</tbody>
+</table>
 <h3>Inheritors</h3>
 <table>
 <tbody>
@@ -59,7 +73,7 @@
 <p><a href="../-component-metadata-details/index.html">ComponentMetadataDetails</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ComponentMetadataDetails</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ComponentMetadata</span></code>
+<code><span class="keyword">interface </span><span class="identifier">ComponentMetadataDetails</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ComponentMetadata</span></a><span class="symbol">, </span><a href="../../org.gradle.api.attributes/-has-configurable-attributes/index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="../-component-metadata-details/index.html"><span class="identifier">ComponentMetadataDetails</span></a><span class="symbol">&gt;</span></code>
 <p>Describes a resolved component's metadata, which typically originates from a component descriptor (Ivy file, Maven POM). Some parts of the metadata can be changed via metadata rules (see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
 </td>
 </tr>

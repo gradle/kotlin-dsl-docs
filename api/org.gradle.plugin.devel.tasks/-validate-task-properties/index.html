@@ -5,10 +5,10 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugin.devel.tasks</a>&nbsp;/&nbsp;<a href=".">ValidateTaskProperties</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugin.devel.tasks</a>&nbsp;/&nbsp;<a href="./index.html">ValidateTaskProperties</a><br/>
 <br/>
 <h1>ValidateTaskProperties</h1>
-<code><span class="identifier">@Incubating</span> <span class="identifier">@CacheableTask</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ValidateTaskProperties</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><a href="../../org.gradle.api.tasks/-verification-task/index.html"><span class="identifier">VerificationTask</span></a></code>
+<code><span class="identifier">@Incubating</span> <span class="identifier">@CacheableTask</span> <span class="identifier">@NonNullApi</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">ValidateTaskProperties</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><a href="../../org.gradle.api.tasks/-verification-task/index.html"><span class="identifier">VerificationTask</span></a></code>
 <p>Validates task property annotations. 
 <p> Task properties must be annotated with one of: </p>
  <ul> <li> <strong>Properties taken into account during up-to-date checks:</strong> <ul> <li> @org.gradle.api.tasks.Input, @org.gradle.api.tasks.Nested, @org.gradle.api.tasks.InputFile, @org.gradle.api.tasks.InputDirectory, @org.gradle.api.tasks.InputFiles to mark it as an input to the task. </li>
@@ -94,7 +94,7 @@
 <p><a href="get-output-file.html">getOutputFile</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOutputFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOutputFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-regular-file-property/index.html"><span class="identifier">RegularFileProperty</span></a></code>
 <p>Returns the output file to store the report in.</p>
 </td>
 </tr>
@@ -132,16 +132,6 @@
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setIgnoreFailures</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.devel.tasks.ValidateTaskProperties$setIgnoreFailures(kotlin.Boolean)/ignoreFailures">ignoreFailures</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>{@inheritDoc}</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="set-output-file.html">setOutputFile</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOutputFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.devel.tasks.ValidateTaskProperties$setOutputFile(java.io.File)/outputFile">outputFile</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOutputFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugin.devel.tasks.ValidateTaskProperties$setOutputFile(kotlin.Any)/outputFile">outputFile</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Sets the output file to store the report in.</p>
 </td>
 </tr>
 <tr>

@@ -1,0 +1,80 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MutableVersionConstraint - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="./index.html">MutableVersionConstraint</a><br/>
+<br/>
+<h1>MutableVersionConstraint</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">MutableVersionConstraint</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-version-constraint/index.html"><span class="identifier">VersionConstraint</span></a></code>
+<p>A configurable version constraint. This is exposed to the build author, so that one can express more constraints on a version,</p>
+<p><strong>Since</strong><br/>
+4.4</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="prefer.html">prefer</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">prefer</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.MutableVersionConstraint$prefer(kotlin.String)/version">version</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the preferred version of this module. Any other rejection/strict constraint will be overriden.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="reject.html">reject</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">reject</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.artifacts.MutableVersionConstraint$reject(kotlin.Array((kotlin.String)))/versions">versions</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Declares a list of rejected versions. If such a version is found during dependency resolution, it will not be selected.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="reject-all.html">rejectAll</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">rejectAll</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Rejects all versions of this component. Can be used to declare that a component is incompatible with another (typically, cannot have both a 2 different implementations of the same API).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="strictly.html">strictly</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">strictly</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.MutableVersionConstraint$strictly(kotlin.String)/version">version</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the version as strict, meaning that if any other dependency version for this module disagrees with this version, resolution will fail.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-version-constraint/get-preferred-version.html">getPreferredVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPreferredVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The preferred version of a module. The preferred version of a module can typically be upgraded during dependency resolution, unless further constraints are added.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-version-constraint/get-rejected-versions.html">getRejectedVersions</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRejectedVersions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the list of versions that this module rejects (which may be exact versions, or ranges, anything that fits into a version string).</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

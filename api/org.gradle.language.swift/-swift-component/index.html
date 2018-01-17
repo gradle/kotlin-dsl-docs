@@ -5,10 +5,10 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.swift</a>&nbsp;/&nbsp;<a href=".">SwiftComponent</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.swift</a>&nbsp;/&nbsp;<a href="./index.html">SwiftComponent</a><br/>
 <br/>
 <h1>SwiftComponent</h1>
-<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">SwiftComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.component/-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">SwiftComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language/-component-with-binaries/index.html"><span class="identifier">ComponentWithBinaries</span></a></code>
 <p>Configuration for a Swift component, such as a library or executable, defining the source files that make up the component plus other settings. 
 <p>Swift component is composed of some Swift source files that are compiled and then linked into some binary.</p>
  
@@ -21,11 +21,11 @@
 <tbody>
 <tr>
 <td>
-<p><a href="get-development-binary.html">getDevelopmentBinary</a></p>
+<p><a href="get-binaries.html">getBinaries</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDevelopmentBinary</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-swift-binary/index.html"><span class="identifier">SwiftBinary</span></a></code>
-<p>Returns the binary of the component to use as the default for development.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBinaries</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.language/-binary-collection/index.html"><span class="identifier">BinaryCollection</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-swift-binary/index.html"><span class="identifier">SwiftBinary</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the binaries for this library.</p>
 </td>
 </tr>
 <tr>
@@ -42,7 +42,7 @@
 <p><a href="get-module.html">getModule</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getModule</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-property-state/index.html"><span class="identifier">PropertyState</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getModule</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-property/index.html"><span class="identifier">Property</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
 <p>Defines the Swift module for this component. The default value is calculated from the project name.</p>
 </td>
 </tr>
@@ -82,24 +82,11 @@
 <tbody>
 <tr>
 <td>
-<p><a href="../-swift-application/index.html">SwiftApplication</a></p>
+<p><a href="../-production-swift-component/index.html">ProductionSwiftComponent</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">SwiftApplication</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">SwiftComponent</span></code>
-<p>Configuration for a Swift application, defining the source files that make up the application plus other settings. 
-<p>An instance of this type is added as a project extension by the Swift executable plugin.</p>
-</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../-swift-library/index.html">SwiftLibrary</a></p>
-</td>
-<td>
-<code><span class="keyword">interface </span><span class="identifier">SwiftLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">SwiftComponent</span></code>
-<p>Configuration for a Swift library, defining the source files that make up the library plus other settings. 
-<p>An instance of this type is added as a project extension by the Swift library plugin.</p>
-</p>
+<code><span class="keyword">interface </span><span class="identifier">ProductionSwiftComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">SwiftComponent</span></a><span class="symbol">, </span><a href="../../org.gradle.language/-production-component/index.html"><span class="identifier">ProductionComponent</span></a></code>
+<p>Represents a Swift component that is the main product of a project.</p>
 </td>
 </tr>
 <tr>
@@ -107,8 +94,8 @@
 <p><a href="../../org.gradle.nativeplatform.test.xctest/-swift-x-c-test-suite/index.html">SwiftXCTestSuite</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">SwiftXCTestSuite</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">SwiftComponent</span></code>
-<p>An XCTest suite, implemented in Swift.</p>
+<code><span class="keyword">interface </span><span class="identifier">SwiftXCTestSuite</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">SwiftComponent</span></a><span class="symbol">, </span><a href="../../org.gradle.nativeplatform.test/-test-suite-component/index.html"><span class="identifier">TestSuiteComponent</span></a></code>
+<p>A XCTest suite, implemented in Swift.</p>
 </td>
 </tr>
 </tbody>

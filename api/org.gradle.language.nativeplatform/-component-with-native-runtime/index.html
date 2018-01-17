@@ -1,0 +1,134 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ComponentWithNativeRuntime - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.nativeplatform</a>&nbsp;/&nbsp;<a href="./index.html">ComponentWithNativeRuntime</a><br/>
+<br/>
+<h1>ComponentWithNativeRuntime</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ComponentWithNativeRuntime</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.component/-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
+<p>Represents a component that produces outputs that run on a native platform.</p>
+<p><strong>Since</strong><br/>
+4.5</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-base-name.html">getBaseName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBaseName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the base name of this component. This is used to calculate output file names.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-target-platform.html">getTargetPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a></code>
+<p>Returns the target platform for this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-tool-chain.html">getToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getToolChain</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a></code>
+<p>Returns the tool chain for this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-debuggable.html">isDebuggable</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isDebuggable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if this component has debugging enabled.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-optimized.html">isOptimized</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isOptimized</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if this component is optimized.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-component-with-executable/index.html">ComponentWithExecutable</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentWithExecutable</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ComponentWithNativeRuntime</span></a></code>
+<p>Represents a native component that produces an executable.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-component-with-installation/index.html">ComponentWithInstallation</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentWithInstallation</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ComponentWithNativeRuntime</span></a></code>
+<p>Represents a native component that produces an application installation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-component-with-link-file/index.html">ComponentWithLinkFile</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentWithLinkFile</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ComponentWithNativeRuntime</span></a></code>
+<p>Represents a native component that produces a file to be used at link time.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-component-with-link-usage/index.html">ComponentWithLinkUsage</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentWithLinkUsage</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ComponentWithNativeRuntime</span></a></code>
+<p>Represents a native component whose link time file and dependencies are published for consumption by some other project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-component-with-object-files/index.html">ComponentWithObjectFiles</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentWithObjectFiles</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ComponentWithNativeRuntime</span></a></code>
+<p>Represents a component that produces object files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-component-with-runtime-file/index.html">ComponentWithRuntimeFile</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentWithRuntimeFile</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ComponentWithNativeRuntime</span></a></code>
+<p>Represents a native component that produces a file to be used at runtime.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-component-with-runtime-usage/index.html">ComponentWithRuntimeUsage</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentWithRuntimeUsage</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ComponentWithNativeRuntime</span></a></code>
+<p>Represents a native component whose runtime file and dependencies are published for consumption by some other project.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

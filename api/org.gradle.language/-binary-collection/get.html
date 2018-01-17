@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BinaryCollection.get - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language</a>&nbsp;/&nbsp;<a href="index.html">BinaryCollection</a>&nbsp;/&nbsp;<a href="./get.html">get</a><br/>
+<br/>
+<h1>get</h1>
+<a name="org.gradle.language.BinaryCollection$get(java.lang.Class((org.gradle.language.BinaryCollection.get.S)), org.gradle.api.specs.Spec((org.gradle.language.BinaryCollection.get.S)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.BinaryCollection$get(java.lang.Class((org.gradle.language.BinaryCollection.get.S)), org.gradle.api.specs.Spec((org.gradle.language.BinaryCollection.get.S)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="get.html#S"><span class="identifier">S</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.language.BinaryCollection$get(java.lang.Class((org.gradle.language.BinaryCollection.get.S)), org.gradle.api.specs.Spec((org.gradle.language.BinaryCollection.get.S)))/spec">spec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="get.html#S"><span class="identifier">S</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-binary-provider/index.html"><span class="identifier">BinaryProvider</span></a><span class="symbol">&lt;</span><a href="get.html#S"><span class="identifier">S</span></a><span class="symbol">&gt;</span></code>
+<p>Returns a BinaryProvider that contains the single binary matching the specified type and specification. The binary will be in the finalized state. The provider can be used to apply configuration to the element before it is finalized. 
+<p>Querying the return value will fail when there is not exactly one matching binary.</p>
+</p>
+<h3>Parameters</h3>
+<p><a name="type"></a>
+<code>type</code> - type to match</p>
+<p><a name="spec"></a>
+<code>spec</code> - specification to satisfy. The spec is applied to each binary prior to configuration.</p>
+<p><a name="&lt;S&gt;"></a>
+<code><S></code> - type of the binary to return</p>
+<p><strong>Return</strong><br/>
+a binary from the collection in a finalized state</p>
+<a name="org.gradle.language.BinaryCollection$get(org.gradle.api.specs.Spec((org.gradle.language.BinaryCollection.T)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.BinaryCollection$get(org.gradle.api.specs.Spec((org.gradle.language.BinaryCollection.T)))/spec">spec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-binary-provider/index.html"><span class="identifier">BinaryProvider</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Returns a Provider that contains the single binary matching the given specification. The binary will be in the finalized state. The provider can be used to apply configuration to the element before it is finalized. 
+<p>Querying the return value will fail when there is not exactly one matching binary.</p>
+</p>
+<h3>Parameters</h3>
+<p><a name="spec"></a>
+<code>spec</code> - specification to satisfy. The spec is applied to each binary prior to configuration.</p>
+<p><strong>Return</strong><br/>
+a binary from the collection in a finalized state</p>
+<a name="org.gradle.language.BinaryCollection$get()"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the set of binaries from this collection. Elements are in a finalized state.</p>
+</BODY>
+</HTML>

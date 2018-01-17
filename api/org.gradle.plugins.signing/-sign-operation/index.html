@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.signing</a>&nbsp;/&nbsp;<a href=".">SignOperation</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.signing</a>&nbsp;/&nbsp;<a href="./index.html">SignOperation</a><br/>
 <br/>
 <h1>SignOperation</h1>
 <code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SignOperation</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-signature-spec/index.html"><span class="identifier">SignatureSpec</span></a></code>
@@ -38,7 +38,7 @@
 <p><a href="configure.html">configure</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">configure</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SignOperation$configure(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SignOperation</span></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">configure</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SignOperation$configure(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">SignOperation</span></a></code>
 <p>Executes the given closure against this object.</p>
 </td>
 </tr>
@@ -47,7 +47,7 @@
 <p><a href="execute.html">execute</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">execute</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SignOperation</span></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">execute</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">SignOperation</span></a></code>
 <p>Generates actual signature files for all of the registered signatures. 
 <p>The signatures are generated with the configuration they have at this time, which includes the signature type and signatory of this operation at this time. </p>
 <p> This method can be called multiple times, with the signatures being generated with their current configuration each time.</p>
@@ -144,11 +144,11 @@
 <p><a href="sign.html">sign</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.plugins.signing.SignOperation$sign(kotlin.Array((org.gradle.api.artifacts.PublishArtifact)))/artifacts">artifacts</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts/-publish-artifact/index.html"><span class="identifier">PublishArtifact</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SignOperation</span></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.plugins.signing.SignOperation$sign(kotlin.Array((org.gradle.api.artifacts.PublishArtifact)))/artifacts">artifacts</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts/-publish-artifact/index.html"><span class="identifier">PublishArtifact</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">SignOperation</span></a></code>
 <p>Registers signatures for the given artifacts.</p>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.plugins.signing.SignOperation$sign(kotlin.Array((java.io.File)))/files">files</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SignOperation</span></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.plugins.signing.SignOperation$sign(kotlin.Array((java.io.File)))/files">files</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">SignOperation</span></a></code>
 <p>Registers signatures for the given files.</p>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SignOperation$sign(kotlin.String, kotlin.Array((java.io.File)))/classifier">classifier</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.plugins.signing.SignOperation$sign(kotlin.String, kotlin.Array((java.io.File)))/files">files</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SignOperation</span></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SignOperation$sign(kotlin.String, kotlin.Array((java.io.File)))/classifier">classifier</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.plugins.signing.SignOperation$sign(kotlin.String, kotlin.Array((java.io.File)))/files">files</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">SignOperation</span></a></code>
 <p>Registers signatures (with the given classifier) for the given files</p>
 </td>
 </tr>
@@ -157,7 +157,7 @@
 <p><a href="signatory.html">signatory</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">signatory</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SignOperation$signatory(org.gradle.plugins.signing.signatory.Signatory)/signatory">signatory</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.signing.signatory/-signatory/index.html"><span class="identifier">Signatory</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SignOperation</span></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">signatory</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SignOperation$signatory(org.gradle.plugins.signing.signatory.Signatory)/signatory">signatory</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.signing.signatory/-signatory/index.html"><span class="identifier">Signatory</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">SignOperation</span></a></code>
 <p>Change the signatory for signature generation.</p>
 </td>
 </tr>
@@ -166,7 +166,7 @@
 <p><a href="signature-type.html">signatureType</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">signatureType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SignOperation$signatureType(org.gradle.plugins.signing.type.SignatureType)/type">type</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.signing.type/-signature-type/index.html"><span class="identifier">SignatureType</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SignOperation</span></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">signatureType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SignOperation$signatureType(org.gradle.plugins.signing.type.SignatureType)/type">type</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.signing.type/-signature-type/index.html"><span class="identifier">SignatureType</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">SignOperation</span></a></code>
 <p>Change the signature type for signature generation.</p>
 </td>
 </tr>

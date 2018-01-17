@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.caching.configuration</a>&nbsp;/&nbsp;<a href=".">AbstractBuildCache</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.caching.configuration</a>&nbsp;/&nbsp;<a href="./index.html">AbstractBuildCache</a><br/>
 <br/>
 <h1>AbstractBuildCache</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractBuildCache</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-build-cache/index.html"><span class="identifier">BuildCache</span></a></code>
@@ -75,7 +75,7 @@
 <p><a href="../../org.gradle.caching.local/-directory-build-cache/index.html">DirectoryBuildCache</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">DirectoryBuildCache</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractBuildCache</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">DirectoryBuildCache</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">AbstractBuildCache</span></a></code>
 <p>Configuration object for the local directory build cache.</p>
 </td>
 </tr>
@@ -84,7 +84,7 @@
 <p><a href="../../org.gradle.caching.http/-http-build-cache/index.html">HttpBuildCache</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">HttpBuildCache</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">AbstractBuildCache</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">HttpBuildCache</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">AbstractBuildCache</span></a></code>
 <p>Configuration object for the HTTP build cache. The build cache only supports BASIC authentication currently. 
 <p>Cache entries are loaded via GET and stored via PUT requests.</p>
  For a GET request we expect a 200 or 404 response and for PUT we expect any 2xx response. Other responses are treated as recoverable or non-recoverable errors, depending on the status code. E.g. we treat authentication failures (401 and 409) as non-recoverable while an internal server error (500) is recoverable.</p>

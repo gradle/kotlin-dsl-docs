@@ -5,10 +5,10 @@
 <link rel="stylesheet" href="../../style.css">
 </HEAD>
 <BODY>
-<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.language.cpp</a>&nbsp;/&nbsp;<a href=".">CppSharedLibrary</a><br/>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.language.cpp</a>&nbsp;/&nbsp;<a href="./-cpp-shared-library.html">CppSharedLibrary</a><br/>
 <br/>
 <h1>CppSharedLibrary</h1>
-<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">CppSharedLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-cpp-binary/index.html"><span class="identifier">CppBinary</span></a></code>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">CppSharedLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-cpp-binary/index.html"><span class="identifier">CppBinary</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-component-with-shared-library/index.html"><span class="identifier">ComponentWithSharedLibrary</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-component-with-link-usage/index.html"><span class="identifier">ComponentWithLinkUsage</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-component-with-runtime-usage/index.html"><span class="identifier">ComponentWithRuntimeUsage</span></a><span class="symbol">, </span><a href="../org.gradle.language/-component-with-outputs/index.html"><span class="identifier">ComponentWithOutputs</span></a></code>
 <p>A shared library built from C++ source.</p>
 <p><strong>Since</strong><br/>
 4.2</p>
@@ -24,6 +24,24 @@
 <p>The dependency resolution attribute use to indicate whether a binary is debuggable or not.</p>
 </td>
 </tr>
+<tr>
+<td>
+<p><a href="-cpp-binary/-l-i-n-k-a-g-e_-a-t-t-r-i-b-u-t-e.html">LINKAGE_ATTRIBUTE</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">LINKAGE_ATTRIBUTE</span><span class="symbol">: </span><a href="../org.gradle.api.attributes/-attribute/index.html"><span class="identifier">Attribute</span></a><span class="symbol">&lt;</span><a href="../org.gradle.nativeplatform/-linkage/index.html"><span class="identifier">Linkage</span></a><span class="symbol">&gt;</span></code>
+<p>The dependency resolution attribute use to indicate which linkage a binary uses.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-cpp-binary/-o-p-t-i-m-i-z-e-d_-a-t-t-r-i-b-u-t-e.html">OPTIMIZED_ATTRIBUTE</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">OPTIMIZED_ATTRIBUTE</span><span class="symbol">: </span><a href="../org.gradle.api.attributes/-attribute/index.html"><span class="identifier">Attribute</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">&gt;</span></code>
+<p>The dependency resolution attribute use to indicate whether a binary is optimized or not.</p>
+</td>
+</tr>
 </tbody>
 </table>
 <h3>Inherited Functions</h3>
@@ -31,20 +49,20 @@
 <tbody>
 <tr>
 <td>
-<p><a href="-cpp-binary/get-base-name.html">getBaseName</a></p>
-</td>
-<td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBaseName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
-<p>Returns the base name of the binary.</p>
-</td>
-</tr>
-<tr>
-<td>
 <p><a href="-cpp-binary/get-compile-include-path.html">getCompileIncludePath</a></p>
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCompileIncludePath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
 <p>Returns the header directories to use to compile this binary. Includes the header directories of this binary plus those of its dependencies.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-cpp-binary/get-compile-task.html">getCompileTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCompileTask</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../org.gradle.language.cpp.tasks/-cpp-compile/index.html"><span class="identifier">CppCompile</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the compile task for this binary.</p>
 </td>
 </tr>
 <tr>
@@ -58,11 +76,45 @@
 </tr>
 <tr>
 <td>
+<p><a href="../org.gradle.language.nativeplatform/-component-with-link-usage/get-link-elements.html">getLinkElements</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLinkElements</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the outgoing link elements of this component.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="-cpp-binary/get-link-libraries.html">getLinkLibraries</a></p>
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLinkLibraries</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
 <p>Returns the link libraries to use to link this binary. Includes the link libraries of the component's dependencies.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.language.nativeplatform/-component-with-shared-library/get-link-task.html">getLinkTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLinkTask</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../org.gradle.nativeplatform.tasks/-link-shared-library/index.html"><span class="identifier">LinkSharedLibrary</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the link task for the shared library.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.language/-component-with-outputs/get-outputs.html">getOutputs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOutputs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.language.nativeplatform/-component-with-runtime-usage/get-runtime-elements.html">getRuntimeElements</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRuntimeElements</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the outgoing runtime elements of this component.</p>
 </td>
 </tr>
 <tr>
@@ -76,11 +128,11 @@
 </tr>
 <tr>
 <td>
-<p><a href="-cpp-binary/is-debuggable.html">isDebuggable</a></p>
+<p><a href="-cpp-binary/get-target-platform.html">getTargetPlatform</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isDebuggable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
-<p>Returns true if this binary has debugging enabled.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-cpp-platform.html"><span class="identifier">CppPlatform</span></a></code>
+<p>{@inheritDoc}</p>
 </td>
 </tr>
 </tbody>

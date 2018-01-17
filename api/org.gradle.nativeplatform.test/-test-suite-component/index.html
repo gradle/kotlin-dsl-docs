@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TestSuiteComponent - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform.test</a>&nbsp;/&nbsp;<a href="./index.html">TestSuiteComponent</a><br/>
+<br/>
+<h1>TestSuiteComponent</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">TestSuiteComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.component/-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
+<p>Represents a component that defines a test suite.</p>
+<p><strong>Since</strong><br/>
+4.5</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-test-binary.html">getTestBinary</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTestBinary</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-test-component/index.html"><span class="identifier">TestComponent</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the binary to use as the default to run this test suite.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.test.cpp/-cpp-test-suite/index.html">CppTestSuite</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CppTestSuite</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.cpp/-cpp-component/index.html"><span class="identifier">CppComponent</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">TestSuiteComponent</span></a></code>
+<p>A C++ test suite.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.test.xctest/-swift-x-c-test-suite/index.html">SwiftXCTestSuite</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SwiftXCTestSuite</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.swift/-swift-component/index.html"><span class="identifier">SwiftComponent</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">TestSuiteComponent</span></a></code>
+<p>A XCTest suite, implemented in Swift.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

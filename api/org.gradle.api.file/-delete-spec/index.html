@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href=".">DeleteSpec</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href="./index.html">DeleteSpec</a><br/>
 <br/>
 <h1>DeleteSpec</h1>
 <code><span class="keyword">interface </span><span class="identifier">DeleteSpec</span></code>
@@ -18,7 +18,7 @@
 <p><a href="delete.html">delete</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.file.DeleteSpec$delete(kotlin.Array((kotlin.Any)))/files">files</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">DeleteSpec</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.file.DeleteSpec$delete(kotlin.Array((kotlin.Any)))/files">files</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">DeleteSpec</span></a></code>
 <p>Specifies the files to delete.</p>
 </td>
 </tr>
@@ -41,7 +41,7 @@
 <p><a href="../../org.gradle.api.tasks/-delete/index.html">Delete</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Delete</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><span class="identifier">DeleteSpec</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Delete</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">DeleteSpec</span></a></code>
 <p>
 <p>Deletes files or directories. Example:</p>
  <pre><code> task makePretty(type: Delete) { delete 'uglyFolder', 'uglyFile' followSymlinks = true } </code></pre> Be default symlinks will not be followed when deleting files. To change this behavior call <code><a href="../../org.gradle.api.tasks/-delete/set-follow-symlinks.html">Delete#setFollowSymlinks(boolean)</a></code> with true. On systems that do not support symlinks, this will have no effect.</p>

@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>NativeBasePlugin - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.plugins</a>&nbsp;/&nbsp;<a href="./index.html">NativeBasePlugin</a><br/>
+<br/>
+<h1>NativeBasePlugin</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">NativeBasePlugin</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><span class="identifier">ProjectInternal</span><span class="symbol">&gt;</span></code>
+<p>A common base plugin for the native plugins. 
+<p>Expects plugins to register the native components in the <code><a href="../../org.gradle.api/-project/get-components.html">Project#getComponents()</a></code> container, and defines a number of rules that act on these components to configure them.</p>
+ <ul> <li>Configures the {@value LifecycleBasePlugin#ASSEMBLE_TASK_NAME} task to build the development binary of the main component, if present. Expects the main component to be of type ProductionComponent and ComponentWithBinaries.</li>
+ <li>Adds an <code>"assemble"</code> task for each binary of the main component.</li>
+ <li>Adds tasks to compile and link an executable. Currently requires component implements internal API ConfigurableComponentWithExecutable.</li>
+ <li>Adds tasks to compile and link a shared library. Currently requires component implements internal API ConfigurableComponentWithSharedLibrary.</li>
+ <li>Adds tasks to compile and create a static library. Currently requires component implements internal API ConfigurableComponentWithStaticLibrary.</li>
+ <li>Adds outgoing configuration and artifacts for link file. Currently requires component implements internal API ConfigurableComponentWithLinkUsage.</li>
+ <li>Adds outgoing configuration and artifacts for runtime file. Currently requires component implements internal API ConfigurableComponentWithRuntimeUsage.</li>
+ <li>Maven publications. Currently requires component implements internal API PublicationAwareComponent.</li>
+ </ul>
+</p>
+<p><strong>Since</strong><br/>
+4.5</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">NativeBasePlugin</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>A common base plugin for the native plugins. 
+<p>Expects plugins to register the native components in the <code><a href="../../org.gradle.api/-project/get-components.html">Project#getComponents()</a></code> container, and defines a number of rules that act on these components to configure them.</p>
+ <ul> <li>Configures the {@value LifecycleBasePlugin#ASSEMBLE_TASK_NAME} task to build the development binary of the main component, if present. Expects the main component to be of type ProductionComponent and ComponentWithBinaries.</li>
+ <li>Adds an <code>"assemble"</code> task for each binary of the main component.</li>
+ <li>Adds tasks to compile and link an executable. Currently requires component implements internal API ConfigurableComponentWithExecutable.</li>
+ <li>Adds tasks to compile and link a shared library. Currently requires component implements internal API ConfigurableComponentWithSharedLibrary.</li>
+ <li>Adds tasks to compile and create a static library. Currently requires component implements internal API ConfigurableComponentWithStaticLibrary.</li>
+ <li>Adds outgoing configuration and artifacts for link file. Currently requires component implements internal API ConfigurableComponentWithLinkUsage.</li>
+ <li>Adds outgoing configuration and artifacts for runtime file. Currently requires component implements internal API ConfigurableComponentWithRuntimeUsage.</li>
+ <li>Maven publications. Currently requires component implements internal API PublicationAwareComponent.</li>
+ </ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="apply.html">apply</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.plugins.NativeBasePlugin$apply(ProjectInternal)/project">project</span><span class="symbol">:</span>&nbsp;<span class="identifier">ProjectInternal</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

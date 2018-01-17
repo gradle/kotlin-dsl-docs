@@ -1,0 +1,136 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>SwiftStaticLibrary - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.language.swift</a>&nbsp;/&nbsp;<a href="./-swift-static-library.html">SwiftStaticLibrary</a><br/>
+<br/>
+<h1>SwiftStaticLibrary</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">SwiftStaticLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-swift-binary/index.html"><span class="identifier">SwiftBinary</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-component-with-static-library/index.html"><span class="identifier">ComponentWithStaticLibrary</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-component-with-runtime-usage/index.html"><span class="identifier">ComponentWithRuntimeUsage</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-component-with-link-usage/index.html"><span class="identifier">ComponentWithLinkUsage</span></a><span class="symbol">, </span><a href="../org.gradle.language/-component-with-outputs/index.html"><span class="identifier">ComponentWithOutputs</span></a></code>
+<p>A static library built from Swift source.</p>
+<p><strong>Since</strong><br/>
+4.5</p>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-swift-binary/get-compile-modules.html">getCompileModules</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCompileModules</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the modules to use to compile this binary. Includes the module file of this binary's dependencies.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-swift-binary/get-compile-task.html">getCompileTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCompileTask</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../org.gradle.language.swift.tasks/-swift-compile/index.html"><span class="identifier">SwiftCompile</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the compile task for this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.language.nativeplatform/-component-with-static-library/get-create-task.html">getCreateTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCreateTask</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../org.gradle.nativeplatform.tasks/-create-static-library/index.html"><span class="identifier">CreateStaticLibrary</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the task to create the static library.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.language.nativeplatform/-component-with-link-usage/get-link-elements.html">getLinkElements</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLinkElements</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the outgoing link elements of this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-swift-binary/get-link-libraries.html">getLinkLibraries</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLinkLibraries</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the link libraries to use to link this binary. Includes the link libraries of the component's dependencies.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-swift-binary/get-module.html">getModule</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getModule</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the name of the Swift module that this binary defines.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.language/-component-with-outputs/get-outputs.html">getOutputs</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOutputs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.language.nativeplatform/-component-with-runtime-usage/get-runtime-elements.html">getRuntimeElements</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRuntimeElements</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the outgoing runtime elements of this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-swift-binary/get-runtime-libraries.html">getRuntimeLibraries</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRuntimeLibraries</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the runtime libraries required by this binary. Includes the runtime libraries of the component's dependencies.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-swift-binary/get-swift-language-version.html">getSwiftLanguageVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSwiftLanguageVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-swift-language-version/index.html"><span class="identifier">SwiftLanguageVersion</span></a></code>
+<p>Returns the Swift language version of this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-swift-binary/get-swift-source.html">getSwiftSource</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSwiftSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the Swift source files of this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-swift-binary/get-target-platform.html">getTargetPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="-swift-platform.html"><span class="identifier">SwiftPlatform</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-swift-binary/is-testable.html">isTestable</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isTestable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if this binary has testing enabled.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

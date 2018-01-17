@@ -1,0 +1,139 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ComponentWithInstallation - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.nativeplatform</a>&nbsp;/&nbsp;<a href="./index.html">ComponentWithInstallation</a><br/>
+<br/>
+<h1>ComponentWithInstallation</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ComponentWithInstallation</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-component-with-native-runtime/index.html"><span class="identifier">ComponentWithNativeRuntime</span></a></code>
+<p>Represents a native component that produces an application installation.</p>
+<p><strong>Since</strong><br/>
+4.5</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-install-directory.html">getInstallDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getInstallDirectory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.file/-directory/index.html"><span class="identifier">Directory</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the installation directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-install-task.html">getInstallTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getInstallTask</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.nativeplatform.tasks/-install-executable/index.html"><span class="identifier">InstallExecutable</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the install task.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-runtime-libraries.html">getRuntimeLibraries</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRuntimeLibraries</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the runtime libraries required for the installation. Includes the runtime libraries of the component's dependencies.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-component-with-native-runtime/get-base-name.html">getBaseName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBaseName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the base name of this component. This is used to calculate output file names.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-component-with-native-runtime/get-target-platform.html">getTargetPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a></code>
+<p>Returns the target platform for this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-component-with-native-runtime/get-tool-chain.html">getToolChain</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getToolChain</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a></code>
+<p>Returns the tool chain for this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-component-with-native-runtime/is-debuggable.html">isDebuggable</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isDebuggable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if this component has debugging enabled.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-component-with-native-runtime/is-optimized.html">isOptimized</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isOptimized</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns true if this component is optimized.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.cpp/-cpp-executable/index.html">CppExecutable</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CppExecutable</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.cpp/-cpp-binary/index.html"><span class="identifier">CppBinary</span></a><span class="symbol">, </span><a href="../-component-with-executable/index.html"><span class="identifier">ComponentWithExecutable</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">ComponentWithInstallation</span></a><span class="symbol">, </span><a href="../../org.gradle.language/-component-with-outputs/index.html"><span class="identifier">ComponentWithOutputs</span></a><span class="symbol">, </span><a href="../-component-with-runtime-usage/index.html"><span class="identifier">ComponentWithRuntimeUsage</span></a></code>
+<p>An executable built from C++ source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.test.cpp/-cpp-test-executable/index.html">CppTestExecutable</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CppTestExecutable</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.cpp/-cpp-binary/index.html"><span class="identifier">CppBinary</span></a><span class="symbol">, </span><a href="../-component-with-executable/index.html"><span class="identifier">ComponentWithExecutable</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">ComponentWithInstallation</span></a><span class="symbol">, </span><a href="../../org.gradle.nativeplatform.test/-test-component/index.html"><span class="identifier">TestComponent</span></a></code>
+<p>A test executable with tests implemented in C++.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.swift/-swift-executable/index.html">SwiftExecutable</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SwiftExecutable</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.swift/-swift-binary/index.html"><span class="identifier">SwiftBinary</span></a><span class="symbol">, </span><a href="../-component-with-executable/index.html"><span class="identifier">ComponentWithExecutable</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">ComponentWithInstallation</span></a><span class="symbol">, </span><a href="../../org.gradle.language/-component-with-outputs/index.html"><span class="identifier">ComponentWithOutputs</span></a></code>
+<p>An executable built from Swift source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.test.xctest/-swift-x-c-test-executable.html">SwiftXCTestExecutable</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SwiftXCTestExecutable</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.nativeplatform.test.xctest/-swift-x-c-test-binary/index.html"><span class="identifier">SwiftXCTestBinary</span></a><span class="symbol">, </span><a href="../-component-with-executable/index.html"><span class="identifier">ComponentWithExecutable</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">ComponentWithInstallation</span></a></code>
+<p>An XCTest executable for tests implemented in Swift.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

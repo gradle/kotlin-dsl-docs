@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks</a>&nbsp;/&nbsp;<a href="index.html">OutputFiles</a>&nbsp;/&nbsp;<a href=".">&lt;init&gt;</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks</a>&nbsp;/&nbsp;<a href="index.html">OutputFiles</a>&nbsp;/&nbsp;<a href="./-init-.html">&lt;init&gt;</a><br/>
 <br/>
 <h1>&lt;init&gt;</h1>
 <a name="org.gradle.api.tasks.OutputFiles$&lt;init&gt;()"></a>
@@ -17,7 +17,7 @@
  
 <p>This will cause the task to be considered out-of-date when the file paths or contents are different to when the task was last run.</p>
  
-<p>When the annotated property is a java.util.Map, then each output file will be associated with an identity. For cacheable tasks this is a requirement. The keys of the map must be <a href="#">valid Java identifiers</a>. The values of the map will be evaluated to individual files as per <code><a href="#">org.gradle.api.Project#file(Object)</a></code>.</p>
+<p>When the annotated property is a java.util.Map, then each output file will be associated with an identity. For cacheable tasks this is a requirement. The keys of the map must be non-empty strings. The values of the map will be evaluated to individual files as per <code><a href="#">org.gradle.api.Project#file(Object)</a></code>.</p>
  
 <p>Otherwise the given files will be evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code>, and task output caching will be disabled for the task.</p>
 </p>

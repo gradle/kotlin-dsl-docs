@@ -5,13 +5,27 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.repositories</a>&nbsp;/&nbsp;<a href=".">MavenArtifactRepository</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.repositories</a>&nbsp;/&nbsp;<a href="./index.html">MavenArtifactRepository</a><br/>
 <br/>
 <h1>MavenArtifactRepository</h1>
 <code><span class="keyword">interface </span><span class="identifier">MavenArtifactRepository</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-artifact-repository/index.html"><span class="identifier">ArtifactRepository</span></a><span class="symbol">, </span><a href="../-authentication-supported/index.html"><span class="identifier">AuthenticationSupported</span></a></code>
 <p>An artifact repository which uses a Maven format to store artifacts and meta-data. 
 <p> Repositories of this type are created by the <code><a href="#">org.gradle.api.artifacts.dsl.RepositoryHandler#maven(org.gradle.api.Action)</a></code> group of methods.</p>
 </p>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-metadata-sources/index.html">MetadataSources</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MetadataSources</span></code>
+<p>Allows configuring the sources of metadata for a specific repository.</p>
+</td>
+</tr>
+</tbody>
+</table>
 <h3>Functions</h3>
 <table>
 <tbody>
@@ -42,6 +56,15 @@
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getUrl</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/net/URI.html"><span class="identifier">URI</span></a></code>
 <p>The base URL of this repository. This URL is used to find both POMs and artifact files. You can add additional URLs to use to look for artifact files, such as jars, using <code><a href="#"> </a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="metadata-sources.html">metadataSources</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">metadataSources</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.MavenArtifactRepository$metadataSources(org.gradle.api.Action((org.gradle.api.artifacts.repositories.MavenArtifactRepository.MetadataSources)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="-metadata-sources/index.html"><span class="identifier">MetadataSources</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the metadata sources for this repository. This method will replace any previously configured sources of metadata.</p>
 </td>
 </tr>
 <tr>
@@ -99,7 +122,7 @@
 <p>Configures the username and password credentials for this repository using the supplied action. 
 <p> If no credentials have been assigned to this repository, an empty set of username and password credentials is assigned to this repository and passed to the action. </p>
 <pre><code> repositories { maven { url "${url}" credentials { username = 'joe' password = 'secret' } } } </code></pre></p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.credentials/-credentials.html"><span class="identifier">Credentials</span></a><span class="symbol">&gt;</span> <span class="identifier">credentials</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.AuthenticationSupported$credentials(java.lang.Class((org.gradle.api.artifacts.repositories.AuthenticationSupported.credentials.T)), org.gradle.api.Action((org.gradle.api.artifacts.repositories.AuthenticationSupported.credentials.T)))/credentialsType">credentialsType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.repositories.AuthenticationSupported$credentials(java.lang.Class((org.gradle.api.artifacts.repositories.AuthenticationSupported.credentials.T)), org.gradle.api.Action((org.gradle.api.artifacts.repositories.AuthenticationSupported.credentials.T)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.credentials/-credentials.html"><span class="identifier">Credentials</span></a><span class="symbol">&gt;</span> <span class="identifier">credentials</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.AuthenticationSupported$credentials(java.lang.Class((org.gradle.api.artifacts.repositories.AuthenticationSupported.credentials.T)), org.gradle.api.Action((org.gradle.api.artifacts.repositories.AuthenticationSupported.credentials.T)))/credentialsType">credentialsType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="../-authentication-supported/credentials.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.repositories.AuthenticationSupported$credentials(java.lang.Class((org.gradle.api.artifacts.repositories.AuthenticationSupported.credentials.T)), org.gradle.api.Action((org.gradle.api.artifacts.repositories.AuthenticationSupported.credentials.T)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-authentication-supported/credentials.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Configures the credentials for this repository using the supplied action. 
 <p> If no credentials have been assigned to this repository, an empty set of credentials of the specified type will be assigned to this repository and given to the configuration action. If credentials have already been specified for this repository, they will be passed to the given configuration action. </p>
 <pre><code> repositories { maven { url "${url}" credentials(AwsCredentials) { accessKey "myAccessKey" secretKey "mySecret" } } } </code></pre> 
@@ -129,7 +152,7 @@
 <p> If no credentials have been assigned to this repository, an empty set of username and password credentials is assigned to this repository and returned. </p>
 <p> If you are using a different type of credentials than PasswordCredentials, please use <code><a href="#">#getCredentials(Class)</a></code> to obtain the credentials.</p>
 </p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.credentials/-credentials.html"><span class="identifier">Credentials</span></a><span class="symbol">&gt;</span> <span class="identifier">getCredentials</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.AuthenticationSupported$getCredentials(java.lang.Class((org.gradle.api.artifacts.repositories.AuthenticationSupported.getCredentials.T)))/credentialsType">credentialsType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.credentials/-credentials.html"><span class="identifier">Credentials</span></a><span class="symbol">&gt;</span> <span class="identifier">getCredentials</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.AuthenticationSupported$getCredentials(java.lang.Class((org.gradle.api.artifacts.repositories.AuthenticationSupported.getCredentials.T)))/credentialsType">credentialsType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="../-authentication-supported/get-credentials.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-authentication-supported/get-credentials.html#T"><span class="identifier">T</span></a></code>
 <p>Returns the credentials of the specified type used to authenticate with this repository. 
 <p> If no credentials have been assigned to this repository, an empty set of credentials of the specified type is assigned to this repository and returned.</p>
 </p>

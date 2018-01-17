@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href=".">PluginAware</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href="./index.html">PluginAware</a><br/>
 <br/>
 <h1>PluginAware</h1>
 <code><span class="keyword">interface </span><span class="identifier">PluginAware</span></code>
@@ -70,7 +70,7 @@
 <p><a href="../../org.gradle.api.invocation/-gradle/index.html">Gradle</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">Gradle</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">PluginAware</span></code>
+<code><span class="keyword">interface </span><span class="identifier">Gradle</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">PluginAware</span></a></code>
 <p>Represents an invocation of Gradle. 
 <p>You can obtain a <code>Gradle</code> instance by calling <code><a href="../../org.gradle.api/-project/get-gradle.html">Project#getGradle()</a></code>.</p>
 </p>
@@ -81,7 +81,7 @@
 <p><a href="../../org.gradle.api/-project/index.html">Project</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">Project</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../-extension-aware/index.html"><span class="identifier">ExtensionAware</span></a><span class="symbol">, </span><span class="identifier">PluginAware</span></code>
+<code><span class="keyword">interface </span><span class="identifier">Project</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-comparable/index.html"><span class="identifier">Comparable</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../-extension-aware/index.html"><span class="identifier">ExtensionAware</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">PluginAware</span></a></code>
 <p>
 <p>This interface is the main API you use to interact with Gradle from your build file. From a <code>Project</code>, you have programmatic access to all of Gradle's features.</p>
  Lifecycle 
@@ -135,13 +135,13 @@
 <p><a href="../../org.gradle.api.initialization/-settings/index.html">Settings</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">Settings</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">PluginAware</span></code>
+<code><span class="keyword">interface </span><span class="identifier">Settings</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">PluginAware</span></a></code>
 <p>
 <p>Declares the configuration required to instantiate and configure the hierarchy of instances which are to participate in a build.</p>
  
 <p>There is a one-to-one correspondence between a <code>Settings</code> instance and a <code>{@value * #DEFAULT_SETTINGS_FILE}</code> settings file. Before Gradle assembles the projects for a build, it creates a <code>Settings</code> instance and executes the settings file against it.</p>
  Assembling a Multi-Project Build 
-<p>One of the purposes of the <code>Settings</code> object is to allow you to declare the projects which are to be included in the build. You add projects to the build using the <code><a href="#">#include(String[])</a></code> method. There is always a root project included in a build. It is added automatically when the <code>Settings</code> object is created. The root project's name defaults to the name of the directory containing the settings file. The root project's project directory defaults to the directory containing the settings file.</p>
+<p>One of the purposes of the <code>Settings</code> object is to allow you to declare the projects which are to be included in the build. You add projects to the build using the <code><a href="#">#include(String...)</a></code> method. There is always a root project included in a build. It is added automatically when the <code>Settings</code> object is created. The root project's name defaults to the name of the directory containing the settings file. The root project's project directory defaults to the directory containing the settings file.</p>
  
 <p>When a project is included in the build, a ProjectDescriptor is created. You can use this descriptor to change the default values for several properties of the project.</p>
  Using Settings in a Settings File Dynamic Properties 

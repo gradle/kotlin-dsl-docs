@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.process</a>&nbsp;/&nbsp;<a href=".">JavaForkOptions</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.process</a>&nbsp;/&nbsp;<a href="./index.html">JavaForkOptions</a><br/>
 <br/>
 <h1>JavaForkOptions</h1>
 <code><span class="keyword">interface </span><span class="identifier">JavaForkOptions</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-process-fork-options/index.html"><span class="identifier">ProcessForkOptions</span></a></code>
@@ -20,7 +20,7 @@
 <p><a href="bootstrap-classpath.html">bootstrapClasspath</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">bootstrapClasspath</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.process.JavaForkOptions$bootstrapClasspath(kotlin.Array((kotlin.Any)))/classpath">classpath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">JavaForkOptions</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">bootstrapClasspath</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.process.JavaForkOptions$bootstrapClasspath(kotlin.Array((kotlin.Any)))/classpath">classpath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">JavaForkOptions</span></a></code>
 <p>Adds the given values to the end of the bootstrap classpath for the process.</p>
 </td>
 </tr>
@@ -29,7 +29,7 @@
 <p><a href="copy-to.html">copyTo</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copyTo</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$copyTo(org.gradle.process.JavaForkOptions)/options">options</span><span class="symbol">:</span>&nbsp;<span class="identifier">JavaForkOptions</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">JavaForkOptions</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copyTo</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$copyTo(org.gradle.process.JavaForkOptions)/options">options</span><span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">JavaForkOptions</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">JavaForkOptions</span></a></code>
 <p>Copies these options to the given options.</p>
 </td>
 </tr>
@@ -119,8 +119,8 @@
 <p><a href="jvm-args.html">jvmArgs</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">jvmArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$jvmArgs(kotlin.collections.MutableIterable((kotlin.Any)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">JavaForkOptions</span></code><br/>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">jvmArgs</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.process.JavaForkOptions$jvmArgs(kotlin.Array((kotlin.Any)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">JavaForkOptions</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">jvmArgs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$jvmArgs(kotlin.collections.MutableIterable((kotlin.Any)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">JavaForkOptions</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">jvmArgs</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.process.JavaForkOptions$jvmArgs(kotlin.Array((kotlin.Any)))/arguments">arguments</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">JavaForkOptions</span></a></code>
 <p>Adds some arguments to use to launch the JVM for the process.</p>
 </td>
 </tr>
@@ -212,7 +212,7 @@
 <p><a href="system-properties.html">systemProperties</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">systemProperties</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$systemProperties(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/properties">properties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">JavaForkOptions</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">systemProperties</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$systemProperties(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/properties">properties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">JavaForkOptions</span></a></code>
 <p>Adds some system properties to use for the process.</p>
 </td>
 </tr>
@@ -221,7 +221,7 @@
 <p><a href="system-property.html">systemProperty</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">systemProperty</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$systemProperty(kotlin.String, kotlin.Any)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.process.JavaForkOptions$systemProperty(kotlin.String, kotlin.Any)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">JavaForkOptions</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">systemProperty</span><span class="symbol">(</span><span class="identifier" id="org.gradle.process.JavaForkOptions$systemProperty(kotlin.String, kotlin.Any)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.process.JavaForkOptions$systemProperty(kotlin.String, kotlin.Any)/value">value</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">JavaForkOptions</span></a></code>
 <p>Adds a system property to use for the process.</p>
 </td>
 </tr>
@@ -335,7 +335,7 @@
 <p><a href="../-java-exec-spec/index.html">JavaExecSpec</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">JavaExecSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">JavaForkOptions</span><span class="symbol">, </span><a href="../-base-exec-spec/index.html"><span class="identifier">BaseExecSpec</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">JavaExecSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">JavaForkOptions</span></a><span class="symbol">, </span><a href="../-base-exec-spec/index.html"><span class="identifier">BaseExecSpec</span></a></code>
 <p>Specifies the options for executing a Java application.</p>
 </td>
 </tr>
@@ -344,7 +344,7 @@
 <p><a href="../../org.gradle.api.tasks.testing/-test/index.html">Test</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Test</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ConventionTask</span><span class="symbol">, </span><span class="identifier">JavaForkOptions</span><span class="symbol">, </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks/-verification-task/index.html"><span class="identifier">VerificationTask</span></a><span class="symbol">, </span><a href="../../org.gradle.api.reporting/-reporting/index.html"><span class="identifier">Reporting</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.tasks.testing/-test-task-reports/index.html"><span class="identifier">TestTaskReports</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Test</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks.testing/-abstract-test-task/index.html"><span class="identifier">AbstractTestTask</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">JavaForkOptions</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a></code>
 <p>Executes JUnit (3.8.x or 4.x) or TestNG tests. Test are always run in (one or more) separate JVMs. The sample below shows various configuration options. <pre><code> apply plugin: 'java' // adds 'test' task test { // enable TestNG support (default is JUnit) useTestNG() // set a system property for the test JVM(s) systemProperty 'some.prop', 'value' // explicitly include or exclude tests include 'org/foo/**' exclude 'org/boo/**' // show standard out and standard error of the test JVM(s) on the console testLogging.showStandardStreams = true // set heap size for the test JVM(s) minHeapSize = "128m" maxHeapSize = "512m" // set JVM arguments for the test JVM(s) jvmArgs '-XX:MaxPermSize=256m' // listen to events in the test execution lifecycle beforeTest { descriptor -&gt; logger.lifecycle("Running test: " + descriptor) } // listen to standard out and standard error of the test JVM(s) onOutput { descriptor, event -&gt; logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message ) } } </code></pre> 
 <p> The test process can be started in debug mode (see <code><a href="../../org.gradle.api.tasks.testing/-test/get-debug.html">#getDebug()</a></code>) in an ad-hoc manner by supplying the `--debug-jvm` switch when invoking the build. </p>
 <pre><code> gradle someTestTask --debug-jvm </code></pre></p>

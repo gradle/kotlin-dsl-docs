@@ -5,10 +5,10 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href=".">PluginCollection</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.plugins</a>&nbsp;/&nbsp;<a href="./index.html">PluginCollection</a><br/>
 <br/>
 <h1>PluginCollection</h1>
-<code><span class="keyword">interface </span><span class="identifier">PluginCollection</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">PluginCollection</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
 <p>
 <p>A <code>PluginCollection</code> represents a collection of org.gradle.api.Plugin instances.</p>
 </p>
@@ -20,12 +20,57 @@
 <tbody>
 <tr>
 <td>
+<p><a href="add.html">add</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginCollection$add(org.gradle.api.plugins.PluginCollection.T)/element">element</span><span class="symbol">:</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Unsupported.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="add-all.html">addAll</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addAll</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginCollection$addAll(kotlin.collections.Collection((org.gradle.api.plugins.PluginCollection.T)))/elements">elements</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html"><span class="identifier">Collection</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Unsupported.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="clear.html">clear</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">clear</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Unsupported.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="matching.html">matching</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginCollection$matching(org.gradle.api.specs.Spec((org.gradle.api.plugins.PluginCollection.T)))/spec">spec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">PluginCollection</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code><br/>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginCollection$matching(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">PluginCollection</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginCollection$matching(org.gradle.api.specs.Spec((org.gradle.api.plugins.PluginCollection.T)))/spec">spec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">PluginCollection</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginCollection$matching(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">PluginCollection</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
 <p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="remove.html">remove</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">remove</span><span class="symbol">(</span><span class="identifier" id="kotlin.collections.MutableCollection$remove(kotlin.collections.MutableCollection.E)/o">o</span><span class="symbol">:</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Unsupported.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="remove-all.html">removeAll</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">removeAll</span><span class="symbol">(</span><span class="identifier" id="kotlin.collections.MutableCollection$removeAll(kotlin.collections.Collection((kotlin.collections.MutableCollection.E)))/elements">elements</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-collection/index.html"><span class="identifier">Collection</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Unsupported.</p>
 </td>
 </tr>
 <tr>
@@ -33,7 +78,7 @@
 <p><a href="when-plugin-added.html">whenPluginAdded</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">whenPluginAdded</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginCollection$whenPluginAdded(org.gradle.api.Action((org.gradle.api.plugins.PluginCollection.T)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">whenPluginAdded</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginCollection$whenPluginAdded(org.gradle.api.Action((org.gradle.api.plugins.PluginCollection.T)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
 <p>Adds an <code>Action</code> to be executed when a plugin is added to this collection.</p>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">whenPluginAdded</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginCollection$whenPluginAdded(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Adds a closure to be called when a plugin is added to this collection. The plugin is passed to the closure as the parameter.</p>
@@ -44,7 +89,7 @@
 <p><a href="with-type.html">withType</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">withType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginCollection$withType(java.lang.Class((org.gradle.api.plugins.PluginCollection.withType.S)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">PluginCollection</span><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span> <span class="identifier">withType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.PluginCollection$withType(java.lang.Class((org.gradle.api.plugins.PluginCollection.withType.S)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="with-type.html#S"><span class="identifier">S</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">PluginCollection</span></a><span class="symbol">&lt;</span><a href="with-type.html#S"><span class="identifier">S</span></a><span class="symbol">&gt;</span></code>
 <p>{@inheritDoc}</p>
 </td>
 </tr>
@@ -58,7 +103,7 @@
 <p><a href="../../org.gradle.api/-domain-object-set/find-all.html">findAll</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">findAll</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.DomainObjectSet$findAll(groovy.lang.Closure((kotlin.Any)))/spec">spec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">findAll</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.DomainObjectSet$findAll(groovy.lang.Closure((kotlin.Any)))/spec">spec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-domain-object-set/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
 <p>{@inheritDoc}</p>
 </td>
 </tr>
@@ -72,7 +117,7 @@
 <p><a href="../-plugin-container/index.html">PluginContainer</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">PluginContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">PluginCollection</span><span class="symbol">&lt;</span><a href="../../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">PluginContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">PluginCollection</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
 <p>
 <p>A <code>PluginContainer</code> is used to manage a set of org.gradle.api.Plugin instances applied to a particular project.</p>
  

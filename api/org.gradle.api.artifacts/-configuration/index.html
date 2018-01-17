@@ -5,10 +5,10 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">Configuration</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="./index.html">Configuration</a><br/>
 <br/>
 <h1>Configuration</h1>
-<code><span class="keyword">interface </span><span class="identifier">Configuration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">, </span><a href="../../org.gradle.api.attributes/-has-configurable-attributes/index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><span class="identifier">Configuration</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">Configuration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">, </span><a href="../../org.gradle.api.attributes/-has-configurable-attributes/index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span></code>
 <p>A <code>Configuration</code> represents a group of artifacts and their dependencies. Find more information about declaring dependencies to a configuration or about managing configurations in docs for ConfigurationContainer 
 <p> Configuration is an instance of a FileCollection that contains all dependencies (see also <code><a href="get-all-dependencies.html">#getAllDependencies()</a></code>) but not artifacts. If you want to refer to the artifacts declared in this configuration please use <code><a href="get-artifacts.html">#getArtifacts()</a></code> or <code><a href="get-all-artifacts.html">#getAllArtifacts()</a></code>. Read more about declaring artifacts in the configuration in docs for org.gradle.api.artifacts.dsl.ArtifactHandler</p>
 </p>
@@ -20,7 +20,7 @@
 <p><a href="-namer/index.html">Namer</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Namer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-namer/index.html"><span class="identifier">Namer</span></a><span class="symbol">&lt;</span><span class="identifier">Configuration</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Namer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-namer/index.html"><span class="identifier">Namer</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span></code>
 <p>A org.gradle.api.Namer namer for configurations that returns <code><a href="get-name.html">#getName()</a></code>.</p>
 </td>
 </tr>
@@ -43,11 +43,11 @@
 <p><a href="copy.html">copy</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Configuration</span></a></code>
 <p>Creates a copy of this configuration that only contains the dependencies directly in this configuration (without contributions from superconfigurations). The new configuration will be in the UNRESOLVED state, but will retain all other attributes of this configuration except superconfigurations. <code><a href="get-hierarchy.html">#getHierarchy()</a></code> for the copy will not include any superconfigurations.</p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$copy(org.gradle.api.specs.Spec((org.gradle.api.artifacts.Dependency)))/dependencySpec">dependencySpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$copy(org.gradle.api.specs.Spec((org.gradle.api.artifacts.Dependency)))/dependencySpec">dependencySpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Configuration</span></a></code>
 <p>Creates a copy of this configuration ignoring superconfigurations (see <code><a href="copy.html">#copy()</a></code> but filtering the dependencies using the specified dependency spec.</p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$copy(groovy.lang.Closure((kotlin.Any)))/dependencySpec">dependencySpec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$copy(groovy.lang.Closure((kotlin.Any)))/dependencySpec">dependencySpec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Configuration</span></a></code>
 <p>Takes a closure which gets coerced into a Spec. Behaves otherwise in the same way as <code><a href="#">#copy(org.gradle.api.specs.Spec)</a></code></p>
 </td>
 </tr>
@@ -56,11 +56,11 @@
 <p><a href="copy-recursive.html">copyRecursive</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copyRecursive</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copyRecursive</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Configuration</span></a></code>
 <p>Creates a copy of this configuration that contains the dependencies directly in this configuration and those derived from superconfigurations. The new configuration will be in the UNRESOLVED state, but will retain all other attributes of this configuration except superconfigurations. <code><a href="get-hierarchy.html">#getHierarchy()</a></code> for the copy will not include any superconfigurations.</p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copyRecursive</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$copyRecursive(org.gradle.api.specs.Spec((org.gradle.api.artifacts.Dependency)))/dependencySpec">dependencySpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copyRecursive</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$copyRecursive(org.gradle.api.specs.Spec((org.gradle.api.artifacts.Dependency)))/dependencySpec">dependencySpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Configuration</span></a></code>
 <p>Creates a copy of this configuration with dependencies from superconfigurations (see <code><a href="copy-recursive.html">#copyRecursive()</a></code>) but filtering the dependencies using the dependencySpec.</p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copyRecursive</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$copyRecursive(groovy.lang.Closure((kotlin.Any)))/dependencySpec">dependencySpec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copyRecursive</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$copyRecursive(groovy.lang.Closure((kotlin.Any)))/dependencySpec">dependencySpec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Configuration</span></a></code>
 <p>Takes a closure which gets coerced into a Spec. Behaves otherwise in the same way as <code><a href="#">#copyRecursive(org.gradle.api.specs.Spec)</a></code></p>
 </td>
 </tr>
@@ -69,7 +69,7 @@
 <p><a href="default-dependencies.html">defaultDependencies</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">defaultDependencies</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$defaultDependencies(org.gradle.api.Action((org.gradle.api.artifacts.DependencySet)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency-set.html"><span class="identifier">DependencySet</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">defaultDependencies</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$defaultDependencies(org.gradle.api.Action((org.gradle.api.artifacts.DependencySet)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency-set.html"><span class="identifier">DependencySet</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Configuration</span></a></code>
 <p>Execute the given action if the configuration has no defined dependencies when it first participates in dependency resolution. A <code>Configuration</code> will participate in dependency resolution when: <ul> <li>The Configuration itself is resolved</li>
  <li>Another Configuration that extends this one is resolved</li>
  <li>Another Configuration that references this one as a project dependency is resolved</li>
@@ -82,7 +82,7 @@
 <p><a href="exclude.html">exclude</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$exclude(kotlin.collections.MutableMap((kotlin.String, )))/excludeProperties">excludeProperties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$exclude(kotlin.collections.MutableMap((kotlin.String, )))/excludeProperties">excludeProperties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Configuration</span></a></code>
 <p>Adds an exclude rule to exclude transitive dependencies for all dependencies of this configuration. You can also add exclude rules per-dependency. See <code><a href="#">ModuleDependency#exclude(java.util.Map)</a></code>.</p>
 </td>
 </tr>
@@ -91,7 +91,7 @@
 <p><a href="extends-from.html">extendsFrom</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">extendsFrom</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.artifacts.Configuration$extendsFrom(kotlin.Array((org.gradle.api.artifacts.Configuration)))/superConfigs">superConfigs</span><span class="symbol">:</span>&nbsp;<span class="identifier">Configuration</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">extendsFrom</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.artifacts.Configuration$extendsFrom(kotlin.Array((org.gradle.api.artifacts.Configuration)))/superConfigs">superConfigs</span><span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Configuration</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Configuration</span></a></code>
 <p>Adds the given configurations to the set of configuration which this configuration extends from.</p>
 </td>
 </tr>
@@ -126,7 +126,7 @@
 <p><a href="get-all.html">getAll</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAll</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">Configuration</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAll</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span></code>
 <p>Returns all the configurations belonging to the same configuration container as this configuration (including this configuration).</p>
 </td>
 </tr>
@@ -200,7 +200,7 @@
 <p><a href="get-extends-from.html">getExtendsFrom</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExtendsFrom</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">Configuration</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getExtendsFrom</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span></code>
 <p>Returns the names of the configurations which this configuration extends from. The artifacts of the super configurations are also available in this configuration.</p>
 </td>
 </tr>
@@ -209,7 +209,7 @@
 <p><a href="get-hierarchy.html">getHierarchy</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getHierarchy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">Configuration</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getHierarchy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span></code>
 <p>Gets a ordered set including this configuration and all superconfigurations recursively.</p>
 </td>
 </tr>
@@ -335,8 +335,8 @@
 <p><a href="resolution-strategy.html">resolutionStrategy</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">resolutionStrategy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$resolutionStrategy(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code><br/>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">resolutionStrategy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$resolutionStrategy(org.gradle.api.Action((org.gradle.api.artifacts.ResolutionStrategy)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-resolution-strategy/index.html"><span class="identifier">ResolutionStrategy</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">resolutionStrategy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$resolutionStrategy(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Configuration</span></a></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">resolutionStrategy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$resolutionStrategy(org.gradle.api.Action((org.gradle.api.artifacts.ResolutionStrategy)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-resolution-strategy/index.html"><span class="identifier">ResolutionStrategy</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Configuration</span></a></code>
 <p>The resolution strategy provides extra details on how to resolve this configuration. See docs for ResolutionStrategy for more info and examples.</p>
 </td>
 </tr>
@@ -372,7 +372,7 @@
 <p><a href="set-description.html">setDescription</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setDescription</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$setDescription(kotlin.String)/description">description</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setDescription</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$setDescription(kotlin.String)/description">description</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Configuration</span></a></code>
 <p>Sets the description for this configuration.</p>
 </td>
 </tr>
@@ -381,7 +381,7 @@
 <p><a href="set-extends-from.html">setExtendsFrom</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setExtendsFrom</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$setExtendsFrom(kotlin.collections.MutableIterable((org.gradle.api.artifacts.Configuration)))/superConfigs">superConfigs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><span class="identifier">Configuration</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setExtendsFrom</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$setExtendsFrom(kotlin.collections.MutableIterable((org.gradle.api.artifacts.Configuration)))/superConfigs">superConfigs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Configuration</span></a></code>
 <p>Sets the configurations which this configuration extends from.</p>
 </td>
 </tr>
@@ -390,7 +390,7 @@
 <p><a href="set-transitive.html">setTransitive</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setTransitive</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$setTransitive(kotlin.Boolean)/t">t</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setTransitive</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$setTransitive(kotlin.Boolean)/t">t</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Configuration</span></a></code>
 <p>Sets the transitivity of this configuration. When set to true, this configuration will contain the transitive closure of its dependencies and their dependencies. The default value is true.</p>
 </td>
 </tr>
@@ -399,8 +399,21 @@
 <p><a href="set-visible.html">setVisible</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setVisible</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$setVisible(kotlin.Boolean)/visible">visible</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setVisible</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$setVisible(kotlin.Boolean)/visible">visible</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Configuration</span></a></code>
 <p>Sets the visibility of this configuration. When visible is set to true, this configuration is visible outside the project it belongs to. The default value is true.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="with-dependencies.html">withDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withDependencies</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$withDependencies(org.gradle.api.Action((org.gradle.api.artifacts.DependencySet)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency-set.html"><span class="identifier">DependencySet</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Configuration</span></a></code>
+<p>Execute the given action before the configuration first participates in dependency resolution. A <code>Configuration</code> will participate in dependency resolution when: <ul> <li>The Configuration itself is resolved</li>
+ <li>Another Configuration that extends this one is resolved</li>
+ <li>Another Configuration that references this one as a project dependency is resolved</li>
+ </ul>
+ This method is useful for mutating the dependencies for a configuration: <pre><code> configurations { conf } configurations['conf'].withDependencies { dependencies -&gt; dependencies.each { dependency -&gt; if (dependency.version == null) { dependency.version { prefer '1.0' } } } } </code></pre> Actions will be executed in the order provided.</p>
 </td>
 </tr>
 </tbody>
@@ -452,7 +465,7 @@
 <p><a href="../../org.gradle.api.attributes/-has-configurable-attributes/attributes.html">attributes</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">attributes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.attributes.HasConfigurableAttributes$attributes(org.gradle.api.Action((org.gradle.api.attributes.AttributeContainer)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.attributes/-attribute-container/index.html"><span class="identifier">AttributeContainer</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">SELF</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">attributes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.attributes.HasConfigurableAttributes$attributes(org.gradle.api.Action((org.gradle.api.attributes.AttributeContainer)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.attributes/-attribute-container/index.html"><span class="identifier">AttributeContainer</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.attributes/-has-configurable-attributes/index.html#SELF"><span class="identifier">SELF</span></a></code>
 <p>Configure the attribute container that provides the attributes associated with this domain object.</p>
 </td>
 </tr>
@@ -572,7 +585,7 @@
 <p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.artifacts.-configuration/exclude.html">exclude</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">Configuration</span><span class="symbol">.</span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$exclude(org.gradle.api.artifacts.Configuration, kotlin.String, kotlin.String)/group">group</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl$exclude(org.gradle.api.artifacts.Configuration, kotlin.String, kotlin.String)/module">module</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Configuration</span></code>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">Configuration</span></a><span class="symbol">.</span><span class="identifier">exclude</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$exclude(org.gradle.api.artifacts.Configuration, kotlin.String, kotlin.String)/group">group</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl$exclude(org.gradle.api.artifacts.Configuration, kotlin.String, kotlin.String)/module">module</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Configuration</span></a></code>
 <p>Adds an exclude rule to exclude transitive dependencies for all dependencies of this configuration.
 You can also add exclude rules per-dependency. See <a href="../-module-dependency/exclude.html">ModuleDependency.exclude</a>.</p>
 </td>

@@ -5,10 +5,10 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.cpp</a>&nbsp;/&nbsp;<a href=".">CppComponent</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.cpp</a>&nbsp;/&nbsp;<a href="./index.html">CppComponent</a><br/>
 <br/>
 <h1>CppComponent</h1>
-<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">CppComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.component/-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">CppComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language/-component-with-binaries/index.html"><span class="identifier">ComponentWithBinaries</span></a></code>
 <p>Configuration for a C++ component, such as a library or executable, defining the source files and private header directories that make up the component. Private headers are those that are visible only to the source files of the component. 
 <p>A C++ component is composed of some C++ source files that are compiled and then linked into some binary.</p>
  
@@ -24,8 +24,17 @@
 <p><a href="get-base-name.html">getBaseName</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBaseName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-property-state/index.html"><span class="identifier">PropertyState</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBaseName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-property/index.html"><span class="identifier">Property</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
 <p>Specifies the base name for this component. This name is used to calculate various output file names. The default value is calculated from the project name.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-binaries.html">getBinaries</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBinaries</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.language/-binary-collection/index.html"><span class="identifier">BinaryCollection</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-cpp-binary/index.html"><span class="identifier">CppBinary</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the binaries for this library.</p>
 </td>
 </tr>
 <tr>
@@ -35,15 +44,6 @@
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCppSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
 <p>Returns the C++ source files of this component, as defined in <code><a href="get-source.html">#getSource()</a></code>.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="get-development-binary.html">getDevelopmentBinary</a></p>
-</td>
-<td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDevelopmentBinary</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-cpp-binary/index.html"><span class="identifier">CppBinary</span></a></code>
-<p>Returns the binary of the component to use as the default for development.</p>
 </td>
 </tr>
 <tr>
@@ -120,24 +120,20 @@
 <tbody>
 <tr>
 <td>
-<p><a href="../-cpp-application/index.html">CppApplication</a></p>
+<p><a href="../../org.gradle.nativeplatform.test.cpp/-cpp-test-suite/index.html">CppTestSuite</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">CppApplication</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">CppComponent</span></code>
-<p>Configuration for a C++ application, defining the source files that make up the application plus other settings. 
-<p>An instance of this type is added as a project extension by the C++ executable plugin.</p>
-</p>
+<code><span class="keyword">interface </span><span class="identifier">CppTestSuite</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">CppComponent</span></a><span class="symbol">, </span><a href="../../org.gradle.nativeplatform.test/-test-suite-component/index.html"><span class="identifier">TestSuiteComponent</span></a></code>
+<p>A C++ test suite.</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="../-cpp-library/index.html">CppLibrary</a></p>
+<p><a href="../-production-cpp-component/index.html">ProductionCppComponent</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">CppLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">CppComponent</span></code>
-<p>Configuration for a C++ library, defining the source files and header directories that make up the library plus other settings. 
-<p>An instance of this type is added as a project extension by the C++ library plugin.</p>
-</p>
+<code><span class="keyword">interface </span><span class="identifier">ProductionCppComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">CppComponent</span></a><span class="symbol">, </span><a href="../../org.gradle.language/-production-component/index.html"><span class="identifier">ProductionComponent</span></a></code>
+<p>Represents a C++ component that is the main product of a project.</p>
 </td>
 </tr>
 </tbody>

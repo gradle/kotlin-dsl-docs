@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../style.css">
 </HEAD>
 <BODY>
-<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.tooling</a><br/>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="./index.html">org.gradle.tooling</a><br/>
 <br/>
 <h2>Package org.gradle.tooling</h2>
 <h3>Types</h3>
@@ -27,7 +27,7 @@
 <p><a href="-build-action-executer/index.html">BuildActionExecuter</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">BuildActionExecuter</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-configurable-launcher/index.html"><span class="identifier">ConfigurableLauncher</span></a><span class="symbol">&lt;</span><a href="-build-action-executer/index.html"><span class="identifier">BuildActionExecuter</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">BuildActionExecuter</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-configurable-launcher/index.html"><span class="identifier">ConfigurableLauncher</span></a><span class="symbol">&lt;</span><a href="-build-action-executer/index.html"><span class="identifier">BuildActionExecuter</span></a><span class="symbol">&lt;</span><a href="-build-action-executer/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
 <p>Used to execute a BuildAction in the build process.</p>
 </td>
 </tr>
@@ -53,7 +53,7 @@
 <li>Call either <code><a href="-build-launcher/run.html">#run()</a></code> or <code><a href="#">#run(ResultHandler)</a></code> to execute the build. </li>
 <li>Optionally, you can reuse the launcher to launch additional builds. </li>
 </ul>
- Example: <pre><code> ProjectConnection connection = GradleConnector.newConnector() .forProjectDirectory(new File("someFolder")) .connect(); try { BuildLauncher build = connection.newBuild(); //select tasks to run: build.forTasks("clean", "test"); //include some build arguments: build.withArguments("--no-search-upward", "-i", "--project-dir", "someProjectDir"); //configure the standard input: build.setStandardInput(new ByteArrayInputStream("consume this!".getBytes())); //in case you want the build to use java different than default: build.setJavaHome(new File("/path/to/java")); //if your build needs crazy amounts of memory: build.setJvmArguments("-Xmx2048m", "-XX:MaxPermSize=512m"); //if you want to listen to the progress events: ProgressListener listener = null; // use your implementation build.addProgressListener(listener); //kick the build off: build.run(); } finally { connection.close(); } </code></pre></p>
+ Example: <pre><code> ProjectConnection connection = GradleConnector.newConnector() .forProjectDirectory(new File("someFolder")) .connect(); try { BuildLauncher build = connection.newBuild(); //select tasks to run: build.forTasks("clean", "test"); //include some build arguments: build.withArguments("-i", "--project-dir", "someProjectDir"); //configure the standard input: build.setStandardInput(new ByteArrayInputStream("consume this!".getBytes())); //in case you want the build to use java different than default: build.setJavaHome(new File("/path/to/java")); //if your build needs crazy amounts of memory: build.setJvmArguments("-Xmx2048m", "-XX:MaxPermSize=512m"); //if you want to listen to the progress events: ProgressListener listener = null; // use your implementation build.addProgressListener(listener); //kick the build off: build.run(); } finally { connection.close(); } </code></pre></p>
 </td>
 </tr>
 <tr>
@@ -153,7 +153,7 @@ Java version compatibility
 <p><a href="-model-builder/index.html">ModelBuilder</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ModelBuilder</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-configurable-launcher/index.html"><span class="identifier">ConfigurableLauncher</span></a><span class="symbol">&lt;</span><a href="-model-builder/index.html"><span class="identifier">ModelBuilder</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">ModelBuilder</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-configurable-launcher/index.html"><span class="identifier">ConfigurableLauncher</span></a><span class="symbol">&lt;</span><a href="-model-builder/index.html"><span class="identifier">ModelBuilder</span></a><span class="symbol">&lt;</span><a href="-model-builder/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
 <p>A <code>ModelBuilder</code> allows you to fetch a snapshot of some model for a project or a build. Instances of <code>ModelBuilder</code> are not thread-safe. 
 <p> You use a <code>ModelBuilder</code> as follows: </p>
 <ul> <li>Create an instance of <code>ModelBuilder</code> by calling <code><a href="#">org.gradle.tooling.ProjectConnection#model(Class)</a></code>. </li>

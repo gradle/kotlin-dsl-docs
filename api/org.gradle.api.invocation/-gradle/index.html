@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.invocation</a>&nbsp;/&nbsp;<a href=".">Gradle</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.invocation</a>&nbsp;/&nbsp;<a href="./index.html">Gradle</a><br/>
 <br/>
 <h1>Gradle</h1>
 <code><span class="keyword">interface </span><span class="identifier">Gradle</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins/-plugin-aware/index.html"><span class="identifier">PluginAware</span></a></code>
@@ -101,7 +101,7 @@
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">buildStarted</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$buildStarted(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Adds a closure to be called when the build is started. This <code>Gradle</code> instance is passed to the closure as the first parameter.</p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">buildStarted</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$buildStarted(org.gradle.api.Action((org.gradle.api.invocation.Gradle)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">Gradle</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">buildStarted</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$buildStarted(org.gradle.api.Action((org.gradle.api.invocation.Gradle)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="./index.html"><span class="identifier">Gradle</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Adds an action to be called when the build is started.</p>
 </td>
 </tr>
@@ -110,7 +110,7 @@
 <p><a href="get-gradle.html">getGradle</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGradle</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Gradle</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getGradle</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Gradle</span></a></code>
 <p>Returns this <code>Gradle</code> instance. This method is useful in init scripts to explicitly access Gradle properties and methods. For example, using <code>gradle.parent</code> can express your intent better than using <code>parent</code>. This property also allows you to access Gradle properties from a scope where the property may be hidden, such as, for example, from a method or closure.</p>
 </td>
 </tr>
@@ -157,7 +157,7 @@
 <p><a href="get-parent.html">getParent</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getParent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Gradle</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getParent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Gradle</span></a></code>
 <p>Returns the parent build of this build, if any.</p>
 </td>
 </tr>
@@ -204,7 +204,7 @@
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">projectsEvaluated</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$projectsEvaluated(groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Adds a closure to be called when all projects for the build have been evaluated. The project objects are fully configured and are ready to use to populate the task graph. This <code>Gradle</code> instance is passed to the closure as a parameter.</p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">projectsEvaluated</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$projectsEvaluated(org.gradle.api.Action((org.gradle.api.invocation.Gradle)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">Gradle</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">projectsEvaluated</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$projectsEvaluated(org.gradle.api.Action((org.gradle.api.invocation.Gradle)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="./index.html"><span class="identifier">Gradle</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Adds an action to be called when all projects for the build have been evaluated. The project objects are fully configured and are ready to use to populate the task graph.</p>
 </td>
 </tr>
@@ -217,7 +217,7 @@
 <p>Adds a closure to be called when the projects for the build have been created from the settings. None of the projects have been evaluated. This <code>Gradle</code> instance is passed to the closure as a parameter. 
 <p> An example of hooking into the projectsLoaded to configure buildscript classpath from the init script. </p>
 <pre><code> //init.gradle gradle.projectsLoaded { rootProject.buildscript { repositories { //... } dependencies { //... } } } </code></pre></p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">projectsLoaded</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$projectsLoaded(org.gradle.api.Action((org.gradle.api.invocation.Gradle)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">Gradle</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">projectsLoaded</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.invocation.Gradle$projectsLoaded(org.gradle.api.Action((org.gradle.api.invocation.Gradle)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="./index.html"><span class="identifier">Gradle</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Adds an action to be called when the projects for the build have been created from the settings. None of the projects have been evaluated.</p>
 </td>
 </tr>

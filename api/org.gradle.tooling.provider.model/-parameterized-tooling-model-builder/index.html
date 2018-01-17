@@ -1,0 +1,71 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ParameterizedToolingModelBuilder - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.provider.model</a>&nbsp;/&nbsp;<a href="./index.html">ParameterizedToolingModelBuilder</a><br/>
+<br/>
+<h1>ParameterizedToolingModelBuilder</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ParameterizedToolingModelBuilder</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-tooling-model-builder/index.html"><span class="identifier">ToolingModelBuilder</span></a></code>
+<p>A ToolingModelBuilder which can be parametrized by the client. 
+<p>The parameter type <code>T</code> does not need to implement the interface defined in the client side, but it does need to have the same structure. The Tooling API will create a view from the client side parameter type to the one defined in this model builder, and deal automatically with missing methods in order to allow evolution of the models. </p>
+ 
+<p>All classes implementing this interface should also implement methods from ToolingModelBuilder, which will be used to determine if a model can be built by the current builder and to generate the model in case no parameter is passed from the client. The parameter type should be bound to the model type. </p>
+</p>
+<h3>Parameters</h3>
+<p><a name="&lt;T&gt;"></a>
+<code><T></code> - The type of parameter used by this model builder.</p>
+<p><strong>Since</strong><br/>
+4.4</p>
+<p><strong>See Also</strong><br/>
+ToolingModelBuilder</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="build-all.html">buildAll</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">buildAll</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.provider.model.ParameterizedToolingModelBuilder$buildAll(kotlin.String, org.gradle.tooling.provider.model.ParameterizedToolingModelBuilder.T, org.gradle.api.Project)/modelName">modelName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.provider.model.ParameterizedToolingModelBuilder$buildAll(kotlin.String, org.gradle.tooling.provider.model.ParameterizedToolingModelBuilder.T, org.gradle.api.Project)/parameter">parameter</span><span class="symbol">:</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.provider.model.ParameterizedToolingModelBuilder$buildAll(kotlin.String, org.gradle.tooling.provider.model.ParameterizedToolingModelBuilder.T, org.gradle.api.Project)/project">project</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Creates the model of the given type for the given project using the given parameter.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-parameter-type.html">getParameterType</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getParameterType</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the expected type of the parameter. It should be an interface with only getters and setters.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-tooling-model-builder/build-all.html">buildAll</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">buildAll</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.provider.model.ToolingModelBuilder$buildAll(kotlin.String, org.gradle.api.Project)/modelName">modelName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.provider.model.ToolingModelBuilder$buildAll(kotlin.String, org.gradle.api.Project)/project">project</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a></code>
+<p>Creates the model of the given type for the given project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-tooling-model-builder/can-build.html">canBuild</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">canBuild</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.provider.model.ToolingModelBuilder$canBuild(kotlin.String)/modelName">modelName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Indicates whether this builder can construct the given model.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../style.css">
 </HEAD>
 <BODY>
-<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.nativeplatform.test.xctest</a><br/>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="./index.html">org.gradle.nativeplatform.test.xctest</a><br/>
 <br/>
 <h2>Package org.gradle.nativeplatform.test.xctest</h2>
 <h3>Types</h3>
@@ -13,11 +13,38 @@
 <tbody>
 <tr>
 <td>
+<p><a href="-swift-x-c-test-binary/index.html">SwiftXCTestBinary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SwiftXCTestBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.language.swift/-swift-binary/index.html"><span class="identifier">SwiftBinary</span></a><span class="symbol">, </span><a href="../org.gradle.nativeplatform.test/-test-component/index.html"><span class="identifier">TestComponent</span></a></code>
+<p>An test binary built from Swift source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-swift-x-c-test-bundle/index.html">SwiftXCTestBundle</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SwiftXCTestBundle</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-swift-x-c-test-binary/index.html"><span class="identifier">SwiftXCTestBinary</span></a></code>
+<p>An XCTest executable for tests implemented in Swift.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-swift-x-c-test-executable.html">SwiftXCTestExecutable</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SwiftXCTestExecutable</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-swift-x-c-test-binary/index.html"><span class="identifier">SwiftXCTestBinary</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-component-with-executable/index.html"><span class="identifier">ComponentWithExecutable</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-component-with-installation/index.html"><span class="identifier">ComponentWithInstallation</span></a></code>
+<p>An XCTest executable for tests implemented in Swift.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="-swift-x-c-test-suite/index.html">SwiftXCTestSuite</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">SwiftXCTestSuite</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.language.swift/-swift-component/index.html"><span class="identifier">SwiftComponent</span></a></code>
-<p>An XCTest suite, implemented in Swift.</p>
+<code><span class="keyword">interface </span><span class="identifier">SwiftXCTestSuite</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.language.swift/-swift-component/index.html"><span class="identifier">SwiftComponent</span></a><span class="symbol">, </span><a href="../org.gradle.nativeplatform.test/-test-suite-component/index.html"><span class="identifier">TestSuiteComponent</span></a></code>
+<p>A XCTest suite, implemented in Swift.</p>
 </td>
 </tr>
 </tbody>

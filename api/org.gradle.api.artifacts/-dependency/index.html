@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">Dependency</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="./index.html">Dependency</a><br/>
 <br/>
 <h1>Dependency</h1>
 <code><span class="keyword">interface </span><span class="identifier">Dependency</span></code>
@@ -44,7 +44,7 @@
 <p><a href="content-equals.html">contentEquals</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">contentEquals</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Dependency$contentEquals(org.gradle.api.artifacts.Dependency)/dependency">dependency</span><span class="symbol">:</span>&nbsp;<span class="identifier">Dependency</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">contentEquals</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Dependency$contentEquals(org.gradle.api.artifacts.Dependency)/dependency">dependency</span><span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Dependency</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
 <p>Returns whether two dependencies have identical values for their properties. A dependency is an entity with a key. Therefore dependencies might be equal and yet have different properties.</p>
 </td>
 </tr>
@@ -53,7 +53,7 @@
 <p><a href="copy.html">copy</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Dependency</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Dependency</span></a></code>
 <p>Creates and returns a new dependency with the property values of this one.</p>
 </td>
 </tr>
@@ -91,22 +91,20 @@
 <tbody>
 <tr>
 <td>
-<p><a href="../-module-dependency/index.html">ModuleDependency</a></p>
+<p><a href="../-dependency-constraint/index.html">DependencyConstraint</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ModuleDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Dependency</span></code>
-<p>A <code>ModuleDependency</code> is a org.gradle.api.artifacts.Dependency on a module outside the current project. 
-<p> For examples on configuring the exclude rules please refer to <code><a href="#">#exclude(java.util.Map)</a></code>.</p>
-</p>
+<code><span class="keyword">interface </span><span class="identifier">DependencyConstraint</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Dependency</span></a></code>
+<p>Represents a constraints over all, including transitive, dependencies.</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="../-self-resolving-dependency/index.html">SelfResolvingDependency</a></p>
+<p><a href="../-direct-dependency.html">DirectDependency</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">SelfResolvingDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Dependency</span><span class="symbol">, </span><a href="../../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
-<p>A <code>SelfResolvingDependency</code> is a Dependency which is able to resolve itself, independent of a repository.</p>
+<code><span class="keyword">interface </span><span class="identifier">DirectDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Dependency</span></a></code>
+<p>Implementations of this interface always describe direct dependencies and not constraints may optionally considered as dependency.</p>
 </td>
 </tr>
 </tbody>

@@ -5,11 +5,11 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.swift.tasks</a>&nbsp;/&nbsp;<a href=".">SwiftCompile</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.swift.tasks</a>&nbsp;/&nbsp;<a href="./index.html">SwiftCompile</a><br/>
 <br/>
 <h1>SwiftCompile</h1>
-<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SwiftCompile</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.nativeplatform.tasks/-abstract-native-compile-task/index.html"><span class="identifier">AbstractNativeCompileTask</span></a></code>
-<p>Compiles Swift source files into object files, executables and libraries.</p>
+<code><span class="identifier">@Incubating</span> <span class="identifier">@CacheableTask</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SwiftCompile</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a></code>
+<p>Compiles Swift source files into object files.</p>
 <p><strong>Since</strong><br/>
 4.1</p>
 <h3>Constructors</h3>
@@ -29,35 +29,7 @@
 <tbody>
 <tr>
 <td>
-<p><a href="compile.html">compile</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">compile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.swift.tasks.SwiftCompile$compile(org.gradle.api.tasks.incremental.IncrementalTaskInputs)/inputs">inputs</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks.incremental/-incremental-task-inputs/index.html"><span class="identifier">IncrementalTaskInputs</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
-</tr>
-<tr>
-<td>
-<p><a href="get-module-name.html">getModuleName</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getModuleName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
-</tr>
-<tr>
-<td>
-<p><a href="set-module-name.html">setModuleName</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setModuleName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.swift.tasks.SwiftCompile$setModuleName(kotlin.String)/moduleName">moduleName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setModuleName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.swift.tasks.SwiftCompile$setModuleName(org.gradle.api.provider.Provider((kotlin.String)))/moduleName">moduleName</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Sets the moduleName property through a Provider.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<h3>Inherited Functions</h3>
-<table>
-<tbody>
-<tr>
-<td>
-<p><a href="../../org.gradle.language.nativeplatform.tasks/-abstract-native-compile-task/get-compiler-args.html">getCompilerArgs</a></p>
+<p><a href="get-compiler-args.html">getCompilerArgs</a></p>
 </td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getCompilerArgs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-list-property.html"><span class="identifier">ListProperty</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
@@ -66,16 +38,7 @@
 </tr>
 <tr>
 <td>
-<p><a href="../../org.gradle.language.nativeplatform.tasks/-abstract-native-compile-task/get-includes.html">getIncludes</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getIncludes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code>
-<p>Returns the header directories to be used for compilation.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../../org.gradle.language.nativeplatform.tasks/-abstract-native-compile-task/get-macros.html">getMacros</a></p>
+<p><a href="get-macros.html">getMacros</a></p>
 </td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMacros</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
@@ -84,16 +47,43 @@
 </tr>
 <tr>
 <td>
-<p><a href="../../org.gradle.language.nativeplatform.tasks/-abstract-native-compile-task/get-object-file-dir.html">getObjectFileDir</a></p>
+<p><a href="get-module-file.html">getModuleFile</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getObjectFileDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-directory-var/index.html"><span class="identifier">DirectoryVar</span></a></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getModuleFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-regular-file-property/index.html"><span class="identifier">RegularFileProperty</span></a></code>
+<p>The location to write the Swift module file to.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-module-name.html">getModuleName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getModuleName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-property/index.html"><span class="identifier">Property</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The name of the module to produce.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-modules.html">getModules</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getModules</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code>
+<p>The modules required to compile the source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-object-file-dir.html">getObjectFileDir</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getObjectFileDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-directory-property/index.html"><span class="identifier">DirectoryProperty</span></a></code>
 <p>The directory where object files will be generated.</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="../../org.gradle.language.nativeplatform.tasks/-abstract-native-compile-task/get-source.html">getSource</a></p>
+<p><a href="get-source.html">getSource</a></p>
 </td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSource</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code>
@@ -102,16 +92,16 @@
 </tr>
 <tr>
 <td>
-<p><a href="../../org.gradle.language.nativeplatform.tasks/-abstract-native-compile-task/get-target-platform.html">getTargetPlatform</a></p>
+<p><a href="get-target-platform.html">getTargetPlatform</a></p>
 </td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a></code>
-<p>The platform being targeted.</p>
+<p>The platform being compiled for.</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="../../org.gradle.language.nativeplatform.tasks/-abstract-native-compile-task/get-tool-chain.html">getToolChain</a></p>
+<p><a href="get-tool-chain.html">getToolChain</a></p>
 </td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getToolChain</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a></code>
@@ -120,16 +110,7 @@
 </tr>
 <tr>
 <td>
-<p><a href="../../org.gradle.language.nativeplatform.tasks/-abstract-native-compile-task/includes.html">includes</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">includes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.nativeplatform.tasks.AbstractNativeCompileTask$includes(kotlin.Any)/includeRoots">includeRoots</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Add directories where the compiler should search for header files.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../../org.gradle.language.nativeplatform.tasks/-abstract-native-compile-task/is-debuggable.html">isDebuggable</a></p>
+<p><a href="is-debuggable.html">isDebuggable</a></p>
 </td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isDebuggable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
@@ -138,7 +119,7 @@
 </tr>
 <tr>
 <td>
-<p><a href="../../org.gradle.language.nativeplatform.tasks/-abstract-native-compile-task/is-optimized.html">isOptimized</a></p>
+<p><a href="is-optimized.html">isOptimized</a></p>
 </td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isOptimized</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
@@ -147,66 +128,47 @@
 </tr>
 <tr>
 <td>
-<p><a href="../../org.gradle.language.nativeplatform.tasks/-abstract-native-compile-task/is-position-independent-code.html">isPositionIndependentCode</a></p>
+<p><a href="set-debuggable.html">setDebuggable</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isPositionIndependentCode</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
-<p>Should the compiler generate position independent code?</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../../org.gradle.language.nativeplatform.tasks/-abstract-native-compile-task/set-debuggable.html">setDebuggable</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDebuggable</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.nativeplatform.tasks.AbstractNativeCompileTask$setDebuggable(kotlin.Boolean)/debug">debug</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDebuggable</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.swift.tasks.SwiftCompile$setDebuggable(kotlin.Boolean)/debug">debug</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Should the compiler generate debuggable code?</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="../../org.gradle.language.nativeplatform.tasks/-abstract-native-compile-task/set-macros.html">setMacros</a></p>
+<p><a href="set-macros.html">setMacros</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMacros</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.nativeplatform.tasks.AbstractNativeCompileTask$setMacros(kotlin.collections.MutableMap((kotlin.String, )))/macros">macros</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMacros</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.swift.tasks.SwiftCompile$setMacros(kotlin.collections.MutableMap((kotlin.String, )))/macros">macros</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the macros that should be defined when compiling.</p>
+</td>
 </tr>
 <tr>
 <td>
-<p><a href="../../org.gradle.language.nativeplatform.tasks/-abstract-native-compile-task/set-optimized.html">setOptimized</a></p>
+<p><a href="set-optimized.html">setOptimized</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOptimized</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.nativeplatform.tasks.AbstractNativeCompileTask$setOptimized(kotlin.Boolean)/optimize">optimize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOptimized</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.swift.tasks.SwiftCompile$setOptimized(kotlin.Boolean)/optimize">optimize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Should the compiler generate optimized code?</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="../../org.gradle.language.nativeplatform.tasks/-abstract-native-compile-task/set-position-independent-code.html">setPositionIndependentCode</a></p>
+<p><a href="set-target-platform.html">setTargetPlatform</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setPositionIndependentCode</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.nativeplatform.tasks.AbstractNativeCompileTask$setPositionIndependentCode(kotlin.Boolean)/positionIndependentCode">positionIndependentCode</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTargetPlatform</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.swift.tasks.SwiftCompile$setTargetPlatform(org.gradle.nativeplatform.platform.NativePlatform)/targetPlatform">targetPlatform</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the platform being compiled for.</p>
+</td>
 </tr>
 <tr>
 <td>
-<p><a href="../../org.gradle.language.nativeplatform.tasks/-abstract-native-compile-task/set-target-platform.html">setTargetPlatform</a></p>
+<p><a href="set-tool-chain.html">setToolChain</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTargetPlatform</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.nativeplatform.tasks.AbstractNativeCompileTask$setTargetPlatform(org.gradle.nativeplatform.platform.NativePlatform)/targetPlatform">targetPlatform</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
-</tr>
-<tr>
-<td>
-<p><a href="../../org.gradle.language.nativeplatform.tasks/-abstract-native-compile-task/set-tool-chain.html">setToolChain</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setToolChain</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.nativeplatform.tasks.AbstractNativeCompileTask$setToolChain(org.gradle.nativeplatform.toolchain.NativeToolChain)/toolChain">toolChain</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
-</tr>
-<tr>
-<td>
-<p><a href="../../org.gradle.language.nativeplatform.tasks/-abstract-native-compile-task/source.html">source</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">source</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.nativeplatform.tasks.AbstractNativeCompileTask$source(kotlin.Any)/sourceFiles">sourceFiles</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Adds a set of source files to be compiled. The provided sourceFiles object is evaluated as per <code><a href="#">org.gradle.api.Project#files(Object...)</a></code>.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setToolChain</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.swift.tasks.SwiftCompile$setToolChain(org.gradle.nativeplatform.toolchain.NativeToolChain)/toolChain">toolChain</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the tool chain to use for compilation.</p>
 </td>
 </tr>
 </tbody>

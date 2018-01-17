@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform.tasks</a>&nbsp;/&nbsp;<a href=".">ObjectFilesToBinary</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform.tasks</a>&nbsp;/&nbsp;<a href="./index.html">ObjectFilesToBinary</a><br/>
 <br/>
 <h1>ObjectFilesToBinary</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ObjectFilesToBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a></code>
@@ -285,6 +285,15 @@
 <p>
 <p>Returns the inputs of this task.</p>
 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api/-task/get-local-state.html">getLocalState</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLocalState</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-task-local-state/index.html"><span class="identifier">TaskLocalState</span></a></code>
+<p>Returns the local state of this task.</p>
 </td>
 </tr>
 <tr>
@@ -645,7 +654,7 @@
 <p><a href="../-abstract-link-task/index.html">AbstractLinkTask</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractLinkTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a><span class="symbol">, </span><span class="identifier">ObjectFilesToBinary</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">AbstractLinkTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">ObjectFilesToBinary</span></a></code>
 <p>Base task for linking a native binary from object files and libraries.</p>
 </td>
 </tr>
@@ -654,7 +663,7 @@
 <p><a href="../-create-static-library/index.html">CreateStaticLibrary</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CreateStaticLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a><span class="symbol">, </span><span class="identifier">ObjectFilesToBinary</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">CreateStaticLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">ObjectFilesToBinary</span></a></code>
 <p>Assembles a static library from object files.</p>
 </td>
 </tr>

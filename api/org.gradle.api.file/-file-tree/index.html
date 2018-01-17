@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href=".">FileTree</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href="./index.html">FileTree</a><br/>
 <br/>
 <h1>FileTree</h1>
 <code><span class="keyword">interface </span><span class="identifier">FileTree</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
@@ -22,7 +22,7 @@
 <p><a href="get-as-file-tree.html">getAsFileTree</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAsFileTree</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileTree</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAsFileTree</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">FileTree</span></a></code>
 <p>Returns this.</p>
 </td>
 </tr>
@@ -40,19 +40,19 @@
 <p><a href="matching.html">matching</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$matching(groovy.lang.Closure((kotlin.Any)))/filterConfigClosure">filterConfigClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileTree</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$matching(groovy.lang.Closure((kotlin.Any)))/filterConfigClosure">filterConfigClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">FileTree</span></a></code>
 <p>
 <p>Restricts the contents of this tree to those files matching the given filter. The filtered tree is live, so that any changes to this tree are reflected in the filtered tree.</p>
  
 <p>The given closure is used to configure the filter. A org.gradle.api.tasks.util.PatternFilterable is passed to the closure as its delegate. Only files which match the specified include patterns will be included in the filtered tree. Any files which match the specified exclude patterns will be excluded from the filtered tree.</p>
 </p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$matching(org.gradle.api.Action((org.gradle.api.tasks.util.PatternFilterable)))/filterConfigAction">filterConfigAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileTree</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$matching(org.gradle.api.Action((org.gradle.api.tasks.util.PatternFilterable)))/filterConfigAction">filterConfigAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">FileTree</span></a></code>
 <p>
 <p>Restricts the contents of this tree to those files matching the given filter. The filtered tree is live, so that any changes to this tree are reflected in the filtered tree.</p>
  
 <p>The given action is used to configure the filter. A org.gradle.api.tasks.util.PatternFilterable is passed to the action. Only files which match the specified include patterns will be included in the filtered tree. Any files which match the specified exclude patterns will be excluded from the filtered tree.</p>
 </p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$matching(org.gradle.api.tasks.util.PatternFilterable)/patterns">patterns</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileTree</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$matching(org.gradle.api.tasks.util.PatternFilterable)/patterns">patterns</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">FileTree</span></a></code>
 <p>
 <p>Restricts the contents of this tree to those files matching the given filter. The filtered tree is live, so that any changes to this tree are reflected in the filtered tree.</p>
  
@@ -65,7 +65,7 @@
 <p><a href="plus.html">plus</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$plus(org.gradle.api.file.FileTree)/fileTree">fileTree</span><span class="symbol">:</span>&nbsp;<span class="identifier">FileTree</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileTree</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$plus(org.gradle.api.file.FileTree)/fileTree">fileTree</span><span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">FileTree</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">FileTree</span></a></code>
 <p>Returns a <code>FileTree</code> which contains the union of this tree and the given tree. The returned tree is live, so that changes to either this tree or the other source tree are reflected in the returned tree.</p>
 </td>
 </tr>
@@ -74,11 +74,11 @@
 <p><a href="visit.html">visit</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">visit</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$visit(org.gradle.api.file.FileVisitor)/visitor">visitor</span><span class="symbol">:</span>&nbsp;<a href="../-file-visitor/index.html"><span class="identifier">FileVisitor</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileTree</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">visit</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$visit(org.gradle.api.file.FileVisitor)/visitor">visitor</span><span class="symbol">:</span>&nbsp;<a href="../-file-visitor/index.html"><span class="identifier">FileVisitor</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">FileTree</span></a></code>
 <p>Visits the files and directories in this file tree. Files are visited in depth-first prefix order, so that a directory is visited before its children.</p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">visit</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$visit(groovy.lang.Closure((kotlin.Any)))/visitor">visitor</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileTree</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">visit</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$visit(groovy.lang.Closure((kotlin.Any)))/visitor">visitor</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">FileTree</span></a></code>
 <p>Visits the files and directories in this file tree. Files are visited in depth-first prefix order, so that a directory is visited before its children. The file/directory to be visited is passed to the given closure as a</p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">visit</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$visit(org.gradle.api.Action((org.gradle.api.file.FileVisitDetails)))/visitor">visitor</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-file-visit-details/index.html"><span class="identifier">FileVisitDetails</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileTree</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">visit</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileTree$visit(org.gradle.api.Action((org.gradle.api.file.FileVisitDetails)))/visitor">visitor</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-file-visit-details/index.html"><span class="identifier">FileVisitDetails</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">FileTree</span></a></code>
 <p>Visits the files and directories in this file tree. Files are visited in depth-first prefix order, so that a directory is visited before its children. The file/directory to be visited is passed to the given action as a</p>
 </td>
 </tr>
@@ -224,7 +224,7 @@
 <p><a href="../-configurable-file-tree/index.html">ConfigurableFileTree</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ConfigurableFileTree</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">FileTree</span><span class="symbol">, </span><a href="../-directory-tree/index.html"><span class="identifier">DirectoryTree</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">, </span><a href="../../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">ConfigurableFileTree</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">FileTree</span></a><span class="symbol">, </span><a href="../-directory-tree/index.html"><span class="identifier">DirectoryTree</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">, </span><a href="../../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
 <p>
 <p>A FileTree with a single base directory, which can be configured and modified.</p>
  
@@ -237,7 +237,7 @@
 <p><a href="../-source-directory-set/index.html">SourceDirectorySet</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">SourceDirectorySet</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">FileTree</span><span class="symbol">, </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">, </span><a href="../../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a><span class="symbol">, </span><a href="../../org.gradle.api/-describable/index.html"><span class="identifier">Describable</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">SourceDirectorySet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">FileTree</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">, </span><a href="../../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a><span class="symbol">, </span><a href="../../org.gradle.api/-describable/index.html"><span class="identifier">Describable</span></a></code>
 <p>
 <p>A <code>SourceDirectorySet</code> represents a set of source files composed from a set of source directories, along with associated include and exclude patterns.</p>
  

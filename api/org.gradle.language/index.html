@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>org.gradle.language - api</title>
+<link rel="stylesheet" href="../../style.css">
+</HEAD>
+<BODY>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="./index.html">org.gradle.language</a><br/>
+<br/>
+<h2>Package org.gradle.language</h2>
+<h3>Types</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-binary-collection/index.html">BinaryCollection</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BinaryCollection</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.component/-software-component.html"><span class="identifier">SoftwareComponent</span></a><span class="symbol">&gt;</span></code>
+<p>A collection of binaries that are created and configured as they are required. 
+<p>Each element in this collection passes through several states. The element is created and becomes 'known'. The element is passed to any actions registered using <code><a href="#">#whenElementKnown(Action)</a></code>. The element is then configured using any actions registered using <code><a href="#">#configureEach(Action)</a></code> and becomes 'finalized'. The element is passed to any actions registered using <code><a href="#">#whenElementFinalized(Action)</a></code>. Elements are created and configured only when required.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-binary-provider/index.html">BinaryProvider</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BinaryProvider</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="-binary-provider/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Represents a binary that is created and configured as required.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-component-with-binaries/index.html">ComponentWithBinaries</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentWithBinaries</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.component/-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
+<p>Represents a component that is composed of one or more binaries.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-component-with-outputs/index.html">ComponentWithOutputs</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentWithOutputs</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.component/-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
+<p>Represents a component with output files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-production-component/index.html">ProductionComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ProductionComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.component/-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
+<p>Represents a component that is the main product of a project.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

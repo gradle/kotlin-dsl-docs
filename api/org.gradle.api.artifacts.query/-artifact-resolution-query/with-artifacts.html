@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.query</a>&nbsp;/&nbsp;<a href="index.html">ArtifactResolutionQuery</a>&nbsp;/&nbsp;<a href=".">withArtifacts</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.query</a>&nbsp;/&nbsp;<a href="index.html">ArtifactResolutionQuery</a>&nbsp;/&nbsp;<a href="./with-artifacts.html">withArtifacts</a><br/>
 <br/>
 <h1>withArtifacts</h1>
 <a name="org.gradle.api.artifacts.query.ArtifactResolutionQuery$withArtifacts(java.lang.Class((org.gradle.api.component.Component)), kotlin.Array((java.lang.Class((org.gradle.api.component.Artifact)))))"></a>
@@ -16,5 +16,15 @@
 <code>componentType</code> - The expected type of the component.</p>
 <p><a name="artifactTypes"></a>
 <code>artifactTypes</code> - The artifacts to retrieve for the queried components.</p>
+<a name="org.gradle.api.artifacts.query.ArtifactResolutionQuery$withArtifacts(java.lang.Class((org.gradle.api.component.Component)), kotlin.collections.MutableCollection((java.lang.Class((org.gradle.api.component.Artifact)))))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withArtifacts</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.query.ArtifactResolutionQuery$withArtifacts(java.lang.Class((org.gradle.api.component.Component)), kotlin.collections.MutableCollection((java.lang.Class((org.gradle.api.component.Artifact)))))/componentType">componentType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.api.component/-component.html"><span class="identifier">Component</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.query.ArtifactResolutionQuery$withArtifacts(java.lang.Class((org.gradle.api.component.Component)), kotlin.collections.MutableCollection((java.lang.Class((org.gradle.api.component.Artifact)))))/artifactTypes">artifactTypes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.api.component/-artifact.html"><span class="identifier">Artifact</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">ArtifactResolutionQuery</span></a></code>
+<p>Defines the type of component that is expected in the result, and the artifacts to retrieve for components of this type. Presently, only a single component type and set of artifacts is permitted.</p>
+<h3>Parameters</h3>
+<p><a name="componentType"></a>
+<code>componentType</code> - The expected type of the component.</p>
+<p><a name="artifactTypes"></a>
+<code>artifactTypes</code> - The artifacts to retrieve for the queried components.</p>
+<p><strong>Since</strong><br/>
+4.5</p>
 </BODY>
 </HTML>

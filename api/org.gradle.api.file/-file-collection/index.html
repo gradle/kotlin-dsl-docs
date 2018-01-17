@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href=".">FileCollection</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href="./index.html">FileCollection</a><br/>
 <br/>
 <h1>FileCollection</h1>
 <code><span class="keyword">interface </span><span class="identifier">FileCollection</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../../org.gradle.api.tasks/-ant-builder-aware/index.html"><span class="identifier">AntBuilderAware</span></a><span class="symbol">, </span><a href="../../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
@@ -36,7 +36,7 @@
 <p><a href="add.html">add</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$add(org.gradle.api.file.FileCollection)/collection">collection</span><span class="symbol">:</span>&nbsp;<span class="identifier">FileCollection</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileCollection</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">add</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$add(org.gradle.api.file.FileCollection)/collection">collection</span><span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">FileCollection</span></a></code>
 <p>
 <p>Adds another collection to this collection. This is an optional operation.</p>
 </p>
@@ -84,13 +84,13 @@
 <p><a href="filter.html">filter</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$filter(groovy.lang.Closure((kotlin.Any)))/filterClosure">filterClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileCollection</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$filter(groovy.lang.Closure((kotlin.Any)))/filterClosure">filterClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">FileCollection</span></a></code>
 <p>
 <p>Restricts the contents of this collection to those files which match the given criteria. The filtered collection is live, so that it reflects any changes to this collection.</p>
  
 <p>The given closure is passed the File as a parameter, and should return a boolean value.</p>
 </p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$filter(org.gradle.api.specs.Spec((java.io.File)))/filterSpec">filterSpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileCollection</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$filter(org.gradle.api.specs.Spec((java.io.File)))/filterSpec">filterSpec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">FileCollection</span></a></code>
 <p>
 <p>Restricts the contents of this collection to those files which match the given criteria. The filtered collection is live, so that it reflects any changes to this collection.</p>
 </p>
@@ -146,7 +146,7 @@
 <p><a href="minus.html">minus</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">minus</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$minus(org.gradle.api.file.FileCollection)/collection">collection</span><span class="symbol">:</span>&nbsp;<span class="identifier">FileCollection</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileCollection</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">minus</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$minus(org.gradle.api.file.FileCollection)/collection">collection</span><span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">FileCollection</span></a></code>
 <p>
 <p>Returns a <code>FileCollection</code> which contains the difference between this collection and the given collection. The returned collection is live, and tracks changes to both source collections.</p>
  
@@ -159,7 +159,7 @@
 <p><a href="plus.html">plus</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$plus(org.gradle.api.file.FileCollection)/collection">collection</span><span class="symbol">:</span>&nbsp;<span class="identifier">FileCollection</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileCollection</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">plus</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.FileCollection$plus(org.gradle.api.file.FileCollection)/collection">collection</span><span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">FileCollection</span></a></code>
 <p>
 <p>Returns a <code>FileCollection</code> which contains the union of this collection and the given collection. The returned collection is live, and tracks changes to both source collections.</p>
  
@@ -172,7 +172,7 @@
 <p><a href="stop-execution-if-empty.html">stopExecutionIfEmpty</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">stopExecutionIfEmpty</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">FileCollection</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">stopExecutionIfEmpty</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">FileCollection</span></a></code>
 <p>Throws a StopExecutionException if this collection is empty.</p>
 </td>
 </tr>
@@ -200,7 +200,7 @@
 <p><a href="../-configurable-file-collection/index.html">ConfigurableFileCollection</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ConfigurableFileCollection</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">FileCollection</span></code>
+<code><span class="keyword">interface </span><span class="identifier">ConfigurableFileCollection</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">FileCollection</span></a></code>
 <p>
 <p>A <code>ConfigurableFileCollection</code> is a mutable <code>FileCollection</code>.</p>
  
@@ -213,7 +213,7 @@
 <p><a href="../../org.gradle.api.artifacts/-configuration/index.html">Configuration</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">Configuration</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">FileCollection</span><span class="symbol">, </span><a href="../../org.gradle.api.attributes/-has-configurable-attributes/index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">Configuration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">FileCollection</span></a><span class="symbol">, </span><a href="../../org.gradle.api.attributes/-has-configurable-attributes/index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span></code>
 <p>A <code>Configuration</code> represents a group of artifacts and their dependencies. Find more information about declaring dependencies to a configuration or about managing configurations in docs for ConfigurationContainer 
 <p> Configuration is an instance of a FileCollection that contains all dependencies (see also <code><a href="../../org.gradle.api.artifacts/-configuration/get-all-dependencies.html">#getAllDependencies()</a></code>) but not artifacts. If you want to refer to the artifacts declared in this configuration please use <code><a href="../../org.gradle.api.artifacts/-configuration/get-artifacts.html">#getArtifacts()</a></code> or <code><a href="../../org.gradle.api.artifacts/-configuration/get-all-artifacts.html">#getAllArtifacts()</a></code>. Read more about declaring artifacts in the configuration in docs for org.gradle.api.artifacts.dsl.ArtifactHandler</p>
 </p>
@@ -224,7 +224,7 @@
 <p><a href="../-file-tree/index.html">FileTree</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">FileTree</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">FileCollection</span></code>
+<code><span class="keyword">interface </span><span class="identifier">FileTree</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">FileCollection</span></a></code>
 <p>
 <p>A <code>FileTree</code> represents a hierarchy of files. It extends FileCollection to add hierarchy query and manipulation methods. You typically use a <code>FileTree</code> to represent files to copy or the contents of an archive.</p>
  
@@ -237,7 +237,7 @@
 <p><a href="../../org.gradle.api.tasks/-source-set-output/index.html">SourceSetOutput</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">SourceSetOutput</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">FileCollection</span></code>
+<code><span class="keyword">interface </span><span class="identifier">SourceSetOutput</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">FileCollection</span></a></code>
 <p>A collection of all output directories (compiled classes, processed resources, etc.) - notice that SourceSetOutput extends FileCollection. 
 <p> Provides output information of the source set. Allows configuring the default output dirs and specify additional output dirs. </p>
 <pre><code> apply plugin: 'java' sourceSets { main { //if you truly want to override the defaults: output.resourcesDir = file('out/bin') // Compiled Java classes should use this directory java.outputDir = file('out/bin') } } </code></pre> Working with generated resources. 

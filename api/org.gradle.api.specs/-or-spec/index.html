@@ -5,10 +5,10 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.specs</a>&nbsp;/&nbsp;<a href=".">OrSpec</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.specs</a>&nbsp;/&nbsp;<a href="./index.html">OrSpec</a><br/>
 <br/>
 <h1>OrSpec</h1>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">OrSpec</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-composite-spec/index.html"><span class="identifier">CompositeSpec</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">OrSpec</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-composite-spec/index.html"><span class="identifier">CompositeSpec</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
 <p>A CompositeSpec which requires any one of its specs to be true in order to evaluate to true. Uses lazy evaluation.</p>
 <h3>Parameters</h3>
 <p><a name="&lt;T&gt;"></a>
@@ -22,8 +22,8 @@
 </td>
 <td>
 <code><span class="identifier">OrSpec</span><span class="symbol">(</span><span class="symbol">)</span></code><br/>
-<code><span class="identifier">OrSpec</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.specs.OrSpec$<init>(kotlin.Array((org.gradle.api.specs.Spec((org.gradle.api.specs.OrSpec.T)))))/specs">specs</span><span class="symbol">:</span>&nbsp;<a href="../-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span></code><br/>
-<code><span class="identifier">OrSpec</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.specs.OrSpec$<init>(kotlin.collections.MutableIterable((org.gradle.api.specs.Spec((org.gradle.api.specs.OrSpec.T)))))/specs">specs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="../-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span></code></td>
+<code><span class="identifier">OrSpec</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.specs.OrSpec$<init>(kotlin.Array((org.gradle.api.specs.Spec((org.gradle.api.specs.OrSpec.T)))))/specs">specs</span><span class="symbol">:</span>&nbsp;<a href="../-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span></code><br/>
+<code><span class="identifier">OrSpec</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.specs.OrSpec$<init>(kotlin.collections.MutableIterable((org.gradle.api.specs.Spec((org.gradle.api.specs.OrSpec.T)))))/specs">specs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="../-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">)</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -35,7 +35,7 @@
 <p><a href="-e-m-p-t-y.html">EMPTY</a></p>
 </td>
 <td>
-<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">EMPTY</span><span class="symbol">: </span><span class="identifier">OrSpec</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span></code></td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">EMPTY</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">OrSpec</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -47,7 +47,7 @@
 <p><a href="empty.html">empty</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">static</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">empty</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">OrSpec</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+<code><span class="keyword">open</span> <span class="keyword">static</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">empty</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">OrSpec</span></a><span class="symbol">&lt;</span><a href="empty.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code></td>
 </tr>
 <tr>
 <td>
@@ -61,14 +61,14 @@
 <p><a href="is-satisfied-by.html">isSatisfiedBy</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isSatisfiedBy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.specs.OrSpec$isSatisfiedBy(org.gradle.api.specs.OrSpec.T)/object">object</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isSatisfiedBy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.specs.OrSpec$isSatisfiedBy(org.gradle.api.specs.OrSpec.T)/object">object</span><span class="symbol">:</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
 </tr>
 <tr>
 <td>
 <p><a href="or.html">or</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">or</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.specs.OrSpec$or(kotlin.Array((org.gradle.api.specs.Spec((org.gradle.api.specs.OrSpec.T)))))/specs">specs</span><span class="symbol">:</span>&nbsp;<a href="../-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">OrSpec</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">or</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.specs.OrSpec$or(kotlin.Array((org.gradle.api.specs.Spec((org.gradle.api.specs.OrSpec.T)))))/specs">specs</span><span class="symbol">:</span>&nbsp;<a href="../-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">OrSpec</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -87,7 +87,7 @@
 <p><a href="../-composite-spec/get-specs.html">getSpecs</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSpecs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSpecs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-composite-spec/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code></td>
 </tr>
 <tr>
 <td>

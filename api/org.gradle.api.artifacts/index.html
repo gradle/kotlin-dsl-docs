@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../style.css">
 </HEAD>
 <BODY>
-<a href="../index.html">api</a>&nbsp;/&nbsp;<a href=".">org.gradle.api.artifacts</a><br/>
+<a href="../index.html">api</a>&nbsp;/&nbsp;<a href="./index.html">org.gradle.api.artifacts</a><br/>
 <br/>
 <h2>Package org.gradle.api.artifacts</h2>
 <h3>Types</h3>
@@ -69,7 +69,7 @@
 <p><a href="-component-metadata/index.html">ComponentMetadata</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ComponentMetadata</span></code>
+<code><span class="keyword">interface </span><span class="identifier">ComponentMetadata</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.attributes/-has-attributes/index.html"><span class="identifier">HasAttributes</span></a></code>
 <p>Provides a read-only view of a resolved component's metadata, which typically originates from a component descriptor (Ivy file, Maven POM).</p>
 </td>
 </tr>
@@ -87,7 +87,7 @@
 <p><a href="-component-metadata-details/index.html">ComponentMetadataDetails</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ComponentMetadataDetails</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-component-metadata/index.html"><span class="identifier">ComponentMetadata</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">ComponentMetadataDetails</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-component-metadata/index.html"><span class="identifier">ComponentMetadata</span></a><span class="symbol">, </span><a href="../org.gradle.api.attributes/-has-configurable-attributes/index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="-component-metadata-details/index.html"><span class="identifier">ComponentMetadataDetails</span></a><span class="symbol">&gt;</span></code>
 <p>Describes a resolved component's metadata, which typically originates from a component descriptor (Ivy file, Maven POM). Some parts of the metadata can be changed via metadata rules (see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
 </td>
 </tr>
@@ -206,6 +206,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="-dependencies-metadata/index.html">DependenciesMetadata</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DependenciesMetadata</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependency-metadata/index.html"><span class="identifier">DependencyMetadata</span></a><span class="symbol">&lt;</span><a href="-dependency-metadata/index.html"><span class="identifier">DependencyMetadata</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="-dependencies-metadata/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Describes metadata about a dependency - direct dependencies or dependency constraints - declared in a resolved component's metadata.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="-dependency/index.html">Dependency</a></p>
 </td>
 <td>
@@ -222,6 +231,42 @@
 <p>
 <p>An <code>Artifact</code> represents an artifact included in a org.gradle.api.artifacts.Dependency.</p>
  An artifact is an (immutable) value object.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency-constraint/index.html">DependencyConstraint</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DependencyConstraint</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependency/index.html"><span class="identifier">Dependency</span></a></code>
+<p>Represents a constraints over all, including transitive, dependencies.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency-constraint-metadata.html">DependencyConstraintMetadata</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DependencyConstraintMetadata</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependency-metadata/index.html"><span class="identifier">DependencyMetadata</span></a><span class="symbol">&lt;</span><a href="-dependency-constraint-metadata.html"><span class="identifier">DependencyConstraintMetadata</span></a><span class="symbol">&gt;</span></code>
+<p>Describes a dependency constraint declared in a resolved component's metadata, which typically originates from a component descriptor (Gradle metadata file). This interface can be used to adjust a dependency constraint's properties via metadata rules (see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency-constraints-metadata.html">DependencyConstraintsMetadata</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DependencyConstraintsMetadata</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependencies-metadata/index.html"><span class="identifier">DependenciesMetadata</span></a><span class="symbol">&lt;</span><a href="-dependency-constraint-metadata.html"><span class="identifier">DependencyConstraintMetadata</span></a><span class="symbol">&gt;</span></code>
+<p>Describes the dependency constraints of a variant declared in a resolved component's metadata, which typically originate from a component descriptor (Gradle metadata file). This interface can be used to adjust the dependencies of a published component via metadata rules (see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency-metadata/index.html">DependencyMetadata</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DependencyMetadata</span><span class="symbol">&lt;</span><span class="identifier">SELF</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependency-metadata/index.html"><span class="identifier">DependencyMetadata</span></a><span class="symbol">&lt;</span><a href="-dependency-metadata/index.html"><span class="identifier">DependencyMetadata</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span></code>
+<p>Describes a metadata about a dependency - direct dependency or dependency constraint - declared in a resolved component's metadata.</p>
 </td>
 </tr>
 <tr>
@@ -267,6 +312,33 @@
 <td>
 <code><span class="keyword">interface </span><span class="identifier">DependencySubstitutions</span></code>
 <p>Allows replacing dependencies with other dependencies.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-direct-dependencies-metadata.html">DirectDependenciesMetadata</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DirectDependenciesMetadata</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependencies-metadata/index.html"><span class="identifier">DependenciesMetadata</span></a><span class="symbol">&lt;</span><a href="-direct-dependency-metadata.html"><span class="identifier">DirectDependencyMetadata</span></a><span class="symbol">&gt;</span></code>
+<p>Describes the dependencies of a variant declared in a resolved component's metadata, which typically originate from a component descriptor (Gradle metadata file, Ivy file, Maven POM). This interface can be used to adjust the dependencies of a published component via metadata rules (see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-direct-dependency.html">DirectDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DirectDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependency/index.html"><span class="identifier">Dependency</span></a></code>
+<p>Implementations of this interface always describe direct dependencies and not constraints may optionally considered as dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-direct-dependency-metadata.html">DirectDependencyMetadata</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DirectDependencyMetadata</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependency-metadata/index.html"><span class="identifier">DependencyMetadata</span></a><span class="symbol">&lt;</span><a href="-direct-dependency-metadata.html"><span class="identifier">DirectDependencyMetadata</span></a><span class="symbol">&gt;</span></code>
+<p>Describes a dependency declared in a resolved component's metadata, which typically originates from a component descriptor (Gradle metadata file, Ivy file, Maven POM). This interface can be used to adjust a dependency's properties via metadata rules (see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
 </td>
 </tr>
 <tr>
@@ -334,7 +406,7 @@
 <p><a href="-module-dependency/index.html">ModuleDependency</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ModuleDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependency/index.html"><span class="identifier">Dependency</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">ModuleDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-direct-dependency.html"><span class="identifier">DirectDependency</span></a></code>
 <p>A <code>ModuleDependency</code> is a org.gradle.api.artifacts.Dependency on a module outside the current project. 
 <p> For examples on configuring the exclude rules please refer to <code><a href="#">#exclude(java.util.Map)</a></code>.</p>
 </p>
@@ -364,7 +436,16 @@
 </td>
 <td>
 <code><span class="keyword">interface </span><span class="identifier">ModuleVersionSelector</span></code>
-<p>Selects a module version</p>
+<p>Selects a module version. If you need to change this interface, you're probably doing it wrong: it is superceded by org.gradle.api.artifacts.component.ModuleComponentSelector, so check this first, and only add methods here if it's for bridging.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-mutable-version-constraint/index.html">MutableVersionConstraint</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MutableVersionConstraint</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-version-constraint/index.html"><span class="identifier">VersionConstraint</span></a></code>
+<p>A configurable version constraint. This is exposed to the build author, so that one can express more constraints on a version,</p>
 </td>
 </tr>
 <tr>
@@ -476,7 +557,7 @@
 <p><a href="-self-resolving-dependency/index.html">SelfResolvingDependency</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">SelfResolvingDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">, </span><a href="../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">SelfResolvingDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-direct-dependency.html"><span class="identifier">DirectDependency</span></a><span class="symbol">, </span><a href="../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
 <p>A <code>SelfResolvingDependency</code> is a Dependency which is able to resolve itself, independent of a repository.</p>
 </td>
 </tr>
@@ -487,6 +568,24 @@
 <td>
 <code><span class="keyword">interface </span><span class="identifier">UnresolvedDependency</span></code>
 <p>Unsuccessfully resolved dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-variant-metadata/index.html">VariantMetadata</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VariantMetadata</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.attributes/-has-configurable-attributes/index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="-variant-metadata/index.html"><span class="identifier">VariantMetadata</span></a><span class="symbol">&gt;</span></code>
+<p>Represents the metadata of one variant of a component, see <code><a href="#">ComponentMetadataDetails#withVariant(String, Action)</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-version-constraint/index.html">VersionConstraint</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VersionConstraint</span></code>
+<p>Represents a constrained version. By default, when a dependency has a version number, it is assumed that the version can be upgraded during conflict resolution (typically, version 1.15 can be upgraded to 1.16). However in some cases we don't want this behavior. This class represents the base spec of module constraints.</p>
 </td>
 </tr>
 </tbody>

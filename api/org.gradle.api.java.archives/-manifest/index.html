@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.java.archives</a>&nbsp;/&nbsp;<a href=".">Manifest</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.java.archives</a>&nbsp;/&nbsp;<a href="./index.html">Manifest</a><br/>
 <br/>
 <h1>Manifest</h1>
 <code><span class="keyword">interface </span><span class="identifier">Manifest</span></code>
@@ -18,9 +18,9 @@
 <p><a href="attributes.html">attributes</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">attributes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.java.archives.Manifest$attributes(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/attributes">attributes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Manifest</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">attributes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.java.archives.Manifest$attributes(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)))/attributes">attributes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Manifest</span></a></code>
 <p>Adds content to the main attributes of the manifest.</p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">attributes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.java.archives.Manifest$attributes(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), kotlin.String)/attributes">attributes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.java.archives.Manifest$attributes(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), kotlin.String)/sectionName">sectionName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Manifest</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">attributes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.java.archives.Manifest$attributes(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), kotlin.String)/attributes">attributes</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.java.archives.Manifest$attributes(kotlin.collections.MutableMap((kotlin.String, kotlin.Any)), kotlin.String)/sectionName">sectionName</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Manifest</span></a></code>
 <p>Adds content to the given section of the manifest.</p>
 </td>
 </tr>
@@ -29,9 +29,9 @@
 <p><a href="from.html">from</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.java.archives.Manifest$from(kotlin.Array((kotlin.Any)))/mergePath">mergePath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Manifest</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.java.archives.Manifest$from(kotlin.Array((kotlin.Any)))/mergePath">mergePath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Manifest</span></a></code>
 <p>Specifies other manifests to be merged into this manifest. A merge path can either be another instance of org.gradle.api.java.archives.Manifest or a file path as interpreted by <code><a href="#">org.gradle.api.Project#files(Object...)</a></code>. The merge is not happening instantaneously. It happens either before writing or when <code><a href="get-effective-manifest.html">#getEffectiveManifest()</a></code> is called.</p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.java.archives.Manifest$from(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/mergePath">mergePath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.java.archives.Manifest$from(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Manifest</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">from</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.java.archives.Manifest$from(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/mergePath">mergePath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.java.archives.Manifest$from(kotlin.Any, groovy.lang.Closure((kotlin.Any)))/closure">closure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Manifest</span></a></code>
 <p>Specifies other manifests to be merged into this manifest. A merge path is interpreted as described in <code><a href="#">#from(Object...)</a></code>. The merge is not happening instantaneously. It happens either before writing or when <code><a href="get-effective-manifest.html">#getEffectiveManifest()</a></code> is called. The closure configures the underlying org.gradle.api.java.archives.ManifestMergeSpec.</p>
 </td>
 </tr>
@@ -49,7 +49,7 @@
 <p><a href="get-effective-manifest.html">getEffectiveManifest</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getEffectiveManifest</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Manifest</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getEffectiveManifest</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Manifest</span></a></code>
 <p>Returns a new manifest instance where all the attribute values are expanded (e.g. their toString method is called). The returned manifest also contains all the attributes of the to be merged manifests specified in <code><a href="#">#from(Object...)</a></code>.</p>
 </td>
 </tr>
@@ -67,7 +67,7 @@
 <p><a href="write-to.html">writeTo</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">writeTo</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.java.archives.Manifest$writeTo(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Manifest</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">writeTo</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.java.archives.Manifest$writeTo(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">Manifest</span></a></code>
 <p>Writes the manifest into a file. The path's are resolved as defined by <code><a href="#">org.gradle.api.Project#files(Object...)</a></code> The manifest will be encoded using the character set defined by the <code><a href="../../org.gradle.jvm.tasks/-jar/get-manifest-content-charset.html">org.gradle.jvm.tasks.Jar#getManifestContentCharset()</a></code> property.</p>
 </td>
 </tr>
@@ -81,7 +81,7 @@
 <p><a href="../../org.gradle.api.plugins.osgi/-osgi-manifest/index.html">OsgiManifest</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">OsgiManifest</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Manifest</span></code>
+<code><span class="keyword">interface </span><span class="identifier">OsgiManifest</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Manifest</span></a></code>
 <p>Represents a manifest file for a JAR containing an OSGi bundle.</p>
 </td>
 </tr>

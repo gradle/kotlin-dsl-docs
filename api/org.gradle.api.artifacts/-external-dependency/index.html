@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href=".">ExternalDependency</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="./index.html">ExternalDependency</a><br/>
 <br/>
 <h1>ExternalDependency</h1>
 <code><span class="keyword">interface </span><span class="identifier">ExternalDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-module-dependency/index.html"><span class="identifier">ModuleDependency</span></a><span class="symbol">, </span><a href="../-module-version-selector/index.html"><span class="identifier">ModuleVersionSelector</span></a></code>
@@ -20,7 +20,7 @@
 <p><a href="copy.html">copy</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ExternalDependency</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">ExternalDependency</span></a></code>
 <p>{@inheritDoc}</p>
 </td>
 </tr>
@@ -38,8 +38,17 @@
 <p><a href="set-force.html">setForce</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setForce</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ExternalDependency$setForce(kotlin.Boolean)/force">force</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">ExternalDependency</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setForce</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ExternalDependency$setForce(kotlin.Boolean)/force">force</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="./index.html"><span class="identifier">ExternalDependency</span></a></code>
 <p>Sets whether or not the version of this dependency should be enforced in the case of version conflicts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="version.html">version</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">version</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ExternalDependency$version(org.gradle.api.Action((org.gradle.api.artifacts.MutableVersionConstraint)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-mutable-version-constraint/index.html"><span class="identifier">MutableVersionConstraint</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the version constraint for this dependency.</p>
 </td>
 </tr>
 </tbody>
@@ -120,6 +129,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="../-module-version-selector/get-version-constraint.html">getVersionConstraint</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getVersionConstraint</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-version-constraint/index.html"><span class="identifier">VersionConstraint</span></a></code>
+<p>Returns the version constraint to be used during selection.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="../-module-dependency/is-transitive.html">isTransitive</a></p>
 </td>
 <td>
@@ -164,7 +182,7 @@
 <p><a href="../-external-module-dependency/index.html">ExternalModuleDependency</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ExternalModuleDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ExternalDependency</span></code>
+<code><span class="keyword">interface </span><span class="identifier">ExternalModuleDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ExternalDependency</span></a></code>
 <p>
 <p>A <code>ModuleDependency</code> is a Dependency on a module outside the current project hierarchy.</p>
 </p>

@@ -1,0 +1,152 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>DirectoryProperty - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href="./index.html">DirectoryProperty</a><br/>
+<br/>
+<h1>DirectoryProperty</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">DirectoryProperty</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../-directory/index.html"><span class="identifier">Directory</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../../org.gradle.api.provider/-property/index.html"><span class="identifier">Property</span></a><span class="symbol">&lt;</span><a href="../-directory/index.html"><span class="identifier">Directory</span></a><span class="symbol">&gt;</span></code>
+<p>Represents some configurable directory location, whose value is mutable and is not necessarily currently known until later. 
+<p> <strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created using the <code><a href="../-project-layout/directory-property.html">ProjectLayout#directoryProperty()</a></code> method.</p>
+</p>
+<p><strong>Since</strong><br/>
+4.3</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="dir.html">dir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">dir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.DirectoryProperty$dir(kotlin.String)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../-directory/index.html"><span class="identifier">Directory</span></a><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">dir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.DirectoryProperty$dir(org.gradle.api.provider.Provider((kotlin.CharSequence)))/path">path</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../-directory/index.html"><span class="identifier">Directory</span></a><span class="symbol">&gt;</span></code>
+<p>Returns a Directory whose value is the given path resolved relative to the value of this directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="file.html">file</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.DirectoryProperty$file(kotlin.String)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../-regular-file/index.html"><span class="identifier">RegularFile</span></a><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.DirectoryProperty$file(org.gradle.api.provider.Provider((kotlin.CharSequence)))/path">path</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html"><span class="identifier">CharSequence</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../-regular-file/index.html"><span class="identifier">RegularFile</span></a><span class="symbol">&gt;</span></code>
+<p>Returns a RegularFile whose value is the given path resolved relative to the value of this directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-as-file.html">getAsFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAsFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>Views the location of this directory as a File.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-as-file-tree.html">getAsFileTree</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAsFileTree</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<p>Returns a FileTree that allows the files and directories contained in this directory to be queried.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set.html">set</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">set</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.file.DirectoryProperty$set(java.io.File)/dir">dir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the location of this directory.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.provider/-provider/get.html">get</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html#T"><span class="identifier">T</span></a></code>
+<p>Returns the value of this provider if it has a value present, otherwise throws <code>java.lang.IllegalStateException</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.provider/-provider/get-or-else.html">getOrElse</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOrElse</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.Provider$getOrElse(org.gradle.api.provider.Provider.T)/defaultValue">defaultValue</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/index.html#T"><span class="identifier">T</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html#T"><span class="identifier">T</span></a></code>
+<p>Returns the value of this provider if it has a value present. Returns the given default value if a value is not available.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.provider/-provider/get-or-null.html">getOrNull</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOrNull</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html#T"><span class="identifier">T</span></a></code>
+<p>Returns the value of this provider if it has a value present. Returns <code>null</code> a value is not available.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.provider/-provider/is-present.html">isPresent</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isPresent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns <code>true</code> if there is a value present, otherwise <code>false</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.provider/-provider/map.html">map</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">map</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.Provider$map(org.gradle.api.Transformer((org.gradle.api.provider.Provider.map.S, org.gradle.api.provider.Provider.T)))/transformer">transformer</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-transformer/index.html"><span class="identifier">Transformer</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/map.html#S"><span class="identifier">S</span></a><span class="symbol">,</span>&nbsp;<span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.provider/-provider/map.html#S"><span class="identifier">S</span></a><span class="symbol">&gt;</span></code>
+<p>Returns a new Provider whose value is the value of this provider transformed using the given function. 
+<p>The new provider will be live, so that each time it is queried, it queries this provider and applies the transformation to the result. Whenever this provider has no value, the new provider will also have no value. </p>
+<p>Note that the new provider may cache the result of the transformations and so there is no guarantee that the transformer is called on every query of the new provider. The new provider will apply the transformation lazily, and calculate the value for the new provider when queried.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.provider/-property/set.html">set</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">set</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.Property$set(org.gradle.api.provider.Property.T)/value">value</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.provider/-property/index.html#T"><span class="identifier">T</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the value of the property the given value. 
+<p>This method can also be used to clear the value of the property, by passing <code>null</code> as the value.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">set</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.Property$set(org.gradle.api.provider.Provider((org.gradle.api.provider.Property.T)))/provider">provider</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.api.provider/-property/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the property to have the same value of the given provider. This property will track the value of the provider and query its value each time the value of the property is queried. When the provider has no value, this property will also have no value.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-directory-var.html">DirectoryVar</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DirectoryVar</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">DirectoryProperty</span></a><span class="symbol">, </span><a href="../../org.gradle.api.provider/-property-state.html"><span class="identifier">PropertyState</span></a><span class="symbol">&lt;</span><a href="../-directory/index.html"><span class="identifier">Directory</span></a><span class="symbol">&gt;</span></code>
+<p>Represents some configurable directory location, whose value is mutable and is not necessarily currently known until later. 
+<p> <strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created using the <code><a href="../-project-layout/new-directory-var.html">ProjectLayout#newDirectoryVar()</a></code> method.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.attributes</a>&nbsp;/&nbsp;<a href=".">MultipleCandidatesDetails</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.attributes</a>&nbsp;/&nbsp;<a href="./index.html">MultipleCandidatesDetails</a><br/>
 <br/>
 <h1>MultipleCandidatesDetails</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">MultipleCandidatesDetails</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
@@ -23,7 +23,7 @@
 <p><a href="closest-match.html">closestMatch</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">closestMatch</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.attributes.MultipleCandidatesDetails$closestMatch(org.gradle.api.attributes.MultipleCandidatesDetails.T)/candidate">candidate</span><span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">closestMatch</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.attributes.MultipleCandidatesDetails$closestMatch(org.gradle.api.attributes.MultipleCandidatesDetails.T)/candidate">candidate</span><span class="symbol">:</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Calling this method indicates that the candidate is the closest match. It is allowed to call this method several times with different values, in which case it indicates that multiple candidates are equally compatible.</p>
 </td>
 </tr>
@@ -32,7 +32,7 @@
 <p><a href="get-candidate-values.html">getCandidateValues</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCandidateValues</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCandidateValues</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
 <p>A set of candidate values.</p>
 </td>
 </tr>
@@ -41,7 +41,7 @@
 <p><a href="get-consumer-value.html">getConsumerValue</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getConsumerValue</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getConsumerValue</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html#T"><span class="identifier">T</span></a></code>
 <p>Returns the value of the attribute specified by the consumer.</p>
 </td>
 </tr>

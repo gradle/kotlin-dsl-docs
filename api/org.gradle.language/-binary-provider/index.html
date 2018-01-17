@@ -1,0 +1,86 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BinaryProvider - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language</a>&nbsp;/&nbsp;<a href="./index.html">BinaryProvider</a><br/>
+<br/>
+<h1>BinaryProvider</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">BinaryProvider</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Represents a binary that is created and configured as required.</p>
+<h3>Parameters</h3>
+<p><a name="&lt;T&gt;"></a>
+<code><T></code> - The type of binary.</p>
+<p><strong>Since</strong><br/>
+4.5</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="configure.html">configure</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">configure</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.BinaryProvider$configure(org.gradle.api.Action((org.gradle.language.BinaryProvider.T)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Registers an action to execute to configure the binary. The action is executed when the element is required.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.provider/-provider/get.html">get</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">get</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html#T"><span class="identifier">T</span></a></code>
+<p>Returns the value of this provider if it has a value present, otherwise throws <code>java.lang.IllegalStateException</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.provider/-provider/get-or-else.html">getOrElse</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOrElse</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.Provider$getOrElse(org.gradle.api.provider.Provider.T)/defaultValue">defaultValue</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/index.html#T"><span class="identifier">T</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html#T"><span class="identifier">T</span></a></code>
+<p>Returns the value of this provider if it has a value present. Returns the given default value if a value is not available.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.provider/-provider/get-or-null.html">getOrNull</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOrNull</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html#T"><span class="identifier">T</span></a></code>
+<p>Returns the value of this provider if it has a value present. Returns <code>null</code> a value is not available.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.provider/-provider/is-present.html">isPresent</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isPresent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Returns <code>true</code> if there is a value present, otherwise <code>false</code>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.provider/-provider/map.html">map</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">map</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.provider.Provider$map(org.gradle.api.Transformer((org.gradle.api.provider.Provider.map.S, org.gradle.api.provider.Provider.T)))/transformer">transformer</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-transformer/index.html"><span class="identifier">Transformer</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/map.html#S"><span class="identifier">S</span></a><span class="symbol">,</span>&nbsp;<span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.provider/-provider/map.html#S"><span class="identifier">S</span></a><span class="symbol">&gt;</span></code>
+<p>Returns a new Provider whose value is the value of this provider transformed using the given function. 
+<p>The new provider will be live, so that each time it is queried, it queries this provider and applies the transformation to the result. Whenever this provider has no value, the new provider will also have no value. </p>
+<p>Note that the new provider may cache the result of the transformations and so there is no guarantee that the transformer is called on every query of the new provider. The new provider will apply the transformation lazily, and calculate the value for the new provider when queried.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

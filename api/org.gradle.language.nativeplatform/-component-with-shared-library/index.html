@@ -1,0 +1,85 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ComponentWithSharedLibrary - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.nativeplatform</a>&nbsp;/&nbsp;<a href="./index.html">ComponentWithSharedLibrary</a><br/>
+<br/>
+<h1>ComponentWithSharedLibrary</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ComponentWithSharedLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-component-with-link-file/index.html"><span class="identifier">ComponentWithLinkFile</span></a><span class="symbol">, </span><a href="../-component-with-runtime-file/index.html"><span class="identifier">ComponentWithRuntimeFile</span></a></code>
+<p>Represents a native component that produces a shared library.</p>
+<p><strong>Since</strong><br/>
+4.5</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-link-libraries.html">getLinkLibraries</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLinkLibraries</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the link libraries to use to link the shared library. Includes the link libraries of the component's dependencies.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-link-task.html">getLinkTask</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLinkTask</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.nativeplatform.tasks/-link-shared-library/index.html"><span class="identifier">LinkSharedLibrary</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the link task for the shared library.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-component-with-link-file/get-link-file.html">getLinkFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getLinkFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.file/-regular-file/index.html"><span class="identifier">RegularFile</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the link file of this component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-component-with-runtime-file/get-runtime-file.html">getRuntimeFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRuntimeFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.file/-regular-file/index.html"><span class="identifier">RegularFile</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the runtime file of this component.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.cpp/-cpp-shared-library.html">CppSharedLibrary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CppSharedLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.cpp/-cpp-binary/index.html"><span class="identifier">CppBinary</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">ComponentWithSharedLibrary</span></a><span class="symbol">, </span><a href="../-component-with-link-usage/index.html"><span class="identifier">ComponentWithLinkUsage</span></a><span class="symbol">, </span><a href="../-component-with-runtime-usage/index.html"><span class="identifier">ComponentWithRuntimeUsage</span></a><span class="symbol">, </span><a href="../../org.gradle.language/-component-with-outputs/index.html"><span class="identifier">ComponentWithOutputs</span></a></code>
+<p>A shared library built from C++ source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.swift/-swift-shared-library.html">SwiftSharedLibrary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SwiftSharedLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.swift/-swift-binary/index.html"><span class="identifier">SwiftBinary</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">ComponentWithSharedLibrary</span></a><span class="symbol">, </span><a href="../-component-with-runtime-usage/index.html"><span class="identifier">ComponentWithRuntimeUsage</span></a><span class="symbol">, </span><a href="../-component-with-link-usage/index.html"><span class="identifier">ComponentWithLinkUsage</span></a><span class="symbol">, </span><a href="../../org.gradle.language/-component-with-outputs/index.html"><span class="identifier">ComponentWithOutputs</span></a></code>
+<p>A shared library built from Swift source.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

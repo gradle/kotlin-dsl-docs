@@ -5,10 +5,10 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.reporting</a>&nbsp;/&nbsp;<a href=".">ReportContainer</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.reporting</a>&nbsp;/&nbsp;<a href="./index.html">ReportContainer</a><br/>
 <br/>
 <h1>ReportContainer</h1>
-<code><span class="keyword">interface </span><span class="identifier">ReportContainer</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-report/index.html"><span class="identifier">Report</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">Configurable</span></code>
+<code><span class="keyword">interface </span><span class="identifier">ReportContainer</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-report/index.html"><span class="identifier">Report</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">Configurable</span></code>
 <p>A container of Report objects, that represent potential reports. 
 <p> Things that produce reports (typically tasks) expose a report container that contains Report objects for each possible report that they can produce. Each report object can be configured individually, including whether or not it should be produced by way of its <code><a href="../-report/set-enabled.html">enabled</a></code> property. </p>
 <p> <code>ReportContainer</code> implementations are <strong>immutable</strong> in that standard collection methods such as <code>add()</code>, <code>remove()</code> and <code>clear()</code> will throw an ImmutableViolationException. However, implementations may provide new methods that allow the addition of new report object and/or the removal of existing report objects.</p>
@@ -40,14 +40,14 @@
 <p><a href="get-as-map.html">getAsMap</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAsMap</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/util/SortedMap.html"><span class="identifier">SortedMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAsMap</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/util/SortedMap.html"><span class="identifier">SortedMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code></td>
 </tr>
 <tr>
 <td>
 <p><a href="get-enabled.html">getEnabled</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getEnabled</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getEnabled</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
 <p>Returns an immutable collection of all the enabled Report objects in this container. 
 <p> The returned collection is live. That is, as reports are enabled/disabled the returned collection always reflects the current set of enabled reports.</p>
 </p>
@@ -79,7 +79,7 @@
 <p><a href="get-namer.html">getNamer</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getNamer</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-namer/index.html"><span class="identifier">Namer</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getNamer</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-namer/index.html"><span class="identifier">Namer</span></a><span class="symbol">&lt;</span><a href="index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code></td>
 </tr>
 <tr>
 <td>
@@ -112,7 +112,7 @@
 <p><a href="../../org.gradle.api/-named-domain-object-set/find-all.html">findAll</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">findAll</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectSet$findAll(groovy.lang.Closure((kotlin.Any)))/spec">spec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">findAll</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectSet$findAll(groovy.lang.Closure((kotlin.Any)))/spec">spec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-named-domain-object-set/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
 <p>{@inheritDoc}</p>
 </td>
 </tr>
@@ -121,7 +121,8 @@
 <p><a href="../../org.gradle.api/-named-domain-object-set/matching.html">matching</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectSet$matching(groovy.lang.Closure((kotlin.Any)))/spec">spec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectSet$matching(org.gradle.api.specs.Spec((org.gradle.api.NamedDomainObjectSet.T)))/spec">spec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api/-named-domain-object-set/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-named-domain-object-set/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code><br/>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">matching</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectSet$matching(groovy.lang.Closure((kotlin.Any)))/spec">spec</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-named-domain-object-set/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
 <p>{@inheritDoc}</p>
 </td>
 </tr>
@@ -130,7 +131,7 @@
 <p><a href="../../org.gradle.api/-named-domain-object-set/with-type.html">withType</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">withType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectSet$withType(java.lang.Class((org.gradle.api.NamedDomainObjectSet.withType.S)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><span class="identifier">S</span><span class="symbol">&gt;</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">S</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-named-domain-object-set/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span> <span class="identifier">withType</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectSet$withType(java.lang.Class((org.gradle.api.NamedDomainObjectSet.withType.S)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-named-domain-object-set/with-type.html#S"><span class="identifier">S</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-named-domain-object-set/index.html"><span class="identifier">NamedDomainObjectSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-named-domain-object-set/with-type.html#S"><span class="identifier">S</span></a><span class="symbol">&gt;</span></code>
 <p>{@inheritDoc}</p>
 </td>
 </tr>
@@ -144,7 +145,7 @@
 <p><a href="../-build-dashboard-reports/index.html">BuildDashboardReports</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">BuildDashboardReports</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ReportContainer</span><span class="symbol">&lt;</span><a href="../-report/index.html"><span class="identifier">Report</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">BuildDashboardReports</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ReportContainer</span></a><span class="symbol">&lt;</span><a href="../-report/index.html"><span class="identifier">Report</span></a><span class="symbol">&gt;</span></code>
 <p>The reporting configuration for the GenerateBuildDashboard task.</p>
 </td>
 </tr>
@@ -153,7 +154,7 @@
 <p><a href="../../org.gradle.api.plugins.quality/-checkstyle-reports/index.html">CheckstyleReports</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">CheckstyleReports</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ReportContainer</span><span class="symbol">&lt;</span><a href="../-single-file-report/index.html"><span class="identifier">SingleFileReport</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">CheckstyleReports</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ReportContainer</span></a><span class="symbol">&lt;</span><a href="../-single-file-report/index.html"><span class="identifier">SingleFileReport</span></a><span class="symbol">&gt;</span></code>
 <p>The reporting configuration for the Checkstyle task.</p>
 </td>
 </tr>
@@ -162,7 +163,7 @@
 <p><a href="../../org.gradle.api.plugins.quality/-code-narc-reports/index.html">CodeNarcReports</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">CodeNarcReports</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ReportContainer</span><span class="symbol">&lt;</span><a href="../-single-file-report/index.html"><span class="identifier">SingleFileReport</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">CodeNarcReports</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ReportContainer</span></a><span class="symbol">&lt;</span><a href="../-single-file-report/index.html"><span class="identifier">SingleFileReport</span></a><span class="symbol">&gt;</span></code>
 <p>The reporting configuration for the CodeNarc test.</p>
 </td>
 </tr>
@@ -171,7 +172,7 @@
 <p><a href="../../org.gradle.api.reporting.dependencies/-dependency-report-container/index.html">DependencyReportContainer</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">DependencyReportContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ReportContainer</span><span class="symbol">&lt;</span><a href="../-report/index.html"><span class="identifier">Report</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">DependencyReportContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ReportContainer</span></a><span class="symbol">&lt;</span><a href="../-report/index.html"><span class="identifier">Report</span></a><span class="symbol">&gt;</span></code>
 <p>The set of reports that can be generated by the HtmlDependencyReportTask task type.</p>
 </td>
 </tr>
@@ -180,7 +181,7 @@
 <p><a href="../../org.gradle.api.plugins.quality/-find-bugs-reports/index.html">FindBugsReports</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">FindBugsReports</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ReportContainer</span><span class="symbol">&lt;</span><a href="../-single-file-report/index.html"><span class="identifier">SingleFileReport</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">FindBugsReports</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ReportContainer</span></a><span class="symbol">&lt;</span><a href="../-single-file-report/index.html"><span class="identifier">SingleFileReport</span></a><span class="symbol">&gt;</span></code>
 <p>The reporting configuration for the FindBugs task. Only one of the reports can be enabled when the task executes. If more than one is enabled, an org.gradle.api.InvalidUserDataException will be thrown.</p>
 </td>
 </tr>
@@ -189,7 +190,7 @@
 <p><a href="../../org.gradle.api.plugins.quality/-j-depend-reports/index.html">JDependReports</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">JDependReports</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ReportContainer</span><span class="symbol">&lt;</span><a href="../-single-file-report/index.html"><span class="identifier">SingleFileReport</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">JDependReports</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ReportContainer</span></a><span class="symbol">&lt;</span><a href="../-single-file-report/index.html"><span class="identifier">SingleFileReport</span></a><span class="symbol">&gt;</span></code>
 <p>The reporting configuration for the JDepend task. Exactly one of the XML or HTML reports can be enabled when the task executes. If more than one or none is enabled, an org.gradle.api.InvalidUserDataException will be thrown.</p>
 </td>
 </tr>
@@ -198,7 +199,7 @@
 <p><a href="../../org.gradle.testing.jacoco.tasks/-jacoco-reports-container/index.html">JacocoReportsContainer</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">JacocoReportsContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ReportContainer</span><span class="symbol">&lt;</span><a href="../-configurable-report/index.html"><span class="identifier">ConfigurableReport</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">JacocoReportsContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ReportContainer</span></a><span class="symbol">&lt;</span><a href="../-configurable-report/index.html"><span class="identifier">ConfigurableReport</span></a><span class="symbol">&gt;</span></code>
 <p>The reporting configuration for the JacocoReport task.</p>
 </td>
 </tr>
@@ -207,7 +208,7 @@
 <p><a href="../../org.gradle.api.plugins.quality/-pmd-reports/index.html">PmdReports</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">PmdReports</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ReportContainer</span><span class="symbol">&lt;</span><a href="../-single-file-report/index.html"><span class="identifier">SingleFileReport</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">PmdReports</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ReportContainer</span></a><span class="symbol">&lt;</span><a href="../-single-file-report/index.html"><span class="identifier">SingleFileReport</span></a><span class="symbol">&gt;</span></code>
 <p>The reporting configuration for the Pmd task.</p>
 </td>
 </tr>
@@ -216,7 +217,7 @@
 <p><a href="../../org.gradle.api.tasks.testing/-test-task-reports/index.html">TestTaskReports</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">TestTaskReports</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ReportContainer</span><span class="symbol">&lt;</span><a href="../-report/index.html"><span class="identifier">Report</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">TestTaskReports</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ReportContainer</span></a><span class="symbol">&lt;</span><a href="../-report/index.html"><span class="identifier">Report</span></a><span class="symbol">&gt;</span></code>
 <p>The reports produced by the Test task.</p>
 </td>
 </tr>

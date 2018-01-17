@@ -1,0 +1,26 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>Configuration.withDependencies - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="index.html">Configuration</a>&nbsp;/&nbsp;<a href="./with-dependencies.html">withDependencies</a><br/>
+<br/>
+<h1>withDependencies</h1>
+<a name="org.gradle.api.artifacts.Configuration$withDependencies(org.gradle.api.Action((org.gradle.api.artifacts.DependencySet)))"></a>
+<code><span class="identifier">@Incubating</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withDependencies</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Configuration$withDependencies(org.gradle.api.Action((org.gradle.api.artifacts.DependencySet)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-dependency-set.html"><span class="identifier">DependencySet</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">Configuration</span></a></code>
+<p>Execute the given action before the configuration first participates in dependency resolution. A <code>Configuration</code> will participate in dependency resolution when: <ul> <li>The Configuration itself is resolved</li>
+ <li>Another Configuration that extends this one is resolved</li>
+ <li>Another Configuration that references this one as a project dependency is resolved</li>
+ </ul>
+ This method is useful for mutating the dependencies for a configuration: <pre><code> configurations { conf } configurations['conf'].withDependencies { dependencies -&gt; dependencies.each { dependency -&gt; if (dependency.version == null) { dependency.version { prefer '1.0' } } } } </code></pre> Actions will be executed in the order provided.</p>
+<h3>Parameters</h3>
+<p><a name="action"></a>
+<code>action</code> - a dependency action to execute before the configuration is used.</p>
+<p><strong>Since</strong><br/>
+4.4</p>
+<p><strong>Return</strong><br/>
+this</p>
+</BODY>
+</HTML>

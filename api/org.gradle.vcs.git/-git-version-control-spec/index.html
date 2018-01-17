@@ -5,13 +5,13 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.vcs.git</a>&nbsp;/&nbsp;<a href=".">GitVersionControlSpec</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.vcs.git</a>&nbsp;/&nbsp;<a href="./index.html">GitVersionControlSpec</a><br/>
 <br/>
 <h1>GitVersionControlSpec</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">GitVersionControlSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.vcs/-version-control-spec/index.html"><span class="identifier">VersionControlSpec</span></a></code>
 <p>A specification of a Git repository.</p>
 <p><strong>Since</strong><br/>
-4.3</p>
+4.4</p>
 <h3>Functions</h3>
 <table>
 <tbody>
@@ -52,11 +52,31 @@
 </tr>
 <tr>
 <td>
+<p><a href="../../org.gradle.vcs/-version-control-spec/get-root-dir.html">getRootDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRootDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the relative path to the root of the build within the repository. 
+<p> Defaults to an empty relative path, meaning the root of the repository.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="../../org.gradle.vcs/-version-control-spec/get-unique-id.html">getUniqueId</a></p>
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getUniqueId</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
 <p>Returns a String identifier which will be unique to this version control specification among other version control specifications.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.vcs/-version-control-spec/set-root-dir.html">setRootDir</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setRootDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.vcs.VersionControlSpec$setRootDir(kotlin.String)/rootDir">rootDir</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the relative path to the root of the build within the repository.</p>
 </td>
 </tr>
 </tbody>

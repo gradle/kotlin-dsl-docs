@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href=".">Buildable</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api</a>&nbsp;/&nbsp;<a href="./index.html">Buildable</a><br/>
 <br/>
 <h1>Buildable</h1>
 <code><span class="keyword">interface </span><span class="identifier">Buildable</span></code>
@@ -32,7 +32,7 @@
 <p><a href="../-buildable-component-spec/index.html">BuildableComponentSpec</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">BuildableComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Buildable</span><span class="symbol">, </span><a href="../../org.gradle.platform.base/-component-spec/index.html"><span class="identifier">ComponentSpec</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">BuildableComponentSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Buildable</span></a><span class="symbol">, </span><a href="../../org.gradle.platform.base/-component-spec/index.html"><span class="identifier">ComponentSpec</span></a></code>
 <p>A ComponentSpec that is directly Buildable via a specified task.</p>
 </td>
 </tr>
@@ -41,7 +41,7 @@
 <p><a href="../../org.gradle.jvm/-classpath/index.html">Classpath</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">Classpath</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Buildable</span></code>
+<code><span class="keyword">interface </span><span class="identifier">Classpath</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Buildable</span></a></code>
 <p>A collection of files to be used as a class path.</p>
 </td>
 </tr>
@@ -50,7 +50,7 @@
 <p><a href="../../org.gradle.api.file/-configurable-file-tree/index.html">ConfigurableFileTree</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ConfigurableFileTree</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-tree/index.html"><span class="identifier">FileTree</span></a><span class="symbol">, </span><a href="../../org.gradle.api.file/-directory-tree/index.html"><span class="identifier">DirectoryTree</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">, </span><span class="identifier">Buildable</span></code>
+<code><span class="keyword">interface </span><span class="identifier">ConfigurableFileTree</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-tree/index.html"><span class="identifier">FileTree</span></a><span class="symbol">, </span><a href="../../org.gradle.api.file/-directory-tree/index.html"><span class="identifier">DirectoryTree</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">Buildable</span></a></code>
 <p>
 <p>A FileTree with a single base directory, which can be configured and modified.</p>
  
@@ -63,7 +63,7 @@
 <p><a href="../../org.gradle.api.artifacts/-dependency-set.html">DependencySet</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">DependencySet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">Buildable</span></code>
+<code><span class="keyword">interface </span><span class="identifier">DependencySet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">Buildable</span></a></code>
 <p>A set of artifact dependencies.</p>
 </td>
 </tr>
@@ -72,7 +72,7 @@
 <p><a href="../../org.gradle.api.file/-file-collection/index.html">FileCollection</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">FileCollection</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../../org.gradle.api.tasks/-ant-builder-aware/index.html"><span class="identifier">AntBuilderAware</span></a><span class="symbol">, </span><span class="identifier">Buildable</span></code>
+<code><span class="keyword">interface </span><span class="identifier">FileCollection</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-iterable/index.html"><span class="identifier">MutableIterable</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../../org.gradle.api.tasks/-ant-builder-aware/index.html"><span class="identifier">AntBuilderAware</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">Buildable</span></a></code>
 <p>
 <p>A <code>FileCollection</code> represents a collection of files which you can query in certain ways. A file collection is often used to define a classpath, or to add files to a container.</p>
  
@@ -85,7 +85,7 @@
 <p><a href="../../org.gradle.api.publish.ivy/-ivy-artifact/index.html">IvyArtifact</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">IvyArtifact</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Buildable</span></code>
+<code><span class="keyword">interface </span><span class="identifier">IvyArtifact</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Buildable</span></a></code>
 <p>An artifact published as part of a IvyPublication.</p>
 </td>
 </tr>
@@ -94,7 +94,7 @@
 <p><a href="../../org.gradle.api.publish.maven/-maven-artifact/index.html">MavenArtifact</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">MavenArtifact</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Buildable</span></code>
+<code><span class="keyword">interface </span><span class="identifier">MavenArtifact</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Buildable</span></a></code>
 <p>An artifact published as part of a MavenPublication.</p>
 </td>
 </tr>
@@ -103,7 +103,7 @@
 <p><a href="../../org.gradle.api.artifacts/-publish-artifact/index.html">PublishArtifact</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">PublishArtifact</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Buildable</span></code>
+<code><span class="keyword">interface </span><span class="identifier">PublishArtifact</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Buildable</span></a></code>
 <p>
 <p>A <code>PublishArtifact</code> is an artifact produced by a project.</p>
 </p>
@@ -114,7 +114,7 @@
 <p><a href="../../org.gradle.api.artifacts/-publish-artifact-set/index.html">PublishArtifactSet</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">PublishArtifactSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-publish-artifact/index.html"><span class="identifier">PublishArtifact</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">Buildable</span></code>
+<code><span class="keyword">interface </span><span class="identifier">PublishArtifactSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-publish-artifact/index.html"><span class="identifier">PublishArtifact</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">Buildable</span></a></code>
 <p>A set of artifacts to be published.</p>
 </td>
 </tr>
@@ -123,7 +123,7 @@
 <p><a href="../../org.gradle.api.artifacts/-self-resolving-dependency/index.html">SelfResolvingDependency</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">SelfResolvingDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts/-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">, </span><span class="identifier">Buildable</span></code>
+<code><span class="keyword">interface </span><span class="identifier">SelfResolvingDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts/-direct-dependency.html"><span class="identifier">DirectDependency</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">Buildable</span></a></code>
 <p>A <code>SelfResolvingDependency</code> is a Dependency which is able to resolve itself, independent of a repository.</p>
 </td>
 </tr>
@@ -132,7 +132,7 @@
 <p><a href="../../org.gradle.api.resources/-text-resource/index.html">TextResource</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">TextResource</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">Buildable</span></code>
+<code><span class="keyword">interface </span><span class="identifier">TextResource</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Buildable</span></a></code>
 <p>A read-only body of text backed by a string, file, archive entry, or other source. To create a text resource, use one of the factory methods in TextResourceFactory (e.g. <code>project.resources.text.fromFile(myFile)</code>).</p>
 </td>
 </tr>

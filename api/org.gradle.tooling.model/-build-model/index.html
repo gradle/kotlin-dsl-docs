@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.model</a>&nbsp;/&nbsp;<a href=".">BuildModel</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling.model</a>&nbsp;/&nbsp;<a href="./index.html">BuildModel</a><br/>
 <br/>
 <h1>BuildModel</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">BuildModel</span></code>
@@ -34,7 +34,7 @@
 <p><a href="../../org.gradle.tooling.model.build/-build-environment/index.html">BuildEnvironment</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">BuildEnvironment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-model.html"><span class="identifier">Model</span></a><span class="symbol">, </span><span class="identifier">BuildModel</span></code>
+<code><span class="keyword">interface </span><span class="identifier">BuildEnvironment</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-model.html"><span class="identifier">Model</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">BuildModel</span></a></code>
 <p>Informs about the build environment, like Gradle version or the Java home in use. 
 <p> Example: </p>
 <pre><code> ProjectConnection connection = GradleConnector.newConnector() .forProjectDirectory(new File("someProjectFolder")) .connect(); try { BuildEnvironment env = connection.getModel(BuildEnvironment.class); System.out.println("Gradle version: " + env.getGradle().getGradleVersion()); System.out.println("Java home: " + env.getJava().getJavaHome()); } finally { connection.close(); } </code></pre></p>
@@ -45,7 +45,7 @@
 <p><a href="../../org.gradle.tooling.model.gradle/-gradle-build/index.html">GradleBuild</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">GradleBuild</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-model.html"><span class="identifier">Model</span></a><span class="symbol">, </span><span class="identifier">BuildModel</span></code>
+<code><span class="keyword">interface </span><span class="identifier">GradleBuild</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-model.html"><span class="identifier">Model</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">BuildModel</span></a></code>
 <p>Provides information about the structure of a Gradle build.</p>
 </td>
 </tr>

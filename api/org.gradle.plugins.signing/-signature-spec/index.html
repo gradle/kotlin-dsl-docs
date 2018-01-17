@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.signing</a>&nbsp;/&nbsp;<a href=".">SignatureSpec</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.signing</a>&nbsp;/&nbsp;<a href="./index.html">SignatureSpec</a><br/>
 <br/>
 <h1>SignatureSpec</h1>
 <code><span class="keyword">interface </span><span class="identifier">SignatureSpec</span></code>
@@ -77,7 +77,7 @@
 <p><a href="../-sign/index.html">Sign</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Sign</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a><span class="symbol">, </span><span class="identifier">SignatureSpec</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Sign</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">SignatureSpec</span></a></code>
 <p>A task for creating digital signature files for one or more; tasks, files, publishable artifacts or configurations. 
 <p>The task produces Signature</p>
  objects that are publishable artifacts and can be assigned to another configuration. 
@@ -90,7 +90,7 @@
 <p><a href="../-sign-operation/index.html">SignOperation</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SignOperation</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">SignatureSpec</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">SignOperation</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">SignatureSpec</span></a></code>
 <p>A sign operation creates digital signatures for one or more files or PublishArtifact. 
 <p>The external representation of the signature is specified by the <code><a href="../-sign-operation/get-signature-type.html">signature type property</a></code>, while the <code><a href="#">#signatory</a></code> property specifies who is to sign. </p>
 <p> A sign operation manages one or more Signature objects. The <code>sign</code> methods are used to register things to generate signatures for. The <code><a href="../-sign-operation/execute.html">#execute()</a></code> method generates the signatures for all of the registered items at that time.</p>

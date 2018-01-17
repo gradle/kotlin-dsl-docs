@@ -1,0 +1,53 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>VersionConstraint - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="./index.html">VersionConstraint</a><br/>
+<br/>
+<h1>VersionConstraint</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">VersionConstraint</span></code>
+<p>Represents a constrained version. By default, when a dependency has a version number, it is assumed that the version can be upgraded during conflict resolution (typically, version 1.15 can be upgraded to 1.16). However in some cases we don't want this behavior. This class represents the base spec of module constraints.</p>
+<p><strong>Since</strong><br/>
+4.4</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-preferred-version.html">getPreferredVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPreferredVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The preferred version of a module. The preferred version of a module can typically be upgraded during dependency resolution, unless further constraints are added.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-rejected-versions.html">getRejectedVersions</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getRejectedVersions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the list of versions that this module rejects (which may be exact versions, or ranges, anything that fits into a version string).</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-mutable-version-constraint/index.html">MutableVersionConstraint</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MutableVersionConstraint</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">VersionConstraint</span></a></code>
+<p>A configurable version constraint. This is exposed to the build author, so that one can express more constraints on a version,</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

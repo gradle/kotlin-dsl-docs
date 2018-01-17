@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="../../../style.css">
 </HEAD>
 <BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.platform.base</a>&nbsp;/&nbsp;<a href=".">ToolChainRegistry</a><br/>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.platform.base</a>&nbsp;/&nbsp;<a href="./index.html">ToolChainRegistry</a><br/>
 <br/>
 <h1>ToolChainRegistry</h1>
 <code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ToolChainRegistry</span><span class="symbol">&lt;</span><span class="identifier">P</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-platform/index.html"><span class="identifier">Platform</span></a><span class="symbol">, </span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-tool-chain/index.html"><span class="identifier">ToolChain</span></a><span class="symbol">&gt;</span></code>
@@ -23,7 +23,7 @@
 <p><a href="get-for-platform.html">getForPlatform</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getForPlatform</span><span class="symbol">(</span><span class="identifier" id="org.gradle.platform.base.ToolChainRegistry$getForPlatform(org.gradle.platform.base.ToolChainRegistry.P)/targetPlatform">targetPlatform</span><span class="symbol">:</span>&nbsp;<span class="identifier">P</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">T</span></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getForPlatform</span><span class="symbol">(</span><span class="identifier" id="org.gradle.platform.base.ToolChainRegistry$getForPlatform(org.gradle.platform.base.ToolChainRegistry.P)/targetPlatform">targetPlatform</span><span class="symbol">:</span>&nbsp;<a href="index.html#P"><span class="identifier">P</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html#T"><span class="identifier">T</span></a></code>
 <p>Returns the best tool chain to build for the target platform.</p>
 </td>
 </tr>
@@ -37,7 +37,7 @@
 <p><a href="../../org.gradle.jvm.toolchain/-java-tool-chain-registry.html">JavaToolChainRegistry</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">JavaToolChainRegistry</span>&nbsp;<span class="symbol">:</span>&nbsp;<span class="identifier">ToolChainRegistry</span><span class="symbol">&lt;</span><a href="../../org.gradle.jvm.platform/-java-platform/index.html"><span class="identifier">JavaPlatform</span></a><span class="symbol">,</span>&nbsp;<a href="../../org.gradle.jvm.toolchain/-java-tool-chain/index.html"><span class="identifier">JavaToolChain</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">JavaToolChainRegistry</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ToolChainRegistry</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.jvm.platform/-java-platform/index.html"><span class="identifier">JavaPlatform</span></a><span class="symbol">,</span>&nbsp;<a href="../../org.gradle.jvm.toolchain/-java-tool-chain/index.html"><span class="identifier">JavaToolChain</span></a><span class="symbol">&gt;</span></code>
 <p>A container for JavaToolChains.</p>
 </td>
 </tr>
@@ -46,7 +46,7 @@
 <p><a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain-registry.html">NativeToolChainRegistry</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">NativeToolChainRegistry</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-extensible-polymorphic-domain-object-container/index.html"><span class="identifier">ExtensiblePolymorphicDomainObjectContainer</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier">ToolChainRegistry</span><span class="symbol">&lt;</span><a href="../../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a><span class="symbol">,</span>&nbsp;<a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">NativeToolChainRegistry</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-extensible-polymorphic-domain-object-container/index.html"><span class="identifier">ExtensiblePolymorphicDomainObjectContainer</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="./index.html"><span class="identifier">ToolChainRegistry</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a><span class="symbol">,</span>&nbsp;<a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a><span class="symbol">&gt;</span></code>
 <p>A container for NativeToolChains.</p>
 </td>
 </tr>
