@@ -24,6 +24,7 @@ open class GradleApiSources : DefaultTask() {
             project.copy {
                 from(File(subprojectDir, "src/main/java"))
                 from(File(subprojectDir, "src/main/groovy"))
+                from(File(subprojectDir, "src/main/kotlin"))
                 include(
                         "org/gradle/*",
                         "org/gradle/api/**",
