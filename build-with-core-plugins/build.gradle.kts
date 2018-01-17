@@ -33,7 +33,7 @@ plugins {
     assembler
     `c-lang`
     c
-    // `cpp-executable`
+    // `cpp-application`
     `cpp-lang`
     // `cpp-library`
     cpp
@@ -41,7 +41,7 @@ plugins {
     `objective-c`
     `objective-cpp-lang`
     `objective-cpp`
-    // `swift-executable`
+    // `swift-application`
     // `swift-library`
     `windows-resource-script`
     `windows-resources`
@@ -83,6 +83,7 @@ plugins {
     scala
     signing
     `junit-test-suite`
+    // `cpp-test-suite`
     `cunit-test-suite`
     cunit
     `google-test-test-suite`
