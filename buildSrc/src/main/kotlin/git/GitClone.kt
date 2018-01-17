@@ -12,13 +12,13 @@ import org.gradle.api.tasks.*
 open class GitClone : DefaultTask() {
 
     @get:Input
-    var uri: String? = null
+    lateinit var uri: String
 
     @get:Internal
-    var ref: String? = null
+    lateinit var ref: String
 
     @get:OutputDirectory
-    var cloneDir: File? = null
+    lateinit var cloneDir: File
 
     private
     val lastCommitHashFile: File =
@@ -38,14 +38,14 @@ open class GitClone : DefaultTask() {
 
     @TaskAction
     fun gitClone(): Unit {
-        cloneDir!!.deleteRecursively()
+        cloneDir.deleteRecursively()
         var clone: Git? = null
         try {
             clone = Git.cloneRepository()
-                .setURI(uri!!)
-                .setDirectory(cloneDir!!)
-                .setBranchesToClone(listOf(ref!!))
-                .setBranch(ref!!)
+                .setURI(uri)
+                .setDirectory(cloneDir)
+                .setBranchesToClone(listOf(ref))
+                .setBranch(ref)
                 .call()
         } finally {
             clone?.close()
@@ -58,7 +58,7 @@ open class GitClone : DefaultTask() {
         var repo: Repository? = null
         try {
             repo = FileRepositoryBuilder().setWorkTree(cloneDir).build()
-            return repo.findRef(ref!!)!!.objectId.name
+            return repo.findRef(ref)!!.objectId.name
         } finally {
             repo?.close()
         }
@@ -67,7 +67,7 @@ open class GitClone : DefaultTask() {
     private
     fun retrieveRemoteRefCommitHash(): String =
         LsRemoteCommand(null)
-            .setRemote(uri!!)
+            .setRemote(uri)
             .setHeads(true)
-            .call().find { it.name.substringAfter("refs/heads/") == ref!! }?.objectId?.name ?: ref!!
+            .call().find { it.name.substringAfter("refs/heads/") == ref }?.objectId?.name ?: ref
 }

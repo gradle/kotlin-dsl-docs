@@ -10,17 +10,17 @@ import org.gradle.api.tasks.*
 open class GradlePluginsAccessors : DefaultTask() {
 
     @get:InputDirectory
-    var gradleInstall: File? = null
+    lateinit var gradleInstall: File
 
     @get:Internal
-    var buildDirectory: File? = null
+    lateinit var buildDirectory: File
 
     @get:InputFile
     val buildScript: File
-        get() = File(buildDirectory!!, "build.gradle.kts")
+        get() = File(buildDirectory, "build.gradle.kts")
 
     private
-    val accessorsDirState = project.property(File::class.java)
+    val accessorsDirState = project.objects.property(File::class.java)
 
     @get:OutputDirectory
     var accessorsDir
@@ -35,12 +35,12 @@ open class GradlePluginsAccessors : DefaultTask() {
     fun gradlePluginsAccessors() {
         accessorsDir.deleteRecursively()
         val baos = ByteArrayOutputStream()
-        val gradlew = File(gradleInstall!!, "bin/gradle")
+        val gradlew = File(gradleInstall, "bin/gradle")
         project.exec {
             commandLine = listOf(
-                    gradlew.absolutePath, "-q",
-                    "-c", File(buildDirectory!!, "settings.gradle").absolutePath,
-                    "-p", buildDirectory!!.absolutePath,
+                    gradlew.absolutePath, "-q", "-s",
+                    "-c", File(buildDirectory, "settings.gradle.kts").absolutePath,
+                    "-p", buildDirectory.absolutePath,
                     "kotlinDslAccessorsReport")
             standardOutput = baos
         }

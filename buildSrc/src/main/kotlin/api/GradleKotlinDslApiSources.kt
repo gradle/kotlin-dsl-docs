@@ -8,24 +8,24 @@ import org.gradle.api.tasks.*
 open class GradleKotlinDslApiSources : DefaultTask() {
 
     @get:InputDirectory
-    var gskClone: File? = null
+    lateinit var kotlinDslClone: File
 
     @get:OutputDirectory
-    var sourceDir: File? = null
+    lateinit var sourceDir: File
 
     @TaskAction
     fun copyGradleScriptKotlinApiSources() {
         project.sync {
-            from(File(gskClone!!, "provider/src/main/kotlin"))
-            from(File(gskClone!!, "provider/src/generated/kotlin"))
-            from(File(gskClone!!, "plugins/src/main/kotlin"))
-            from(File(gskClone!!, "tooling-models/src/main/kotlin"))
+            from(File(kotlinDslClone, "provider/src/main/kotlin"))
+            from(File(kotlinDslClone, "provider/src/generated/kotlin"))
+            from(File(kotlinDslClone, "plugins/src/main/kotlin"))
+            from(File(kotlinDslClone, "tooling-models/src/main/kotlin"))
             exclude("org/gradle/kotlin/dsl/accessors/**")
             exclude("org/gradle/kotlin/dsl/provider/**")
             exclude("org/gradle/kotlin/dsl/resolver/**")
             exclude("org/gradle/kotlin/dsl/support/**")
             exclude("org/gradle/script/lang/kotlin/**")
-            into(sourceDir!!)
+            into(sourceDir)
         }
     }
 }

@@ -9,10 +9,10 @@ import java.io.File
 open class GradleInstall : DefaultTask() {
 
     @get:InputDirectory
-    var gradleClone: File? = null
+    lateinit var gradleClone: File
 
     @get:OutputDirectory
-    var gradleInstall: File? = null
+    lateinit var gradleInstall: File
 
 
     @TaskAction
@@ -20,7 +20,7 @@ open class GradleInstall : DefaultTask() {
         val buildDirectory = File(temporaryDir, "gradle")
         project.delete(buildDirectory)
         project.copy {
-            from(gradleClone!!)
+            from(gradleClone)
             into(buildDirectory)
         }
         project.delete(gradleInstall)
@@ -28,9 +28,9 @@ open class GradleInstall : DefaultTask() {
         project.exec {
             commandLine = listOf(
                     gradlew.absolutePath, "-q", "--no-scan",
-                    "-c", File(buildDirectory, "settings.gradle").absolutePath,
+                    "-c", File(buildDirectory, "settings.gradle.kts").absolutePath,
                     "-p", buildDirectory.absolutePath,
-                    "install", "-Pgradle_installPath=${gradleInstall!!.absolutePath}")
+                    "install", "-Pgradle_installPath=${gradleInstall.absolutePath}")
         }
     }
 }

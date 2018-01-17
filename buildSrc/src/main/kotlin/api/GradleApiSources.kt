@@ -10,16 +10,16 @@ import org.gradle.api.tasks.*
 open class GradleApiSources : DefaultTask() {
 
     @get:InputDirectory
-    var gradleClone: File? = null
+    lateinit var gradleClone: File
 
     @get:OutputDirectory
-    var sourceDir: File? = null
+    lateinit var sourceDir: File
 
     @TaskAction
     fun copyGradleApiSources() {
-        File(gradleClone!!, "subprojects").listFiles { file: File ->
+        File(gradleClone, "subprojects").listFiles { file: File ->
             file.isDirectory() && !file.name.startsWith("internal") &&
-                    file.name !in listOf("integTest", "distributions", "performance", "buildScanPerformance")
+                file.name !in listOf("integTest", "distributions", "performance", "buildScanPerformance")
         }.forEach { subprojectDir: File ->
             project.copy {
                 from(File(subprojectDir, "src/main/java"))
@@ -58,7 +58,7 @@ open class GradleApiSources : DefaultTask() {
                         "org/gradle/vcs/**",
                         "org/gradle/workers/**")
                 exclude("**/internal/**")
-                into(sourceDir!!)
+                into(sourceDir)
             }
         }
     }
