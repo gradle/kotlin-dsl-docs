@@ -16,13 +16,19 @@ open class GradleKotlinDslApiSources : DefaultTask() {
     @TaskAction
     fun copyGradleScriptKotlinApiSources() {
         project.sync {
-            from(File(kotlinDslClone, "provider/src/main/kotlin"))
-            from(File(kotlinDslClone, "provider/src/generated/kotlin"))
-            from(File(kotlinDslClone, "plugins/src/main/kotlin"))
-            from(File(kotlinDslClone, "tooling-models/src/main/kotlin"))
+            from(File(kotlinDslClone, "subprojects/provider/src/main/kotlin"))
+            from(File(kotlinDslClone, "subprojects/provider/src/generated/kotlin"))
+            from(File(kotlinDslClone, "subprojects/plugins/src/main/kotlin"))
+            from(File(kotlinDslClone, "subprojects/tooling-models/src/main/kotlin"))
             exclude("org/gradle/kotlin/dsl/accessors/**")
+            exclude("org/gradle/kotlin/dsl/cache/**")
+            exclude("org/gradle/kotlin/dsl/codegen/**")
+            exclude("org/gradle/kotlin/dsl/concurrent/**")
+            exclude("org/gradle/kotlin/dsl/execution/**")
+            exclude("org/gradle/kotlin/dsl/precompile/**")
             exclude("org/gradle/kotlin/dsl/provider/**")
             exclude("org/gradle/kotlin/dsl/resolver/**")
+            exclude("org/gradle/kotlin/dsl/services/**")
             exclude("org/gradle/kotlin/dsl/support/**")
             exclude("org/gradle/script/lang/kotlin/**")
             into(sourceDir)
