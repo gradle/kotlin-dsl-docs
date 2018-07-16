@@ -56,8 +56,8 @@ val kotlinVersion =
             .openStream().bufferedReader().use { it.lineSequence().toList().extractKotlinVersion() }
 
 fun List<String>.extractGroovyVersion() =
-    find { it.startsWith("versions.groovy =") }!!
-        .split("=").last().replace("'", "").trim()
+    find { it.startsWith("libraries.groovy =") }!!
+        .split("=").last().substringAfterLast("version: '").substringBeforeLast("'").trim()
 
 fun List<String>.extractKotlinVersion() =
     first().trim()
