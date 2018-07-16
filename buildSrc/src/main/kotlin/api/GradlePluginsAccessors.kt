@@ -78,7 +78,7 @@ open class GradlePluginsAccessors : DefaultTask() {
                 .single()
 
         JarFile(generatedJar).use { jar ->
-            jar.entries().toList()
+            jar.entries().asSequence()
                     .filter { !it.isDirectory && it.name.endsWith(".kt") }
                     .forEach { sourceEntry ->
                         val sourceFile = accessorsDir.resolve(sourceEntry.name)
