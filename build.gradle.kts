@@ -30,7 +30,7 @@ val kotlinDslGitUseLocalClone = file("../kotlin-dsl/.git").isDirectory
 val kotlinDslGitUri =
     if (kotlinDslGitUseLocalClone) file("../kotlin-dsl").toURI().toString()
     else "https://github.com/gradle/kotlin-dsl.git"
-val kotlinDslGitRef = "v0.14.2"
+val kotlinDslGitRef = "v0.18.4"
 
 logger.lifecycle("\nGradle sources for Kotlin DSL API\n  uri = $gradleGitUri\n  ref = $gradleGitRef")
 logger.lifecycle("\nKotlin DSL sources for Kotlin DSL API\n  uri = $kotlinDslGitUri\n  ref = $kotlinDslGitRef")
