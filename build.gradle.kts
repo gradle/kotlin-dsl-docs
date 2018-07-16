@@ -12,7 +12,7 @@ buildscript {
     // dokka requires a repository from which to download dokka-fatjar on demand
     configure(listOf(repositories, project.repositories)) {
         jcenter()
-        maven { url = uri("https://dl.bintray.com/kotlin/kotlin-eap") }
+        maven { url = uri("https://dl.bintray.com/kotlin/kotlin-dev") }
     }
 }
 
