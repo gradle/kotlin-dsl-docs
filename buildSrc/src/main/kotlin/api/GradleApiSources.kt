@@ -5,6 +5,7 @@ import java.io.File
 import org.gradle.api.*
 import org.gradle.api.tasks.*
 
+
 // TODO Gradle API definition extracted from gradle/gradle/build.gradle
 // and gradle/gradle/publicApi.gradle
 open class GradleApiSources : DefaultTask() {
@@ -18,8 +19,9 @@ open class GradleApiSources : DefaultTask() {
     @TaskAction
     fun copyGradleApiSources() {
         File(gradleClone, "subprojects").listFiles { file: File ->
-            file.isDirectory() && !file.name.startsWith("internal") &&
-                file.name !in listOf("integTest", "distributions", "performance", "buildScanPerformance")
+            file.isDirectory()
+                    && !file.name.startsWith("internal")
+                    && file.name !in listOf("integTest", "distributions", "performance", "build-scan-performance", "distributions-dependencies")
         }.forEach { subprojectDir: File ->
             project.copy {
                 from(File(subprojectDir, "src/main/java"))
@@ -53,6 +55,7 @@ open class GradleApiSources : DefaultTask() {
                         "org/gradle/testfixtures/**",
                         "org/gradle/testing/jacoco/**",
                         "org/gradle/tooling/**",
+                        "org/gradle/swiftpm/**",
                         "org/gradle/model/**",
                         "org/gradle/testkit/**",
                         "org/gradle/testing/**",
