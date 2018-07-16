@@ -32,22 +32,6 @@
 </tr>
 <tr>
 <td>
-<p><a href="-extra-property-delegate/index.html">ExtraPropertyDelegate</a></p>
-</td>
-<td>
-<code><span class="keyword">class </span><span class="identifier">ExtraPropertyDelegate</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
-<p>Enables typed access to extra properties.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="-extra-property-delegate-provider/index.html">ExtraPropertyDelegateProvider</a></p>
-</td>
-<td>
-<code><span class="keyword">class </span><span class="identifier">ExtraPropertyDelegateProvider</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
-</tr>
-<tr>
-<td>
 <p><a href="-groovy-builder-scope/index.html">GroovyBuilderScope</a></p>
 </td>
 <td>
@@ -55,6 +39,32 @@
 <p>Provides a dynamic dispatching DSL with Groovy semantics for better integration with
 plugins that rely on Groovy builders such as the core <code>maven</code> plugin.</p>
 </td>
+</tr>
+<tr>
+<td>
+<p><a href="-init-script-api/index.html">InitScriptApi</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">InitScriptApi</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.invocation/-gradle/index.html"><span class="identifier">Gradle</span></a></code>
+<p>Standard implementation of the API exposed to all types of <a href="../org.gradle.api.invocation/-gradle/index.html">Gradle</a> scripts,
+precompiled and otherwise.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-initial-value-extra-property-delegate/index.html">InitialValueExtraPropertyDelegate</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">InitialValueExtraPropertyDelegate</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code>
+<p>Enables typed access to extra properties with initial value.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-initial-value-extra-property-delegate-provider/index.html">InitialValueExtraPropertyDelegateProvider</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">InitialValueExtraPropertyDelegateProvider</span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span></code></td>
 </tr>
 <tr>
 <td>
@@ -94,11 +104,29 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 </tr>
 <tr>
 <td>
+<p><a href="-kotlin-init-script/index.html">KotlinInitScript</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">KotlinInitScript</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-init-script-api/index.html"><span class="identifier">InitScriptApi</span></a></code>
+<p>Base class for Kotlin init scripts.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="-kotlin-settings-script/index.html">KotlinSettingsScript</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">KotlinSettingsScript</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.initialization/-settings/index.html"><span class="identifier">Settings</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">KotlinSettingsScript</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-settings-script-api/index.html"><span class="identifier">SettingsScriptApi</span></a></code>
 <p>Base class for Kotlin settings scripts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-mutable-property-delegate/index.html">MutablePropertyDelegate</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MutablePropertyDelegate</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-property-delegate/index.html"><span class="identifier">PropertyDelegate</span></a></code>
+<p>Provides efficient access to a mutable dynamic property.</p>
 </td>
 </tr>
 <tr>
@@ -122,7 +150,7 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 <p><a href="-named-domain-object-container-scope/index.html">NamedDomainObjectContainerScope</a></p>
 </td>
 <td>
-<code><span class="keyword">class </span><span class="identifier">NamedDomainObjectContainerScope</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named-domain-object-container/index.html"><span class="identifier">NamedDomainObjectContainer</span></a><span class="symbol">&lt;</span><a href="-named-domain-object-container-scope/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">class </span><span class="identifier">NamedDomainObjectContainerScope</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named-domain-object-container/index.html"><span class="identifier">NamedDomainObjectContainer</span></a><span class="symbol">&lt;</span><a href="-named-domain-object-container-scope/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../org.gradle.api/-polymorphic-domain-object-container/index.html"><span class="identifier">PolymorphicDomainObjectContainer</span></a><span class="symbol">&lt;</span><a href="-named-domain-object-container-scope/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
 <p>Receiver for <a href="../org.gradle.api/-named-domain-object-container/index.html">NamedDomainObjectContainer</a> configuration blocks.</p>
 </td>
 </tr>
@@ -165,11 +193,30 @@ and applies the given <a href="-polymorphic-domain-object-container-getting-dele
 </tr>
 <tr>
 <td>
+<p><a href="-property-delegate/index.html">PropertyDelegate</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PropertyDelegate</span></code>
+<p>Provides efficient access to a property.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="-script-handler-scope/index.html">ScriptHandlerScope</a></p>
 </td>
 <td>
 <code><span class="keyword">class </span><span class="identifier">ScriptHandlerScope</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.initialization.dsl/-script-handler/index.html"><span class="identifier">ScriptHandler</span></a></code>
 <p>Receiver for the <code>buildscript</code> block.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-settings-script-api/index.html">SettingsScriptApi</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">SettingsScriptApi</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.initialization/-settings/index.html"><span class="identifier">Settings</span></a></code>
+<p>Standard implementation of the API exposed to all types of <a href="../org.gradle.api.initialization/-settings/index.html">Settings</a> scripts,
+precompiled and otherwise.</p>
 </td>
 </tr>
 </tbody>
@@ -184,6 +231,15 @@ and applies the given <a href="-polymorphic-domain-object-container-getting-dele
 <td>
 <code><span class="keyword">annotation</span> <span class="keyword">class </span><span class="identifier">GradleDsl</span></code>
 <p>Delimits a Gradle DSL.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-kotlin-script-template/index.html">KotlinScriptTemplate</a></p>
+</td>
+<td>
+<code><span class="keyword">annotation</span> <span class="keyword">class </span><span class="identifier">KotlinScriptTemplate</span></code>
+<p>Temporary workaround for Kotlin 1.2.50.</p>
 </td>
 </tr>
 </tbody>
@@ -201,6 +257,13 @@ and applies the given <a href="-polymorphic-domain-object-container-getting-dele
 <tr>
 <td>
 <p><a href="kotlin.-any/index.html">kotlin.Any</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.api.-action/index.html">org.gradle.api.Action</a></p>
 </td>
 <td>
 </td>
@@ -270,7 +333,21 @@ and applies the given <a href="-polymorphic-domain-object-container-getting-dele
 </tr>
 <tr>
 <td>
+<p><a href="org.gradle.api.distribution.-distribution-container/index.html">org.gradle.api.distribution.DistributionContainer</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="org.gradle.api.file.-configurable-file-collection/index.html">org.gradle.api.file.ConfigurableFileCollection</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.api.file.-content-filterable/index.html">org.gradle.api.file.ContentFilterable</a></p>
 </td>
 <td>
 </td>
@@ -284,7 +361,21 @@ and applies the given <a href="-polymorphic-domain-object-container-getting-dele
 </tr>
 <tr>
 <td>
+<p><a href="org.gradle.api.initialization.-settings/index.html">org.gradle.api.initialization.Settings</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="org.gradle.api.initialization.dsl.-script-handler/index.html">org.gradle.api.initialization.dsl.ScriptHandler</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.api.invocation.-gradle/index.html">org.gradle.api.invocation.Gradle</a></p>
 </td>
 <td>
 </td>
@@ -333,6 +424,55 @@ and applies the given <a href="-polymorphic-domain-object-container-getting-dele
 </tr>
 <tr>
 <td>
+<p><a href="org.gradle.api.plugins.-plugin-aware/index.html">org.gradle.api.plugins.PluginAware</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.api.plugins.announce.-announce-plugin-extension/index.html">org.gradle.api.plugins.announce.AnnouncePluginExtension</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.api.plugins.quality.-checkstyle-extension/index.html">org.gradle.api.plugins.quality.CheckstyleExtension</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.api.plugins.quality.-code-narc-extension/index.html">org.gradle.api.plugins.quality.CodeNarcExtension</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.api.plugins.quality.-find-bugs-extension/index.html">org.gradle.api.plugins.quality.FindBugsExtension</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.api.plugins.quality.-j-depend-extension/index.html">org.gradle.api.plugins.quality.JDependExtension</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.api.plugins.quality.-pmd-extension/index.html">org.gradle.api.plugins.quality.PmdExtension</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="org.gradle.api.provider.-property/index.html">org.gradle.api.provider.Property</a></p>
 </td>
 <td>
@@ -341,6 +481,104 @@ and applies the given <a href="-polymorphic-domain-object-container-getting-dele
 <tr>
 <td>
 <p><a href="org.gradle.api.provider.-property-state/index.html">org.gradle.api.provider.PropertyState</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.api.reporting.-reporting-extension/index.html">org.gradle.api.reporting.ReportingExtension</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.api.specs.-spec/index.html">org.gradle.api.specs.Spec</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.api.tasks.-groovy-runtime/index.html">org.gradle.api.tasks.GroovyRuntime</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.api.tasks.-scala-runtime/index.html">org.gradle.api.tasks.ScalaRuntime</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.api.tasks.-source-set/index.html">org.gradle.api.tasks.SourceSet</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.api.tasks.-task-container/index.html">org.gradle.api.tasks.TaskContainer</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.ide.visualstudio.-visual-studio-root-extension/index.html">org.gradle.ide.visualstudio.VisualStudioRootExtension</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.ide.xcode.-xcode-root-extension/index.html">org.gradle.ide.xcode.XcodeRootExtension</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.nativeplatform.-build-type-container/index.html">org.gradle.nativeplatform.BuildTypeContainer</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.nativeplatform.-flavor-container/index.html">org.gradle.nativeplatform.FlavorContainer</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.nativeplatform.toolchain.-native-tool-chain-registry/index.html">org.gradle.nativeplatform.toolchain.NativeToolChainRegistry</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.platform.base.-platform-container/index.html">org.gradle.platform.base.PlatformContainer</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.play.plugins.-play-plugin-configurations/index.html">org.gradle.play.plugins.PlayPluginConfigurations</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.plugin.devel.-gradle-plugin-development-extension/index.html">org.gradle.plugin.devel.GradlePluginDevelopmentExtension</a></p>
 </td>
 <td>
 </td>
@@ -359,6 +597,76 @@ and applies the given <a href="-polymorphic-domain-object-container-getting-dele
 <td>
 </td>
 </tr>
+<tr>
+<td>
+<p><a href="org.gradle.plugins.ear.-ear-plugin-convention/index.html">org.gradle.plugins.ear.EarPluginConvention</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.plugins.ide.eclipse.model.-eclipse-model/index.html">org.gradle.plugins.ide.eclipse.model.EclipseModel</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.plugins.ide.idea.model.-idea-model/index.html">org.gradle.plugins.ide.idea.model.IdeaModel</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.plugins.javascript.base.-java-script-extension/index.html">org.gradle.plugins.javascript.base.JavaScriptExtension</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.plugins.javascript.coffeescript.-coffee-script-extension/index.html">org.gradle.plugins.javascript.coffeescript.CoffeeScriptExtension</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.plugins.javascript.envjs.-env-js-extension/index.html">org.gradle.plugins.javascript.envjs.EnvJsExtension</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.plugins.javascript.jshint.-js-hint-extension/index.html">org.gradle.plugins.javascript.jshint.JsHintExtension</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.plugins.javascript.rhino.-rhino-extension/index.html">org.gradle.plugins.javascript.rhino.RhinoExtension</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.plugins.signing.-signing-extension/index.html">org.gradle.plugins.signing.SigningExtension</a></p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="org.gradle.testing.jacoco.plugins.-jacoco-plugin-extension/index.html">org.gradle.testing.jacoco.plugins.JacocoPluginExtension</a></p>
+</td>
+<td>
+</td>
+</tr>
 </tbody>
 </table>
 <h3>Properties</h3>
@@ -370,7 +678,16 @@ and applies the given <a href="-polymorphic-domain-object-container-getting-dele
 </td>
 <td>
 <code><span class="keyword">val </span><span class="identifier">embeddedKotlinVersion</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
-<p>The version of the Kotlin compiler embedded in gradle-kotlin-dsl (currently <em>1.2.0</em>).</p>
+<p>The version of the Kotlin compiler embedded in gradle-kotlin-dsl (currently <em>1.2.41</em>).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="ext.html">ext</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><span class="identifier">&lt;ERROR CLASS&gt;</span><span class="symbol">.</span><span class="identifier">ext</span><span class="symbol">: </span><a href="../org.gradle.api.plugins/-extra-properties-extension/index.html"><span class="identifier">ExtraPropertiesExtension</span></a></code>
+<p>Retrieves the <a href="../org.gradle.api.plugins/-extra-properties-extension/index.html">ext</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -399,6 +716,15 @@ via a delegate property.</p>
 </tr>
 <tr>
 <td>
+<p><a href="ext.html">ext</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="identifier">&lt;ERROR CLASS&gt;</span><span class="symbol">.</span><span class="identifier">ext</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$ext(, kotlin.Function1((org.gradle.api.plugins.ExtraPropertiesExtension, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.plugins/-extra-properties-extension/index.html"><span class="identifier">ExtraPropertiesExtension</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the <a href="../org.gradle.api.plugins/-extra-properties-extension/index.html">ext</a> extension.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="getting.html">getting</a></p>
 </td>
 <td>
@@ -414,6 +740,15 @@ via a delegate property.</p>
 <td>
 <code><span class="keyword">operator</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier">C</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named-domain-object-container/index.html"><span class="identifier">NamedDomainObjectContainer</span></a><span class="symbol">&lt;</span><a href="invoke.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <a href="invoke.html#C"><span class="identifier">C</span></a><span class="symbol">.</span><span class="identifier">invoke</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$invoke(org.gradle.kotlin.dsl.invoke.C, kotlin.Function1((org.gradle.kotlin.dsl.NamedDomainObjectContainerScope((org.gradle.kotlin.dsl.invoke.T)), kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="-named-domain-object-container-scope/index.html"><span class="identifier">NamedDomainObjectContainerScope</span></a><span class="symbol">&lt;</span><a href="invoke.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="invoke.html#C"><span class="identifier">C</span></a></code>
 <p>Allows the container to be configured, creating missing objects as they are referenced.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="type-of.html">typeOf</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <span class="identifier">typeOf</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.reflect/-type-of/index.html"><span class="identifier">TypeOf</span></a><span class="symbol">&lt;</span><a href="type-of.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Creates an instance of <a href="../org.gradle.api.reflect/-type-of/index.html">TypeOf</a> for the given parameterized type.</p>
 </td>
 </tr>
 </tbody>

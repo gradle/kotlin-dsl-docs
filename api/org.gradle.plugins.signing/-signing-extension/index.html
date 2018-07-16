@@ -149,8 +149,16 @@
 <p> The signature artifact for the created task is added to the <code><a href="get-configuration.html"> </a></code>.</p>
 </p>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.plugins.signing.SigningExtension$sign(kotlin.Array((org.gradle.api.artifacts.Configuration)))/configurations">configurations</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-sign/index.html"><span class="identifier">Sign</span></a><span class="symbol">&gt;</span></code>
-<p>Creates signing tasks that sign <code><a href="../../org.gradle.api.artifacts/-configuration/get-all-artifacts.html">all of the artifacts</a></code> of the given configurations. 
-<p>The created tasks will be named "sign<em>&lt;configuration name capitalized&gt;</em>". That is, given a configuration with the name "archives" the created task will be named "signArchives". The signature artifact for the created task is added to the <code><a href="get-configuration.html">for this settings object</a></code>.</p>
+<p>Creates signing tasks that sign <code><a href="../../org.gradle.api.artifacts/-configuration/get-all-artifacts.html">all artifacts</a></code> of the given configurations. 
+<p>The created tasks will be named "sign<em>&lt;configuration name capitalized&gt;</em>". That is, given a configuration with the name "archives" the created task will be named "signArchives". The signature artifacts for the created tasks are added to the <code><a href="get-configuration.html">configuration</a></code> for this settings object.</p>
+</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.plugins.signing.SigningExtension$sign(kotlin.Array((org.gradle.api.publish.Publication)))/publications">publications</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.publish/-publication.html"><span class="identifier">Publication</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-sign/index.html"><span class="identifier">Sign</span></a><span class="symbol">&gt;</span></code>
+<p>Creates signing tasks that sign all publishable artifacts of the given publications. 
+<p>The created tasks will be named "sign<em>&lt;publication name capitalized&gt;</em>Publication". That is, given a publication with the name "mavenJava" the created task will be named "signMavenJavaPublication". The signature artifacts for the created tasks are added to the publishable artifacts of the given publications.</p>
+</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.SigningExtension$sign(org.gradle.api.DomainObjectCollection((org.gradle.api.publish.Publication)))/publications">publications</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-domain-object-collection/index.html"><span class="identifier">DomainObjectCollection</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.publish/-publication.html"><span class="identifier">Publication</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-sign/index.html"><span class="identifier">Sign</span></a><span class="symbol">&gt;</span></code>
+<p>Creates signing tasks that sign all publishable artifacts of the given publication collection. 
+<p>The created tasks will be named "sign<em>&lt;publication name capitalized&gt;</em>Publication". That is, given a publication with the name "mavenJava" the created task will be named "signMavenJavaPublication". The signature artifacts for the created tasks are added to the publishable artifacts of the given publications.</p>
 </p>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">sign</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.plugins.signing.SigningExtension$sign(kotlin.Array((org.gradle.api.artifacts.PublishArtifact)))/publishArtifacts">publishArtifacts</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts/-publish-artifact/index.html"><span class="identifier">PublishArtifact</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-sign-operation/index.html"><span class="identifier">SignOperation</span></a></code>
 <p>Digitally signs the publish artifacts, generating signature files alongside them. 
@@ -203,6 +211,34 @@
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">useGpgCmd</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Use GnuPG agent to perform signing work.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.kotlin.dsl/org.gradle.plugins.signing.-signing-extension/ext.html">ext</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><a href="./index.html"><span class="identifier">SigningExtension</span></a><span class="symbol">.</span><span class="identifier">ext</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins/-extra-properties-extension/index.html"><span class="identifier">ExtraPropertiesExtension</span></a></code>
+<p>Retrieves the <a href="../../org.gradle.api.plugins/-extra-properties-extension/index.html">ext</a> extension.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.kotlin.dsl/org.gradle.plugins.signing.-signing-extension/ext.html">ext</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">SigningExtension</span></a><span class="symbol">.</span><span class="identifier">ext</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$ext(org.gradle.plugins.signing.SigningExtension, kotlin.Function1((org.gradle.api.plugins.ExtraPropertiesExtension, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins/-extra-properties-extension/index.html"><span class="identifier">ExtraPropertiesExtension</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the <a href="../../org.gradle.api.plugins/-extra-properties-extension/index.html">ext</a> extension.</p>
 </td>
 </tr>
 </tbody>

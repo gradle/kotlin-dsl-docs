@@ -105,7 +105,7 @@
 <td>
 <code><span class="keyword">interface </span><span class="identifier">DomainObjectCollection</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><a href="-domain-object-collection/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
 <p>
-<p>A <code>DomainObjectCollection</code> is a specialised Collection that adds the ability to modification notifications and live filtered sub collections.</p>
+<p>A <code>DomainObjectCollection</code> is a specialised Collection that adds the ability to receive modification notifications and use live filtered sub collections.</p>
  
 <p>The filtered collections returned by the filtering methods, such as <code><a href="#">#matching(Closure)</a></code>, return collections that are <em>live</em>. That is, they reflect changes made to the source collection that they were created from. This is true for filtered collections made from filtered collections etc.</p>
  
@@ -139,7 +139,7 @@
 </td>
 <td>
 <code><span class="keyword">class </span><span class="identifier">JavaVersion</span></code>
-<p>An enumeration of Java versions.</p>
+<p>An enumeration of Java versions. Before 9: http://www.oracle.com/technetwork/java/javase/versioning-naming-139433.html 9+: http://openjdk.java.net/jeps/223</p>
 </td>
 </tr>
 <tr>

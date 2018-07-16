@@ -16,7 +16,7 @@
 <p><a href="-maven-artifact/index.html">MavenArtifact</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">MavenArtifact</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">MavenArtifact</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.publish/-publication-artifact/index.html"><span class="identifier">PublicationArtifact</span></a></code>
 <p>An artifact published as part of a MavenPublication.</p>
 </td>
 </tr>
@@ -44,7 +44,135 @@
 </td>
 <td>
 <code><span class="keyword">interface </span><span class="identifier">MavenPom</span></code>
-<p>The POM for a Maven publication. The <code><a href="#">#withXml(org.gradle.api.Action)</a></code> method can be used to modify the descriptor after it has been generated according to the publication data.</p>
+<p>The POM for a Maven publication. 
+<p>The <code><a href="#">#withXml(org.gradle.api.Action)</a></code> method can be used to modify the descriptor after it has been generated according to the publication data. However, the preferred way to customize the project information to be published is to use the dedicated properties exposed by this class, e.g. <code><a href="-maven-pom/get-description.html">#getDescription()</a></code>. Please refer to the official <a href="#">POM Reference</a> for detailed information about the individual properties.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-pom-ci-management/index.html">MavenPomCiManagement</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MavenPomCiManagement</span></code>
+<p>The CI management system of a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-pom-contributor/index.html">MavenPomContributor</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MavenPomContributor</span></code>
+<p>A contributor of a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-pom-contributor-spec/index.html">MavenPomContributorSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MavenPomContributorSpec</span></code>
+<p>Allows to add contributors of a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-pom-developer/index.html">MavenPomDeveloper</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MavenPomDeveloper</span></code>
+<p>A developer of a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-pom-developer-spec/index.html">MavenPomDeveloperSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MavenPomDeveloperSpec</span></code>
+<p>Allows to add developers to a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-pom-distribution-management/index.html">MavenPomDistributionManagement</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MavenPomDistributionManagement</span></code>
+<p>The distribution management configuration of a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-pom-issue-management/index.html">MavenPomIssueManagement</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MavenPomIssueManagement</span></code>
+<p>The issue management system of a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-pom-license/index.html">MavenPomLicense</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MavenPomLicense</span></code>
+<p>A license of a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-pom-license-spec/index.html">MavenPomLicenseSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MavenPomLicenseSpec</span></code>
+<p>Allows to add licenses to a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-pom-mailing-list/index.html">MavenPomMailingList</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MavenPomMailingList</span></code>
+<p>A mailing list of a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-pom-mailing-list-spec/index.html">MavenPomMailingListSpec</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MavenPomMailingListSpec</span></code>
+<p>Allows to add mailing lists to a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-pom-organization/index.html">MavenPomOrganization</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MavenPomOrganization</span></code>
+<p>The organization of a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-pom-relocation/index.html">MavenPomRelocation</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MavenPomRelocation</span></code>
+<p>The relocation information of a Maven publication that has been moved to a new group and/or artifact ID.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-maven-pom-scm/index.html">MavenPomScm</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">MavenPomScm</span></code>
+<p>The SCM (source control management) of a Maven publication.</p>
 </td>
 </tr>
 <tr>
@@ -60,8 +188,8 @@
  
 <p> For certain common use cases, it's often sufficient to specify the component to publish, and nothing more (<code><a href="-maven-publication/from.html">#from(org.gradle.api.component.SoftwareComponent)</a></code>. The published component is used to determine which artifacts to publish, and which dependencies should be listed in the generated POM file. </p>
 <p> To add additional artifacts to the set published, use the <code><a href="#">#artifact(Object)</a></code> and <code><a href="#">#artifact(Object, org.gradle.api.Action)</a></code> methods. You can also completely replace the set of published artifacts using <code><a href="#">#setArtifacts(Iterable)</a></code>. Together, these methods give you full control over what artifacts will be published. </p>
-<p> For any other tweaks to the publication, it is possible to modify the generated POM prior to publication. This is done using the <code><a href="#">MavenPom#withXml(org.gradle.api.Action)</a></code> method of the POM returned via the <code><a href="-maven-publication/get-pom.html">#getPom()</a></code> method, or directly by an action (or closure) passed into <code><a href="#">#pom(org.gradle.api.Action)</a></code>. </p>
- Example of publishing a java module with a source artifact and custom POM description <pre><code> apply plugin: "java" apply plugin: "maven-publish" task sourceJar(type: Jar) { from sourceSets.main.allJava classifier "sources" } publishing { publications { myPublication(MavenPublication) { from components.java artifact sourceJar pom.withXml { asNode().appendNode('description', 'A demonstration of Maven POM customization') } } } } </code></pre></p>
+<p> To customize the metadata published in the generated POM, set properties, e.g. <code><a href="-maven-pom/get-description.html">MavenPom#getDescription()</a></code>, on the POM returned via the <code><a href="-maven-publication/get-pom.html">#getPom()</a></code> method or directly by an action (or closure) passed into <code><a href="#">#pom(org.gradle.api.Action)</a></code>. As a last resort, it is possible to modify the generated POM using the <code><a href="#">MavenPom#withXml(org.gradle.api.Action)</a></code> method. </p>
+ Example of publishing a Java module with a source artifact and a customized POM <pre><code> apply plugin: "java" apply plugin: "maven-publish" task sourceJar(type: Jar) { from sourceSets.main.allJava classifier "sources" } publishing { publications { myPublication(MavenPublication) { from components.java artifact sourceJar pom { name = "Demo" description = "A demonstration of Maven POM customization" url = "http://www.example.com/project" licenses { license { name = "The Apache License, Version 2.0" url = "http://www.apache.org/licenses/LICENSE-2.0.txt" } } developers { developer { id = "johnd" name = "John Doe" email = "john.doe@example.com" } } scm { connection = "scm:svn:http://subversion.example.com/svn/project/trunk/" developerConnection = "scm:svn:https://subversion.example.com/svn/project/trunk/" url = "http://subversion.example.com/svn/project/trunk/" } } } } } </code></pre></p>
 </td>
 </tr>
 </tbody>

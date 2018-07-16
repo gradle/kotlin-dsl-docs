@@ -84,11 +84,38 @@
 </tr>
 <tr>
 <td>
+<p><a href="-component-metadata-context/index.html">ComponentMetadataContext</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentMetadataContext</span></code>
+<p>Provides access to compoment metadata from a ComponentMetadataRule.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="-component-metadata-details/index.html">ComponentMetadataDetails</a></p>
 </td>
 <td>
 <code><span class="keyword">interface </span><span class="identifier">ComponentMetadataDetails</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-component-metadata/index.html"><span class="identifier">ComponentMetadata</span></a><span class="symbol">, </span><a href="../org.gradle.api.attributes/-has-configurable-attributes/index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="-component-metadata-details/index.html"><span class="identifier">ComponentMetadataDetails</span></a><span class="symbol">&gt;</span></code>
 <p>Describes a resolved component's metadata, which typically originates from a component descriptor (Ivy file, Maven POM). Some parts of the metadata can be changed via metadata rules (see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-component-metadata-lister-details/index.html">ComponentMetadataListerDetails</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentMetadataListerDetails</span></code>
+<p>Allows a custom version lister to specify the list of versions known for a specific module.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-component-metadata-rule.html">ComponentMetadataRule</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentMetadataRule</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><a href="-component-metadata-context/index.html"><span class="identifier">ComponentMetadataContext</span></a><span class="symbol">&gt;</span></code>
+<p>A rule that modify ComponentMetadataDetails.</p>
 </td>
 </tr>
 <tr>
@@ -107,6 +134,15 @@
 <td>
 <code><span class="keyword">interface </span><span class="identifier">ComponentMetadataSupplierDetails</span></code>
 <p>A component metadata rule details, giving access to the identifier of the component being resolved, the metadata builder, and the repository resource accessor for this.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-component-metadata-version-lister/index.html">ComponentMetadataVersionLister</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentMetadataVersionLister</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><a href="-component-metadata-lister-details/index.html"><span class="identifier">ComponentMetadataListerDetails</span></a><span class="symbol">&gt;</span></code>
+<p>Interface for custom version listers. A version lister is reponsible for returning the list of versions of a module which are available in a specific repository. For this, Gradle is going to call the lister once for each module it needs the list of versions. This will typically happen in case a dynamic version is requested, in which case we need to know the list of versions published for this module. It will not, however, be called for fixed version numbers.</p>
 </td>
 </tr>
 <tr>
@@ -161,7 +197,7 @@
 <td>
 <code><span class="keyword">interface </span><span class="identifier">Configuration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">, </span><a href="../org.gradle.api.attributes/-has-configurable-attributes/index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span></code>
 <p>A <code>Configuration</code> represents a group of artifacts and their dependencies. Find more information about declaring dependencies to a configuration or about managing configurations in docs for ConfigurationContainer 
-<p> Configuration is an instance of a FileCollection that contains all dependencies (see also <code><a href="-configuration/get-all-dependencies.html">#getAllDependencies()</a></code>) but not artifacts. If you want to refer to the artifacts declared in this configuration please use <code><a href="-configuration/get-artifacts.html">#getArtifacts()</a></code> or <code><a href="-configuration/get-all-artifacts.html">#getAllArtifacts()</a></code>. Read more about declaring artifacts in the configuration in docs for org.gradle.api.artifacts.dsl.ArtifactHandler</p>
+<p> Configuration is an instance of a FileCollection that contains all dependencies (see also <code><a href="-configuration/get-all-dependencies.html">#getAllDependencies()</a></code>) but not artifacts. If you want to refer to the artifacts declared in this configuration please use <code><a href="-configuration/get-artifacts.html">#getArtifacts()</a></code> or <code><a href="-configuration/get-all-artifacts.html">#getAllArtifacts()</a></code>. Read more about declaring artifacts in the configuration in docs for org.gradle.api.artifacts.dsl.ArtifactHandler Please see the <a href="#">Managing Dependency Configurations User Guide chapter</a> for more information.</p>
 </p>
 </td>
 </tr>
@@ -179,7 +215,7 @@
 <p>The configurations in a container are accessible as read-only properties of the container, using the name of the configuration as the property name. For example:</p>
  <pre><code> configurations.create('myConfiguration') configurations.myConfiguration.transitive = false </code></pre> 
 <p>A dynamic method is added for each configuration which takes a configuration closure. This is equivalent to calling <code><a href="#">#getByName(String, groovy.lang.Closure)</a></code>. For example:</p>
- <pre><code> configurations.create('myConfiguration') configurations.myConfiguration { transitive = false } </code></pre> Examples An example showing how to refer to a given configuration by name in order to get hold of all dependencies (e.g. jars, but only) <pre><code> apply plugin: 'java' //so that I can use 'compile' configuration //copying all dependencies attached to 'compile' into a specific folder task copyAllDependencies(type: Copy) { //referring to the 'compile' configuration from configurations.compile into 'allLibs' } </code></pre> An example showing how to declare and configure configurations <pre><code> apply plugin: 'java' //so that I can use 'compile', 'testCompile' configurations configurations { //adding a configuration: myConfiguration //adding a configuration that extends existing configuration: //(testCompile was added by the java plugin) myIntegrationTestsCompile.extendsFrom(testCompile) //configuring existing configurations not to put transitive dependencies on the compile classpath //this way you can avoid issues with implicit dependencies to transitive libraries compile.transitive = false testCompile.transitive = false } </code></pre> Examples on configuring the <strong>resolution strategy</strong> - see docs for ResolutionStrategy</p>
+ <pre><code> configurations.create('myConfiguration') configurations.myConfiguration { transitive = false } </code></pre> Examples An example showing how to refer to a given configuration by name in order to get hold of all dependencies (e.g. jars, but only) <pre><code> apply plugin: 'java' //so that I can use 'compile' configuration //copying all dependencies attached to 'compile' into a specific folder task copyAllDependencies(type: Copy) { //referring to the 'compile' configuration from configurations.compile into 'allLibs' } </code></pre> An example showing how to declare and configure configurations <pre><code> apply plugin: 'java' //so that I can use 'compile', 'testCompile' configurations configurations { //adding a configuration: myConfiguration //adding a configuration that extends existing configuration: //(testCompile was added by the java plugin) myIntegrationTestsCompile.extendsFrom(testCompile) //configuring existing configurations not to put transitive dependencies on the compile classpath //this way you can avoid issues with implicit dependencies to transitive libraries compile.transitive = false testCompile.transitive = false } </code></pre> Examples on configuring the <strong>resolution strategy</strong> - see docs for ResolutionStrategy Please see the <a href="#">Managing Dependency Configurations User Guide chapter</a> for more information.</p>
 </td>
 </tr>
 <tr>
@@ -238,7 +274,7 @@
 <p><a href="-dependency-constraint/index.html">DependencyConstraint</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">DependencyConstraint</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependency/index.html"><span class="identifier">Dependency</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">DependencyConstraint</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-module-version-selector/index.html"><span class="identifier">ModuleVersionSelector</span></a><span class="symbol">, </span><a href="../org.gradle.api.attributes/-has-configurable-attributes/index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="-dependency-constraint/index.html"><span class="identifier">DependencyConstraint</span></a><span class="symbol">&gt;</span></code>
 <p>Represents a constraints over all, including transitive, dependencies.</p>
 </td>
 </tr>
@@ -249,6 +285,15 @@
 <td>
 <code><span class="keyword">interface </span><span class="identifier">DependencyConstraintMetadata</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependency-metadata/index.html"><span class="identifier">DependencyMetadata</span></a><span class="symbol">&lt;</span><a href="-dependency-constraint-metadata.html"><span class="identifier">DependencyConstraintMetadata</span></a><span class="symbol">&gt;</span></code>
 <p>Describes a dependency constraint declared in a resolved component's metadata, which typically originates from a component descriptor (Gradle metadata file). This interface can be used to adjust a dependency constraint's properties via metadata rules (see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-dependency-constraint-set.html">DependencyConstraintSet</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DependencyConstraintSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><a href="-dependency-constraint/index.html"><span class="identifier">DependencyConstraint</span></a><span class="symbol">&gt;</span></code>
+<p>A set of dependency constraint definitions that are associated with a configuration.</p>
 </td>
 </tr>
 <tr>
@@ -325,15 +370,6 @@
 </tr>
 <tr>
 <td>
-<p><a href="-direct-dependency.html">DirectDependency</a></p>
-</td>
-<td>
-<code><span class="keyword">interface </span><span class="identifier">DirectDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependency/index.html"><span class="identifier">Dependency</span></a></code>
-<p>Implementations of this interface always describe direct dependencies and not constraints may optionally considered as dependency.</p>
-</td>
-</tr>
-<tr>
-<td>
 <p><a href="-direct-dependency-metadata.html">DirectDependencyMetadata</a></p>
 </td>
 <td>
@@ -406,7 +442,7 @@
 <p><a href="-module-dependency/index.html">ModuleDependency</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">ModuleDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-direct-dependency.html"><span class="identifier">DirectDependency</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">ModuleDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">, </span><a href="../org.gradle.api.attributes/-has-configurable-attributes/index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="-module-dependency/index.html"><span class="identifier">ModuleDependency</span></a><span class="symbol">&gt;</span></code>
 <p>A <code>ModuleDependency</code> is a org.gradle.api.artifacts.Dependency on a module outside the current project. 
 <p> For examples on configuring the exclude rules please refer to <code><a href="#">#exclude(java.util.Map)</a></code>.</p>
 </p>
@@ -557,7 +593,7 @@
 <p><a href="-self-resolving-dependency/index.html">SelfResolvingDependency</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">SelfResolvingDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-direct-dependency.html"><span class="identifier">DirectDependency</span></a><span class="symbol">, </span><a href="../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">SelfResolvingDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">, </span><a href="../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
 <p>A <code>SelfResolvingDependency</code> is a Dependency which is able to resolve itself, independent of a repository.</p>
 </td>
 </tr>
@@ -586,6 +622,20 @@
 <td>
 <code><span class="keyword">interface </span><span class="identifier">VersionConstraint</span></code>
 <p>Represents a constrained version. By default, when a dependency has a version number, it is assumed that the version can be upgraded during conflict resolution (typically, version 1.15 can be upgraded to 1.16). However in some cases we don't want this behavior. This class represents the base spec of module constraints.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Annotations</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-cacheable-rule/index.html">CacheableRule</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">CacheableRule</span></code>
+<p>Denotates a rule which execution is subject to caching.</p>
 </td>
 </tr>
 </tbody>

@@ -10,8 +10,12 @@
 <h1>getDependencies</h1>
 <a name="org.gradle.api.artifacts.Configuration$getDependencies()"></a>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-dependency-set.html"><span class="identifier">DependencySet</span></a></code>
-<p>Gets the set of dependencies directly contained in this configuration (ignoring superconfigurations).</p>
+<p>Gets the set of declared dependencies directly contained in this configuration (ignoring superconfigurations). 
+<p> This method does not resolve the configuration. Therefore, the return value does not include transitive dependencies.</p>
+</p>
 <p><strong>Return</strong><br/>
 the set of dependencies</p>
+<p><strong>See Also</strong><br/>
+<a href="#">#extendsFrom(Configuration...)</a></p>
 </BODY>
 </HTML>

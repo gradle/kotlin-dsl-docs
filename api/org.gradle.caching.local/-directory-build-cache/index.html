@@ -8,7 +8,7 @@
 <a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.caching.local</a>&nbsp;/&nbsp;<a href="./index.html">DirectoryBuildCache</a><br/>
 <br/>
 <h1>DirectoryBuildCache</h1>
-<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">DirectoryBuildCache</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.caching.configuration/-abstract-build-cache/index.html"><span class="identifier">AbstractBuildCache</span></a></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">DirectoryBuildCache</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.caching.configuration/-abstract-build-cache/index.html"><span class="identifier">AbstractBuildCache</span></a></code>
 <p>Configuration object for the local directory build cache.</p>
 <p><strong>Since</strong><br/>
 3.5</p>
@@ -40,13 +40,20 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-remove-unused-entries-after-days.html">getRemoveUnusedEntriesAfterDays</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getRemoveUnusedEntriesAfterDays</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a></code>
+<p>Returns the number of days after unused entries are garbage collected. Defaults to 7 days.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-target-size-in-m-b.html">getTargetSizeInMB</a></p>
 </td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTargetSizeInMB</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a></code>
-<p>The target size of the build cache in megabytes. Defaults to 5 GB. 
-<p> Must be greater than or equal to 1, although larger cache sizes will be more useful.</p>
-</p>
+<p>Used to be the target size of the build cache in megabytes, now returns <code>0</code>.</p>
 </td>
 </tr>
 <tr>
@@ -60,13 +67,20 @@
 </tr>
 <tr>
 <td>
+<p><a href="set-remove-unused-entries-after-days.html">setRemoveUnusedEntriesAfterDays</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setRemoveUnusedEntriesAfterDays</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.local.DirectoryBuildCache$setRemoveUnusedEntriesAfterDays(kotlin.Int)/removeUnusedEntriesAfterDays">removeUnusedEntriesAfterDays</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-int/index.html"><span class="identifier">Int</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the number of days after unused entries are garbage collected. Defaults to 7 days. Must be greater than 1.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="set-target-size-in-m-b.html">setTargetSizeInMB</a></p>
 </td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTargetSizeInMB</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.local.DirectoryBuildCache$setTargetSizeInMB(kotlin.Long)/targetSizeInMB">targetSizeInMB</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-long/index.html"><span class="identifier">Long</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>The target size of the build cache in megabytes. Defaults to 5 GB. 
-<p> Must be greater than or equal to 1, although larger cache sizes will be more useful.</p>
-</p>
+<p>Used to set the target size of the build cache in megabytes, now has no effect.</p>
 </td>
 </tr>
 </tbody>

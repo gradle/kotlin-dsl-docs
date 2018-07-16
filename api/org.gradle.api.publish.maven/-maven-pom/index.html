@@ -8,8 +8,10 @@
 <a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.publish.maven</a>&nbsp;/&nbsp;<a href="./index.html">MavenPom</a><br/>
 <br/>
 <h1>MavenPom</h1>
-<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">MavenPom</span></code>
-<p>The POM for a Maven publication. The <code><a href="#">#withXml(org.gradle.api.Action)</a></code> method can be used to modify the descriptor after it has been generated according to the publication data.</p>
+<code><span class="keyword">interface </span><span class="identifier">MavenPom</span></code>
+<p>The POM for a Maven publication. 
+<p>The <code><a href="#">#withXml(org.gradle.api.Action)</a></code> method can be used to modify the descriptor after it has been generated according to the publication data. However, the preferred way to customize the project information to be published is to use the dedicated properties exposed by this class, e.g. <code><a href="get-description.html">#getDescription()</a></code>. Please refer to the official <a href="#">POM Reference</a> for detailed information about the individual properties.</p>
+</p>
 <p><strong>Since</strong><br/>
 1.4</p>
 <h3>Functions</h3>
@@ -17,11 +19,128 @@
 <tbody>
 <tr>
 <td>
+<p><a href="ci-management.html">ciManagement</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">ciManagement</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.publish.maven.MavenPom$ciManagement(org.gradle.api.Action((org.gradle.api.publish.maven.MavenPomCiManagement)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-maven-pom-ci-management/index.html"><span class="identifier">MavenPomCiManagement</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the CI management for the publication represented by this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="contributors.html">contributors</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">contributors</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.publish.maven.MavenPom$contributors(org.gradle.api.Action((org.gradle.api.publish.maven.MavenPomContributorSpec)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-maven-pom-contributor-spec/index.html"><span class="identifier">MavenPomContributorSpec</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the contributors for the publication represented by this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="developers.html">developers</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">developers</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.publish.maven.MavenPom$developers(org.gradle.api.Action((org.gradle.api.publish.maven.MavenPomDeveloperSpec)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-maven-pom-developer-spec/index.html"><span class="identifier">MavenPomDeveloperSpec</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the developers for the publication represented by this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="distribution-management.html">distributionManagement</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">distributionManagement</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.publish.maven.MavenPom$distributionManagement(org.gradle.api.Action((org.gradle.api.publish.maven.MavenPomDistributionManagement)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-maven-pom-distribution-management/index.html"><span class="identifier">MavenPomDistributionManagement</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the distribution management for the publication represented by this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-description.html">getDescription</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDescription</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-property/index.html"><span class="identifier">Property</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The description for the publication represented by this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-inception-year.html">getInceptionYear</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getInceptionYear</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-property/index.html"><span class="identifier">Property</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The year of the inception for the publication represented by this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-property/index.html"><span class="identifier">Property</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The name for the publication represented by this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-packaging.html">getPackaging</a></p>
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getPackaging</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
-<p>Returns the packaging for this publication.</p>
+<p>Returns the packaging for the publication represented by this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-url.html">getUrl</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getUrl</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-property/index.html"><span class="identifier">Property</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>The URL for the publication represented by this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="issue-management.html">issueManagement</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">issueManagement</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.publish.maven.MavenPom$issueManagement(org.gradle.api.Action((org.gradle.api.publish.maven.MavenPomIssueManagement)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-maven-pom-issue-management/index.html"><span class="identifier">MavenPomIssueManagement</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the issue management for the publication represented by this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="licenses.html">licenses</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">licenses</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.publish.maven.MavenPom$licenses(org.gradle.api.Action((org.gradle.api.publish.maven.MavenPomLicenseSpec)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-maven-pom-license-spec/index.html"><span class="identifier">MavenPomLicenseSpec</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the licenses for the publication represented by this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="mailing-lists.html">mailingLists</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">mailingLists</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.publish.maven.MavenPom$mailingLists(org.gradle.api.Action((org.gradle.api.publish.maven.MavenPomMailingListSpec)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-maven-pom-mailing-list-spec/index.html"><span class="identifier">MavenPomMailingListSpec</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the mailing lists for the publication represented by this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="organization.html">organization</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">organization</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.publish.maven.MavenPom$organization(org.gradle.api.Action((org.gradle.api.publish.maven.MavenPomOrganization)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-maven-pom-organization/index.html"><span class="identifier">MavenPomOrganization</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the organization for the publication represented by this POM.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="scm.html">scm</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">scm</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.publish.maven.MavenPom$scm(org.gradle.api.Action((org.gradle.api.publish.maven.MavenPomScm)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-maven-pom-scm/index.html"><span class="identifier">MavenPomScm</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the SCM (source control management) for the publication represented by this POM.</p>
 </td>
 </tr>
 <tr>
@@ -30,7 +149,7 @@
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setPackaging</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.publish.maven.MavenPom$setPackaging(kotlin.String)/packaging">packaging</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Sets the packaging for this publication.</p>
+<p>Sets the packaging for the publication represented by this POM.</p>
 </td>
 </tr>
 <tr>
@@ -39,7 +158,7 @@
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">withXml</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.publish.maven.MavenPom$withXml(org.gradle.api.Action((org.gradle.api.XmlProvider)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api/-xml-provider/index.html"><span class="identifier">XmlProvider</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Allows configuration of the POM, after it has been generated according to the input data. <pre><code> apply plugin: "maven-publish" publishing { publications { maven(MavenPublication) { pom.withXml { asNode().appendNode('description', 'A demonstration of Maven POM customization') } } } } </code></pre> Note that due to Gradle's internal type conversion system, you can pass a Groovy closure to this method and it will be automatically converted to an <code>Action</code>. 
+<p>Allows configuration of the POM, after it has been generated according to the input data. <pre><code> apply plugin: "maven-publish" publishing { publications { maven(MavenPublication) { pom.withXml { asNode().appendNode('properties').appendNode('my-property', 'my-value') } } } } </code></pre> Note that due to Gradle's internal type conversion system, you can pass a Groovy closure to this method and it will be automatically converted to an <code>Action</code>. 
 <p> Each action/closure passed to this method will be stored as a callback, and executed when the publication that this descriptor is attached to is published. </p>
 <p> For details on the structure of the XML to be modified, see <a href="#">the POM reference</a>.</p>
 </p>

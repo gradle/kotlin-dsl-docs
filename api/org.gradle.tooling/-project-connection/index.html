@@ -8,10 +8,10 @@
 <a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling</a>&nbsp;/&nbsp;<a href="./index.html">ProjectConnection</a><br/>
 <br/>
 <h1>ProjectConnection</h1>
-<code><span class="keyword">interface </span><span class="identifier">ProjectConnection</span></code>
+<code><span class="keyword">interface </span><span class="identifier">ProjectConnection</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/Closeable.html"><span class="identifier">Closeable</span></a></code>
 <p>
 <p>Represents a long-lived connection to a Gradle project. You obtain an instance of a <code>ProjectConnection</code> by using <code><a href="../-gradle-connector/connect.html">org.gradle.tooling.GradleConnector#connect()</a></code>.</p>
- <pre><code> ProjectConnection connection = GradleConnector.newConnector() .forProjectDirectory(new File("someFolder")) .connect(); try { //obtain some information from the build BuildEnvironment environment = connection.model(BuildEnvironment.class) .get(); //run some tasks connection.newBuild() .forTasks("tasks") .setStandardOutput(System.out) .run(); } finally { connection.close(); } </code></pre> Thread safety information 
+ <pre><code> try (ProjectConnection connection = GradleConnector.newConnector() .forProjectDirectory(new File("someFolder")) .connect()) { //obtain some information from the build BuildEnvironment environment = connection.model(BuildEnvironment.class).get(); //run some tasks connection.newBuild() .forTasks("tasks") .setStandardOutput(System.out) .run(); } </code></pre> Thread safety information 
 <p>All implementations of <code>ProjectConnection</code> are thread-safe, and may be shared by any number of threads.</p>
  
 <p>All notifications from a given <code>ProjectConnection</code> instance are delivered by a single thread at a time. Note, however, that the delivery thread may change over time.</p>
@@ -27,8 +27,12 @@
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">action</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.ProjectConnection$action(org.gradle.tooling.BuildAction((org.gradle.tooling.ProjectConnection.action.T)))/buildAction">buildAction</span><span class="symbol">:</span>&nbsp;<a href="../-build-action/index.html"><span class="identifier">BuildAction</span></a><span class="symbol">&lt;</span><a href="action.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-build-action-executer/index.html"><span class="identifier">BuildActionExecuter</span></a><span class="symbol">&lt;</span><a href="action.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
-<p>Creates an executer which can be used to run the given action. The action is serialized into the build process and executed, then its result is serialized back to the caller. 
+<p>Creates an executer which can be used to run the given action when the build has finished. The action is serialized into the build process and executed, then its result is serialized back to the caller. 
 <p>Requires Gradle 1.8 or later.</p>
+</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">action</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-build-action-executer/-builder/index.html"><span class="identifier">Builder</span></a></code>
+<p>Creates a builder for an executer which can be used to run actions in different phases of the build. The actions are serialized into the build process and executed, then its result is serialized back to the caller. 
+<p>Requires Gradle 4.8 or later.</p>
 </p>
 </td>
 </tr>

@@ -9,7 +9,7 @@
 <br/>
 <h1>getDestination</h1>
 <a name="org.gradle.api.reporting.Report$getDestination()"></a>
-<code><span class="identifier">@Internal</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDestination</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<code><span class="identifier">@Internal</span><span class="symbol">(</span>"Implementations need to add the correct annotation, @OutputDirectory or @OutputFile"<span class="symbol">)</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDestination</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
 <p>The location on the filesystem of the report when it is generated. 
 <p> Depending on the <code><a href="get-output-type.html">output type</a></code> of the report, this may point to a file or a directory. </p>
 <p> Subtypes may implement setters for the destination.</p>

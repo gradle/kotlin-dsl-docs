@@ -17,7 +17,7 @@
 <p>The configurations in a container are accessible as read-only properties of the container, using the name of the configuration as the property name. For example:</p>
  <pre><code> configurations.create('myConfiguration') configurations.myConfiguration.transitive = false </code></pre> 
 <p>A dynamic method is added for each configuration which takes a configuration closure. This is equivalent to calling <code><a href="#">#getByName(String, groovy.lang.Closure)</a></code>. For example:</p>
- <pre><code> configurations.create('myConfiguration') configurations.myConfiguration { transitive = false } </code></pre> Examples An example showing how to refer to a given configuration by name in order to get hold of all dependencies (e.g. jars, but only) <pre><code> apply plugin: 'java' //so that I can use 'compile' configuration //copying all dependencies attached to 'compile' into a specific folder task copyAllDependencies(type: Copy) { //referring to the 'compile' configuration from configurations.compile into 'allLibs' } </code></pre> An example showing how to declare and configure configurations <pre><code> apply plugin: 'java' //so that I can use 'compile', 'testCompile' configurations configurations { //adding a configuration: myConfiguration //adding a configuration that extends existing configuration: //(testCompile was added by the java plugin) myIntegrationTestsCompile.extendsFrom(testCompile) //configuring existing configurations not to put transitive dependencies on the compile classpath //this way you can avoid issues with implicit dependencies to transitive libraries compile.transitive = false testCompile.transitive = false } </code></pre> Examples on configuring the <strong>resolution strategy</strong> - see docs for ResolutionStrategy</p>
+ <pre><code> configurations.create('myConfiguration') configurations.myConfiguration { transitive = false } </code></pre> Examples An example showing how to refer to a given configuration by name in order to get hold of all dependencies (e.g. jars, but only) <pre><code> apply plugin: 'java' //so that I can use 'compile' configuration //copying all dependencies attached to 'compile' into a specific folder task copyAllDependencies(type: Copy) { //referring to the 'compile' configuration from configurations.compile into 'allLibs' } </code></pre> An example showing how to declare and configure configurations <pre><code> apply plugin: 'java' //so that I can use 'compile', 'testCompile' configurations configurations { //adding a configuration: myConfiguration //adding a configuration that extends existing configuration: //(testCompile was added by the java plugin) myIntegrationTestsCompile.extendsFrom(testCompile) //configuring existing configurations not to put transitive dependencies on the compile classpath //this way you can avoid issues with implicit dependencies to transitive libraries compile.transitive = false testCompile.transitive = false } </code></pre> Examples on configuring the <strong>resolution strategy</strong> - see docs for ResolutionStrategy Please see the <a href="#">Managing Dependency Configurations User Guide chapter</a> for more information.</p>
 <h3>Functions</h3>
 <table>
 <tbody>
@@ -73,12 +73,12 @@
 <p><a href="../../org.gradle.api/-named-domain-object-container/create.html">create</a></p>
 </td>
 <td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">create</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectContainer$create(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-named-domain-object-container/index.html#T"><span class="identifier">T</span></a></code>
+<p>Creates a new item with the given name, adding it to this container.</p>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">create</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectContainer$create(kotlin.String, groovy.lang.Closure((kotlin.Any)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.NamedDomainObjectContainer$create(kotlin.String, groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-named-domain-object-container/index.html#T"><span class="identifier">T</span></a></code>
 <p>Creates a new item with the given name, adding it to this container, then configuring it with the given closure.</p>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">create</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectContainer$create(kotlin.String, org.gradle.api.Action((org.gradle.api.NamedDomainObjectContainer.T)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.NamedDomainObjectContainer$create(kotlin.String, org.gradle.api.Action((org.gradle.api.NamedDomainObjectContainer.T)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api/-named-domain-object-container/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-named-domain-object-container/index.html#T"><span class="identifier">T</span></a></code>
 <p>Creates a new item with the given name, adding it to this container, then configuring it with the given action.</p>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">create</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.NamedDomainObjectContainer$create(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-named-domain-object-container/index.html#T"><span class="identifier">T</span></a></code>
-<p>Creates a new item with the given name, adding it to this container.</p>
 </td>
 </tr>
 <tr>
@@ -95,6 +95,15 @@
 <h3>Extension Properties</h3>
 <table>
 <tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.artifacts.-configuration-container/annotation-processor.html">annotationProcessor</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><a href="./index.html"><span class="identifier">ConfigurationContainer</span></a><span class="symbol">.</span><span class="identifier">annotationProcessor</span><span class="symbol">: </span><a href="../-configuration/index.html"><span class="identifier">Configuration</span></a></code>
+<p>The 'annotationProcessor' configuration.</p>
+</td>
+</tr>
 <tr>
 <td>
 <p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.artifacts.-configuration-container/antlr.html">antlr</a></p>
@@ -399,6 +408,15 @@
 <td>
 <code><span class="keyword">val </span><a href="./index.html"><span class="identifier">ConfigurationContainer</span></a><span class="symbol">.</span><span class="identifier">signatures</span><span class="symbol">: </span><a href="../-configuration/index.html"><span class="identifier">Configuration</span></a></code>
 <p>The 'signatures' configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.artifacts.-configuration-container/test-annotation-processor.html">testAnnotationProcessor</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><a href="./index.html"><span class="identifier">ConfigurationContainer</span></a><span class="symbol">.</span><span class="identifier">testAnnotationProcessor</span><span class="symbol">: </span><a href="../-configuration/index.html"><span class="identifier">Configuration</span></a></code>
+<p>The 'testAnnotationProcessor' configuration.</p>
 </td>
 </tr>
 <tr>

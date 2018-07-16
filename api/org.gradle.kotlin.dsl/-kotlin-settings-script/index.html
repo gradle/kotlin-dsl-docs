@@ -8,7 +8,7 @@
 <a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.kotlin.dsl</a>&nbsp;/&nbsp;<a href="./index.html">KotlinSettingsScript</a><br/>
 <br/>
 <h1>KotlinSettingsScript</h1>
-<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">KotlinSettingsScript</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.initialization/-settings/index.html"><span class="identifier">Settings</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">KotlinSettingsScript</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-settings-script-api/index.html"><span class="identifier">SettingsScriptApi</span></a></code>
 <p>Base class for Kotlin settings scripts.</p>
 <h3>Constructors</h3>
 <table>
@@ -18,7 +18,7 @@
 <p><a href="-init-.html">&lt;init&gt;</a></p>
 </td>
 <td>
-<code><span class="identifier">KotlinSettingsScript</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$<init>(org.gradle.api.initialization.Settings)/settings">settings</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.initialization/-settings/index.html"><span class="identifier">Settings</span></a><span class="symbol">)</span></code>
+<code><span class="identifier">KotlinSettingsScript</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$<init>(((org.gradle.api.initialization.Settings)))/host">host</span><span class="symbol">:</span>&nbsp;<span class="identifier">&lt;ERROR CLASS&gt;</span><span class="symbol">&lt;</span><a href="../../org.gradle.api.initialization/-settings/index.html"><span class="identifier">Settings</span></a><span class="symbol">&gt;</span><span class="symbol">)</span></code>
 <p>Base class for Kotlin settings scripts.</p>
 </td>
 </tr>
@@ -29,7 +29,19 @@
 <tbody>
 <tr>
 <td>
-<p><a href="logger.html">logger</a></p>
+<p><a href="file-operations.html">fileOperations</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">val </span><span class="identifier">fileOperations</span><span class="symbol">: </span><span class="identifier">&lt;ERROR CLASS&gt;</span></code></td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-settings-script-api/logger.html">logger</a></p>
 </td>
 <td>
 <code><span class="keyword">val </span><span class="identifier">logger</span><span class="symbol">: </span><a href="../../org.gradle.api.logging/-logger/index.html"><span class="identifier">Logger</span></a></code>
@@ -38,10 +50,10 @@
 </tr>
 <tr>
 <td>
-<p><a href="logging.html">logging</a></p>
+<p><a href="../-settings-script-api/logging.html">logging</a></p>
 </td>
 <td>
-<code><span class="keyword">val </span><span class="identifier">logging</span><span class="symbol">: </span><a href="../../org.gradle.api.logging/-logging-manager/index.html"><span class="identifier">LoggingManager</span></a></code>
+<code><span class="keyword">val </span><span class="identifier">logging</span><span class="symbol">: </span><span class="identifier">&lt;ERROR CLASS&gt;</span></code>
 <p>The <a href="../../org.gradle.api.logging/-logging-manager/index.html">LoggingManager</a> which can be used to receive logging and to control the standard output/error capture for
 this script. By default, <code>System.out</code> is redirected to the Gradle logging system at the <code>QUIET</code> log level,
 and <code>System.err</code> is redirected at the <code>ERROR</code> log level.</p>
@@ -49,7 +61,7 @@ and <code>System.err</code> is redirected at the <code>ERROR</code> log level.</
 </tr>
 <tr>
 <td>
-<p><a href="resources.html">resources</a></p>
+<p><a href="../-settings-script-api/resources.html">resources</a></p>
 </td>
 <td>
 <code><span class="keyword">val </span><span class="identifier">resources</span><span class="symbol">: </span><a href="../../org.gradle.api.resources/-resource-handler/index.html"><span class="identifier">ResourceHandler</span></a></code>
@@ -66,139 +78,153 @@ and <code>System.err</code> is redirected at the <code>ERROR</code> log level.</
 <p><a href="apply.html">apply</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$apply(kotlin.Function1((org.gradle.api.plugins.ObjectConfigurationAction, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins/-object-configuration-action/index.html"><span class="identifier">ObjectConfigurationAction</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$apply(kotlin.Function1((org.gradle.api.plugins.ObjectConfigurationAction, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins/-object-configuration-action/index.html"><span class="identifier">ObjectConfigurationAction</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">&lt;ERROR CLASS&gt;</span></code>
 <p>Applies zero or more plugins or scripts.</p>
-</td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$apply(org.gradle.api.Action((org.gradle.api.plugins.ObjectConfigurationAction)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.plugins/-object-configuration-action/index.html"><span class="identifier">ObjectConfigurationAction</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">&lt;ERROR CLASS&gt;</span></code></td>
 </tr>
 <tr>
 <td>
-<p><a href="buildscript.html">buildscript</a></p>
+<p><a href="get-buildscript.html">getBuildscript</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">buildscript</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$buildscript(kotlin.Function1((org.gradle.kotlin.dsl.ScriptHandlerScope, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<a href="../-script-handler-scope/index.html"><span class="identifier">ScriptHandlerScope</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getBuildscript</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.initialization.dsl/-script-handler/index.html"><span class="identifier">ScriptHandler</span></a></code>
+<p>The <a href="../../org.gradle.api.initialization.dsl/-script-handler/index.html">ScriptHandler</a> for this script.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-settings-script-api/buildscript.html">buildscript</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">buildscript</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.SettingsScriptApi$buildscript(kotlin.Function1((org.gradle.kotlin.dsl.ScriptHandlerScope, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<a href="../-script-handler-scope/index.html"><span class="identifier">ScriptHandlerScope</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Configures the build script classpath for settings.</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="copy.html">copy</a></p>
+<p><a href="../-settings-script-api/copy.html">copy</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$copy(kotlin.Function1((org.gradle.api.file.CopySpec, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-work-result/index.html"><span class="identifier">WorkResult</span></a></code>
+<code><span class="keyword">fun </span><span class="identifier">copy</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.SettingsScriptApi$copy(kotlin.Function1((org.gradle.api.file.CopySpec, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-work-result/index.html"><span class="identifier">WorkResult</span></a></code>
 <p>Copies the specified files.</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="copy-spec.html">copySpec</a></p>
+<p><a href="../-settings-script-api/copy-spec.html">copySpec</a></p>
 </td>
 <td>
 <code><span class="keyword">fun </span><span class="identifier">copySpec</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a></code><br/>
-<code><span class="keyword">fun </span><span class="identifier">copySpec</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$copySpec(kotlin.Function1((org.gradle.api.file.CopySpec, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a></code>
+<code><span class="keyword">fun </span><span class="identifier">copySpec</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.SettingsScriptApi$copySpec(kotlin.Function1((org.gradle.api.file.CopySpec, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-copy-spec/index.html"><span class="identifier">CopySpec</span></a></code>
 <p>Creates a {@link CopySpec} which can later be used to copy files or create an archive.</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="delete.html">delete</a></p>
+<p><a href="../-settings-script-api/delete.html">delete</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$delete(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<code><span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.kotlin.dsl.SettingsScriptApi$delete(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
 <p>Deletes files and directories.</p>
-<code><span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$delete(kotlin.Function1((org.gradle.api.file.DeleteSpec, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-delete-spec/index.html"><span class="identifier">DeleteSpec</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-work-result/index.html"><span class="identifier">WorkResult</span></a></code>
+<code><span class="keyword">fun </span><span class="identifier">delete</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.SettingsScriptApi$delete(kotlin.Function1((org.gradle.api.file.DeleteSpec, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-delete-spec/index.html"><span class="identifier">DeleteSpec</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-work-result/index.html"><span class="identifier">WorkResult</span></a></code>
 <p>Deletes the specified files.</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="exec.html">exec</a></p>
+<p><a href="../-settings-script-api/exec.html">exec</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">exec</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$exec(kotlin.Function1((org.gradle.process.ExecSpec, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.process/-exec-spec/index.html"><span class="identifier">ExecSpec</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.process/-exec-result/index.html"><span class="identifier">ExecResult</span></a></code>
+<code><span class="keyword">fun </span><span class="identifier">exec</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.SettingsScriptApi$exec(kotlin.Function1((org.gradle.process.ExecSpec, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.process/-exec-spec/index.html"><span class="identifier">ExecSpec</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.process/-exec-result/index.html"><span class="identifier">ExecResult</span></a></code>
 <p>Executes an external command.</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="file.html">file</a></p>
+<p><a href="../-settings-script-api/file.html">file</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$file(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code><br/>
-<code><span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$file(kotlin.Any, org.gradle.api.PathValidation)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$file(kotlin.Any, org.gradle.api.PathValidation)/validation">validation</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-path-validation/index.html"><span class="identifier">PathValidation</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<code><span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.SettingsScriptApi$file(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">file</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.SettingsScriptApi$file(kotlin.Any, org.gradle.api.PathValidation)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl.SettingsScriptApi$file(kotlin.Any, org.gradle.api.PathValidation)/validation">validation</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-path-validation/index.html"><span class="identifier">PathValidation</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
 <p>Resolves a file path relative to this script's target base directory.</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="file-tree.html">fileTree</a></p>
+<p><a href="../-settings-script-api/file-tree.html">fileTree</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">fileTree</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$fileTree(kotlin.Any)/baseDir">baseDir</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-tree/index.html"><span class="identifier">ConfigurableFileTree</span></a></code><br/>
-<code><span class="keyword">fun </span><span class="identifier">fileTree</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$fileTree(kotlin.Any, kotlin.Function1((org.gradle.api.file.ConfigurableFileTree, kotlin.Unit)))/baseDir">baseDir</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$fileTree(kotlin.Any, kotlin.Function1((org.gradle.api.file.ConfigurableFileTree, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-configurable-file-tree/index.html"><span class="identifier">ConfigurableFileTree</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-tree/index.html"><span class="identifier">ConfigurableFileTree</span></a></code>
+<code><span class="keyword">fun </span><span class="identifier">fileTree</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.SettingsScriptApi$fileTree(kotlin.Any)/baseDir">baseDir</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-tree/index.html"><span class="identifier">ConfigurableFileTree</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">fileTree</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.SettingsScriptApi$fileTree(kotlin.Any, kotlin.Function1((org.gradle.api.file.ConfigurableFileTree, kotlin.Unit)))/baseDir">baseDir</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl.SettingsScriptApi$fileTree(kotlin.Any, kotlin.Function1((org.gradle.api.file.ConfigurableFileTree, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-configurable-file-tree/index.html"><span class="identifier">ConfigurableFileTree</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-tree/index.html"><span class="identifier">ConfigurableFileTree</span></a></code>
 <p>Creates a new <a href="../../org.gradle.api.file/-configurable-file-tree/index.html">ConfigurableFileTree</a> using the given base directory.</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="files.html">files</a></p>
+<p><a href="../-settings-script-api/files.html">files</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">files</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$files(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code><br/>
-<code><span class="keyword">fun </span><span class="identifier">files</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$files(kotlin.Any, kotlin.Function1((org.gradle.api.file.ConfigurableFileCollection, kotlin.Unit)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$files(kotlin.Any, kotlin.Function1((org.gradle.api.file.ConfigurableFileCollection, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code>
+<code><span class="keyword">fun </span><span class="identifier">files</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.kotlin.dsl.SettingsScriptApi$files(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code><br/>
+<code><span class="keyword">fun </span><span class="identifier">files</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.SettingsScriptApi$files(kotlin.Any, kotlin.Function1((org.gradle.api.file.ConfigurableFileCollection, kotlin.Unit)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl.SettingsScriptApi$files(kotlin.Any, kotlin.Function1((org.gradle.api.file.ConfigurableFileCollection, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code>
 <p>Creates a <a href="../../org.gradle.api.file/-configurable-file-collection/index.html">ConfigurableFileCollection</a> containing the given files.</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="javaexec.html">javaexec</a></p>
+<p><a href="../-settings-script-api/javaexec.html">javaexec</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">javaexec</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$javaexec(kotlin.Function1((org.gradle.process.JavaExecSpec, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.process/-java-exec-spec/index.html"><span class="identifier">JavaExecSpec</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.process/-exec-result/index.html"><span class="identifier">ExecResult</span></a></code>
+<code><span class="keyword">fun </span><span class="identifier">javaexec</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.SettingsScriptApi$javaexec(kotlin.Function1((org.gradle.process.JavaExecSpec, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.process/-java-exec-spec/index.html"><span class="identifier">JavaExecSpec</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.process/-exec-result/index.html"><span class="identifier">ExecResult</span></a></code>
 <p>Executes an external Java process.</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="mkdir.html">mkdir</a></p>
+<p><a href="../-settings-script-api/mkdir.html">mkdir</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">mkdir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$mkdir(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<code><span class="keyword">fun </span><span class="identifier">mkdir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.SettingsScriptApi$mkdir(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
 <p>Creates a directory and returns a file pointing to it.</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="relative-path.html">relativePath</a></p>
+<p><a href="../-settings-script-api/relative-path.html">relativePath</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">relativePath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$relativePath(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<code><span class="keyword">fun </span><span class="identifier">relativePath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.SettingsScriptApi$relativePath(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
 <p>Returns the relative path from this script's target base directory to the given path.</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="tar-tree.html">tarTree</a></p>
+<p><a href="../-settings-script-api/tar-tree.html">tarTree</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">tarTree</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$tarTree(kotlin.Any)/tarPath">tarPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<code><span class="keyword">fun </span><span class="identifier">tarTree</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.SettingsScriptApi$tarTree(kotlin.Any)/tarPath">tarPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
 <p>Creates a new <a href="../../org.gradle.api.file/-file-tree/index.html">FileTree</a> which contains the contents of the given TAR file.</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="uri.html">uri</a></p>
+<p><a href="../-settings-script-api/uri.html">uri</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">uri</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$uri(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/net/URI.html"><span class="identifier">URI</span></a></code>
+<code><span class="keyword">fun </span><span class="identifier">uri</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.SettingsScriptApi$uri(kotlin.Any)/path">path</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/net/URI.html"><span class="identifier">URI</span></a></code>
 <p>Resolves a file path to a URI, relative to this script's target base directory.</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="zip-tree.html">zipTree</a></p>
+<p><a href="../-settings-script-api/zip-tree.html">zipTree</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">zipTree</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinSettingsScript$zipTree(kotlin.Any)/zipPath">zipPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<code><span class="keyword">fun </span><span class="identifier">zipTree</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.SettingsScriptApi$zipTree(kotlin.Any)/zipPath">zipPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
 <p>Creates a new <a href="../../org.gradle.api.file/-file-tree/index.html">FileTree</a> which contains the contents of the given ZIP file.</p>
 </td>
 </tr>
@@ -207,6 +233,17 @@ and <code>System.err</code> is redirected at the <code>ERROR</code> log level.</
 <h3>Extension Functions</h3>
 <table>
 <tbody>
+<tr>
+<td>
+<p><a href="../org.gradle.api.plugins.-plugin-aware/apply.html">apply</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="../../org.gradle.api.plugins/-plugin-aware/index.html"><span class="identifier">PluginAware</span></a><span class="symbol">.</span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$apply(org.gradle.api.plugins.PluginAware, kotlin.Any, kotlin.String, kotlin.Any)/from">from</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl$apply(org.gradle.api.plugins.PluginAware, kotlin.Any, kotlin.String, kotlin.Any)/plugin">plugin</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl$apply(org.gradle.api.plugins.PluginAware, kotlin.Any, kotlin.String, kotlin.Any)/to">to</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies the given plugin or script.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <a href="../../org.gradle.api.plugins/-plugin-aware/index.html"><span class="identifier">PluginAware</span></a><span class="symbol">.</span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$apply(org.gradle.api.plugins.PluginAware, kotlin.Any)/to">to</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies the plugin of the given type <a href="../org.gradle.api.plugins.-plugin-aware/apply.html#T">T</a> to the specified object. Does nothing if the plugin has already been applied.</p>
+</td>
+</tr>
 <tr>
 <td>
 <p><a href="../kotlin.-any/closure-of.html">closureOf</a></p>
@@ -224,6 +261,15 @@ and <code>System.err</code> is redirected at the <code>ERROR</code> log level.</
 <code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span><span class="symbol">&gt;</span> <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">.</span><span class="identifier">delegateClosureOf</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$delegateClosureOf(kotlin.Any, kotlin.Function1((org.gradle.kotlin.dsl.delegateClosureOf.T, kotlin.Unit)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../kotlin.-any/delegate-closure-of.html#T"><span class="identifier">T</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">&gt;</span></code>
 <p>Adapts a Kotlin function to a Groovy <a href="#">Closure</a> that operates on the
 configured Closure delegate.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.api.initialization.-settings/provide-delegate.html">provideDelegate</a></p>
+</td>
+<td>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><a href="../../org.gradle.api.initialization/-settings/index.html"><span class="identifier">Settings</span></a><span class="symbol">.</span><span class="identifier">provideDelegate</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$provideDelegate(org.gradle.api.initialization.Settings, kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)))/any">any</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl$provideDelegate(org.gradle.api.initialization.Settings, kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)))/property">property</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-property/index.html"><span class="identifier">KProperty</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-property-delegate/index.html"><span class="identifier">PropertyDelegate</span></a></code>
+<p>Locates a property on <a href="../../org.gradle.api.initialization/-settings/index.html">Settings</a>.</p>
 </td>
 </tr>
 <tr>

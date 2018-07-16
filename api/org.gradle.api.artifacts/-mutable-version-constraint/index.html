@@ -17,6 +17,15 @@
 <tbody>
 <tr>
 <td>
+<p><a href="get-branch.html">getBranch</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBranch</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the branch to select versions from. When not <code>null</code>, select only versions that were built from the given branch.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="prefer.html">prefer</a></p>
 </td>
 <td>
@@ -40,6 +49,15 @@
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">rejectAll</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Rejects all versions of this component. Can be used to declare that a component is incompatible with another (typically, cannot have both a 2 different implementations of the same API).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-branch.html">setBranch</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setBranch</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.MutableVersionConstraint$setBranch(kotlin.String)/branch">branch</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies the branch to select versions from.</p>
 </td>
 </tr>
 <tr>

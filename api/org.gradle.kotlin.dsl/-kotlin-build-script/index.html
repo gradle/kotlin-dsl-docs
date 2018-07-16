@@ -18,7 +18,7 @@
 <p><a href="-init-.html">&lt;init&gt;</a></p>
 </td>
 <td>
-<code><span class="identifier">KotlinBuildScript</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinBuildScript$<init>(org.gradle.api.Project)/project">project</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">)</span></code>
+<code><span class="identifier">KotlinBuildScript</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinBuildScript$<init>(((org.gradle.api.Project)))/host">host</span><span class="symbol">:</span>&nbsp;<span class="identifier">&lt;ERROR CLASS&gt;</span><span class="symbol">&lt;</span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span><span class="symbol">)</span></code>
 <p>Base class for Kotlin build scripts.</p>
 </td>
 </tr>
@@ -34,6 +34,15 @@
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">buildscript</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.KotlinBuildScript$buildscript(kotlin.Function1((org.gradle.kotlin.dsl.ScriptHandlerScope, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<a href="../-script-handler-scope/index.html"><span class="identifier">ScriptHandlerScope</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Configures the build script classpath for this project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-buildscript.html">getBuildscript</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getBuildscript</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.initialization.dsl/-script-handler/index.html"><span class="identifier">ScriptHandler</span></a></code>
+<p>The <a href="../../org.gradle.api.initialization.dsl/-script-handler/index.html">ScriptHandler</a> for this script.</p>
 </td>
 </tr>
 <tr>
@@ -56,7 +65,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">announce</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins.announce/-announce-plugin-extension/index.html"><span class="identifier">AnnouncePluginExtension</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.api.plugins.announce/-announce-plugin-extension/index.html">announce</a> project extension.</p>
+<p>Retrieves the <a href="../../org.gradle.api.plugins.announce/-announce-plugin-extension/index.html">announce</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -65,7 +74,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">application</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins/-application-plugin-convention/index.html"><span class="identifier">ApplicationPluginConvention</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.api.plugins/-application-plugin-convention/index.html">application</a> project convention.</p>
+<p>Retrieves the <a href="../../org.gradle.api.plugins/-application-plugin-convention/index.html">application</a> convention.</p>
 </td>
 </tr>
 <tr>
@@ -74,7 +83,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">base</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins/-base-plugin-convention/index.html"><span class="identifier">BasePluginConvention</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.api.plugins/-base-plugin-convention/index.html">base</a> project convention.</p>
+<p>Retrieves the <a href="../../org.gradle.api.plugins/-base-plugin-convention/index.html">base</a> convention.</p>
 </td>
 </tr>
 <tr>
@@ -83,7 +92,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">buildTypes</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform/-build-type-container.html"><span class="identifier">BuildTypeContainer</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.nativeplatform/-build-type-container.html">buildTypes</a> project extension.</p>
+<p>Retrieves the <a href="../../org.gradle.nativeplatform/-build-type-container.html">buildTypes</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -92,7 +101,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">checkstyle</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins.quality/-checkstyle-extension/index.html"><span class="identifier">CheckstyleExtension</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.api.plugins.quality/-checkstyle-extension/index.html">checkstyle</a> project extension.</p>
+<p>Retrieves the <a href="../../org.gradle.api.plugins.quality/-checkstyle-extension/index.html">checkstyle</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -101,7 +110,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">codenarc</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins.quality/-code-narc-extension/index.html"><span class="identifier">CodeNarcExtension</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.api.plugins.quality/-code-narc-extension/index.html">codenarc</a> project extension.</p>
+<p>Retrieves the <a href="../../org.gradle.api.plugins.quality/-code-narc-extension/index.html">codenarc</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -110,7 +119,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">defaultArtifacts</span><span class="symbol">: </span><span class="identifier">&lt;ERROR CLASS&gt;</span></code>
-<p>Retrieves the <a href="#">defaultArtifacts</a> project extension.</p>
+<p>Retrieves the <a href="#">defaultArtifacts</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -119,7 +128,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">distributions</span><span class="symbol">: </span><a href="../../org.gradle.api.distribution/-distribution-container.html"><span class="identifier">DistributionContainer</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.api.distribution/-distribution-container.html">distributions</a> project extension.</p>
+<p>Retrieves the <a href="../../org.gradle.api.distribution/-distribution-container.html">distributions</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -127,8 +136,8 @@
 <p><a href="../org.gradle.api.-project/ear.html">ear</a></p>
 </td>
 <td>
-<code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">ear</span><span class="symbol">: </span><span class="identifier">&lt;ERROR CLASS&gt;</span></code>
-<p>Retrieves the <a href="#">ear</a> project convention.</p>
+<code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">ear</span><span class="symbol">: </span><a href="../../org.gradle.plugins.ear/-ear-plugin-convention/index.html"><span class="identifier">EarPluginConvention</span></a></code>
+<p>Retrieves the <a href="../../org.gradle.plugins.ear/-ear-plugin-convention/index.html">ear</a> convention.</p>
 </td>
 </tr>
 <tr>
@@ -137,16 +146,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">eclipse</span><span class="symbol">: </span><a href="../../org.gradle.plugins.ide.eclipse.model/-eclipse-model/index.html"><span class="identifier">EclipseModel</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.plugins.ide.eclipse.model/-eclipse-model/index.html">eclipse</a> project extension.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../org.gradle.api.-project/ext.html">ext</a></p>
-</td>
-<td>
-<code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">ext</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins/-extra-properties-extension/index.html"><span class="identifier">ExtraPropertiesExtension</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.api.plugins/-extra-properties-extension/index.html">ext</a> project extension.</p>
+<p>Retrieves the <a href="../../org.gradle.plugins.ide.eclipse.model/-eclipse-model/index.html">eclipse</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -164,7 +164,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">findbugs</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins.quality/-find-bugs-extension/index.html"><span class="identifier">FindBugsExtension</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.api.plugins.quality/-find-bugs-extension/index.html">findbugs</a> project extension.</p>
+<p>Retrieves the <a href="../../org.gradle.api.plugins.quality/-find-bugs-extension/index.html">findbugs</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -173,16 +173,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">flavors</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform/-flavor-container.html"><span class="identifier">FlavorContainer</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.nativeplatform/-flavor-container.html">flavors</a> project extension.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../org.gradle.api.-project/gradle-plugin.html">gradlePlugin</a></p>
-</td>
-<td>
-<code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">gradlePlugin</span><span class="symbol">: </span><a href="../../org.gradle.plugin.devel/-gradle-plugin-development-extension/index.html"><span class="identifier">GradlePluginDevelopmentExtension</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.plugin.devel/-gradle-plugin-development-extension/index.html">gradlePlugin</a> project extension.</p>
+<p>Retrieves the <a href="../../org.gradle.nativeplatform/-flavor-container.html">flavors</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -191,7 +182,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">groovyRuntime</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-groovy-runtime/index.html"><span class="identifier">GroovyRuntime</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.api.tasks/-groovy-runtime/index.html">groovyRuntime</a> project extension.</p>
+<p>Retrieves the <a href="../../org.gradle.api.tasks/-groovy-runtime/index.html">groovyRuntime</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -200,7 +191,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">idea</span><span class="symbol">: </span><a href="../../org.gradle.plugins.ide.idea.model/-idea-model/index.html"><span class="identifier">IdeaModel</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.plugins.ide.idea.model/-idea-model/index.html">idea</a> project extension.</p>
+<p>Retrieves the <a href="../../org.gradle.plugins.ide.idea.model/-idea-model/index.html">idea</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -209,7 +200,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">jacoco</span><span class="symbol">: </span><a href="../../org.gradle.testing.jacoco.plugins/-jacoco-plugin-extension/index.html"><span class="identifier">JacocoPluginExtension</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.testing.jacoco.plugins/-jacoco-plugin-extension/index.html">jacoco</a> project extension.</p>
+<p>Retrieves the <a href="../../org.gradle.testing.jacoco.plugins/-jacoco-plugin-extension/index.html">jacoco</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -218,7 +209,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">java</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins/-java-plugin-convention/index.html"><span class="identifier">JavaPluginConvention</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.api.plugins/-java-plugin-convention/index.html">java</a> project convention.</p>
+<p>Retrieves the <a href="../../org.gradle.api.plugins/-java-plugin-convention/index.html">java</a> convention.</p>
 </td>
 </tr>
 <tr>
@@ -227,7 +218,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">javaScript</span><span class="symbol">: </span><a href="../../org.gradle.plugins.javascript.base/-java-script-extension/index.html"><span class="identifier">JavaScriptExtension</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.plugins.javascript.base/-java-script-extension/index.html">javaScript</a> project extension.</p>
+<p>Retrieves the <a href="../../org.gradle.plugins.javascript.base/-java-script-extension/index.html">javaScript</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -236,7 +227,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">jdepend</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins.quality/-j-depend-extension/index.html"><span class="identifier">JDependExtension</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.api.plugins.quality/-j-depend-extension/index.html">jdepend</a> project extension.</p>
+<p>Retrieves the <a href="../../org.gradle.api.plugins.quality/-j-depend-extension/index.html">jdepend</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -245,7 +236,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">maven</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins/-maven-plugin-convention/index.html"><span class="identifier">MavenPluginConvention</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.api.plugins/-maven-plugin-convention/index.html">maven</a> project convention.</p>
+<p>Retrieves the <a href="../../org.gradle.api.plugins/-maven-plugin-convention/index.html">maven</a> convention.</p>
 </td>
 </tr>
 <tr>
@@ -254,7 +245,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">osgi</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins.osgi/-osgi-plugin-convention/index.html"><span class="identifier">OsgiPluginConvention</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.api.plugins.osgi/-osgi-plugin-convention/index.html">osgi</a> project convention.</p>
+<p>Retrieves the <a href="../../org.gradle.api.plugins.osgi/-osgi-plugin-convention/index.html">osgi</a> convention.</p>
 </td>
 </tr>
 <tr>
@@ -263,7 +254,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">platforms</span><span class="symbol">: </span><a href="../../org.gradle.platform.base/-platform-container.html"><span class="identifier">PlatformContainer</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.platform.base/-platform-container.html">platforms</a> project extension.</p>
+<p>Retrieves the <a href="../../org.gradle.platform.base/-platform-container.html">platforms</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -272,7 +263,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">playConfigurations</span><span class="symbol">: </span><a href="../../org.gradle.play.plugins/-play-plugin-configurations/index.html"><span class="identifier">PlayPluginConfigurations</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.play.plugins/-play-plugin-configurations/index.html">playConfigurations</a> project extension.</p>
+<p>Retrieves the <a href="../../org.gradle.play.plugins/-play-plugin-configurations/index.html">playConfigurations</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -281,7 +272,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">pmd</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins.quality/-pmd-extension/index.html"><span class="identifier">PmdExtension</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.api.plugins.quality/-pmd-extension/index.html">pmd</a> project extension.</p>
+<p>Retrieves the <a href="../../org.gradle.api.plugins.quality/-pmd-extension/index.html">pmd</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -290,7 +281,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">projectReports</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins/-project-reports-plugin-convention/index.html"><span class="identifier">ProjectReportsPluginConvention</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.api.plugins/-project-reports-plugin-convention/index.html">projectReports</a> project convention.</p>
+<p>Retrieves the <a href="../../org.gradle.api.plugins/-project-reports-plugin-convention/index.html">projectReports</a> convention.</p>
 </td>
 </tr>
 <tr>
@@ -299,7 +290,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">publishing</span><span class="symbol">: </span><a href="../../org.gradle.api.publish/-publishing-extension/index.html"><span class="identifier">PublishingExtension</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.api.publish/-publishing-extension/index.html">publishing</a> project extension.</p>
+<p>Retrieves the <a href="../../org.gradle.api.publish/-publishing-extension/index.html">publishing</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -308,7 +299,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">reporting</span><span class="symbol">: </span><a href="../../org.gradle.api.reporting/-reporting-extension/index.html"><span class="identifier">ReportingExtension</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.api.reporting/-reporting-extension/index.html">reporting</a> project extension.</p>
+<p>Retrieves the <a href="../../org.gradle.api.reporting/-reporting-extension/index.html">reporting</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -317,7 +308,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">scalaRuntime</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-scala-runtime/index.html"><span class="identifier">ScalaRuntime</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.api.tasks/-scala-runtime/index.html">scalaRuntime</a> project extension.</p>
+<p>Retrieves the <a href="../../org.gradle.api.tasks/-scala-runtime/index.html">scalaRuntime</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -326,7 +317,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">signing</span><span class="symbol">: </span><a href="../../org.gradle.plugins.signing/-signing-extension/index.html"><span class="identifier">SigningExtension</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.plugins.signing/-signing-extension/index.html">signing</a> project extension.</p>
+<p>Retrieves the <a href="../../org.gradle.plugins.signing/-signing-extension/index.html">signing</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -334,8 +325,17 @@
 <p><a href="../org.gradle.api.-project/tool-chains.html">toolChains</a></p>
 </td>
 <td>
-<code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">toolChains</span><span class="symbol">: </span><span class="identifier">&lt;ERROR CLASS&gt;</span></code>
-<p>Retrieves the <a href="#">toolChains</a> project extension.</p>
+<code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">toolChains</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain-registry.html"><span class="identifier">NativeToolChainRegistry</span></a></code>
+<p>Retrieves the <a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain-registry.html">toolChains</a> extension.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.api.-project/visual-studio.html">visualStudio</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">visualStudio</span><span class="symbol">: </span><a href="../../org.gradle.ide.visualstudio/-visual-studio-root-extension/index.html"><span class="identifier">VisualStudioRootExtension</span></a></code>
+<p>Retrieves the <a href="../../org.gradle.ide.visualstudio/-visual-studio-root-extension/index.html">visualStudio</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -344,7 +344,7 @@
 </td>
 <td>
 <code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">war</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins/-war-plugin-convention/index.html"><span class="identifier">WarPluginConvention</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.api.plugins/-war-plugin-convention/index.html">war</a> project convention.</p>
+<p>Retrieves the <a href="../../org.gradle.api.plugins/-war-plugin-convention/index.html">war</a> convention.</p>
 </td>
 </tr>
 <tr>
@@ -352,8 +352,8 @@
 <p><a href="../org.gradle.api.-project/xcode.html">xcode</a></p>
 </td>
 <td>
-<code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">xcode</span><span class="symbol">: </span><a href="../../org.gradle.ide.xcode/-xcode-extension/index.html"><span class="identifier">XcodeExtension</span></a></code>
-<p>Retrieves the <a href="../../org.gradle.ide.xcode/-xcode-extension/index.html">xcode</a> project extension.</p>
+<code><span class="keyword">val </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">xcode</span><span class="symbol">: </span><a href="../../org.gradle.ide.xcode/-xcode-root-extension/index.html"><span class="identifier">XcodeRootExtension</span></a></code>
+<p>Retrieves the <a href="../../org.gradle.ide.xcode/-xcode-root-extension/index.html">xcode</a> extension.</p>
 </td>
 </tr>
 </tbody>
@@ -367,7 +367,7 @@
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">announce</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$announce(org.gradle.api.Project, kotlin.Function1((org.gradle.api.plugins.announce.AnnouncePluginExtension, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins.announce/-announce-plugin-extension/index.html"><span class="identifier">AnnouncePluginExtension</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.api.plugins.announce/-announce-plugin-extension/index.html">announce</a> project extension.</p>
+<p>Configures the <a href="../../org.gradle.api.plugins.announce/-announce-plugin-extension/index.html">announce</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -376,18 +376,18 @@
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">application</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$application(org.gradle.api.Project, kotlin.Function1((org.gradle.api.plugins.ApplicationPluginConvention, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins/-application-plugin-convention/index.html"><span class="identifier">ApplicationPluginConvention</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.api.plugins/-application-plugin-convention/index.html">application</a> project convention.</p>
+<p>Configures the <a href="../../org.gradle.api.plugins/-application-plugin-convention/index.html">application</a> convention.</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="../org.gradle.api.-project/apply.html">apply</a></p>
+<p><a href="../org.gradle.api.plugins.-plugin-aware/apply.html">apply</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$apply(org.gradle.api.Project, kotlin.Function1((org.gradle.api.plugins.ObjectConfigurationAction, kotlin.Unit)))/block">block</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins/-object-configuration-action/index.html"><span class="identifier">ObjectConfigurationAction</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Applies zero or more plugins or scripts.</p>
-<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">apply</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Applies the given plugin. Does nothing if the plugin has already been applied.</p>
+<code><span class="keyword">fun </span><a href="../../org.gradle.api.plugins/-plugin-aware/index.html"><span class="identifier">PluginAware</span></a><span class="symbol">.</span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$apply(org.gradle.api.plugins.PluginAware, kotlin.Any, kotlin.String, kotlin.Any)/from">from</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl$apply(org.gradle.api.plugins.PluginAware, kotlin.Any, kotlin.String, kotlin.Any)/plugin">plugin</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl$apply(org.gradle.api.plugins.PluginAware, kotlin.Any, kotlin.String, kotlin.Any)/to">to</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span>&nbsp;<span class="symbol">=</span>&nbsp;null<span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies the given plugin or script.</p>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <a href="../../org.gradle.api.plugins/-plugin-aware/index.html"><span class="identifier">PluginAware</span></a><span class="symbol">.</span><span class="identifier">apply</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$apply(org.gradle.api.plugins.PluginAware, kotlin.Any)/to">to</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies the plugin of the given type <a href="../org.gradle.api.plugins.-plugin-aware/apply.html#T">T</a> to the specified object. Does nothing if the plugin has already been applied.</p>
 </td>
 </tr>
 <tr>
@@ -396,7 +396,7 @@
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">base</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$base(org.gradle.api.Project, kotlin.Function1((org.gradle.api.plugins.BasePluginConvention, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins/-base-plugin-convention/index.html"><span class="identifier">BasePluginConvention</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.api.plugins/-base-plugin-convention/index.html">base</a> project convention.</p>
+<p>Configures the <a href="../../org.gradle.api.plugins/-base-plugin-convention/index.html">base</a> convention.</p>
 </td>
 </tr>
 <tr>
@@ -405,8 +405,15 @@
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">buildTypes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$buildTypes(org.gradle.api.Project, kotlin.Function1((org.gradle.nativeplatform.BuildTypeContainer, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.nativeplatform/-build-type-container.html"><span class="identifier">BuildTypeContainer</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.nativeplatform/-build-type-container.html">buildTypes</a> project extension.</p>
+<p>Configures the <a href="../../org.gradle.nativeplatform/-build-type-container.html">buildTypes</a> extension.</p>
 </td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.api.-project/buildscript.html">buildscript</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">buildscript</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$buildscript(org.gradle.api.Project, kotlin.Function1((org.gradle.kotlin.dsl.ScriptHandlerScope, kotlin.Unit)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../-script-handler-scope/index.html"><span class="identifier">ScriptHandlerScope</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
 </tr>
 <tr>
 <td>
@@ -414,7 +421,7 @@
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">checkstyle</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$checkstyle(org.gradle.api.Project, kotlin.Function1((org.gradle.api.plugins.quality.CheckstyleExtension, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins.quality/-checkstyle-extension/index.html"><span class="identifier">CheckstyleExtension</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.api.plugins.quality/-checkstyle-extension/index.html">checkstyle</a> project extension.</p>
+<p>Configures the <a href="../../org.gradle.api.plugins.quality/-checkstyle-extension/index.html">checkstyle</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -432,7 +439,16 @@
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">codenarc</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$codenarc(org.gradle.api.Project, kotlin.Function1((org.gradle.api.plugins.quality.CodeNarcExtension, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins.quality/-code-narc-extension/index.html"><span class="identifier">CodeNarcExtension</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.api.plugins.quality/-code-narc-extension/index.html">codenarc</a> project extension.</p>
+<p>Configures the <a href="../../org.gradle.api.plugins.quality/-code-narc-extension/index.html">codenarc</a> extension.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.api.plugins.-extension-aware/configure.html">configure</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <a href="../../org.gradle.api.plugins/-extension-aware/index.html"><span class="identifier">ExtensionAware</span></a><span class="symbol">.</span><span class="identifier">configure</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$configure(org.gradle.api.plugins.ExtensionAware, kotlin.Function1((org.gradle.kotlin.dsl.configure.T, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.plugins.-extension-aware/configure.html#T"><span class="identifier">T</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Executes the given configuration block against the <a href="../../org.gradle.api.plugins/-extension-aware/index.html">extension</a> of the specified type.</p>
 </td>
 </tr>
 <tr>
@@ -457,7 +473,7 @@
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">defaultArtifacts</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$defaultArtifacts(org.gradle.api.Project, kotlin.Function1((, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<span class="identifier">&lt;ERROR CLASS&gt;</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="#">defaultArtifacts</a> project extension.</p>
+<p>Configures the <a href="#">defaultArtifacts</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -466,7 +482,7 @@
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">defaultTasks</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.kotlin.dsl$defaultTasks(org.gradle.api.Project, kotlin.Array((org.gradle.api.Task)))/tasks">tasks</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Sets the the default tasks of this project. These are used when no tasks names are provided when
+<p>Sets the default tasks of this project. These are used when no tasks names are provided when
 starting the build.</p>
 </td>
 </tr>
@@ -495,7 +511,7 @@ configured Closure delegate.</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">distributions</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$distributions(org.gradle.api.Project, kotlin.Function1((org.gradle.api.distribution.DistributionContainer, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.distribution/-distribution-container.html"><span class="identifier">DistributionContainer</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.api.distribution/-distribution-container.html">distributions</a> project extension.</p>
+<p>Configures the <a href="../../org.gradle.api.distribution/-distribution-container.html">distributions</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -503,8 +519,8 @@ configured Closure delegate.</p>
 <p><a href="../org.gradle.api.-project/ear.html">ear</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">ear</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$ear(org.gradle.api.Project, kotlin.Function1((, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<span class="identifier">&lt;ERROR CLASS&gt;</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="#">ear</a> project convention.</p>
+<code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">ear</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$ear(org.gradle.api.Project, kotlin.Function1((org.gradle.plugins.ear.EarPluginConvention, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.ear/-ear-plugin-convention/index.html"><span class="identifier">EarPluginConvention</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the <a href="../../org.gradle.plugins.ear/-ear-plugin-convention/index.html">ear</a> convention.</p>
 </td>
 </tr>
 <tr>
@@ -513,16 +529,7 @@ configured Closure delegate.</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">eclipse</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$eclipse(org.gradle.api.Project, kotlin.Function1((org.gradle.plugins.ide.eclipse.model.EclipseModel, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.ide.eclipse.model/-eclipse-model/index.html"><span class="identifier">EclipseModel</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.plugins.ide.eclipse.model/-eclipse-model/index.html">eclipse</a> project extension.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../org.gradle.api.-project/ext.html">ext</a></p>
-</td>
-<td>
-<code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">ext</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$ext(org.gradle.api.Project, kotlin.Function1((org.gradle.api.plugins.ExtraPropertiesExtension, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins/-extra-properties-extension/index.html"><span class="identifier">ExtraPropertiesExtension</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.api.plugins/-extra-properties-extension/index.html">ext</a> project extension.</p>
+<p>Configures the <a href="../../org.gradle.plugins.ide.eclipse.model/-eclipse-model/index.html">eclipse</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -531,7 +538,7 @@ configured Closure delegate.</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">findbugs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$findbugs(org.gradle.api.Project, kotlin.Function1((org.gradle.api.plugins.quality.FindBugsExtension, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins.quality/-find-bugs-extension/index.html"><span class="identifier">FindBugsExtension</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.api.plugins.quality/-find-bugs-extension/index.html">findbugs</a> project extension.</p>
+<p>Configures the <a href="../../org.gradle.api.plugins.quality/-find-bugs-extension/index.html">findbugs</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -540,16 +547,7 @@ configured Closure delegate.</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">flavors</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$flavors(org.gradle.api.Project, kotlin.Function1((org.gradle.nativeplatform.FlavorContainer, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.nativeplatform/-flavor-container.html"><span class="identifier">FlavorContainer</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.nativeplatform/-flavor-container.html">flavors</a> project extension.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../org.gradle.api.-project/get-value.html">getValue</a></p>
-</td>
-<td>
-<code><span class="keyword">operator</span> <span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">getValue</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$getValue(org.gradle.api.Project, kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)))/any">any</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl$getValue(org.gradle.api.Project, kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)))/property">property</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-property/index.html"><span class="identifier">KProperty</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span></code>
-<p>Locates a <a href="../../org.gradle.api/-project/index.html">Project</a> property using <a href="../../org.gradle.api/-project/find-property.html">Project.findProperty</a>.</p>
+<p>Configures the <a href="../../org.gradle.nativeplatform/-flavor-container.html">flavors</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -567,7 +565,7 @@ configured Closure delegate.</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">gradlePlugin</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$gradlePlugin(org.gradle.api.Project, kotlin.Function1((org.gradle.plugin.devel.GradlePluginDevelopmentExtension, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugin.devel/-gradle-plugin-development-extension/index.html"><span class="identifier">GradlePluginDevelopmentExtension</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.plugin.devel/-gradle-plugin-development-extension/index.html">gradlePlugin</a> project extension.</p>
+<p>Configures the <a href="../../org.gradle.plugin.devel/-gradle-plugin-development-extension/index.html">gradlePlugin</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -583,7 +581,7 @@ configured Closure delegate.</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">groovyRuntime</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$groovyRuntime(org.gradle.api.Project, kotlin.Function1((org.gradle.api.tasks.GroovyRuntime, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks/-groovy-runtime/index.html"><span class="identifier">GroovyRuntime</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.api.tasks/-groovy-runtime/index.html">groovyRuntime</a> project extension.</p>
+<p>Configures the <a href="../../org.gradle.api.tasks/-groovy-runtime/index.html">groovyRuntime</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -592,7 +590,7 @@ configured Closure delegate.</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">idea</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$idea(org.gradle.api.Project, kotlin.Function1((org.gradle.plugins.ide.idea.model.IdeaModel, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.ide.idea.model/-idea-model/index.html"><span class="identifier">IdeaModel</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.plugins.ide.idea.model/-idea-model/index.html">idea</a> project extension.</p>
+<p>Configures the <a href="../../org.gradle.plugins.ide.idea.model/-idea-model/index.html">idea</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -601,7 +599,7 @@ configured Closure delegate.</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">jacoco</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$jacoco(org.gradle.api.Project, kotlin.Function1((org.gradle.testing.jacoco.plugins.JacocoPluginExtension, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.testing.jacoco.plugins/-jacoco-plugin-extension/index.html"><span class="identifier">JacocoPluginExtension</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.testing.jacoco.plugins/-jacoco-plugin-extension/index.html">jacoco</a> project extension.</p>
+<p>Configures the <a href="../../org.gradle.testing.jacoco.plugins/-jacoco-plugin-extension/index.html">jacoco</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -610,7 +608,7 @@ configured Closure delegate.</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">java</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$java(org.gradle.api.Project, kotlin.Function1((org.gradle.api.plugins.JavaPluginConvention, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins/-java-plugin-convention/index.html"><span class="identifier">JavaPluginConvention</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.api.plugins/-java-plugin-convention/index.html">java</a> project convention.</p>
+<p>Configures the <a href="../../org.gradle.api.plugins/-java-plugin-convention/index.html">java</a> convention.</p>
 </td>
 </tr>
 <tr>
@@ -619,7 +617,7 @@ configured Closure delegate.</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">javaScript</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$javaScript(org.gradle.api.Project, kotlin.Function1((org.gradle.plugins.javascript.base.JavaScriptExtension, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.javascript.base/-java-script-extension/index.html"><span class="identifier">JavaScriptExtension</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.plugins.javascript.base/-java-script-extension/index.html">javaScript</a> project extension.</p>
+<p>Configures the <a href="../../org.gradle.plugins.javascript.base/-java-script-extension/index.html">javaScript</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -628,7 +626,7 @@ configured Closure delegate.</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">jdepend</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$jdepend(org.gradle.api.Project, kotlin.Function1((org.gradle.api.plugins.quality.JDependExtension, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins.quality/-j-depend-extension/index.html"><span class="identifier">JDependExtension</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.api.plugins.quality/-j-depend-extension/index.html">jdepend</a> project extension.</p>
+<p>Configures the <a href="../../org.gradle.api.plugins.quality/-j-depend-extension/index.html">jdepend</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -637,7 +635,7 @@ configured Closure delegate.</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">maven</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$maven(org.gradle.api.Project, kotlin.Function1((org.gradle.api.plugins.MavenPluginConvention, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins/-maven-plugin-convention/index.html"><span class="identifier">MavenPluginConvention</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.api.plugins/-maven-plugin-convention/index.html">maven</a> project convention.</p>
+<p>Configures the <a href="../../org.gradle.api.plugins/-maven-plugin-convention/index.html">maven</a> convention.</p>
 </td>
 </tr>
 <tr>
@@ -646,7 +644,7 @@ configured Closure delegate.</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">osgi</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$osgi(org.gradle.api.Project, kotlin.Function1((org.gradle.api.plugins.osgi.OsgiPluginConvention, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins.osgi/-osgi-plugin-convention/index.html"><span class="identifier">OsgiPluginConvention</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.api.plugins.osgi/-osgi-plugin-convention/index.html">osgi</a> project convention.</p>
+<p>Configures the <a href="../../org.gradle.api.plugins.osgi/-osgi-plugin-convention/index.html">osgi</a> convention.</p>
 </td>
 </tr>
 <tr>
@@ -655,7 +653,7 @@ configured Closure delegate.</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">platforms</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$platforms(org.gradle.api.Project, kotlin.Function1((org.gradle.platform.base.PlatformContainer, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.platform.base/-platform-container.html"><span class="identifier">PlatformContainer</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.platform.base/-platform-container.html">platforms</a> project extension.</p>
+<p>Configures the <a href="../../org.gradle.platform.base/-platform-container.html">platforms</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -664,7 +662,7 @@ configured Closure delegate.</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">playConfigurations</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$playConfigurations(org.gradle.api.Project, kotlin.Function1((org.gradle.play.plugins.PlayPluginConfigurations, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.play.plugins/-play-plugin-configurations/index.html"><span class="identifier">PlayPluginConfigurations</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.play.plugins/-play-plugin-configurations/index.html">playConfigurations</a> project extension.</p>
+<p>Configures the <a href="../../org.gradle.play.plugins/-play-plugin-configurations/index.html">playConfigurations</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -673,7 +671,7 @@ configured Closure delegate.</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">pmd</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$pmd(org.gradle.api.Project, kotlin.Function1((org.gradle.api.plugins.quality.PmdExtension, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins.quality/-pmd-extension/index.html"><span class="identifier">PmdExtension</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.api.plugins.quality/-pmd-extension/index.html">pmd</a> project extension.</p>
+<p>Configures the <a href="../../org.gradle.api.plugins.quality/-pmd-extension/index.html">pmd</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -682,7 +680,7 @@ configured Closure delegate.</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">projectReports</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$projectReports(org.gradle.api.Project, kotlin.Function1((org.gradle.api.plugins.ProjectReportsPluginConvention, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins/-project-reports-plugin-convention/index.html"><span class="identifier">ProjectReportsPluginConvention</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.api.plugins/-project-reports-plugin-convention/index.html">projectReports</a> project convention.</p>
+<p>Configures the <a href="../../org.gradle.api.plugins/-project-reports-plugin-convention/index.html">projectReports</a> convention.</p>
 </td>
 </tr>
 <tr>
@@ -696,11 +694,20 @@ configured Closure delegate.</p>
 </tr>
 <tr>
 <td>
+<p><a href="../org.gradle.api.-project/provide-delegate.html">provideDelegate</a></p>
+</td>
+<td>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">provideDelegate</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$provideDelegate(org.gradle.api.Project, kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)))/any">any</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl$provideDelegate(org.gradle.api.Project, kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)))/property">property</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-property/index.html"><span class="identifier">KProperty</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-property-delegate/index.html"><span class="identifier">PropertyDelegate</span></a></code>
+<p>Locates a property on <a href="../../org.gradle.api/-project/index.html">Project</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="../org.gradle.api.-project/publishing.html">publishing</a></p>
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">publishing</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$publishing(org.gradle.api.Project, kotlin.Function1((org.gradle.api.publish.PublishingExtension, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.publish/-publishing-extension/index.html"><span class="identifier">PublishingExtension</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.api.publish/-publishing-extension/index.html">publishing</a> project extension.</p>
+<p>Configures the <a href="../../org.gradle.api.publish/-publishing-extension/index.html">publishing</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -709,7 +716,7 @@ configured Closure delegate.</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">reporting</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$reporting(org.gradle.api.Project, kotlin.Function1((org.gradle.api.reporting.ReportingExtension, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.reporting/-reporting-extension/index.html"><span class="identifier">ReportingExtension</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.api.reporting/-reporting-extension/index.html">reporting</a> project extension.</p>
+<p>Configures the <a href="../../org.gradle.api.reporting/-reporting-extension/index.html">reporting</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -727,7 +734,7 @@ configured Closure delegate.</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">scalaRuntime</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$scalaRuntime(org.gradle.api.Project, kotlin.Function1((org.gradle.api.tasks.ScalaRuntime, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.tasks/-scala-runtime/index.html"><span class="identifier">ScalaRuntime</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.api.tasks/-scala-runtime/index.html">scalaRuntime</a> project extension.</p>
+<p>Configures the <a href="../../org.gradle.api.tasks/-scala-runtime/index.html">scalaRuntime</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -736,7 +743,7 @@ configured Closure delegate.</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">signing</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$signing(org.gradle.api.Project, kotlin.Function1((org.gradle.plugins.signing.SigningExtension, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.signing/-signing-extension/index.html"><span class="identifier">SigningExtension</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.plugins.signing/-signing-extension/index.html">signing</a> project extension.</p>
+<p>Configures the <a href="../../org.gradle.plugins.signing/-signing-extension/index.html">signing</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -756,20 +763,38 @@ and adds it to this project tasks container.</p>
 </tr>
 <tr>
 <td>
+<p><a href="../org.gradle.api.plugins.-extension-aware/the.html">the</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <a href="../../org.gradle.api.plugins/-extension-aware/index.html"><span class="identifier">ExtensionAware</span></a><span class="symbol">.</span><span class="identifier">the</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$the(org.gradle.api.plugins.ExtensionAware, kotlin.reflect.KClass((org.gradle.kotlin.dsl.the.T)))/extensionType">extensionType</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><span class="identifier">KClass</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api.plugins.-extension-aware/the.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.plugins.-extension-aware/the.html#T"><span class="identifier">T</span></a></code>
+<p>Returns the extension of the specified <a href="../org.gradle.api.plugins.-extension-aware/the.html#org.gradle.kotlin.dsl$the(org.gradle.api.plugins.ExtensionAware, kotlin.reflect.KClass((org.gradle.kotlin.dsl.the.T)))/extensionType">extensionType</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="../org.gradle.api.-project/the.html">the</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">the</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.-project/the.html#T"><span class="identifier">T</span></a></code>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">the</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$the(org.gradle.api.Project, kotlin.reflect.KClass((org.gradle.kotlin.dsl.the.T)))/extensionType">extensionType</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><span class="identifier">KClass</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api.-project/the.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.-project/the.html#T"><span class="identifier">T</span></a></code>
 <p>Returns the plugin convention or extension of the specified type.</p>
-<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">the</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$the(org.gradle.api.Project, kotlin.reflect.KClass((org.gradle.kotlin.dsl.the.T)))/extensionType">extensionType</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><span class="identifier">KClass</span></a><span class="symbol">&lt;</span><a href="../org.gradle.api.-project/the.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../org.gradle.api.-project/the.html#T"><span class="identifier">T</span></a></code></td>
+</td>
 </tr>
 <tr>
 <td>
 <p><a href="../org.gradle.api.-project/tool-chains.html">toolChains</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">toolChains</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$toolChains(org.gradle.api.Project, kotlin.Function1((, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<span class="identifier">&lt;ERROR CLASS&gt;</span><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="#">toolChains</a> project extension.</p>
+<code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">toolChains</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$toolChains(org.gradle.api.Project, kotlin.Function1((org.gradle.nativeplatform.toolchain.NativeToolChainRegistry, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain-registry.html"><span class="identifier">NativeToolChainRegistry</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the <a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain-registry.html">toolChains</a> extension.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.api.-project/visual-studio.html">visualStudio</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">visualStudio</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$visualStudio(org.gradle.api.Project, kotlin.Function1((org.gradle.ide.visualstudio.VisualStudioRootExtension, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.ide.visualstudio/-visual-studio-root-extension/index.html"><span class="identifier">VisualStudioRootExtension</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the <a href="../../org.gradle.ide.visualstudio/-visual-studio-root-extension/index.html">visualStudio</a> extension.</p>
 </td>
 </tr>
 <tr>
@@ -778,7 +803,7 @@ and adds it to this project tasks container.</p>
 </td>
 <td>
 <code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">war</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$war(org.gradle.api.Project, kotlin.Function1((org.gradle.api.plugins.WarPluginConvention, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins/-war-plugin-convention/index.html"><span class="identifier">WarPluginConvention</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.api.plugins/-war-plugin-convention/index.html">war</a> project convention.</p>
+<p>Configures the <a href="../../org.gradle.api.plugins/-war-plugin-convention/index.html">war</a> convention.</p>
 </td>
 </tr>
 <tr>
@@ -804,8 +829,8 @@ and adds it to this project tasks container.</p>
 <p><a href="../org.gradle.api.-project/xcode.html">xcode</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">xcode</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$xcode(org.gradle.api.Project, kotlin.Function1((org.gradle.ide.xcode.XcodeExtension, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.ide.xcode/-xcode-extension/index.html"><span class="identifier">XcodeExtension</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Configures the <a href="../../org.gradle.ide.xcode/-xcode-extension/index.html">xcode</a> project extension.</p>
+<code><span class="keyword">fun </span><a href="../../org.gradle.api/-project/index.html"><span class="identifier">Project</span></a><span class="symbol">.</span><span class="identifier">xcode</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$xcode(org.gradle.api.Project, kotlin.Function1((org.gradle.ide.xcode.XcodeRootExtension, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.ide.xcode/-xcode-root-extension/index.html"><span class="identifier">XcodeRootExtension</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the <a href="../../org.gradle.ide.xcode/-xcode-root-extension/index.html">xcode</a> extension.</p>
 </td>
 </tr>
 </tbody>

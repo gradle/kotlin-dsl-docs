@@ -20,7 +20,9 @@
 <p><a href="get-outputs.html">getOutputs</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOutputs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code></td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOutputs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the outputs produced for this component.</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -32,7 +34,7 @@
 <p><a href="../../org.gradle.language.cpp/-cpp-executable/index.html">CppExecutable</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">CppExecutable</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.cpp/-cpp-binary/index.html"><span class="identifier">CppBinary</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-executable/index.html"><span class="identifier">ComponentWithExecutable</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-installation/index.html"><span class="identifier">ComponentWithInstallation</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">ComponentWithOutputs</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-runtime-usage/index.html"><span class="identifier">ComponentWithRuntimeUsage</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">CppExecutable</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.cpp/-cpp-binary/index.html"><span class="identifier">CppBinary</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-executable/index.html"><span class="identifier">ComponentWithExecutable</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-installation/index.html"><span class="identifier">ComponentWithInstallation</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">ComponentWithOutputs</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-runtime-usage/index.html"><span class="identifier">ComponentWithRuntimeUsage</span></a><span class="symbol">, </span><a href="../../org.gradle.api.component/-publishable-component.html"><span class="identifier">PublishableComponent</span></a></code>
 <p>An executable built from C++ source.</p>
 </td>
 </tr>
@@ -41,7 +43,7 @@
 <p><a href="../../org.gradle.language.cpp/-cpp-shared-library.html">CppSharedLibrary</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">CppSharedLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.cpp/-cpp-binary/index.html"><span class="identifier">CppBinary</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-shared-library/index.html"><span class="identifier">ComponentWithSharedLibrary</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-link-usage/index.html"><span class="identifier">ComponentWithLinkUsage</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-runtime-usage/index.html"><span class="identifier">ComponentWithRuntimeUsage</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">ComponentWithOutputs</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">CppSharedLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.cpp/-cpp-binary/index.html"><span class="identifier">CppBinary</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-shared-library/index.html"><span class="identifier">ComponentWithSharedLibrary</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-link-usage/index.html"><span class="identifier">ComponentWithLinkUsage</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-runtime-usage/index.html"><span class="identifier">ComponentWithRuntimeUsage</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">ComponentWithOutputs</span></a><span class="symbol">, </span><a href="../../org.gradle.api.component/-publishable-component.html"><span class="identifier">PublishableComponent</span></a></code>
 <p>A shared library built from C++ source.</p>
 </td>
 </tr>
@@ -50,7 +52,7 @@
 <p><a href="../../org.gradle.language.cpp/-cpp-static-library.html">CppStaticLibrary</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">CppStaticLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.cpp/-cpp-binary/index.html"><span class="identifier">CppBinary</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-static-library/index.html"><span class="identifier">ComponentWithStaticLibrary</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-link-usage/index.html"><span class="identifier">ComponentWithLinkUsage</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-runtime-usage/index.html"><span class="identifier">ComponentWithRuntimeUsage</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">ComponentWithOutputs</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">CppStaticLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.cpp/-cpp-binary/index.html"><span class="identifier">CppBinary</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-static-library/index.html"><span class="identifier">ComponentWithStaticLibrary</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-link-usage/index.html"><span class="identifier">ComponentWithLinkUsage</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-runtime-usage/index.html"><span class="identifier">ComponentWithRuntimeUsage</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">ComponentWithOutputs</span></a><span class="symbol">, </span><a href="../../org.gradle.api.component/-publishable-component.html"><span class="identifier">PublishableComponent</span></a></code>
 <p>A static library built from C++ source.</p>
 </td>
 </tr>

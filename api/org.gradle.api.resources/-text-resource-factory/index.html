@@ -11,7 +11,7 @@
 <code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">TextResourceFactory</span></code>
 <p>Creates <code>TextResource</code>s backed by sources such as strings, files, and archive entries. 
 <p>Example usages: </p>
-<pre><code> def sourcedFromString = resources.text.fromString("some text content") def sourcedFromFile = resources.text.fromFile("path/to/file.txt") task someTask {} // assumption: produces a text file and declares it as output def sourcedFromTask = resources.text.fromFile(someTask) def sourcedFromArchiveEntry = resources.text.fromArchiveEntry("path/to/archive.zip", "path/to/archive/entry.txt") configurations { someConfig } // assumption: contains a single archive def sourcedFromConfiguration = resources.text.fromArchiveEntry(configurations.someConfig, "path/to/archive/entry.txt") </code></pre> File based factory methods optionally accept a character encoding. If no encoding is specified, the platform's default encoding is used.</p>
+<pre><code> def sourcedFromString = resources.text.fromString("some text content") def sourcedFromFile = resources.text.fromFile("path/to/file.txt") task someTask {} // assumption: produces a text file and declares it as output def sourcedFromTask = resources.text.fromFile(someTask) def sourcedFromArchiveEntry = resources.text.fromArchiveEntry("path/to/archive.zip", "path/to/archive/entry.txt") configurations { someConfig } // assumption: contains a single archive def sourcedFromConfiguration = resources.text.fromArchiveEntry(configurations.someConfig, "path/to/archive/entry.txt") def sourceFromUri = resources.text.fromUri("https://path/to/the/resource") </code></pre> File based factory methods optionally accept a character encoding. If no encoding is specified, the platform's default encoding is used.</p>
 <p><strong>Since</strong><br/>
 2.2</p>
 <h3>Functions</h3>
@@ -46,6 +46,15 @@
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">fromString</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.resources.TextResourceFactory$fromString(kotlin.String)/string">string</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-text-resource/index.html"><span class="identifier">TextResource</span></a></code>
 <p>Creates a text resource backed by the given string.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="from-uri.html">fromUri</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">fromUri</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.resources.TextResourceFactory$fromUri(kotlin.Any)/uri">uri</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-text-resource/index.html"><span class="identifier">TextResource</span></a></code>
+<p>Creates a text resource backed by the given uri.</p>
 </td>
 </tr>
 </tbody>

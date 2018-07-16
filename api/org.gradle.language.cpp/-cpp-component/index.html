@@ -8,7 +8,7 @@
 <a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.cpp</a>&nbsp;/&nbsp;<a href="./index.html">CppComponent</a><br/>
 <br/>
 <h1>CppComponent</h1>
-<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">CppComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language/-component-with-binaries/index.html"><span class="identifier">ComponentWithBinaries</span></a></code>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">CppComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language/-component-with-binaries/index.html"><span class="identifier">ComponentWithBinaries</span></a><span class="symbol">, </span><a href="../../org.gradle.language/-component-with-dependencies/index.html"><span class="identifier">ComponentWithDependencies</span></a></code>
 <p>Configuration for a C++ component, such as a library or executable, defining the source files and private header directories that make up the component. Private headers are those that are visible only to the source files of the component. 
 <p>A C++ component is composed of some C++ source files that are compiled and then linked into some binary.</p>
  
@@ -66,6 +66,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-operating-systems.html">getOperatingSystems</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOperatingSystems</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-set-property.html"><span class="identifier">SetProperty</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.nativeplatform/-operating-system-family/index.html"><span class="identifier">OperatingSystemFamily</span></a><span class="symbol">&gt;</span></code>
+<p>Specifies the operating systems for the target machine.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-private-header-dirs.html">getPrivateHeaderDirs</a></p>
 </td>
 <td>
@@ -111,6 +120,20 @@
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">source</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.cpp.CppComponent$source(org.gradle.api.Action((org.gradle.api.file.ConfigurableFileCollection)))/action">action</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Configures the source files or directories for this component.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.language/-component-with-dependencies/get-dependencies.html">getDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.language/-component-dependencies/index.html"><span class="identifier">ComponentDependencies</span></a></code>
+<p>Returns the dependencies of this component.</p>
 </td>
 </tr>
 </tbody>

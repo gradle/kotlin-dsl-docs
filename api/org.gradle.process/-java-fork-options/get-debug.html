@@ -10,7 +10,7 @@
 <h1>getDebug</h1>
 <a name="org.gradle.process.JavaForkOptions$getDebug()"></a>
 <code><span class="identifier">@Input</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDebug</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
-<p>Returns true if debugging is enabled for the process. When enabled, the process is started suspended and listening on port 5005.</p>
+<p>Determines whether debugging is enabled for the test process. When enabled — <code>debug = true</code> — the process is started in a suspended state, listening on port 5005. You should disable parallel test execution when debugging and you will need to reattach the debugger occasionally if you use a non-zero value for <code><a href="../../org.gradle.api.tasks.testing/-test/get-fork-every.html">org.gradle.api.tasks.testing.Test#getForkEvery()</a></code>.</p>
 <p><strong>Return</strong><br/>
 true when debugging is enabled, false to disable.</p>
 </BODY>

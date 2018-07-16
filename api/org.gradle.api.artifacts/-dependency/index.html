@@ -41,6 +41,15 @@
 <tbody>
 <tr>
 <td>
+<p><a href="because.html">because</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">because</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.Dependency$because(kotlin.String)/reason">reason</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the reason why this dependency should be used.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="content-equals.html">contentEquals</a></p>
 </td>
 <td>
@@ -77,6 +86,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-reason.html">getReason</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getReason</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns a reason why this dependency should be used, in particular with regards to its version. The dependency report will use it to explain why a specific dependency was selected, or why a specific dependency version was used.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-version.html">getVersion</a></p>
 </td>
 <td>
@@ -91,20 +109,22 @@
 <tbody>
 <tr>
 <td>
-<p><a href="../-dependency-constraint/index.html">DependencyConstraint</a></p>
+<p><a href="../-module-dependency/index.html">ModuleDependency</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">DependencyConstraint</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Dependency</span></a></code>
-<p>Represents a constraints over all, including transitive, dependencies.</p>
+<code><span class="keyword">interface </span><span class="identifier">ModuleDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Dependency</span></a><span class="symbol">, </span><a href="../../org.gradle.api.attributes/-has-configurable-attributes/index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="../-module-dependency/index.html"><span class="identifier">ModuleDependency</span></a><span class="symbol">&gt;</span></code>
+<p>A <code>ModuleDependency</code> is a org.gradle.api.artifacts.Dependency on a module outside the current project. 
+<p> For examples on configuring the exclude rules please refer to <code><a href="#">#exclude(java.util.Map)</a></code>.</p>
+</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="../-direct-dependency.html">DirectDependency</a></p>
+<p><a href="../-self-resolving-dependency/index.html">SelfResolvingDependency</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">DirectDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Dependency</span></a></code>
-<p>Implementations of this interface always describe direct dependencies and not constraints may optionally considered as dependency.</p>
+<code><span class="keyword">interface </span><span class="identifier">SelfResolvingDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Dependency</span></a><span class="symbol">, </span><a href="../../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<p>A <code>SelfResolvingDependency</code> is a Dependency which is able to resolve itself, independent of a repository.</p>
 </td>
 </tr>
 </tbody>

@@ -8,7 +8,7 @@
 <a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.publish.ivy</a>&nbsp;/&nbsp;<a href="./index.html">IvyArtifactSet</a><br/>
 <br/>
 <h1>IvyArtifactSet</h1>
-<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">IvyArtifactSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><a href="../-ivy-artifact/index.html"><span class="identifier">IvyArtifact</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">IvyArtifactSet</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-domain-object-set/index.html"><span class="identifier">DomainObjectSet</span></a><span class="symbol">&lt;</span><a href="../-ivy-artifact/index.html"><span class="identifier">IvyArtifact</span></a><span class="symbol">&gt;</span></code>
 <p>A Collection of IvyArtifacts to be included in an IvyPublication. Being a DomainObjectSet, a <code>IvyArtifactSet</code> provides convenient methods for querying, filtering, and applying actions to the set of IvyArtifacts. <pre><code> apply plugin: 'ivy-publish' def publication = publishing.publications.create("my-pub", IvyPublication) def artifacts = publication.artifacts artifacts.matching({ it.type == "source" }).all({ it.extension = "src.jar" }) </code></pre></p>
 <p><strong>See Also</strong><br/>
 DomainObjectSet</p>

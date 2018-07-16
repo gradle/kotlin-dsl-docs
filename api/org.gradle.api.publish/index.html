@@ -22,6 +22,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="-publication-artifact/index.html">PublicationArtifact</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PublicationArtifact</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<p>An artifact published as part of a Publication.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="-publication-container.html">PublicationContainer</a></p>
 </td>
 <td>
@@ -38,17 +47,7 @@
 </td>
 <td>
 <code><span class="keyword">interface </span><span class="identifier">PublishingExtension</span></code>
-<p>The configuration of how to “publish” the different components of a project. 
-<p> This new publishing mechanism will eventually replace the current mechanism of upload tasks and configurations. At this time, it is an incubating feature and under development. </p>
-<p> The PublishingExtension is a org.gradle.api.plugins.DeferredConfigurable model element, meaning that extension will be configured as late as possible in the build. So any 'publishing' configuration blocks are not evaluated until either: </p>
-<ol> <li>The project is about to execute, or</li>
- <li>he publishing extension is referenced as an instance, as opposed to via a configuration closure.</li>
- </ol>
- 
-<p> A 'publishing' configuration block does not need to dereference the publishing extension, and so will be evaluated late. eg: </p>
-<pre><code> publishing { publications { ... } repositories.maven { ... } } </code></pre> 
-<p> Any use that accesses the publishing extension as an instance does require the publishing extension to be realised, forcing all configuration blocks to be evaluated. eg: </p>
-<pre><code> publishing.publications { ... } publishing.repositories.maven { ... } </code></pre></p>
+<p>The configuration of how to “publish” the different components of a project.</p>
 </td>
 </tr>
 </tbody>

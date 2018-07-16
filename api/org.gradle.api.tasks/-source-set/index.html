@@ -67,6 +67,24 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-annotation-processor-configuration-name.html">getAnnotationProcessorConfigurationName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAnnotationProcessorConfigurationName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the name of the configuration containing annotation processors and their dependencies needed to compile this source set.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-annotation-processor-path.html">getAnnotationProcessorPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAnnotationProcessorPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the classpath used to load annotation processors when compiling this source set. This path is also used for annotation processor discovery. The classpath can be empty, which means use the compile classpath; if you want to disable annotation processing, then use <code>-proc:none</code> as a compiler argument.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-api-configuration-name.html">getApiConfigurationName</a></p>
 </td>
 <td>
@@ -295,6 +313,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="set-annotation-processor-path.html">setAnnotationProcessorPath</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setAnnotationProcessorPath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.SourceSet$setAnnotationProcessorPath(org.gradle.api.file.FileCollection)/annotationProcessorPath">annotationProcessorPath</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the classpath to use to load annotation processors when compiling this source set. This path is also used for annotation processor discovery. The classpath can be empty, which means use the compile classpath; if you want to disable annotation processing, then use <code>-proc:none</code> as a compiler argument.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="set-compile-classpath.html">setCompileClasspath</a></p>
 </td>
 <td>
@@ -309,6 +336,34 @@
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setRuntimeClasspath</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.SourceSet$setRuntimeClasspath(org.gradle.api.file.FileCollection)/classpath">classpath</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Sets the classpath used to execute this source.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.tasks.-source-set/ext.html">ext</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><a href="./index.html"><span class="identifier">SourceSet</span></a><span class="symbol">.</span><span class="identifier">ext</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins/-extra-properties-extension/index.html"><span class="identifier">ExtraPropertiesExtension</span></a></code>
+<p>Retrieves the <a href="../../org.gradle.api.plugins/-extra-properties-extension/index.html">ext</a> extension.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.tasks.-source-set/ext.html">ext</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">SourceSet</span></a><span class="symbol">.</span><span class="identifier">ext</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$ext(org.gradle.api.tasks.SourceSet, kotlin.Function1((org.gradle.api.plugins.ExtraPropertiesExtension, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins/-extra-properties-extension/index.html"><span class="identifier">ExtraPropertiesExtension</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the <a href="../../org.gradle.api.plugins/-extra-properties-extension/index.html">ext</a> extension.</p>
 </td>
 </tr>
 </tbody>

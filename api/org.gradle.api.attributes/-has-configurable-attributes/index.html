@@ -62,7 +62,7 @@
 <td>
 <code><span class="keyword">interface </span><span class="identifier">Configuration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-configuration/index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span></code>
 <p>A <code>Configuration</code> represents a group of artifacts and their dependencies. Find more information about declaring dependencies to a configuration or about managing configurations in docs for ConfigurationContainer 
-<p> Configuration is an instance of a FileCollection that contains all dependencies (see also <code><a href="../../org.gradle.api.artifacts/-configuration/get-all-dependencies.html">#getAllDependencies()</a></code>) but not artifacts. If you want to refer to the artifacts declared in this configuration please use <code><a href="../../org.gradle.api.artifacts/-configuration/get-artifacts.html">#getArtifacts()</a></code> or <code><a href="../../org.gradle.api.artifacts/-configuration/get-all-artifacts.html">#getAllArtifacts()</a></code>. Read more about declaring artifacts in the configuration in docs for org.gradle.api.artifacts.dsl.ArtifactHandler</p>
+<p> Configuration is an instance of a FileCollection that contains all dependencies (see also <code><a href="../../org.gradle.api.artifacts/-configuration/get-all-dependencies.html">#getAllDependencies()</a></code>) but not artifacts. If you want to refer to the artifacts declared in this configuration please use <code><a href="../../org.gradle.api.artifacts/-configuration/get-artifacts.html">#getArtifacts()</a></code> or <code><a href="../../org.gradle.api.artifacts/-configuration/get-all-artifacts.html">#getAllArtifacts()</a></code>. Read more about declaring artifacts in the configuration in docs for org.gradle.api.artifacts.dsl.ArtifactHandler Please see the <a href="#">Managing Dependency Configurations User Guide chapter</a> for more information.</p>
 </p>
 </td>
 </tr>
@@ -86,6 +86,26 @@
 <td>
 <code><span class="keyword">interface </span><span class="identifier">ConfigurationVariant</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-configuration-variant/index.html"><span class="identifier">ConfigurationVariant</span></a><span class="symbol">&gt;</span></code>
 <p>Represents some variant of an outgoing configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.artifacts/-dependency-constraint/index.html">DependencyConstraint</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">DependencyConstraint</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts/-module-version-selector/index.html"><span class="identifier">ModuleVersionSelector</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-dependency-constraint/index.html"><span class="identifier">DependencyConstraint</span></a><span class="symbol">&gt;</span></code>
+<p>Represents a constraints over all, including transitive, dependencies.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.artifacts/-module-dependency/index.html">ModuleDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ModuleDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts/-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.artifacts/-module-dependency/index.html"><span class="identifier">ModuleDependency</span></a><span class="symbol">&gt;</span></code>
+<p>A <code>ModuleDependency</code> is a org.gradle.api.artifacts.Dependency on a module outside the current project. 
+<p> For examples on configuring the exclude rules please refer to <code><a href="#">#exclude(java.util.Map)</a></code>.</p>
+</p>
 </td>
 </tr>
 <tr>

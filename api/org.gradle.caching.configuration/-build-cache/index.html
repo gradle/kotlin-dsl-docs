@@ -8,7 +8,7 @@
 <a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.caching.configuration</a>&nbsp;/&nbsp;<a href="./index.html">BuildCache</a><br/>
 <br/>
 <h1>BuildCache</h1>
-<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">BuildCache</span></code>
+<code><span class="keyword">interface </span><span class="identifier">BuildCache</span></code>
 <p>Configuration object for a build cache.</p>
 <p><strong>Since</strong><br/>
 3.5</p>
@@ -30,7 +30,7 @@
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">isPush</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
-<p>Returns whether pushing to the build cache is enabled.</p>
+<p>Returns whether a given build can store outputs in the build cache.</p>
 </td>
 </tr>
 <tr>
@@ -39,7 +39,7 @@
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setEnabled</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.configuration.BuildCache$setEnabled(kotlin.Boolean)/enabled">enabled</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Enables or disables the build cache service.</p>
+<p>Sets whether the build cache is enabled.</p>
 </td>
 </tr>
 <tr>
@@ -48,7 +48,7 @@
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setPush</span><span class="symbol">(</span><span class="identifier" id="org.gradle.caching.configuration.BuildCache$setPush(kotlin.Boolean)/enabled">enabled</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Sets whether pushing to the build cache is enabled.</p>
+<p>Sets whether a given build can store outputs in the build cache.</p>
 </td>
 </tr>
 </tbody>

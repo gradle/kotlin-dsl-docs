@@ -1,0 +1,75 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>CppPlatform - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.cpp</a>&nbsp;/&nbsp;<a href="./index.html">CppPlatform</a><br/>
+<br/>
+<h1>CppPlatform</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">CppPlatform</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a></code>
+<p>A target platform for building C++ binaries.</p>
+<p><strong>Since</strong><br/>
+4.5</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-operating-system-family.html">getOperatingSystemFamily</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOperatingSystemFamily</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform/-operating-system-family/index.html"><span class="identifier">OperatingSystemFamily</span></a></code>
+<p>The operating system family being targeted.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.platform/-native-platform/architecture.html">architecture</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">architecture</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.platform.NativePlatform$architecture(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the cpu architecture being targeted. 
+<p> The architecture is provided as a string name, which is translated into one of the supported architecture types. </p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.platform/-native-platform/get-architecture.html">getArchitecture</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getArchitecture</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform.platform/-architecture/index.html"><span class="identifier">Architecture</span></a></code>
+<p>The cpu architecture being targeted. Defaults to the default architecture produced by the tool chain.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.platform/-native-platform/get-operating-system.html">getOperatingSystem</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOperatingSystem</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform.platform/-operating-system/index.html"><span class="identifier">OperatingSystem</span></a></code>
+<p>The operating system being targeted. Defaults to the default operating system targeted by the tool chain (normally the current operating system).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.nativeplatform.platform/-native-platform/operating-system.html">operatingSystem</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">operatingSystem</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.platform.NativePlatform$operatingSystem(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the operating system being targeted. 
+<p> The operating system is provided as a string name, which is translated into one of the supported operating system types. </p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

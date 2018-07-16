@@ -8,21 +8,19 @@
 <a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.ide.visualstudio</a>&nbsp;/&nbsp;<a href="./index.html">VisualStudioProject</a><br/>
 <br/>
 <h1>VisualStudioProject</h1>
-<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">VisualStudioProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-buildable-component-spec/index.html"><span class="identifier">BuildableComponentSpec</span></a></code>
-<p>A visual studio project, created from one or more org.gradle.nativeplatform.NativeBinary instances. 
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">VisualStudioProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a><span class="symbol">, </span><a href="../../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<p>A visual studio project, created from one or more native binaries. 
 <p> The content and location of the generate project file can be modified by the supplied methods: </p>
-<pre><code> apply plugin: "visual-studio" model { visualStudio { projects.all { projectFile.location = "vs/${name}.vcxproj" projectFile.withXml { asNode().appendNode('PropertyGroup', [Label: 'Custom']) .appendNode('ProjectDetails', "Project is named ${project.name}") } } } } </code></pre></p>
+<pre><code> apply plugin: "cpp" apply plugin: "visual-studio" model { visualStudio { projects.all { projectFile.location = "vs/${name}.vcxproj" projectFile.withXml { asNode().appendNode('PropertyGroup', [Label: 'Custom']) .appendNode('ProjectDetails', "Project is named ${project.name}") } } } } </code></pre></p>
 <h3>Functions</h3>
 <table>
 <tbody>
 <tr>
 <td>
-<p><a href="get-component.html">getComponent</a></p>
+<p><a href="get-build-dependencies.html">getBuildDependencies</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getComponent</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform/-native-component-spec/index.html"><span class="identifier">NativeComponentSpec</span></a></code>
-<p>The component that this project represents.</p>
-</td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.tasks/-task-dependency/index.html"><span class="identifier">TaskDependency</span></a></code></td>
 </tr>
 <tr>
 <td>
@@ -35,50 +33,18 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
+<tr>
+<td>
 <p><a href="get-project-file.html">getProjectFile</a></p>
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getProjectFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-xml-config-file/index.html"><span class="identifier">XmlConfigFile</span></a></code>
 <p>Configuration for the generated project file.</p>
-</td>
-</tr>
-</tbody>
-</table>
-<h3>Inherited Functions</h3>
-<table>
-<tbody>
-<tr>
-<td>
-<p><a href="../../org.gradle.api/-buildable-component-spec/built-by.html">builtBy</a></p>
-</td>
-<td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">builtBy</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.BuildableComponentSpec$builtBy(kotlin.Array((kotlin.Any)))/tasks">tasks</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Adds tasks required to build this component. Tasks added this way are subsequently added as dependencies of this component's <code><a href="../../org.gradle.api/-buildable-component-spec/get-build-task.html">build task</a></code>.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../../org.gradle.api/-buildable-component-spec/get-build-task.html">getBuildTask</a></p>
-</td>
-<td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getBuildTask</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a></code>
-<p>Returns the task responsible for building this component.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../../org.gradle.api/-buildable-component-spec/has-build-dependencies.html">hasBuildDependencies</a></p>
-</td>
-<td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">hasBuildDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code></td>
-</tr>
-<tr>
-<td>
-<p><a href="../../org.gradle.api/-buildable-component-spec/set-build-task.html">setBuildTask</a></p>
-</td>
-<td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setBuildTask</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.BuildableComponentSpec$setBuildTask(org.gradle.api.Task)/buildTask">buildTask</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Specifies the task responsible for building this component.</p>
 </td>
 </tr>
 </tbody>

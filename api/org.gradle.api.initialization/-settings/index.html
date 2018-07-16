@@ -54,6 +54,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="enable-feature-preview.html">enableFeaturePreview</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">enableFeaturePreview</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.initialization.Settings$enableFeaturePreview(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Enables a feature preview by name.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="find-project.html">findProject</a></p>
 </td>
 <td>
@@ -294,16 +303,40 @@
 </tr>
 </tbody>
 </table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.initialization.-settings/apply.html">apply</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-plugin/index.html"><span class="identifier">Plugin</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Settings</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span> <a href="./index.html"><span class="identifier">Settings</span></a><span class="symbol">.</span><span class="identifier">apply</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Applies the plugin of the given type <a href="../../org.gradle.kotlin.dsl/org.gradle.api.initialization.-settings/apply.html#T">T</a>. Does nothing if the plugin has already been applied.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.initialization.-settings/provide-delegate.html">provideDelegate</a></p>
+</td>
+<td>
+<code><span class="keyword">operator</span> <span class="keyword">fun </span><a href="./index.html"><span class="identifier">Settings</span></a><span class="symbol">.</span><span class="identifier">provideDelegate</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$provideDelegate(org.gradle.api.initialization.Settings, kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)))/any">any</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl$provideDelegate(org.gradle.api.initialization.Settings, kotlin.Any, kotlin.reflect.KProperty((kotlin.Any)))/property">property</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-property/index.html"><span class="identifier">KProperty</span></a><span class="symbol">&lt;</span><span class="identifier">*</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.kotlin.dsl/-property-delegate/index.html"><span class="identifier">PropertyDelegate</span></a></code>
+<p>Locates a property on <a href="./index.html">Settings</a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
 <h3>Inheritors</h3>
 <table>
 <tbody>
 <tr>
 <td>
-<p><a href="../../org.gradle.kotlin.dsl/-kotlin-settings-script/index.html">KotlinSettingsScript</a></p>
+<p><a href="../../org.gradle.kotlin.dsl/-settings-script-api/index.html">SettingsScriptApi</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">KotlinSettingsScript</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Settings</span></a></code>
-<p>Base class for Kotlin settings scripts.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">SettingsScriptApi</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Settings</span></a></code>
+<p>Standard implementation of the API exposed to all types of <a href="./index.html">Settings</a> scripts,
+precompiled and otherwise.</p>
 </td>
 </tr>
 </tbody>

@@ -1,0 +1,46 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ProjectLayout.files - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.file</a>&nbsp;/&nbsp;<a href="index.html">ProjectLayout</a>&nbsp;/&nbsp;<a href="./files.html">files</a><br/>
+<br/>
+<h1>files</h1>
+<a name="org.gradle.api.file.ProjectLayout$files(kotlin.Array((kotlin.Any)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">files</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.file.ProjectLayout$files(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>
+<p>Creates a FileCollection for the given targets. You can pass any of the following types to this method:</p>
+ <ul> <li>A CharSequence, including String or groovy.lang.GString. Interpreted relative to the project directory, as per <code><a href="#">Project#file(Object)</a></code>. A string that starts with <code>file:</code> is treated as a file URL.</li>
+ <li>A File. Interpreted relative to the project directory, as per <code><a href="#">Project#file(Object)</a></code>.</li>
+ <li>A java.nio.file.Path as defined by <code><a href="#">Project#file(Object)</a></code>.</li>
+ <li>A java.net.URI or java.net.URL. The URL's path is interpreted as a file path. Only <code>file:</code> URLs are supported.</li>
+ <li>A org.gradle.api.file.Directory or org.gradle.api.file.RegularFile.</li>
+ <li>A java.util.Collection, Iterable, or an array that contains objects of any supported type. The elements of the collection are recursively converted to files.</li>
+ <li>A org.gradle.api.file.FileCollection. The contents of the collection are included in the returned collection.</li>
+ <li>A Provider of any supported type. The provider's value is recursively converted to files. If the provider represents an output of a task, that task is executed if the file collection is used as an input to another task. </li>
+<li>A java.util.concurrent.Callable that returns any supported type. The return value of the <code>call()</code> method is recursively converted to files. A <code>null</code> return value is treated as an empty collection.</li>
+ <li>A Closure that returns any of the types listed here. The return value of the closure is recursively converted to files. A <code>null</code> return value is treated as an empty collection.</li>
+ <li>A Task. Converted to the task's output files. The task is executed if the file collection is used as an input to another task.</li>
+ <li>A org.gradle.api.tasks.TaskOutputs. Converted to the output files the related task. The task is executed if the file collection is used as an input to another task.</li>
+ <li>Anything else is treated as a failure.</li>
+ </ul>
+ 
+<p>The returned file collection is lazy, so that the paths are evaluated only when the contents of the file collection are queried. The file collection is also live, so that it evaluates the above each time the contents of the collection is queried.</p>
+ 
+<p>The returned file collection maintains the iteration order of the supplied paths.</p>
+ 
+<p>The returned file collection maintains the details of the tasks that produce the files, so that these tasks are executed if this file collection is used as an input to some task.</p>
+ 
+<p>This method can also be used to create an empty collection, but the collection may not be mutated later.</p>
+</p>
+<h3>Parameters</h3>
+<p><a name="paths"></a>
+<code>paths</code> - The paths to the files. May be empty.</p>
+<p><strong>Return</strong><br/>
+The file collection. Never returns null.</p>
+<p><strong>Since</strong><br/>
+4.8</p>
+</BODY>
+</HTML>

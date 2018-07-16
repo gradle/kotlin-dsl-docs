@@ -20,6 +20,33 @@
 <tbody>
 <tr>
 <td>
+<p><a href="attributes.html">attributes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">attributes</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.DependencyMetadata$attributes(org.gradle.api.Action((org.gradle.api.attributes.AttributeContainer)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.attributes/-attribute-container/index.html"><span class="identifier">AttributeContainer</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html#SELF"><span class="identifier">SELF</span></a></code>
+<p>Adjust the attributes of this dependency</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="because.html">because</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">because</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.DependencyMetadata$because(kotlin.String)/reason">reason</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="index.html#SELF"><span class="identifier">SELF</span></a></code>
+<p>Adjust the reason why this dependency should be selected.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-attributes.html">getAttributes</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAttributes</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.attributes/-attribute-container/index.html"><span class="identifier">AttributeContainer</span></a></code>
+<p>Returns the attributes of this dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-group.html">getGroup</a></p>
 </td>
 <td>
@@ -29,11 +56,29 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-module.html">getModule</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getModule</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-module-identifier/index.html"><span class="identifier">ModuleIdentifier</span></a></code>
+<p>The module identifier of the component. Returns the same information as <code><a href="get-group.html">#getGroup()</a></code> and <code><a href="get-name.html">#getName()</a></code>.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-name.html">getName</a></p>
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
 <p>Returns the name of the module that is targeted by this dependency or dependency constraint.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-reason.html">getReason</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getReason</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>Returns the reason why this dependency should be selected.</p>
 </td>
 </tr>
 <tr>

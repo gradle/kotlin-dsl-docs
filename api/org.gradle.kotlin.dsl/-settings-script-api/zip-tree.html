@@ -1,0 +1,25 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>SettingsScriptApi.zipTree - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.kotlin.dsl</a>&nbsp;/&nbsp;<a href="index.html">SettingsScriptApi</a>&nbsp;/&nbsp;<a href="./zip-tree.html">zipTree</a><br/>
+<br/>
+<h1>zipTree</h1>
+<a name="org.gradle.kotlin.dsl.SettingsScriptApi$zipTree(kotlin.Any)"></a>
+<code><span class="keyword">fun </span><span class="identifier">zipTree</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.SettingsScriptApi$zipTree(kotlin.Any)/zipPath">zipPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<p>Creates a new <a href="../../org.gradle.api.file/-file-tree/index.html">FileTree</a> which contains the contents of the given ZIP file.</p>
+<p>The given <code>zipPath</code> path is evaluated as per <a href="file.html">KotlinSettingsScript.file</a></p>
+<p>The returned file tree is lazy, so that it scans for files only when the contents of the file tree are
+queried. The file tree is also live, so that it scans for files each time the contents of the file tree are
+queried.</p>
+<p>You can combine this method with the <a href="copy.html">KotlinSettingsScript.copy</a> method to unzip a ZIP file.</p>
+<h3>Parameters</h3>
+<p><a name="zipPath"></a>
+<code>zipPath</code> - The ZIP file. Evaluated as per <a href="file.html">KotlinSettingsScript.file</a>.</p>
+<p><strong>Return</strong><br/>
+The file tree.</p>
+</BODY>
+</HTML>

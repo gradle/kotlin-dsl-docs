@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>maybeCreate - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.kotlin.dsl</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.api.PolymorphicDomainObjectContainer</a>&nbsp;/&nbsp;<a href="./maybe-create.html">maybeCreate</a><br/>
+<br/>
+<h1>maybeCreate</h1>
+<a name="org.gradle.kotlin.dsl$maybeCreate(org.gradle.api.PolymorphicDomainObjectContainer((org.gradle.kotlin.dsl.maybeCreate.U)), kotlin.String)"></a>
+<code><span class="keyword">inline</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="keyword">reified</span>&nbsp;<span class="identifier">U</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <a href="../../org.gradle.api/-polymorphic-domain-object-container/index.html"><span class="identifier">PolymorphicDomainObjectContainer</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="maybe-create.html#U"><span class="identifier">U</span></a><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">maybeCreate</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$maybeCreate(org.gradle.api.PolymorphicDomainObjectContainer((org.gradle.kotlin.dsl.maybeCreate.U)), kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="maybe-create.html#U"><span class="identifier">U</span></a></code>
+<p>Creates a domain object with the specified name and type if it does not exists, and adds it to the container.</p>
+<h3>Parameters</h3>
+<p><a name="name"></a>
+<code>name</code> - the name of the domain object to be created</p>
+<h3>Exceptions</h3>
+<p><a name="InvalidUserDataException"></a>
+<code>InvalidUserDataException</code> - if a domain object with the specified name already
+exists or the container does not support creating a domain object with the specified
+type</p>
+<p><a name="ClassCastException"></a>
+<code>ClassCastException</code> - if a domain object with the specified name exists with a different type</p>
+<p><strong>Parameters</strong><br/>
+</p>
+<p><strong>Return</strong><br/>
+the created domain object</p>
+</BODY>
+</HTML>

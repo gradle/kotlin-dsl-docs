@@ -1,0 +1,105 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>TaskContainer.register - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks</a>&nbsp;/&nbsp;<a href="index.html">TaskContainer</a>&nbsp;/&nbsp;<a href="./register.html">register</a><br/>
+<br/>
+<h1>register</h1>
+<a name="org.gradle.api.tasks.TaskContainer$register(kotlin.String, org.gradle.api.Action((org.gradle.api.Task)))"></a>
+<code><span class="identifier">@Incubating</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">register</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.TaskContainer$register(kotlin.String, org.gradle.api.Action((org.gradle.api.Task)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.TaskContainer$register(kotlin.String, org.gradle.api.Action((org.gradle.api.Task)))/configurationAction">configurationAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-task-provider/index.html"><span class="identifier">TaskProvider</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span></code>
+<p>Defines a new task, which will be created and configured when it is required. A task is 'required' when the task is located using query methods such as <code><a href="#">#getByName(String)</a></code>, when the task is added to the task graph for execution or when <code><a href="../../org.gradle.api.provider/-provider/get.html">Provider#get()</a></code> is called on the return value of this method. 
+<p>It is generally more efficient to use this method instead of <code><a href="#">#create(String, Action)</a></code> or <code><a href="#">#create(String)</a></code>, as those methods will eagerly create and configure the task, regardless of whether that task is required for the current build or not. This method, on the other hand, will defer creation and configuration until required.</p>
+</p>
+<h3>Parameters</h3>
+<p><a name="name"></a>
+<code>name</code> - The name of the task.</p>
+<p><a name="configurationAction"></a>
+<code>configurationAction</code> - The action to run to configure the task. This action runs when the task is required.</p>
+<h3>Exceptions</h3>
+<p><a name="InvalidUserDataException"></a>
+<code>InvalidUserDataException</code> - If a task with the given name already exists in this project.</p>
+<p><strong>Return</strong><br/>
+A Provider that whose value will be the task, when queried.</p>
+<p><strong>Since</strong><br/>
+4.9</p>
+<a name="org.gradle.api.tasks.TaskContainer$register(kotlin.String, java.lang.Class((org.gradle.api.tasks.TaskContainer.register.T)), org.gradle.api.Action((org.gradle.api.tasks.TaskContainer.register.T)))"></a>
+<code><span class="identifier">@Incubating</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span> <span class="identifier">register</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.TaskContainer$register(kotlin.String, java.lang.Class((org.gradle.api.tasks.TaskContainer.register.T)), org.gradle.api.Action((org.gradle.api.tasks.TaskContainer.register.T)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.TaskContainer$register(kotlin.String, java.lang.Class((org.gradle.api.tasks.TaskContainer.register.T)), org.gradle.api.Action((org.gradle.api.tasks.TaskContainer.register.T)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="register.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.TaskContainer$register(kotlin.String, java.lang.Class((org.gradle.api.tasks.TaskContainer.register.T)), org.gradle.api.Action((org.gradle.api.tasks.TaskContainer.register.T)))/configurationAction">configurationAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="register.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-task-provider/index.html"><span class="identifier">TaskProvider</span></a><span class="symbol">&lt;</span><a href="register.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Defines a new task, which will be created and configured when it is required. A task is 'required' when the task is located using query methods such as <code><a href="#">#getByName(String)</a></code>, when the task is added to the task graph for execution or when <code><a href="../../org.gradle.api.provider/-provider/get.html">Provider#get()</a></code> is called on the return value of this method. 
+<p>It is generally more efficient to use this method instead of <code><a href="#">#create(String, Class, Action)</a></code> or <code><a href="#">#create(String, Class)</a></code>, as those methods will eagerly create and configure the task, regardless of whether that task is required for the current build or not. This method, on the other hand, will defer creation and configuration until required.</p>
+</p>
+<h3>Parameters</h3>
+<p><a name="name"></a>
+<code>name</code> - The name of the task.</p>
+<p><a name="type"></a>
+<code>type</code> - The task type.</p>
+<p><a name="configurationAction"></a>
+<code>configurationAction</code> - The action to run to configure the task. This action runs when the task is required.</p>
+<p><a name="&lt;T&gt;"></a>
+<code><T></code> - The task type</p>
+<h3>Exceptions</h3>
+<p><a name="InvalidUserDataException"></a>
+<code>InvalidUserDataException</code> - If a task with the given name already exists in this project.</p>
+<p><strong>Return</strong><br/>
+A Provider that whose value will be the task, when queried.</p>
+<p><strong>Since</strong><br/>
+4.9</p>
+<a name="org.gradle.api.tasks.TaskContainer$register(kotlin.String, java.lang.Class((org.gradle.api.tasks.TaskContainer.register.T)))"></a>
+<code><span class="identifier">@Incubating</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span> <span class="identifier">register</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.TaskContainer$register(kotlin.String, java.lang.Class((org.gradle.api.tasks.TaskContainer.register.T)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.TaskContainer$register(kotlin.String, java.lang.Class((org.gradle.api.tasks.TaskContainer.register.T)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="register.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-task-provider/index.html"><span class="identifier">TaskProvider</span></a><span class="symbol">&lt;</span><a href="register.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Defines a new task, which will be created when it is required. A task is 'required' when the task is located using query methods such as <code><a href="#">#getByName(String)</a></code>, when the task is added to the task graph for execution or when <code><a href="../../org.gradle.api.provider/-provider/get.html">Provider#get()</a></code> is called on the return value of this method. 
+<p>It is generally more efficient to use this method instead of <code><a href="#">#create(String, Class, Action)</a></code> or <code><a href="#">#create(String, Class)</a></code>, as those methods will eagerly create and configure the task, regardless of whether that task is required for the current build or not. This method, on the other hand, will defer creation until required.</p>
+</p>
+<h3>Parameters</h3>
+<p><a name="name"></a>
+<code>name</code> - The name of the task.</p>
+<p><a name="type"></a>
+<code>type</code> - The task type.</p>
+<p><a name="&lt;T&gt;"></a>
+<code><T></code> - The task type</p>
+<h3>Exceptions</h3>
+<p><a name="InvalidUserDataException"></a>
+<code>InvalidUserDataException</code> - If a task with the given name already exists in this project.</p>
+<p><strong>Return</strong><br/>
+A Provider that whose value will be the task, when queried.</p>
+<p><strong>Since</strong><br/>
+4.9</p>
+<a name="org.gradle.api.tasks.TaskContainer$register(kotlin.String, java.lang.Class((org.gradle.api.tasks.TaskContainer.register.T)), kotlin.Array((kotlin.Any)))"></a>
+<code><span class="identifier">@Incubating</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span> <span class="identifier">register</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.TaskContainer$register(kotlin.String, java.lang.Class((org.gradle.api.tasks.TaskContainer.register.T)), kotlin.Array((kotlin.Any)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.TaskContainer$register(kotlin.String, java.lang.Class((org.gradle.api.tasks.TaskContainer.register.T)), kotlin.Array((kotlin.Any)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="register.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.api.tasks.TaskContainer$register(kotlin.String, java.lang.Class((org.gradle.api.tasks.TaskContainer.register.T)), kotlin.Array((kotlin.Any)))/constructorArgs">constructorArgs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-task-provider/index.html"><span class="identifier">TaskProvider</span></a><span class="symbol">&lt;</span><a href="register.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Defines a new task, which will be created when it is required passing the given arguments to the <code>@Inject</code>-annotated constructor. A task is 'required' when the task is located using query methods such as <code><a href="#">#getByName(String)</a></code>, when the task is added to the task graph for execution or when <code><a href="../../org.gradle.api.provider/-provider/get.html">Provider#get()</a></code> is called on the return value of this method. All values passed to the task constructor must be non-null; otherwise a <code>NullPointerException</code> will be thrown 
+<p>It is generally more efficient to use this method instead of <code><a href="#">#create(String, Class, Action)</a></code> or <code><a href="#">#create(String, Class)</a></code>, as those methods will eagerly create and configure the task, regardless of whether that task is required for the current build or not. This method, on the other hand, will defer creation until required.</p>
+</p>
+<h3>Parameters</h3>
+<p><a name="name"></a>
+<code>name</code> - The name of the task.</p>
+<p><a name="type"></a>
+<code>type</code> - The task type.</p>
+<p><a name="constructorArgs"></a>
+<code>constructorArgs</code> - The arguments to pass to the task constructor</p>
+<p><a name="&lt;T&gt;"></a>
+<code><T></code> - The task type</p>
+<h3>Exceptions</h3>
+<p><a name="NullPointerException"></a>
+<code>NullPointerException</code> - If any of the values in <code>constructorArgs</code> is null.</p>
+<p><strong>Return</strong><br/>
+A Provider that whose value will be the task, when queried.</p>
+<p><strong>Since</strong><br/>
+4.9</p>
+<a name="org.gradle.api.tasks.TaskContainer$register(kotlin.String)"></a>
+<code><span class="identifier">@Incubating</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">register</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.TaskContainer$register(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-task-provider/index.html"><span class="identifier">TaskProvider</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span></code>
+<p>Defines a new task, which will be created when it is required. A task is 'required' when the task is located using query methods such as <code><a href="#">#getByName(String)</a></code>, when the task is added to the task graph for execution or when <code><a href="../../org.gradle.api.provider/-provider/get.html">Provider#get()</a></code> is called on the return value of this method. 
+<p>It is generally more efficient to use this method instead of <code><a href="#">#create(String)</a></code>, as that methods will eagerly create he task, regardless of whether that task is required for the current build or not. This method, on the other hand, will defer creation until required.</p>
+</p>
+<h3>Parameters</h3>
+<p><a name="name"></a>
+<code>name</code> - The name of the task.</p>
+<h3>Exceptions</h3>
+<p><a name="InvalidUserDataException"></a>
+<code>InvalidUserDataException</code> - If a task with the given name already exists in this project.</p>
+<p><strong>Return</strong><br/>
+A Provider that whose value will be the task, when queried.</p>
+<p><strong>Since</strong><br/>
+4.9</p>
+</BODY>
+</HTML>

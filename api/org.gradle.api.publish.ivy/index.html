@@ -16,7 +16,7 @@
 <p><a href="-ivy-artifact/index.html">IvyArtifact</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">IvyArtifact</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">IvyArtifact</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api.publish/-publication-artifact/index.html"><span class="identifier">PublicationArtifact</span></a></code>
 <p>An artifact published as part of a IvyPublication.</p>
 </td>
 </tr>
@@ -67,13 +67,40 @@
 </tr>
 <tr>
 <td>
+<p><a href="-ivy-module-descriptor-author/index.html">IvyModuleDescriptorAuthor</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">IvyModuleDescriptorAuthor</span></code>
+<p>An author of an Ivy publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-ivy-module-descriptor-description/index.html">IvyModuleDescriptorDescription</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">IvyModuleDescriptorDescription</span></code>
+<p>The description of an Ivy publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-ivy-module-descriptor-license/index.html">IvyModuleDescriptorLicense</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">IvyModuleDescriptorLicense</span></code>
+<p>A license of an Ivy publication.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="-ivy-module-descriptor-spec/index.html">IvyModuleDescriptorSpec</a></p>
 </td>
 <td>
 <code><span class="keyword">interface </span><span class="identifier">IvyModuleDescriptorSpec</span></code>
 <p>The descriptor of any Ivy publication. 
 <p> Corresponds to the <a href="#">XML version of the Ivy Module Descriptor</a>. </p>
-<p> The <code><a href="#">#withXml(org.gradle.api.Action)</a></code> method can be used to modify the descriptor after it has been generated according to the publication data.</p>
+<p> The <code><a href="#">#withXml(org.gradle.api.Action)</a></code> method can be used to modify the descriptor after it has been generated according to the publication data. However, the preferred way to customize the project information to be published is to use the dedicated configuration methods exposed by this class, e.g. <code><a href="#">#description(Action)</a></code>.</p>
 </p>
 </td>
 </tr>
@@ -94,8 +121,9 @@
 <p> For certain common use cases, it's often sufficient to specify the component to publish, using (<code><a href="-ivy-publication/from.html">#from(org.gradle.api.component.SoftwareComponent)</a></code>. The published component is used to determine which artifacts to publish, and which configurations and dependencies should be listed in the generated ivy descriptor file. </p>
 <p> You can add configurations to the generated ivy descriptor file, by supplying a Closure to the <code><a href="#">#configurations(org.gradle.api.Action)</a></code> method. </p>
 <p> To add additional artifacts to the set published, use the <code><a href="#">#artifact(Object)</a></code> and <code><a href="#">#artifact(Object, org.gradle.api.Action)</a></code> methods. You can also completely replace the set of published artifacts using <code><a href="#">#setArtifacts(Iterable)</a></code>. Together, these methods give you full control over the artifacts to be published. </p>
+<p> In addition, IvyModuleDescriptorSpec provides configuration methods to customize licenses, authors, and the description to be published in the Ivy module descriptor. </p>
 <p> For any other tweaks to the publication, it is possible to modify the generated Ivy descriptor file prior to publication. This is done using the <code><a href="#">IvyModuleDescriptorSpec#withXml(org.gradle.api.Action)</a></code> method, normally via a Closure passed to the <code><a href="#">#descriptor(org.gradle.api.Action)</a></code> method. </p>
- Example of publishing a java component with an added source jar and custom module description <pre><code> apply plugin: "java" apply plugin: "ivy-publish" task sourceJar(type: Jar) { from sourceSets.main.allJava } publishing { publications { myPublication(IvyPublication) { from components.java artifact(sourceJar) { type "source" extension "src.jar" conf "runtime" } descriptor.withXml { asNode().info[0].appendNode("description", "custom-description") } } } } </code></pre></p>
+ Example of publishing a java component with an added source jar and custom module description <pre><code> apply plugin: "java" apply plugin: "ivy-publish" task sourceJar(type: Jar) { from sourceSets.main.allJava } publishing { publications { myPublication(IvyPublication) { from components.java artifact(sourceJar) { type "source" extension "src.jar" conf "runtime" } descriptor { license { name = "Custom License" } author { name = "Custom Name" } description { text = "Custom Description" } } } } } </code></pre></p>
 </td>
 </tr>
 </tbody>

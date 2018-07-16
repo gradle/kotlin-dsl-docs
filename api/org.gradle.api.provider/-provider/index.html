@@ -8,7 +8,7 @@
 <a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.provider</a>&nbsp;/&nbsp;<a href="./index.html">Provider</a><br/>
 <br/>
 <h1>Provider</h1>
-<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">Provider</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
+<code><span class="identifier">@Incubating</span> <span class="identifier">@NonExtensible</span> <span class="keyword">interface </span><span class="identifier">Provider</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span></code>
 <p>A container object that provides a value of a specific type. The value can be retrieved by the method <code><a href="get.html">#get()</a></code> or <code><a href="get-or-null.html">#getOrNull()</a></code>. 
 <p> A provider may not always have a value available, for example when the value may not yet be known but will be known at some point in the future. When a value is not available, <code><a href="is-present.html">#isPresent()</a></code> returns <code>false</code> and retrieving the value will fail with an exception. </p>
  
@@ -18,7 +18,7 @@
  
 <p> A typical use of a provider is to pass values from one DSL element to another, e.g. from an extension to a task. Providers also allow expensive computations to be deferred until their value is actually needed, usually at task execution time. </p>
  
-<p> For a provider whose value can be mutated, see PropertyState. </p>
+<p> For a provider whose value can be mutated, see Property. </p>
  
 <p> Do not use <code>Provider&lt;File&gt;</code>. Use org.gradle.api.file.Directory or org.gradle.api.file.RegularFile instead. </p>
  
@@ -145,8 +145,17 @@
 <td>
 <code><span class="keyword">interface </span><span class="identifier">SetProperty</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="../-set-property.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><a href="../-has-multiple-values/index.html"><span class="identifier">HasMultipleValues</span></a><span class="symbol">&lt;</span><a href="../-set-property.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
 <p>Represents a property whose type is a Set of elements of type T. Retains iteration order. 
-<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory method <code><a href="#">org.gradle.api.model.ObjectFactory#listProperty(Class)</a></code>.</p>
+<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory method <code><a href="#">org.gradle.api.model.ObjectFactory#setProperty(Class)</a></code>.</p>
 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.api.tasks/-task-provider/index.html">TaskProvider</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">TaskProvider</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.tasks/-task-provider/index.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Providers a task of the given type.</p>
 </td>
 </tr>
 </tbody>

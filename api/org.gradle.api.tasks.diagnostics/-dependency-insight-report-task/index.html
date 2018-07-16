@@ -8,7 +8,7 @@
 <a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.diagnostics</a>&nbsp;/&nbsp;<a href="./index.html">DependencyInsightReportTask</a><br/>
 <br/>
 <h1>DependencyInsightReportTask</h1>
-<code><span class="identifier">@Incubating</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">DependencyInsightReportTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">DependencyInsightReportTask</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-default-task/index.html"><span class="identifier">DefaultTask</span></a></code>
 <p>Generates a report that attempts to answer questions like: <ul> <li>Why is this dependency in the dependency graph?</li>
  <li>Exactly which dependencies are pulling this dependency into the graph?</li>
  <li>What is the actual version (i.e. *selected* version) of the dependency that will be used? Is it the same as what was *requested*?</li>
@@ -65,6 +65,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="is-show-single-path-to-dependency.html">isShowSinglePathToDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isShowSinglePathToDependency</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Tells if the report should only show one path to each dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="report.html">report</a></p>
 </td>
 <td>
@@ -94,6 +103,15 @@
 <p>Configures the dependency to show the report for. Multiple notation formats are supported: Strings, instances of Spec and groovy closures. Spec and closure receive DependencyResult as parameter. Examples of String notation: 'org.slf4j:slf4j-api', 'slf4j-api', or simply: 'slf4j'. The input may potentially match multiple dependencies. See also <code><a href="#">DependencyInsightReportTask#setDependencySpec(Spec)</a></code> 
 <p> This method is exposed to the command line interface. Example usage: </p>
 <pre><code>gradle dependencyInsight --dependency slf4j</code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-show-single-path-to-dependency.html">setShowSinglePathToDependency</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setShowSinglePathToDependency</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.diagnostics.DependencyInsightReportTask$setShowSinglePathToDependency(kotlin.Boolean)/showSinglePathToDependency">showSinglePathToDependency</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Tells if the report should only display a single path to each dependency, which can be useful when the graph is large. This is false by default, meaning that for each dependency, the report will display all paths leading to it.</p>
 </td>
 </tr>
 </tbody>

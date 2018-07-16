@@ -67,7 +67,9 @@
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">doNotCacheIf</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.TaskOutputs$doNotCacheIf(kotlin.String, org.gradle.api.specs.Spec((org.gradle.api.Task)))/cachingDisabledReason">cachingDisabledReason</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.tasks.TaskOutputs$doNotCacheIf(kotlin.String, org.gradle.api.specs.Spec((org.gradle.api.Task)))/spec">spec</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.specs/-spec/index.html"><span class="identifier">Spec</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api/-task/index.html"><span class="identifier">Task</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>
-<p>Disable caching the results of the task if the given spec is satisfied. The spec will be evaluated at task execution time, not during configuration. If the spec is not satisfied, the results of the task will be cached according to <code><a href="#">#cacheIf(Spec)</a></code>.</p>
+<p>Disable caching the results of the task if the given spec is satisfied. The spec will be evaluated at task execution time, not during configuration.</p>
+ 
+<p>As opposed to <code><a href="#">#cacheIf(String, Spec)</a></code>, this method never enables caching for a task, it can only be used to disable caching.</p>
  
 <p>You may add multiple such predicates. The results of the task are not cached if any of the predicates return <code>true</code>, or if any of the predicates passed to <code><a href="#">#cacheIf(String, Spec)</a></code> returns <code>false</code>.</p>
 </p>

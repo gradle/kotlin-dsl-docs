@@ -35,7 +35,7 @@
 </td>
 <td>
 <code><span class="keyword">interface </span><span class="identifier">VcsMappings</span></code>
-<p>In settings.gradle: <pre><code> vcsMappings { withModule("group:name") { from vcs(GitVcs) { url = "..." } } addRule("rule for group") { details -&gt; if (details.requested.group == "group") { from vcs(GitVcs) { url = "..." } } } } </code></pre></p>
+<p>Allows VCS mapping rules to be specified for a build. A VCS mapping rule is responsible for calculating the VCS information for a particular dependency. In settings.gradle: <pre><code> sourceControl { vcsMappings { withModule("org.gradle:gradle") { from vcs(GitVersionControlSpec) { url = uri("https://github.com/gradle/gradle") } } all { details -&gt; if (details.requested.group == "org.gradle") { from vcs(GitVersionControlSpec) { url = uri("https://github.com/gradle/${details.requested.module}") } } } } } </code></pre></p>
 </td>
 </tr>
 <tr>
@@ -45,24 +45,6 @@
 <td>
 <code><span class="keyword">interface </span><span class="identifier">VersionControlSpec</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-describable/index.html"><span class="identifier">Describable</span></a></code>
 <p>Captures user-provided information about a version control system.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="-version-control-system/index.html">VersionControlSystem</a></p>
-</td>
-<td>
-<code><span class="keyword">interface </span><span class="identifier">VersionControlSystem</span></code>
-<p>Allows the user to perform generic version control operations in ways specified by the underlying implementations.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="-version-ref/index.html">VersionRef</a></p>
-</td>
-<td>
-<code><span class="keyword">interface </span><span class="identifier">VersionRef</span></code>
-<p>Represents how a version of a software component is referred to in a version control system.</p>
 </td>
 </tr>
 </tbody>

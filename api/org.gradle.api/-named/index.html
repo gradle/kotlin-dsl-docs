@@ -126,6 +126,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="../../org.gradle.nativeplatform/-linkage/index.html">Linkage</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">Linkage</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Named</span></a></code>
+<p>Specify how a native library should be linked into another binary.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="../../org.gradle.jvm.toolchain/-local-java/index.html">LocalJava</a></p>
 </td>
 <td>
@@ -153,6 +162,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="../../org.gradle.nativeplatform/-operating-system-family/index.html">OperatingSystemFamily</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">OperatingSystemFamily</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Named</span></a></code>
+<p>Represents the operating system of a configuration. Typical operating system include Windows, Linux, and macOS. This interface allows the user to customize operating systems by implementing this interface.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="../../org.gradle.platform.base/-platform/index.html">Platform</a></p>
 </td>
 <td>
@@ -176,6 +194,15 @@
 <td>
 <code><span class="keyword">interface </span><span class="identifier">PrebuiltLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Named</span></a><span class="symbol">, </span><a href="../../org.gradle.nativeplatform/-native-library.html"><span class="identifier">NativeLibrary</span></a></code>
 <p>A library component that is not built by gradle.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.swiftpm/-product/index.html">Product</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">Product</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Named</span></a></code>
+<p>A product in a Swift Package Manager package.</p>
 </td>
 </tr>
 <tr>
@@ -238,6 +265,28 @@
 <td>
 <code><span class="keyword">interface </span><span class="identifier">Usage</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Named</span></a></code>
 <p>Represents the usage of a configuration. Typical usages include compilation or runtime. This interface allows the user to customize usages by implementing this interface.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.ide.visualstudio/-visual-studio-project/index.html">VisualStudioProject</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VisualStudioProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Named</span></a><span class="symbol">, </span><a href="../-buildable/index.html"><span class="identifier">Buildable</span></a></code>
+<p>A visual studio project, created from one or more native binaries. 
+<p> The content and location of the generate project file can be modified by the supplied methods: </p>
+<pre><code> apply plugin: "cpp" apply plugin: "visual-studio" model { visualStudio { projects.all { projectFile.location = "vs/${name}.vcxproj" projectFile.withXml { asNode().appendNode('PropertyGroup', [Label: 'Custom']) .appendNode('ProjectDetails', "Project is named ${project.name}") } } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.ide.visualstudio/-visual-studio-solution/index.html">VisualStudioSolution</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VisualStudioSolution</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Named</span></a><span class="symbol">, </span><a href="../-buildable/index.html"><span class="identifier">Buildable</span></a><span class="symbol">, </span><a href="../../org.gradle.plugins.ide/-ide-workspace/index.html"><span class="identifier">IdeWorkspace</span></a></code>
+<p>A visual studio solution, representing one or more native binaries in a build. 
+<p> The content and location of the generate solution file can be modified by the supplied methods: </p>
+<pre><code> apply plugin: "visual-studio" model { visualStudio { solution { solutionFile.location = "vs/${name}.sln" solutionFile.withContent { TextProvider content -&gt; content.asBuilder().insert(0, "# GENERATED FILE: DO NOT EDIT\n") content.text = content.text.replaceAll("HideSolutionNode = FALSE", "HideSolutionNode = TRUE") } } } } </code></pre></p>
 </td>
 </tr>
 </tbody>

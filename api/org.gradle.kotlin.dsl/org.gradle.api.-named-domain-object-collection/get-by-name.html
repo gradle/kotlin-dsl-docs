@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>getByName - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.kotlin.dsl</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.api.NamedDomainObjectCollection</a>&nbsp;/&nbsp;<a href="./get-by-name.html">getByName</a><br/>
+<br/>
+<h1>getByName</h1>
+<a name="org.gradle.kotlin.dsl$getByName(org.gradle.api.NamedDomainObjectCollection((kotlin.Any)), kotlin.String)"></a>
+<code><span class="keyword">inline</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="keyword">reified</span>&nbsp;<span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <a href="../../org.gradle.api/-named-domain-object-collection/index.html"><span class="identifier">NamedDomainObjectCollection</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">getByName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$getByName(org.gradle.api.NamedDomainObjectCollection((kotlin.Any)), kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="get-by-name.html#T"><span class="identifier">T</span></a></code>
+<p>Locates an object by name and casts it to the expected type <a href="get-by-name.html#T">T</a>.</p>
+<p>If an object with the given <a href="get-by-name.html#org.gradle.kotlin.dsl$getByName(org.gradle.api.NamedDomainObjectCollection((kotlin.Any)), kotlin.String)/name">name</a> is not found, <a href="../../org.gradle.api/-unknown-domain-object-exception/index.html">UnknownDomainObjectException</a> is thrown.
+If the object is found but cannot be cast to the expected type <a href="get-by-name.html#T">T</a>, <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-illegal-argument-exception/index.html">IllegalArgumentException</a> is thrown.</p>
+<h3>Parameters</h3>
+<p><a name="name"></a>
+<code>name</code> - object name</p>
+<h3>Exceptions</h3>
+<p><a name="UnknownDomainObjectException"></a>
+<code>UnknownDomainObjectException</code> - When the given object is not found.</p>
+<p><a name="IllegalArgumentException"></a>
+<code>IllegalArgumentException</code> - When the given object cannot be cast to the expected type.</p>
+<p><strong>Return</strong><br/>
+the object, never null</p>
+<a name="org.gradle.kotlin.dsl$getByName(org.gradle.api.NamedDomainObjectCollection((kotlin.Any)), kotlin.String, kotlin.reflect.KClass((org.gradle.kotlin.dsl.getByName.T)))"></a>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <a href="../../org.gradle.api/-named-domain-object-collection/index.html"><span class="identifier">NamedDomainObjectCollection</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">getByName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$getByName(org.gradle.api.NamedDomainObjectCollection((kotlin.Any)), kotlin.String, kotlin.reflect.KClass((org.gradle.kotlin.dsl.getByName.T)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl$getByName(org.gradle.api.NamedDomainObjectCollection((kotlin.Any)), kotlin.String, kotlin.reflect.KClass((org.gradle.kotlin.dsl.getByName.T)))/type">type</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><span class="identifier">KClass</span></a><span class="symbol">&lt;</span><a href="get-by-name.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="get-by-name.html#T"><span class="identifier">T</span></a></code>
+<p>Locates an object by name and casts it to the expected <a href="get-by-name.html#org.gradle.kotlin.dsl$getByName(org.gradle.api.NamedDomainObjectCollection((kotlin.Any)), kotlin.String, kotlin.reflect.KClass((org.gradle.kotlin.dsl.getByName.T)))/type">type</a>.</p>
+<p>If an object with the given <a href="get-by-name.html#org.gradle.kotlin.dsl$getByName(org.gradle.api.NamedDomainObjectCollection((kotlin.Any)), kotlin.String, kotlin.reflect.KClass((org.gradle.kotlin.dsl.getByName.T)))/name">name</a> is not found, <a href="../../org.gradle.api/-unknown-domain-object-exception/index.html">UnknownDomainObjectException</a> is thrown.
+If the object is found but cannot be cast to the expected <a href="get-by-name.html#org.gradle.kotlin.dsl$getByName(org.gradle.api.NamedDomainObjectCollection((kotlin.Any)), kotlin.String, kotlin.reflect.KClass((org.gradle.kotlin.dsl.getByName.T)))/type">type</a>, <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-illegal-argument-exception/index.html">IllegalArgumentException</a> is thrown.</p>
+<h3>Parameters</h3>
+<p><a name="name"></a>
+<code>name</code> - object name</p>
+<p><a name="type"></a>
+<code>type</code> - expected type</p>
+<h3>Exceptions</h3>
+<p><a name="UnknownDomainObjectException"></a>
+<code>UnknownDomainObjectException</code> - When the given object is not found.</p>
+<p><a name="IllegalArgumentException"></a>
+<code>IllegalArgumentException</code> - When the given object cannot be cast to the expected type.</p>
+<p><strong>Return</strong><br/>
+the object, never null</p>
+<a name="org.gradle.kotlin.dsl$getByName(org.gradle.api.NamedDomainObjectCollection((kotlin.Any)), kotlin.String, kotlin.Function1((org.gradle.kotlin.dsl.getByName.T, kotlin.Unit)))"></a>
+<code><span class="keyword">inline</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="keyword">reified</span>&nbsp;<span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <a href="../../org.gradle.api/-named-domain-object-collection/index.html"><span class="identifier">NamedDomainObjectCollection</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">.</span><span class="identifier">getByName</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$getByName(org.gradle.api.NamedDomainObjectCollection((kotlin.Any)), kotlin.String, kotlin.Function1((org.gradle.kotlin.dsl.getByName.T, kotlin.Unit)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl$getByName(org.gradle.api.NamedDomainObjectCollection((kotlin.Any)), kotlin.String, kotlin.Function1((org.gradle.kotlin.dsl.getByName.T, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="get-by-name.html#T"><span class="identifier">T</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="get-by-name.html#T"><span class="identifier">T</span></a></code>
+<p>Locates an object by name and casts it to the expected type <a href="get-by-name.html#T">T</a> then configures it.</p>
+<p>If an object with the given <a href="get-by-name.html#org.gradle.kotlin.dsl$getByName(org.gradle.api.NamedDomainObjectCollection((kotlin.Any)), kotlin.String, kotlin.Function1((org.gradle.kotlin.dsl.getByName.T, kotlin.Unit)))/name">name</a> is not found, <a href="../../org.gradle.api/-unknown-domain-object-exception/index.html">UnknownDomainObjectException</a> is thrown.
+If the object is found but cannot be cast to the expected type <a href="get-by-name.html#T">T</a>, <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-illegal-argument-exception/index.html">IllegalArgumentException</a> is thrown.</p>
+<h3>Parameters</h3>
+<p><a name="name"></a>
+<code>name</code> - object name</p>
+<p><a name="configure"></a>
+<code>configure</code> - configuration action to apply to the object before returning it</p>
+<h3>Exceptions</h3>
+<p><a name="UnknownDomainObjectException"></a>
+<code>UnknownDomainObjectException</code> - When the given object is not found.</p>
+<p><a name="IllegalArgumentException"></a>
+<code>IllegalArgumentException</code> - When the given object cannot be cast to the expected type.</p>
+<p><strong>Return</strong><br/>
+the object, never null</p>
+</BODY>
+</HTML>

@@ -8,7 +8,7 @@
 <a href="../index.html">api</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.api.publish.ivy</a>&nbsp;/&nbsp;<a href="./-ivy-configuration-container.html">IvyConfigurationContainer</a><br/>
 <br/>
 <h1>IvyConfigurationContainer</h1>
-<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">IvyConfigurationContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named-domain-object-container/index.html"><span class="identifier">NamedDomainObjectContainer</span></a><span class="symbol">&lt;</span><a href="-ivy-configuration/index.html"><span class="identifier">IvyConfiguration</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">interface </span><span class="identifier">IvyConfigurationContainer</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.api/-named-domain-object-container/index.html"><span class="identifier">NamedDomainObjectContainer</span></a><span class="symbol">&lt;</span><a href="-ivy-configuration/index.html"><span class="identifier">IvyConfiguration</span></a><span class="symbol">&gt;</span></code>
 <p>The set of IvyConfigurations that will be included in the IvyPublication. Being a org.gradle.api.NamedDomainObjectContainer, a <code>IvyConfigurationContainer</code> provides convenient methods for adding, querying, filtering, and applying actions to the set of IvyConfigurations. <pre><code> apply plugin: 'ivy-publish' def publication = publishing.publications.create("my-pub", IvyPublication) def configurations = publication.configurations configurations.create("extended", { extend "default"}) configurations.all { extend "base" } </code></pre></p>
 <h3>Inherited Functions</h3>
 <table>

@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>filter - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.kotlin.dsl</a>&nbsp;/&nbsp;<a href="index.html">org.gradle.api.file.ContentFilterable</a>&nbsp;/&nbsp;<a href="./filter.html">filter</a><br/>
+<br/>
+<h1>filter</h1>
+<a name="org.gradle.kotlin.dsl$filter(org.gradle.api.file.ContentFilterable, kotlin.Array((kotlin.Pair((kotlin.String, kotlin.Any)))))"></a>
+<code><span class="keyword">inline</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="keyword">reified</span>&nbsp;<span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/FilterReader.html"><span class="identifier">FilterReader</span></a><span class="symbol">&gt;</span> <a href="../../org.gradle.api.file/-content-filterable/index.html"><span class="identifier">ContentFilterable</span></a><span class="symbol">.</span><span class="identifier">filter</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.kotlin.dsl$filter(org.gradle.api.file.ContentFilterable, kotlin.Array((kotlin.Pair((kotlin.String, kotlin.Any)))))/properties">properties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><span class="identifier">Pair</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-content-filterable/index.html"><span class="identifier">ContentFilterable</span></a></code>
+<p>Adds a content filter to be used during the copy.
+Multiple calls add additional filters to the filter chain.
+Each filter should implement <a href="http://docs.oracle.com/javase/8/docs/api/java/io/FilterReader.html">FilterReader</a>.
+Import <code>org.apache.tools.ant.filters.*</code> for access to all the standard Ant filters.</p>
+<p>Examples:</p>
+<pre><code>filter&lt;StripJavaComments&gt;()
+filter&lt;com.mycompany.project.CustomFilter&gt;()
+filter&lt;HeadFilter&gt;("lines" to 25, "skip" to 2)
+filter&lt;ReplaceTokens&gt;("tokens" to mapOf("copyright" to "2009", "version" to "2.3.1"))
+</code></pre>
+<h3>Parameters</h3>
+<p><a name="T"></a>
+<code>T</code> - type of the filter to add</p>
+<p><a name="properties"></a>
+<code>properties</code> - map of filter properties</p>
+<p><strong>Return</strong><br/>
+this</p>
+<a name="org.gradle.kotlin.dsl$filter(org.gradle.api.file.ContentFilterable, kotlin.collections.Map((kotlin.String, kotlin.Any)))"></a>
+<code><span class="keyword">inline</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="keyword">reified</span>&nbsp;<span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/FilterReader.html"><span class="identifier">FilterReader</span></a><span class="symbol">&gt;</span> <a href="../../org.gradle.api.file/-content-filterable/index.html"><span class="identifier">ContentFilterable</span></a><span class="symbol">.</span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$filter(org.gradle.api.file.ContentFilterable, kotlin.collections.Map((kotlin.String, kotlin.Any)))/properties">properties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-content-filterable/index.html"><span class="identifier">ContentFilterable</span></a></code>
+<p>Adds a content filter to be used during the copy.
+Multiple calls add additional filters to the filter chain.
+Each filter should implement <a href="http://docs.oracle.com/javase/8/docs/api/java/io/FilterReader.html">FilterReader</a>.
+Import <code>org.apache.tools.ant.filters.*</code> for access to all the standard Ant filters.</p>
+<p>Examples:</p>
+<pre><code>filter&lt;HeadFilter&gt;(mapOf("lines" to 25, "skip" to 2))
+filter&lt;ReplaceTokens&gt;(mapOf("tokens" to mapOf("copyright" to "2009", "version" to "2.3.1")))
+</code></pre>
+<h3>Parameters</h3>
+<p><a name="T"></a>
+<code>T</code> - type of the filter to add</p>
+<p><a name="properties"></a>
+<code>properties</code> - map of filter properties</p>
+<p><strong>Return</strong><br/>
+this</p>
+<a name="org.gradle.kotlin.dsl$filter(org.gradle.api.file.ContentFilterable, kotlin.reflect.KClass((org.gradle.kotlin.dsl.filter.T)), kotlin.Array((kotlin.Pair((kotlin.String, kotlin.Any)))))"></a>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/FilterReader.html"><span class="identifier">FilterReader</span></a><span class="symbol">&gt;</span> <a href="../../org.gradle.api.file/-content-filterable/index.html"><span class="identifier">ContentFilterable</span></a><span class="symbol">.</span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$filter(org.gradle.api.file.ContentFilterable, kotlin.reflect.KClass((org.gradle.kotlin.dsl.filter.T)), kotlin.Array((kotlin.Pair((kotlin.String, kotlin.Any)))))/filterType">filterType</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><span class="identifier">KClass</span></a><span class="symbol">&lt;</span><a href="filter.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.kotlin.dsl$filter(org.gradle.api.file.ContentFilterable, kotlin.reflect.KClass((org.gradle.kotlin.dsl.filter.T)), kotlin.Array((kotlin.Pair((kotlin.String, kotlin.Any)))))/properties">properties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-pair/index.html"><span class="identifier">Pair</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-content-filterable/index.html"><span class="identifier">ContentFilterable</span></a></code>
+<p>Adds a content filter to be used during the copy.
+Multiple calls add additional filters to the filter chain.
+Each filter should implement <a href="http://docs.oracle.com/javase/8/docs/api/java/io/FilterReader.html">FilterReader</a>.
+Import <code>org.apache.tools.ant.filters.*</code> for access to all the standard Ant filters.</p>
+<p>Examples:</p>
+<pre><code>filter(StripJavaComments::class)
+filter(com.mycompany.project.CustomFilter::class)
+filter(HeadFilter::class, "lines" to 25, "skip" to 2)
+filter(ReplaceTokens::class, "tokens" to mapOf("copyright" to "2009", "version" to "2.3.1"))
+</code></pre>
+<h3>Parameters</h3>
+<p><a name="filterType"></a>
+<code>filterType</code> - type of the filter to add</p>
+<p><a name="properties"></a>
+<code>properties</code> - map of filter properties</p>
+<p><strong>Return</strong><br/>
+this</p>
+<a name="org.gradle.kotlin.dsl$filter(org.gradle.api.file.ContentFilterable, kotlin.reflect.KClass((org.gradle.kotlin.dsl.filter.T)), kotlin.collections.Map((kotlin.String, kotlin.Any)))"></a>
+<code><span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/FilterReader.html"><span class="identifier">FilterReader</span></a><span class="symbol">&gt;</span> <a href="../../org.gradle.api.file/-content-filterable/index.html"><span class="identifier">ContentFilterable</span></a><span class="symbol">.</span><span class="identifier">filter</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$filter(org.gradle.api.file.ContentFilterable, kotlin.reflect.KClass((org.gradle.kotlin.dsl.filter.T)), kotlin.collections.Map((kotlin.String, kotlin.Any)))/filterType">filterType</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.reflect/-k-class/index.html"><span class="identifier">KClass</span></a><span class="symbol">&lt;</span><a href="filter.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl$filter(org.gradle.api.file.ContentFilterable, kotlin.reflect.KClass((org.gradle.kotlin.dsl.filter.T)), kotlin.collections.Map((kotlin.String, kotlin.Any)))/properties">properties</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-map/index.html"><span class="identifier">Map</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">?</span><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-content-filterable/index.html"><span class="identifier">ContentFilterable</span></a></code>
+<p>Adds a content filter to be used during the copy.
+Multiple calls add additional filters to the filter chain.
+Each filter should implement <a href="http://docs.oracle.com/javase/8/docs/api/java/io/FilterReader.html">FilterReader</a>.
+Import <code>org.apache.tools.ant.filters.*</code> for access to all the standard Ant filters.</p>
+<p>Examples:</p>
+<pre><code>filter(HeadFilter::class, mapOf("lines" to 25, "skip" to 2))
+filter(ReplaceTokens::class, mapOf("tokens" to mapOf("copyright" to "2009", "version" to "2.3.1")))
+</code></pre>
+<h3>Parameters</h3>
+<p><a name="filterType"></a>
+<code>filterType</code> - type of the filter to add</p>
+<p><a name="properties"></a>
+<code>properties</code> - map of filter properties</p>
+<p><strong>Return</strong><br/>
+this</p>
+</BODY>
+</HTML>

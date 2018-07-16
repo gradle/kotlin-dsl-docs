@@ -9,8 +9,8 @@
 <br/>
 <h1>action</h1>
 <a name="org.gradle.tooling.ProjectConnection$action(org.gradle.tooling.BuildAction((org.gradle.tooling.ProjectConnection.action.T)))"></a>
-<code><span class="identifier">@Incubating</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">action</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.ProjectConnection$action(org.gradle.tooling.BuildAction((org.gradle.tooling.ProjectConnection.action.T)))/buildAction">buildAction</span><span class="symbol">:</span>&nbsp;<a href="../-build-action/index.html"><span class="identifier">BuildAction</span></a><span class="symbol">&lt;</span><a href="action.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-build-action-executer/index.html"><span class="identifier">BuildActionExecuter</span></a><span class="symbol">&lt;</span><a href="action.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
-<p>Creates an executer which can be used to run the given action. The action is serialized into the build process and executed, then its result is serialized back to the caller. 
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">action</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.ProjectConnection$action(org.gradle.tooling.BuildAction((org.gradle.tooling.ProjectConnection.action.T)))/buildAction">buildAction</span><span class="symbol">:</span>&nbsp;<a href="../-build-action/index.html"><span class="identifier">BuildAction</span></a><span class="symbol">&lt;</span><a href="action.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-build-action-executer/index.html"><span class="identifier">BuildActionExecuter</span></a><span class="symbol">&lt;</span><a href="action.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
+<p>Creates an executer which can be used to run the given action when the build has finished. The action is serialized into the build process and executed, then its result is serialized back to the caller. 
 <p>Requires Gradle 1.8 or later.</p>
 </p>
 <h3>Parameters</h3>
@@ -22,5 +22,16 @@
 The builder.</p>
 <p><strong>Since</strong><br/>
 1.8</p>
+<p><strong>See Also</strong><br/>
+<a href="./action.html">#action()</a></p>
+<a name="org.gradle.tooling.ProjectConnection$action()"></a>
+<code><span class="identifier">@Incubating</span> <span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">action</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-build-action-executer/-builder/index.html"><span class="identifier">Builder</span></a></code>
+<p>Creates a builder for an executer which can be used to run actions in different phases of the build. The actions are serialized into the build process and executed, then its result is serialized back to the caller. 
+<p>Requires Gradle 4.8 or later.</p>
+</p>
+<p><strong>Return</strong><br/>
+The builder.</p>
+<p><strong>Since</strong><br/>
+4.8</p>
 </BODY>
 </HTML>

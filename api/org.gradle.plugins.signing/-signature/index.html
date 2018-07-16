@@ -93,7 +93,7 @@
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
 <p>The file for the generated signature, which may not yet exist. 
-<p>Defaults to a file alongside the <code><a href="get-to-sign.html">file to sign</a></code> with the extension of the <code><a href="get-signature-type.html">signature type</a></code>.</p>
+<p>The file will be placed alongside the <code><a href="get-to-sign.html">file to sign</a></code> with the extension of the <code><a href="get-signature-type.html">signature type</a></code>.</p>
 </p>
 </td>
 </tr>
@@ -147,7 +147,9 @@
 <p><a href="get-to-sign-artifact.html">getToSignArtifact</a></p>
 </td>
 <td>
-<code><span class="keyword">fun </span><span class="identifier">getToSignArtifact</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts/-publish-artifact/index.html"><span class="identifier">PublishArtifact</span></a></code></td>
+<code><span class="keyword">fun </span><span class="identifier">getToSignArtifact</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.artifacts/-publish-artifact/index.html"><span class="identifier">PublishArtifact</span></a></code>
+<p>Get the artifact that this signature is for, if available.</p>
+</td>
 </tr>
 <tr>
 <td>
@@ -186,7 +188,9 @@
 <p><a href="set-file.html">setFile</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.Signature$setFile(java.io.File)/file">file</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.signing.Signature$setFile(java.io.File)/file">file</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Set the file for the generated signature.</p>
+</td>
 </tr>
 <tr>
 <td>

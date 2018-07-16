@@ -111,28 +111,6 @@
 <p>A set of public assets added to a binary.</p>
 </td>
 </tr>
-<tr>
-<td>
-<p><a href="../../org.gradle.ide.visualstudio/-visual-studio-project/index.html">VisualStudioProject</a></p>
-</td>
-<td>
-<code><span class="keyword">interface </span><span class="identifier">VisualStudioProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BuildableComponentSpec</span></a></code>
-<p>A visual studio project, created from one or more org.gradle.nativeplatform.NativeBinary instances. 
-<p> The content and location of the generate project file can be modified by the supplied methods: </p>
-<pre><code> apply plugin: "visual-studio" model { visualStudio { projects.all { projectFile.location = "vs/${name}.vcxproj" projectFile.withXml { asNode().appendNode('PropertyGroup', [Label: 'Custom']) .appendNode('ProjectDetails', "Project is named ${project.name}") } } } } </code></pre></p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../../org.gradle.ide.visualstudio/-visual-studio-solution/index.html">VisualStudioSolution</a></p>
-</td>
-<td>
-<code><span class="keyword">interface </span><span class="identifier">VisualStudioSolution</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">BuildableComponentSpec</span></a></code>
-<p>A visual studio solution, representing one or more org.gradle.nativeplatform.NativeBinarySpec instances from the same org.gradle.nativeplatform.NativeComponentSpec. 
-<p> The content and location of the generate solution file can be modified by the supplied methods: </p>
-<pre><code> apply plugin: "visual-studio" model { visualStudio { solutions.all { solutionFile.location = "vs/${name}.sln" solutionFile.withContent { TextProvider content -&gt; content.asBuilder().insert(0, "# GENERATED FILE: DO NOT EDIT\n") content.text = content.text.replaceAll("HideSolutionNode = FALSE", "HideSolutionNode = TRUE") } } } } </code></pre></p>
-</td>
-</tr>
 </tbody>
 </table>
 </BODY>

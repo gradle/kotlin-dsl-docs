@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>InitScriptApi.fileTree - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.kotlin.dsl</a>&nbsp;/&nbsp;<a href="index.html">InitScriptApi</a>&nbsp;/&nbsp;<a href="./file-tree.html">fileTree</a><br/>
+<br/>
+<h1>fileTree</h1>
+<a name="org.gradle.kotlin.dsl.InitScriptApi$fileTree(kotlin.Any)"></a>
+<code><span class="keyword">fun </span><span class="identifier">fileTree</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.InitScriptApi$fileTree(kotlin.Any)/baseDir">baseDir</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-tree/index.html"><span class="identifier">ConfigurableFileTree</span></a></code>
+<p>Creates a new <a href="../../org.gradle.api.file/-configurable-file-tree/index.html">ConfigurableFileTree</a> using the given base directory.</p>
+<p>The given <code>baseDir</code> path is evaluated as per <a href="file.html">KotlinInitScript.file</a>.</p>
+<p>The returned file tree is lazy, so that it scans for files only when the contents of the file tree are
+queried. The file tree is also live, so that it scans for files each time the contents of the file tree are
+queried.</p>
+<h3>Parameters</h3>
+<p><a name="baseDir"></a>
+<code>baseDir</code> - The base directory of the file tree. Evaluated as per <a href="file.html">KotlinInitScript.file</a>.</p>
+<p><strong>Return</strong><br/>
+The file tree.</p>
+<a name="org.gradle.kotlin.dsl.InitScriptApi$fileTree(kotlin.Any, kotlin.Function1((org.gradle.api.file.ConfigurableFileTree, kotlin.Unit)))"></a>
+<code><span class="keyword">fun </span><span class="identifier">fileTree</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.InitScriptApi$fileTree(kotlin.Any, kotlin.Function1((org.gradle.api.file.ConfigurableFileTree, kotlin.Unit)))/baseDir">baseDir</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl.InitScriptApi$fileTree(kotlin.Any, kotlin.Function1((org.gradle.api.file.ConfigurableFileTree, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-configurable-file-tree/index.html"><span class="identifier">ConfigurableFileTree</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-tree/index.html"><span class="identifier">ConfigurableFileTree</span></a></code>
+<p>Creates a new <a href="../../org.gradle.api.file/-configurable-file-tree/index.html">ConfigurableFileTree</a> using the given base directory.</p>
+<h3>Parameters</h3>
+<p><a name="baseDir"></a>
+<code>baseDir</code> - The base directory of the file tree. Evaluated as per <a href="file.html">KotlinInitScript.file</a>.</p>
+<p><a name="configuration"></a>
+<code>configuration</code> - The block to use to configure the file tree.</p>
+<p><strong>Return</strong><br/>
+The file tree.</p>
+<p><strong>See Also</strong><br/>
+<p><a href="./file-tree.html">KotlinInitScript.fileTree</a></p>
+</p>
+</BODY>
+</HTML>

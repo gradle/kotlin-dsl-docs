@@ -8,7 +8,7 @@
 <a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.plugins.ide.idea.model</a>&nbsp;/&nbsp;<a href="./index.html">IdeaProject</a><br/>
 <br/>
 <h1>IdeaProject</h1>
-<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">IdeaProject</span></code>
+<code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">IdeaProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.plugins.ide/-ide-workspace/index.html"><span class="identifier">IdeWorkspace</span></a></code>
 <p>Enables fine-tuning project details (*.ipr file) of the IDEA plugin. 
 <p> Example of use with a blend of all possible properties. Typically you don't have to configure IDEA module directly because Gradle configures it for you. </p>
 <pre><code> import org.gradle.plugins.ide.idea.model.* apply plugin: 'java' apply plugin: 'idea' idea { project { //if you want to set specific jdk and language level jdkName = '1.6' languageLevel = '1.5' //you can update the source wildcards wildcards += '!?*.ruby' //you can configure the VCS used by the project vcs = 'Git' //you can change the modules of the *.ipr //modules = project(':someProject').idea.module //you can change the output file outputFile = new File(outputFile.parentFile, 'someBetterName.ipr') //you can add project-level libraries projectLibraries &lt;&lt; new ProjectLibrary(name: "my-library", classes: [new File("path/to/library")]) } } </code></pre> For tackling edge cases users can perform advanced configuration on resulting XML file. It is also possible to affect the way IDEA plugin merges the existing configuration via beforeMerged and whenMerged closures. 
@@ -30,6 +30,13 @@
 <h3>Functions</h3>
 <table>
 <tbody>
+<tr>
+<td>
+<p><a href="get-display-name.html">getDisplayName</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDisplayName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code></td>
+</tr>
 <tr>
 <td>
 <p><a href="get-ipr.html">getIpr</a></p>
@@ -61,6 +68,13 @@
 <p> When not explicitly set, this is calculated as the maximum language level for the Idea modules of this Idea project.</p>
 </p>
 </td>
+</tr>
+<tr>
+<td>
+<p><a href="get-location.html">getLocation</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLocation</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.file/-regular-file/index.html"><span class="identifier">RegularFile</span></a><span class="symbol">&gt;</span></code></td>
 </tr>
 <tr>
 <td>

@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MutableCapabilitiesMetadata - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.capabilities</a>&nbsp;/&nbsp;<a href="./index.html">MutableCapabilitiesMetadata</a><br/>
+<br/>
+<h1>MutableCapabilitiesMetadata</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">MutableCapabilitiesMetadata</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-capabilities-metadata/index.html"><span class="identifier">CapabilitiesMetadata</span></a></code>
+<p>Describes the capabilities of a component in a mutable way. This interface can be used to adjust the capabilities of a published component via metadata rules (see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
+<p><strong>Since</strong><br/>
+4.7</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="add-capability.html">addCapability</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">addCapability</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.capabilities.MutableCapabilitiesMetadata$addCapability(kotlin.String, kotlin.String, kotlin.String)/group">group</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.capabilities.MutableCapabilitiesMetadata$addCapability(kotlin.String, kotlin.String, kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.capabilities.MutableCapabilitiesMetadata$addCapability(kotlin.String, kotlin.String, kotlin.String)/version">version</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Adds a new capability. If a capability of the same (group, name) is found with a different version, an error will be thrown.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="as-immutable.html">asImmutable</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">asImmutable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-capabilities-metadata/index.html"><span class="identifier">CapabilitiesMetadata</span></a></code>
+<p>Returns an immutable vew of the capabilities.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="remove-capability.html">removeCapability</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">removeCapability</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.capabilities.MutableCapabilitiesMetadata$removeCapability(kotlin.String, kotlin.String)/group">group</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.capabilities.MutableCapabilitiesMetadata$removeCapability(kotlin.String, kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Removes a capability.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inherited Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../-capabilities-metadata/get-capabilities.html">getCapabilities</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCapabilities</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../-capability/index.html"><span class="identifier">Capability</span></a><span class="symbol">&gt;</span></code>
+<p>Returns an immutable view of the capabilities.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

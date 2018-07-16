@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>InitScriptApi.tarTree - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.kotlin.dsl</a>&nbsp;/&nbsp;<a href="index.html">InitScriptApi</a>&nbsp;/&nbsp;<a href="./tar-tree.html">tarTree</a><br/>
+<br/>
+<h1>tarTree</h1>
+<a name="org.gradle.kotlin.dsl.InitScriptApi$tarTree(kotlin.Any)"></a>
+<code><span class="keyword">fun </span><span class="identifier">tarTree</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.InitScriptApi$tarTree(kotlin.Any)/tarPath">tarPath</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-tree/index.html"><span class="identifier">FileTree</span></a></code>
+<p>Creates a new <a href="../../org.gradle.api.file/-file-tree/index.html">FileTree</a> which contains the contents of the given TAR file.</p>
+<p>The given tarPath path can be:</p>
+<ul><li>an instance of <a href="../../org.gradle.api.resources/-resource/index.html">org.gradle.api.resources.Resource</a>,</li>
+<li>any other object is evaluated as per <a href="file.html">KotlinInitScript.file</a>.</li>
+</ul>
+<p>The returned file tree is lazy, so that it scans for files only when the contents of the file tree are
+queried. The file tree is also live, so that it scans for files each time the contents of the file tree are
+queried.</p>
+<p>Unless custom implementation of resources is passed,
+the tar tree attempts to guess the compression based on the file extension.</p>
+<p>You can combine this method with the <a href="copy.html">KotlinInitScript.copy</a> method to unzip a ZIP file.</p>
+<h3>Parameters</h3>
+<p><a name="tarPath"></a>
+<code>tarPath</code> - The TAR file or an instance of <a href="../../org.gradle.api.resources/-resource/index.html">org.gradle.api.resources.Resource</a>.</p>
+<p><strong>Return</strong><br/>
+The file tree.</p>
+</BODY>
+</HTML>

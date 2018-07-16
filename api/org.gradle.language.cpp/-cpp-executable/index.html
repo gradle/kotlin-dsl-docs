@@ -8,7 +8,7 @@
 <a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.cpp</a>&nbsp;/&nbsp;<a href="./index.html">CppExecutable</a><br/>
 <br/>
 <h1>CppExecutable</h1>
-<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">CppExecutable</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-cpp-binary/index.html"><span class="identifier">CppBinary</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-executable/index.html"><span class="identifier">ComponentWithExecutable</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-installation/index.html"><span class="identifier">ComponentWithInstallation</span></a><span class="symbol">, </span><a href="../../org.gradle.language/-component-with-outputs/index.html"><span class="identifier">ComponentWithOutputs</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-runtime-usage/index.html"><span class="identifier">ComponentWithRuntimeUsage</span></a></code>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">CppExecutable</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-cpp-binary/index.html"><span class="identifier">CppBinary</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-executable/index.html"><span class="identifier">ComponentWithExecutable</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-installation/index.html"><span class="identifier">ComponentWithInstallation</span></a><span class="symbol">, </span><a href="../../org.gradle.language/-component-with-outputs/index.html"><span class="identifier">ComponentWithOutputs</span></a><span class="symbol">, </span><a href="../../org.gradle.language.nativeplatform/-component-with-runtime-usage/index.html"><span class="identifier">ComponentWithRuntimeUsage</span></a><span class="symbol">, </span><a href="../../org.gradle.api.component/-publishable-component.html"><span class="identifier">PublishableComponent</span></a></code>
 <p>An executable built from C++ source.</p>
 <p><strong>Since</strong><br/>
 4.2</p>
@@ -138,7 +138,9 @@
 <p><a href="../../org.gradle.language/-component-with-outputs/get-outputs.html">getOutputs</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOutputs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code></td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getOutputs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
+<p>Returns the outputs produced for this component.</p>
+</td>
 </tr>
 <tr>
 <td>
@@ -163,7 +165,7 @@
 <p><a href="../-cpp-binary/get-target-platform.html">getTargetPlatform</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-cpp-platform.html"><span class="identifier">CppPlatform</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-cpp-platform/index.html"><span class="identifier">CppPlatform</span></a></code>
 <p>{@inheritDoc}</p>
 </td>
 </tr>

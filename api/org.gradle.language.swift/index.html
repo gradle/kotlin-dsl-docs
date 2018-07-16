@@ -36,7 +36,7 @@
 <p><a href="-swift-binary/index.html">SwiftBinary</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">SwiftBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.language.nativeplatform/-component-with-object-files/index.html"><span class="identifier">ComponentWithObjectFiles</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">SwiftBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.language.nativeplatform/-component-with-object-files/index.html"><span class="identifier">ComponentWithObjectFiles</span></a><span class="symbol">, </span><a href="../org.gradle.language/-component-with-dependencies/index.html"><span class="identifier">ComponentWithDependencies</span></a></code>
 <p>A binary built from Swift source and linked from the resulting object files.</p>
 </td>
 </tr>
@@ -45,7 +45,7 @@
 <p><a href="-swift-component/index.html">SwiftComponent</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">SwiftComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.language/-component-with-binaries/index.html"><span class="identifier">ComponentWithBinaries</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">SwiftComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.language/-component-with-binaries/index.html"><span class="identifier">ComponentWithBinaries</span></a><span class="symbol">, </span><a href="../org.gradle.language/-component-with-dependencies/index.html"><span class="identifier">ComponentWithDependencies</span></a></code>
 <p>Configuration for a Swift component, such as a library or executable, defining the source files that make up the component plus other settings. 
 <p>Swift component is composed of some Swift source files that are compiled and then linked into some binary.</p>
  
@@ -64,15 +64,6 @@
 </tr>
 <tr>
 <td>
-<p><a href="-swift-language-version/index.html">SwiftLanguageVersion</a></p>
-</td>
-<td>
-<code><span class="keyword">class </span><span class="identifier">SwiftLanguageVersion</span></code>
-<p>Swift language version.</p>
-</td>
-</tr>
-<tr>
-<td>
 <p><a href="-swift-library/index.html">SwiftLibrary</a></p>
 </td>
 <td>
@@ -84,7 +75,7 @@
 </tr>
 <tr>
 <td>
-<p><a href="-swift-platform.html">SwiftPlatform</a></p>
+<p><a href="-swift-platform/index.html">SwiftPlatform</a></p>
 </td>
 <td>
 <code><span class="keyword">interface </span><span class="identifier">SwiftPlatform</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a></code>
@@ -107,6 +98,15 @@
 <td>
 <code><span class="keyword">interface </span><span class="identifier">SwiftStaticLibrary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-swift-binary/index.html"><span class="identifier">SwiftBinary</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-component-with-static-library/index.html"><span class="identifier">ComponentWithStaticLibrary</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-component-with-runtime-usage/index.html"><span class="identifier">ComponentWithRuntimeUsage</span></a><span class="symbol">, </span><a href="../org.gradle.language.nativeplatform/-component-with-link-usage/index.html"><span class="identifier">ComponentWithLinkUsage</span></a><span class="symbol">, </span><a href="../org.gradle.language/-component-with-outputs/index.html"><span class="identifier">ComponentWithOutputs</span></a></code>
 <p>A static library built from Swift source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-swift-version/index.html">SwiftVersion</a></p>
+</td>
+<td>
+<code><span class="keyword">class </span><span class="identifier">SwiftVersion</span></code>
+<p>Swift version.</p>
 </td>
 </tr>
 </tbody>

@@ -1,0 +1,39 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ComponentMetadataListerDetails - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts</a>&nbsp;/&nbsp;<a href="./index.html">ComponentMetadataListerDetails</a><br/>
+<br/>
+<h1>ComponentMetadataListerDetails</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ComponentMetadataListerDetails</span></code>
+<p>Allows a custom version lister to specify the list of versions known for a specific module.</p>
+<p><strong>Since</strong><br/>
+4.9</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-module-identifier.html">getModuleIdentifier</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getModuleIdentifier</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-module-identifier/index.html"><span class="identifier">ModuleIdentifier</span></a></code>
+<p>Gives access to the module identifier for which the version lister should return the list of versions.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="listed.html">listed</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">listed</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ComponentMetadataListerDetails$listed(kotlin.collections.MutableList((kotlin.String)))/versions">versions</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>List the versions of the requested component.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

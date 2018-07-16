@@ -8,7 +8,7 @@
 <a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language.swift</a>&nbsp;/&nbsp;<a href="./index.html">SwiftBinary</a><br/>
 <br/>
 <h1>SwiftBinary</h1>
-<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">SwiftBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.nativeplatform/-component-with-object-files/index.html"><span class="identifier">ComponentWithObjectFiles</span></a></code>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">SwiftBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.nativeplatform/-component-with-object-files/index.html"><span class="identifier">ComponentWithObjectFiles</span></a><span class="symbol">, </span><a href="../../org.gradle.language/-component-with-dependencies/index.html"><span class="identifier">ComponentWithDependencies</span></a></code>
 <p>A binary built from Swift source and linked from the resulting object files.</p>
 <p><strong>Since</strong><br/>
 4.2</p>
@@ -53,6 +53,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-module-file.html">getModuleFile</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getModuleFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.api.file/-regular-file/index.html"><span class="identifier">RegularFile</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the module file for this binary.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-runtime-libraries.html">getRuntimeLibraries</a></p>
 </td>
 <td>
@@ -62,11 +71,11 @@
 </tr>
 <tr>
 <td>
-<p><a href="get-swift-language-version.html">getSwiftLanguageVersion</a></p>
+<p><a href="get-source-compatibility.html">getSourceCompatibility</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSwiftLanguageVersion</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-swift-language-version/index.html"><span class="identifier">SwiftLanguageVersion</span></a></code>
-<p>Returns the Swift language version of this component.</p>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getSourceCompatibility</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="../-swift-version/index.html"><span class="identifier">SwiftVersion</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the Swift language level to use to compile the source files.</p>
 </td>
 </tr>
 <tr>
@@ -83,7 +92,7 @@
 <p><a href="get-target-platform.html">getTargetPlatform</a></p>
 </td>
 <td>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-swift-platform.html"><span class="identifier">SwiftPlatform</span></a></code>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-swift-platform/index.html"><span class="identifier">SwiftPlatform</span></a></code>
 <p>{@inheritDoc}</p>
 </td>
 </tr>
@@ -101,6 +110,15 @@
 <h3>Inherited Functions</h3>
 <table>
 <tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.language/-component-with-dependencies/get-dependencies.html">getDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.language/-component-dependencies/index.html"><span class="identifier">ComponentDependencies</span></a></code>
+<p>Returns the dependencies of this component.</p>
+</td>
+</tr>
 <tr>
 <td>
 <p><a href="../../org.gradle.language.nativeplatform/-component-with-object-files/get-objects.html">getObjects</a></p>

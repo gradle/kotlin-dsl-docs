@@ -82,20 +82,11 @@
 </tr>
 <tr>
 <td>
-<p><a href="../../org.gradle.api.publish.ivy/-ivy-artifact/index.html">IvyArtifact</a></p>
+<p><a href="../../org.gradle.api.publish/-publication-artifact/index.html">PublicationArtifact</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">IvyArtifact</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Buildable</span></a></code>
-<p>An artifact published as part of a IvyPublication.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="../../org.gradle.api.publish.maven/-maven-artifact/index.html">MavenArtifact</a></p>
-</td>
-<td>
-<code><span class="keyword">interface </span><span class="identifier">MavenArtifact</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Buildable</span></a></code>
-<p>An artifact published as part of a MavenPublication.</p>
+<code><span class="keyword">interface </span><span class="identifier">PublicationArtifact</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Buildable</span></a></code>
+<p>An artifact published as part of a Publication.</p>
 </td>
 </tr>
 <tr>
@@ -123,7 +114,7 @@
 <p><a href="../../org.gradle.api.artifacts/-self-resolving-dependency/index.html">SelfResolvingDependency</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">SelfResolvingDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts/-direct-dependency.html"><span class="identifier">DirectDependency</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">Buildable</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">SelfResolvingDependency</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.artifacts/-dependency/index.html"><span class="identifier">Dependency</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">Buildable</span></a></code>
 <p>A <code>SelfResolvingDependency</code> is a Dependency which is able to resolve itself, independent of a repository.</p>
 </td>
 </tr>
@@ -134,6 +125,28 @@
 <td>
 <code><span class="keyword">interface </span><span class="identifier">TextResource</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">Buildable</span></a></code>
 <p>A read-only body of text backed by a string, file, archive entry, or other source. To create a text resource, use one of the factory methods in TextResourceFactory (e.g. <code>project.resources.text.fromFile(myFile)</code>).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.ide.visualstudio/-visual-studio-project/index.html">VisualStudioProject</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VisualStudioProject</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-named/index.html"><span class="identifier">Named</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">Buildable</span></a></code>
+<p>A visual studio project, created from one or more native binaries. 
+<p> The content and location of the generate project file can be modified by the supplied methods: </p>
+<pre><code> apply plugin: "cpp" apply plugin: "visual-studio" model { visualStudio { projects.all { projectFile.location = "vs/${name}.vcxproj" projectFile.withXml { asNode().appendNode('PropertyGroup', [Label: 'Custom']) .appendNode('ProjectDetails', "Project is named ${project.name}") } } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.ide.visualstudio/-visual-studio-solution/index.html">VisualStudioSolution</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">VisualStudioSolution</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-named/index.html"><span class="identifier">Named</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">Buildable</span></a><span class="symbol">, </span><a href="../../org.gradle.plugins.ide/-ide-workspace/index.html"><span class="identifier">IdeWorkspace</span></a></code>
+<p>A visual studio solution, representing one or more native binaries in a build. 
+<p> The content and location of the generate solution file can be modified by the supplied methods: </p>
+<pre><code> apply plugin: "visual-studio" model { visualStudio { solution { solutionFile.location = "vs/${name}.sln" solutionFile.withContent { TextProvider content -&gt; content.asBuilder().insert(0, "# GENERATED FILE: DO NOT EDIT\n") content.text = content.text.replaceAll("HideSolutionNode = FALSE", "HideSolutionNode = TRUE") } } } } </code></pre></p>
 </td>
 </tr>
 </tbody>

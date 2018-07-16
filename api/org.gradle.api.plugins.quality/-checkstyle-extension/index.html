@@ -42,9 +42,18 @@ CheckstylePlugin</p>
 </td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getConfigDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
-<p>Path to other Checkstyle configuration files. By default, this path is <code>$projectDir/config/checkstyle</code> 
+<p>Path to other Checkstyle configuration files. By default, this path is <code>$rootProject.projectDir/config/checkstyle</code> 
 <p> This path will be exposed as the variable <code>config_loc</code> in Checkstyle's configuration files. </p>
 </p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-config-directory.html">getConfigDirectory</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getConfigDirectory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-directory-property/index.html"><span class="identifier">DirectoryProperty</span></a></code>
+<p>Gets the configuration directory.</p>
 </td>
 </tr>
 <tr>
@@ -236,6 +245,34 @@ CheckstylePlugin</p>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setToolVersion</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.plugins.quality.CodeQualityExtension$setToolVersion(kotlin.String)/toolVersion">toolVersion</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>The version of the code quality tool to be used.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.plugins.quality.-checkstyle-extension/ext.html">ext</a></p>
+</td>
+<td>
+<code><span class="keyword">val </span><a href="./index.html"><span class="identifier">CheckstyleExtension</span></a><span class="symbol">.</span><span class="identifier">ext</span><span class="symbol">: </span><a href="../../org.gradle.api.plugins/-extra-properties-extension/index.html"><span class="identifier">ExtraPropertiesExtension</span></a></code>
+<p>Retrieves the <a href="../../org.gradle.api.plugins/-extra-properties-extension/index.html">ext</a> extension.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Extension Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.kotlin.dsl/org.gradle.api.plugins.quality.-checkstyle-extension/ext.html">ext</a></p>
+</td>
+<td>
+<code><span class="keyword">fun </span><a href="./index.html"><span class="identifier">CheckstyleExtension</span></a><span class="symbol">.</span><span class="identifier">ext</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl$ext(org.gradle.api.plugins.quality.CheckstyleExtension, kotlin.Function1((org.gradle.api.plugins.ExtraPropertiesExtension, kotlin.Unit)))/configure">configure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.plugins/-extra-properties-extension/index.html"><span class="identifier">ExtraPropertiesExtension</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Configures the <a href="../../org.gradle.api.plugins/-extra-properties-extension/index.html">ext</a> extension.</p>
 </td>
 </tr>
 </tbody>

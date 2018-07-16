@@ -10,7 +10,7 @@
 <h1>Configuration</h1>
 <code><span class="keyword">interface </span><span class="identifier">Configuration</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">, </span><a href="../../org.gradle.api.attributes/-has-configurable-attributes/index.html"><span class="identifier">HasConfigurableAttributes</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">Configuration</span></a><span class="symbol">&gt;</span></code>
 <p>A <code>Configuration</code> represents a group of artifacts and their dependencies. Find more information about declaring dependencies to a configuration or about managing configurations in docs for ConfigurationContainer 
-<p> Configuration is an instance of a FileCollection that contains all dependencies (see also <code><a href="get-all-dependencies.html">#getAllDependencies()</a></code>) but not artifacts. If you want to refer to the artifacts declared in this configuration please use <code><a href="get-artifacts.html">#getArtifacts()</a></code> or <code><a href="get-all-artifacts.html">#getAllArtifacts()</a></code>. Read more about declaring artifacts in the configuration in docs for org.gradle.api.artifacts.dsl.ArtifactHandler</p>
+<p> Configuration is an instance of a FileCollection that contains all dependencies (see also <code><a href="get-all-dependencies.html">#getAllDependencies()</a></code>) but not artifacts. If you want to refer to the artifacts declared in this configuration please use <code><a href="get-artifacts.html">#getArtifacts()</a></code> or <code><a href="get-all-artifacts.html">#getAllArtifacts()</a></code>. Read more about declaring artifacts in the configuration in docs for org.gradle.api.artifacts.dsl.ArtifactHandler Please see the <a href="#">Managing Dependency Configurations User Guide chapter</a> for more information.</p>
 </p>
 <h3>Types</h3>
 <table>
@@ -145,8 +145,19 @@
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAllDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-dependency-set.html"><span class="identifier">DependencySet</span></a></code>
+<p>Gets the complete set of declared dependencies including those contributed by superconfigurations. 
+<p> This method does not resolve the configuration. Therefore, the return value does not include transitive dependencies.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-all-dependency-constraints.html">getAllDependencyConstraints</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getAllDependencyConstraints</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-dependency-constraint-set.html"><span class="identifier">DependencyConstraintSet</span></a></code>
 <p>
-<p>Gets the complete set of dependencies including those contributed by superconfigurations.</p>
+<p>Gets the complete set of dependency constraints including those contributed by superconfigurations.</p>
 </p>
 </td>
 </tr>
@@ -174,7 +185,18 @@
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-dependency-set.html"><span class="identifier">DependencySet</span></a></code>
-<p>Gets the set of dependencies directly contained in this configuration (ignoring superconfigurations).</p>
+<p>Gets the set of declared dependencies directly contained in this configuration (ignoring superconfigurations). 
+<p> This method does not resolve the configuration. Therefore, the return value does not include transitive dependencies.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-dependency-constraints.html">getDependencyConstraints</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDependencyConstraints</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-dependency-constraint-set.html"><span class="identifier">DependencyConstraintSet</span></a></code>
+<p>Gets the set of dependency constraints directly contained in this configuration (ignoring superconfigurations).</p>
 </td>
 </tr>
 <tr>

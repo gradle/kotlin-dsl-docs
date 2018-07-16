@@ -8,7 +8,7 @@
 <a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling</a>&nbsp;/&nbsp;<a href="./index.html">CancellationTokenSource</a><br/>
 <br/>
 <h1>CancellationTokenSource</h1>
-<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">CancellationTokenSource</span></code>
+<code><span class="keyword">interface </span><span class="identifier">CancellationTokenSource</span></code>
 <p>A <code>CancellationTokenSource</code> allows you to issue cancellation requests to one or more org.gradle.tooling.LongRunningOperation instances. To use a token source: <ul> <li>Create a token source using <code><a href="../-gradle-connector/new-cancellation-token-source.html">GradleConnector#newCancellationTokenSource()</a></code>.</li>
  <li>Attach the token to one or more operations using <code><a href="../-long-running-operation/with-cancellation-token.html">org.gradle.tooling.LongRunningOperation#withCancellationToken(CancellationToken)</a></code>. You need to do this before you start the operation. </li>
  <li>Later, you can cancel the associated operations by calling <code><a href="cancel.html">#cancel()</a></code> on this token source.</li>

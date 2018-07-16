@@ -59,7 +59,7 @@
 <p><a href="../-ivy-artifact-repository/index.html">IvyArtifactRepository</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">IvyArtifactRepository</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ArtifactRepository</span></a><span class="symbol">, </span><a href="../-authentication-supported/index.html"><span class="identifier">AuthenticationSupported</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">IvyArtifactRepository</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ArtifactRepository</span></a><span class="symbol">, </span><a href="../-authentication-supported/index.html"><span class="identifier">AuthenticationSupported</span></a><span class="symbol">, </span><a href="../-metadata-supplier-aware/index.html"><span class="identifier">MetadataSupplierAware</span></a></code>
 <p>An artifact repository which uses an Ivy format to store artifacts and meta-data. 
 <p> When used to resolve metadata and artifact files, all available patterns will be searched. </p>
 <p> When used to upload metadata and artifact files, only a single, primary pattern will be used: </p>
@@ -76,7 +76,7 @@
 <p><a href="../-maven-artifact-repository/index.html">MavenArtifactRepository</a></p>
 </td>
 <td>
-<code><span class="keyword">interface </span><span class="identifier">MavenArtifactRepository</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ArtifactRepository</span></a><span class="symbol">, </span><a href="../-authentication-supported/index.html"><span class="identifier">AuthenticationSupported</span></a></code>
+<code><span class="keyword">interface </span><span class="identifier">MavenArtifactRepository</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./index.html"><span class="identifier">ArtifactRepository</span></a><span class="symbol">, </span><a href="../-authentication-supported/index.html"><span class="identifier">AuthenticationSupported</span></a><span class="symbol">, </span><a href="../-metadata-supplier-aware/index.html"><span class="identifier">MetadataSupplierAware</span></a></code>
 <p>An artifact repository which uses a Maven format to store artifacts and meta-data. 
 <p> Repositories of this type are created by the <code><a href="#">org.gradle.api.artifacts.dsl.RepositoryHandler#maven(org.gradle.api.Action)</a></code> group of methods.</p>
 </p>

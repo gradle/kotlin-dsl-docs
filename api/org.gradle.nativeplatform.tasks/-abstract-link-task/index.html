@@ -27,19 +27,19 @@
 <tbody>
 <tr>
 <td>
-<p><a href="get-binary-file.html">getBinaryFile</a></p>
+<p><a href="get-debuggable.html">getDebuggable</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getBinaryFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-regular-file-property/index.html"><span class="identifier">RegularFileProperty</span></a></code>
-<p>The file where the linked binary will be located.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDebuggable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-property/index.html"><span class="identifier">Property</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">&gt;</span></code>
+<p>Create a debuggable binary?</p>
 </td>
 </tr>
 <tr>
 <td>
-<p><a href="get-destination-dir.html">getDestinationDir</a></p>
+<p><a href="get-destination-directory.html">getDestinationDirectory</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDestinationDir</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDestinationDirectory</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-directory-property/index.html"><span class="identifier">DirectoryProperty</span></a></code>
 <p>Include the destination directory as an output, to pick up auxiliary files produced alongside the main output file</p>
 </td>
 </tr>
@@ -50,6 +50,15 @@
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLibs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code>
 <p>The library files to be passed to the linker.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-linked-file.html">getLinkedFile</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getLinkedFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-regular-file-property/index.html"><span class="identifier">RegularFileProperty</span></a></code>
+<p>The file where the linked binary will be located.</p>
 </td>
 </tr>
 <tr>
@@ -70,13 +79,6 @@
 </tr>
 <tr>
 <td>
-<p><a href="get-output-file.html">getOutputFile</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOutputFile</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a></code></td>
-</tr>
-<tr>
-<td>
 <p><a href="get-source.html">getSource</a></p>
 </td>
 <td>
@@ -89,8 +91,8 @@
 <p><a href="get-target-platform.html">getTargetPlatform</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a></code>
-<p>The platform that the linked binary will run on.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-property/index.html"><span class="identifier">Property</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a><span class="symbol">&gt;</span></code>
+<p>The platform being linked for.</p>
 </td>
 </tr>
 <tr>
@@ -98,7 +100,7 @@
 <p><a href="get-tool-chain.html">getToolChain</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getToolChain</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getToolChain</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-property/index.html"><span class="identifier">Property</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a><span class="symbol">&gt;</span></code>
 <p>The tool chain used for linking.</p>
 </td>
 </tr>
@@ -129,15 +131,6 @@
 </tr>
 <tr>
 <td>
-<p><a href="set-debuggable.html">setDebuggable</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDebuggable</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.AbstractLinkTask$setDebuggable(kotlin.Boolean)/debuggable">debuggable</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Create a debuggable binary?</p>
-</td>
-</tr>
-<tr>
-<td>
 <p><a href="set-libs.html">setLibs</a></p>
 </td>
 <td>
@@ -145,33 +138,10 @@
 </tr>
 <tr>
 <td>
-<p><a href="set-output-file.html">setOutputFile</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOutputFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.AbstractLinkTask$setOutputFile(java.io.File)/outputFile">outputFile</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOutputFile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.AbstractLinkTask$setOutputFile(org.gradle.api.provider.Provider((org.gradle.api.file.RegularFile)))/outputFile">outputFile</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.provider/-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.api.file/-regular-file/index.html"><span class="identifier">RegularFile</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Sets the output file generated by the linking process via a Provider.</p>
-</td>
-</tr>
-<tr>
-<td>
 <p><a href="set-source.html">setSource</a></p>
 </td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setSource</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.AbstractLinkTask$setSource(org.gradle.api.file.FileCollection)/source">source</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
-</tr>
-<tr>
-<td>
-<p><a href="set-target-platform.html">setTargetPlatform</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTargetPlatform</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.AbstractLinkTask$setTargetPlatform(org.gradle.nativeplatform.platform.NativePlatform)/targetPlatform">targetPlatform</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
-</tr>
-<tr>
-<td>
-<p><a href="set-tool-chain.html">setToolChain</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setToolChain</span><span class="symbol">(</span><span class="identifier" id="org.gradle.nativeplatform.tasks.AbstractLinkTask$setToolChain(org.gradle.nativeplatform.toolchain.NativeToolChain)/toolChain">toolChain</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
 </tr>
 <tr>
 <td>

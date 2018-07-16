@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>BuildActionExecuter.Builder.buildFinished - api</title>
+<link rel="stylesheet" href="../../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../../index.html">api</a>&nbsp;/&nbsp;<a href="../../index.html">org.gradle.tooling</a>&nbsp;/&nbsp;<a href="../index.html">BuildActionExecuter</a>&nbsp;/&nbsp;<a href="index.html">Builder</a>&nbsp;/&nbsp;<a href="./build-finished.html">buildFinished</a><br/>
+<br/>
+<h1>buildFinished</h1>
+<a name="org.gradle.tooling.BuildActionExecuter.Builder$buildFinished(org.gradle.tooling.BuildAction((org.gradle.tooling.BuildActionExecuter.Builder.buildFinished.T)), org.gradle.tooling.IntermediateResultHandler((org.gradle.tooling.BuildActionExecuter.Builder.buildFinished.T)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">buildFinished</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.BuildActionExecuter.Builder$buildFinished(org.gradle.tooling.BuildAction((org.gradle.tooling.BuildActionExecuter.Builder.buildFinished.T)), org.gradle.tooling.IntermediateResultHandler((org.gradle.tooling.BuildActionExecuter.Builder.buildFinished.T)))/buildAction">buildAction</span><span class="symbol">:</span>&nbsp;<a href="../../-build-action/index.html"><span class="identifier">BuildAction</span></a><span class="symbol">&lt;</span><a href="build-finished.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.BuildActionExecuter.Builder$buildFinished(org.gradle.tooling.BuildAction((org.gradle.tooling.BuildActionExecuter.Builder.buildFinished.T)), org.gradle.tooling.IntermediateResultHandler((org.gradle.tooling.BuildActionExecuter.Builder.buildFinished.T)))/handler">handler</span><span class="symbol">:</span>&nbsp;<a href="../../-intermediate-result-handler/index.html"><span class="identifier">IntermediateResultHandler</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="build-finished.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="index.html"><span class="identifier">Builder</span></a></code>
+<p>Executes the given action after tasks are run and sends its result to the given result handler. 
+<p>If the operation fails, build will fail with the appropriate exception. Handler won't be notified in case of failure.</p>
+</p>
+<h3>Parameters</h3>
+<p><a name="buildAction"></a>
+<code>buildAction</code> - The action to run in the specified build phase.</p>
+<p><a name="handler"></a>
+<code>handler</code> - The handler to supply the result of the given action to.</p>
+<p><a name="&lt;T&gt;"></a>
+<code><T></code> - The returning type of the action.</p>
+<h3>Exceptions</h3>
+<p><a name="IllegalArgumentException"></a>
+<code>IllegalArgumentException</code> - If an action has already been added to this build phase. Multiple actions per phase are not supported yet.</p>
+<p><strong>Return</strong><br/>
+The builder.</p>
+</BODY>
+</HTML>

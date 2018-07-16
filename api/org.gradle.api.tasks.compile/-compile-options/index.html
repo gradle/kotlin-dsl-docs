@@ -67,7 +67,7 @@
 </td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getAnnotationProcessorPath</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-file-collection/index.html"><span class="identifier">FileCollection</span></a></code>
-<p>Returns the classpath to use to load annotation processors. This path is also used for annotation processor discovery. The default value is <code>null</code>, which means use the compile classpath.</p>
+<p>Returns the classpath to use to load annotation processors. This path is also used for annotation processor discovery. If set to <code>null</code>, it means use the compile classpath.</p>
 </td>
 </tr>
 <tr>
@@ -102,7 +102,7 @@
 <p><a href="get-compiler-argument-providers.html">getCompilerArgumentProviders</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getCompilerArgumentProviders</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-compiler-argument-provider/index.html"><span class="identifier">CompilerArgumentProvider</span></a><span class="symbol">&gt;</span></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getCompilerArgumentProviders</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.process/-command-line-argument-provider/index.html"><span class="identifier">CommandLineArgumentProvider</span></a><span class="symbol">&gt;</span></code>
 <p>Compiler argument providers.</p>
 </td>
 </tr>

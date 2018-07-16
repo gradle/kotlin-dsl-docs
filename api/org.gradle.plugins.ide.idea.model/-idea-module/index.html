@@ -11,7 +11,7 @@
 <code><span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">IdeaModule</span></code>
 <p>Enables fine-tuning module details (*.iml file) of the IDEA plugin. 
 <p> Example of use with a blend of most possible properties. Typically you don't have to configure this model directly because Gradle configures it for you. </p>
-<pre><code> apply plugin: 'java' apply plugin: 'idea' //for the sake of this example, let's introduce a 'performanceTestCompile' configuration configurations { performanceTestCompile performanceTestCompile.extendsFrom(testCompile) } dependencies { //performanceTestCompile "some.interesting:dependency:1.0" } idea { //if you want parts of paths in resulting files (*.iml, etc.) to be replaced by variables (Files) pathVariables GRADLE_HOME: file('~/cool-software/gradle') module { //if for some reason you want to add an extra sourceDirs sourceDirs += file('some-extra-source-folder') //and some extra test source dirs testSourceDirs += file('some-extra-test-dir') //and hint to mark some of existing source dirs as generated sources generatedSourceDirs += file('some-extra-source-folder') //and some extra dirs that should be excluded by IDEA excludeDirs += file('some-extra-exclude-dir') //if you don't like the name Gradle has chosen name = 'some-better-name' //if you prefer different output folders inheritOutputDirs = false outputDir = file('muchBetterOutputDir') testOutputDir = file('muchBetterTestOutputDir') //if you prefer different SDK than the one inherited from IDEA project jdkName = '1.6' //put our custom test dependencies onto IDEA's TEST scope scopes.TEST.plus += [ configurations.performanceTestCompile ] //if 'content root' (as IDEA calls it) of the module is different contentRoot = file('my-module-content-root') //if you love browsing Javadoc downloadJavadoc = true //and hate reading sources :) downloadSources = false } } </code></pre> For tackling edge cases, users can perform advanced configuration on the resulting XML file. It is also possible to affect the way the IDEA plugin merges the existing configuration via beforeMerged and whenMerged closures. 
+<pre><code> apply plugin: 'java' apply plugin: 'idea' //for the sake of this example, let's introduce a 'performanceTestCompile' configuration configurations { performanceTestCompile performanceTestCompile.extendsFrom(testCompile) } dependencies { //performanceTestCompile "some.interesting:dependency:1.0" } idea { //if you want parts of paths in resulting files (*.iml, etc.) to be replaced by variables (Files) pathVariables GRADLE_HOME: file('~/cool-software/gradle') module { //if for some reason you want to add an extra sourceDirs sourceDirs += file('some-extra-source-folder') //and some extra test source dirs testSourceDirs += file('some-extra-test-dir') //and some extra resource dirs resourceDirs += file('some-extra-resource-dir') //and some extra test resource dirs testResourceDirs += file('some-extra-test-resource-dir') //and hint to mark some of existing source dirs as generated sources generatedSourceDirs += file('some-extra-source-folder') //and some extra dirs that should be excluded by IDEA excludeDirs += file('some-extra-exclude-dir') //if you don't like the name Gradle has chosen name = 'some-better-name' //if you prefer different output folders inheritOutputDirs = false outputDir = file('muchBetterOutputDir') testOutputDir = file('muchBetterTestOutputDir') //if you prefer different SDK than the one inherited from IDEA project jdkName = '1.6' //put our custom test dependencies onto IDEA's TEST scope scopes.TEST.plus += [ configurations.performanceTestCompile ] //if 'content root' (as IDEA calls it) of the module is different contentRoot = file('my-module-content-root') //if you love browsing Javadoc downloadJavadoc = true //and hate reading sources :) downloadSources = false } } </code></pre> For tackling edge cases, users can perform advanced configuration on the resulting XML file. It is also possible to affect the way the IDEA plugin merges the existing configuration via beforeMerged and whenMerged closures. 
 <p> beforeMerged and whenMerged closures receive a Module parameter </p>
 <p> Examples of advanced configuration: </p>
 <pre><code> apply plugin: 'java' apply plugin: 'idea' idea { module { iml { //if you like to keep *.iml in a secret folder generateTo = file('secret-modules-folder') //if you want to mess with the resulting XML in whatever way you fancy withXml { def node = it.asNode() node.appendNode('iLoveGradle', 'true') node.appendNode('butAlso', 'I find increasing pleasure tinkering with output *.iml contents. Yeah!!!') } //closure executed after *.iml content is loaded from existing file //but before gradle build information is merged beforeMerged { module -&gt; //if you want skip merging exclude dirs module.excludeFolders.clear() } //closure executed after *.iml content is loaded from existing file //and after gradle build information is merged whenMerged { module -&gt; //you can tinker with Module } } } } </code></pre></p>
@@ -173,6 +173,17 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-resource-dirs.html">getResourceDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getResourceDirs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>The directories containing resources. 
+<p> For example see docs for IdeaModule</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-scala-platform.html">getScalaPlatform</a></p>
 </td>
 <td>
@@ -205,7 +216,8 @@
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSourceDirs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
 <p>The directories containing the production sources. 
-<p> For example see docs for IdeaModule</p>
+<p> For backward-compatibility it is set of directories containing the production sources from project.sourceSets.main.allSource. </p>
+<p> Starting with Gradle 5.0 it is set of directories containing the production sources from project.sourceSets.main.allJava. For example see docs for IdeaModule</p>
 </p>
 </td>
 </tr>
@@ -233,12 +245,24 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-test-resource-dirs.html">getTestResourceDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTestResourceDirs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
+<p>The directories containing the test resources. 
+<p> For example see docs for IdeaModule</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-test-source-dirs.html">getTestSourceDirs</a></p>
 </td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTestSourceDirs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
 <p>The directories containing the test sources. 
-<p> For example see docs for IdeaModule</p>
+<p> For backward-compatibility it is set of directories containing the test sources from project.sourceSets.test.allSource. </p>
+<p> Starting with Gradle 5.0 it is set of directories containing the test sources from project.sourceSets.test.allJava. For example see docs for IdeaModule</p>
 </p>
 </td>
 </tr>
@@ -401,6 +425,17 @@
 </tr>
 <tr>
 <td>
+<p><a href="set-resource-dirs.html">setResourceDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setResourceDirs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setResourceDirs(kotlin.collections.MutableSet((java.io.File)))/resourceDirs">resourceDirs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the directories containing resources. 
+<p> For example see docs for IdeaModule</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="set-scala-platform.html">setScalaPlatform</a></p>
 </td>
 <td>
@@ -440,6 +475,17 @@
 </td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTestOutputDir</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setTestOutputDir(java.io.File)/testOutputDir">testOutputDir</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="set-test-resource-dirs.html">setTestResourceDirs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTestResourceDirs</span><span class="symbol">(</span><span class="identifier" id="org.gradle.plugins.ide.idea.model.IdeaModule$setTestResourceDirs(kotlin.collections.MutableSet((java.io.File)))/testResourceDirs">testResourceDirs</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets the directories containing the test resources. 
+<p> For example see docs for IdeaModule</p>
+</p>
+</td>
 </tr>
 <tr>
 <td>

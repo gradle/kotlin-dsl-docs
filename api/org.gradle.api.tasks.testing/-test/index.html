@@ -8,8 +8,8 @@
 <a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.tasks.testing</a>&nbsp;/&nbsp;<a href="./index.html">Test</a><br/>
 <br/>
 <h1>Test</h1>
-<code><span class="identifier">@CacheableTask</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Test</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-abstract-test-task/index.html"><span class="identifier">AbstractTestTask</span></a><span class="symbol">, </span><a href="../../org.gradle.process/-java-fork-options/index.html"><span class="identifier">JavaForkOptions</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a></code>
-<p>Executes JUnit (3.8.x or 4.x) or TestNG tests. Test are always run in (one or more) separate JVMs. The sample below shows various configuration options. <pre><code> apply plugin: 'java' // adds 'test' task test { // enable TestNG support (default is JUnit) useTestNG() // set a system property for the test JVM(s) systemProperty 'some.prop', 'value' // explicitly include or exclude tests include 'org/foo/**' exclude 'org/boo/**' // show standard out and standard error of the test JVM(s) on the console testLogging.showStandardStreams = true // set heap size for the test JVM(s) minHeapSize = "128m" maxHeapSize = "512m" // set JVM arguments for the test JVM(s) jvmArgs '-XX:MaxPermSize=256m' // listen to events in the test execution lifecycle beforeTest { descriptor -&gt; logger.lifecycle("Running test: " + descriptor) } // listen to standard out and standard error of the test JVM(s) onOutput { descriptor, event -&gt; logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message ) } } </code></pre> 
+<code><span class="identifier">@NonNullApi</span> <span class="identifier">@CacheableTask</span> <span class="keyword">open</span> <span class="keyword">class </span><span class="identifier">Test</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-abstract-test-task/index.html"><span class="identifier">AbstractTestTask</span></a><span class="symbol">, </span><a href="../../org.gradle.process/-java-fork-options/index.html"><span class="identifier">JavaForkOptions</span></a><span class="symbol">, </span><a href="../../org.gradle.api.tasks.util/-pattern-filterable/index.html"><span class="identifier">PatternFilterable</span></a></code>
+<p>Executes JUnit (3.8.x, 4.x or 5.x) or TestNG tests. Test are always run in (one or more) separate JVMs. The sample below shows various configuration options. <pre><code> apply plugin: 'java' // adds 'test' task test { // enable TestNG support (default is JUnit) useTestNG() // enable JUnit Platform (a.k.a. JUnit 5) support useJUnitPlatform() // set a system property for the test JVM(s) systemProperty 'some.prop', 'value' // explicitly include or exclude tests include 'org/foo/**' exclude 'org/boo/**' // show standard out and standard error of the test JVM(s) on the console testLogging.showStandardStreams = true // set heap size for the test JVM(s) minHeapSize = "128m" maxHeapSize = "512m" // set JVM arguments for the test JVM(s) jvmArgs '-XX:MaxPermSize=256m' // listen to events in the test execution lifecycle beforeTest { descriptor -&gt; logger.lifecycle("Running test: " + descriptor) } // Fail the 'test' task on the first test failure failFast = true // listen to standard out and standard error of the test JVM(s) onOutput { descriptor, event -&gt; logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message ) } } </code></pre> 
 <p> The test process can be started in debug mode (see <code><a href="get-debug.html">#getDebug()</a></code>) in an ad-hoc manner by supplying the `--debug-jvm` switch when invoking the build. </p>
 <pre><code> gradle someTestTask --debug-jvm </code></pre></p>
 <h3>Constructors</h3>
@@ -186,6 +186,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-fail-fast.html">getFailFast</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getFailFast</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Indicates if this task will fail on the first failed test</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-fork-every.html">getForkEvery</a></p>
 </td>
 <td>
@@ -222,6 +231,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-jvm-argument-providers.html">getJvmArgumentProviders</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getJvmArgumentProviders</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.process/-command-line-argument-provider/index.html"><span class="identifier">CommandLineArgumentProvider</span></a><span class="symbol">&gt;</span></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-max-heap-size.html">getMaxHeapSize</a></p>
 </td>
 <td>
@@ -253,7 +271,7 @@
 </td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOptions</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-test-framework-options/index.html"><span class="identifier">TestFrameworkOptions</span></a></code>
-<p>Returns test framework specific options. Make sure to call <code><a href="use-j-unit.html">#useJUnit()</a></code> or <code><a href="use-test-n-g.html">#useTestNG()</a></code> before using this method.</p>
+<p>Returns test framework specific options. Make sure to call <code><a href="use-j-unit.html">#useJUnit()</a></code>, <code><a href="use-j-unit-platform.html">#useJUnitPlatform()</a></code> or <code><a href="use-test-n-g.html">#useTestNG()</a></code> before using this method.</p>
 </td>
 </tr>
 <tr>
@@ -338,7 +356,7 @@
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">options</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.Test$options(groovy.lang.Closure((kotlin.Any)))/testFrameworkConfigure">testFrameworkConfigure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-test-framework-options/index.html"><span class="identifier">TestFrameworkOptions</span></a></code><br/>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">options</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.Test$options(org.gradle.api.Action((org.gradle.api.tasks.testing.TestFrameworkOptions)))/testFrameworkConfigure">testFrameworkConfigure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-test-framework-options/index.html"><span class="identifier">TestFrameworkOptions</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-test-framework-options/index.html"><span class="identifier">TestFrameworkOptions</span></a></code>
-<p>Configures test framework specific options. Make sure to call <code><a href="use-j-unit.html">#useJUnit()</a></code> or <code><a href="use-test-n-g.html">#useTestNG()</a></code> before using this method.</p>
+<p>Configures test framework specific options. Make sure to call <code><a href="use-j-unit.html">#useJUnit()</a></code>, <code><a href="use-j-unit-platform.html">#useJUnitPlatform()</a></code> or <code><a href="use-test-n-g.html">#useTestNG()</a></code> before using this method.</p>
 </td>
 </tr>
 <tr>
@@ -420,6 +438,15 @@
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExecutable</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.Test$setExecutable(kotlin.String)/executable">executable</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code><br/>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setExecutable</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.Test$setExecutable(kotlin.Any)/executable">executable</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="set-fail-fast.html">setFailFast</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setFailFast</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.Test$setFailFast(kotlin.Boolean)/failFast">failFast</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Enables fail fast behavior causing the task to fail on the first failed test.</p>
 </td>
 </tr>
 <tr>
@@ -571,6 +598,21 @@
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">useJUnit</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.Test$useJUnit(org.gradle.api.Action((org.gradle.api.tasks.testing.junit.JUnitOptions)))/testFrameworkConfigure">testFrameworkConfigure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.tasks.testing.junit/-j-unit-options/index.html"><span class="identifier">JUnitOptions</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Specifies that JUnit should be used to execute the tests, configuring JUnit specific options. 
 <p> The supplied action configures an instance of , which can be used to configure how JUnit runs.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="use-j-unit-platform.html">useJUnitPlatform</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">useJUnitPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies that JUnit Platform (a.k.a. JUnit 5) should be used to execute the tests. 
+<p> To configure JUnit platform specific options, see <code><a href="#">#useJUnitPlatform(Action)</a></code>.</p>
+</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">useJUnitPlatform</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.tasks.testing.Test$useJUnitPlatform(org.gradle.api.Action((org.gradle.api.tasks.testing.junitplatform.JUnitPlatformOptions)))/testFrameworkConfigure">testFrameworkConfigure</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api.tasks.testing.junitplatform/-j-unit-platform-options/index.html"><span class="identifier">JUnitPlatformOptions</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Specifies that JUnit Platform (a.k.a. JUnit 5) should be used to execute the tests, configuring JUnit platform specific options. 
+<p> The supplied action configures an instance of , which can be used to configure how JUnit platform runs.</p>
 </p>
 </td>
 </tr>

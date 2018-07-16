@@ -1,0 +1,65 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>InitScriptApi.files - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.kotlin.dsl</a>&nbsp;/&nbsp;<a href="index.html">InitScriptApi</a>&nbsp;/&nbsp;<a href="./files.html">files</a><br/>
+<br/>
+<h1>files</h1>
+<a name="org.gradle.kotlin.dsl.InitScriptApi$files(kotlin.Array((kotlin.Any)))"></a>
+<code><span class="keyword">fun </span><span class="identifier">files</span><span class="symbol">(</span><span class="keyword">vararg</span> <span class="identifier" id="org.gradle.kotlin.dsl.InitScriptApi$files(kotlin.Array((kotlin.Any)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code>
+<p>Creates a <a href="../../org.gradle.api.file/-configurable-file-collection/index.html">ConfigurableFileCollection</a> containing the given files.</p>
+<p>You can pass any of the following types to this method:</p>
+<ul><li>A <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-char-sequence/index.html">CharSequence</a>, including <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html">String</a> as defined by <a href="file.html">KotlinInitScript.file</a>.</li>
+<li>A <a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html">File</a> as defined by <a href="file.html">KotlinInitScript.file</a>.</li>
+<li>A <a href="http://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html">java.nio.file.Path</a> as defined by <a href="file.html">KotlinInitScript.file</a>.</li>
+<li>A <a href="http://docs.oracle.com/javase/8/docs/api/java/net/URI.html">URI</a> or <a href="http://docs.oracle.com/javase/8/docs/api/java/net/URL.html">java.net.URL</a> as defined by <a href="file.html">KotlinInitScript.file</a>.</li>
+<li>A <a href="../../org.gradle.api.file/-directory/index.html">org.gradle.api.file.Directory</a> or <a href="../../org.gradle.api.file/-regular-file/index.html">org.gradle.api.file.RegularFile</a>
+as defined by <a href="file.html">KotlinInitScript.file</a>.</li>
+<li>A <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.sequences/-sequence/index.html">Sequence</a>, <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-array/index.html">Array</a> or <a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-iterable/index.html">Iterable</a> that contains objects of any supported type.
+The elements of the collection are recursively converted to files.</li>
+<li>A <a href="../../org.gradle.api.file/-file-collection/index.html">org.gradle.api.file.FileCollection</a>.
+The contents of the collection are included in the returned collection.</li>
+<li>A <a href="../../org.gradle.api.provider/-provider/index.html">org.gradle.api.provider.Provider</a> of any supported type.
+The provider's value is recursively converted to files. If the provider represents an output of a task,
+that task is executed if the file collection is used as an input to another task.</li>
+<li>A <a href="http://docs.oracle.com/javase/8/docs/api/java/util/concurrent/Callable.html">java.util.concurrent.Callable</a> that returns any supported type.
+The callable's return value is recursively converted to files.
+A <code>null</code> return value is treated as an empty collection.</li>
+<li>A <a href="../../org.gradle.api/-task/index.html">org.gradle.api.Task</a>.
+Converted to the task's output files.
+The task is executed if the file collection is used as an input to another task.</li>
+<li>A <a href="../../org.gradle.api.tasks/-task-outputs/index.html">org.gradle.api.tasks.TaskOutputs</a>.
+Converted to the output files the related task.
+The task is executed if the file collection is used as an input to another task.</li>
+<li>Anything else is treated as a failure.</li>
+</ul>
+<p>The returned file collection is lazy, so that the paths are evaluated only when the contents of the file
+collection are queried. The file collection is also live, so that it evaluates the above each time the contents
+of the collection is queried.</p>
+<p>The returned file collection maintains the iteration order of the supplied paths.</p>
+<p>The returned file collection maintains the details of the tasks that produce the files,
+so that these tasks are executed if this file collection is used as an input to some task.</p>
+<p>This method can also be used to create an empty collection, which can later be mutated to add elements.</p>
+<h3>Parameters</h3>
+<p><a name="paths"></a>
+<code>paths</code> - The paths to the files. May be empty.</p>
+<p><strong>Return</strong><br/>
+The file collection.</p>
+<a name="org.gradle.kotlin.dsl.InitScriptApi$files(kotlin.Any, kotlin.Function1((org.gradle.api.file.ConfigurableFileCollection, kotlin.Unit)))"></a>
+<code><span class="keyword">fun </span><span class="identifier">files</span><span class="symbol">(</span><span class="identifier" id="org.gradle.kotlin.dsl.InitScriptApi$files(kotlin.Any, kotlin.Function1((org.gradle.api.file.ConfigurableFileCollection, kotlin.Unit)))/paths">paths</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.kotlin.dsl.InitScriptApi$files(kotlin.Any, kotlin.Function1((org.gradle.api.file.ConfigurableFileCollection, kotlin.Unit)))/configuration">configuration</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a><span class="symbol">.</span><span class="symbol">(</span><span class="symbol">)</span>&nbsp;<span class="symbol">-&gt;</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.file/-configurable-file-collection/index.html"><span class="identifier">ConfigurableFileCollection</span></a></code>
+<p>Creates a <a href="../../org.gradle.api.file/-configurable-file-collection/index.html">ConfigurableFileCollection</a> containing the given files.</p>
+<h3>Parameters</h3>
+<p><a name="paths"></a>
+<code>paths</code> - The contents of the file collection. Evaluated as per <a href="./files.html">KotlinInitScript.files</a>.</p>
+<p><a name="configuration"></a>
+<code>configuration</code> - The block to use to configure the file collection.</p>
+<p><strong>Return</strong><br/>
+The file collection.</p>
+<p><strong>See Also</strong><br/>
+<p><a href="./files.html">KotlinInitScript.files</a></p>
+</p>
+</BODY>
+</HTML>

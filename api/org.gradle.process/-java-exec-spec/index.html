@@ -43,6 +43,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-argument-providers.html">getArgumentProviders</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getArgumentProviders</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-command-line-argument-provider/index.html"><span class="identifier">CommandLineArgumentProvider</span></a><span class="symbol">&gt;</span></code>
+<p>Argument providers for the application.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-classpath.html">getClasspath</a></p>
 </td>
 <td>
@@ -143,7 +152,7 @@
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDebug</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
-<p>Returns true if debugging is enabled for the process. When enabled, the process is started suspended and listening on port 5005.</p>
+<p>Determines whether debugging is enabled for the test process. When enabled — <code>debug = true</code> — the process is started in a suspended state, listening on port 5005. You should disable parallel test execution when debugging and you will need to reattach the debugger occasionally if you use a non-zero value for <code><a href="../../org.gradle.api.tasks.testing/-test/get-fork-every.html">org.gradle.api.tasks.testing.Test#getForkEvery()</a></code>.</p>
 </td>
 </tr>
 <tr>
@@ -180,6 +189,15 @@
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getJvmArgs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
 <p>Returns the extra arguments to use to launch the JVM for the process. Does not include system properties and the minimum/maximum heap size.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../-java-fork-options/get-jvm-argument-providers.html">getJvmArgumentProviders</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getJvmArgumentProviders</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-list/index.html"><span class="identifier">MutableList</span></a><span class="symbol">&lt;</span><a href="../-command-line-argument-provider/index.html"><span class="identifier">CommandLineArgumentProvider</span></a><span class="symbol">&gt;</span></code>
+<p>Command line argument providers for the java process to fork.</p>
 </td>
 </tr>
 <tr>

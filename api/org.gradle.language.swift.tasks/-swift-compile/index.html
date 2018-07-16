@@ -20,7 +20,7 @@
 <p><a href="-init-.html">&lt;init&gt;</a></p>
 </td>
 <td>
-<code><span class="identifier">SwiftCompile</span><span class="symbol">(</span><span class="symbol">)</span></code></td>
+<code><span class="identifier">SwiftCompile</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.swift.tasks.SwiftCompile$<init>(CompilerOutputFileNamingSchemeFactory)/compilerOutputFileNamingSchemeFactory">compilerOutputFileNamingSchemeFactory</span><span class="symbol">:</span>&nbsp;<span class="identifier">CompilerOutputFileNamingSchemeFactory</span><span class="symbol">)</span></code></td>
 </tr>
 </tbody>
 </table>
@@ -38,11 +38,22 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-debuggable.html">getDebuggable</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getDebuggable</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-property/index.html"><span class="identifier">Property</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">&gt;</span></code>
+<p>Should the compiler generate debuggable code?</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-macros.html">getMacros</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMacros</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
-<p>Macros that should be defined for the compiler.</p>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getMacros</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-list-property.html"><span class="identifier">ListProperty</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span></code>
+<p>Macros that should be defined for the compiler. 
+<p>Macros do not have values in Swift; they are either present or absent.</p>
+</p>
 </td>
 </tr>
 <tr>
@@ -83,6 +94,15 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-optimized.html">getOptimized</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getOptimized</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-property/index.html"><span class="identifier">Property</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">&gt;</span></code>
+<p>Should the compiler generate optimized code?</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-source.html">getSource</a></p>
 </td>
 <td>
@@ -92,10 +112,19 @@
 </tr>
 <tr>
 <td>
+<p><a href="get-source-compatibility.html">getSourceCompatibility</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getSourceCompatibility</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-property/index.html"><span class="identifier">Property</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.language.swift/-swift-version/index.html"><span class="identifier">SwiftVersion</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the Swift language level to use to compile the source files.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-target-platform.html">getTargetPlatform</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTargetPlatform</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-property/index.html"><span class="identifier">Property</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a><span class="symbol">&gt;</span></code>
 <p>The platform being compiled for.</p>
 </td>
 </tr>
@@ -104,7 +133,7 @@
 <p><a href="get-tool-chain.html">getToolChain</a></p>
 </td>
 <td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getToolChain</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a></code>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getToolChain</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../../org.gradle.api.provider/-property/index.html"><span class="identifier">Property</span></a><span class="symbol">&lt;</span><a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a><span class="symbol">&gt;</span></code>
 <p>The tool chain used for compilation.</p>
 </td>
 </tr>
@@ -123,52 +152,7 @@
 </td>
 <td>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isOptimized</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
-<p>Should the compiler generate optimized code?</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="set-debuggable.html">setDebuggable</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setDebuggable</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.swift.tasks.SwiftCompile$setDebuggable(kotlin.Boolean)/debug">debug</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
 <p>Should the compiler generate debuggable code?</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="set-macros.html">setMacros</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setMacros</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.swift.tasks.SwiftCompile$setMacros(kotlin.collections.MutableMap((kotlin.String, )))/macros">macros</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-map/index.html"><span class="identifier">MutableMap</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">,</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Sets the macros that should be defined when compiling.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="set-optimized.html">setOptimized</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setOptimized</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.swift.tasks.SwiftCompile$setOptimized(kotlin.Boolean)/optimize">optimize</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Should the compiler generate optimized code?</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="set-target-platform.html">setTargetPlatform</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setTargetPlatform</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.swift.tasks.SwiftCompile$setTargetPlatform(org.gradle.nativeplatform.platform.NativePlatform)/targetPlatform">targetPlatform</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.nativeplatform.platform/-native-platform/index.html"><span class="identifier">NativePlatform</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Sets the platform being compiled for.</p>
-</td>
-</tr>
-<tr>
-<td>
-<p><a href="set-tool-chain.html">setToolChain</a></p>
-</td>
-<td>
-<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">setToolChain</span><span class="symbol">(</span><span class="identifier" id="org.gradle.language.swift.tasks.SwiftCompile$setToolChain(org.gradle.nativeplatform.toolchain.NativeToolChain)/toolChain">toolChain</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.nativeplatform.toolchain/-native-tool-chain.html"><span class="identifier">NativeToolChain</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Sets the tool chain to use for compilation.</p>
 </td>
 </tr>
 </tbody>

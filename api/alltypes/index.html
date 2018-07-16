@@ -150,6 +150,13 @@
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.tooling.model.eclipse/-access-rule/index.html">org.gradle.tooling.model.eclipse.AccessRule</a></td>
+<td>
+<p>Access rule associated with an Eclipse classpath entry.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.plugins.ide.eclipse.model/-access-rule/index.html">org.gradle.plugins.ide.eclipse.model.AccessRule</a></td>
 <td>
 <p>Access rule associated to a classpath entry.</p>
@@ -157,9 +164,8 @@
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.tooling.model.eclipse/-access-rule/index.html">org.gradle.tooling.model.eclipse.AccessRule</a></td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.api.-action/index.html">org.gradle.api.Action</a> (extensions in package org.gradle.kotlin.dsl)</td>
 <td>
-<p>Access rule associated with an Eclipse classpath entry.</p>
 </td>
 </tr>
 <tr>
@@ -201,6 +207,12 @@
 <a href="../org.gradle.api.plugins.announce/-announce-plugin/index.html">org.gradle.api.plugins.announce.AnnouncePlugin</a></td>
 <td>
 <p>This plugin allows to send announce messages to Twitter.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.api.plugins.announce.-announce-plugin-extension/index.html">org.gradle.api.plugins.announce.AnnouncePluginExtension</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
 </td>
 </tr>
 <tr>
@@ -410,13 +422,6 @@
  <pre><code> repositories.maven { name 'myResolver' } repositories.myResolver.url = 'some-url' </code></pre> 
 <p>A dynamic method is added for each resolver which takes a configuration closure. This is equivalent to calling <code><a href="#">#getByName(String, groovy.lang.Closure)</a></code>. For example:</p>
  <pre><code> repositories.maven { name 'myResolver' } repositories.myResolver { url 'some-url' } </code></pre></p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.api.artifacts.cache/-artifact-resolution-control/index.html">org.gradle.api.artifacts.cache.ArtifactResolutionControl</a></td>
-<td>
-<p>Command methods for controlling artifact resolution via the DSL.</p>
 </td>
 </tr>
 <tr>
@@ -858,18 +863,18 @@
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.tooling/-build-cancelled-exception/index.html">org.gradle.tooling.BuildCancelledException</a></td>
+<td>
+<p>Thrown when a org.gradle.tooling.LongRunningOperation is cancelled before the operation completes.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api/-build-cancelled-exception/index.html">org.gradle.api.BuildCancelledException</a></td>
 <td>
 <p>
 <p>A <code>BuildCancelledException</code> is thrown when a build is interrupted due to cancellation request.</p>
 </p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.tooling/-build-cancelled-exception/index.html">org.gradle.tooling.BuildCancelledException</a></td>
-<td>
-<p>Thrown when a org.gradle.tooling.LongRunningOperation is cancelled before the operation completes.</p>
 </td>
 </tr>
 <tr>
@@ -928,18 +933,18 @@
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.api.artifacts.component/-build-identifier/index.html">org.gradle.api.artifacts.component.BuildIdentifier</a></td>
-<td>
-<p>Identifies a Gradle build.</p>
-</td>
-</tr>
-<tr>
-<td>
 <a href="../org.gradle.tooling.model/-build-identifier/index.html">org.gradle.tooling.model.BuildIdentifier</a></td>
 <td>
 <p>Identifies a Gradle build. 
 <p> A Gradle Build is a collection of one or more projects. </p>
 </p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.artifacts.component/-build-identifier/index.html">org.gradle.api.artifacts.component.BuildIdentifier</a></td>
+<td>
+<p>Identifies a Gradle build. The identifier is unique within a Gradle invocation, so for example, each included build will have a different identifier.</p>
 </td>
 </tr>
 <tr>
@@ -1020,6 +1025,12 @@
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.nativeplatform.-build-type-container/index.html">org.gradle.nativeplatform.BuildTypeContainer</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.nativeplatform/-build-type-container.html">org.gradle.nativeplatform.BuildTypeContainer</a></td>
 <td>
 <p>A container of BuildTypes.</p>
@@ -1030,6 +1041,13 @@
 <a href="../org.gradle.api/-buildable/index.html">org.gradle.api.Buildable</a></td>
 <td>
 <p>A <code>Buildable</code> represents an artifact or set of artifacts which are built by one or more Task instances.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.component/-buildable-component.html">org.gradle.api.component.BuildableComponent</a></td>
+<td>
+<p>Represents a component that can be built.</p>
 </td>
 </tr>
 <tr>
@@ -1117,6 +1135,13 @@
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.api.artifacts/-cacheable-rule/index.html">org.gradle.api.artifacts.CacheableRule</a></td>
+<td>
+<p>Denotates a rule which execution is subject to caching.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.tasks/-cacheable-task/index.html">org.gradle.api.tasks.CacheableTask</a></td>
 <td>
 <p>
@@ -1124,7 +1149,7 @@
  
 <p>Only tasks that produce reproducible and relocatable output should be marked with <code>CacheableTask</code>.</p>
  
-<p>Caching for individual task instances can be disabled via TaskOutputs#cacheIf(String, Spec) or TaskOutputs#doNotCacheIf(String, Spec).</p>
+<p>Caching for individual task instances can be disabled via <code><a href="#">TaskOutputs#cacheIf(String, Spec)</a></code> or <code><a href="#">TaskOutputs#doNotCacheIf(String, Spec)</a></code>.</p>
 </p>
 </td>
 </tr>
@@ -1152,6 +1177,20 @@
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.api.capabilities/-capabilities-metadata/index.html">org.gradle.api.capabilities.CapabilitiesMetadata</a></td>
+<td>
+<p>Gives access to the list of capabilities of a component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.capabilities/-capability/index.html">org.gradle.api.capabilities.Capability</a></td>
+<td>
+<p>Represents a capability. Capabilities are versioned. Only one component for a specific capability can be found on a dependency graph.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api/-checkable-component-spec/index.html">org.gradle.api.CheckableComponentSpec</a></td>
 <td>
 <p>A ComponentSpec that is directly checkable via a specified task.</p>
@@ -1162,6 +1201,12 @@
 <a href="../org.gradle.api.plugins.quality/-checkstyle/index.html">org.gradle.api.plugins.quality.Checkstyle</a></td>
 <td>
 <p>Runs Checkstyle against some source files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.api.plugins.quality.-checkstyle-extension/index.html">org.gradle.api.plugins.quality.CheckstyleExtension</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
 </td>
 </tr>
 <tr>
@@ -1217,15 +1262,9 @@
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.api.tasks/-classpath/index.html">org.gradle.api.tasks.Classpath</a></td>
+<a href="../org.gradle.plugins.ide.eclipse.model/-classpath/index.html">org.gradle.plugins.ide.eclipse.model.Classpath</a></td>
 <td>
-<p>
-<p>Marks a property as specifying a JVM classpath for a task.</p>
- 
-<p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
- 
-<p><strong>Note:</strong> to stay compatible with versions prior to Gradle 3.2, classpath properties need to be annotated with @InputFiles as well.</p>
-</p>
+<p>Represents the customizable elements of an eclipse classpath file. (via XML hooks everything is customizable).</p>
 </td>
 </tr>
 <tr>
@@ -1237,9 +1276,15 @@
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.plugins.ide.eclipse.model/-classpath/index.html">org.gradle.plugins.ide.eclipse.model.Classpath</a></td>
+<a href="../org.gradle.api.tasks/-classpath/index.html">org.gradle.api.tasks.Classpath</a></td>
 <td>
-<p>Represents the customizable elements of an eclipse classpath file. (via XML hooks everything is customizable).</p>
+<p>
+<p>Marks a property as specifying a JVM classpath for a task.</p>
+ 
+<p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
+ 
+<p><strong>Note:</strong> to stay compatible with versions prior to Gradle 3.2, classpath properties need to be annotated with @InputFiles as well.</p>
+</p>
 </td>
 </tr>
 <tr>
@@ -1288,6 +1333,12 @@
 <a href="../org.gradle.api.plugins.quality/-code-narc/index.html">org.gradle.api.plugins.quality.CodeNarc</a></td>
 <td>
 <p>Runs CodeNarc against some source files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.api.plugins.quality.-code-narc-extension/index.html">org.gradle.api.plugins.quality.CodeNarcExtension</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
 </td>
 </tr>
 <tr>
@@ -1350,6 +1401,12 @@
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.plugins.javascript.coffeescript.-coffee-script-extension/index.html">org.gradle.plugins.javascript.coffeescript.CoffeeScriptExtension</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.plugins.javascript.coffeescript/-coffee-script-extension/index.html">org.gradle.plugins.javascript.coffeescript.CoffeeScriptExtension</a></td>
 <td>
 </td>
@@ -1359,6 +1416,13 @@
 <a href="../org.gradle.language.coffeescript/-coffee-script-source-set.html">org.gradle.language.coffeescript.CoffeeScriptSourceSet</a></td>
 <td>
 <p>Represents a source set for CoffeeScript sources</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.process/-command-line-argument-provider/index.html">org.gradle.process.CommandLineArgumentProvider</a></td>
+<td>
+<p>Provides arguments to a process.</p>
 </td>
 </tr>
 <tr>
@@ -1453,7 +1517,7 @@
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.api.tasks.compile/-compiler-argument-provider/index.html">org.gradle.api.tasks.compile.CompilerArgumentProvider</a></td>
+<a href="../org.gradle.api.tasks.compile/-compiler-argument-provider.html">org.gradle.api.tasks.compile.CompilerArgumentProvider</a></td>
 <td>
 <p>Provides command-line arguments to the compiler.</p>
 </td>
@@ -1502,6 +1566,13 @@
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.language/-component-dependencies/index.html">org.gradle.language.ComponentDependencies</a></td>
+<td>
+<p>Allows the implementation dependencies of a component to be specified.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.artifacts.component/-component-identifier/index.html">org.gradle.api.artifacts.component.ComponentIdentifier</a></td>
 <td>
 <p>An opaque immutable identifier for a component instance. There are various sub-interfaces that expose specific details about the identifier.</p>
@@ -1519,6 +1590,13 @@
 <a href="../org.gradle.api.artifacts/-component-metadata-builder/index.html">org.gradle.api.artifacts.ComponentMetadataBuilder</a></td>
 <td>
 <p>A component metadata builder.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.artifacts/-component-metadata-context/index.html">org.gradle.api.artifacts.ComponentMetadataContext</a></td>
+<td>
+<p>Provides access to compoment metadata from a ComponentMetadataRule.</p>
 </td>
 </tr>
 <tr>
@@ -1544,6 +1622,20 @@
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.api.artifacts/-component-metadata-lister-details/index.html">org.gradle.api.artifacts.ComponentMetadataListerDetails</a></td>
+<td>
+<p>Allows a custom version lister to specify the list of versions known for a specific module.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.artifacts/-component-metadata-rule.html">org.gradle.api.artifacts.ComponentMetadataRule</a></td>
+<td>
+<p>A rule that modify ComponentMetadataDetails.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.artifacts/-component-metadata-supplier/index.html">org.gradle.api.artifacts.ComponentMetadataSupplier</a></td>
 <td>
 <p>A component metadata rule is responsible for providing the initial metadata of a component from a remote repository, in place of parsing the descriptor. Users may implement a provider to make dependency resolution faster.</p>
@@ -1554,6 +1646,13 @@
 <a href="../org.gradle.api.artifacts/-component-metadata-supplier-details/index.html">org.gradle.api.artifacts.ComponentMetadataSupplierDetails</a></td>
 <td>
 <p>A component metadata rule details, giving access to the identifier of the component being resolved, the metadata builder, and the repository resource accessor for this.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.artifacts/-component-metadata-version-lister/index.html">org.gradle.api.artifacts.ComponentMetadataVersionLister</a></td>
+<td>
+<p>Interface for custom version listers. A version lister is reponsible for returning the list of versions of a module which are available in a specific repository. For this, Gradle is going to call the lister once for each module it needs the list of versions. This will typically happen in case a dynamic version is requested, in which case we need to know the list of versions published for this module. It will not, however, be called for fixed version numbers.</p>
 </td>
 </tr>
 <tr>
@@ -1609,6 +1708,20 @@
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.api.artifacts.result/-component-selection-cause/index.html">org.gradle.api.artifacts.result.ComponentSelectionCause</a></td>
+<td>
+<p>The possible component selection causes. There are a limited number of causes, but each of them can be provided with a custom description, via ComponentSelectionDescriptor.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.artifacts.result/-component-selection-descriptor/index.html">org.gradle.api.artifacts.result.ComponentSelectionDescriptor</a></td>
+<td>
+<p>A component selection description, which wraps a cause with an optional custom description.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.artifacts.result/-component-selection-reason/index.html">org.gradle.api.artifacts.result.ComponentSelectionReason</a></td>
 <td>
 <p>Answers the question why a component was selected during the dependency resolution.</p>
@@ -1654,6 +1767,20 @@
 <a href="../org.gradle.language/-component-with-binaries/index.html">org.gradle.language.ComponentWithBinaries</a></td>
 <td>
 <p>Represents a component that is composed of one or more binaries.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.component/-component-with-coordinates/index.html">org.gradle.api.component.ComponentWithCoordinates</a></td>
+<td>
+<p>Represents a component that determines its publication coordinates.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language/-component-with-dependencies/index.html">org.gradle.language.ComponentWithDependencies</a></td>
+<td>
+<p>Represents a component with implementation dependencies.</p>
 </td>
 </tr>
 <tr>
@@ -1842,7 +1969,7 @@
 <a href="../org.gradle.api.artifacts/-configuration/index.html">org.gradle.api.artifacts.Configuration</a></td>
 <td>
 <p>A <code>Configuration</code> represents a group of artifacts and their dependencies. Find more information about declaring dependencies to a configuration or about managing configurations in docs for ConfigurationContainer 
-<p> Configuration is an instance of a FileCollection that contains all dependencies (see also <code><a href="../org.gradle.api.artifacts/-configuration/get-all-dependencies.html">#getAllDependencies()</a></code>) but not artifacts. If you want to refer to the artifacts declared in this configuration please use <code><a href="../org.gradle.api.artifacts/-configuration/get-artifacts.html">#getArtifacts()</a></code> or <code><a href="../org.gradle.api.artifacts/-configuration/get-all-artifacts.html">#getAllArtifacts()</a></code>. Read more about declaring artifacts in the configuration in docs for org.gradle.api.artifacts.dsl.ArtifactHandler</p>
+<p> Configuration is an instance of a FileCollection that contains all dependencies (see also <code><a href="../org.gradle.api.artifacts/-configuration/get-all-dependencies.html">#getAllDependencies()</a></code>) but not artifacts. If you want to refer to the artifacts declared in this configuration please use <code><a href="../org.gradle.api.artifacts/-configuration/get-artifacts.html">#getArtifacts()</a></code> or <code><a href="../org.gradle.api.artifacts/-configuration/get-all-artifacts.html">#getAllArtifacts()</a></code>. Read more about declaring artifacts in the configuration in docs for org.gradle.api.artifacts.dsl.ArtifactHandler Please see the <a href="#">Managing Dependency Configurations User Guide chapter</a> for more information.</p>
 </p>
 </td>
 </tr>
@@ -1864,7 +1991,7 @@
 <p>The configurations in a container are accessible as read-only properties of the container, using the name of the configuration as the property name. For example:</p>
  <pre><code> configurations.create('myConfiguration') configurations.myConfiguration.transitive = false </code></pre> 
 <p>A dynamic method is added for each configuration which takes a configuration closure. This is equivalent to calling <code><a href="#">#getByName(String, groovy.lang.Closure)</a></code>. For example:</p>
- <pre><code> configurations.create('myConfiguration') configurations.myConfiguration { transitive = false } </code></pre> Examples An example showing how to refer to a given configuration by name in order to get hold of all dependencies (e.g. jars, but only) <pre><code> apply plugin: 'java' //so that I can use 'compile' configuration //copying all dependencies attached to 'compile' into a specific folder task copyAllDependencies(type: Copy) { //referring to the 'compile' configuration from configurations.compile into 'allLibs' } </code></pre> An example showing how to declare and configure configurations <pre><code> apply plugin: 'java' //so that I can use 'compile', 'testCompile' configurations configurations { //adding a configuration: myConfiguration //adding a configuration that extends existing configuration: //(testCompile was added by the java plugin) myIntegrationTestsCompile.extendsFrom(testCompile) //configuring existing configurations not to put transitive dependencies on the compile classpath //this way you can avoid issues with implicit dependencies to transitive libraries compile.transitive = false testCompile.transitive = false } </code></pre> Examples on configuring the <strong>resolution strategy</strong> - see docs for ResolutionStrategy</p>
+ <pre><code> configurations.create('myConfiguration') configurations.myConfiguration { transitive = false } </code></pre> Examples An example showing how to refer to a given configuration by name in order to get hold of all dependencies (e.g. jars, but only) <pre><code> apply plugin: 'java' //so that I can use 'compile' configuration //copying all dependencies attached to 'compile' into a specific folder task copyAllDependencies(type: Copy) { //referring to the 'compile' configuration from configurations.compile into 'allLibs' } </code></pre> An example showing how to declare and configure configurations <pre><code> apply plugin: 'java' //so that I can use 'compile', 'testCompile' configurations configurations { //adding a configuration: myConfiguration //adding a configuration that extends existing configuration: //(testCompile was added by the java plugin) myIntegrationTestsCompile.extendsFrom(testCompile) //configuring existing configurations not to put transitive dependencies on the compile classpath //this way you can avoid issues with implicit dependencies to transitive libraries compile.transitive = false testCompile.transitive = false } </code></pre> Examples on configuring the <strong>resolution strategy</strong> - see docs for ResolutionStrategy Please see the <a href="#">Managing Dependency Configurations User Guide chapter</a> for more information.</p>
 </td>
 </tr>
 <tr>
@@ -1917,6 +2044,12 @@
 <a href="../org.gradle.plugins.ide.eclipse.model/-container/index.html">org.gradle.plugins.ide.eclipse.model.Container</a></td>
 <td>
 <p>A container classpath entry.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.api.file.-content-filterable/index.html">org.gradle.api.file.ContentFilterable</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
 </td>
 </tr>
 <tr>
@@ -2091,7 +2224,7 @@
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.language.cpp/-cpp-platform.html">org.gradle.language.cpp.CppPlatform</a></td>
+<a href="../org.gradle.language.cpp/-cpp-platform/index.html">org.gradle.language.cpp.CppPlatform</a></td>
 <td>
 <p>A target platform for building C++ binaries.</p>
 </td>
@@ -2160,33 +2293,6 @@
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.api.tasks.application/-create-start-scripts/index.html">org.gradle.api.tasks.application.CreateStartScripts</a></td>
-<td>
-<p>Creates start scripts for launching JVM applications. 
-<p> Example: </p>
-<pre><code> task createStartScripts(type: CreateStartScripts) { outputDir = file('build/sample') mainClassName = 'org.gradle.test.Main' applicationName = 'myApp' classpath = files('path/to/some.jar') } </code></pre> 
-<p> Note: the Gradle <code>"application"</code> plugin adds a pre-configured task of this type named <code>"startScripts"</code>. </p>
-<p> The task generates separate scripts targeted at Microsoft Windows environments and UNIX-like environments (e.g. Linux, macOS). The actual generation is implemented by the <code><a href="../org.gradle.jvm.application.tasks/-create-start-scripts/get-windows-start-script-generator.html">#getWindowsStartScriptGenerator()</a></code> and <code><a href="../org.gradle.jvm.application.tasks/-create-start-scripts/get-unix-start-script-generator.html">#getUnixStartScriptGenerator()</a></code> properties, of type org.gradle.jvm.application.scripts.ScriptGenerator. </p>
-<p> Example: </p>
-<pre><code> task createStartScripts(type: CreateStartScripts) { unixStartScriptGenerator = new CustomUnixStartScriptGenerator() windowsStartScriptGenerator = new CustomWindowsStartScriptGenerator() } class CustomUnixStartScriptGenerator implements ScriptGenerator { void generateScript(JavaAppStartScriptGenerationDetails details, Writer destination) { // implementation } } class CustomWindowsStartScriptGenerator implements ScriptGenerator { void generateScript(JavaAppStartScriptGenerationDetails details, Writer destination) { // implementation } } </code></pre> 
-<p> The default generators are of the type org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator, with default templates. This templates can be changed via the <code><a href="../org.gradle.jvm.application.scripts/-template-based-script-generator/set-template.html">org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator#setTemplate(org.gradle.api.resources.TextResource)</a></code> method. </p>
-<p> The default implementations used by this task use <a href="#">Groovy's SimpleTemplateEngine</a> to parse the template, with the following variables available: </p>
-<ul> <li><code>applicationName</code></li>
- <li><code>optsEnvironmentVar</code></li>
- <li><code>exitEnvironmentVar</code></li>
- <li><code>mainClassName</code></li>
- <li><code>defaultJvmOpts</code></li>
- <li><code>appNameSystemProperty</code></li>
- <li><code>appHomeRelativePath</code></li>
- <li><code>classpath</code></li>
- </ul>
- 
-<p> Example: </p>
-<pre><code> task createStartScripts(type: CreateStartScripts) { unixStartScriptGenerator.template = resources.text.fromFile('customUnixStartScript.txt') windowsStartScriptGenerator.template = resources.text.fromFile('customWindowsStartScript.txt') } </code></pre></p>
-</td>
-</tr>
-<tr>
-<td>
 <a href="../org.gradle.jvm.application.tasks/-create-start-scripts/index.html">org.gradle.jvm.application.tasks.CreateStartScripts</a></td>
 <td>
 <p>Creates start scripts for launching JVM applications. 
@@ -2203,6 +2309,33 @@
  <li><code>exitEnvironmentVar</code></li>
  <li><code>mainClassName</code></li>
  <li><code>executableDir</code></li>
+ <li><code>defaultJvmOpts</code></li>
+ <li><code>appNameSystemProperty</code></li>
+ <li><code>appHomeRelativePath</code></li>
+ <li><code>classpath</code></li>
+ </ul>
+ 
+<p> Example: </p>
+<pre><code> task createStartScripts(type: CreateStartScripts) { unixStartScriptGenerator.template = resources.text.fromFile('customUnixStartScript.txt') windowsStartScriptGenerator.template = resources.text.fromFile('customWindowsStartScript.txt') } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.tasks.application/-create-start-scripts/index.html">org.gradle.api.tasks.application.CreateStartScripts</a></td>
+<td>
+<p>Creates start scripts for launching JVM applications. 
+<p> Example: </p>
+<pre><code> task createStartScripts(type: CreateStartScripts) { outputDir = file('build/sample') mainClassName = 'org.gradle.test.Main' applicationName = 'myApp' classpath = files('path/to/some.jar') } </code></pre> 
+<p> Note: the Gradle <code>"application"</code> plugin adds a pre-configured task of this type named <code>"startScripts"</code>. </p>
+<p> The task generates separate scripts targeted at Microsoft Windows environments and UNIX-like environments (e.g. Linux, macOS). The actual generation is implemented by the <code><a href="../org.gradle.jvm.application.tasks/-create-start-scripts/get-windows-start-script-generator.html">#getWindowsStartScriptGenerator()</a></code> and <code><a href="../org.gradle.jvm.application.tasks/-create-start-scripts/get-unix-start-script-generator.html">#getUnixStartScriptGenerator()</a></code> properties, of type org.gradle.jvm.application.scripts.ScriptGenerator. </p>
+<p> Example: </p>
+<pre><code> task createStartScripts(type: CreateStartScripts) { unixStartScriptGenerator = new CustomUnixStartScriptGenerator() windowsStartScriptGenerator = new CustomWindowsStartScriptGenerator() } class CustomUnixStartScriptGenerator implements ScriptGenerator { void generateScript(JavaAppStartScriptGenerationDetails details, Writer destination) { // implementation } } class CustomWindowsStartScriptGenerator implements ScriptGenerator { void generateScript(JavaAppStartScriptGenerationDetails details, Writer destination) { // implementation } } </code></pre> 
+<p> The default generators are of the type org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator, with default templates. This templates can be changed via the <code><a href="../org.gradle.jvm.application.scripts/-template-based-script-generator/set-template.html">org.gradle.jvm.application.scripts.TemplateBasedScriptGenerator#setTemplate(org.gradle.api.resources.TextResource)</a></code> method. </p>
+<p> The default implementations used by this task use <a href="#">Groovy's SimpleTemplateEngine</a> to parse the template, with the following variables available: </p>
+<ul> <li><code>applicationName</code></li>
+ <li><code>optsEnvironmentVar</code></li>
+ <li><code>exitEnvironmentVar</code></li>
+ <li><code>mainClassName</code></li>
  <li><code>defaultJvmOpts</code></li>
  <li><code>appNameSystemProperty</code></li>
  <li><code>appHomeRelativePath</code></li>
@@ -2297,9 +2430,9 @@
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.api.artifacts/-dependency/index.html">org.gradle.api.artifacts.Dependency</a></td>
+<a href="../org.gradle.tooling.model/-dependency.html">org.gradle.tooling.model.Dependency</a></td>
 <td>
-<p>A <code>Dependency</code> represents a dependency on the artifacts from a particular source. A source can be an Ivy module, a Maven POM, another Gradle project, a collection of Files, etc... A source can have zero or more artifacts.</p>
+<p>Represents an artifact dependency.</p>
 </td>
 </tr>
 <tr>
@@ -2311,9 +2444,9 @@
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.tooling.model/-dependency.html">org.gradle.tooling.model.Dependency</a></td>
+<a href="../org.gradle.api.artifacts/-dependency/index.html">org.gradle.api.artifacts.Dependency</a></td>
 <td>
-<p>Represents an artifact dependency.</p>
+<p>A <code>Dependency</code> represents a dependency on the artifacts from a particular source. A source can be an Ivy module, a Maven POM, another Gradle project, a collection of Files, etc... A source can have zero or more artifacts.</p>
 </td>
 </tr>
 <tr>
@@ -2346,6 +2479,13 @@
 <a href="../org.gradle.api.artifacts/-dependency-constraint-metadata.html">org.gradle.api.artifacts.DependencyConstraintMetadata</a></td>
 <td>
 <p>Describes a dependency constraint declared in a resolved component's metadata, which typically originates from a component descriptor (Gradle metadata file). This interface can be used to adjust a dependency constraint's properties via metadata rules (see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.artifacts/-dependency-constraint-set.html">org.gradle.api.artifacts.DependencyConstraintSet</a></td>
+<td>
+<p>A set of dependency constraint definitions that are associated with a configuration.</p>
 </td>
 </tr>
 <tr>
@@ -2441,6 +2581,13 @@ File dependencies
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.api.artifacts.dsl/-dependency-locking-handler/index.html">org.gradle.api.artifacts.dsl.DependencyLockingHandler</a></td>
+<td>
+<p>A <code>DependencyLockingHandler</code> manages the behaviour and configuration of dependency locking.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.artifacts/-dependency-metadata/index.html">org.gradle.api.artifacts.DependencyMetadata</a></td>
 <td>
 <p>Describes a metadata about a dependency - direct dependency or dependency constraint - declared in a resolved component's metadata.</p>
@@ -2458,13 +2605,6 @@ File dependencies
 <a href="../org.gradle.api.tasks.diagnostics/-dependency-report-task/index.html">org.gradle.api.tasks.diagnostics.DependencyReportTask</a></td>
 <td>
 <p>Displays the dependency tree for a project. An instance of this type is used when you execute the <code>dependencies</code> task from the command-line.</p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.api.artifacts.cache/-dependency-resolution-control.html">org.gradle.api.artifacts.cache.DependencyResolutionControl</a></td>
-<td>
-<p>Command methods for controlling dependency resolution via the DSL.</p>
 </td>
 </tr>
 <tr>
@@ -2539,16 +2679,16 @@ File dependencies
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.language.base/-dependent-source-set/index.html">org.gradle.language.base.DependentSourceSet</a></td>
+<a href="../org.gradle.language.nativeplatform/-dependent-source-set/index.html">org.gradle.language.nativeplatform.DependentSourceSet</a></td>
 <td>
-<p>A source set that can have dependencies on other Libraries.</p>
+<p>A source set that depends on one or more org.gradle.nativeplatform.NativeDependencySets to be built.</p>
 </td>
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.language.nativeplatform/-dependent-source-set/index.html">org.gradle.language.nativeplatform.DependentSourceSet</a></td>
+<a href="../org.gradle.language.base/-dependent-source-set/index.html">org.gradle.language.base.DependentSourceSet</a></td>
 <td>
-<p>A source set that depends on one or more org.gradle.nativeplatform.NativeDependencySets to be built.</p>
+<p>A source set that can have dependencies on other Libraries.</p>
 </td>
 </tr>
 <tr>
@@ -2590,13 +2730,6 @@ File dependencies
 <a href="../org.gradle.api.artifacts/-direct-dependencies-metadata.html">org.gradle.api.artifacts.DirectDependenciesMetadata</a></td>
 <td>
 <p>Describes the dependencies of a variant declared in a resolved component's metadata, which typically originate from a component descriptor (Gradle metadata file, Ivy file, Maven POM). This interface can be used to adjust the dependencies of a published component via metadata rules (see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.api.artifacts/-direct-dependency.html">org.gradle.api.artifacts.DirectDependency</a></td>
-<td>
-<p>Implementations of this interface always describe direct dependencies and not constraints may optionally considered as dependency.</p>
 </td>
 </tr>
 <tr>
@@ -2680,6 +2813,12 @@ File dependencies
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.api.distribution.-distribution-container/index.html">org.gradle.api.distribution.DistributionContainer</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.distribution/-distribution-container.html">org.gradle.api.distribution.DistributionContainer</a></td>
 <td>
 <p>A <code>DistributionContainer</code> manages a set of Distribution objects.</p>
@@ -2705,7 +2844,7 @@ File dependencies
 <a href="../org.gradle.api/-domain-object-collection/index.html">org.gradle.api.DomainObjectCollection</a></td>
 <td>
 <p>
-<p>A <code>DomainObjectCollection</code> is a specialised Collection that adds the ability to modification notifications and live filtered sub collections.</p>
+<p>A <code>DomainObjectCollection</code> is a specialised Collection that adds the ability to receive modification notifications and use live filtered sub collections.</p>
  
 <p>The filtered collections returned by the filtering methods, such as <code><a href="#">#matching(Closure)</a></code>, return collections that are <em>live</em>. That is, they reflect changes made to the source collection that they were created from. This is true for filtered collections made from filtered collections etc.</p>
  
@@ -2715,18 +2854,18 @@ File dependencies
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.tooling.model/-domain-object-set/index.html">org.gradle.tooling.model.DomainObjectSet</a></td>
+<td>
+<p>A set of domain objects of type T.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api/-domain-object-set/index.html">org.gradle.api.DomainObjectSet</a></td>
 <td>
 <p>
 <p>A <code>DomainObjectSet</code> is a specialisation of DomainObjectCollection that guarantees Set semantics.</p>
 </p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.tooling.model/-domain-object-set/index.html">org.gradle.tooling.model.DomainObjectSet</a></td>
-<td>
-<p>A set of domain objects of type T.</p>
 </td>
 </tr>
 <tr>
@@ -2771,6 +2910,12 @@ File dependencies
 <p>
 <p> A Plugin with tasks which assemble a web application into a EAR file. </p>
 </p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.plugins.ear.-ear-plugin-convention/index.html">org.gradle.plugins.ear.EarPluginConvention</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
 </td>
 </tr>
 <tr>
@@ -2857,6 +3002,12 @@ File dependencies
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.plugins.ide.eclipse.model.-eclipse-model/index.html">org.gradle.plugins.ide.eclipse.model.EclipseModel</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.plugins.ide.eclipse.model/-eclipse-model/index.html">org.gradle.plugins.ide.eclipse.model.EclipseModel</a></td>
 <td>
 <p>DSL-friendly model of the Eclipse project information. First point of entry for customizing Eclipse project generation. <pre><code> apply plugin: 'java' apply plugin: 'eclipse' apply plugin: 'eclipse-wtp' //for web projects only eclipse { pathVariables 'GRADLE_HOME': file('/best/software/gradle'), 'TOMCAT_HOME': file('../tomcat') project { //see docs for EclipseProject } classpath { //see docs for EclipseClasspath } wtp { //see docs for EclipseWtp } } </code></pre> More examples in docs for EclipseProject, EclipseClasspath, EclipseWtp</p>
@@ -2880,6 +3031,15 @@ File dependencies
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.tooling.model.eclipse/-eclipse-project/index.html">org.gradle.tooling.model.eclipse.EclipseProject</a></td>
+<td>
+<p>The complete model of an Eclipse project. 
+<p>Note that the names of Eclipse projects are unique, and can be used as an identifier for the project.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.plugins.ide.eclipse.model/-eclipse-project/index.html">org.gradle.plugins.ide.eclipse.model.EclipseProject</a></td>
 <td>
 <p>Enables fine-tuning project details (.project file) of the Eclipse plugin 
@@ -2888,15 +3048,6 @@ File dependencies
 <p> beforeMerged and whenMerged closures receive Project object </p>
 <p> Examples of advanced configuration: </p>
 <pre><code> apply plugin: 'java' apply plugin: 'eclipse' eclipse { project { file { //if you want to mess with the resulting XML in whatever way you fancy withXml { def node = it.asNode() node.appendNode('xml', 'is what I love') } //closure executed after .project content is loaded from existing file //but before gradle build information is merged beforeMerged { project -&gt; //if you want skip merging natures... (a very abstract example) project.natures.clear() } //closure executed after .project content is loaded from existing file //and after gradle build information is merged whenMerged { project -&gt; //you can tinker with the Project here } } } } </code></pre></p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.tooling.model.eclipse/-eclipse-project/index.html">org.gradle.tooling.model.eclipse.EclipseProject</a></td>
-<td>
-<p>The complete model of an Eclipse project. 
-<p>Note that the names of Eclipse projects are unique, and can be used as an identifier for the project.</p>
-</p>
 </td>
 </tr>
 <tr>
@@ -2977,6 +3128,12 @@ File dependencies
 <a href="../org.gradle.api.file/-empty-file-visitor/index.html">org.gradle.api.file.EmptyFileVisitor</a></td>
 <td>
 <p>The EmptyFileVisitor can be extends by implementations that only require to implement one of the 2 visit methods (dir or file). This is just to limit the amount of code clutter when not both visit methods need to be implemented.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.plugins.javascript.envjs.-env-js-extension/index.html">org.gradle.plugins.javascript.envjs.EnvJsExtension</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
 </td>
 </tr>
 <tr>
@@ -3079,18 +3236,18 @@ File dependencies
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.tooling.model/-external-dependency/index.html">org.gradle.tooling.model.ExternalDependency</a></td>
+<td>
+<p>Represents an external artifact dependency.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.artifacts/-external-dependency/index.html">org.gradle.api.artifacts.ExternalDependency</a></td>
 <td>
 <p>
 <p>An <code>ExternalDependency</code> is a Dependency on a source outside the current project hierarchy.</p>
 </p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.tooling.model/-external-dependency/index.html">org.gradle.tooling.model.ExternalDependency</a></td>
-<td>
-<p>Represents an external artifact dependency.</p>
 </td>
 </tr>
 <tr>
@@ -3116,19 +3273,6 @@ File dependencies
 <p> Extra properties extensions allow new properties to be added to existing domain objects. They act like maps, allowing the storage of arbitrary key/value pairs. All ExtensionAware Gradle domain objects intrinsically have an extension named “{@value #EXTENSION_NAME}” of this type. </p>
 <p> An important feature of extra properties extensions is that all of its properties are exposed for reading and writing via the ExtensionAware object that owns the extension. </p>
 <pre><code> project.ext.set("myProp", "myValue") assert project.myProp == "myValue" project.myProp = "anotherValue" assert project.myProp == "anotherValue" assert project.ext.get("myProp") == "anotherValue" </code></pre> Extra properties extension objects support Groovy property syntax. That is, a property can be read via <code>extension.«name»</code> and set via <code>extension.«name» = "value"</code>. <strong>Wherever possible, the Groovy property syntax should be preferred over the <code><a href="#">#get(String)</a></code> and <code><a href="#">#set(String, Object)</a></code> methods.</strong> <pre><code> project.ext { myprop = "a" } assert project.myprop == "a" assert project.ext.myprop == "a" project.myprop = "b" assert project.myprop == "b" assert project.ext.myprop == "b" </code></pre> You can also use the Groovy accessor syntax to get and set properties on an extra properties extension. <pre><code> project.ext["otherProp"] = "a" assert project.otherProp == "a" assert project.ext["otherProp"] == "a" </code></pre> The exception that is thrown when an attempt is made to get the value of a property that does not exist is different depending on whether the Groovy syntax is used or not. If Groovy property syntax is used, the Groovy groovy.lang.MissingPropertyException will be thrown. When the <code><a href="#">#get(String)</a></code> method is used, an UnknownPropertyException will be thrown.</p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.kotlin.dsl/-extra-property-delegate/index.html">org.gradle.kotlin.dsl.ExtraPropertyDelegate</a></td>
-<td>
-<p>Enables typed access to extra properties.</p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.kotlin.dsl/-extra-property-delegate-provider/index.html">org.gradle.kotlin.dsl.ExtraPropertyDelegateProvider</a></td>
-<td>
 </td>
 </tr>
 <tr>
@@ -3282,6 +3426,12 @@ File dependencies
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.api.plugins.quality.-find-bugs-extension/index.html">org.gradle.api.plugins.quality.FindBugsExtension</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.plugins.quality/-find-bugs-extension/index.html">org.gradle.api.plugins.quality.FindBugsExtension</a></td>
 <td>
 <p>Configuration options for the FindBugs plugin. All options have sensible defaults. See the <a href="#">FindBugs Manual</a> for additional information on these options. 
@@ -3339,6 +3489,12 @@ File dependencies
 <a href="../org.gradle.nativeplatform/-flavor/index.html">org.gradle.nativeplatform.Flavor</a></td>
 <td>
 <p>Defines a custom variant that differentiate a NativeBinary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.nativeplatform.-flavor-container/index.html">org.gradle.nativeplatform.FlavorContainer</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
 </td>
 </tr>
 <tr>
@@ -3556,6 +3712,13 @@ File dependencies
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.swiftpm.tasks/-generate-swift-package-manager-manifest/index.html">org.gradle.swiftpm.tasks.GenerateSwiftPackageManagerManifest</a></td>
+<td>
+<p>A task that produces a Swift Package Manager manifest.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.ide.xcode.tasks/-generate-workspace-settings-file-task/index.html">org.gradle.ide.xcode.tasks.GenerateWorkspaceSettingsFileTask</a></td>
 <td>
 <p>Task for generating a workspace settings file.</p>
@@ -3627,6 +3790,12 @@ File dependencies
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.api.invocation.-gradle/index.html">org.gradle.api.invocation.Gradle</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.invocation/-gradle/index.html">org.gradle.api.invocation.Gradle</a></td>
 <td>
 <p>Represents an invocation of Gradle. 
@@ -3636,16 +3805,16 @@ File dependencies
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.api.tasks/-gradle-build/index.html">org.gradle.api.tasks.GradleBuild</a></td>
+<a href="../org.gradle.tooling.model.gradle/-gradle-build/index.html">org.gradle.tooling.model.gradle.GradleBuild</a></td>
 <td>
-<p>Executes a Gradle build.</p>
+<p>Provides information about the structure of a Gradle build.</p>
 </td>
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.tooling.model.gradle/-gradle-build/index.html">org.gradle.tooling.model.gradle.GradleBuild</a></td>
+<a href="../org.gradle.api.tasks/-gradle-build/index.html">org.gradle.api.tasks.GradleBuild</a></td>
 <td>
-<p>Provides information about the structure of a Gradle build.</p>
+<p>Executes a Gradle build.</p>
 </td>
 </tr>
 <tr>
@@ -3724,6 +3893,12 @@ Java version compatibility
 <a href="../org.gradle.tooling.model/-gradle-module-version/index.html">org.gradle.tooling.model.GradleModuleVersion</a></td>
 <td>
 <p>Informs about a module version, i.e. group, name, version.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.plugin.devel.-gradle-plugin-development-extension/index.html">org.gradle.plugin.devel.GradlePluginDevelopmentExtension</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
 </td>
 </tr>
 <tr>
@@ -3837,6 +4012,12 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 <p>
 <p>A Plugin which extends the JavaPlugin to provide support for compiling and documenting Groovy source files.</p>
 </p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.api.tasks.-groovy-runtime/index.html">org.gradle.api.tasks.GroovyRuntime</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
 </td>
 </tr>
 <tr>
@@ -3978,6 +4159,13 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.plugins.ide/-ide-workspace/index.html">org.gradle.plugins.ide.IdeWorkspace</a></td>
+<td>
+<p>Represents an IDE "workspace" that is generated by Gradle and can be opened in the IDE.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.tooling.model.idea/-idea-compiler-output/index.html">org.gradle.tooling.model.idea.IdeaCompilerOutput</a></td>
 <td>
 <p>IDEA compiler output settings.</p>
@@ -4013,6 +4201,13 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.tooling.model.idea/-idea-language-level/index.html">org.gradle.tooling.model.idea.IdeaLanguageLevel</a></td>
+<td>
+<p>Language level setting for IDEA.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.plugins.ide.idea.model/-idea-language-level/index.html">org.gradle.plugins.ide.idea.model.IdeaLanguageLevel</a></td>
 <td>
 <p>Java language level used by IDEA projects.</p>
@@ -4020,9 +4215,8 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.tooling.model.idea/-idea-language-level/index.html">org.gradle.tooling.model.idea.IdeaLanguageLevel</a></td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.plugins.ide.idea.model.-idea-model/index.html">org.gradle.plugins.ide.idea.model.IdeaModel</a> (extensions in package org.gradle.kotlin.dsl)</td>
 <td>
-<p>Language level setting for IDEA.</p>
 </td>
 </tr>
 <tr>
@@ -4036,21 +4230,21 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.plugins.ide.idea.model/-idea-module/index.html">org.gradle.plugins.ide.idea.model.IdeaModule</a></td>
+<a href="../org.gradle.tooling.model.idea/-idea-module/index.html">org.gradle.tooling.model.idea.IdeaModule</a></td>
 <td>
-<p>Enables fine-tuning module details (*.iml file) of the IDEA plugin. 
-<p> Example of use with a blend of most possible properties. Typically you don't have to configure this model directly because Gradle configures it for you. </p>
-<pre><code> apply plugin: 'java' apply plugin: 'idea' //for the sake of this example, let's introduce a 'performanceTestCompile' configuration configurations { performanceTestCompile performanceTestCompile.extendsFrom(testCompile) } dependencies { //performanceTestCompile "some.interesting:dependency:1.0" } idea { //if you want parts of paths in resulting files (*.iml, etc.) to be replaced by variables (Files) pathVariables GRADLE_HOME: file('~/cool-software/gradle') module { //if for some reason you want to add an extra sourceDirs sourceDirs += file('some-extra-source-folder') //and some extra test source dirs testSourceDirs += file('some-extra-test-dir') //and hint to mark some of existing source dirs as generated sources generatedSourceDirs += file('some-extra-source-folder') //and some extra dirs that should be excluded by IDEA excludeDirs += file('some-extra-exclude-dir') //if you don't like the name Gradle has chosen name = 'some-better-name' //if you prefer different output folders inheritOutputDirs = false outputDir = file('muchBetterOutputDir') testOutputDir = file('muchBetterTestOutputDir') //if you prefer different SDK than the one inherited from IDEA project jdkName = '1.6' //put our custom test dependencies onto IDEA's TEST scope scopes.TEST.plus += [ configurations.performanceTestCompile ] //if 'content root' (as IDEA calls it) of the module is different contentRoot = file('my-module-content-root') //if you love browsing Javadoc downloadJavadoc = true //and hate reading sources :) downloadSources = false } } </code></pre> For tackling edge cases, users can perform advanced configuration on the resulting XML file. It is also possible to affect the way the IDEA plugin merges the existing configuration via beforeMerged and whenMerged closures. 
-<p> beforeMerged and whenMerged closures receive a Module parameter </p>
-<p> Examples of advanced configuration: </p>
-<pre><code> apply plugin: 'java' apply plugin: 'idea' idea { module { iml { //if you like to keep *.iml in a secret folder generateTo = file('secret-modules-folder') //if you want to mess with the resulting XML in whatever way you fancy withXml { def node = it.asNode() node.appendNode('iLoveGradle', 'true') node.appendNode('butAlso', 'I find increasing pleasure tinkering with output *.iml contents. Yeah!!!') } //closure executed after *.iml content is loaded from existing file //but before gradle build information is merged beforeMerged { module -&gt; //if you want skip merging exclude dirs module.excludeFolders.clear() } //closure executed after *.iml content is loaded from existing file //and after gradle build information is merged whenMerged { module -&gt; //you can tinker with Module } } } } </code></pre></p>
+<p>Represents information about the IDEA module.</p>
 </td>
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.tooling.model.idea/-idea-module/index.html">org.gradle.tooling.model.idea.IdeaModule</a></td>
+<a href="../org.gradle.plugins.ide.idea.model/-idea-module/index.html">org.gradle.plugins.ide.idea.model.IdeaModule</a></td>
 <td>
-<p>Represents information about the IDEA module.</p>
+<p>Enables fine-tuning module details (*.iml file) of the IDEA plugin. 
+<p> Example of use with a blend of most possible properties. Typically you don't have to configure this model directly because Gradle configures it for you. </p>
+<pre><code> apply plugin: 'java' apply plugin: 'idea' //for the sake of this example, let's introduce a 'performanceTestCompile' configuration configurations { performanceTestCompile performanceTestCompile.extendsFrom(testCompile) } dependencies { //performanceTestCompile "some.interesting:dependency:1.0" } idea { //if you want parts of paths in resulting files (*.iml, etc.) to be replaced by variables (Files) pathVariables GRADLE_HOME: file('~/cool-software/gradle') module { //if for some reason you want to add an extra sourceDirs sourceDirs += file('some-extra-source-folder') //and some extra test source dirs testSourceDirs += file('some-extra-test-dir') //and some extra resource dirs resourceDirs += file('some-extra-resource-dir') //and some extra test resource dirs testResourceDirs += file('some-extra-test-resource-dir') //and hint to mark some of existing source dirs as generated sources generatedSourceDirs += file('some-extra-source-folder') //and some extra dirs that should be excluded by IDEA excludeDirs += file('some-extra-exclude-dir') //if you don't like the name Gradle has chosen name = 'some-better-name' //if you prefer different output folders inheritOutputDirs = false outputDir = file('muchBetterOutputDir') testOutputDir = file('muchBetterTestOutputDir') //if you prefer different SDK than the one inherited from IDEA project jdkName = '1.6' //put our custom test dependencies onto IDEA's TEST scope scopes.TEST.plus += [ configurations.performanceTestCompile ] //if 'content root' (as IDEA calls it) of the module is different contentRoot = file('my-module-content-root') //if you love browsing Javadoc downloadJavadoc = true //and hate reading sources :) downloadSources = false } } </code></pre> For tackling edge cases, users can perform advanced configuration on the resulting XML file. It is also possible to affect the way the IDEA plugin merges the existing configuration via beforeMerged and whenMerged closures. 
+<p> beforeMerged and whenMerged closures receive a Module parameter </p>
+<p> Examples of advanced configuration: </p>
+<pre><code> apply plugin: 'java' apply plugin: 'idea' idea { module { iml { //if you like to keep *.iml in a secret folder generateTo = file('secret-modules-folder') //if you want to mess with the resulting XML in whatever way you fancy withXml { def node = it.asNode() node.appendNode('iLoveGradle', 'true') node.appendNode('butAlso', 'I find increasing pleasure tinkering with output *.iml contents. Yeah!!!') } //closure executed after *.iml content is loaded from existing file //but before gradle build information is merged beforeMerged { module -&gt; //if you want skip merging exclude dirs module.excludeFolders.clear() } //closure executed after *.iml content is loaded from existing file //and after gradle build information is merged whenMerged { module -&gt; //you can tinker with Module } } } } </code></pre></p>
 </td>
 </tr>
 <tr>
@@ -4085,6 +4279,13 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.tooling.model.idea/-idea-project/index.html">org.gradle.tooling.model.idea.IdeaProject</a></td>
+<td>
+<p>Represents the information about the IDEA project.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.plugins.ide.idea.model/-idea-project/index.html">org.gradle.plugins.ide.idea.model.IdeaProject</a></td>
 <td>
 <p>Enables fine-tuning project details (*.ipr file) of the IDEA plugin. 
@@ -4093,13 +4294,6 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 <p> beforeMerged and whenMerged closures receive Project object </p>
 <p> Examples of advanced configuration: </p>
 <pre><code> apply plugin: 'java' apply plugin: 'idea' idea { project { ipr { //you can tinker with the output *.ipr file before it's written out withXml { def node = it.asNode() node.appendNode('iLove', 'tinkering with the output *.ipr file!') } //closure executed after *.ipr content is loaded from existing file //but before gradle build information is merged beforeMerged { project -&gt; //you can tinker with Project } //closure executed after *.ipr content is loaded from existing file //and after gradle build information is merged whenMerged { project -&gt; //you can tinker with Project } } } } </code></pre></p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.tooling.model.idea/-idea-project/index.html">org.gradle.tooling.model.idea.IdeaProject</a></td>
-<td>
-<p>Represents the information about the IDEA project.</p>
 </td>
 </tr>
 <tr>
@@ -4177,6 +4371,41 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 <a href="../org.gradle.buildinit.tasks/-init-build/index.html">org.gradle.buildinit.tasks.InitBuild</a></td>
 <td>
 <p>Generates a Gradle project structure.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/-init-script-api/index.html">org.gradle.kotlin.dsl.InitScriptApi</a></td>
+<td>
+<p>Standard implementation of the API exposed to all types of <a href="../org.gradle.api.invocation/-gradle/index.html">Gradle</a> scripts,
+precompiled and otherwise.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/-initial-value-extra-property-delegate/index.html">org.gradle.kotlin.dsl.InitialValueExtraPropertyDelegate</a></td>
+<td>
+<p>Enables typed access to extra properties with initial value.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/-initial-value-extra-property-delegate-provider/index.html">org.gradle.kotlin.dsl.InitialValueExtraPropertyDelegateProvider</a></td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.initialization.definition/-injected-plugin-dependencies/index.html">org.gradle.api.initialization.definition.InjectedPluginDependencies</a></td>
+<td>
+<p>The DSL for declaring plugins to inject into an included build. TODO: Plugins need to be located in this build's buildSrc.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.initialization.definition/-injected-plugin-dependency.html">org.gradle.api.initialization.definition.InjectedPluginDependency</a></td>
+<td>
+<p>Specification of a dependency on a plugin injected into an included build.</p>
 </td>
 </tr>
 <tr>
@@ -4271,6 +4500,13 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 <a href="../org.gradle.tooling.model.java/-installed-jdk/index.html">org.gradle.tooling.model.java.InstalledJdk</a></td>
 <td>
 <p>Represents a Java Development Kit machine installation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.tooling/-intermediate-result-handler/index.html">org.gradle.tooling.IntermediateResultHandler</a></td>
+<td>
+<p>A handler for an intermediate result obtained by a BuildActionExecuter.</p>
 </td>
 </tr>
 <tr>
@@ -4467,11 +4703,32 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.api.publish.ivy/-ivy-module-descriptor-author/index.html">org.gradle.api.publish.ivy.IvyModuleDescriptorAuthor</a></td>
+<td>
+<p>An author of an Ivy publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.publish.ivy/-ivy-module-descriptor-description/index.html">org.gradle.api.publish.ivy.IvyModuleDescriptorDescription</a></td>
+<td>
+<p>The description of an Ivy publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.publish.ivy/-ivy-module-descriptor-license/index.html">org.gradle.api.publish.ivy.IvyModuleDescriptorLicense</a></td>
+<td>
+<p>A license of an Ivy publication.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.publish.ivy/-ivy-module-descriptor-spec/index.html">org.gradle.api.publish.ivy.IvyModuleDescriptorSpec</a></td>
 <td>
 <p>The descriptor of any Ivy publication. 
 <p> Corresponds to the <a href="#">XML version of the Ivy Module Descriptor</a>. </p>
-<p> The <code><a href="#">#withXml(org.gradle.api.Action)</a></code> method can be used to modify the descriptor after it has been generated according to the publication data.</p>
+<p> The <code><a href="#">#withXml(org.gradle.api.Action)</a></code> method can be used to modify the descriptor after it has been generated according to the publication data. However, the preferred way to customize the project information to be published is to use the dedicated configuration methods exposed by this class, e.g. <code><a href="#">#description(Action)</a></code>.</p>
 </p>
 </td>
 </tr>
@@ -4497,8 +4754,9 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 <p> For certain common use cases, it's often sufficient to specify the component to publish, using (<code><a href="../org.gradle.api.publish.ivy/-ivy-publication/from.html">#from(org.gradle.api.component.SoftwareComponent)</a></code>. The published component is used to determine which artifacts to publish, and which configurations and dependencies should be listed in the generated ivy descriptor file. </p>
 <p> You can add configurations to the generated ivy descriptor file, by supplying a Closure to the <code><a href="#">#configurations(org.gradle.api.Action)</a></code> method. </p>
 <p> To add additional artifacts to the set published, use the <code><a href="#">#artifact(Object)</a></code> and <code><a href="#">#artifact(Object, org.gradle.api.Action)</a></code> methods. You can also completely replace the set of published artifacts using <code><a href="#">#setArtifacts(Iterable)</a></code>. Together, these methods give you full control over the artifacts to be published. </p>
+<p> In addition, IvyModuleDescriptorSpec provides configuration methods to customize licenses, authors, and the description to be published in the Ivy module descriptor. </p>
 <p> For any other tweaks to the publication, it is possible to modify the generated Ivy descriptor file prior to publication. This is done using the <code><a href="#">IvyModuleDescriptorSpec#withXml(org.gradle.api.Action)</a></code> method, normally via a Closure passed to the <code><a href="#">#descriptor(org.gradle.api.Action)</a></code> method. </p>
- Example of publishing a java component with an added source jar and custom module description <pre><code> apply plugin: "java" apply plugin: "ivy-publish" task sourceJar(type: Jar) { from sourceSets.main.allJava } publishing { publications { myPublication(IvyPublication) { from components.java artifact(sourceJar) { type "source" extension "src.jar" conf "runtime" } descriptor.withXml { asNode().info[0].appendNode("description", "custom-description") } } } } </code></pre></p>
+ Example of publishing a java component with an added source jar and custom module description <pre><code> apply plugin: "java" apply plugin: "ivy-publish" task sourceJar(type: Jar) { from sourceSets.main.allJava } publishing { publications { myPublication(IvyPublication) { from components.java artifact(sourceJar) { type "source" extension "src.jar" conf "runtime" } descriptor { license { name = "Custom License" } author { name = "Custom Name" } description { text = "Custom Description" } } } } } </code></pre></p>
 </td>
 </tr>
 <tr>
@@ -4513,6 +4771,12 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 <a href="../org.gradle.api.plugins.quality/-j-depend/index.html">org.gradle.api.plugins.quality.JDepend</a></td>
 <td>
 <p>Analyzes code with <a href="#">JDepend</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.api.plugins.quality.-j-depend-extension/index.html">org.gradle.api.plugins.quality.JDependExtension</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
 </td>
 </tr>
 <tr>
@@ -4541,6 +4805,13 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 <a href="../org.gradle.api.tasks.testing.junit/-j-unit-options/index.html">org.gradle.api.tasks.testing.junit.JUnitOptions</a></td>
 <td>
 <p>The JUnit specific test options.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.tasks.testing.junitplatform/-j-unit-platform-options/index.html">org.gradle.api.tasks.testing.junitplatform.JUnitPlatformOptions</a></td>
+<td>
+<p>The JUnit platform specific test options.</p>
 </td>
 </tr>
 <tr>
@@ -4610,6 +4881,12 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.testing.jacoco.plugins.-jacoco-plugin-extension/index.html">org.gradle.testing.jacoco.plugins.JacocoPluginExtension</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.testing.jacoco.plugins/-jacoco-plugin-extension/index.html">org.gradle.testing.jacoco.plugins.JacocoPluginExtension</a></td>
 <td>
 <p>Extension including common properties and methods for Jacoco.</p>
@@ -4659,14 +4936,14 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.api.tasks.bundling/-jar/index.html">org.gradle.api.tasks.bundling.Jar</a></td>
+<a href="../org.gradle.jvm.tasks/-jar/index.html">org.gradle.jvm.tasks.Jar</a></td>
 <td>
 <p>Assembles a JAR archive.</p>
 </td>
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.jvm.tasks/-jar/index.html">org.gradle.jvm.tasks.Jar</a></td>
+<a href="../org.gradle.api.tasks.bundling/-jar/index.html">org.gradle.api.tasks.bundling.Jar</a></td>
 <td>
 <p>Assembles a JAR archive.</p>
 </td>
@@ -4812,6 +5089,12 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.plugins.javascript.base.-java-script-extension/index.html">org.gradle.plugins.javascript.base.JavaScriptExtension</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.plugins.javascript.base/-java-script-extension/index.html">org.gradle.plugins.javascript.base.JavaScriptExtension</a></td>
 <td>
 </td>
@@ -4866,7 +5149,7 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 <td>
 <a href="../org.gradle.api/-java-version/index.html">org.gradle.api.JavaVersion</a></td>
 <td>
-<p>An enumeration of Java versions.</p>
+<p>An enumeration of Java versions. Before 9: http://www.oracle.com/technetwork/java/javase/versioning-naming-139433.html 9+: http://openjdk.java.net/jeps/223</p>
 </td>
 </tr>
 <tr>
@@ -4934,6 +5217,12 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 <tr>
 <td>
 <a href="../org.gradle.plugins.javascript.jshint/-js-hint/index.html">org.gradle.plugins.javascript.jshint.JsHint</a></td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.plugins.javascript.jshint.-js-hint-extension/index.html">org.gradle.plugins.javascript.jshint.JsHintExtension</a> (extensions in package org.gradle.kotlin.dsl)</td>
 <td>
 </td>
 </tr>
@@ -5104,9 +5393,31 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.kotlin.dsl.plugins.dsl/-kotlin-dsl-compiler-plugins/index.html">org.gradle.kotlin.dsl.plugins.dsl.KotlinDslCompilerPlugins</a></td>
+<td>
+<p>Configures the Kotlin compiler to recognise Gradle functional interface
+annotated with <a href="../org.gradle.api/-has-implicit-receiver/index.html">HasImplicitReceiver</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.kotlin.dsl.plugins.dsl/-kotlin-dsl-plugin/index.html">org.gradle.kotlin.dsl.plugins.dsl.KotlinDslPlugin</a></td>
 <td>
 <p>The <code>kotlin-dsl</code> plugin.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/-kotlin-init-script/index.html">org.gradle.kotlin.dsl.KotlinInitScript</a></td>
+<td>
+<p>Base class for Kotlin init scripts.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/-kotlin-script-template/index.html">org.gradle.kotlin.dsl.KotlinScriptTemplate</a></td>
+<td>
+<p>Temporary workaround for Kotlin 1.2.50.</p>
 </td>
 </tr>
 <tr>
@@ -5148,16 +5459,16 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.platform.base/-library.html">org.gradle.platform.base.Library</a></td>
+<a href="../org.gradle.plugins.ide.eclipse.model/-library/index.html">org.gradle.plugins.ide.eclipse.model.Library</a></td>
 <td>
-<p>A library that can be linked into or depended on by another software element.</p>
+<p>A classpath entry representing a library.</p>
 </td>
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.plugins.ide.eclipse.model/-library/index.html">org.gradle.plugins.ide.eclipse.model.Library</a></td>
+<a href="../org.gradle.platform.base/-library.html">org.gradle.platform.base.Library</a></td>
 <td>
-<p>A classpath entry representing a library.</p>
+<p>A library that can be linked into or depended on by another software element.</p>
 </td>
 </tr>
 <tr>
@@ -5186,6 +5497,13 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 <a href="../org.gradle.api.artifacts.component/-library-component-selector/index.html">org.gradle.api.artifacts.component.LibraryComponentSelector</a></td>
 <td>
 <p>Criteria for selecting a library instance that is built as part of the current build.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language/-library-dependencies/index.html">org.gradle.language.LibraryDependencies</a></td>
+<td>
+<p>Allows the API and implementation dependencies of a library to be specified.</p>
 </td>
 </tr>
 <tr>
@@ -5314,7 +5632,7 @@ plugins that rely on Groovy builders such as the core <code>maven</code> plugin.
 <a href="../org.gradle.api.logging/-logging-manager/index.html">org.gradle.api.logging.LoggingManager</a></td>
 <td>
 <p>
-<p>A <code>LoggingManager</code> provides access to and control over the Gradle logging system. Using this interface, you can control the current logging level and standard output and error capture.</p>
+<p>A <code>LoggingManager</code> provides access to and control over the Gradle logging system. Using this interface, you can control standard output and error capture and receive logging events.</p>
 </p>
 </td>
 </tr>
@@ -5501,7 +5819,9 @@ Creating managed model elements
 <td>
 <a href="../org.gradle.api.publish.maven/-maven-pom/index.html">org.gradle.api.publish.maven.MavenPom</a></td>
 <td>
-<p>The POM for a Maven publication. The <code><a href="#">#withXml(org.gradle.api.Action)</a></code> method can be used to modify the descriptor after it has been generated according to the publication data.</p>
+<p>The POM for a Maven publication. 
+<p>The <code><a href="#">#withXml(org.gradle.api.Action)</a></code> method can be used to modify the descriptor after it has been generated according to the publication data. However, the preferred way to customize the project information to be published is to use the dedicated properties exposed by this class, e.g. <code><a href="../org.gradle.api.publish.maven/-maven-pom/get-description.html">#getDescription()</a></code>. Please refer to the official <a href="#">POM Reference</a> for detailed information about the individual properties.</p>
+</p>
 </td>
 </tr>
 <tr>
@@ -5509,6 +5829,104 @@ Creating managed model elements
 <a href="../org.gradle.maven/-maven-pom-artifact.html">org.gradle.maven.MavenPomArtifact</a></td>
 <td>
 <p>A Maven POM artifact.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.publish.maven/-maven-pom-ci-management/index.html">org.gradle.api.publish.maven.MavenPomCiManagement</a></td>
+<td>
+<p>The CI management system of a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.publish.maven/-maven-pom-contributor/index.html">org.gradle.api.publish.maven.MavenPomContributor</a></td>
+<td>
+<p>A contributor of a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.publish.maven/-maven-pom-contributor-spec/index.html">org.gradle.api.publish.maven.MavenPomContributorSpec</a></td>
+<td>
+<p>Allows to add contributors of a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.publish.maven/-maven-pom-developer/index.html">org.gradle.api.publish.maven.MavenPomDeveloper</a></td>
+<td>
+<p>A developer of a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.publish.maven/-maven-pom-developer-spec/index.html">org.gradle.api.publish.maven.MavenPomDeveloperSpec</a></td>
+<td>
+<p>Allows to add developers to a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.publish.maven/-maven-pom-distribution-management/index.html">org.gradle.api.publish.maven.MavenPomDistributionManagement</a></td>
+<td>
+<p>The distribution management configuration of a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.publish.maven/-maven-pom-issue-management/index.html">org.gradle.api.publish.maven.MavenPomIssueManagement</a></td>
+<td>
+<p>The issue management system of a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.publish.maven/-maven-pom-license/index.html">org.gradle.api.publish.maven.MavenPomLicense</a></td>
+<td>
+<p>A license of a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.publish.maven/-maven-pom-license-spec/index.html">org.gradle.api.publish.maven.MavenPomLicenseSpec</a></td>
+<td>
+<p>Allows to add licenses to a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.publish.maven/-maven-pom-mailing-list/index.html">org.gradle.api.publish.maven.MavenPomMailingList</a></td>
+<td>
+<p>A mailing list of a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.publish.maven/-maven-pom-mailing-list-spec/index.html">org.gradle.api.publish.maven.MavenPomMailingListSpec</a></td>
+<td>
+<p>Allows to add mailing lists to a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.publish.maven/-maven-pom-organization/index.html">org.gradle.api.publish.maven.MavenPomOrganization</a></td>
+<td>
+<p>The organization of a Maven publication.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.publish.maven/-maven-pom-relocation/index.html">org.gradle.api.publish.maven.MavenPomRelocation</a></td>
+<td>
+<p>The relocation information of a Maven publication that has been moved to a new group and/or artifact ID.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.publish.maven/-maven-pom-scm/index.html">org.gradle.api.publish.maven.MavenPomScm</a></td>
+<td>
+<p>The SCM (source control management) of a Maven publication.</p>
 </td>
 </tr>
 <tr>
@@ -5522,8 +5940,8 @@ Creating managed model elements
  
 <p> For certain common use cases, it's often sufficient to specify the component to publish, and nothing more (<code><a href="../org.gradle.api.publish.maven/-maven-publication/from.html">#from(org.gradle.api.component.SoftwareComponent)</a></code>. The published component is used to determine which artifacts to publish, and which dependencies should be listed in the generated POM file. </p>
 <p> To add additional artifacts to the set published, use the <code><a href="#">#artifact(Object)</a></code> and <code><a href="#">#artifact(Object, org.gradle.api.Action)</a></code> methods. You can also completely replace the set of published artifacts using <code><a href="#">#setArtifacts(Iterable)</a></code>. Together, these methods give you full control over what artifacts will be published. </p>
-<p> For any other tweaks to the publication, it is possible to modify the generated POM prior to publication. This is done using the <code><a href="#">MavenPom#withXml(org.gradle.api.Action)</a></code> method of the POM returned via the <code><a href="../org.gradle.api.publish.maven/-maven-publication/get-pom.html">#getPom()</a></code> method, or directly by an action (or closure) passed into <code><a href="#">#pom(org.gradle.api.Action)</a></code>. </p>
- Example of publishing a java module with a source artifact and custom POM description <pre><code> apply plugin: "java" apply plugin: "maven-publish" task sourceJar(type: Jar) { from sourceSets.main.allJava classifier "sources" } publishing { publications { myPublication(MavenPublication) { from components.java artifact sourceJar pom.withXml { asNode().appendNode('description', 'A demonstration of Maven POM customization') } } } } </code></pre></p>
+<p> To customize the metadata published in the generated POM, set properties, e.g. <code><a href="../org.gradle.api.publish.maven/-maven-pom/get-description.html">MavenPom#getDescription()</a></code>, on the POM returned via the <code><a href="../org.gradle.api.publish.maven/-maven-publication/get-pom.html">#getPom()</a></code> method or directly by an action (or closure) passed into <code><a href="#">#pom(org.gradle.api.Action)</a></code>. As a last resort, it is possible to modify the generated POM using the <code><a href="#">MavenPom#withXml(org.gradle.api.Action)</a></code> method. </p>
+ Example of publishing a Java module with a source artifact and a customized POM <pre><code> apply plugin: "java" apply plugin: "maven-publish" task sourceJar(type: Jar) { from sourceSets.main.allJava classifier "sources" } publishing { publications { myPublication(MavenPublication) { from components.java artifact sourceJar pom { name = "Demo" description = "A demonstration of Maven POM customization" url = "http://www.example.com/project" licenses { license { name = "The Apache License, Version 2.0" url = "http://www.apache.org/licenses/LICENSE-2.0.txt" } } developers { developer { id = "johnd" name = "John Doe" email = "john.doe@example.com" } } scm { connection = "scm:svn:http://subversion.example.com/svn/project/trunk/" developerConnection = "scm:svn:https://subversion.example.com/svn/project/trunk/" url = "http://subversion.example.com/svn/project/trunk/" } } } } } </code></pre></p>
 </td>
 </tr>
 <tr>
@@ -5549,6 +5967,13 @@ Creating managed model elements
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.api.artifacts.repositories/-metadata-supplier-aware/index.html">org.gradle.api.artifacts.repositories.MetadataSupplierAware</a></td>
+<td>
+<p>Interface for repositories which support custom metadata suppliers and/or version listers. A custom version lister or metadata supplier can be used as an optimization technique to avoid too many requests on a server. By providing such rules, a plugin or build author can provide the necessary information to perform component selection without having to actually fetch the component metadata on a server.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.nativeplatform.toolchain.plugins/-microsoft-visual-cpp-compiler-plugin/index.html">org.gradle.nativeplatform.toolchain.plugins.MicrosoftVisualCppCompilerPlugin</a></td>
 <td>
 <p>A Plugin which makes the Microsoft Visual C++ compiler available to compile C/C++ code.</p>
@@ -5570,6 +5995,13 @@ Creating managed model elements
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.tooling.model/-model.html">org.gradle.tooling.model.Model</a></td>
+<td>
+<p>A model that is buildable by the Tooling API. Models contain various information regarding the build. Models are typically tailored to a specific domain, for example build environment or IDE.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.model/-model/index.html">org.gradle.model.Model</a></td>
 <td>
 <p>Denotes that the RuleSource method rule carrying this annotation creates a new top level element in the model space. 
@@ -5580,13 +6012,6 @@ Creating managed model elements
 Creating non-managed model elements 
 <p> If the element is to be of a non-managed type, the method must return the newly created instance. All parameters are considered <em>inputs</em>. Please see RuleSource for more information on method rules.</p>
 </p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.tooling.model/-model.html">org.gradle.tooling.model.Model</a></td>
-<td>
-<p>A model that is buildable by the Tooling API. Models contain various information regarding the build. Models are typically tailored to a specific domain, for example build environment or IDE.</p>
 </td>
 </tr>
 <tr>
@@ -5684,18 +6109,18 @@ Creating non-managed model elements
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.plugins.ide.idea.model/-module-dependency/index.html">org.gradle.plugins.ide.idea.model.ModuleDependency</a></td>
+<td>
+<p>Represents an orderEntry of type module in the iml XML.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.artifacts/-module-dependency/index.html">org.gradle.api.artifacts.ModuleDependency</a></td>
 <td>
 <p>A <code>ModuleDependency</code> is a org.gradle.api.artifacts.Dependency on a module outside the current project. 
 <p> For examples on configuring the exclude rules please refer to <code><a href="#">#exclude(java.util.Map)</a></code>.</p>
 </p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.plugins.ide.idea.model/-module-dependency/index.html">org.gradle.plugins.ide.idea.model.ModuleDependency</a></td>
-<td>
-<p>Represents an orderEntry of type module in the iml XML.</p>
 </td>
 </tr>
 <tr>
@@ -5728,13 +6153,6 @@ Creating non-managed model elements
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.api.artifacts.cache/-module-resolution-control/index.html">org.gradle.api.artifacts.cache.ModuleResolutionControl</a></td>
-<td>
-<p>Command methods for controlling module resolution via the DSL.</p>
-</td>
-</tr>
-<tr>
-<td>
 <a href="../org.gradle.api.artifacts/-module-version-identifier/index.html">org.gradle.api.artifacts.ModuleVersionIdentifier</a></td>
 <td>
 <p>The identifier of a module version.</p>
@@ -5752,6 +6170,20 @@ Creating non-managed model elements
 <a href="../org.gradle.api.attributes/-multiple-candidates-details/index.html">org.gradle.api.attributes.MultipleCandidatesDetails</a></td>
 <td>
 <p>Provides context about candidates for an attribute. In particular, this class gives access to the list of candidates on the producer side.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.capabilities/-mutable-capabilities-metadata/index.html">org.gradle.api.capabilities.MutableCapabilitiesMetadata</a></td>
+<td>
+<p>Describes the capabilities of a component in a mutable way. This interface can be used to adjust the capabilities of a published component via metadata rules (see org.gradle.api.artifacts.dsl.ComponentMetadataHandler.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/-mutable-property-delegate/index.html">org.gradle.kotlin.dsl.MutablePropertyDelegate</a></td>
+<td>
+<p>Provides efficient access to a mutable dynamic property.</p>
 </td>
 </tr>
 <tr>
@@ -6089,6 +6521,12 @@ Creating non-managed model elements
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.nativeplatform.toolchain.-native-tool-chain-registry/index.html">org.gradle.nativeplatform.toolchain.NativeToolChainRegistry</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.nativeplatform.toolchain/-native-tool-chain-registry.html">org.gradle.nativeplatform.toolchain.NativeToolChainRegistry</a></td>
 <td>
 <p>A container for NativeToolChains.</p>
@@ -6103,7 +6541,13 @@ Creating non-managed model elements
  
 <p>This annotation should be attached to the getter method in Java or the property in Groovy. Annotations on setters or just the field in Java are ignored.</p>
  
-<p>This annotation supports iterable values by treating each element as a separate nested input.</p>
+<p>The implementation of the nested bean is tracked as an input, too. This allows tracking behavior such as org.gradle.api.Actions as task inputs.</p>
+ 
+<p>This annotations supports org.gradle.api.provider.Provider values by treating the result of <code><a href="../org.gradle.api.provider/-provider/get.html">org.gradle.api.provider.Provider#get()</a></code> as a nested bean.</p>
+ 
+<p>This annotation supports Iterable values by treating each element as a separate nested bean. As a property name, the index of the element in the iterable prefixed by <code>$</code> is used, e.g. <code>$0</code>. If the element implements org.gradle.api.Named, then the property name is composed of <code><a href="../org.gradle.api/-named/get-name.html">org.gradle.api.Named#getName()</a></code> and the index, e.g. <code>name$1</code>. The ordering of the elements in the iterable is crucial for for reliable up-to-date checks and caching.</p>
+ 
+<p>This annotation supports $java.util.Map values by treating each value of the map as a separate nested bean. The keys of the map are used as property names.</p>
 </p>
 </td>
 </tr>
@@ -6279,6 +6723,13 @@ Creating non-managed model elements
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.nativeplatform/-operating-system-family/index.html">org.gradle.nativeplatform.OperatingSystemFamily</a></td>
+<td>
+<p>Represents the operating system of a configuration. Typical operating system include Windows, Linux, and macOS. This interface allows the user to customize operating systems by implementing this interface.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.tooling.events/-operation-descriptor/index.html">org.gradle.tooling.events.OperationDescriptor</a></td>
 <td>
 <p>Describes an operation for which an event has occurred. 
@@ -6304,9 +6755,40 @@ Creating non-managed model elements
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.api.tasks.options/-option/index.html">org.gradle.api.tasks.options.Option</a></td>
+<td>
+<p>
+<p>Marks a property of a org.gradle.api.Task as being configurable from the command-line.</p>
+ 
+<p>This annotation should be attached to a field or a setter method. When attached to a field, <code><a href="#">#option()</a></code> will use the name of the field by default. When attached to a method, <code><a href="#">#option()</a></code> must be specified.</p>
+ 
+<p>An option may have one of the following types:</p>
+ <ul> <li><code>boolean</code></li>
+ <li><code>Boolean</code></li>
+ <li><code>Enum</code></li>
+ <li><code>List&amp;lt;Enum&amp;gt;</code></li>
+ <li><code>List&amp;lt;String&amp;gt;</code></li>
+ <li><code>String</code></li>
+ </ul>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.external.javadoc/-option-less-javadoc-option-file-option/index.html">org.gradle.external.javadoc.OptionLessJavadocOptionFileOption</a></td>
 <td>
 <p>Represents a Javadoc option.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.tasks.options/-option-values/index.html">org.gradle.api.tasks.options.OptionValues</a></td>
+<td>
+<p>
+<p>Marks a method on a org.gradle.api.Task as providing the possible values for a <code>String</code> or <code>List&amp;lt;String&amp;gt;</code> Option. At most one option values method may be provided for a particular option.</p>
+ 
+<p>This annotation should be attached to a getter method that returns a java.util.Collection of possible values. The entries in the collection may be of any type. If necessary, they are transformed into String by calling <code>toString()</code>.</p>
+</p>
 </td>
 </tr>
 <tr>
@@ -6424,6 +6906,13 @@ Creating non-managed model elements
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.swiftpm/-package/index.html">org.gradle.swiftpm.Package</a></td>
+<td>
+<p>Represents a Swift Package Manager package.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.concurrent/-parallelism-configuration/index.html">org.gradle.concurrent.ParallelismConfiguration</a></td>
 <td>
 <p>A <code>ParallelismConfiguration</code> defines the parallel settings for a Gradle build.</p>
@@ -6456,16 +6945,16 @@ Creating non-managed model elements
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.model/-path/index.html">org.gradle.model.Path</a></td>
+<a href="../org.gradle.plugins.ide.idea.model/-path/index.html">org.gradle.plugins.ide.idea.model.Path</a></td>
 <td>
-<p>Specifies a model path on a parameter</p>
+<p>Represents a path in a format as used often in ipr and iml files.</p>
 </td>
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.plugins.ide.idea.model/-path/index.html">org.gradle.plugins.ide.idea.model.Path</a></td>
+<a href="../org.gradle.model/-path/index.html">org.gradle.model.Path</a></td>
 <td>
-<p>Represents a path in a format as used often in ipr and iml files.</p>
+<p>Specifies a model path on a parameter</p>
 </td>
 </tr>
 <tr>
@@ -6570,6 +7059,12 @@ Creating non-managed model elements
 <a href="../org.gradle.platform.base/-platform-aware-component-spec/index.html">org.gradle.platform.base.PlatformAwareComponentSpec</a></td>
 <td>
 <p>Defines Platform specific operations for ComponentSpecs</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.platform.base.-platform-container/index.html">org.gradle.platform.base.PlatformContainer</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
 </td>
 </tr>
 <tr>
@@ -6688,6 +7183,12 @@ Creating non-managed model elements
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.play.plugins.-play-plugin-configurations/index.html">org.gradle.play.plugins.PlayPluginConfigurations</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.play.plugins/-play-plugin-configurations/index.html">org.gradle.play.plugins.PlayPluginConfigurations</a></td>
 <td>
 <p>Conventional locations and names for play plugins.</p>
@@ -6735,6 +7236,12 @@ Creating non-managed model elements
 <p>
 <p>A <code>Plugin</code> represents an extension to Gradle. A plugin applies some configuration to a target object. Usually, this target object is a org.gradle.api.Project, but plugins can be applied to any type of objects.</p>
 </p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.api.plugins.-plugin-aware/index.html">org.gradle.api.plugins.PluginAware</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
 </td>
 </tr>
 <tr>
@@ -6901,6 +7408,12 @@ Creating non-managed model elements
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.api.plugins.quality.-pmd-extension/index.html">org.gradle.api.plugins.quality.PmdExtension</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.plugins.quality/-pmd-extension/index.html">org.gradle.api.plugins.quality.PmdExtension</a></td>
 <td>
 <p>Configuration options for the PMD plugin.</p>
@@ -6996,6 +7509,12 @@ and applies the given <a href="../org.gradle.kotlin.dsl/-polymorphic-domain-obje
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.kotlin.dsl.plugins.precompiled/-precompiled-script-plugins/index.html">org.gradle.kotlin.dsl.plugins.precompiled.PrecompiledScriptPlugins</a></td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.nativeplatform.tasks/-prefix-header-file-generate-task/index.html">org.gradle.nativeplatform.tasks.PrefixHeaderFileGenerateTask</a></td>
 <td>
 <p>Generates a prefix header file from a list of headers to be precompiled.</p>
@@ -7022,6 +7541,13 @@ and applies the given <a href="../org.gradle.kotlin.dsl/-polymorphic-domain-obje
 <a href="../org.gradle.language.jvm.tasks/-process-resources/index.html">org.gradle.language.jvm.tasks.ProcessResources</a></td>
 <td>
 <p>Copies resources from their source to their target directory, potentially processing them. Makes sure no stale resources remain in the target directory.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.swiftpm/-product/index.html">org.gradle.swiftpm.Product</a></td>
+<td>
+<p>A product in a Swift Package Manager package.</p>
 </td>
 </tr>
 <tr>
@@ -7081,6 +7607,20 @@ and applies the given <a href="../org.gradle.kotlin.dsl/-polymorphic-domain-obje
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.plugins.ide.eclipse.model/-project/index.html">org.gradle.plugins.ide.eclipse.model.Project</a></td>
+<td>
+<p>Represents the customizable elements of an eclipse project file. (via XML hooks everything is customizable).</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.plugins.ide.idea.model/-project/index.html">org.gradle.plugins.ide.idea.model.Project</a></td>
+<td>
+<p>Represents the customizable elements of an ipr (via XML hooks everything of the ipr is customizable).</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api/-project/index.html">org.gradle.api.Project</a></td>
 <td>
 <p>
@@ -7133,20 +7673,6 @@ and applies the given <a href="../org.gradle.kotlin.dsl/-polymorphic-domain-obje
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.plugins.ide.eclipse.model/-project/index.html">org.gradle.plugins.ide.eclipse.model.Project</a></td>
-<td>
-<p>Represents the customizable elements of an eclipse project file. (via XML hooks everything is customizable).</p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.plugins.ide.idea.model/-project/index.html">org.gradle.plugins.ide.idea.model.Project</a></td>
-<td>
-<p>Represents the customizable elements of an ipr (via XML hooks everything of the ipr is customizable).</p>
-</td>
-</tr>
-<tr>
-<td>
 <a href="../org.gradle.testfixtures/-project-builder/index.html">org.gradle.testfixtures.ProjectBuilder</a></td>
 <td>
 <p>
@@ -7191,7 +7717,7 @@ and applies the given <a href="../org.gradle.kotlin.dsl/-polymorphic-domain-obje
 <td>
 <p>
 <p>Represents a long-lived connection to a Gradle project. You obtain an instance of a <code>ProjectConnection</code> by using <code><a href="../org.gradle.tooling/-gradle-connector/connect.html">org.gradle.tooling.GradleConnector#connect()</a></code>.</p>
- <pre><code> ProjectConnection connection = GradleConnector.newConnector() .forProjectDirectory(new File("someFolder")) .connect(); try { //obtain some information from the build BuildEnvironment environment = connection.model(BuildEnvironment.class) .get(); //run some tasks connection.newBuild() .forTasks("tasks") .setStandardOutput(System.out) .run(); } finally { connection.close(); } </code></pre> Thread safety information 
+ <pre><code> try (ProjectConnection connection = GradleConnector.newConnector() .forProjectDirectory(new File("someFolder")) .connect()) { //obtain some information from the build BuildEnvironment environment = connection.model(BuildEnvironment.class).get(); //run some tasks connection.newBuild() .forTasks("tasks") .setStandardOutput(System.out) .run(); } </code></pre> Thread safety information 
 <p>All implementations of <code>ProjectConnection</code> are thread-safe, and may be shared by any number of threads.</p>
  
 <p>All notifications from a given <code>ProjectConnection</code> instance are delivered by a single thread at a time. Note, however, that the delivery thread may change over time.</p>
@@ -7200,11 +7726,9 @@ and applies the given <a href="../org.gradle.kotlin.dsl/-polymorphic-domain-obje
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.api.artifacts/-project-dependency/index.html">org.gradle.api.artifacts.ProjectDependency</a></td>
+<a href="../org.gradle.tooling.model/-project-dependency.html">org.gradle.tooling.model.ProjectDependency</a></td>
 <td>
-<p>
-<p>A <code>ProjectDependency</code> is a Dependency on another project in the current project hierarchy.</p>
-</p>
+<p>Represents a dependency on another project.</p>
 </td>
 </tr>
 <tr>
@@ -7216,9 +7740,11 @@ and applies the given <a href="../org.gradle.kotlin.dsl/-polymorphic-domain-obje
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.tooling.model/-project-dependency.html">org.gradle.tooling.model.ProjectDependency</a></td>
+<a href="../org.gradle.api.artifacts/-project-dependency/index.html">org.gradle.api.artifacts.ProjectDependency</a></td>
 <td>
-<p>Represents a dependency on another project.</p>
+<p>
+<p>A <code>ProjectDependency</code> is a Dependency on another project in the current project hierarchy.</p>
+</p>
 </td>
 </tr>
 <tr>
@@ -7364,6 +7890,13 @@ and applies the given <a href="../org.gradle.kotlin.dsl/-polymorphic-domain-obje
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.kotlin.dsl/-property-delegate/index.html">org.gradle.kotlin.dsl.PropertyDelegate</a></td>
+<td>
+<p>Provides efficient access to a property.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.plugins.ide.api/-property-list-generator-task/index.html">org.gradle.plugins.ide.api.PropertyListGeneratorTask</a></td>
 <td>
 <p>A convenience superclass for those tasks which generate Property List configuration files from a domain object of type T.</p>
@@ -7404,7 +7937,7 @@ and applies the given <a href="../org.gradle.kotlin.dsl/-polymorphic-domain-obje
  
 <p> A typical use of a provider is to pass values from one DSL element to another, e.g. from an extension to a task. Providers also allow expensive computations to be deferred until their value is actually needed, usually at task execution time. </p>
  
-<p> For a provider whose value can be mutated, see PropertyState. </p>
+<p> For a provider whose value can be mutated, see Property. </p>
  
 <p> Do not use <code>Provider&lt;File&gt;</code>. Use org.gradle.api.file.Directory or org.gradle.api.file.RegularFile instead. </p>
  
@@ -7435,6 +7968,13 @@ and applies the given <a href="../org.gradle.kotlin.dsl/-polymorphic-domain-obje
 <a href="../org.gradle.api.publish/-publication.html">org.gradle.api.publish.Publication</a></td>
 <td>
 <p>A publication is a description of a consumable representation of one or more artifacts, and possibly associated metadata.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.api.publish/-publication-artifact/index.html">org.gradle.api.publish.PublicationArtifact</a></td>
+<td>
+<p>An artifact published as part of a Publication.</p>
 </td>
 </tr>
 <tr>
@@ -7502,19 +8042,16 @@ and applies the given <a href="../org.gradle.kotlin.dsl/-polymorphic-domain-obje
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.api.component/-publishable-component.html">org.gradle.api.component.PublishableComponent</a></td>
+<td>
+<p>Represents a component that can be published.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.publish/-publishing-extension/index.html">org.gradle.api.publish.PublishingExtension</a></td>
 <td>
-<p>The configuration of how to “publish” the different components of a project. 
-<p> This new publishing mechanism will eventually replace the current mechanism of upload tasks and configurations. At this time, it is an incubating feature and under development. </p>
-<p> The PublishingExtension is a org.gradle.api.plugins.DeferredConfigurable model element, meaning that extension will be configured as late as possible in the build. So any 'publishing' configuration blocks are not evaluated until either: </p>
-<ol> <li>The project is about to execute, or</li>
- <li>he publishing extension is referenced as an instance, as opposed to via a configuration closure.</li>
- </ol>
- 
-<p> A 'publishing' configuration block does not need to dereference the publishing extension, and so will be evaluated late. eg: </p>
-<pre><code> publishing { publications { ... } repositories.maven { ... } } </code></pre> 
-<p> Any use that accesses the publishing extension as an instance does require the publishing extension to be realised, forcing all configuration blocks to be evaluated. eg: </p>
-<pre><code> publishing.publications { ... } publishing.repositories.maven { ... } </code></pre></p>
+<p>The configuration of how to “publish” the different components of a project.</p>
 </td>
 </tr>
 <tr>
@@ -7624,6 +8161,12 @@ and applies the given <a href="../org.gradle.kotlin.dsl/-polymorphic-domain-obje
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.api.reporting.-reporting-extension/index.html">org.gradle.api.reporting.ReportingExtension</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.reporting/-reporting-extension/index.html">org.gradle.api.reporting.ReportingExtension</a></td>
 <td>
 <p>A project extension named "reporting" that provides basic reporting settings and utilities. 
@@ -7676,23 +8219,9 @@ and applies the given <a href="../org.gradle.kotlin.dsl/-polymorphic-domain-obje
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.api.artifacts.cache/-resolution-control/index.html">org.gradle.api.artifacts.cache.ResolutionControl</a></td>
-<td>
-<p>Command methods for controlling dependency resolution via the DSL.</p>
-</td>
-</tr>
-<tr>
-<td>
 <a href="../org.gradle.api.artifacts.result/-resolution-result/index.html">org.gradle.api.artifacts.result.ResolutionResult</a></td>
 <td>
 <p>Contains the information about the result of dependency resolution. You can use this type to determine all the component instances that are included in the resolved dependency graph, and the dependencies between them.</p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.api.artifacts.cache/-resolution-rules/index.html">org.gradle.api.artifacts.cache.ResolutionRules</a></td>
-<td>
-<p>Represents a set of rules/actions that can be applied during dependency resolution. Currently these are restricted to controlling caching, but these could possibly be extended in the future to include other manipulations.</p>
 </td>
 </tr>
 <tr>
@@ -7840,6 +8369,12 @@ and applies the given <a href="../org.gradle.kotlin.dsl/-polymorphic-domain-obje
 <a href="../org.gradle.tooling/-result-handler/index.html">org.gradle.tooling.ResultHandler</a></td>
 <td>
 <p>A handler for an asynchronous operation which returns an object of type T.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.plugins.javascript.rhino.-rhino-extension/index.html">org.gradle.plugins.javascript.rhino.RhinoExtension</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
 </td>
 </tr>
 <tr>
@@ -8041,6 +8576,12 @@ General class constraints
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.api.tasks.-scala-runtime/index.html">org.gradle.api.tasks.ScalaRuntime</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.tasks/-scala-runtime/index.html">org.gradle.api.tasks.ScalaRuntime</a></td>
 <td>
 <p>Provides information related to the Scala runtime(s) used in a project. Added by the <code>org.gradle.api.plugins.scala.ScalaBasePlugin</code> as a project extension named <code>scalaRuntime</code>. 
@@ -8120,8 +8661,14 @@ General class constraints
 <a href="../org.gradle.api.provider/-set-property.html">org.gradle.api.provider.SetProperty</a></td>
 <td>
 <p>Represents a property whose type is a Set of elements of type T. Retains iteration order. 
-<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory method <code><a href="#">org.gradle.api.model.ObjectFactory#listProperty(Class)</a></code>.</p>
+<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory method <code><a href="#">org.gradle.api.model.ObjectFactory#setProperty(Class)</a></code>.</p>
 </p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.api.initialization.-settings/index.html">org.gradle.api.initialization.Settings</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
 </td>
 </tr>
 <tr>
@@ -8143,6 +8690,14 @@ General class constraints
  <li>Provided on the command-line using the -P option.</li>
  </ul>
 </p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/-settings-script-api/index.html">org.gradle.kotlin.dsl.SettingsScriptApi</a></td>
+<td>
+<p>Standard implementation of the API exposed to all types of <a href="../org.gradle.api.initialization/-settings/index.html">Settings</a> scripts,
+precompiled and otherwise.</p>
 </td>
 </tr>
 <tr>
@@ -8238,6 +8793,12 @@ General class constraints
 <a href="../org.gradle.plugins.signing.type/-signature-type-provider/index.html">org.gradle.plugins.signing.type.SignatureTypeProvider</a></td>
 <td>
 <p>Provider of SignatureType.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.plugins.signing.-signing-extension/index.html">org.gradle.plugins.signing.SigningExtension</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
 </td>
 </tr>
 <tr>
@@ -8362,6 +8923,12 @@ General class constraints
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.api.tasks.-source-set/index.html">org.gradle.api.tasks.SourceSet</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.tasks/-source-set/index.html">org.gradle.api.tasks.SourceSet</a></td>
 <td>
 <p>A <code>SourceSet</code> represents a logical group of Java source and resources. 
@@ -8407,6 +8974,12 @@ General class constraints
 <a href="../org.gradle.language.base.artifact/-sources-artifact.html">org.gradle.language.base.artifact.SourcesArtifact</a></td>
 <td>
 <p>An artifact containing sources for a software component.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.api.specs.-spec/index.html">org.gradle.api.specs.Spec</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
 </td>
 </tr>
 <tr>
@@ -8585,13 +9158,6 @@ General class constraints
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.language.swift/-swift-language-version/index.html">org.gradle.language.swift.SwiftLanguageVersion</a></td>
-<td>
-<p>Swift language version.</p>
-</td>
-</tr>
-<tr>
-<td>
 <a href="../org.gradle.language.swift/-swift-library/index.html">org.gradle.language.swift.SwiftLibrary</a></td>
 <td>
 <p>Configuration for a Swift library, defining the source files that make up the library plus other settings. 
@@ -8614,7 +9180,16 @@ General class constraints
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.language.swift/-swift-platform.html">org.gradle.language.swift.SwiftPlatform</a></td>
+<a href="../org.gradle.swiftpm.plugins/-swift-package-manager-export-plugin/index.html">org.gradle.swiftpm.plugins.SwiftPackageManagerExportPlugin</a></td>
+<td>
+<p>A plugin that produces a Swift Package Manager manifests from the Gradle model. 
+<p>This plugin should only be applied to the root project of a build.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language.swift/-swift-platform/index.html">org.gradle.language.swift.SwiftPlatform</a></td>
 <td>
 <p>A target platform for building Swift binaries.</p>
 </td>
@@ -8631,6 +9206,13 @@ General class constraints
 <a href="../org.gradle.language.swift/-swift-static-library.html">org.gradle.language.swift.SwiftStaticLibrary</a></td>
 <td>
 <p>A static library built from Swift source.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.language.swift/-swift-version/index.html">org.gradle.language.swift.SwiftVersion</a></td>
+<td>
+<p>Swift version.</p>
 </td>
 </tr>
 <tr>
@@ -8708,6 +9290,15 @@ General class constraints
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.tooling.model/-task/index.html">org.gradle.tooling.model.Task</a></td>
+<td>
+<p>Represents a task which is executable by Gradle. 
+<p>Note: <code>Task</code> extends <code>Launchable</code> since 1.12.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api/-task/index.html">org.gradle.api.Task</a></td>
 <td>
 <p>
@@ -8751,15 +9342,6 @@ General class constraints
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.tooling.model/-task/index.html">org.gradle.tooling.model.Task</a></td>
-<td>
-<p>Represents a task which is executable by Gradle. 
-<p>Note: <code>Task</code> extends <code>Launchable</code> since 1.12.</p>
-</p>
-</td>
-</tr>
-<tr>
-<td>
 <a href="../org.gradle.api.tasks/-task-action/index.html">org.gradle.api.tasks.TaskAction</a></td>
 <td>
 <p>Marks a method as the action to run when the task is executed.</p>
@@ -8779,6 +9361,12 @@ General class constraints
 <a href="../org.gradle.api.tasks/-task-collection/index.html">org.gradle.api.tasks.TaskCollection</a></td>
 <td>
 <p>A <code>TaskCollection</code> contains a set of Task instances, and provides a number of query methods.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.api.tasks.-task-container/index.html">org.gradle.api.tasks.TaskContainer</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
 </td>
 </tr>
 <tr>
@@ -8981,6 +9569,13 @@ General class constraints
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.api.tasks/-task-provider/index.html">org.gradle.api.tasks.TaskProvider</a></td>
+<td>
+<p>Providers a task of the given type.</p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.tasks/-task-reference.html">org.gradle.api.tasks.TaskReference</a></td>
 <td>
 <p>A lightweight reference to a task.</p>
@@ -9048,7 +9643,7 @@ General class constraints
 <td>
 <a href="../org.gradle.api.tasks.testing/-test/index.html">org.gradle.api.tasks.testing.Test</a></td>
 <td>
-<p>Executes JUnit (3.8.x or 4.x) or TestNG tests. Test are always run in (one or more) separate JVMs. The sample below shows various configuration options. <pre><code> apply plugin: 'java' // adds 'test' task test { // enable TestNG support (default is JUnit) useTestNG() // set a system property for the test JVM(s) systemProperty 'some.prop', 'value' // explicitly include or exclude tests include 'org/foo/**' exclude 'org/boo/**' // show standard out and standard error of the test JVM(s) on the console testLogging.showStandardStreams = true // set heap size for the test JVM(s) minHeapSize = "128m" maxHeapSize = "512m" // set JVM arguments for the test JVM(s) jvmArgs '-XX:MaxPermSize=256m' // listen to events in the test execution lifecycle beforeTest { descriptor -&gt; logger.lifecycle("Running test: " + descriptor) } // listen to standard out and standard error of the test JVM(s) onOutput { descriptor, event -&gt; logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message ) } } </code></pre> 
+<p>Executes JUnit (3.8.x, 4.x or 5.x) or TestNG tests. Test are always run in (one or more) separate JVMs. The sample below shows various configuration options. <pre><code> apply plugin: 'java' // adds 'test' task test { // enable TestNG support (default is JUnit) useTestNG() // enable JUnit Platform (a.k.a. JUnit 5) support useJUnitPlatform() // set a system property for the test JVM(s) systemProperty 'some.prop', 'value' // explicitly include or exclude tests include 'org/foo/**' exclude 'org/boo/**' // show standard out and standard error of the test JVM(s) on the console testLogging.showStandardStreams = true // set heap size for the test JVM(s) minHeapSize = "128m" maxHeapSize = "512m" // set JVM arguments for the test JVM(s) jvmArgs '-XX:MaxPermSize=256m' // listen to events in the test execution lifecycle beforeTest { descriptor -&gt; logger.lifecycle("Running test: " + descriptor) } // Fail the 'test' task on the first test failure failFast = true // listen to standard out and standard error of the test JVM(s) onOutput { descriptor, event -&gt; logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message ) } } </code></pre> 
 <p> The test process can be started in debug mode (see <code><a href="../org.gradle.api.tasks.testing/-test/get-debug.html">#getDebug()</a></code>) in an ad-hoc manner by supplying the `--debug-jvm` switch when invoking the build. </p>
 <pre><code> gradle someTestTask --debug-jvm </code></pre></p>
 </td>
@@ -9076,18 +9671,18 @@ General class constraints
 </tr>
 <tr>
 <td>
+<a href="../org.gradle.tooling/-test-execution-exception/index.html">org.gradle.tooling.TestExecutionException</a></td>
+<td>
+<p>Thrown when the org.gradle.tooling.TestLauncher cannot run tests, or when one or more tests fail. </p>
+</td>
+</tr>
+<tr>
+<td>
 <a href="../org.gradle.api.tasks.testing/-test-execution-exception/index.html">org.gradle.api.tasks.testing.TestExecutionException</a></td>
 <td>
 <p>
 <p>A <code>TestExecutionException</code> is thrown when no tests can be found that match the specified test filters.</p>
 </p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.tooling/-test-execution-exception/index.html">org.gradle.tooling.TestExecutionException</a></td>
-<td>
-<p>Thrown when the org.gradle.tooling.TestLauncher cannot run tests, or when one or more tests fail. </p>
 </td>
 </tr>
 <tr>
@@ -9101,7 +9696,7 @@ General class constraints
 <td>
 <a href="../org.gradle.api.tasks.testing/-test-filter/index.html">org.gradle.api.tasks.testing.TestFilter</a></td>
 <td>
-<p>Allows filtering tests for execution. Some examples: <pre><code> apply plugin: 'java' test { filter { //specific test method includeTestsMatching "org.gradle.SomeTest.someSpecificFeature" //specific test method, use wildcard for packages includeTestsMatching "*SomeTest.someSpecificFeature" //specific test class includeTestsMatching "org.gradle.SomeTest" //specific test class, wildcard for packages includeTestsMatching "*.SomeTest" //all classes in package, recursively includeTestsMatching "com.gradle.tooling.*" //all integration tests, by naming convention includeTestsMatching "*IntegTest" //only ui tests from integration tests, by some naming convention includeTestsMatching "*IntegTest*ui" //specific test class and test method includeTest "org.gradle.SomeTest", "someTestMethod" } } </code></pre></p>
+<p>Allows filtering tests for execution. Some examples: <pre><code> apply plugin: 'java' test { filter { //specific test class, this can match 'SomeTest' class and corresponding method under any package includeTestsMatching "SomeTest" includeTestsMatching "SomeTest.someTestMethod*" //specific test class includeTestsMatching "org.gradle.SomeTest" //specific test class and method includeTestsMatching "org.gradle.SomeTest.someSpecificFeature" includeTest "org.gradle.SomeTest", "someTestMethod" //specific test method, use wildcard includeTestsMatching "*SomeTest.someSpecificFeature" //specific test class, wildcard for packages includeTestsMatching "*.SomeTest" //all classes in package, recursively includeTestsMatching "com.gradle.tooling.*" //all integration tests, by naming convention includeTestsMatching "*IntegTest" //only ui tests from integration tests, by some naming convention includeTestsMatching "*IntegTest*ui" } } </code></pre></p>
 </td>
 </tr>
 <tr>
@@ -9320,7 +9915,7 @@ General class constraints
 <td>
 <p>Creates <code>TextResource</code>s backed by sources such as strings, files, and archive entries. 
 <p>Example usages: </p>
-<pre><code> def sourcedFromString = resources.text.fromString("some text content") def sourcedFromFile = resources.text.fromFile("path/to/file.txt") task someTask {} // assumption: produces a text file and declares it as output def sourcedFromTask = resources.text.fromFile(someTask) def sourcedFromArchiveEntry = resources.text.fromArchiveEntry("path/to/archive.zip", "path/to/archive/entry.txt") configurations { someConfig } // assumption: contains a single archive def sourcedFromConfiguration = resources.text.fromArchiveEntry(configurations.someConfig, "path/to/archive/entry.txt") </code></pre> File based factory methods optionally accept a character encoding. If no encoding is specified, the platform's default encoding is used.</p>
+<pre><code> def sourcedFromString = resources.text.fromString("some text content") def sourcedFromFile = resources.text.fromFile("path/to/file.txt") task someTask {} // assumption: produces a text file and declares it as output def sourcedFromTask = resources.text.fromFile(someTask) def sourcedFromArchiveEntry = resources.text.fromArchiveEntry("path/to/archive.zip", "path/to/archive/entry.txt") configurations { someConfig } // assumption: contains a single archive def sourcedFromConfiguration = resources.text.fromArchiveEntry(configurations.someConfig, "path/to/archive/entry.txt") def sourceFromUri = resources.text.fromUri("https://path/to/the/resource") </code></pre> File based factory methods optionally accept a character encoding. If no encoding is specified, the platform's default encoding is used.</p>
 </td>
 </tr>
 <tr>
@@ -9709,7 +10304,7 @@ General class constraints
 <td>
 <a href="../org.gradle.vcs/-vcs-mappings/index.html">org.gradle.vcs.VcsMappings</a></td>
 <td>
-<p>In settings.gradle: <pre><code> vcsMappings { withModule("group:name") { from vcs(GitVcs) { url = "..." } } addRule("rule for group") { details -&gt; if (details.requested.group == "group") { from vcs(GitVcs) { url = "..." } } } } </code></pre></p>
+<p>Allows VCS mapping rules to be specified for a build. A VCS mapping rule is responsible for calculating the VCS information for a particular dependency. In settings.gradle: <pre><code> sourceControl { vcsMappings { withModule("org.gradle:gradle") { from vcs(GitVersionControlSpec) { url = uri("https://github.com/gradle/gradle") } } all { details -&gt; if (details.requested.group == "org.gradle") { from vcs(GitVersionControlSpec) { url = uri("https://github.com/gradle/${details.requested.module}") } } } } } </code></pre></p>
 </td>
 </tr>
 <tr>
@@ -9735,20 +10330,6 @@ General class constraints
 </tr>
 <tr>
 <td>
-<a href="../org.gradle.vcs/-version-control-system/index.html">org.gradle.vcs.VersionControlSystem</a></td>
-<td>
-<p>Allows the user to perform generic version control operations in ways specified by the underlying implementations.</p>
-</td>
-</tr>
-<tr>
-<td>
-<a href="../org.gradle.vcs/-version-ref/index.html">org.gradle.vcs.VersionRef</a></td>
-<td>
-<p>Represents how a version of a software component is referred to in a version control system.</p>
-</td>
-</tr>
-<tr>
-<td>
 <a href="../org.gradle.nativeplatform.toolchain/-visual-cpp/index.html">org.gradle.nativeplatform.toolchain.VisualCpp</a></td>
 <td>
 <p>The Visual C++ tool chain.</p>
@@ -9765,7 +10346,7 @@ General class constraints
 <td>
 <a href="../org.gradle.ide.visualstudio/-visual-studio-extension/index.html">org.gradle.ide.visualstudio.VisualStudioExtension</a></td>
 <td>
-<p>The configuration for mapping a set of org.gradle.nativeplatform.NativeComponentSpecs to a Visual Studio project.</p>
+<p>The configuration for mapping a set of native components to a Visual Studio project.</p>
 </td>
 </tr>
 <tr>
@@ -9779,18 +10360,31 @@ General class constraints
 <td>
 <a href="../org.gradle.ide.visualstudio/-visual-studio-project/index.html">org.gradle.ide.visualstudio.VisualStudioProject</a></td>
 <td>
-<p>A visual studio project, created from one or more org.gradle.nativeplatform.NativeBinary instances. 
+<p>A visual studio project, created from one or more native binaries. 
 <p> The content and location of the generate project file can be modified by the supplied methods: </p>
-<pre><code> apply plugin: "visual-studio" model { visualStudio { projects.all { projectFile.location = "vs/${name}.vcxproj" projectFile.withXml { asNode().appendNode('PropertyGroup', [Label: 'Custom']) .appendNode('ProjectDetails', "Project is named ${project.name}") } } } } </code></pre></p>
+<pre><code> apply plugin: "cpp" apply plugin: "visual-studio" model { visualStudio { projects.all { projectFile.location = "vs/${name}.vcxproj" projectFile.withXml { asNode().appendNode('PropertyGroup', [Label: 'Custom']) .appendNode('ProjectDetails', "Project is named ${project.name}") } } } } </code></pre></p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.ide.visualstudio.-visual-studio-root-extension/index.html">org.gradle.ide.visualstudio.VisualStudioRootExtension</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.ide.visualstudio/-visual-studio-root-extension/index.html">org.gradle.ide.visualstudio.VisualStudioRootExtension</a></td>
+<td>
+<p>The configuration for mapping a set of native components to a Visual Studio project and solution.</p>
 </td>
 </tr>
 <tr>
 <td>
 <a href="../org.gradle.ide.visualstudio/-visual-studio-solution/index.html">org.gradle.ide.visualstudio.VisualStudioSolution</a></td>
 <td>
-<p>A visual studio solution, representing one or more org.gradle.nativeplatform.NativeBinarySpec instances from the same org.gradle.nativeplatform.NativeComponentSpec. 
+<p>A visual studio solution, representing one or more native binaries in a build. 
 <p> The content and location of the generate solution file can be modified by the supplied methods: </p>
-<pre><code> apply plugin: "visual-studio" model { visualStudio { solutions.all { solutionFile.location = "vs/${name}.sln" solutionFile.withContent { TextProvider content -&gt; content.asBuilder().insert(0, "# GENERATED FILE: DO NOT EDIT\n") content.text = content.text.replaceAll("HideSolutionNode = FALSE", "HideSolutionNode = TRUE") } } } } </code></pre></p>
+<pre><code> apply plugin: "visual-studio" model { visualStudio { solution { solutionFile.location = "vs/${name}.sln" solutionFile.withContent { TextProvider content -&gt; content.asBuilder().insert(0, "# GENERATED FILE: DO NOT EDIT\n") content.text = content.text.replaceAll("HideSolutionNode = FALSE", "HideSolutionNode = TRUE") } } } } </code></pre></p>
 </td>
 </tr>
 <tr>
@@ -10005,7 +10599,7 @@ General class constraints
 <td>
 <a href="../org.gradle.ide.xcode/-xcode-extension/index.html">org.gradle.ide.xcode.XcodeExtension</a></td>
 <td>
-<p>The configuration for mapping a C++ or Swift project to XCode IDE.</p>
+<p>The configuration for mapping a C++ or Swift project to an XCode project.</p>
 </td>
 </tr>
 <tr>
@@ -10020,6 +10614,26 @@ General class constraints
 <a href="../org.gradle.ide.xcode/-xcode-project.html">org.gradle.ide.xcode.XcodeProject</a></td>
 <td>
 <p>A xcode project, created from C++ or Swift capable project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.kotlin.dsl/org.gradle.ide.xcode.-xcode-root-extension/index.html">org.gradle.ide.xcode.XcodeRootExtension</a> (extensions in package org.gradle.kotlin.dsl)</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.ide.xcode/-xcode-root-extension/index.html">org.gradle.ide.xcode.XcodeRootExtension</a></td>
+<td>
+<p>The configuration for mapping a C++ or Swift project to XCode project and workspace.</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="../org.gradle.ide.xcode/-xcode-workspace/index.html">org.gradle.ide.xcode.XcodeWorkspace</a></td>
+<td>
+<p>Represents the generated Xcode workspace.</p>
 </td>
 </tr>
 <tr>

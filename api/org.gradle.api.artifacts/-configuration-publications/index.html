@@ -36,11 +36,29 @@
 </tr>
 <tr>
 <td>
+<p><a href="capability.html">capability</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">capability</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.ConfigurationPublications$capability(kotlin.Any)/notation">notation</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Declares a capability for this configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="get-artifacts.html">getArtifacts</a></p>
 </td>
 <td>
 <code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getArtifacts</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-publish-artifact-set/index.html"><span class="identifier">PublishArtifactSet</span></a></code>
 <p>Returns the artifacts associated with this configuration. When an artifact is added to this set, an implicit variant is defined for the configuration. These artifacts are also inherited by all configurations that extend this configuration.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="get-capabilities.html">getCapabilities</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getCapabilities</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-collection/index.html"><span class="identifier">MutableCollection</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.api.capabilities/-capability/index.html"><span class="identifier">Capability</span></a><span class="symbol">&gt;</span></code>
+<p>Returns the capabilities declared for this configuration.</p>
 </td>
 </tr>
 <tr>

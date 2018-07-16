@@ -11,7 +11,8 @@
 <a name="org.gradle.plugins.ide.idea.model.IdeaModule$getTestSourceDirs()"></a>
 <code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">getTestSourceDirs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="http://docs.oracle.com/javase/8/docs/api/java/io/File.html"><span class="identifier">File</span></a><span class="symbol">&gt;</span></code>
 <p>The directories containing the test sources. 
-<p> For example see docs for IdeaModule</p>
+<p> For backward-compatibility it is set of directories containing the test sources from project.sourceSets.test.allSource. </p>
+<p> Starting with Gradle 5.0 it is set of directories containing the test sources from project.sourceSets.test.allJava. For example see docs for IdeaModule</p>
 </p>
 </BODY>
 </HTML>

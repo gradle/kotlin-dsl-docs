@@ -70,7 +70,7 @@
  
 <p> A typical use of a provider is to pass values from one DSL element to another, e.g. from an extension to a task. Providers also allow expensive computations to be deferred until their value is actually needed, usually at task execution time. </p>
  
-<p> For a provider whose value can be mutated, see PropertyState. </p>
+<p> For a provider whose value can be mutated, see Property. </p>
  
 <p> Do not use <code>Provider&lt;File&gt;</code>. Use org.gradle.api.file.Directory or org.gradle.api.file.RegularFile instead. </p>
  
@@ -98,7 +98,7 @@
 <td>
 <code><span class="keyword">interface </span><span class="identifier">SetProperty</span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="-provider/index.html"><span class="identifier">Provider</span></a><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/-mutable-set/index.html"><span class="identifier">MutableSet</span></a><span class="symbol">&lt;</span><a href="-set-property.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">&gt;</span><span class="symbol">, </span><a href="-has-multiple-values/index.html"><span class="identifier">HasMultipleValues</span></a><span class="symbol">&lt;</span><a href="-set-property.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span></code>
 <p>Represents a property whose type is a Set of elements of type T. Retains iteration order. 
-<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory method <code><a href="#">org.gradle.api.model.ObjectFactory#listProperty(Class)</a></code>.</p>
+<p><strong>Note:</strong> This interface is not intended for implementation by build script or plugin authors. An instance of this class can be created through the factory method <code><a href="#">org.gradle.api.model.ObjectFactory#setProperty(Class)</a></code>.</p>
 </p>
 </td>
 </tr>

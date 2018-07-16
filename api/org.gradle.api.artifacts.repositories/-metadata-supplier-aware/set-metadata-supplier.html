@@ -1,0 +1,30 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>MetadataSupplierAware.setMetadataSupplier - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.repositories</a>&nbsp;/&nbsp;<a href="index.html">MetadataSupplierAware</a>&nbsp;/&nbsp;<a href="./set-metadata-supplier.html">setMetadataSupplier</a><br/>
+<br/>
+<h1>setMetadataSupplier</h1>
+<a name="org.gradle.api.artifacts.repositories.MetadataSupplierAware$setMetadataSupplier(java.lang.Class((org.gradle.api.artifacts.ComponentMetadataSupplier)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setMetadataSupplier</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.MetadataSupplierAware$setMetadataSupplier(java.lang.Class((org.gradle.api.artifacts.ComponentMetadataSupplier)))/rule">rule</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.api.artifacts/-component-metadata-supplier/index.html"><span class="identifier">ComponentMetadataSupplier</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets a custom metadata rule, which is capable of supplying the metadata of a component (status, status scheme, changing flag) whenever a dynamic version is requested. It can be used to provide metadata directly, instead of having to parse the Ivy descriptor.</p>
+<h3>Parameters</h3>
+<p><a name="rule"></a>
+<code>rule</code> - the class of the rule. Gradle will instantiate a new rule for each dependency which requires metadata.</p>
+<p><strong>Since</strong><br/>
+4.9</p>
+<a name="org.gradle.api.artifacts.repositories.MetadataSupplierAware$setMetadataSupplier(java.lang.Class((org.gradle.api.artifacts.ComponentMetadataSupplier)), org.gradle.api.Action((org.gradle.api.ActionConfiguration)))"></a>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">setMetadataSupplier</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.repositories.MetadataSupplierAware$setMetadataSupplier(java.lang.Class((org.gradle.api.artifacts.ComponentMetadataSupplier)), org.gradle.api.Action((org.gradle.api.ActionConfiguration)))/rule">rule</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><span class="keyword">out</span>&nbsp;<a href="../../org.gradle.api.artifacts/-component-metadata-supplier/index.html"><span class="identifier">ComponentMetadataSupplier</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.repositories.MetadataSupplierAware$setMetadataSupplier(java.lang.Class((org.gradle.api.artifacts.ComponentMetadataSupplier)), org.gradle.api.Action((org.gradle.api.ActionConfiguration)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../../org.gradle.api/-action-configuration/index.html"><span class="identifier">ActionConfiguration</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
+<p>Sets a custom metadata rule, possibly configuring the rule.</p>
+<h3>Parameters</h3>
+<p><a name="rule"></a>
+<code>rule</code> - the class of the rule. Gradle will instantiate a new rule for each dependency which requires metadata.</p>
+<p><a name="configureAction"></a>
+<code>configureAction</code> - the action to use to configure the rule.</p>
+<p><strong>Since</strong><br/>
+4.9</p>
+</BODY>
+</HTML>

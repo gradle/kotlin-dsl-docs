@@ -35,11 +35,38 @@
 <tbody>
 <tr>
 <td>
+<p><a href="-buildable-component.html">BuildableComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">BuildableComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
+<p>Represents a component that can be built.</p>
+</td>
+</tr>
+<tr>
+<td>
 <p><a href="../org.gradle.language/-component-with-binaries/index.html">ComponentWithBinaries</a></p>
 </td>
 <td>
 <code><span class="keyword">interface </span><span class="identifier">ComponentWithBinaries</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
 <p>Represents a component that is composed of one or more binaries.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-component-with-coordinates/index.html">ComponentWithCoordinates</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentWithCoordinates</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
+<p>Represents a component that determines its publication coordinates.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../org.gradle.language/-component-with-dependencies/index.html">ComponentWithDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">ComponentWithDependencies</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
+<p>Represents a component with implementation dependencies.</p>
 </td>
 </tr>
 <tr>
@@ -76,6 +103,15 @@
 <td>
 <code><span class="keyword">interface </span><span class="identifier">ProductionComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
 <p>Represents a component that is the main product of a project.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-publishable-component.html">PublishableComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">PublishableComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="./-software-component.html"><span class="identifier">SoftwareComponent</span></a><span class="symbol">, </span><a href="-component-with-coordinates/index.html"><span class="identifier">ComponentWithCoordinates</span></a></code>
+<p>Represents a component that can be published.</p>
 </td>
 </tr>
 <tr>

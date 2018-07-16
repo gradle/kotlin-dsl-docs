@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>ComponentWithDependencies - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.language</a>&nbsp;/&nbsp;<a href="./index.html">ComponentWithDependencies</a><br/>
+<br/>
+<h1>ComponentWithDependencies</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">interface </span><span class="identifier">ComponentWithDependencies</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api.component/-software-component.html"><span class="identifier">SoftwareComponent</span></a></code>
+<p>Represents a component with implementation dependencies.</p>
+<p><strong>Since</strong><br/>
+4.6</p>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-dependencies.html">getDependencies</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getDependencies</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-component-dependencies/index.html"><span class="identifier">ComponentDependencies</span></a></code>
+<p>Returns the dependencies of this component.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Inheritors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.cpp/-cpp-binary/index.html">CppBinary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CppBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.nativeplatform/-component-with-object-files/index.html"><span class="identifier">ComponentWithObjectFiles</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">ComponentWithDependencies</span></a><span class="symbol">, </span><a href="../../org.gradle.api.component/-buildable-component.html"><span class="identifier">BuildableComponent</span></a></code>
+<p>A binary built from C++ source and linked from the resulting object files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.cpp/-cpp-component/index.html">CppComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">CppComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-component-with-binaries/index.html"><span class="identifier">ComponentWithBinaries</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">ComponentWithDependencies</span></a></code>
+<p>Configuration for a C++ component, such as a library or executable, defining the source files and private header directories that make up the component. Private headers are those that are visible only to the source files of the component. 
+<p>A C++ component is composed of some C++ source files that are compiled and then linked into some binary.</p>
+ 
+<p>An instance of this type is added as a project extension by the C++ plugins.</p>
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.swift/-swift-binary/index.html">SwiftBinary</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SwiftBinary</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.language.nativeplatform/-component-with-object-files/index.html"><span class="identifier">ComponentWithObjectFiles</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">ComponentWithDependencies</span></a></code>
+<p>A binary built from Swift source and linked from the resulting object files.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="../../org.gradle.language.swift/-swift-component/index.html">SwiftComponent</a></p>
+</td>
+<td>
+<code><span class="keyword">interface </span><span class="identifier">SwiftComponent</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../-component-with-binaries/index.html"><span class="identifier">ComponentWithBinaries</span></a><span class="symbol">, </span><a href="./index.html"><span class="identifier">ComponentWithDependencies</span></a></code>
+<p>Configuration for a Swift component, such as a library or executable, defining the source files that make up the component plus other settings. 
+<p>Swift component is composed of some Swift source files that are compiled and then linked into some binary.</p>
+ 
+<p>An instance of this type is added as a project extension by the Swift plugins.</p>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>

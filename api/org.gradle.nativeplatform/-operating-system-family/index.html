@@ -1,0 +1,110 @@
+<HTML>
+<HEAD>
+<meta charset="UTF-8">
+<title>OperatingSystemFamily - api</title>
+<link rel="stylesheet" href="../../../style.css">
+</HEAD>
+<BODY>
+<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.nativeplatform</a>&nbsp;/&nbsp;<a href="./index.html">OperatingSystemFamily</a><br/>
+<br/>
+<h1>OperatingSystemFamily</h1>
+<code><span class="identifier">@Incubating</span> <span class="keyword">abstract</span> <span class="keyword">class </span><span class="identifier">OperatingSystemFamily</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-named/index.html"><span class="identifier">Named</span></a></code>
+<p>Represents the operating system of a configuration. Typical operating system include Windows, Linux, and macOS. This interface allows the user to customize operating systems by implementing this interface.</p>
+<p><strong>Since</strong><br/>
+4.7</p>
+<h3>Constructors</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-init-.html">&lt;init&gt;</a></p>
+</td>
+<td>
+<code><span class="identifier">OperatingSystemFamily</span><span class="symbol">(</span><span class="symbol">)</span></code>
+<p>Represents the operating system of a configuration. Typical operating system include Windows, Linux, and macOS. This interface allows the user to customize operating systems by implementing this interface.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Properties</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="-l-i-n-u-x.html">LINUX</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">LINUX</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The Linux operating system family.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-m-a-c-o-s.html">MACOS</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">MACOS</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The macOS operating system family.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="-o-p-e-r-a-t-i-n-g_-s-y-s-t-e-m_-a-t-t-r-i-b-u-t-e.html">OPERATING_SYSTEM_ATTRIBUTE</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">OPERATING_SYSTEM_ATTRIBUTE</span><span class="symbol">: </span><a href="../../org.gradle.api.attributes/-attribute/index.html"><span class="identifier">Attribute</span></a><span class="symbol">&lt;</span><a href="./index.html"><span class="identifier">OperatingSystemFamily</span></a><span class="symbol">&gt;</span></code></td>
+</tr>
+<tr>
+<td>
+<p><a href="-w-i-n-d-o-w-s.html">WINDOWS</a></p>
+</td>
+<td>
+<code><span class="keyword">static</span> <span class="keyword">val </span><span class="identifier">WINDOWS</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>The Windows operating system family.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<h3>Functions</h3>
+<table>
+<tbody>
+<tr>
+<td>
+<p><a href="get-name.html">getName</a></p>
+</td>
+<td>
+<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">getName</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a></code>
+<p>{@inheritDoc}</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-linux.html">isLinux</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isLinux</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Is this the Linux operating system family?</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-mac-os.html">isMacOs</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isMacOs</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Is this the macOS operating system family?</p>
+</td>
+</tr>
+<tr>
+<td>
+<p><a href="is-windows.html">isWindows</a></p>
+</td>
+<td>
+<code><span class="keyword">open</span> <span class="keyword">fun </span><span class="identifier">isWindows</span><span class="symbol">(</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-boolean/index.html"><span class="identifier">Boolean</span></a></code>
+<p>Is this the Windows operating system family?</p>
+</td>
+</tr>
+</tbody>
+</table>
+</BODY>
+</HTML>
