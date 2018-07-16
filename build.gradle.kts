@@ -22,18 +22,18 @@ buildscript {
 
 val gradleGitUseLocalClone = file("../gradle/.git").isDirectory
 val gradleGitUri =
-    if (gradleGitUseLocalClone) file("../gradle").toURI().toString()
-    else "https://github.com/gradle/gradle.git"
+        if (gradleGitUseLocalClone) file("../gradle").toURI().toString()
+        else "https://github.com/gradle/gradle.git"
 val gradleGitRef = "kotlin-dsl-docs"
 
 val kotlinDslGitUseLocalClone = file("../kotlin-dsl/.git").isDirectory
 val kotlinDslGitUri =
-    if (kotlinDslGitUseLocalClone) file("../kotlin-dsl").toURI().toString()
-    else "https://github.com/gradle/kotlin-dsl.git"
+        if (kotlinDslGitUseLocalClone) file("../kotlin-dsl").toURI().toString()
+        else "https://github.com/gradle/kotlin-dsl.git"
 val kotlinDslGitRef = "v0.18.4"
 
-logger.lifecycle("\nGradle sources for Kotlin DSL API\n  uri = $gradleGitUri\n  ref = $gradleGitRef")
-logger.lifecycle("\nKotlin DSL sources for Kotlin DSL API\n  uri = $kotlinDslGitUri\n  ref = $kotlinDslGitRef")
+logger.lifecycle("Gradle sources for Kotlin DSL API\n  uri = $gradleGitUri\n  ref = $gradleGitRef\n")
+logger.lifecycle("Kotlin DSL sources for Kotlin DSL API\n  uri = $kotlinDslGitUri\n  ref = $kotlinDslGitRef\n")
 
 
 // Groovy and Kotlin versions
@@ -41,28 +41,28 @@ logger.lifecycle("\nKotlin DSL sources for Kotlin DSL API\n  uri = $kotlinDslGit
 
 val groovyVersionSourceFilePath = "gradle/dependencies.gradle"
 val groovyVersion =
-    if (gradleGitUseLocalClone)
-        file("../gradle/$groovyVersionSourceFilePath").readLines().extractGroovyVersion()
-    else
-        URL("https://raw.githubusercontent.com/gradle/gradle/$gradleGitRef/$groovyVersionSourceFilePath")
-            .openStream().bufferedReader().use { it.lineSequence().toList().extractGroovyVersion() }
+        if (gradleGitUseLocalClone)
+            file("../gradle/$groovyVersionSourceFilePath").readLines().extractGroovyVersion()
+        else
+            URL("https://raw.githubusercontent.com/gradle/gradle/$gradleGitRef/$groovyVersionSourceFilePath")
+                    .openStream().bufferedReader().use { it.lineSequence().toList().extractGroovyVersion() }
 
 val kotlinVersionSourceFilePath = "kotlin-version.txt"
 val kotlinVersion =
-    if (kotlinDslGitUseLocalClone)
-        file("../kotlin-dsl/$kotlinVersionSourceFilePath").readLines().extractKotlinVersion()
-    else
-        URL("https://raw.githubusercontent.com/gradle/kotlin-dsl/$kotlinDslGitRef/$kotlinVersionSourceFilePath")
-            .openStream().bufferedReader().use { it.lineSequence().toList().extractKotlinVersion() }
+        if (kotlinDslGitUseLocalClone)
+            file("../kotlin-dsl/$kotlinVersionSourceFilePath").readLines().extractKotlinVersion()
+        else
+            URL("https://raw.githubusercontent.com/gradle/kotlin-dsl/$kotlinDslGitRef/$kotlinVersionSourceFilePath")
+                    .openStream().bufferedReader().use { it.lineSequence().toList().extractKotlinVersion() }
 
 fun List<String>.extractGroovyVersion() =
-    find { it.startsWith("libraries.groovy =") }!!
-        .split("=").last().substringAfterLast("version: '").substringBeforeLast("'").trim()
+        find { it.startsWith("libraries.groovy =") }!!
+                .split("=").last().substringAfterLast("version: '").substringBeforeLast("'").trim()
 
 fun List<String>.extractKotlinVersion() =
-    first().trim()
+        first().trim()
 
-logger.lifecycle("\nRuntime versions for Kotlin DSL API\n  Groovy $groovyVersion\n  Kotlin $kotlinVersion")
+logger.lifecycle("Runtime versions for Kotlin DSL API\n  Groovy $groovyVersion\n  Kotlin $kotlinVersion\n")
 
 
 val dokkaDependencies by configurations.creating
@@ -137,15 +137,15 @@ tasks {
     // API docs generation using dokka
     val dokka by getting(DokkaTask::class) {
         dependsOn(gradleApiSources, gradleKotlinDslApiSources, gradlePluginsAccessors)
-        group = null
+        group = ""
         moduleName = "api"
         outputDirectory = "$buildDir/docs/dokka"
         jdkVersion = 8
         classpath = dokkaDependencies
         sourceDirs = listOf(
-            gradleKotlinDslApiSources.sourceDir,
-            gradleApiSources.sourceDir,
-            gradlePluginsAccessors.accessorsDir)
+                gradleKotlinDslApiSources.sourceDir,
+                gradleApiSources.sourceDir,
+                gradlePluginsAccessors.accessorsDir)
         includes = listOf("src/dokka/kotlin-dsl.md")
         doFirst {
             file(outputDirectory).deleteRecursively()
