@@ -169,6 +169,7 @@ tasks {
             var gradleApiFound = false
             var gradleKotlinDslApiFound = false
             var gradleKotlinDslGeneratedApiFound = false
+            var gradlePluginsBlockAccessorsFound = false
             var gradlePluginsAccessorsFound = false
             val filesWithErrorClass = mutableListOf<File>()
             apiDocsRoot.walk().filter { it.isFile }.forEach { file ->
@@ -185,6 +186,9 @@ tasks {
                 if (!gradleKotlinDslGeneratedApiFound && text.contains("embeddedKotlinVersion")) {
                     gradleKotlinDslGeneratedApiFound = true
                 }
+                if (!gradlePluginsBlockAccessorsFound && text.contains("name=\"org.gradle.kotlin.dsl\$base#org.gradle.plugin.use.PluginDependenciesSpec\"")) {
+                    gradlePluginsBlockAccessorsFound = true
+                }
                 if (!gradlePluginsAccessorsFound && text.contains("name=\"org.gradle.kotlin.dsl\$checkstyle#org.gradle.api.Project")) {
                     gradlePluginsAccessorsFound = true
                 }
@@ -198,8 +202,11 @@ tasks {
             if (!gradleKotlinDslGeneratedApiFound) {
                 throw Exception("API documentation does not include *generated* Gradle Kotlin DSL")
             }
+            if (!gradlePluginsBlockAccessorsFound) {
+                throw Exception("API documentation does not include *generated* Gradle plugins { core } accessors")
+            }
             if (!gradlePluginsAccessorsFound) {
-                throw Exception("API documentation does not include *generated* Gradle Plugins accessors")
+                throw Exception("API documentation does not include *generated* Core Gradle Plugins extensions accessors")
             }
             if (filesWithErrorClass.isNotEmpty()) {
                 throw  Exception("<ERROR CLASS> found in ${filesWithErrorClass.size} files:\n  ${filesWithErrorClass.joinToString("\n  ")}")
