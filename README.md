@@ -1,11 +1,6 @@
 # Gradle Kotlin DSL Documentation
 
-Local preview
-- `./gradlew prepareGhPages`
-- `open ./build/ghpages/index.html`
+> [!CAUTION]
+> This repository is now obsolete. 
 
-Publishing
-- `./gradlew publishGhPages`
-- open https://gradle.github.io/kotlin-dsl-docs/
-
-Look at `./gradlew tasks` output for details on how to run intermediate steps only.
+Up-to-date Kotlin DSL Reference docs for Gradle can be found [here](https://docs.gradle.org/current/kotlin-dsl/index.html).
