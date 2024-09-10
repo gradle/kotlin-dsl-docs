@@ -1,55 +1,11 @@
-<HTML>
-<HEAD>
-<meta charset="UTF-8">
-<title>ProjectConnection.getModel - api</title>
-<link rel="stylesheet" href="../../../style.css">
-</HEAD>
-<BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.tooling</a>&nbsp;/&nbsp;<a href="index.html">ProjectConnection</a>&nbsp;/&nbsp;<a href="./get-model.html">getModel</a><br/>
-<br/>
-<h1>getModel</h1>
-<a name="org.gradle.tooling.ProjectConnection$getModel(java.lang.Class((org.gradle.tooling.ProjectConnection.getModel.T)))"></a>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">getModel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.ProjectConnection$getModel(java.lang.Class((org.gradle.tooling.ProjectConnection.getModel.T)))/modelType">modelType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="get-model.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="get-model.html#T"><span class="identifier">T</span></a></code>
-<p>Fetches a snapshot of the model of the given type for this project. This method blocks until the model is available. 
-<p>This method is simply a convenience for calling <code>model(modelType).get()</code></p>
-</p>
-<h3>Parameters</h3>
-<p><a name="modelType"></a>
-<code>modelType</code> - The model type.</p>
-<p><a name="&lt;T&gt;"></a>
-<code><T></code> - The model type.</p>
-<h3>Exceptions</h3>
-<p><a name="UnsupportedVersionException"></a>
-<code>UnsupportedVersionException</code> - When the target Gradle version does not support the given model.</p>
-<p><a name="UnknownModelException"></a>
-<code>UnknownModelException</code> - When the target Gradle version or build does not support the requested model.</p>
-<p><a name="BuildException"></a>
-<code>BuildException</code> - On some failure executing the Gradle build, in order to build the model.</p>
-<p><a name="GradleConnectionException"></a>
-<code>GradleConnectionException</code> - On some other failure using the connection.</p>
-<p><a name="IllegalStateException"></a>
-<code>IllegalStateException</code> - When this connection has been closed or is closing.</p>
-<p><strong>Return</strong><br/>
-The model.</p>
-<p><strong>Since</strong><br/>
-1.0-milestone-3</p>
-<a name="org.gradle.tooling.ProjectConnection$getModel(java.lang.Class((org.gradle.tooling.ProjectConnection.getModel.T)), org.gradle.tooling.ResultHandler((org.gradle.tooling.ProjectConnection.getModel.T)))"></a>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="symbol">&lt;</span><span class="identifier">T</span>&nbsp;<span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span> <span class="identifier">getModel</span><span class="symbol">(</span><span class="identifier" id="org.gradle.tooling.ProjectConnection$getModel(java.lang.Class((org.gradle.tooling.ProjectConnection.getModel.T)), org.gradle.tooling.ResultHandler((org.gradle.tooling.ProjectConnection.getModel.T)))/modelType">modelType</span><span class="symbol">:</span>&nbsp;<a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Class.html"><span class="identifier">Class</span></a><span class="symbol">&lt;</span><a href="get-model.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">, </span><span class="identifier" id="org.gradle.tooling.ProjectConnection$getModel(java.lang.Class((org.gradle.tooling.ProjectConnection.getModel.T)), org.gradle.tooling.ResultHandler((org.gradle.tooling.ProjectConnection.getModel.T)))/handler">handler</span><span class="symbol">:</span>&nbsp;<a href="../-result-handler/index.html"><span class="identifier">ResultHandler</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="get-model.html#T"><span class="identifier">T</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-unit/index.html"><span class="identifier">Unit</span></a></code>
-<p>Starts fetching a snapshot of the given model, passing the result to the given handler when complete. This method returns immediately, and the result is later passed to the given handler's <code><a href="#">ResultHandler#onComplete(Object)</a></code> method. 
-<p>If the operation fails, the handler's <code><a href="../-result-handler/on-failure.html">ResultHandler#onFailure(GradleConnectionException)</a></code> method is called with the appropriate exception. See <code><a href="#">#getModel(Class)</a></code> for a description of the various exceptions that the operation may fail with. </p>
-<p>This method is simply a convenience for calling <code>model(modelType).get(handler)</code></p>
-</p>
-<h3>Parameters</h3>
-<p><a name="modelType"></a>
-<code>modelType</code> - The model type.</p>
-<p><a name="handler"></a>
-<code>handler</code> - The handler to pass the result to.</p>
-<p><a name="&lt;T&gt;"></a>
-<code><T></code> - The model type.</p>
-<h3>Exceptions</h3>
-<p><a name="IllegalStateException"></a>
-<code>IllegalStateException</code> - When this connection has been closed or is closing.</p>
-<p><strong>Since</strong><br/>
-1.0-milestone-3</p>
-</BODY>
-</HTML>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Kotlin DSL Reference in the Gradle User Manual</title>
+    <meta http-equiv="refresh" content="0; URL=https://docs.gradle.org/current/kotlin-dsl/index.html">
+</head>
+<body>
+<p>Kotlin DSL Reference documentation has moved to <a href="https://docs.gradle.org/current/kotlin-dsl/index.html">the Gradle User Manual</a>.</p>
+</body>
+</html>
