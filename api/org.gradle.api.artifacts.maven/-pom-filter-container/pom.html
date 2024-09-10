@@ -1,50 +1,11 @@
-<HTML>
-<HEAD>
-<meta charset="UTF-8">
-<title>PomFilterContainer.pom - api</title>
-<link rel="stylesheet" href="../../../style.css">
-</HEAD>
-<BODY>
-<a href="../../index.html">api</a>&nbsp;/&nbsp;<a href="../index.html">org.gradle.api.artifacts.maven</a>&nbsp;/&nbsp;<a href="index.html">PomFilterContainer</a>&nbsp;/&nbsp;<a href="./pom.html">pom</a><br/>
-<br/>
-<h1>pom</h1>
-<a name="org.gradle.api.artifacts.maven.PomFilterContainer$pom(kotlin.String)"></a>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">pom</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$pom(kotlin.String)/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">)</span><span class="symbol">: </span><a href="../-maven-pom/index.html"><span class="identifier">MavenPom</span></a></code>
-<p>Returns the POM associated with a filter added with <code><a href="#">#addFilter(String, org.gradle.api.artifacts.maven.PublishFilter)</a></code>.</p>
-<h3>Parameters</h3>
-<p><a name="name"></a>
-<code>name</code> - The name of the filter.</p>
-<a name="org.gradle.api.artifacts.maven.PomFilterContainer$pom(kotlin.String, groovy.lang.Closure((kotlin.Any)))"></a>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">pom</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$pom(kotlin.String, groovy.lang.Closure((kotlin.Any)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$pom(kotlin.String, groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-maven-pom/index.html"><span class="identifier">MavenPom</span></a></code>
-<p>Configures a POM by a closure. The closure statements are delegated to the POM object associated with the given name.</p>
-<p><strong>Return</strong><br/>
-The POM object associated with the given name.</p>
-<p><strong>See Also</strong><br/>
-<a href="#">PomFilterContainer#pom(String)</a></p>
-<a name="org.gradle.api.artifacts.maven.PomFilterContainer$pom(groovy.lang.Closure((kotlin.Any)))"></a>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">pom</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$pom(groovy.lang.Closure((kotlin.Any)))/configureClosure">configureClosure</span><span class="symbol">:</span>&nbsp;<span class="identifier">Closure</span><span class="symbol">&lt;</span><a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-any/index.html"><span class="identifier">Any</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-maven-pom/index.html"><span class="identifier">MavenPom</span></a></code>
-<p>Configures the default POM by a closure. The closure statements are delegated to the default POM.</p>
-<p><strong>Return</strong><br/>
-The default POM.</p>
-<p><strong>See Also</strong><br/>
-<a href="get-pom.html">PomFilterContainer#getPom()</a></p>
-<a name="org.gradle.api.artifacts.maven.PomFilterContainer$pom(kotlin.String, org.gradle.api.Action((org.gradle.api.artifacts.maven.MavenPom)))"></a>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">pom</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$pom(kotlin.String, org.gradle.api.Action((org.gradle.api.artifacts.maven.MavenPom)))/name">name</span><span class="symbol">:</span>&nbsp;<a href="https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html"><span class="identifier">String</span></a><span class="symbol">, </span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$pom(kotlin.String, org.gradle.api.Action((org.gradle.api.artifacts.maven.MavenPom)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-maven-pom/index.html"><span class="identifier">MavenPom</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-maven-pom/index.html"><span class="identifier">MavenPom</span></a></code>
-<p>Configures a POM by an action. The action is executed against the POM object associated with the given name.</p>
-<p><strong>Return</strong><br/>
-The POM object associated with the given name.</p>
-<p><strong>See Also</strong><br/>
-<a href="#">PomFilterContainer#pom(String)</a></p>
-<p><strong>Since</strong><br/>
-4.2</p>
-<a name="org.gradle.api.artifacts.maven.PomFilterContainer$pom(org.gradle.api.Action((org.gradle.api.artifacts.maven.MavenPom)))"></a>
-<code><span class="keyword">abstract</span> <span class="keyword">fun </span><span class="identifier">pom</span><span class="symbol">(</span><span class="identifier" id="org.gradle.api.artifacts.maven.PomFilterContainer$pom(org.gradle.api.Action((org.gradle.api.artifacts.maven.MavenPom)))/configureAction">configureAction</span><span class="symbol">:</span>&nbsp;<a href="../../org.gradle.api/-action/index.html"><span class="identifier">Action</span></a><span class="symbol">&lt;</span><span class="keyword">in</span>&nbsp;<a href="../-maven-pom/index.html"><span class="identifier">MavenPom</span></a><span class="symbol">&gt;</span><span class="symbol">)</span><span class="symbol">: </span><a href="../-maven-pom/index.html"><span class="identifier">MavenPom</span></a></code>
-<p>Configures the default POM by an action.</p>
-<p><strong>Return</strong><br/>
-The default POM.</p>
-<p><strong>See Also</strong><br/>
-<a href="get-pom.html">PomFilterContainer#getPom()</a></p>
-<p><strong>Since</strong><br/>
-4.2</p>
-</BODY>
-</HTML>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Kotlin DSL Reference in the Gradle User Manual</title>
+    <meta http-equiv="refresh" content="0; URL=https://docs.gradle.org/current/kotlin-dsl/index.html">
+</head>
+<body>
+<p>Kotlin DSL Reference documentation has moved to <a href="https://docs.gradle.org/current/kotlin-dsl/index.html">the Gradle User Manual</a>.</p>
+</body>
+</html>
